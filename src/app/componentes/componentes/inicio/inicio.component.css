@@ -1,0 +1,47 @@
+.harry
+{
+	float:left;
+	margin-top:150px;
+	margin-left:250px;
+}
+
+.anillos
+{
+	float:left;
+	margin-top:150px;
+	margin-left:200px;
+	
+}
+
+.harry2
+{
+	float:right;
+	margin-top:150px;
+	margin-right:275px;
+}
+
+.texto 
+{
+	font-family:fantasy;
+	float:right;
+	margin-top:15px;
+	font-size:30px;
+	margin-right:52px;
+	text-decoration:none;
+	
+	
+}
+
+.compra
+{
+	color:black;
+	background-color:#ffcc00;
+	border-radius:50px;
+	text-decoration:none;
+	padding:10px 15px;
+	font-size:25px;
+	font-family:fantasy;
+	margin-top:60px;
+	float:right;
+	margin-right:-133px;
+}
