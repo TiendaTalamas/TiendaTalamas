@@ -22,6 +22,7 @@
 	margin:30px auto;
 	background-color:#ffcc00;
 	margin-top:-20px;
+	box-shadow:5px 5px 5px #D6D6D6;
 }
 
 .navegacion ul
@@ -67,6 +68,7 @@ header
 {
 	background-color: #212121;
 	height:200px;
+	box-shadow:7px 7px 7px #D6D6D6;
 }
 
 
