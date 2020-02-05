@@ -2,18 +2,9 @@
 {
 	width: 960px;
 	height:800px;
-	background-color: tomato;
+	background-color:rgba(255, 0,0, 0.6);
 	margin:auto;
-	margin-top:50px;
-	
-	
-}
-
-body
-{
-	background:url(src/assets/prueba.jpg);
-	background-repeat:no-repeat ;
-	background-size: cover;
-	background-attachment: fixed;
+	margin-top:100px;
+	color:black;
 	
 }
