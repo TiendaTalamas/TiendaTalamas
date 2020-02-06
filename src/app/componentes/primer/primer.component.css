@@ -1,0 +1,29 @@
+.btn-default{
+   
+	background-color:#3fc5f0;
+	
+   
+  color: #212121;
+    font-family:fantasy;
+    font-size:30px;
+    padding: 15px 20px;
+
+    
+}
+
+.btn:hover
+{
+    color:white;
+	transition: all .3s;
+    font-size: 35px;
+    background-color: black;
+}
+.row
+{
+
+    background-color:#3fc5f0;
+    
+}
+.container{
+    min-width: 100%;
+}
