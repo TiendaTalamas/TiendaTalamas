@@ -24,8 +24,6 @@
     font-size:30px;
 	padding: 15px 20px;
 
-
-    
 }
 
 .btn:hover
@@ -35,17 +33,12 @@
     font-size: 35px;
     background-color: black;
 }
-.row
-{
 
-    background-color:#3fc5f0;
-    
-}
-.container{
+.casa{
 	min-width: 100%;
 	margin-top: -2%;
+	background-color: #3fc5f0;
 }
-
 
 header
 {
@@ -53,10 +46,12 @@ header
 	height:200px;
 	box-shadow:7px 7px 7px #D6D6D6;
 }
+
 footer
 {
 	background-color: #222831;
 }
+
 
 
 
