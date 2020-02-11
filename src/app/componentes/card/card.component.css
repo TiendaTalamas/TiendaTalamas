@@ -1,0 +1,30 @@
+/*Empieza el CSS del card*/
+
+.card
+{
+    
+    margin: auto;
+    margin-bottom: 20%;
+    margin-top:35%;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    
+
+}
+
+/*EL container se modifica para hacer un display*/
+
+.container-fluid
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Se pone hover para darle un efecto de levantar a las cards*/
+
+.card:hover
+{
+    transform:translateY(-15px);
+    box-shadow:0 12px 16px rgba(0,0,0,0.2);
+    transition:all 0.5s;
+    
+}

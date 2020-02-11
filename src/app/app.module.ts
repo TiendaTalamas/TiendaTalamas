@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PrimerComponent } from './componentes/primer/primer.component';
 import { InicioComponent } from './componentes/componentes/inicio/inicio.component';
+import { Contenedor1Component } from './componentes/contenedor1/contenedor1.component';
+import { CardComponent } from './componentes/card/card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrimerComponent,
     InicioComponent,
+    Contenedor1Component,
+    CardComponent,
    
   ],
   imports: [

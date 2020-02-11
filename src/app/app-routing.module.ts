@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PrimerComponent} from './componentes/primer/primer.component'
 import {InicioComponent} from './componentes/componentes/inicio/inicio.component'
+import {Contenedor1Component} from './componentes/contenedor1/contenedor1.component'
+import {CardComponent} from './componentes/card/card.component'
 
 
 
 const routes: Routes = [
-  {path: '', component: InicioComponent, }, 
-    {path: 'primer', component: PrimerComponent, },
+  {path: 'Inicio', component: InicioComponent, }, 
+  {path: '', component: Contenedor1Component, },
+  {path: 'card', component: CardComponent, },
 
 ];
 
