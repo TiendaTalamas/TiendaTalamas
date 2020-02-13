@@ -68,23 +68,8 @@
     <h5 style = "color: black; text-align: left;">Articulos mas vendidos</h5>
     <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
     <div class="row">
-      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2">
-          <img class="imgr"src="https://cdn.shopify.com/s/files/1/0682/8189/products/A-Game-Of-Thromes-HB_1024x1024.png?v=1443617452" style = "width: 150px; height: 200px">
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 mt-2">
-          <img  class="img0" src="https://www.att.com/catalog/en/idse/Mophie/Body%20Glove%20Traction%20Pro%20Case%20-%20iPhone%20X/Black-hero-zoom.png" style = "width: 150px; height: 200px">
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 mt-2">
-          <img  class="imgr" src="https://image.shutterstock.com/image-illustration/microphone-isolated-on-white-background-260nw-667533496.jpg" style = "width: 150px; height: 200px">
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 mt-2">
-          <img  class="imgr" src="https://s3.us-west-2.amazonaws.com/static.ernieball.com/website/images/products/image_front/full/P02212.png" style = "width: 150px; height: 200px">
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 mt-2">
-          <img  class="imgr" src="https://static.wixstatic.com/media/2cd43b_d8557b1abb8944b794fa3f5247c8c510~mv2.png/v1/fill/w_320,h_321,fp_0.50_0.50/2cd43b_d8557b1abb8944b794fa3f5247c8c510~mv2.png" style = "width: 150px; height: 200px">
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 mt-2">
-          <img  class="imgr" src="assets/anillo.jpg" style = "width: 150px; height: 200px">
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2" *ngFor = "let articulo of articulosArray; let i = index">
+          <img class="imgr"src="{{articulo.Imagen}}" style = "width: 150px; height: 200px">
       </div>
     </div>
   </div> 
