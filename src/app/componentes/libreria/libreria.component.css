@@ -1,0 +1,17 @@
+#parallax-imagen
+{
+    background-image:url('../../../assets/parallax.jpg');
+    height:400px;
+    margin-bottom: 50px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1
+{
+    margin-top:-50px;
+    font-size: 80px;
+
+}

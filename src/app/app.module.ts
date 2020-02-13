@@ -7,6 +7,7 @@ import { InicioComponent } from './componentes/componentes/inicio/inicio.compone
 import { Contenedor1Component } from './componentes/contenedor1/contenedor1.component';
 import { CardComponent } from './componentes/card/card.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
+import { LibreriaComponent } from './componentes/libreria/libreria.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { RegistroComponent } from './componentes/registro/registro.component';
     Contenedor1Component,
     CardComponent,
     RegistroComponent,
+    LibreriaComponent,
    
   ],
   imports: [
