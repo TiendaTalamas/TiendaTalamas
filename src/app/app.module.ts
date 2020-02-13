@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './componentes/componentes/inicio/inicio.component';
 import { Contenedor1Component } from './componentes/contenedor1/contenedor1.component';
 import { CardComponent } from './componentes/card/card.component';
+import {HttpModule, RequestOptions, XHRBackend, Http} from "@angular/http";
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { CardComponent } from './componentes/card/card.component';
    
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     AppRoutingModule
   ],
