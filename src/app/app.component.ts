@@ -26,9 +26,17 @@ export class AppComponent {
     this.router.navigate(['']);
     
   }
+
+  navegarSesion()
+  {
+
+    this.router.navigate(['card'])
+
+
+  }
   navegarRegistro()
   {
-    this.router.navigate(['card']);
+    this.router.navigate(['registro']);
     
   }
   title = 'talamas';
