@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router"
+
+import {Location} from "@angular/common"
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private location:Location){}
+
+
 
   ngOnInit() {
+  }
+
+  navegarSesion()
+  {
+
+    this.router.navigate(['card'])
+
+
   }
 
 }

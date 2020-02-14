@@ -39,10 +39,9 @@ export class AppComponent {
     this.router.navigate(['registro']);
     
   }
-  title = 'talamas';
-
   navegarLibreria()
   {
     this.router.navigate(['libreria'])
   }
+  title = 'talamas';
 }
