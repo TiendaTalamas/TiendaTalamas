@@ -1,13 +1,13 @@
-<div class="noticia">
-    <img class="izquierda mb-5" src="https://www.elsotano.com/imagenes_grandes/9786070/978607073620.JPG" width="350" height="450"> 
-     <aside><h3>Wigetta Y los gusanos guasones (spanish edition)</h3>
+<div class="noticia" *ngFor = "let producto of productos">
+    <img class="izquierda mb-5" src="{{producto.imagen}}" width="350" height="450"> 
+     <aside><h3>{{producto.nombre}}</h3>
         <br>
         <br>
 
         <button type="button" class="btn btn-warning">Comprar</button> <button type="button" class="btn btn-warning ml-3">Cantidad</button> <button type="button" class="btn btn-warning ml-3">Agregar al carrito</button>
         <br>
         <br>
-        <p>El equipo ha regresado victorioso de su última aventura y la vida en Pueblo transcurre en paz. Nada parece amenazar la tranquilidad de nuestros amigos y sus mascotas. Sin embargo, muy pronto se verán obligados a enfrentarse a otra situación extraordinaria, un misterio en el que estarán involucrados algunos de los personajes que ya conocemos: el Rey Guerrero, Flordeluna, las brujas del bosque, el chef gigante que cocina en el restaurante de moda o un misterioso Tabernardo. En compañía de todos ellos nos adentramos en un nuevo episodio de la saga protagonizada por Willy, Vegetta, Trotuman y Vakypandy. En esta ocasión, llegaremos hasta Setilandia, donde habitan Cipriano, Adriano y Germano, miembros de una curiosa colonia de gusanos laboriosos y bromistas, a los que, no obstante, no conviene enfadar…</p>
+        <p>{{producto.descripcion}}</p>
     
     </aside>
     <div class="reset"></div>

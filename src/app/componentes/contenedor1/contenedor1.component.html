@@ -69,7 +69,7 @@
     <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2" *ngFor = "let articulo of articulosArray; let i = index">
-          <img class="imgr"src="{{articulo.Imagen}}" style = "width: 150px; height: 200px"><p>{{articulo.Precio}}</p>
+          <img  class="imgr"src="{{articulo.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(articulo.NombreProducto, articulo.Descripcion, articulo.Unidades, articulo.Imagen)"><p>{{articulo.Precio}}</p>
       </div>
     </div>
   </div> 
@@ -79,7 +79,7 @@
     <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2">
-          <img class="imgr" src="https://png.pngtree.com/png_detail/20181017/violin-png-clipart_1262753.png" style = "width: 150px; height: 200px">
+          <img (click) = "masInformacion(articulo.NombreProducto)" class="imgr" src="https://png.pngtree.com/png_detail/20181017/violin-png-clipart_1262753.png" style = "width: 150px; height: 200px">
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 mt-2">
           <img class="imgr" src="https://i.ebayimg.com/images/g/XqgAAOSwGhtbnZXr/s-l300.png" style = "width: 150px; height: 200px">
