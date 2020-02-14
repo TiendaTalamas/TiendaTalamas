@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { URLSearchParams } from "@angular/http";
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
+import {Router} from "@angular/router";
+import {Location} from "@angular/common";
+import { producto } from '../../servicios/producto';
+import { servicioCompartido } from '../../servicios/servicioCompartido';
+
 @Component({
   selector: 'app-contenedor1',
   templateUrl: './contenedor1.component.html',
   styleUrls: ['./contenedor1.component.css']
 })
 export class Contenedor1Component implements OnInit {
+  //
+  nombre: string;
+  productoObjeto: producto[];
   //Datos separados
   AA: string;
   data: any[];
@@ -16,7 +24,8 @@ export class Contenedor1Component implements OnInit {
   xxxMap = new Map();
   valuesKeys = new Array;
   articulosArray = new Array;
-  constructor(private http: Http) { }
+  constructor(private http: Http,private router: Router, private location:Location,
+    private _servicioCompartido : servicioCompartido) { }
 
   ngOnInit() {
     this.obtenerArticulos();
@@ -49,6 +58,20 @@ export class Contenedor1Component implements OnInit {
              }
           }
     });
+  }
+
+  masInformacion(nombre:string, descripcion: string, unidades: number, imagen: string){
+    this.nombre = nombre;
+    console.log(this.nombre);
+    this.router.navigate(['venta']);
+    this.productoObjeto = [{
+      nombre: nombre,
+      descripcion: descripcion,
+      unidades: unidades,
+      imagen: imagen,
+  }]
+  this._servicioCompartido.setProductoData(this.productoObjeto);
+  
   }
 
 }

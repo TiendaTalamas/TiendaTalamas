@@ -11,6 +11,10 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { LibreriaComponent } from './componentes/libreria/libreria.component';
 import { VentaLibroComponent } from './componentes/venta-libro/venta-libro.component';
 
+//Importando los servicios
+import { producto } from './servicios/producto';
+import { servicioCompartido } from './servicios/servicioCompartido';
+
 
 
 @NgModule({
@@ -29,7 +33,9 @@ import { VentaLibroComponent } from './componentes/venta-libro/venta-libro.compo
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    servicioCompartido,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
