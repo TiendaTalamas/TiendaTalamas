@@ -24,3 +24,58 @@ section
     height:500px;
     background-attachment: fixed;
 }
+
+
+.fondo
+{
+    background-image: url('../../../assets/fantasia.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:500px;
+    background-attachment: fixed;
+}
+
+.fondo2
+{
+    background-image: url('../../../assets/infantil.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:500px;
+    background-attachment: fixed;
+}
+
+.fondo3
+{
+    background-image: url('../../../assets/ciencia.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:500px;
+    background-attachment: fixed;
+}
+
+.fondo4
+{
+    background-image: url('../../../assets/varios.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:500px;
+    background-attachment: fixed;
+}
+
+.fondo5
+{
+    background-image: url('../../../assets/terror.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:500px;
+    background-attachment: fixed;
+}
+
+.fondo6
+{
+    background-image: url('../../../assets/clasicos.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:500px;
+    background-attachment: fixed;
+}
