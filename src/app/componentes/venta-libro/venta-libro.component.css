@@ -1,0 +1,25 @@
+*
+{
+   background-color: white;
+}
+
+div.noticia {
+   
+ 
+   color:black;
+   padding: 15px;
+ }
+ 
+ div.noticia img.izquierda {
+   float: left;
+   margin-right: 25px;
+   margin-left: 50px;
+ }
+ 
+ div.reset {
+   clear: both;
+ }
+
+ .card-inner{
+   margin-left: 4rem;
+}

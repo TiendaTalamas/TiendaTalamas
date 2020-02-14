@@ -4,7 +4,7 @@ import {Contenedor1Component} from './componentes/contenedor1/contenedor1.compon
 import {CardComponent} from './componentes/card/card.component'
 import {RegistroComponent} from './componentes/registro/registro.component'
 import {LibreriaComponent} from './componentes/libreria/libreria.component'
-
+import {VentaLibroComponent} from './componentes/venta-libro/venta-libro.component'
 
 
 
@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'card', component: CardComponent, },
   {path: 'registro', component: RegistroComponent, },
   {path: 'libreria', component: LibreriaComponent, },
+  {path: 'venta', component: VentaLibroComponent, },
 
 ];
 

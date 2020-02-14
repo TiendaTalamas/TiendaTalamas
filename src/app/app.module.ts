@@ -9,6 +9,7 @@ import { CardComponent } from './componentes/card/card.component';
 import {HttpModule, RequestOptions, XHRBackend, Http} from "@angular/http";
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { LibreriaComponent } from './componentes/libreria/libreria.component';
+import { VentaLibroComponent } from './componentes/venta-libro/venta-libro.component';
 
 
 
@@ -20,6 +21,7 @@ import { LibreriaComponent } from './componentes/libreria/libreria.component';
     CardComponent,
     RegistroComponent,
     LibreriaComponent,
+    VentaLibroComponent,
    
   ],
   imports: [

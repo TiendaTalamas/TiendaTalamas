@@ -40,4 +40,9 @@ export class AppComponent {
     
   }
   title = 'talamas';
+
+  navegarLibreria()
+  {
+    this.router.navigate(['libreria'])
+  }
 }
