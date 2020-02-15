@@ -1,7 +1,7 @@
 #parallax-imagen
 {
     background-image:url('../../../assets/parallax.jpg');
-    height:500px;
+    height:800px;
     margin-bottom:0px;
     background-attachment: fixed;
     background-position: center;
@@ -21,7 +21,6 @@ section
     background-image: url('../../../assets/fondo-texto-libreria.jpg');
     background-repeat: no-repeat;
     background-size:cover;
-    height:500px;
     background-attachment: fixed;
 }
 
@@ -31,7 +30,6 @@ section
     background-image: url('../../../assets/fantasia.jpg');
     background-repeat: no-repeat;
     background-size:cover;
-    height:500px;
     background-attachment: fixed;
 }
 
@@ -40,7 +38,6 @@ section
     background-image: url('../../../assets/infantil.jpg');
     background-repeat: no-repeat;
     background-size:cover;
-    height:500px;
     background-attachment: fixed;
 }
 
@@ -49,7 +46,6 @@ section
     background-image: url('../../../assets/ciencia.jpg');
     background-repeat: no-repeat;
     background-size:cover;
-    height:500px;
     background-attachment: fixed;
 }
 
@@ -58,7 +54,6 @@ section
     background-image: url('../../../assets/varios.jpg');
     background-repeat: no-repeat;
     background-size:cover;
-    height:500px;
     background-attachment: fixed;
 }
 
@@ -67,7 +62,6 @@ section
     background-image: url('../../../assets/terror.jpg');
     background-repeat: no-repeat;
     background-size:cover;
-    height:500px;
     background-attachment: fixed;
 }
 
@@ -76,6 +70,10 @@ section
     background-image: url('../../../assets/clasicos.jpg');
     background-repeat: no-repeat;
     background-size:cover;
-    height:500px;
     background-attachment: fixed;
+}
+
+button
+{
+    margin-left:125px;
 }

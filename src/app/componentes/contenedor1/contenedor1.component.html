@@ -26,37 +26,16 @@
 <!--Pongo las cards-->
 <div class="container">
 <div class="row">
-           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-2">
+           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-2" *ngFor = "let oferta of articulosArray_Ofertas; let i = index">
            <div class="card" style="width: 22rem;">
-           <img class="card-img-top" src="assets/libro.jpg" alt="Card image cap" height="200">
+           <img class="card-img-top" src="{{oferta.Imagen}}" alt="Card image cap" height="200">
            <div class="card-body">
-           <h5 class="card-title">Productos</h5>
-           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+           <h5 class="card-title">{{oferta.NombreProducto}}</h5>
+           <p class="card-text">{{oferta.Descripcion}}</p>
            <a href="#" class="btn btn-primary">Ver mas</a>          
 </div>
 </div>
 </div>
-           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-2">
-           <div class="card" style="width: 22rem;">
-           <img class="card-img-top" src="assets/libro.jpg" alt="Card image cap" height="200">
-           <div class="card-body">
-           <h5 class="card-title">Ofertas</h5>
-           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-           <a href="#" class="btn btn-primary">Ver mas</a>
-  </div>
-  </div>
-  </div>
-
-          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-2">
-          <div class="card" style="width: 22rem;">
-          <img class="card-img-top" src="assets/recomendados.jpg" alt="Card image cap" height="200">
-          <div class="card-body">
-          <h5 class="card-title">Recomendados</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Ver mas</a>
-    </div>
-    </div>
-    </div>
 </div>
 </div>
 
