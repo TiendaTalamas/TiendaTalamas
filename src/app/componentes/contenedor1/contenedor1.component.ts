@@ -16,6 +16,16 @@ export class Contenedor1Component implements OnInit {
   //
   nombre: string;
   productoObjeto: producto[];
+  
+    //Datos Slider
+    AA_slider: string;
+    data_slider: any[];
+    val_slider: any[];
+    contenedor_slider: string;
+    xxxMap_slider = new Map();
+    valuesKeys_slider = new Array;
+    articulosArray_slider = new Array;
+
   //Datos Articulos mas Vendidos
   AA: string;
   data: any[];
@@ -43,6 +53,15 @@ export class Contenedor1Component implements OnInit {
    valuesKeys_Recientes = new Array;
    articulosArray_Recientes = new Array;
 
+   //Datos Recomendados
+    AA_Recomendados: string;
+    data_Recomendados: any[];
+    val_Recomendados: any[];
+    contenedor_Recomendados: string;
+    xxxMap_Recomendados = new Map();
+    valuesKeys_Recomendados = new Array;
+    articulosArray_Recomendados = new Array;
+
 
 
   constructor(private http: Http,private router: Router, private location:Location,
@@ -51,6 +70,9 @@ export class Contenedor1Component implements OnInit {
   ngOnInit() {
     this.obtenerArticulos();
     this.obtenerOfertas();
+    this.obtenerRecientes();
+    this.obtenerRecomendados();
+    this.obtenerSlider();
   }
 
   //Obteniendo datos
@@ -109,10 +131,10 @@ export class Contenedor1Component implements OnInit {
           }
     });
   }
-
+   //Metodo para obtener recientes
   obtenerRecientes() {
     let body = new URLSearchParams();
-    this.http.post('http://192.168.1.99/talamas/.php', body)
+    this.http.post('http://192.168.1.99/talamas/recientes.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -138,6 +160,34 @@ export class Contenedor1Component implements OnInit {
     });
   }
 
+  obtenerRecomendados() {
+    let body = new URLSearchParams();
+    this.http.post('http://192.168.1.99/talamas/recomendados.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recomendados = "";
+            this.data_Recomendados = [];
+            console.log(result);
+            this.articulosArray_Recomendados = result;
+            for (var key in result) {
+            this.AA_Recomendados = this.AA_Recomendados + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recomendados = result[key];
+              this.data_Recomendados.push(Object.keys(this.val_Recomendados));
+              for (var i = 0; i < Object.keys(this.val_Recomendados).length; i++) {
+              this.contenedor = Object.keys(this.val_Recomendados)[i];
+              Object.entries(this.val_Recomendados)[i]
+               
+                this.xxxMap_Recomendados.set(Object.keys(this.val_Recomendados)[i], Object.values(this.val_Recomendados)[i]);
+                this.valuesKeys_Recomendados.push(Object.keys(this.val_Recomendados)[i], Object.values(this.val_Recomendados)[i]);
+
+                }
+             }
+          }
+    });
+  }
+
   masInformacion(nombre:string, descripcion: string, unidades: number, imagen: string){
     this.nombre = nombre;
     console.log(this.nombre);
@@ -150,6 +200,35 @@ export class Contenedor1Component implements OnInit {
   }]
   this._servicioCompartido.setProductoData(this.productoObjeto);
   
+  }
+
+   //Obteniendo datos
+   obtenerSlider() {
+    let body = new URLSearchParams();
+    this.http.post('http://192.168.1.99/talamas/slider.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_slider = "";
+            this.data_slider = [];
+            console.log(result);
+            this.articulosArray_slider = result;
+            for (var key in result) {
+            this.AA = this.AA_slider + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_slider = result[key];
+              this.data_slider.push(Object.keys(this.val_slider));
+              for (var i = 0; i < Object.keys(this.val_slider).length; i++) {
+              this.contenedor = Object.keys(this.val_slider)[i];
+              Object.entries(this.val_slider)[i]
+               
+                this.xxxMap_slider.set(Object.keys(this.val_slider)[i], Object.values(this.val_slider)[i]);
+                this.valuesKeys_slider.push(Object.keys(this.val_slider)[i], Object.values(this.val_slider)[i]);
+
+                }
+             }
+          }
+    });
   }
 
 }

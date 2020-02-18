@@ -14,6 +14,7 @@ import {Location} from "@angular/common"
 })
 export class AppComponent { 
   constructor(private router: Router, private location:Location)
+  
   {}
   ngOnInit()
   {
