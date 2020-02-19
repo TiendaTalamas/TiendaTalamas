@@ -14,7 +14,7 @@ import { VentaLibroComponent } from './componentes/venta-libro/venta-libro.compo
 //Importando los servicios
 import { producto } from './servicios/producto';
 import { servicioCompartido } from './servicios/servicioCompartido';
-
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +31,9 @@ import { servicioCompartido } from './servicios/servicioCompartido';
   imports: [
     HttpModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     servicioCompartido,

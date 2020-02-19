@@ -11,20 +11,20 @@
       <p class="divider-text">
             <span class="bg-light">O</span>
         </p>
-      <form>
+      <form [formGroup]="registroForm">
       <div class="form-group input-group">
         <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
          </div>
-            <input name="Nombre" class="form-control" placeholder="Nombre(s)" type="text">
-            <input name="ApellidoPa" class="form-control" placeholder="A.P Paterno" type="text">
-            <input name="ApellidoMa" class="form-control" placeholder="A.P Materno" type="text">
+            <input name="Nombre" [(ngModel)]="nombre" formControlName="nombre" class="form-control" placeholder="Nombre(s)" type="text">
+            <input name="ApellidoPa" [(ngModel)]="apellidoPa" formControlName="apellidoPa" class="form-control" placeholder="A.P Paterno" type="text">
+            <input name="ApellidoMa" [(ngModel)]="apellidoMa" formControlName="apellidoMa" class="form-control" placeholder="A.P Materno" type="text">
         </div> <!-- form-group// -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
          </div>
-            <input name="email" class="form-control" placeholder="Correo electronico" type="email">
+            <input name="email" [(ngModel)]="email" formControlName="email" class="form-control" placeholder="Correo electronico" type="email">
         </div> <!-- form-group// -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
@@ -33,23 +33,23 @@
         <select class="custom-select" style="max-width: 120px;">
             <option selected="">+52</option>
         </select>
-          <input name="NumeroTel" class="form-control" placeholder="Numero de telofono" type="text">
+          <input name="NumeroTel" [(ngModel)]="telefono" formControlName="telefono" class="form-control" placeholder="Numero de telofono" type="text">
         </div> 
    
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
         </div>
-            <input name="contraseña" class="form-control" placeholder="Crear contraseña" type="password">
+            <input name="contraseña" [(ngModel)]="contrasena" formControlName="contrasena" class="form-control" placeholder="Crear contraseña" type="password">
         </div> <!-- form-group// -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
         </div>
-            <input class="form-control" placeholder="Repetir contraseña" type="password">
+            <input class="form-control" [(ngModel)]="repContrasena" formControlName="repContrasena" placeholder="Repetir contraseña" type="password">
         </div> <!-- form-group// -->                                      
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block"> Crear Cuenta  </button>
+            <button type="submit" class="btn btn-primary btn-block" (click) = "registrar()"> Crear Cuenta  </button>
         </div> <!-- form-group// -->      
         <p class="text-center">¿Tienes una cuenta? <a style=color:blue;  (click)="navegarSesion()">Iniciar Sesión</a> </p>                                                                 
     </form>
