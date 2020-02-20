@@ -59,7 +59,9 @@ export class RegistroComponent implements OnInit {
       .map((res:Response) => res.json())
               .subscribe(result => 
                 {
-              alert(result);            
+                  
+              alert(result);   
+                     
             });
       
     }
