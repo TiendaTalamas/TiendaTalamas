@@ -6,7 +6,7 @@
 
 .imgr
 {
-    margin-top:20px;
+	margin-top:20px;
 }
 
 .img0
@@ -53,75 +53,36 @@ h1
 	font-weight:300;
 }
 
-/*
-.our-team-main
-{
-	width:100%;
-	height:auto;
-	border-bottom:5px #323233 solid;
-	background:#fff;
-	text-align:center;
-	border-radius:10px;
-	overflow:hidden;
-	position:relative;
-	transition:0.5s;
-	margin-bottom:28px;
-}
 
-
-.our-team-main img
+.carousel-control-prev-icon
 {
-	border-radius:50%;
-	margin-bottom:20px;
-	width: 90px;
-}
-
-.our-team-main h3
-{
-	font-size:20px;
-	font-weight:700;
-}
-
-.our-team-main p
-{
-	margin-bottom:0;
-}
-
-.team-back
-{
-	width:100%;
-	height:auto;
-	position:absolute;
-	top:0;
-	left:0;
-	padding:5px 15px 0 15px;
-	text-align:left;
-	background:#fff;
+	
+	
+	position: absolute;
+	background-color: #888;
+	height: 100px;
+	line-height: 100px;
+	width: 30px;
+	text-align: center;
+	box-shadow: 0 1px 3px #888;
+	left: 0px;
+	clip: rect(-10px,55px,110px,0);
+	padding-right: 5px;
 	
 }
 
-.team-front-1
+.carousel-control-next-icon 
 {
-	width:100%;
-	height:auto;
-	position:relative;
-	z-index:10;
-    background-image: url('../../../assets/ofertas.jpg');
-    background-size: cover;
-	padding:15px;
-	bottom:0px;
-	transition: all 0.5s ease;
+	position: absolute;
+	background-color: #888;
+	height: 100px;
+	line-height: 100px;
+	width: 30px;
+	text-align: center;
+	box-shadow: 0 1px 3px #888;
+	right: 0px;
+	clip: rect(-10px,55px,110px,0);
+	padding-right: 5px;
+
 }
 
-.our-team-main:hover .team-front-1
-{
-	bottom:-200px;
-	transition: all 0.5s ease;
-}
-
-.our-team-main:hover
-{
-	border-color:#777;
-	transition:0.5s;
-}
-*/

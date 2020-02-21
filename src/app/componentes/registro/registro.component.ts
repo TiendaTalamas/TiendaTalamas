@@ -12,6 +12,8 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
+  DatosError:boolean = false;
+  
   registroForm: FormGroup;
   email: string;
   nombre: string
@@ -39,7 +41,21 @@ export class RegistroComponent implements OnInit {
       this.router.navigate(['card'])
     }
 
-    registrar() {
+    registrar() {     
+      if(this.nombre.length<3)
+      {
+        this.DatosError=true;
+        alert("La cadena debe ser mayor a 2 caracter")
+      }
+      if(this.nombre.includes("@"))
+      {
+        this.DatosError=true;
+        alert("Tiene un caracter no valido en el nombre")
+         
+      }
+      if(!this.DatosError)
+      {
+        
       let body = new URLSearchParams();
       body.append('nombre', this.nombre);
       body.append('email', this.email);
@@ -63,6 +79,9 @@ export class RegistroComponent implements OnInit {
               alert(result);   
                      
             });
+
+      }
+
       
     }
 
