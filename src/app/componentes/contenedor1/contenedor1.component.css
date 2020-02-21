@@ -1,3 +1,6 @@
+.carousel-control-next, .carousel-control-prev{
+	width: 1% !important;
+}
 .imgr:hover
 {
     transform:translateY(-15px);
