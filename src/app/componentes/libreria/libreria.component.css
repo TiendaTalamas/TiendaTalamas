@@ -31,6 +31,7 @@ section
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    filter: blur(8px);
 }
 
 .fondo2

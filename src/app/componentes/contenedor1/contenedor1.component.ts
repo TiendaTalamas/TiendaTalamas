@@ -73,6 +73,7 @@ export class Contenedor1Component implements OnInit {
     this.obtenerRecientes();
     this.obtenerRecomendados();
     this.obtenerSlider();
+    
   }
 
   //Obteniendo datos
