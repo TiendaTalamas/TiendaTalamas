@@ -232,6 +232,34 @@ export class Contenedor1Component implements OnInit {
     });
   }
 
+  navegarInicio()
+  {
+    this.router.navigate(['']);
+    
+  }
+
+  navegarSesion()
+  {
+
+    this.router.navigate(['card'])
+
+
+  }
+  navegarRegistro()
+  {
+    this.router.navigate(['registro']);
+    
+  }
+  navegarLibreria()
+  {
+    this.router.navigate(['libreria'])
+  }
+
+  navegarPublicidad()
+  {
+    this.router.navigate(['emd'])
+  }
+
 }
 
 

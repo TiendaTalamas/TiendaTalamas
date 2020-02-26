@@ -15,6 +15,7 @@ import { VentaLibroComponent } from './componentes/venta-libro/venta-libro.compo
 import { producto } from './servicios/producto';
 import { servicioCompartido } from './servicios/servicioCompartido';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { EMDComponent } from './componentes/emd/emd.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
     RegistroComponent,
     LibreriaComponent,
     VentaLibroComponent,
+    EMDComponent,
    
   ],
   imports: [

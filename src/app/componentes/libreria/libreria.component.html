@@ -1,3 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #ffca00">
+    <a class="navbar-brand"><img src="assets/logot.png" alt="" style = "width: 100px; height:100px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" (click)="navegarInicio();">Inicio<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navegarLibreria();">Libreria</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Musica
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Acceso</a>
+            <a class="dropdown-item" href="#">De viento</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Otro tipo</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" (click)="navegarPublicidad();">Publicidad</a>
+        </li>
+      </ul>
+      
+      
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Escribe aqui para buscar" aria-label="Search">
+        <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white">Buscar</button>
+      </form>
+      <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
+        
+  <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>
+    </div>  
+  </nav>
+
+
+
 <div id="parallax-imagen">
     <div class="row h-100">
      <div class="col-md-12 align-self-center">
@@ -18,15 +61,15 @@
             <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
                 <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
                 <br>
-                <button type="button" class="btn btn-dark mt-2">Comprar</button>
+                <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
             </div>
             <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
                 <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-                <button type="button" class="btn btn-dark mt-2">Comprar</button>
+                <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
             </div>
             <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
                 <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-                <button type="button" class="btn btn-dark mt-2">Comprar</button>
+                <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
             </div>
           </div>
 </section>
@@ -35,15 +78,15 @@
     <div class="row">
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>        
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>        
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
       </div>
 
@@ -56,15 +99,15 @@
     <div class="row">
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>        
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>        
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
       </div>
 </section>
@@ -73,15 +116,15 @@
     <div class="row">
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
       </div>
 </section>
@@ -90,15 +133,15 @@
     <div class="row">
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
 
       </div>
@@ -108,15 +151,15 @@
     <div class="row">
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
       </div>
 </section>
@@ -125,15 +168,15 @@
     <div class="row">
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
         <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5">
             <img class="imgr mt-5 ml-5" src="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-            <button type="button" class="btn btn-dark mt-2">Comprar</button>
+            <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
       </div>
 </section>

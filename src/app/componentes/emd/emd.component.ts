@@ -7,13 +7,12 @@ import {Location} from "@angular/common";
 import { producto } from '../../servicios/producto';
 import { servicioCompartido } from '../../servicios/servicioCompartido';
 
-
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'app-emd',
+  templateUrl: './emd.component.html',
+  styleUrls: ['./emd.component.css']
 })
-export class CardComponent implements OnInit {
+export class EMDComponent implements OnInit {
 
   constructor(private http: Http,private router: Router, private location:Location,
     private _servicioCompartido : servicioCompartido) { }
@@ -47,6 +46,5 @@ export class CardComponent implements OnInit {
   {
     this.router.navigate(['emd'])
   }
-
 
 }
