@@ -73,7 +73,10 @@ export class LibreriaComponent implements OnInit {
     this.router.navigate(['']);
     
   }
-
+  navegarMusica()
+  {
+    this.router.navigate(['musica'])
+  }
   navegarSesion()
   {
 
