@@ -16,6 +16,7 @@ import { producto } from './servicios/producto';
 import { servicioCompartido } from './servicios/servicioCompartido';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { EMDComponent } from './componentes/emd/emd.component';
+import { MusicaComponent } from './componentes/musica/musica.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { EMDComponent } from './componentes/emd/emd.component';
     LibreriaComponent,
     VentaLibroComponent,
     EMDComponent,
+    MusicaComponent,
    
   ],
   imports: [

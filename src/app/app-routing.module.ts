@@ -6,6 +6,7 @@ import {RegistroComponent} from './componentes/registro/registro.component'
 import {LibreriaComponent} from './componentes/libreria/libreria.component'
 import {VentaLibroComponent} from './componentes/venta-libro/venta-libro.component'
 import {EMDComponent} from './componentes/emd/emd.component'
+import {MusicaComponent} from './componentes/musica/musica.component'
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'libreria', component: LibreriaComponent, },
   {path: 'venta', component: VentaLibroComponent, },
   {path: 'emd', component: EMDComponent, },
+  {path: 'musica', component: MusicaComponent,},
 
 ];
 

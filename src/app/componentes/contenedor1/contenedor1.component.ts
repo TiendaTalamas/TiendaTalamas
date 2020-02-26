@@ -259,6 +259,10 @@ export class Contenedor1Component implements OnInit {
   {
     this.router.navigate(['emd'])
   }
+  navegarMusica()
+  {
+    this.router.navigate(['musica'])
+  }
 
 }
 
