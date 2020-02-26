@@ -1,0 +1,119 @@
+<nav class="navbar navbar-expand-lg navbar-light" style = "background-color:#32ff6a;">
+  <a class="navbar-brand"><img src="assets/logot.png" alt="" style = "width: 100px; height:100px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="navegarInicio();">Inicio<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="navegarLibreria();">Libreria</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Musica
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Acceso</a>
+          <a class="dropdown-item" href="#">De viento</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Otro tipo</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" (click)="navegarPublicidad();">Publicidad</a>
+      </li>
+    </ul>
+    
+    
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Escribe aqui para buscar" aria-label="Search">
+      <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white">Buscar</button>
+    </form>
+    <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
+      
+<button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>
+  </div>  
+</nav>
+
+<div class="container-fluid">
+    <div class="timeline">
+
+
+      <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+        <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+          <h3 class=" text-light">Tarjetas de Presentación</h3>
+          <p>Las tarjetas de presentacion se intercambian entre personas para generar oportunidades de negocios, sirven para reforzar el contacto entre empresas y personas con la idea de dejarles una posibilidad de comunicacion para adquirir o preguntar por los bienes o servicios que dicha persona ofrece.</p>
+        </div>
+        <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+          <img src="assets/tarjeta.jpg" class="img-fluid" alt="img" style="border-radius: 50%;">
+        </div>
+        <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+          <button type="button" style="background-color: #fe346e; border-color:#32ff6a;" class="btn btn-info" data-toggle="collapse" data-target="#demo1">Ver ejemplo</button>
+          <div id="demo1" class="collapse in">
+            <img class="mt-2" src="assets/equis.jpg" width="400px" height="200px">
+          </div>
+        </div>
+      </div>
+
+
+      <!--Se acaba primer boton-->
+      <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+        <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+          <h3 class=" text-light">Lonas personalizadas</h3>
+          <p> atraer la atención de las personas que transitan a su alrededor. ... Es Impresionante, ya que hacen hincapié en que el diseño, el tamaño y la impresión digital de las lonas son cuestiones fundamentales para garantizar el éxito de las campañas publicitarias que promueven</p>
+        </div>
+        <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+          <img src="assets/dinero.jpg" style="border-radius: 50%;" class="img-fluid" alt="img">
+        </div>
+        <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+         <button type="button" style="background-color: #fe346e; border-color:#32ff6a;" class="btn btn-info" data-toggle="collapse" data-target="#demo2">Ver ejemplo</button>
+          <div id="demo2" class="collapse in">
+            <img class="mt-2" src="assets/lona.jfif" width="450px" height="200px">
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+        <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+          <h3 class=" text-light">Anuncios luminosos</h3>
+          <p>Todos los días, estamos expuestos a una gran cantidad de publicidad y para las empresas, negocios o marcas, es necesario marcar su presencia. Los anuncios luminosos son una opción súper efectiva para llegar a tu publico objetivo.</p>
+        </div>
+        <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+          <img src="assets/luminoso.png" style="border-radius: 50%;" class="img-fluid" alt="img">
+        </div>
+        <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+          <button type="button" style="background-color: #fe346e; border-color:#32ff6a;" class="btn btn-info" data-toggle="collapse" data-target="#demo3">Ver ejemplo</button>
+          <div id="demo3" class="collapse in">
+            <img class="mt-2" src="assets/anuncio.jpg" width="450px" height="200px">
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+        <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+          <h3 class=" text-light">Serigrafía</h3>
+          <p>La impresión por serigrafía se recomienda para diseños de hasta cuatro colores planos por ejemplo logos, frases y diseños gráficos sencillos. Para tiradas cortas e impresiones más complejas tipo fotografías o diseños con degradados, se recomienda la impresión digital.</p>
+        </div>
+        <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+          <img src="assets/serigrafia.jpg" style="border-radius:50%;" class="img-fluid" alt="img">
+        </div>
+        <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+          <button type="button" style="background-color: #fe346e; border-color:#32ff6a;" class="btn btn-info" data-toggle="collapse" data-target="#demo4">Ver ejemplo</button>
+          <div id="demo4" class="collapse in">
+            <img class="mt-2" src="assets/camisa.png" width="250px" height="300px">
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>

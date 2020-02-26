@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Http } from '@angular/http';
-import { Router } from '@angular/router';
-import { Response } from '@angular/http';
-import { URLSearchParams } from "@angular/http";
+import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
-
+import {Router} from "@angular/router";
 import {Location} from "@angular/common";
-import { producto } from '../../servicios/producto';
-import { servicioCompartido } from '../../servicios/servicioCompartido';
+import{FormGroup,FormBuilder,Validators} from '@angular/forms';
+import { URLSearchParams } from 'url';
+
+
 
 
 @Component({
@@ -18,7 +16,6 @@ import { servicioCompartido } from '../../servicios/servicioCompartido';
 })
 export class CardComponent implements OnInit {
   DatosError:boolean = false;
- 
   registroForm: FormGroup;
   email: string;
   contrasena: string;
@@ -41,15 +38,18 @@ ngOnInit(){
 
     });}
 
-  registrar() {     
-    if(!this.DatosError)
+    registrar()
     {
-      
-    let body = new URLSearchParams();
-  
-    body.append('email', this.email);
-  
-    body.append('contrasena', this.contrasena);
+      if(!this.DatosError)
+      {
+        let body= new URLSearchParams();
+
+        body.append('email',this.email);
+
+        body.append('contrasena',this.contrasena);
+
+
+
 
   
     console.log(this.email);
@@ -85,6 +85,34 @@ ngOnInit(){
 
     
   }
+  navegarInicio()
+  {
+    this.router.navigate(['']);
+    
+  }
+
+  navegarSesion()
+  {
+
+    this.router.navigate(['card'])
+
+
+  }
+  navegarRegistro()
+  {
+    this.router.navigate(['registro']);
+    
+  }
+  navegarLibreria()
+  {
+    this.router.navigate(['libreria'])
+  }
+
+  navegarPublicidad()
+  {
+    this.router.navigate(['emd'])
+  }
+
 
 
 }
