@@ -3,7 +3,7 @@
 #parallax-imagen
 {
     background-image:url('../../../assets/pasto.jpg');
-    height:800px;
+    height:auto;
     margin-bottom:0px;
     background-attachment: fixed;
     background-position: center;
@@ -86,14 +86,21 @@ button
     margin-right: 20px;
 }
 
-.imgr{
 
-    padding:0px 0px 0px 0px;
-    width:5px ;
-    height: 5px;
-    
+.imgr{
+    position: relative;
+    filter: brightness(50%);
+    transition: filter 2s, transform 3s;
 }
 
+.imgr:hover{
+    filter: brightness(100%);
+    transform: scale(1.03);
+}
 .row{
-padding-left:50px ;
+
+padding-left:30px ;
+margin-right:110px;
+margin-left:-20px;
+margin-bottom:-50px ;
 }
