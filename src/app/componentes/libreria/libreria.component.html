@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #f09f07">
+<nav class="navbar navbar-expand-lg navbar-light" style = " background-image: url(../../../assets/navbarLibreria.png); background-color: #f09f07">
     <a class="navbar-brand"><img src="assets/logoLibreria.jpg" alt="" style = "width: 100px; height:100px; border-radius: 50%;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,11 +31,11 @@
       
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Escribe aqui para buscar" aria-label="Search">
-        <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #00737d; color:white">Buscar</button>
+        <button class="btn my-2 my-sm-0" type="submit" style = "background-image:url(../../../assets/botonesLibreria.png); color:white">Buscar</button>
       </form>
-      <button style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
+      <button style="background-image:url(../../../assets/botonesLibreria.png); border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
         
-  <button style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>
+  <button style="background-image:url(../../../assets/botonesLibreria.png); border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>
     </div>  
   </nav>
 
@@ -45,32 +45,41 @@
     <div class="row h-100">
      <div class="col-md-12 align-self-center">
          <h1>Libreria Talamas</h1>
-         <button type="button" class="btn btn-outline-light mt-5 ml-5">Romance</button>
-         <button type="button" class="btn btn-outline-light mt-5 ml-5">Fantasia</button>
-         <button type="button" class="btn btn-outline-light mt-5 ml-5">Infantiles</button>
-         <button type="button" class="btn btn-outline-light mt-5 ml-5">Ciencía Ficción</button>
-         <button type="button" class="btn btn-outline-light mt-5 ml-5">Varios</button>
-         <button type="button" class="btn btn-outline-light mt-5 ml-5">Terror</button>
-         <button type="button" class="btn btn-outline-light mt-5 ml-5">Clasicos</button>
+         <button type="button" class="btn btn-outline-dark mt-5 ml-5">Romance</button>
+         <button type="button" class="btn btn-outline-dark mt-5 ml-5">Fantasia</button>
+         <button type="button" class="btn btn-outline-dark mt-5 ml-5">Infantiles</button>
+         <button type="button" class="btn btn-outline-dark mt-5 ml-5">Ciencía Ficción</button>
+         <button type="button" class="btn btn-outline-dark mt-5 ml-5">Varios</button>
+         <button type="button" class="btn btn-outline-dark mt-5 ml-5">Terror</button>
+         <button type="button" class="btn btn-outline-dark mt-5 ml-5">Clasicos</button>
     </div>
     </div>
 </div>
-<div class="container">
 
-
-
-
+<div style ="width: 100%; height:5px;background-color: black;"></div>
+<div class="jumbotron jumbotron-fluid" style="background-image: url(../../../assets/fondox.jpg);">
+  <div class="container">
+    <h1 class="display-4">¿Te gusta lo romantico?</h1>
+    <p class="lead">Esto es lo indicado para ti, disfruta de nuetro catalogo entero de comedias romanticas e incluso de puro amor, solo para ti.</p>
+  </div>
 </div>
+
+
 <section>
-        <div style ="width: 100%; height:5px;background-color: black;"></div>
-        <div class="row">
-            <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5"*ngFor="let articulo of articulosArray; let i = index">
-                <img class="imgr mt-5 ml-5" src="{{articulo.Imagen}}" alt="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
-                <br>
-                <button id="b" type="button" class="btn btn-dark mt-2" (click) = "masInformacion(articulo.NombreProducto, articulo.Descripcion, articulo.Unidades, articulo.Imagen)">Comprar</button>
-            </div>
-          </div>
+  <div class="row">
+    <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 mt-2 mb-5" *ngFor="let articulo of articulosArray; let i = index">
+        <img class="imgr mt-5 ml-5" src="{{articulo.Imagen}}" alt="https://images-na.ssl-images-amazon.com/images/I/418kfGzE0VL._SX331_BO1,204,203,200_.jpg" style = "width: 250px; height: 300px">
+        <br>
+        <button id="b" type="button" class="btn btn-dark mt-2" (click) = "masInformacion(articulo.NombreProducto, articulo.Descripcion, articulo.Unidades, articulo.Imagen)">Comprar</button>
+    </div>
+  </div>
 </section>
+
+
+
+
+
+
 
 <section class="fondo">
     <div class="row">
@@ -87,9 +96,6 @@
             <button id="b" type="button" class="btn btn-dark mt-2">Comprar</button>
         </div>
       </div>
-
-    
-
 </section>
 
 

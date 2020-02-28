@@ -35,6 +35,27 @@ export class RegistroComponent implements OnInit {
 
     ngOnInit() {
     }
+
+    navegarInicio()
+    {
+      this.router.navigate(['']);
+      
+    }
+
+    navegarRegistro()
+    {
+      this.router.navigate(['registro']);
+      
+    }
+    navegarLibreria()
+    {
+      this.router.navigate(['libreria'])
+    }
+  
+    navegarPublicidad()
+    {
+      this.router.navigate(['emd'])
+    }
   
     navegarSesion()
     {

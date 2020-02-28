@@ -18,7 +18,7 @@ h1
 
 section
 {
-    background-image: url('../../../assets/fondo-texto-libreria.jpg');
+    background-image: url('../../../assets/fondoRomantico.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
@@ -83,3 +83,11 @@ button
 {
     margin-right: 20px;
 }
+
+
+    .jumbotron
+    {
+        margin-bottom: 0em;
+    }
+
+
