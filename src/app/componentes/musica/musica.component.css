@@ -1,7 +1,9 @@
+
+
 #parallax-imagen
 {
     background-image:url('../../../assets/pasto.jpg');
-    height:800px;
+    height:auto;
     margin-bottom:0px;
     background-attachment: fixed;
     background-position: center;
@@ -83,15 +85,38 @@ button
 {
     margin-right: 20px;
 }
+.center-bottom{
+    position: absolute;
+left: 50%;
+top:75% ;
+    z-index: 1;
+    color:white;
+    font-size: xx-large;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: -1000px;
+}
 
 .imgr{
-
-    padding:0px 0px 0px 0px;
-    width:5px ;
-    height: 5px;
-    
+    position: relative;
+    filter: brightness(70%);
+    transition: filter 2s, transform 3s;
+    border-radius: 2%;
+    margin-bottom: -70px;
 }
 
+.imgr:hover{
+    background-color: black;
+    background-position: bottom;
+    filter: brightness(100%);
+    transform: scale(1.03);
+}
 .row{
-padding-left:50px ;
+
+padding-left:30px ;
+margin-right:110px;
+margin-left:-20px;
+
 }
+
+
