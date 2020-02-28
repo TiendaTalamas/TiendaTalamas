@@ -1,12 +1,12 @@
 #parallax-imagen
 {
     background-image:url('../../../assets/libreriafondo.jpg');
-    height:800px;
+    height:600px;
     margin-bottom:0px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
 }
 
 h1
@@ -18,7 +18,7 @@ h1
 
 section
 {
-    background-image: url('../../../assets/fondo-texto-libreria.jpg');
+    background-image: url('../../../assets/fondoRomantico.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
@@ -83,3 +83,39 @@ button
 {
     margin-right: 20px;
 }
+
+
+.jumbotron
+{
+  margin-bottom: 0em;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 50;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.5;
+  }
+  
