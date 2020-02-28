@@ -85,15 +85,29 @@ button
 {
     margin-right: 20px;
 }
-
+.center-bottom{
+    position: absolute;
+left: 50%;
+top:75% ;
+    z-index: 1;
+    color:white;
+    font-size: xx-large;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: -1000px;
+}
 
 .imgr{
     position: relative;
-    filter: brightness(50%);
+    filter: brightness(70%);
     transition: filter 2s, transform 3s;
+    border-radius: 2%;
+    margin-bottom: -70px;
 }
 
 .imgr:hover{
+    background-color: black;
+    background-position: bottom;
     filter: brightness(100%);
     transform: scale(1.03);
 }
@@ -102,5 +116,7 @@ button
 padding-left:30px ;
 margin-right:110px;
 margin-left:-20px;
-margin-bottom:-50px ;
+
 }
+
+
