@@ -1,8 +1,30 @@
+.lb {
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    transition: all 2s;
+    text-align: center;
+    background-color: #212121; 
+    width: 200px; 
+    height: 600px;
+    overflow: hidden;
+    margin-left: -50px;
+}
 
+.Texto{
+    font-size: xx-large;
+    font-weight: 1000;
+    font-style: italic;
+    color: blanchedalmond;
+    z-index: 5;
+
+}
 
 #parallax-imagen
 {
-   background-image:url('../../../assets/pasto.jpg');
+    overflow: hidden;
+    background-image: url('../../../assets/ciencia.jpg');
     height:auto;
     margin-bottom:0px;
     background-attachment: fixed;
@@ -102,19 +124,17 @@ top:75% ;
     filter: brightness(70%);
     transition: filter 2s, transform 3s;
     border-radius: 2%;
+    width: 200px;
+    height: 350px;
+    margin-left: -5px;
+    z-index: 1;
 }
 
 .imgr:hover{
-    background-color: black;
-    background-position: bottom;
+
     filter: brightness(100%);
-    transform: scale(1.03);
-}
-.row{
-    width: auto;
-    height: max-content;
+    transform: scale(1.4);
 }
 
-.laterlal{
-background-color: blue;
-}
+
+
