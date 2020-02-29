@@ -2,7 +2,7 @@
 
 #parallax-imagen
 {
-    background-image:url('../../../assets/pasto.jpg');
+   background-image:url('../../../assets/pasto.jpg');
     height:auto;
     margin-bottom:0px;
     background-attachment: fixed;
@@ -102,7 +102,6 @@ top:75% ;
     filter: brightness(70%);
     transition: filter 2s, transform 3s;
     border-radius: 2%;
-    margin-bottom: -70px;
 }
 
 .imgr:hover{
@@ -112,11 +111,10 @@ top:75% ;
     transform: scale(1.03);
 }
 .row{
-
-padding-left:30px ;
-margin-right:110px;
-margin-left:-20px;
-
+    width: auto;
+    height: max-content;
 }
 
-
+.laterlal{
+background-color: blue;
+}
