@@ -1,12 +1,9 @@
-#parallax-imagen
+.container-fluid
 {
-    background-image:url('../../../assets/libreriafondo.jpg');
-    height:600px;
+    background-color: black;
     margin-bottom:0px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
+    overflow: hidden;
+    
 }
 
 h1
@@ -22,6 +19,7 @@ section
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 
@@ -31,6 +29,7 @@ section
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    overflow: hidden;
     
 }
 
@@ -40,6 +39,7 @@ section
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 .fondo3
@@ -48,6 +48,7 @@ section
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 .fondo4
@@ -56,6 +57,7 @@ section
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 .fondo5
@@ -64,6 +66,7 @@ section
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 .fondo6
@@ -72,6 +75,7 @@ section
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 #b
@@ -90,32 +94,67 @@ button
   margin-bottom: 0em;
 }
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-  }
-  
-  .price {
-    color: grey;
-    font-size: 22px;
-  }
-  
-  .card button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 50;
-    font-size: 18px;
-  }
-  
-  .card button:hover {
-    opacity: 0.5;
-  }
+
+  /*Now the styles*/
+
+
+.accordian {
+	width:110%; height: 320px;
+    overflow: hidden;
+    
+	
+	/*Time for some styling*/
+	margin: 100px auto;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+
+.accordian ul {
+    width: 1200px;
+    margin-left:-50px;
+}
+
+.accordian li {
+	position: relative;
+	display: block;
+	width: 160px;
+	float: left;
+	
+	border-left: 1px solid #888;
+	
+	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+
+}
+
+
+.accordian ul:hover li {width: 40px;}
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+	display: block;
+}
+
+
+.image_title {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0;
+    width: 640px;	
+
+}
+.image_title a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 20px;
+	font-size: 16px;
+}
   

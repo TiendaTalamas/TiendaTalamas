@@ -17,6 +17,7 @@ import { servicioCompartido } from './servicios/servicioCompartido';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { EMDComponent } from './componentes/emd/emd.component';
 import { MusicaComponent } from './componentes/musica/musica.component';
+import { CategoriaProductoComponent } from './componentes/categoria-producto/categoria-producto.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { MusicaComponent } from './componentes/musica/musica.component';
     VentaLibroComponent,
     EMDComponent,
     MusicaComponent,
+    CategoriaProductoComponent,
    
   ],
   imports: [
