@@ -7,6 +7,7 @@ import {LibreriaComponent} from './componentes/libreria/libreria.component'
 import {VentaLibroComponent} from './componentes/venta-libro/venta-libro.component'
 import {EMDComponent} from './componentes/emd/emd.component'
 import {MusicaComponent} from './componentes/musica/musica.component'
+import {CategoriaProductoComponent} from './componentes/categoria-producto/categoria-producto.component'
 
 
 const routes: Routes = [
@@ -17,6 +18,8 @@ const routes: Routes = [
   {path: 'venta', component: VentaLibroComponent, },
   {path: 'emd', component: EMDComponent, },
   {path: 'musica', component: MusicaComponent,},
+  {path: 'categoria', component: CategoriaProductoComponent,},
+
 
 ];
 
