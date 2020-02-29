@@ -1,14 +1,41 @@
+.lb {
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    transition: all 2s;
+    text-align: center;
+    background-color: #212121; 
+    width: 200px; 
+    height: 400px;
+    overflow: hidden;
+    margin-left: -50px;
 
+}
+
+.Texto{
+    font-size: xx-large;
+    font-weight: 1000;
+    font-style: italic;
+    color: blanchedalmond;
+    position: absolute;
+    top: 55%;
+    right: 25%;
+    z-index: 5;
+}
 
 #parallax-imagen
 {
-   background-image:url('../../../assets/pasto.jpg');
+    overflow: hidden;
+    background-image: url('../../../assets/ciencia.jpg');
     height:auto;
     margin-bottom:0px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-bottom: 10px solid black;
+
 }
 
 h1
@@ -29,11 +56,18 @@ section
 
 .fondo
 {
+    overflow: hidden;
     background-image: url('../../../assets/fantasia.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
-    filter: blur(8px);
+    height:auto;
+    margin-bottom:0px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 10px solid black;
 }
 
 .fondo2
@@ -102,19 +136,46 @@ top:75% ;
     filter: brightness(70%);
     transition: filter 2s, transform 3s;
     border-radius: 2%;
+    width: 300px;
+    height: 600px;
+    margin-left: -50px;
+    z-index: 1;
+}
+.Instrumentos{
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    transition: all 2s;
+    text-align: center;
+    width: 280px; 
+    height: 500px;
+    overflow: hidden;
+    border-radius: 2%;
+
+
+}
+.imgr2{
+    position: relative;
+    filter: brightness(70%);
+    transition: filter 2s, transform 3s;
+    width: 300px;
+    height: 500px;
+    z-index: 1;
 }
 
 .imgr:hover{
-    background-color: black;
-    background-position: bottom;
+
     filter: brightness(100%);
-    transform: scale(1.03);
-}
-.row{
-    width: auto;
-    height: max-content;
+    transform: scale(1.2);
 }
 
-.laterlal{
-background-color: blue;
+.imgr2:hover{
+
+    filter: brightness(100%);
+    transform: scale(1.2);
 }
+
+
+
+
