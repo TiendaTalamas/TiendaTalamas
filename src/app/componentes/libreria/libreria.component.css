@@ -23,79 +23,6 @@
     border-radius: 10px;
     
 }
-
-h1
-{
-    margin-top:-50px;
-    font-size: 80px;
-
-}
-
-section
-{
-    background-image: url('../../../assets/fondoRomantico.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    overflow: hidden;
-}
-
-
-.fondo
-{
-    background-image: url('../../../assets/pasto.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    overflow: hidden;
-    
-}
-
-.fondo2
-{
-    background-image: url('../../../assets/infantil.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    overflow: hidden;
-}
-
-.fondo3
-{
-    background-image: url('../../../assets/ciencia.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    overflow: hidden;
-}
-
-.fondo4
-{
-    background-image: url('../../../assets/varios.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    overflow: hidden;
-}
-
-.fondo5
-{
-    background-image: url('../../../assets/terror.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    overflow: hidden;
-}
-
-.fondo6
-{
-    background-image: url('../../../assets/clasicos.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    overflow: hidden;
-}
-
 #b
 {
     margin-left:125px;
@@ -110,71 +37,6 @@ button
 .jumbotron
 {
   margin-bottom: 0em;
-}
-
-
-  /*Now the styles*/
-
-
-.accordian {
-	width:110%; height: 320px;
-    overflow: hidden;
-    
-    
-	
-	/*Time for some styling*/
-	margin: 100px -20px;
-	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
-	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
-	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
-}
-
-
-.accordian ul {
-    width: 1200px;
-    margin-left:-50px;
-}
-
-.accordian li {
-	position: relative;
-	display: block;
-	width: 160px;
-	float: left;
-	
-	border-left: 1px solid #888;
-	
-	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-
-}
-
-
-.accordian ul:hover li {width: 130px;}
-.accordian ul li:hover {width: 640px;}
-
-
-.accordian li img {
-	display: block;
-}
-
-
-.image_title {
-	background: rgba(0, 0, 0, 0.5);
-	position: absolute;
-	left: 0;
-    width: 640px;	
-
-}
-.image_title a {
-	display: block;
-	color: #fff;
-	text-decoration: none;
-	padding: 20px;
-	font-size: 16px;
 }
 
 .card-block {
@@ -222,5 +84,184 @@ button
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
+
+
+
   
+
+
   
+.grid figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    background: #3085a3;
+    text-align: center;
+    cursor: pointer;
+}
+
+.grid figure img {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.grid figure figcaption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+    pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption>a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.grid figure figcaption>a {
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
+}
+
+.grid figure h2 {
+    word-spacing: -0.15em;
+    font-weight: 300;
+}
+
+.grid figure h2 span {
+    font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+    margin: 0;
+}
+
+.grid figure p {
+    letter-spacing: 1px;
+    font-size: 68.5%;
+}
+
+
+
+figure.effect-ravi {
+    background: #303fa9;
+    margin: 0;
+}
+
+.grid [class^="col"] {
+    padding: 2px;
+}
+
+figure.effect-ravi h2 {
+    font-size: 158.75%;
+}
+
+figure.effect-ravi h2,
+figure.effect-ravi p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+}
+
+figure.effect-ravi figcaption::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #fff;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
+    transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+}
+
+figure.effect-ravi p {
+    width: 100px;
+    text-transform: none;
+    font-size: 121%;
+    line-height: 2;
+}
+
+figure.effect-ravi p a {
+    color: #fff;
+}
+
+figure.effect-ravi p a:hover,
+figure.effect-ravi p a:focus {
+    opacity: 0.6;
+}
+
+figure.effect-ravi p a i {
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-ravi p a:first-child i {
+    -webkit-transform: translate3d(-60px, -60px, 0);
+    transform: translate3d(-60px, -60px, 0);
+}
+
+figure.effect-ravi p a:nth-child(2) i {
+    -webkit-transform: translate3d(60px, -60px, 0);
+    transform: translate3d(60px, -60px, 0);
+}
+
+figure.effect-ravi p a:nth-child(3) i {
+    -webkit-transform: translate3d(-60px, 60px, 0);
+    transform: translate3d(-60px, 60px, 0);
+}
+
+figure.effect-ravi p a:nth-child(4) i {
+    -webkit-transform: translate3d(60px, 60px, 0);
+    transform: translate3d(60px, 60px, 0);
+}
+
+figure.effect-ravi:hover figcaption::before {
+    opacity: 1;
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1);
+    transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1);
+}
+
+figure.effect-ravi:hover h2 {
+    opacity: 0;
+    -webkit-transform: translate3d(-50%, -50%, 0) scale3d(0.8, 0.8, 1);
+    transform: translate3d(-50%, -50%, 0) scale3d(0.8, 0.8, 1);
+}
+
+figure.effect-ravi:hover p i:empty {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /* just because it's stronger than nth-child */
+    opacity: 1;
+}
+
