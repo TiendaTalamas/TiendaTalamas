@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-musica',
   templateUrl: './musica.component.html',
@@ -11,7 +10,10 @@ export class MusicaComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+
+  
   ngOnInit() {
+    
   }
 
   navegarInicio()
