@@ -13,6 +13,7 @@ import { servicioCompartido } from '../../servicios/servicioCompartido';
 })
 export class LibreriaComponent implements OnInit {
 
+  Categoria: string;
   AA: string;
   data: any[];
   val: any[];
@@ -105,9 +106,21 @@ export class LibreriaComponent implements OnInit {
   this._servicioCompartido.setProductoData(this.productoObjeto);
   
   }
+
+  navegarCategoria(Categoria:string, SubCategoria: string){
+    this.Categoria = Categoria;
+    console.log(this.Categoria);
+    console.log(SubCategoria);
+    this.router.navigate(['categoria']);
+
+  this._servicioCompartido.setCategoria(Categoria);
+  this._servicioCompartido.setSubCategoria(SubCategoria);
+
+  
+  }
+
   ngOnInit() {
-    this.obtenerArticulos();
-    this.obtenerRecomendados();
+
   }
   navegarInicio()
   {

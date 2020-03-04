@@ -4,7 +4,8 @@ import { producto } from './producto';
 @Injectable()
 export class servicioCompartido{
   productoData : producto[];
-  Categoria : string
+  Categoria : string;
+  SubCategoria : string;
   
     setProductoData(data: producto[]) {    
         this.productoData= data;        
@@ -18,6 +19,13 @@ export class servicioCompartido{
     }
     getCategoria() {    
        return this.Categoria;        
+    }
+
+    setSubCategoria(SubCategoria: string) {    
+        this.SubCategoria= SubCategoria;        
+    }
+    getSubCategoria() {    
+       return this.SubCategoria;        
     }
 
 
