@@ -12,6 +12,7 @@ import { servicioCompartido } from '../../servicios/servicioCompartido';
   styleUrls: ['./libreria.component.css']
 })
 export class LibreriaComponent implements OnInit {
+
   AA: string;
   data: any[];
   val: any[];
@@ -30,6 +31,8 @@ export class LibreriaComponent implements OnInit {
   xxxMap_Recomendados = new Map();
   valuesKeys_Recomendados = new Array;
   articulosArray_Recomendados = new Array;
+
+  //Constructor
   constructor(private http: Http,private router: Router, private location:Location,
     private _servicioCompartido : servicioCompartido) { }
  
