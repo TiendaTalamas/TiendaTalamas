@@ -12,6 +12,7 @@ import { servicioCompartido } from '../../servicios/servicioCompartido';
   styleUrls: ['./libreria.component.css']
 })
 export class LibreriaComponent implements OnInit {
+
   AA: string;
   data: any[];
   val: any[];
@@ -22,6 +23,16 @@ export class LibreriaComponent implements OnInit {
   productoObjeto: producto[];
   nombre: string;
   
+  //Aleatorio
+  AA_Recomendados: string;
+  data_Recomendados: any[];
+  val_Recomendados: any[];
+  contenedor_Recomendados: string;
+  xxxMap_Recomendados = new Map();
+  valuesKeys_Recomendados = new Array;
+  articulosArray_Recomendados = new Array;
+
+  //Constructor
   constructor(private http: Http,private router: Router, private location:Location,
     private _servicioCompartido : servicioCompartido) { }
  
@@ -52,6 +63,35 @@ export class LibreriaComponent implements OnInit {
           }
     });
   }
+
+  obtenerRecomendados() {
+    let body = new URLSearchParams();
+    this.http.post('http://192.168.1.99/talamas/libroAleatorio.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recomendados = "";
+            this.data_Recomendados = [];
+            console.log(result);
+            this.articulosArray_Recomendados = result;
+            for (var key in result) {
+            this.AA_Recomendados = this.AA_Recomendados + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recomendados = result[key];
+              this.data_Recomendados.push(Object.keys(this.val_Recomendados));
+              for (var i = 0; i < Object.keys(this.val_Recomendados).length; i++) {
+              this.contenedor = Object.keys(this.val_Recomendados)[i];
+              Object.entries(this.val_Recomendados)[i]
+               
+                this.xxxMap_Recomendados.set(Object.keys(this.val_Recomendados)[i], Object.values(this.val_Recomendados)[i]);
+                this.valuesKeys_Recomendados.push(Object.keys(this.val_Recomendados)[i], Object.values(this.val_Recomendados)[i]);
+
+                }
+             }
+          }
+    });
+  }
+
   masInformacion(nombre:string, descripcion: string, unidades: number, imagen: string){
    this.nombre = nombre;
    console.log(this.nombre)
@@ -67,6 +107,7 @@ export class LibreriaComponent implements OnInit {
   }
   ngOnInit() {
     this.obtenerArticulos();
+    this.obtenerRecomendados();
   }
   navegarInicio()
   {

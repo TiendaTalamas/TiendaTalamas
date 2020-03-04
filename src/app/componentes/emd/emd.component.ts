@@ -47,4 +47,9 @@ export class EMDComponent implements OnInit {
     this.router.navigate(['emd'])
   }
 
+  navegarMusica()
+  {
+    this.router.navigate(['musica'])
+  }
+
 }
