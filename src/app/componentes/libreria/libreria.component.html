@@ -110,7 +110,7 @@
                   <img src="https://www.rosaleah.com/wp-content/uploads/2015/07/llum-hivern-2000x300.jpg" alt="img25" />
                   <figcaption>
                       <p>
-                        <button type="button" class="btn btn-outline-light" style="margin-left:-6px;" data-toggle="modal" data-target="#myModal">
+                        <button type="button" class="btn btn-outline-light" style="margin-left:-6px;" data-toggle="modal" data-target="#myModal" (click) = "obtenerRecomendados()">
                           Libro al azar
                         </button>
                     </p>
@@ -230,7 +230,7 @@
   <!--Modal del libro al azar-->
 <div class="modal" id="myModal">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content" >
 
       <!-- Modal Header -->
       <div class="modal-header">
@@ -239,8 +239,8 @@
       </div>
 
       <!-- Modal body -->
-      <div class="modal-body">
-        <img class="ola" style="height:350px; width:350px; margin-left:10%;" src="assets/recomendacion.jpg">
+      <div class="modal-body" *ngFor = "let Recomendados of articulosArray_Recomendados; let i = index">
+        <img class="ola" style="height:350px; width:350px; margin-left:10%;" src="{{Recomendados.Imagen}}">
       </div>
 
       <!-- Modal footer -->

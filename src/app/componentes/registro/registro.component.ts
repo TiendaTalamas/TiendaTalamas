@@ -61,7 +61,11 @@ export class RegistroComponent implements OnInit {
     {
       this.router.navigate(['card'])
     }
-
+    navegarMusica()
+    {
+      this.router.navigate(['musica'])
+    }
+    
     registrar() {     
       if(this.nombre.length<3)
       {
