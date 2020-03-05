@@ -60,20 +60,17 @@
 
                 <ul class="list">
                     <h5><strong>Mas</strong></h5>
-                    <li>Discos</li>
-                    <li>Vinilos</li>
-                    <li>Teclados</li>
-                    <li>Acordeones</li>
-                    <li>Accesorios</li>
+                    <li (click)="navegarCategoria('Libros','')">Libros</li>
+                    <li (click)="navegarCategoria('Instrumentos', '')">Musica</li>
                 </ul>
             </div>
         </div>
 
         <div class="col-md-10 col-sm-8 main-content">
           <section class="details-card">
-            <div class="container-fluid mt-2" style="background-color:#fff;">
-                <div class="row">
-                    <div class="col-md-4" *ngFor = "let articulo of articulosArray; let i = index">
+            <div class="container-fluid mt-2 " style="background-color:#fff;">
+                <div class="row ">
+                    <div class="col-md-4 mb-5" *ngFor = "let articulo of articulosArray; let i = index">
                         <div class="card-content">
                             <div class="card-img">
                                 <img src="{{articulo.Imagen}}"style="height:250px; width:250px; margin-left:10%;" alt="">
@@ -82,7 +79,7 @@
                             <div class="card-desc" >
                                 <h3 style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">{{articulo.NombreProducto}}</h3>
                                 <hr/>
-              kk                    <p>{{articulo.Precio}}</p>
+                                  <p>{{articulo.Precio}}</p>
                                     <a (click) = "masInformacion(articulo.NombreProducto, articulo.Descripcion, articulo.Unidades, articulo.Imagen)" class="btn-card">Comprar</a>   
                             </div>
                         </div>

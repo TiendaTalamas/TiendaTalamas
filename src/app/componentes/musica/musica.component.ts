@@ -10,10 +10,21 @@ import { servicioCompartido } from '../../servicios/servicioCompartido';
 })
 export class MusicaComponent implements OnInit {
 
-  constructor(private router: Router, _servicioCompartido: servicioCompartido) { }
+  constructor(private router: Router, private _servicioCompartido: servicioCompartido) { }
+  Categoria : string;
+  
 
+  navegarCategoria(Categoria:string, SubCategoria: string){
+    this.Categoria = Categoria;
+    console.log(this.Categoria);
+    console.log(SubCategoria);
+    this.router.navigate(['categoria']);
+
+  this._servicioCompartido.setCategoria(Categoria);
+  this._servicioCompartido.setSubCategoria(SubCategoria);
 
   
+  }
   ngOnInit() {
     
   }
