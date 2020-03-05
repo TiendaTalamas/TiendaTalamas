@@ -39,13 +39,15 @@
     </div>  
   </nav>
 
-
-<div class="col-xs-12 col" *ngFor = "let producto of productos">
-    <img class="izquierda mb-5" src="{{producto.imagen}}" width="350" height="450"> 
-     <aside><h3><p style = "font-family:Arial Narrow;">{{producto.nombre}}</p></h3>
+<div class="row" *ngFor = "let producto of productos">
+<div class="col-xs-12 col-sm-6 col-md-4">
+    <img class="izquierda mb-5 mt-2 ml-5" src="{{producto.imagen}}" width="350" height="450"> 
+</div>
+    <div class="col-xs-12 col-sm-12 col-md-4">
+     <div><h3><p style = "font-family:Arial Narrow;">{{producto.nombre}}</p></h3>
         <br>
         <br>
-
+        
         <button type="button" class="btn btn-warning">Comprar</button> <button type="button" class="btn btn-warning ml-3">Cantidad</button>
         <br>
         <br>
@@ -55,8 +57,9 @@
         <br>
         <br>
         <h3>* Informacion adicional:</h3>  
-    </aside>
+    </div>
     <div class="reset"></div>    
+</div>
 </div>
 
 
