@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
+import { servicioCompartido } from '../../servicios/servicioCompartido';
+
 @Component({
   selector: 'app-musica',
   templateUrl: './musica.component.html',
@@ -8,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class MusicaComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, _servicioCompartido: servicioCompartido) { }
 
 
   
@@ -47,8 +49,5 @@ export class MusicaComponent implements OnInit {
   {
     this.router.navigate(['musica'])
   }
-  navegarCategoria()
-  {
-    this.router.navigate(['categoria'])
-  }
+
 }
