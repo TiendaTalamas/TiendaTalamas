@@ -43,21 +43,67 @@ export class CategoriaProductoComponent implements OnInit {
 
 
   ngOnInit() {
+    this.Categoria = this._servicioCompartido.getCategoria();
+    this.SubCategoria = this._servicioCompartido.getSubCategoria();
 
 
     
     console.log(this.Categoria);
     console.log(this.SubCategoria);
-   /* if(this.Categoria === undefined)
+    if(this.Categoria === undefined){
+      this.obtenerTodos();
+
+    }
+    else if(this.Categoria == "Libros" && this.SubCategoria === undefined)
     {
-    this.obtenerTodos()
-    }*/
-    //else{
-     this.obtenerArticulos();
+    this.obtenerCategoria()
+    this.obtenerSubCategorias();
+    }
+    else if( this.Categoria == "Instrumentos" && this.SubCategoria === undefined)
+    {
+     this.obtenerCategoria();
      this.obtenerSubCategorias();
-    //}
+    }
+    else{
+      this.obtenerArticulos();
+      this.obtenerSubCategorias();
+    }
  
     
+  }
+
+  obtenerTodos(){
+
+    let body = new URLSearchParams();
+
+      
+
+
+    this.http.post('http://192.168.1.99/talamas/todos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA = "";
+            this.data = [];
+            console.log(result);
+            this.articulosArray = result;
+            for (var key in result) {
+            this.AA = this.AA + key;
+            if (result.hasOwnProperty(key)) {
+              this.val = result[key];
+              this.data.push(Object.keys(this.val));
+              for (var i = 0; i < Object.keys(this.val).length; i++) {
+              this.contenedor = Object.keys(this.val)[i];
+              Object.entries(this.val)[i]
+               
+                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+
+                }
+             }
+          }
+    });
+
   }
 
   obtenerArticulos(){
@@ -95,15 +141,15 @@ export class CategoriaProductoComponent implements OnInit {
 
   }
 
-  obtenerTodos(){
-    this.Categoria = this._servicioCompartido.getCategoria();
-    this.SubCategoria = this._servicioCompartido.getSubCategoria();
-    let body = new URLSearchParams();
-      
-    body.append('categoria', this.Categoria);
-    body.append('sub_categoria', this.SubCategoria);
+  obtenerCategoria(){
 
-    this.http.post('http://192.168.1.99/talamas/todos.php', body)
+    let body = new URLSearchParams();
+    body.append('categoria', this.Categoria);
+
+      
+
+
+    this.http.post('http://192.168.1.99/talamas/obtenerCategoriaEspecifica.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -171,11 +217,21 @@ export class CategoriaProductoComponent implements OnInit {
     console.log(SubCategoria);
     this._servicioCompartido.setCategoria(Categoria);
     this._servicioCompartido.setSubCategoria(SubCategoria);
-
-    this.obtenerArticulos();
-
-
-  
+    if(Categoria == "Libros" && SubCategoria == "")
+    {
+    this.obtenerCategoria()
+    this.obtenerSubCategorias();
+    }
+    else if(Categoria == "Instrumentos" && SubCategoria == "")
+    {
+     this.obtenerCategoria();
+     this.obtenerSubCategorias();
+    }
+    else{
+      this.obtenerArticulos();
+      this.obtenerSubCategorias();
+    }
+ 
   }
  
 
