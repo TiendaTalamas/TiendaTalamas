@@ -17,12 +17,10 @@ import { producto } from '../../servicios/producto';
 })
 export class CategoriaProductoComponent implements OnInit {
   nombre: string;
-  productoObjeto: producto[];
 
   constructor(private http: Http,private router: Router, private location:Location,
     private _servicioCompartido : servicioCompartido) { }
   productoObjeto : producto[];
-  nombre : string;
     
   Categoria : string;
   SubCategoria: string;
@@ -41,7 +39,8 @@ export class CategoriaProductoComponent implements OnInit {
   xxxMap_Sub = new Map();
   valuesKeys_Sub = new Array;
   articulosArray_Sub = new Array;
-  
+
+
 
   ngOnInit() {
 
@@ -49,8 +48,14 @@ export class CategoriaProductoComponent implements OnInit {
     
     console.log(this.Categoria);
     console.log(this.SubCategoria);
+   /* if(this.Categoria === undefined)
+    {
+    this.obtenerTodos()
+    }*/
+    //else{
      this.obtenerArticulos();
      this.obtenerSubCategorias();
+    //}
  
     
   }
@@ -64,6 +69,41 @@ export class CategoriaProductoComponent implements OnInit {
     body.append('sub_categoria', this.SubCategoria);
 
     this.http.post('http://192.168.1.99/talamas/categoria.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA = "";
+            this.data = [];
+            console.log(result);
+            this.articulosArray = result;
+            for (var key in result) {
+            this.AA = this.AA + key;
+            if (result.hasOwnProperty(key)) {
+              this.val = result[key];
+              this.data.push(Object.keys(this.val));
+              for (var i = 0; i < Object.keys(this.val).length; i++) {
+              this.contenedor = Object.keys(this.val)[i];
+              Object.entries(this.val)[i]
+               
+                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+
+                }
+             }
+          }
+    });
+
+  }
+
+  obtenerTodos(){
+    this.Categoria = this._servicioCompartido.getCategoria();
+    this.SubCategoria = this._servicioCompartido.getSubCategoria();
+    let body = new URLSearchParams();
+      
+    body.append('categoria', this.Categoria);
+    body.append('sub_categoria', this.SubCategoria);
+
+    this.http.post('http://192.168.1.99/talamas/todos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -137,19 +177,7 @@ export class CategoriaProductoComponent implements OnInit {
 
   
   }
-  masInformacion(nombre:string, descripcion: string, unidades: number, imagen: string){
-    this.nombre = nombre;
-    console.log(this.nombre);
-    this.router.navigate(['venta']);
-    this.productoObjeto = [{
-      nombre: nombre,
-      descripcion: descripcion,
-      unidades: unidades,
-      imagen: imagen,
-  }]
-  this._servicioCompartido.setProductoData(this.productoObjeto);
-  
-  }
+ 
 
   
   navegarInicio()
