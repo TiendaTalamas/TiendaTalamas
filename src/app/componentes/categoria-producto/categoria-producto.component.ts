@@ -16,6 +16,8 @@ import { producto } from '../../servicios/producto';
   styleUrls: ['./categoria-producto.component.css']
 })
 export class CategoriaProductoComponent implements OnInit {
+  nombre: string;
+  productoObjeto: producto[];
 
   constructor(private http: Http,private router: Router, private location:Location,
     private _servicioCompartido : servicioCompartido) { }
@@ -180,6 +182,20 @@ export class CategoriaProductoComponent implements OnInit {
   navegarMusica()
   {
     this.router.navigate(['musica'])
+  }
+
+  masInformacion(nombre:string, descripcion: string, unidades: number, imagen: string){
+    this.nombre = nombre;
+    console.log(this.nombre);
+    this.router.navigate(['venta']);
+    this.productoObjeto = [{
+      nombre: nombre,
+      descripcion: descripcion,
+      unidades: unidades,
+      imagen: imagen,
+  }]
+  this._servicioCompartido.setProductoData(this.productoObjeto);
+  
   }
 
 }

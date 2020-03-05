@@ -83,7 +83,7 @@
                                 <h3 style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">{{articulo.NombreProducto}}</h3>
                                 <hr/>
                                 <p>{{articulo.Precio}}</p>
-                                    <a href="#" class="btn-card" (click)="masInformacion(articulo.NombreProducto, articulo.Descripcion, articulo.Unidades, articulo.Imagen)">Comprar</a>   
+                                    <a (click) = "masInformacion(articulo.NombreProducto, articulo.Descripcion, articulo.Unidades, articulo.Imagen)" class="btn-card">Comprar</a>   
                             </div>
                         </div>
                     </div>
