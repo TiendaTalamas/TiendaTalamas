@@ -21,6 +21,7 @@ export class CategoriaProductoComponent implements OnInit {
   constructor(private http: Http,private router: Router, private location:Location,
     private _servicioCompartido : servicioCompartido) { }
   productoObjeto : producto[];
+  Logo : string;
     
   Categoria : string;
   SubCategoria: string;
@@ -45,6 +46,14 @@ export class CategoriaProductoComponent implements OnInit {
   ngOnInit() {
     this.Categoria = this._servicioCompartido.getCategoria();
     this.SubCategoria = this._servicioCompartido.getSubCategoria();
+    if(this.Categoria == "Instrumentos")
+    {
+      this.Logo = "assets/libreriaLogo.jpg";
+
+    }else{
+      this.Logo = "assets/logoLibreria.jpg";
+
+    }
 
 
     
@@ -54,12 +63,12 @@ export class CategoriaProductoComponent implements OnInit {
       this.obtenerTodos();
 
     }
-    else if(this.Categoria == "Libros" && this.SubCategoria === undefined)
+    else if(this.Categoria == "Libros" && this.SubCategoria === "")
     {
     this.obtenerCategoria()
     this.obtenerSubCategorias();
     }
-    else if( this.Categoria == "Instrumentos" && this.SubCategoria === undefined)
+    else if( this.Categoria == "Instrumentos" && this.SubCategoria === "")
     {
      this.obtenerCategoria();
      this.obtenerSubCategorias();
@@ -217,6 +226,15 @@ export class CategoriaProductoComponent implements OnInit {
     console.log(SubCategoria);
     this._servicioCompartido.setCategoria(Categoria);
     this._servicioCompartido.setSubCategoria(SubCategoria);
+    if(this.Categoria == "Instrumentos")
+    {
+      this.Logo = "assets/libreriaLogo.jpg";
+
+    
+    }else{
+      this.Logo = "assets/logoLibreria.jpg";
+
+    }
     if(Categoria == "Libros" && SubCategoria == "")
     {
     this.obtenerCategoria()
