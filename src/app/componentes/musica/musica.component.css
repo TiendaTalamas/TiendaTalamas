@@ -344,6 +344,15 @@ top:75% ;
         }
         /*--carousel css--*/
 
-        
+        .image-aboutus-banner {
+            background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/673649/pexels-photo-673649.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            color: #fff;
+            padding-top: 110px;
+            padding-bottom:110px;
+         }
+         
 
 
