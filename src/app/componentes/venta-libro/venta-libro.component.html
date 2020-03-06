@@ -65,26 +65,28 @@
 <div class="col-md-4 mt-5">
   <div class="menu sticky-top ">
       <div class="card bg-light ">
-          <div class="card-body">
-              <small> Get in touch with Seller</small>
-              <h3><i class="fa fa-inr"></i> 4.85 Lakh</h3>
-              <div class="form-group">
-                 <input type="text" class="form-control" id="name1" placeholder="Name">
-                 
-             </div>
-              <div class="form-group">
-                 <input type="text" class="form-control" id="phone1" placeholder="Mobile">
-             </div>
-             <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="updatecheck1">
-                    <label class="form-check-label" for="updatecheck1">
-                      <small>By submitting this form you agree to our <a href="#">terms and conditions </a> </small>
-                    </label>
-                  </div>
+          <div class="card-body"  *ngFor = "let producto of productos">
+              <small>Precio</small>
+              <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
+              <div>
+                <button type="button" class="btn btn-warning">Cantidad</button>
+
+              </div>
+
+
+
                   <div class="pb-3">
                       
                   </div>
-             <button type="button" class="btn btn-warning">Contact the Seller</button>
+             <button type="button" class="btn btn-warning">Agregar al carrito</button>
+             <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="updatecheck1">
+              <label class="form-check-label" for="updatecheck1">
+
+                <small>By submitting this form you agree to our <a href="#">terms and conditions </a> </small>
+              </label>
+            </div>
+
              
           </div>
       </div>
@@ -120,6 +122,5 @@
       </div>
     </div>
   </div> 
-
 
 
