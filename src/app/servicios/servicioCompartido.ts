@@ -6,6 +6,7 @@ export class servicioCompartido{
   productoData : producto[];
   Categoria : string;
   SubCategoria : string;
+  IdProducto: string;
   
     setProductoData(data: producto[]) {    
         this.productoData= data;        
@@ -26,6 +27,15 @@ export class servicioCompartido{
     }
     getSubCategoria() {    
        return this.SubCategoria;        
+    }
+
+    setIdProducto(IdProducto: string){
+        this.IdProducto = IdProducto;
+
+    }
+
+    getIdProducto(){
+        return this.IdProducto;
     }
 
 

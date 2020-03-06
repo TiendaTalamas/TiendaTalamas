@@ -108,7 +108,7 @@
       <div class="carousel-item active">
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes; let i = index">
-          <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.NombreProducto, reciente.Descripcion, reciente.Unidades, reciente.Imagen)">
+          <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto)">
       </div>
   </div>
   </div> 
@@ -133,7 +133,7 @@
       <div class="carousel-item active">
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let Recomendados of articulosArray_Recomendados; let i = index">
-          <img class="imgr" src="{{Recomendados.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(Recomendados.NombreProducto, Recomendados.Descripcion, Recomendados.Unidades, Recomendados.Imagen)">
+          <img class="imgr" src="{{Recomendados.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(Recomendados.IdProducto)">
       </div>
     </div>
     </div>
@@ -141,7 +141,7 @@
     <div class="carousel-item">
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes; let i = index">
-            <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(Recomendados.NombreProducto, Recomendados.Descripcion, Recomendados.Unidades, Recomendados.Imagen)">
+            <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto)">
         </div>
     </div>
     </div> 

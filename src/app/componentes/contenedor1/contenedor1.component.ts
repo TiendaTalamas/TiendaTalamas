@@ -189,17 +189,12 @@ export class Contenedor1Component implements OnInit {
     });
   }
 
-  masInformacion(nombre:string, descripcion: string, unidades: number, imagen: string){
-    this.nombre = nombre;
+  masInformacion(IdProducto: string){
+    this.nombre = IdProducto;
     console.log(this.nombre);
     this.router.navigate(['venta']);
-    this.productoObjeto = [{
-      nombre: nombre,
-      descripcion: descripcion,
-      unidades: unidades,
-      imagen: imagen,
-  }]
-  this._servicioCompartido.setProductoData(this.productoObjeto);
+    this._servicioCompartido.setIdProducto(IdProducto);
+
   
   }
 
