@@ -51,7 +51,7 @@
             <div class="left-navigation">
                 <ul class="list ml-0">
                     <h5><strong>{{Categoria}}</strong></h5>
-                    <li *ngFor = "let Sub of articulosArray_Sub; let i = index" (click)="navegarCategoria(Sub.Propiedad1, Sub.SubCategoria)">{{Sub.SubCategoria}}
+                    <li *ngFor = "let Sub of articulosArray_Sub; let i = index" (click)="navegarCategoria(Sub.categoria, Sub.SubCategoria)">{{Sub.SubCategoria}}
                     </li>
 
                 </ul>

@@ -291,7 +291,7 @@ export class CategoriaProductoComponent implements OnInit {
     console.log(this.nombre);
     this.router.navigate(['venta']);
     this._servicioCompartido.setIdProducto(IdProducto);
-
+    this._servicioCompartido.setCategoria(this.Categoria);
   
   }
 

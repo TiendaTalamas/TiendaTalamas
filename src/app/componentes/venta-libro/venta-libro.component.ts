@@ -13,12 +13,14 @@ import { URLSearchParams } from "@angular/http";
   styleUrls: ['./venta-libro.component.css']
 })
 export class VentaLibroComponent implements OnInit {
-  //array para guardar los valores
+  Categoria: string;
   IdProducto: string;
-  Propiedad1: string;
-  Propiedad2: string;
-  Propiedad3: string;
-  Propiedad4: string;
+  P1: boolean;
+  P2: boolean;
+  P3: boolean;
+  P4: boolean;
+  //array para guardar los valores
+
   constructor(private _servicioCompartido : servicioCompartido,private router:Router,private http:Http) { }
   
   AA: string;
@@ -32,6 +34,7 @@ export class VentaLibroComponent implements OnInit {
 
 
   ngOnInit() {
+    this.Categoria = this._servicioCompartido.getCategoria();
     this.IdProducto = this._servicioCompartido.getIdProducto();  
     if(this.IdProducto === undefined){
       this.LibroAleatorio();
@@ -39,10 +42,18 @@ export class VentaLibroComponent implements OnInit {
     }else{
     this.obtenerArticulo();
     }
-    console.log(this.productos[1]);
-
-    if(this.productos['Categoria'] == "Libros"){
+    if(this.Categoria === undefined){
+      this.Categoria = "Libros";
     }
+    if(this.Categoria == "Libros"){
+      this.P1 = true;
+    }
+    else if(this.Categoria == "Instrumentos"){
+      this.P2 = true;
+    }
+
+
+
   }
 
   LibroAleatorio() {
