@@ -15,6 +15,10 @@ import { URLSearchParams } from "@angular/http";
 export class VentaLibroComponent implements OnInit {
   //array para guardar los valores
   IdProducto: string;
+  Propiedad1: string;
+  Propiedad2: string;
+  Propiedad3: string;
+  Propiedad4: string;
   constructor(private _servicioCompartido : servicioCompartido,private router:Router,private http:Http) { }
   
   AA: string;
@@ -35,7 +39,10 @@ export class VentaLibroComponent implements OnInit {
     }else{
     this.obtenerArticulo();
     }
+    console.log(this.productos[1]);
 
+    if(this.productos['Categoria'] == "Libros"){
+    }
   }
 
   LibroAleatorio() {
