@@ -93,18 +93,13 @@ export class LibreriaComponent implements OnInit {
     });
   }
 
-  masInformacion(nombre:string, descripcion: string, unidades: number, imagen: string){
-   this.nombre = nombre;
-   console.log(this.nombre)
+  masInformacion(IdProducto: string){
+    this.nombre = IdProducto;
+    console.log(this.nombre);
     this.router.navigate(['venta']);
-    this.productoObjeto = [{
-      nombre: nombre,
-      descripcion: descripcion,
-      unidades: unidades,
-      imagen: imagen,
-  }]
-  this._servicioCompartido.setProductoData(this.productoObjeto);
-  
+    this._servicioCompartido.setIdProducto(IdProducto);
+    this._servicioCompartido.setCategoria(this.Categoria);
+
   }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
@@ -120,7 +115,7 @@ export class LibreriaComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.Categoria = "Libros";
   }
   navegarInicio()
   {

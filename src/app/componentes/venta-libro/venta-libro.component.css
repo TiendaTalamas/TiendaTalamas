@@ -16,7 +16,12 @@ div.noticia {
    margin-right: 25px;
    margin-left: 50px;
  }
- 
+ .Descripcion{
+  text-align: justify;
+   font-family: sans-serif;
+   font-size: medium;
+   font-weight: 300;
+ }
  div.reset {
    clear: both;
  }
