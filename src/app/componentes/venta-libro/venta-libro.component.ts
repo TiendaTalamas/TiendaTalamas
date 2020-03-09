@@ -43,7 +43,6 @@ export class VentaLibroComponent implements OnInit {
     this.obtenerArticulo();
     }
     if(this.Categoria === undefined){
-      this.Categoria = "Libros";
     }
     if(this.Categoria == "Libros"){
       this.P1 = true;
@@ -55,7 +54,7 @@ export class VentaLibroComponent implements OnInit {
 
 
   }
-
+//Metodo de obtencion de un libro aleatorio para optimizar las pruebas
   LibroAleatorio() {
     let body = new URLSearchParams();
     this.http.post('http://192.168.1.99/talamas/libroAleatorio.php', body)
@@ -83,6 +82,7 @@ export class VentaLibroComponent implements OnInit {
           }
     });
   }
+  //Obtiene el libro cuando recibe datos
   obtenerArticulo(){
 
     let body = new URLSearchParams();
