@@ -16,7 +16,6 @@ export class Contenedor1Component implements OnInit {
   //
   nombre: string;
   productoObjeto: producto[];
-  Categoria: string;
   
     //Datos Slider
     AA_slider: string;
@@ -69,7 +68,6 @@ export class Contenedor1Component implements OnInit {
     private _servicioCompartido : servicioCompartido) { }
 
   ngOnInit() {
-    this.Categoria = "Libros";
 
     this.obtenerArticulos();
     this.obtenerOfertas();
@@ -192,12 +190,12 @@ export class Contenedor1Component implements OnInit {
     });
   }
 
-  masInformacion(IdProducto: string){
+  masInformacion(IdProducto: string, Categoria: string){
     this.nombre = IdProducto;
     console.log(this.nombre);
     this.router.navigate(['venta']);
     this._servicioCompartido.setIdProducto(IdProducto);
-    this._servicioCompartido.setCategoria(this.Categoria);
+    this._servicioCompartido.setCategoria(Categoria);
 
   }
 
