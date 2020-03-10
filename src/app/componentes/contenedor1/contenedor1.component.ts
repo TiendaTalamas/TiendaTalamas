@@ -45,13 +45,13 @@ export class Contenedor1Component implements OnInit {
   articulosArray_Ofertas = new Array;
 
   //datos recientes
-   AA_Recientes: string;
-   data_Recientes: any[];
-   val_Recientes: any[];
-   contenedor_Recientes: string;
-   xxxMap_Recientes = new Map();
-   valuesKeys_Recientes = new Array;
-   articulosArray_Recientes = new Array;
+   AA_Recientes_Libros: string;
+   data_Recientes_Libros: any[];
+   val_Recientes_Libros: any[];
+   contenedor_Recientes_Libros: string;
+   xxxMap_Recientes_Libros = new Map();
+   valuesKeys_Recientes_Libros = new Array;
+   articulosArray_Recientes_Libros = new Array;
 
    //Datos Recomendados
     AA_Recomendados: string;
@@ -123,7 +123,7 @@ export class Contenedor1Component implements OnInit {
               this.data_Ofertas.push(Object.keys(this.val_Ofertas));
               for (var i = 0; i < Object.keys(this.val_Ofertas).length; i++) {
               this.contenedor_Ofertas = Object.keys(this.val_Ofertas)[i];
-              Object.entries(this.val_Recientes)[i]
+              Object.entries(this.val_Ofertas)[i]
                
                 this.xxxMap_Ofertas.set(Object.keys(this.val_Ofertas)[i], Object.values(this.val_Ofertas)[i]);
                 this.valuesKeys_Ofertas.push(Object.keys(this.val_Ofertas)[i], Object.values(this.val_Ofertas)[i]);
@@ -136,25 +136,25 @@ export class Contenedor1Component implements OnInit {
    //Metodo para obtener recientes
   obtenerRecientes() {
     let body = new URLSearchParams();
-    this.http.post('http://192.168.1.99/talamas/recientes.php', body)
+    this.http.post('http://192.168.1.99/talamas/obtenerLibroReciente.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
-            this.AA_Recientes = "";
-            this.data_Recientes = [];
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
             console.log(result);
-            this.articulosArray_Recientes = result;
+            this.articulosArray_Recientes_Libros = result;
             for (var key in result) {
-            this.AA_Recientes = this.AA_Recientes + key;
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
             if (result.hasOwnProperty(key)) {
-              this.val_Recientes= result[key];
-              this.data_Recientes.push(Object.keys(this.val_Recientes));
-              for (var i = 0; i < Object.keys(this.val_Recientes).length; i++) {
-              this.contenedor_Recientes = Object.keys(this.val_Recientes)[i];
-              Object.entries(this.val_Recientes)[i]
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
                
-                this.xxxMap_Recientes.set(Object.keys(this.val_Recientes)[i], Object.values(this.val_Recientes)[i]);
-                this.valuesKeys_Recientes.push(Object.keys(this.val_Recientes)[i], Object.values(this.val_Recientes)[i]);
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
 
                 }
              }
