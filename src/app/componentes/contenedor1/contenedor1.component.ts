@@ -92,10 +92,13 @@ export class Contenedor1Component implements OnInit {
     //Productos Libros
     this.LimiteI = "0";
     this.obtenerRecientes();
+    this.obtenerMasVendidosInstrumentos();
     this.LimiteI = "6";
     this.obtenerRecientes();
+    this.obtenerMasVendidosInstrumentos();
     this.LimiteI = "12";
     this.obtenerRecientes();
+    this.obtenerMasVendidosInstrumentos();
 
 
 
@@ -392,7 +395,7 @@ export class Contenedor1Component implements OnInit {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
             console.log(result);
-            this.articulosArray_Recientes_Libros2 = result;
+            this.articulosArray_Vendidos_Instrumentos2 = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
             if (result.hasOwnProperty(key)) {
@@ -414,7 +417,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://192.168.1.99/talamas/obtenerLibroReciente.php', body)
+    this.http.post('http://192.168.1.99/talamas/obtenerInstrumentoVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
