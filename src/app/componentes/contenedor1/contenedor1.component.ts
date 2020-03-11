@@ -13,9 +13,12 @@ import { servicioCompartido } from '../../servicios/servicioCompartido';
   styleUrls: ['./contenedor1.component.css']
 })
 export class Contenedor1Component implements OnInit {
-  //
+  //Variables auciliares
   nombre: string;
   productoObjeto: producto[];
+  LimiteI :string;
+  LimiteF :string;
+
   
     //Datos Slider
     AA_slider: string;
@@ -62,6 +65,21 @@ export class Contenedor1Component implements OnInit {
     valuesKeys_Recomendados = new Array;
     articulosArray_Recomendados = new Array;
 
+    //Arrays para libros
+    articulosArray_Recientes_Libros2 = new Array;
+    articulosArray_Recientes_Libros3 = new Array;
+
+    //Arrays para Instrumentos
+    articulosArray_Vendidos_Instrumentos = new Array;
+    articulosArray_Vendidos_Instrumentos2 = new Array;
+    articulosArray_Vendidos_Instrumentos3 = new Array;
+
+
+
+
+
+
+
 
 
   constructor(private http: Http,private router: Router, private location:Location,
@@ -71,7 +89,18 @@ export class Contenedor1Component implements OnInit {
 
     this.obtenerArticulos();
     this.obtenerOfertas();
+    //Productos Libros
+    this.LimiteI = "0";
     this.obtenerRecientes();
+    this.LimiteI = "6";
+    this.obtenerRecientes();
+    this.LimiteI = "12";
+    this.obtenerRecientes();
+
+
+
+
+
     this.obtenerRecomendados();
     this.obtenerSlider();
     
@@ -135,7 +164,10 @@ export class Contenedor1Component implements OnInit {
   }
    //Metodo para obtener recientes
   obtenerRecientes() {
+    if(this.LimiteI == "0")
+    {
     let body = new URLSearchParams();
+    body.append('limiteI', this.LimiteI);
     this.http.post('http://192.168.1.99/talamas/obtenerLibroReciente.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
@@ -160,6 +192,66 @@ export class Contenedor1Component implements OnInit {
              }
           }
     });
+  }else if(this.LimiteI == "6")
+  {
+    let body = new URLSearchParams();
+    body.append('limiteI', this.LimiteI);
+    this.http.post('http://192.168.1.99/talamas/obtenerLibroReciente.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Recientes_Libros2 = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+  }
+  else if(this.LimiteI == "12")
+  {
+    let body = new URLSearchParams();
+    body.append('limiteI', this.LimiteI);
+    this.http.post('http://192.168.1.99/talamas/obtenerLibroReciente.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Recientes_Libros3 = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+
+  }
+
   }
 
   obtenerRecomendados() {
@@ -260,6 +352,96 @@ export class Contenedor1Component implements OnInit {
     this.router.navigate(['musica'])
   }
 
+  obtenerMasVendidosInstrumentos() {
+    if(this.LimiteI == "0")
+    {
+    let body = new URLSearchParams();
+    body.append('limiteI', this.LimiteI);
+    this.http.post('http://192.168.1.99/talamas/obtenerInstrumentoVendidos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Vendidos_Instrumentos = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+  }else if(this.LimiteI == "6")
+  {
+    let body = new URLSearchParams();
+    body.append('limiteI', this.LimiteI);
+    this.http.post('http://192.168.1.99/talamas/obtenerInstrumentoVendidos.php', body)
+    .map((res:Response) => res.json()) 
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Recientes_Libros2 = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+  }
+  else if(this.LimiteI == "12")
+  {
+    let body = new URLSearchParams();
+    body.append('limiteI', this.LimiteI);
+    this.http.post('http://192.168.1.99/talamas/obtenerLibroReciente.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Recientes_Libros3 = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+
+  }
+
+  }
 }
 
 

@@ -184,13 +184,29 @@
   
 <!--Primer slider de recientes-->
   <div class="container-fluid text-center mt-5 mb-5" style="background-color: white;">
-    <h5 style = "color: black; text-align: left;">Articulos recientes</h5>
+    <h5 style = "color: black; text-align: left;">Más vendidos</h5>
     <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
     <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
       <div class="carousel-item active">
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros; let i = index">
+          <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+      </div>
+  </div>
+  <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
+  </div> 
+  <div class="carousel-item">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros2; let i = index">
+          <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+      </div>
+  </div>
+  <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
+  </div> 
+  <div class="carousel-item">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros3; let i = index">
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
       </div>
   </div>
