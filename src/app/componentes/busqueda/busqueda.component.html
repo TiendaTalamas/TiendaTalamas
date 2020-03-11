@@ -13,7 +13,7 @@
           <a class="nav-link" (click)="navegarLibreria();">Libreria</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" (click)="navegarMusica()" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="navegarMusica()">
             Musica
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -38,10 +38,9 @@
   <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>
     </div>  
   </nav>
+<!--Fin del navbar-->
 
-
-
-  <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-2 col-sm-4 sidebar1">
             <div class="logo">
@@ -70,24 +69,18 @@
 
         <div class="col-md-10 col-sm-8 main-content">
           <section class="details-card">
+              <hr color="black"/>
             <div class="container-fluid mt-2 " style="background-color:#fff;">
                 <div class="row ">
-                    <div class="col-md-4 mb-2 mt-3" *ngFor = "let articulo of articulosArray; let i = index">
-                        <div class="card-content">
-                            <div class="card-img">
-                                <img src="{{articulo.Imagen}}"style="height:250px; width:250px; margin-left:10%;" alt="">
-                                <span><h4>{{Categoria}}</h4></span>
-                            </div>
-                            <div class="card-desc" >
-                                <h3 style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">{{articulo.NombreProducto}}</h3>
-                                <hr/>
-                                  <p>{{articulo.Precio}}</p>
-                                    <a (click) = "masInformacion(articulo.IdProducto)" class="btn-card">Comprar</a>   
-                            </div>
+                        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+                            
+                                <img src="assets/camisa.png" width="250" height="250">
+                                 
                         </div>
-                    </div>
-                </div>
+                        </div>
+             
             </div>
+            <hr color="black"/>
           </section>
         
       
@@ -101,3 +94,25 @@
 
 
 
+
+
+
+
+
+
+<!--
+<hr color="black"/>
+<div class="Container">
+<div class="Row">
+<div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+    
+        <img src="assets/camisa.png" width="250" height="250">
+         
+</div>
+</div>
+
+</div>
+<hr color="black"/>
+
+-->
+<router-outlet></router-outlet>

@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { EMDComponent } from './componentes/emd/emd.component';
 import { MusicaComponent } from './componentes/musica/musica.component';
 import { CategoriaProductoComponent } from './componentes/categoria-producto/categoria-producto.component';
+import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CategoriaProductoComponent } from './componentes/categoria-producto/cat
     EMDComponent,
     MusicaComponent,
     CategoriaProductoComponent,
+    BusquedaComponent,
    
   ],
   imports: [
