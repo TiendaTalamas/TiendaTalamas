@@ -13,6 +13,7 @@ import { URLSearchParams } from "@angular/http";
   styleUrls: ['./venta-libro.component.css']
 })
 export class VentaLibroComponent implements OnInit {
+  Nombre: string;
   Categoria: string;
   IdProducto: string;
   limiteI: string;
@@ -211,6 +212,20 @@ export class VentaLibroComponent implements OnInit {
     });
 
   }
+
+  
+  masInformacion(IdProducto: string, Categoria: string){
+    this.Nombre = IdProducto;
+    console.log(this.Nombre);
+    this._servicioCompartido.setIdProducto(IdProducto);
+    this._servicioCompartido.setCategoria(Categoria);
+    this.Categoria = this._servicioCompartido.getCategoria();
+    this.IdProducto = this._servicioCompartido.getIdProducto();  
+    this.obtenerArticulo();
+
+
+  }
+
 
   navegarInicio()
   {
