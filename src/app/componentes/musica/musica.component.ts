@@ -61,4 +61,9 @@ export class MusicaComponent implements OnInit {
     this.router.navigate(['musica'])
   }
 
+  navegarBusqueda()
+  {
+    this.router.navigate(['busqueda'])
+  }
+
 }

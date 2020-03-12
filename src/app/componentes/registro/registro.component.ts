@@ -65,6 +65,11 @@ export class RegistroComponent implements OnInit {
     {
       this.router.navigate(['musica'])
     }
+
+    navegarBusqueda()
+    {
+      this.router.navigate(['busqueda'])
+    }
     
     registrar() {     
       if(this.nombre.length<3)

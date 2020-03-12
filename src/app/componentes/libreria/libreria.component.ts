@@ -148,4 +148,9 @@ export class LibreriaComponent implements OnInit {
     this.router.navigate(['emd'])
   }
 
+  navegarBusqueda()
+  {
+    this.router.navigate(['busqueda'])
+  }
+
 }
