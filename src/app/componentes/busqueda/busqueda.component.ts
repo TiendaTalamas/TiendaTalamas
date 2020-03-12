@@ -6,6 +6,7 @@ import { URLSearchParams } from "@angular/http";
 import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
 import 'rxjs/add/operator/map';
 import {Location} from "@angular/common";
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -14,10 +15,14 @@ import {Location} from "@angular/common";
   styleUrls: ['./busqueda.component.css']
 })
 export class BusquedaComponent implements OnInit {
+  registroForm: FormGroup;
 
 
   constructor(private http: Http,private router: Router, private location:Location,
-    private _servicioCompartido : servicioCompartido){}
+    private _servicioCompartido : servicioCompartido, private fb:FormBuilder){   
+      this.registroForm = fb.group({
+        'cadena' : this.cadena
+   });}
     cadena: string;
     AA_Buscar: string;
     data_Buscar: any[];
@@ -63,6 +68,14 @@ export class BusquedaComponent implements OnInit {
   navegarMusica()
   {
     this.router.navigate(['musica'])
+  }
+
+  navegarBusqueda()
+  {
+    this._servicioCompartido.setCadena(this.cadena);
+    this.cadena = this._servicioCompartido.getCadena();
+    console.log(this.cadena);
+    this.obtenerBusqueda();
   }
 
   obtenerBusqueda(){

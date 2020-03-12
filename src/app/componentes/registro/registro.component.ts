@@ -5,6 +5,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Http, Response } from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import { FormGroup } from '@angular/forms';
+import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
 
 @Component({
   selector: 'app-registro',
@@ -13,8 +14,9 @@ import { FormGroup } from '@angular/forms';
 })
 export class RegistroComponent implements OnInit {
   DatosError:boolean = false;
-  
+  cadena: string;
   registroForm: FormGroup;
+  registro: FormGroup;
   email: string;
   nombre: string
   apellidoPa: string;
@@ -22,16 +24,20 @@ export class RegistroComponent implements OnInit {
   telefono: string;
   contrasena: string;
   repContrasena: string;
-  constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http){
+  constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, fb2: FormBuilder,private _servicioCompartido: servicioCompartido){
     this.registroForm = fb.group({
       'email' : [null, Validators.required],
       'nombre': this.nombre,
-      'apellidoPa': this.apellidoPa,
+      'apellidoPa': this.apellidoPa,  
       'apellidoMa': this.apellidoMa,
       'telefono': this.telefono,
       'contrasena': this.contrasena,
       'repContrasena': this.repContrasena
-    });}
+    });
+  this.registro = fb2.group({
+    'cadena': this.cadena
+  });
+  }
 
     ngOnInit() {
     }
@@ -68,6 +74,8 @@ export class RegistroComponent implements OnInit {
 
     navegarBusqueda()
     {
+      this._servicioCompartido.setCadena(this.cadena);
+      console.log(this.cadena);
       this.router.navigate(['busqueda'])
     }
     

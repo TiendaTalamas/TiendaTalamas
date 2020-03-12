@@ -7,6 +7,7 @@ import { URLSearchParams } from "@angular/http";
 import 'rxjs/add/operator/map';
 
 import {Location} from "@angular/common";
+import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
 
 
 
@@ -17,7 +18,8 @@ import {Location} from "@angular/common";
 })
 export class CardComponent implements OnInit {
   DatosError:boolean = false;
- 
+  cadena: string;
+  registro: FormGroup;
   registroForm: FormGroup;
   email: string;
   contrasena: string;
@@ -32,13 +34,20 @@ ngOnInit(){
 
 }
 
-  constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http){
+  constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, private fb2: FormBuilder, private _servicioCompartido: servicioCompartido) {
+    
+  {
     this.registroForm = fb.group({
       'email' : [null, Validators.required],
   
       'contrasena': this.contrasena,
 
-    });}
+    });
+    this.registro = fb2.group({
+      'cadena': this.cadena
+    });
+  }
+}
 
   registrar() {     
     if(!this.DatosError)
@@ -120,6 +129,8 @@ ngOnInit(){
   
   navegarBusqueda()
   {
+    this._servicioCompartido.setCadena(this.cadena);
+    console.log(this.cadena);
     this.router.navigate(['busqueda'])
   }
   

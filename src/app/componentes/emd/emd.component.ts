@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import {Location} from "@angular/common";
 import { producto } from '../../servicios/producto';
 import { servicioCompartido } from '../../servicios/servicioCompartido';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-emd',
@@ -13,9 +14,14 @@ import { servicioCompartido } from '../../servicios/servicioCompartido';
   styleUrls: ['./emd.component.css']
 })
 export class EMDComponent implements OnInit {
-
+registroForm:FormGroup;
+cadena:string;
   constructor(private http: Http,private router: Router, private location:Location,
-    private _servicioCompartido : servicioCompartido) { }
+    private _servicioCompartido : servicioCompartido, private fb:FormBuilder){   
+      this.registroForm = fb.group({
+        'cadena' : this.cadena
+
+   });}
 
   ngOnInit() {
   }
@@ -54,7 +60,9 @@ export class EMDComponent implements OnInit {
 
   navegarBusqueda()
   {
-    this.router.navigate(['busqueda']);
+    this._servicioCompartido.setCadena(this.cadena);
+    console.log(this.cadena);
+    this.router.navigate(['busqueda'])
   }
 
 }

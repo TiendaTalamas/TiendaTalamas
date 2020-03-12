@@ -6,12 +6,15 @@ import {Router} from "@angular/router";
 import {Location} from "@angular/common";
 import { producto } from '../../servicios/producto';
 import { servicioCompartido } from '../../servicios/servicioCompartido';
+import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-libreria',
   templateUrl: './libreria.component.html',
   styleUrls: ['./libreria.component.css']
 })
 export class LibreriaComponent implements OnInit {
+  cadena: string;
+  registroForm: FormGroup;
 
   Categoria: string;
   AA: string;
@@ -35,7 +38,11 @@ export class LibreriaComponent implements OnInit {
 
   //Constructor
   constructor(private http: Http,private router: Router, private location:Location,
-    private _servicioCompartido : servicioCompartido) { }
+    private _servicioCompartido : servicioCompartido, fb : FormBuilder) {   
+      this.registroForm = fb.group({
+        'cadena' : this.cadena
+
+   });}
  
   obtenerArticulos() {
     let body = new URLSearchParams();
@@ -150,7 +157,10 @@ export class LibreriaComponent implements OnInit {
 
   navegarBusqueda()
   {
+    this._servicioCompartido.setCadena(this.cadena);
+    console.log(this.cadena);
     this.router.navigate(['busqueda'])
   }
+
 
 }

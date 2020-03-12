@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
 import { servicioCompartido } from '../../servicios/servicioCompartido';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-musica',
@@ -9,8 +10,13 @@ import { servicioCompartido } from '../../servicios/servicioCompartido';
   styleUrls: ['./musica.component.css']
 })
 export class MusicaComponent implements OnInit {
+  registroForm: FormGroup;
+  cadena:string;
+  constructor(private router: Router, private _servicioCompartido: servicioCompartido, private fb: FormBuilder) {   
+    this.registroForm = fb.group({
+      'cadena' : this.cadena
 
-  constructor(private router: Router, private _servicioCompartido: servicioCompartido) { }
+ });}
   Categoria : string;
   
 
@@ -63,6 +69,8 @@ export class MusicaComponent implements OnInit {
 
   navegarBusqueda()
   {
+    this._servicioCompartido.setCadena(this.cadena);
+    console.log(this.cadena);
     this.router.navigate(['busqueda'])
   }
 

@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import { URLSearchParams } from "@angular/http";
 import {Location} from "@angular/common";
 import { producto } from '../../servicios/producto';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 
 
@@ -17,9 +18,15 @@ import { producto } from '../../servicios/producto';
 })
 export class CategoriaProductoComponent implements OnInit {
   nombre: string;
+  cadena: string;
+  registroForm: FormGroup;
 
   constructor(private http: Http,private router: Router, private location:Location,
-    private _servicioCompartido : servicioCompartido) { }
+    private _servicioCompartido : servicioCompartido, private fb:FormBuilder) {   
+      this.registroForm = fb.group({
+        'cadena' : this.cadena
+
+   });}
   productoObjeto : producto[];
   Logo : string;
     
@@ -251,7 +258,13 @@ export class CategoriaProductoComponent implements OnInit {
     }
  
   }
- 
+
+  navegarBusqueda()
+  {
+    this._servicioCompartido.setCadena(this.cadena);
+    console.log(this.cadena);
+    this.router.navigate(['busqueda'])
+  }
 
   
   navegarInicio()
