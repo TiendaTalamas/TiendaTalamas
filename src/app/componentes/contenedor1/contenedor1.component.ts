@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import {Location} from "@angular/common";
 import { producto } from '../../servicios/producto';
 import { servicioCompartido } from '../../servicios/servicioCompartido';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-contenedor1',
@@ -18,6 +19,9 @@ export class Contenedor1Component implements OnInit {
   productoObjeto: producto[];
   LimiteI :string;
   LimiteF :string;
+  cadena: string;
+  registroForm: FormGroup;
+
 
   
     //Datos Slider
@@ -82,8 +86,13 @@ export class Contenedor1Component implements OnInit {
 
 
 
-  constructor(private http: Http,private router: Router, private location:Location,
-    private _servicioCompartido : servicioCompartido) { }
+  constructor(private http: Http,private router: Router,private fb: FormBuilder, private location:Location,
+    private _servicioCompartido : servicioCompartido){   
+       this.registroForm = fb.group({
+         'cadena' : this.cadena
+
+    });}
+
 
   ngOnInit() {
 
@@ -357,6 +366,8 @@ export class Contenedor1Component implements OnInit {
 
   navegarBusqueda()
   {
+    this._servicioCompartido.setCadena(this.cadena);
+    console.log(this.cadena);
     this.router.navigate(['busqueda'])
   }
 

@@ -68,19 +68,18 @@
         </div>
 
         <div class="col-md-10 col-sm-8 main-content">
-          <section class="details-card">
+          <section class="details-card" *ngFor = "let resultado of articulosArray_Buscar; let i = index">
               <hr color="black"/>
             <div class="container-fluid mt-2 " style="background-color:#fff;">
                 <div class="row ">
                         <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
                             
-                                <img src="assets/camisa.png" width="250" height="250">
+                                <img src="{{resultado.Imagen}}" width="250" height="250">
                                  
                         </div>
                         </div>
              
             </div>
-            <hr color="black"/>
           </section>
         
       
