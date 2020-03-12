@@ -12,6 +12,7 @@ import { URLSearchParams } from "@angular/http";
   templateUrl: './venta-libro.component.html',
   styleUrls: ['./venta-libro.component.css']
 })
+
 export class VentaLibroComponent implements OnInit {
   Nombre: string;
   Categoria: string;
@@ -20,7 +21,7 @@ export class VentaLibroComponent implements OnInit {
   P1: boolean;
   P2: boolean;
   P3: boolean;
-  P4: boolean;
+  P4: boolean; 
   //array para guardar los valores
 
   constructor(private _servicioCompartido : servicioCompartido,private router:Router,private http:Http) { }
