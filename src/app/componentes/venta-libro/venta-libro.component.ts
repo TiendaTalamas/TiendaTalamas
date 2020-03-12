@@ -12,13 +12,16 @@ import { URLSearchParams } from "@angular/http";
   templateUrl: './venta-libro.component.html',
   styleUrls: ['./venta-libro.component.css']
 })
+
 export class VentaLibroComponent implements OnInit {
+  Nombre: string;
   Categoria: string;
   IdProducto: string;
+  limiteI: string;
   P1: boolean;
   P2: boolean;
   P3: boolean;
-  P4: boolean;
+  P4: boolean; 
   //array para guardar los valores
 
   constructor(private _servicioCompartido : servicioCompartido,private router:Router,private http:Http) { }
@@ -30,6 +33,10 @@ export class VentaLibroComponent implements OnInit {
   xxxMap = new Map();
   valuesKeys = new Array;
   productos = new Array;
+  productosCarrousel = new Array;
+  productosCarrousel2 = new Array;
+  productosCarrousel3 = new Array;
+
 
 
 
@@ -50,6 +57,13 @@ export class VentaLibroComponent implements OnInit {
     else if(this.Categoria == "Instrumentos"){
       this.P2 = true;
     }
+    this.limiteI = "0";
+    this.LibroCarrousel();
+    this.limiteI = "6";
+    this.LibroCarrousel();
+    this.limiteI = "12";
+    this.LibroCarrousel();
+
 
 
 
@@ -82,12 +96,97 @@ export class VentaLibroComponent implements OnInit {
           }
     });
   }
+
+  LibroCarrousel() {
+    let body = new URLSearchParams();
+    body.append('categoria', this.Categoria);
+    body.append('limiteI', this.limiteI);
+    if(this.limiteI == "0"){
+    this.http.post('http://192.168.1.99/talamas/obtenerCarruselVenta.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA = "";
+            this.data = [];
+            console.log(result);
+            this.productosCarrousel = result;
+            for (var key in result) {
+            this.AA = this.AA + key;
+            if (result.hasOwnProperty(key)) {
+              this.val = result[key];
+              this.data.push(Object.keys(this.val));
+              for (var i = 0; i < Object.keys(this.val).length; i++) {
+              this.contenedor = Object.keys(this.val)[i];
+              Object.entries(this.val)[i]
+               
+                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+
+                }
+             }
+          }
+    });
+  }
+  if(this.limiteI == "6"){
+    this.http.post('http://192.168.1.99/talamas/obtenerCarruselVenta.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA = "";
+            this.data = [];
+            console.log(result);
+            this.productosCarrousel2 = result;
+            for (var key in result) {
+            this.AA = this.AA + key;
+            if (result.hasOwnProperty(key)) {
+              this.val = result[key];
+              this.data.push(Object.keys(this.val));
+              for (var i = 0; i < Object.keys(this.val).length; i++) {
+              this.contenedor = Object.keys(this.val)[i];
+              Object.entries(this.val)[i]
+               
+                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+
+                }
+             }
+          }
+    });
+  }
+  if(this.limiteI == "12"){
+    this.http.post('http://192.168.1.99/talamas/obtenerCarruselVenta.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA = "";
+            this.data = [];
+            console.log(result);
+            this.productosCarrousel3 = result;
+            for (var key in result) {
+            this.AA = this.AA + key;
+            if (result.hasOwnProperty(key)) {
+              this.val = result[key];
+              this.data.push(Object.keys(this.val));
+              for (var i = 0; i < Object.keys(this.val).length; i++) {
+              this.contenedor = Object.keys(this.val)[i];
+              Object.entries(this.val)[i]
+               
+                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+
+                }
+             }
+          }
+    });
+  }
+  }
   //Obtiene el libro cuando recibe datos
   obtenerArticulo(){
 
     let body = new URLSearchParams();
       
     body.append('id_producto', this.IdProducto);
+
 
     this.http.post('http://192.168.1.99/talamas/obtenerUnicoArticulo.php', body)
     .map((res:Response) => res.json())
@@ -114,6 +213,20 @@ export class VentaLibroComponent implements OnInit {
     });
 
   }
+
+  
+  masInformacion(IdProducto: string, Categoria: string){
+    this.Nombre = IdProducto;
+    console.log(this.Nombre);
+    this._servicioCompartido.setIdProducto(IdProducto);
+    this._servicioCompartido.setCategoria(Categoria);
+    this.Categoria = this._servicioCompartido.getCategoria();
+    this.IdProducto = this._servicioCompartido.getIdProducto();  
+    this.obtenerArticulo();
+
+
+  }
+
 
   navegarInicio()
   {
