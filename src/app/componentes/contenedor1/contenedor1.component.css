@@ -230,6 +230,26 @@ h1
 
 
 
+@media only  screen and (max-width:400px)
+{
+  #slider1
+  {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width:1500px) and (min-width:500px)
+{
+  .Prueba
+  {
+    display: none !important;
+  }
+
+}
+
+
+
+
 
 
 
