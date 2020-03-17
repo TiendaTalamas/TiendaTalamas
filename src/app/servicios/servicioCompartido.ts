@@ -83,6 +83,7 @@ export class servicioCompartido{
 
     getCadena(){
         return this.Cadena;
+        
     }
 
 
