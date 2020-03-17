@@ -38,6 +38,21 @@ button
 text-align:center;
 }
 
+@media only  screen and (max-width:400px)
+{
+    #Texto
+    {
+       text-align: center;
+    }
 
+    #img 
+    {
+    margin-left:-25px;
+    }
 
+    #boton
+    {
+        margin-left:110px;
+    }
+}
 

@@ -48,8 +48,8 @@
     </div>
     <!-- forma de inicio -->
     <form>
-      <input type="text" [(ngModel)]="email"  id="login" class="fadeIn second" name="login" placeholder="Correo Electronico">
-      <input type="text" [(ngModel)]="contrasena"  id="password" class="fadeIn third" name="login" placeholder="Contraseña">
+      <input [(ngModel)]="email"  id="login" class="fadeIn second" name="login" placeholder="Correo Electronico">
+      <input type="password" [(ngModel)]="contrasena"  id="password" class="fadeIn third" name="login" placeholder="Contraseña">
       <input type="submit" (click) = "registrar()" class="fadeIn fourth" value="Iniciar sesión">
     </form>
 
