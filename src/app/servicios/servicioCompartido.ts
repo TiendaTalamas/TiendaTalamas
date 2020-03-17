@@ -1,5 +1,9 @@
 import {Injectable} from '@angular/core';
 import { producto } from './producto';
+import { strictEqual } from 'assert';
+import { stringify } from 'querystring';
+import { Http, Response } from '@angular/http';
+import { URLSearchParams } from "@angular/http";
 
 @Injectable()
 export class servicioCompartido{
@@ -8,6 +12,45 @@ export class servicioCompartido{
   SubCategoria : string;
   IdProducto: string;
   Cadena: string;
+
+  CompUsuario: boolean;
+  contrasena: string;
+  usuario: string;
+  miJson: JSON;
+  constructor(private http: Http) {}   
+  comprobarUsuario() 
+  {
+    var miJson;
+    var contrasena;
+    var usuario;
+      miJson = JSON.parse(localStorage.getItem('a_user'))
+      contrasena = miJson[0]['p_user'];
+      usuario = miJson[0]['e_user'];
+      let body = new URLSearchParams();
+
+  body.append('email', usuario);
+
+
+  body.append('contrasena', contrasena);
+
+  this.http.post('http://192.168.1.99/talamas/comprobarSesion.php', body)
+  .map((res:Response) => res.text())
+          .subscribe(result => 
+            {
+                if(result == "OK")
+                {
+                 this.CompUsuario =true;
+
+                }
+                else
+                {
+                  this.CompUsuario=false;
+                  this.cerrarSesion();
+
+                }
+
+  });
+  } 
     setProductoData(data: producto[]) {    
         this.productoData= data;        
     }
@@ -46,5 +89,10 @@ export class servicioCompartido{
         return this.Cadena;
     }
 
+
+    cerrarSesion()
+    {
+        localStorage.clear();
+    }
 
 }

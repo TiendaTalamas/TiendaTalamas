@@ -30,7 +30,14 @@ export class CardComponent implements OnInit {
   xxxMap = new Map();
   valuesKeys = new Array;
   articulosArray = new Array;
+
 ngOnInit(){
+this._servicioCompartido.comprobarUsuario();
+alert(this._servicioCompartido.CompUsuario);
+if(!this._servicioCompartido.CompUsuario)
+{
+this.navegarInicio();
+}
 
 }
 
@@ -71,7 +78,8 @@ ngOnInit(){
               this.AA = "";
             this.data = [];
             console.log(result);
-            this.articulosArray = result;
+            localStorage.setItem("a_user","[{\"e_user\":\""+result[0]['email']+"\",\"p_user\":\""+result[0]['Contrasena']+"\"}]");
+            
             for (var key in result) {
             this.AA = this.AA + key;
             if (result.hasOwnProperty(key)) {

@@ -269,6 +269,7 @@ export class CategoriaProductoComponent implements OnInit {
   
   navegarInicio()
   {
+    localStorage.setItem('Nombre', 'Miguel Antonio');
     this.router.navigate(['']);
     
   }

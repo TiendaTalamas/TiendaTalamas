@@ -14,7 +14,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./contenedor1.component.css']
 })
 export class Contenedor1Component implements OnInit {
-  //Variables auciliares
+  //Variables auxiliares
+  CompUsuario:boolean;
+
   nombre: string;
   productoObjeto: producto[];
   LimiteI :string;
@@ -109,13 +111,14 @@ export class Contenedor1Component implements OnInit {
     this.obtenerRecientes();
     this.obtenerMasVendidosInstrumentos();
 
-
-
-
-
     this.obtenerRecomendados();
     this.obtenerSlider();
+    this._servicioCompartido.comprobarUsuario();
     
+    
+ 
+
+
   }
 
   //Obteniendo datos
