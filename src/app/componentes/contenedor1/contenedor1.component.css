@@ -1,3 +1,4 @@
+
 .carousel-control-next, .carousel-control-prev{
 	width: 1% !important;
 }
@@ -236,17 +237,58 @@ h1
   {
     display: none !important;
   }
+  #cards
+  {
+    display: none !important;
+    overflow: hidden;
+  }
+
+  .carousel-inner
+  {
+    display: none !important;
+    overflow: hidden;
+  }
+  .carousel-indicators
+  {
+    display: none;
+    overflow: hidden;
+  }
+  .carousel-control-prev, .carousel-control-next
+  {
+    display: none;
+    overflow: hidden;
+  }
 }
 
-@media only screen and (max-width:1500px) and (min-width:500px)
+@media only screen and (max-width:2600px) and (min-width:500px)
 {
   .Prueba
   {
     display: none !important;
+    overflow: hidden;
   }
 
 }
 
+#contenedor img{
+  width: 125%;
+  height:100%;
+  margin-left: -14px;
+}
+
+.banner-breadcum
+{
+  overflow:hidden;
+} 
+
+.Prueba
+{
+  overflow: hidden;
+}
+
+
+
+  
 
 
 

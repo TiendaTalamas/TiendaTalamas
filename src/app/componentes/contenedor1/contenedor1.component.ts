@@ -78,6 +78,15 @@ export class Contenedor1Component implements OnInit {
     articulosArray_Vendidos_Instrumentos2 = new Array;
     articulosArray_Vendidos_Instrumentos3 = new Array;
 
+    //datos Celualar
+   AA_Celualar: string;
+   data_Celular: any[];
+   val_Celular: any[];
+   contenedor_Celular: string;
+   xxxMap_Celular = new Map();
+   valuesKeys_Celular = new Array;
+   articulosArray_Celular = new Array;
+
 
 
 
@@ -108,11 +117,7 @@ export class Contenedor1Component implements OnInit {
     this.LimiteI = "12";
     this.obtenerRecientes();
     this.obtenerMasVendidosInstrumentos();
-
-
-
-
-
+    this.obtenerLibrosCelular()
     this.obtenerRecomendados();
     this.obtenerSlider();
     
@@ -263,6 +268,36 @@ export class Contenedor1Component implements OnInit {
     });
 
   }
+
+  }
+
+  obtenerLibrosCelular()
+  {
+    let body = new URLSearchParams();
+    this.http.post('http://192.168.1.99/talamas/obtenerLibroCelular.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Celualar = "";
+            this.data_Celular = [];
+            console.log(result);
+            this.articulosArray_Celular = result;
+            for (var key in result) {
+            this.AA_Celualar = this.AA_Celualar + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Celular = result[key];
+              this.data_Celular.push(Object.keys(this.val_Celular));
+              for (var i = 0; i < Object.keys(this.val_Celular).length; i++) {
+              this.contenedor_Celular = Object.keys(this.val_Celular)[i];
+              Object.entries(this.val_Celular)[i]
+               
+                this.xxxMap_Celular.set(Object.keys(this.val_Celular)[i], Object.values(this.val_Celular)[i]);
+                this.valuesKeys_Celular.push(Object.keys(this.val_Celular)[i], Object.values(this.val_Celular)[i]);
+
+                }
+             }
+          }
+    });
 
   }
 
