@@ -57,8 +57,7 @@ this.navegarInicio();
 }
 
   registrar() {     
-    if(!this.DatosError)
-    {
+
       
     let body = new URLSearchParams();
   
@@ -95,9 +94,8 @@ this.navegarInicio();
                 }
              }
           }
+          this.navegarInicio();
     });
-
-    }
 
     
   }
