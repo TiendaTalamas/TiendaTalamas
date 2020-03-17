@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
 
 import {Location} from "@angular/common";
 import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
+import { isNull, isUndefined } from 'util';
 
 
 
@@ -30,7 +31,14 @@ export class CardComponent implements OnInit {
   xxxMap = new Map();
   valuesKeys = new Array;
   articulosArray = new Array;
+
 ngOnInit(){
+this._servicioCompartido.comprobarUsuario();
+alert(this._servicioCompartido.CompUsuario);
+if(isUndefined(this._servicioCompartido.CompUsuario)) 
+{
+this.navegarInicio();
+}
 
 }
 
@@ -50,8 +58,7 @@ ngOnInit(){
 }
 
   registrar() {     
-    if(!this.DatosError)
-    {
+
       
     let body = new URLSearchParams();
   
@@ -71,7 +78,12 @@ ngOnInit(){
               this.AA = "";
             this.data = [];
             console.log(result);
-            this.articulosArray = result;
+            localStorage.setItem('Nombre_U',result[0]['Nombre']);
+            localStorage.setItem('ApellidoPa_U',result[0]['ApellidoPa']);
+            localStorage.setItem('ApellidoMa_U',result[0]['ApellidoMa']);
+            localStorage.setItem('email_U',result[0]['email']);
+            localStorage.setItem('NumeroTel_U',result[0]['NumeroTel']);
+            localStorage.setItem('Imagen_U',result[0]['Imagen']);
             for (var key in result) {
             this.AA = this.AA + key;
             if (result.hasOwnProperty(key)) {
@@ -87,9 +99,8 @@ ngOnInit(){
                 }
              }
           }
+          this.navegarInicio();
     });
-
-    }
 
     
   }
