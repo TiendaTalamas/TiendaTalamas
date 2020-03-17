@@ -20,18 +20,14 @@ export class servicioCompartido{
   constructor(private http: Http) {}   
   comprobarUsuario() 
   {
-    var miJson;
-    var contrasena;
     var usuario;
-      miJson = JSON.parse(localStorage.getItem('a_user'))
-      contrasena = miJson[0]['p_user'];
-      usuario = miJson[0]['e_user'];
+
+      usuario =localStorage.getItem('email_U');
       let body = new URLSearchParams();
 
   body.append('email', usuario);
 
 
-  body.append('contrasena', contrasena);
 
   this.http.post('http://192.168.1.99/talamas/comprobarSesion.php', body)
   .map((res:Response) => res.text())

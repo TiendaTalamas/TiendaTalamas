@@ -34,7 +34,7 @@ export class CardComponent implements OnInit {
 ngOnInit(){
 this._servicioCompartido.comprobarUsuario();
 alert(this._servicioCompartido.CompUsuario);
-if(!this._servicioCompartido.CompUsuario)
+if(this._servicioCompartido.CompUsuario)
 {
 this.navegarInicio();
 }
@@ -77,8 +77,12 @@ this.navegarInicio();
               this.AA = "";
             this.data = [];
             console.log(result);
-            localStorage.setItem("a_user","[{\"e_user\":\""+result[0]['email']+"\",\"p_user\":\""+result[0]['Contrasena']+"\"}]");
-            
+            localStorage.setItem('Nombre_U',result[0]['Nombre']);
+            localStorage.setItem('ApellidoPa_U',result[0]['ApellidoPa']);
+            localStorage.setItem('ApellidoMa_U',result[0]['ApellidoMa']);
+            localStorage.setItem('email_U',result[0]['email']);
+            localStorage.setItem('NumeroTel_U',result[0]['NumeroTel']);
+            localStorage.setItem('Imagen_U',result[0]['Imagen']);
             for (var key in result) {
             this.AA = this.AA + key;
             if (result.hasOwnProperty(key)) {
