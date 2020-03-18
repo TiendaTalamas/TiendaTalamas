@@ -7,6 +7,13 @@ import { URLSearchParams } from "@angular/http";
 
 @Injectable()
 export class servicioCompartido{
+  Nombre:string;
+  ApellidoPa:string;
+  ApellidoMa:string;
+  NumeroTel:String;
+  email:String;
+  Imagen:string;
+
   productoData : producto[];
   Categoria : string;
   SubCategoria : string;
@@ -44,7 +51,12 @@ export class servicioCompartido{
                   this.cerrarSesion();
 
                 }
-
+                this.Nombre = localStorage.getItem('Nombre_U');
+                this.ApellidoPa = localStorage.getItem('ApellidoPa_U');
+                this.ApellidoMa = localStorage.getItem('ApellidoMa_U');
+                this.email = localStorage.getItem('email_U');
+                this.NumeroTel = localStorage.getItem('NumeroTel_U');
+                this.Imagen = localStorage.getItem('Imagen_U');
   });
   } 
     setProductoData(data: producto[]) {    

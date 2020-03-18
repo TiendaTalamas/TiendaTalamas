@@ -199,6 +199,7 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros; let i = index">
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+          {{_servicioCompartido.ApellidoPa}}
       </div>
   </div>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -334,46 +335,6 @@ x
   </div> 
   </div>
   </div>
-
- 
-
-  <p>
-    <a class="btn btn-primary" style="color:#fff; border-color:black; background-color:black;" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-      Usuario
-    </a>
-  </p>
-  <div class="collapse" id="collapseExample">
-    <div class="card card-body">
-     
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <router-outlet></router-outlet>
