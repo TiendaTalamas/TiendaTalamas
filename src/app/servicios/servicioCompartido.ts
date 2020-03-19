@@ -102,6 +102,7 @@ export class servicioCompartido{
     cerrarSesion()
     {
         localStorage.clear();
+        
     }
 
 }

@@ -16,6 +16,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class Contenedor1Component implements OnInit {
   //Variables auxiliares
   CompUsuario:boolean;
+  
 
   nombre: string;
   productoObjeto: producto[];
@@ -106,7 +107,7 @@ export class Contenedor1Component implements OnInit {
 
 
   ngOnInit() {
-
+    sessionStorage.setItem('posicion',"master");
     this.obtenerArticulos();
     this.obtenerOfertas();
     //Productos Libros
@@ -408,12 +409,6 @@ export class Contenedor1Component implements OnInit {
     this.router.navigate(['musica'])
   }
 
-  navegarBusqueda()
-  {
-    this._servicioCompartido.setCadena(this.cadena);
-    console.log(this.cadena);
-    this.router.navigate(['busqueda'])
-  }
 
   obtenerMasVendidosInstrumentos() {
     if(this.LimiteI == "0")
