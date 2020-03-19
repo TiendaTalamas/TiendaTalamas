@@ -26,6 +26,7 @@ export class BusquedaComponent implements OnInit {
 
    productoObjeto : producto[];
    Logo : string;
+   nombre: string;
 
    Categoria : string;
    SubCategoria: string;
@@ -163,6 +164,15 @@ export class BusquedaComponent implements OnInit {
              }
           }
     });
+
+  }
+
+  masInformacion(IdProducto: string, Categoria: string){
+    this.nombre = IdProducto;
+    console.log(this.nombre);
+    this.router.navigate(['venta']);
+    this._servicioCompartido.setIdProducto(IdProducto);
+    this._servicioCompartido.setCategoria(Categoria);
 
   }
 
