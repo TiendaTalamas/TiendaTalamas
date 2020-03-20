@@ -31,6 +31,22 @@ export class AppComponent {
   ngOnInit()
   {
 
+
+  
+  }
+  
+  navegarInicio()
+  {
+    this.router.navigate(['']);
+    
+  }
+
+  navegarSesion()
+  {
+
+    this.router.navigate(['card'])
+
+
   }
   
  

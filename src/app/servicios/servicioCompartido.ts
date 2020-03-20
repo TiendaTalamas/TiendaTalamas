@@ -33,6 +33,7 @@ export class servicioCompartido{
       let body = new URLSearchParams();
 
   body.append('email', usuario);
+  body.append('token', localStorage.getItem('Token_U'));
 
 
 
@@ -40,23 +41,22 @@ export class servicioCompartido{
   .map((res:Response) => res.text())
           .subscribe(result => 
             {
-                if(result == "OK")
-                {
-                 this.CompUsuario =true;
-
-                }
-                else
+                if(result == "Error")
                 {
                   this.CompUsuario=false;
                   this.cerrarSesion();
 
                 }
+                else{ 
+                this.CompUsuario=true;
+                localStorage.setItem('Token_U',result);
                 this.Nombre = localStorage.getItem('Nombre_U');
                 this.ApellidoPa = localStorage.getItem('ApellidoPa_U');
                 this.ApellidoMa = localStorage.getItem('ApellidoMa_U');
                 this.email = localStorage.getItem('email_U');
                 this.NumeroTel = localStorage.getItem('NumeroTel_U');
                 this.Imagen = localStorage.getItem('Imagen_U');
+                }
   });
   } 
     setProductoData(data: producto[]) {    
