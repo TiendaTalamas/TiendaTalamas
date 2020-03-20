@@ -102,8 +102,9 @@ export class servicioCompartido{
 
     cerrarSesion()
     {
-        this.router.navigateByUrl("http://localhost:4200/");
+        
         localStorage.clear();
+    
         
     }
 
