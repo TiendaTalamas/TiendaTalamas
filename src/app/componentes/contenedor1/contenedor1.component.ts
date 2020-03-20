@@ -409,6 +409,13 @@ export class Contenedor1Component implements OnInit {
     this.router.navigate(['musica'])
   }
 
+  navegarBusqueda()
+  {
+    this._servicioCompartido.setCadena(this.cadena);
+    console.log(this.cadena);
+    this.router.navigate(['busqueda'])
+  }
+
 
   obtenerMasVendidosInstrumentos() {
     if(this.LimiteI == "0")
