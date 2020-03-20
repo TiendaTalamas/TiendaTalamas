@@ -122,6 +122,7 @@ export class LibreriaComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._servicioCompartido.comprobarUsuario();
     this.Categoria = "Libros";
   }
   navegarInicio()

@@ -24,6 +24,8 @@ cadena:string;
    });}
 
   ngOnInit() {
+    this._servicioCompartido.comprobarUsuario();
+
   }
   navegarInicio()
   {

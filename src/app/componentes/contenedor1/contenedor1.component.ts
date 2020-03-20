@@ -107,7 +107,6 @@ export class Contenedor1Component implements OnInit {
 
 
   ngOnInit() {
-    sessionStorage.setItem('posicion',"master");
     this.obtenerArticulos();
     this.obtenerOfertas();
     //Productos Libros

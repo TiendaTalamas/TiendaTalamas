@@ -32,7 +32,8 @@ export class MusicaComponent implements OnInit {
   
   }
   ngOnInit() {
-    
+    this._servicioCompartido.comprobarUsuario();
+
   }
 
   navegarInicio()
