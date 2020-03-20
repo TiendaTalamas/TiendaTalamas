@@ -34,6 +34,7 @@ export class servicioCompartido{
 
   body.append('email', usuario);
   body.append('token', localStorage.getItem('Token_U'));
+  
 
 
 
