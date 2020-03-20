@@ -48,7 +48,7 @@ export class servicioCompartido{
 
                 }
                 else{ 
-                this.CompUsuario=false;
+                this.CompUsuario=true;
                 localStorage.setItem('Token_U',result);
                 this.Nombre = localStorage.getItem('Nombre_U');
                 this.ApellidoPa = localStorage.getItem('ApellidoPa_U');
