@@ -4,6 +4,7 @@ import { strictEqual } from 'assert';
 import { stringify } from 'querystring';
 import { Http, Response } from '@angular/http';
 import { URLSearchParams } from "@angular/http";
+import { Router } from '@angular/router';
 
 @Injectable()
 export class servicioCompartido{
@@ -24,7 +25,7 @@ export class servicioCompartido{
   contrasena: string;
   usuario: string;
   miJson: JSON;
-  constructor(private http: Http) {}   
+  constructor(private http: Http, private router: Router) {}   
   comprobarUsuario() 
   {
     var usuario;
@@ -34,7 +35,6 @@ export class servicioCompartido{
 
   body.append('email', usuario);
   body.append('token', localStorage.getItem('Token_U'));
-  
 
 
 
@@ -102,6 +102,7 @@ export class servicioCompartido{
 
     cerrarSesion()
     {
+        this.router.navigateByUrl("http://localhost:4200/");
         localStorage.clear();
         
     }
