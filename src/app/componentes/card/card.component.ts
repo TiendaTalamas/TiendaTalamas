@@ -33,7 +33,7 @@ export class CardComponent implements OnInit {
   articulosArray = new Array;
 
 ngOnInit(){
-
+  this._servicioCompartido.comprobarUsuario();
 
 }
 
