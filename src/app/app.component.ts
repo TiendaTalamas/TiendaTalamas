@@ -30,11 +30,9 @@ export class AppComponent {
   {}
   ngOnInit()
   {
-    alert(sessionStorage.getItem('posicion'));
-   if(sessionStorage.getItem('posicion') == "master")
-   {
-      this.Pag1 = true;
-   } 
+
+
+  
   }
   
   navegarInicio()
