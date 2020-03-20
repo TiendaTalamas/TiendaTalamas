@@ -58,6 +58,7 @@ export class BusquedaComponent implements OnInit {
  
 
   ngOnInit() {
+    this._servicioCompartido.comprobarUsuario();
     this.cadena = this._servicioCompartido.getCadena();
     console.log(this.cadena);
     this.obtenerBusqueda();

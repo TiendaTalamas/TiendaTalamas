@@ -51,6 +51,7 @@ export class CategoriaProductoComponent implements OnInit {
 
 
   ngOnInit() {
+    this._servicioCompartido.comprobarUsuario();
     this.Categoria = this._servicioCompartido.getCategoria();
     this.SubCategoria = this._servicioCompartido.getSubCategoria();
     if(this.Categoria == "Instrumentos")

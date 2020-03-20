@@ -31,12 +31,17 @@
     
     <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-      <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
+      <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #fe346e; color:white" (click)="navegarBusqueda();">Buscar</button>
     </form>
-    <button style="background-color: #fe346e; border-color: #fe346e;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
-      
-<button style="background-color: #fe346e; border-color: #fe346e;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>
-  </div>  
+      <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+        <a href="http://localhost:4200/"><button style="background-color: #fe346e; border-color: #212121;" type="button" class="btn btn-primary"  (click)="_servicioCompartido.cerrarSesion();" >Cerrar Sesion</button></a>      
+        </ng-container>
+        <ng-template #elseTemplate>
+          <button style="background-color: #fe346e; border-color: #fe346e;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
+          
+          <button style="background-color: #fe346e; border-color: #fe346e;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+        </ng-template> 
+       </div>  
 </nav>
 
 <div class="container-fluid">
