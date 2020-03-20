@@ -503,7 +503,8 @@ export class Contenedor1Component implements OnInit {
   }
   navegarMusica()
   {
-    this.router.navigate(['musica']); 
+    this.router.navigate(['musica']);
+
   }
 
   navegarBusqueda()
