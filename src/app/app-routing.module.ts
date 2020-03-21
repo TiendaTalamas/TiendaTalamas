@@ -9,6 +9,7 @@ import {EMDComponent} from './componentes/emd/emd.component'
 import {MusicaComponent} from './componentes/musica/musica.component'
 import {CategoriaProductoComponent} from './componentes/categoria-producto/categoria-producto.component'
 import {BusquedaComponent} from './componentes/busqueda/busqueda.component'
+import {CarritoComponent} from './componentes/carrito/carrito.component'
 
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'musica', component: MusicaComponent,},
   {path: 'categoria', component: CategoriaProductoComponent,}, 
   {path: 'busqueda', component: BusquedaComponent,},
+  {path: 'carrito', component: CarritoComponent,},
 
 
 ];
