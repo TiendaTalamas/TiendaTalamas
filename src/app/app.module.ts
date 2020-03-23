@@ -19,6 +19,7 @@ import { EMDComponent } from './componentes/emd/emd.component';
 import { MusicaComponent } from './componentes/musica/musica.component';
 import { CategoriaProductoComponent } from './componentes/categoria-producto/categoria-producto.component';
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
+import { ConfiguracionUsuarioComponent } from './componentes/configuracion-usuario/configuracion-usuario.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
     MusicaComponent,
     CategoriaProductoComponent,
     BusquedaComponent,
+    ConfiguracionUsuarioComponent,
    
   ],
   imports: [
