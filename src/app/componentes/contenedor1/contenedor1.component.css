@@ -237,11 +237,6 @@ h1
   {
     display: none !important;
   }
-  #cards
-  {
-    display: none !important;
-    overflow: hidden;
-  }
 
   .carousel-inner
   {
