@@ -93,13 +93,13 @@
   <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
   <form method="post" id="passwordForm">
-  <input type="password" class="input-lg form-control" name="password1" id="password1" placeholder="Antigua contraseña" autocomplete="off">
+  <input type="password" class="input-lg form-control" [(ngModel)]="contrasenaActual" name="password1" id="password1" placeholder="Antigua contraseña" autocomplete="off">
   <br>
-  <input type="password" class="input-lg form-control" name="password1" id="password1" placeholder="Contraseña Nueva" autocomplete="off">
+  <input type="password" class="input-lg form-control" [(ngModel)]="contrasenaNueva" name="password1" id="password1" placeholder="Contraseña Nueva" autocomplete="off">
   <br>
-  <input type="password" class="input-lg form-control" name="password2" id="password2" placeholder="Repetir Contraseña" autocomplete="off">
+  <input type="password" class="input-lg form-control"[(ngModel)]="contrasenaRepetida" name="password2" id="password2" placeholder="Repetir Contraseña" autocomplete="off">
   <br>
-  <input type="submit" class="col-xs-12 btn btn-primary btn-load btn-lg" data-loading-text="Changing Password..." value="Cambiar Contraseña">
+  <input type="submit" class="col-xs-12 btn btn-primary btn-load btn-lg" data-loading-text="Changing Password..." value="Cambiar Contraseña" (click)="cambiarContrasena()">
   </form>
   </div><!--/col-sm-6-->
   </div><!--/row-->
