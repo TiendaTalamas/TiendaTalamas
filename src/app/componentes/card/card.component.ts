@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { Response } from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import 'rxjs/add/operator/map';
-
 import {Location} from "@angular/common";
 import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
 import { isNull, isUndefined } from 'util';
