@@ -507,6 +507,10 @@ export class Contenedor1Component implements OnInit {
 
   }
 
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
+  }
   navegarBusqueda()
   {
     this._servicioCompartido.setCadena(this.cadena);

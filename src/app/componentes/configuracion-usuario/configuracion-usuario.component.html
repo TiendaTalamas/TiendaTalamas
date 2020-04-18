@@ -93,13 +93,13 @@
   <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
   <form method="post" id="passwordForm">
-  <input type="password" class="input-lg form-control" name="password1" id="password1" placeholder="Antigua contraseña" autocomplete="off">
+  <input type="password" class="input-lg form-control" [(ngModel)]="contrasenaActual" name="password1" id="password1" placeholder="Antigua contraseña" autocomplete="off">
   <br>
-  <input type="password" class="input-lg form-control" name="password1" id="password1" placeholder="Contraseña Nueva" autocomplete="off">
+  <input type="password" class="input-lg form-control" [(ngModel)]="contrasenaNueva" name="password1" id="password1" placeholder="Contraseña Nueva" autocomplete="off">
   <br>
-  <input type="password" class="input-lg form-control" name="password2" id="password2" placeholder="Repetir Contraseña" autocomplete="off">
+  <input type="password" class="input-lg form-control"[(ngModel)]="contrasenaRepetida" name="password2" id="password2" placeholder="Repetir Contraseña" autocomplete="off">
   <br>
-  <input type="submit" class="col-xs-12 btn btn-primary btn-load btn-lg" data-loading-text="Changing Password..." value="Cambiar Contraseña">
+  <input type="submit" class="col-xs-12 btn btn-primary btn-load btn-lg" data-loading-text="Changing Password..." value="Cambiar Contraseña" (click)="cambiarContrasena()">
   </form>
   </div><!--/col-sm-6-->
   </div><!--/row-->
@@ -116,37 +116,45 @@
       <h1>Cambiar Direccion</h1>
       </div>
       </div>
-    <div class="row">
-        <form action="#">
+    <div class="row" *ngFor = "let direccion of direccionesArray; let i = index">
+        <form action="#" >
             <div class="col-xs-6">
 
                  <div class="form-group">
                     <label for="AddressLine1">Calle 1</label>
-                    <input type="text" class="form-control" id="AddressLine1" placeholder="Address Line 1" required="">
+                    <input type="text" class="form-control" [(ngModel)]="calle1" name="calle1"id="AddressLine1" placeholder="{{direccion.Calle}}" required="">
                 </div>
                 <div class="form-group">
                     <label for="Address Line 1">Calle 2</label>
-                    <input type="text" class="form-control" id="AddressLine2" placeholder="Address Line 2" required="">
+                    <input type="text" class="form-control" [(ngModel)]="calle2" name="calle2"id="AddressLine2" placeholder="{{direccion.Calle2}}" required="">
                 </div>
-                
+                <div class="form-group">
+                  <label for="city">Numero Exterior</label>
+                  <input type="text" class="form-control" [(ngModel)]="numero" name="numero" placeholder="{{direccion.NumeroExterior}}" required="">
+              </div>
+                <div class="form-group">
+                  <label for="city">Colonia</label>
+                  <input type="text" class="form-control" [(ngModel)]="colonia" name="colonia" placeholder="{{direccion.Colonia}}" required="">
+              </div>
+              
             
             </div>
             <div class="col-xs-6">
                 <div class="form-group">
                     <label for="city">Ciudad / Pueblo</label>
-                    <input type="text" class="form-control" id="city" placeholder="Ciudad / Pueblo" required="">
+                    <input type="text" class="form-control" [(ngModel)]="ciudad" name="ciudad" placeholder="{{direccion.Ciudad}}" required="">
                 </div>
                 <div class="form-group">
                     <label for="State">Estado / Provincia / Regiòn</label>
-                    <input type="text" class="form-control" id="state" placeholder="Estado / Provincia / Regiòn" required="">
+                    <input type="text" class="form-control" [(ngModel)]="estado" name="estado" placeholder="{{direccion.Estado}}" required="">
                 </div>
                  <div class="form-group">
                     <label for="zip">Codigo Postal</label>
-                    <input type="text" class="form-control" id="zip" placeholder="Codigo Postal" required="">
+                    <input type="text" class="form-control" [(ngModel)]="codigoPostal" name="codigoPostal" placeholder="{{direccion.CodigoPostal}}" required="">
                 </div>
                 <div class="form-group">
                     <label for="Country">Pais</label>
-                    <select id="country" name="country" autocomplete="country" class="form-control">
+                    <select id="country" name="country" [(ngModel)]="pais" name="pais" autocomplete="country"  class="form-control">
                     <option value="" selected="selected">Selecionar un pais</option>
                     <option value="AF">Afghanistan</option>
                     <option value="AL">Albania</option>
@@ -389,7 +397,7 @@
                     <option value="ZW">Zimbabwe</option>
                 </select>
                 </div> 
-                <button class="btn btn-info">Cambiar Direccion</button>
+                <button class="btn btn-info" (click)="cambiarDireccion()">Cambiar Direccion</button>
             </div>
         </form>
     </div>
