@@ -20,6 +20,7 @@ import { MusicaComponent } from './componentes/musica/musica.component';
 import { CategoriaProductoComponent } from './componentes/categoria-producto/categoria-producto.component';
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 import { ConfiguracionUsuarioComponent } from './componentes/configuracion-usuario/configuracion-usuario.component';
+import { MetodoPagoComponent } from './componentes/metodo-pago/metodo-pago.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ConfiguracionUsuarioComponent } from './componentes/configuracion-usuar
     CategoriaProductoComponent,
     BusquedaComponent,
     ConfiguracionUsuarioComponent,
+    MetodoPagoComponent,
    
   ],
   imports: [
