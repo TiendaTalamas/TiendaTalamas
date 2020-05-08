@@ -19,7 +19,12 @@ import { EMDComponent } from './componentes/emd/emd.component';
 import { MusicaComponent } from './componentes/musica/musica.component';
 import { CategoriaProductoComponent } from './componentes/categoria-producto/categoria-producto.component';
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
+<<<<<<< HEAD
 import { CarritoComponent } from './componentes/carrito/carrito.component';
+=======
+import { ConfiguracionUsuarioComponent } from './componentes/configuracion-usuario/configuracion-usuario.component';
+import { MetodoPagoComponent } from './componentes/metodo-pago/metodo-pago.component';
+>>>>>>> 71d0675cc548bb7b6083be0af8a005f01745f986
 
 
 @NgModule({
@@ -35,7 +40,12 @@ import { CarritoComponent } from './componentes/carrito/carrito.component';
     MusicaComponent,
     CategoriaProductoComponent,
     BusquedaComponent,
+<<<<<<< HEAD
     CarritoComponent,
+=======
+    ConfiguracionUsuarioComponent,
+    MetodoPagoComponent,
+>>>>>>> 71d0675cc548bb7b6083be0af8a005f01745f986
    
   ],
   imports: [

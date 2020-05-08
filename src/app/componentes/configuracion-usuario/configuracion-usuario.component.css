@@ -1,0 +1,119 @@
+.btn
+{
+    margin-right:20px;
+}
+
+#contenedor1
+{
+    
+    height:200px; 
+    width:250px;
+    background-image: url(../../../assets/ajuste.png);
+    background-size:300px;
+    background-repeat: no-repeat;
+    background-position:center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius:5px;
+}
+
+#contenedor1:hover
+{
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+    transition: all .2s;
+}
+
+#contenedor2
+{
+    
+    height:200px; 
+    width:250px;
+    background-image: url(../../../assets/mapa.png);
+    background-size:300px;
+    background-repeat: no-repeat;
+    background-position:center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius:5px;
+}
+
+#contenedor2:hover
+{
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+    transition: all .2s;
+}
+
+#contenedor3
+{
+    
+    height:200px; 
+    width:250px;
+    background-image: url(../../../assets/visa.png);
+    background-size:200px;
+    background-repeat: no-repeat;
+    background-position:center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius:5px;
+}
+
+#contenedor3:hover
+{
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+    transition: all .2s;
+}
+
+
+#Ajuste
+{
+   margin-top:155px;
+   margin-left:25px;
+   background-color: white;
+   border-color:white;
+   color: black;
+}
+
+#Ajuste:hover
+{
+    background-color: #212121;
+    color: white;
+    border-color: #212121;
+    transition: all .2s;
+}
+
+#Ajuste2
+{
+   margin-top:155px;
+   margin-left:30px;
+   background-color: white;
+   border-color:white;
+   color: black;
+}
+
+#Ajuste2:hover
+{
+    background-color: #212121;
+    color: white;
+    border-color: #212121;
+    transition: all .2s;
+}
+
+#Ajuste3
+{
+   margin-top:155px;
+   margin-left:30px;
+   background-color: white;
+   border-color:white;
+   color: black;
+}
+
+#Ajuste3:hover
+{
+    background-color: #212121;
+    color: white;
+    border-color: #212121;
+    transition: all .2s;
+}
+
+
+p {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+

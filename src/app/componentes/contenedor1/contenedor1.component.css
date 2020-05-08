@@ -237,11 +237,6 @@ h1
   {
     display: none !important;
   }
-  #cards
-  {
-    display: none !important;
-    overflow: hidden;
-  }
 
   .carousel-inner
   {
@@ -254,6 +249,12 @@ h1
     overflow: hidden;
   }
   .carousel-control-prev, .carousel-control-next
+  {
+    display: none;
+    overflow: hidden;
+  }
+
+  #cards
   {
     display: none;
     overflow: hidden;
