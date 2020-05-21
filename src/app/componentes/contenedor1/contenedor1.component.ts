@@ -133,6 +133,8 @@ export class Contenedor1Component implements OnInit {
     this.obtenerRecomendados();
     this.obtenerSlider();
     this._servicioCompartido.comprobarUsuario();
+    localStorage.clear()
+    console.log("HOla la verga");
     
     
  
@@ -143,7 +145,7 @@ export class Contenedor1Component implements OnInit {
   //Obteniendo datos
   obtenerArticulos() {
     let body = new URLSearchParams();
-    this.http.post('http://192.168.1.99/talamas/articulosVendidos.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/articulosVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -171,7 +173,7 @@ export class Contenedor1Component implements OnInit {
 //Metodo para obtener Ofertas
   obtenerOfertas() {
     let body = new URLSearchParams();
-    this.http.post('http://192.168.1.99/talamas/ofertas.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/ofertas.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -202,7 +204,7 @@ export class Contenedor1Component implements OnInit {
     {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://192.168.1.99/talamas/obtenerLibroVendidos.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -230,7 +232,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://192.168.1.99/talamas/obtenerLibroVendidos.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -259,7 +261,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://192.168.1.99/talamas/obtenerLibroVendidos.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -292,7 +294,7 @@ export class Contenedor1Component implements OnInit {
     {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://192.168.1.99/talamas/obtenerLibroReciente.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroReciente.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -320,7 +322,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://192.168.1.99/talamas/obtenerLibroReciente.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroReciente.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -349,7 +351,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://192.168.1.99/talamas/obtenerLibroReciente.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroReciente.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -381,7 +383,7 @@ export class Contenedor1Component implements OnInit {
   obtenerLibrosCelular()
   {
     let body = new URLSearchParams();
-    this.http.post('http://192.168.1.99/talamas/obtenerLibroCelular.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroCelular.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -410,7 +412,7 @@ export class Contenedor1Component implements OnInit {
 
   obtenerRecomendados() {
     let body = new URLSearchParams();
-    this.http.post('http://192.168.1.99/talamas/recomendados.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/recomendados.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -448,7 +450,7 @@ export class Contenedor1Component implements OnInit {
    //Obteniendo datos
    obtenerSlider() {
     let body = new URLSearchParams();
-    this.http.post('http://192.168.1.99/talamas/slider.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/slider.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {

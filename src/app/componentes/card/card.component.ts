@@ -65,7 +65,7 @@ ngOnInit(){
    
     console.log(this.contrasena);
 
-    this.http.post('http://192.168.1.99/talamas/inicioSesion.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/inicioSesion.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {

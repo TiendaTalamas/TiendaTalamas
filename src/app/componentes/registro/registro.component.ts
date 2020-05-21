@@ -109,7 +109,7 @@ export class RegistroComponent implements OnInit {
       console.log(this.telefono);
       console.log(this.contrasena);
       console.log(this.repContrasena);
-      this.http.post('http://192.168.1.99/talamas/registro.php', body)
+      this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/registro.php', body)
       .map((res:Response) => res.json())
               .subscribe(result => 
                 {

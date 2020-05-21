@@ -46,7 +46,7 @@ export class LibreriaComponent implements OnInit {
  
   obtenerArticulos() {
     let body = new URLSearchParams();
-    this.http.post('http://192.168.1.99/talamas/librosRomance.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/librosRomance.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -74,7 +74,7 @@ export class LibreriaComponent implements OnInit {
 
   obtenerRecomendados() {
     let body = new URLSearchParams();
-    this.http.post('http://192.168.1.99/talamas/libroAleatorio.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/libroAleatorio.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {

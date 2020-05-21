@@ -71,7 +71,7 @@ export class VentaLibroComponent implements OnInit {
 //Metodo de obtencion de un libro aleatorio para optimizar las pruebas
   LibroAleatorio() {
     let body = new URLSearchParams();
-    this.http.post('http://192.168.1.99/talamas/libroAleatorio.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/libroAleatorio.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -102,7 +102,7 @@ export class VentaLibroComponent implements OnInit {
     body.append('categoria', this.Categoria);
     body.append('limiteI', this.limiteI);
     if(this.limiteI == "0"){
-    this.http.post('http://192.168.1.99/talamas/obtenerCarruselVenta.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerCarruselVenta.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -128,7 +128,7 @@ export class VentaLibroComponent implements OnInit {
     });
   }
   if(this.limiteI == "6"){
-    this.http.post('http://192.168.1.99/talamas/obtenerCarruselVenta.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerCarruselVenta.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -154,7 +154,7 @@ export class VentaLibroComponent implements OnInit {
     });
   }
   if(this.limiteI == "12"){
-    this.http.post('http://192.168.1.99/talamas/obtenerCarruselVenta.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerCarruselVenta.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -188,7 +188,7 @@ export class VentaLibroComponent implements OnInit {
     body.append('id_producto', this.IdProducto);
 
 
-    this.http.post('http://192.168.1.99/talamas/obtenerUnicoArticulo.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerUnicoArticulo.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {

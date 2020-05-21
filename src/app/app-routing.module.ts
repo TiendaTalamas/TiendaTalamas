@@ -9,11 +9,7 @@ import {EMDComponent} from './componentes/emd/emd.component'
 import {MusicaComponent} from './componentes/musica/musica.component'
 import {CategoriaProductoComponent} from './componentes/categoria-producto/categoria-producto.component'
 import {BusquedaComponent} from './componentes/busqueda/busqueda.component'
-<<<<<<< HEAD
-import {CarritoComponent} from './componentes/carrito/carrito.component'
-=======
 import {ConfiguracionUsuarioComponent} from './componentes/configuracion-usuario/configuracion-usuario.component'
->>>>>>> 71d0675cc548bb7b6083be0af8a005f01745f986
 
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
@@ -25,11 +21,7 @@ const routes: Routes = [
   {path: 'musica', component: MusicaComponent,},
   {path: 'categoria', component: CategoriaProductoComponent,}, 
   {path: 'busqueda', component: BusquedaComponent,},
-<<<<<<< HEAD
-  {path: 'carrito', component: CarritoComponent,},
-=======
   {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,},
->>>>>>> 71d0675cc548bb7b6083be0af8a005f01745f986
 
 
 ];

@@ -38,7 +38,7 @@ export class servicioCompartido{
 
 
 
-  this.http.post('http://192.168.1.99/talamas/comprobarSesion.php', body)
+  this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/comprobarSesion.php', body)
   .map((res:Response) => res.text())
           .subscribe(result => 
             {
@@ -102,7 +102,6 @@ export class servicioCompartido{
 
     cerrarSesion()
     {
-        
         localStorage.clear();
     
         
