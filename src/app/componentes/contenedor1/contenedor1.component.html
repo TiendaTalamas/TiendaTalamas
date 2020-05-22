@@ -25,16 +25,10 @@
       <li class="nav-item">
         <a class="nav-link" (click)="navegarLibreria();">Libreria</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" (click)="navegarMusica()" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item">
+        <a class="nav-link" (click)="navegarMusica()" role="button" aria-haspopup="true" aria-expanded="false">
           Musica
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Acceso</a>
-          <a class="dropdown-item" href="#">De viento</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Otro tipo</a>
-        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" (click)="navegarPublicidad();">Publicidad</a>
@@ -177,7 +171,7 @@
              
              <nav class="nav-tabs">
                <ul class="nav nav-pills pull-left">
-                      <li class="ml-5" ><a (click)="navegarPublicidad()">Ir a la pagina</a></li>
+                      <li class="ml-5" ><a href="http://emdpublicidad.com">Ir a la pagina</a></li>
                   </ul>
                
              </nav>
@@ -193,7 +187,7 @@
       <div class="container text-center">
           <h1>No te pierdas Nuestros Mejores libros</h1>
               <div class="breadcrumbs_path">
-                  <a href="#">Libreria</a> - Adelante, leer alimenta tu mente
+                  <a (click)="navegarLibreria()">Libreria</a> - Adelante, leer alimenta tu mente
               </div>      
       </div>
   </div>
@@ -310,7 +304,7 @@
         <div class="container text-center">
             <h1>¿Que tal un poco de musica?</h1>
                 <div class="breadcrumbs_path">
-                    <a href="#">Musica</a> - Para que el mundo este mejor, debes sonar mejor
+                    <a (click)="navegarMusica()">Musica</a> - Para que el mundo este mejor, debes sonar mejor
                 </div>      
         </div>
     </div>
@@ -414,15 +408,15 @@
       <div class="carousel-item active">
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let Recomendados of articulosArray_Recomendados; let i = index">
-          <img class="imgr" src="{{Recomendados.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(Recomendados.IdProducto)">
+          <img class="imgr" src="{{Recomendados.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(Recomendados.IdProducto,Recomendados.Categoria)">
       </div>
     </div>
     </div>
    
     <div class="carousel-item">
       <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes; let i = index">
-            <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto)">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros; let i = index">
+            <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto,reciente.Categoria)">
         </div>
     </div>
     </div> 

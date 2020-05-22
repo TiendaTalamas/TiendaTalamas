@@ -104,7 +104,7 @@ export class Contenedor1Component implements OnInit {
 
 
   constructor(private http: Http,private router: Router,private fb: FormBuilder, private location:Location,
-    private _servicioCompartido : servicioCompartido){   
+    public _servicioCompartido : servicioCompartido){   
        this.registroForm = fb.group({
          'cadena' : this.cadena
 
@@ -445,7 +445,7 @@ export class Contenedor1Component implements OnInit {
     this._servicioCompartido.setIdProducto(IdProducto);
     this._servicioCompartido.setCategoria(Categoria);
 
-  }
+   }
 
    //Obteniendo datos
    obtenerSlider() {

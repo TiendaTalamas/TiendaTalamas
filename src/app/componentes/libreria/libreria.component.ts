@@ -38,7 +38,7 @@ export class LibreriaComponent implements OnInit {
 
   //Constructor
   constructor(private http: Http,private router: Router, private location:Location,
-    private _servicioCompartido : servicioCompartido, fb : FormBuilder) {   
+    public _servicioCompartido : servicioCompartido, fb : FormBuilder) {   
       this.registroForm = fb.group({
         'cadena' : this.cadena
 

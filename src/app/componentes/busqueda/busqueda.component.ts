@@ -19,7 +19,7 @@ export class BusquedaComponent implements OnInit {
 
 
   constructor(private http: Http,private router: Router, private location:Location,
-    private _servicioCompartido : servicioCompartido, private fb:FormBuilder){   
+    public _servicioCompartido : servicioCompartido, private fb:FormBuilder){   
       this.registroForm = fb.group({
         'cadena' : this.cadena
    });}

@@ -38,7 +38,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
   estado:string;
   pais:string;
   codigoPostal:string;
-  constructor(private router: Router, private _servicioCompartido : servicioCompartido, private fb: FormBuilder, private fb2: FormBuilder,private fb3: FormBuilder, private http: Http) { 
+  constructor(private router: Router, public _servicioCompartido : servicioCompartido, private fb: FormBuilder, private fb2: FormBuilder,private fb3: FormBuilder, private http: Http) { 
     this.registroForm = fb.group({
       'cadena' : this.cadena
     
