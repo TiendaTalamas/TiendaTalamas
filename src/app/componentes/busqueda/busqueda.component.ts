@@ -298,6 +298,11 @@ export class BusquedaComponent implements OnInit {
     this.obtenerBusqueda();
   }
 
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
+  }
+
   obtenerBusqueda(){
     let body = new URLSearchParams();
     body.append('cadena', this.cadena);

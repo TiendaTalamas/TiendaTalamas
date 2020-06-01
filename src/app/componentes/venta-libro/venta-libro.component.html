@@ -12,16 +12,10 @@
         <li class="nav-item">
           <a class="nav-link" (click)="navegarLibreria();">Libreria</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" (click)="navegarMusica()" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+          <a class="nav-link" (click)="navegarMusica()" role="button" aria-haspopup="true" aria-expanded="false">
             Musica
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Acceso</a>
-            <a class="dropdown-item" href="#">De viento</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Otro tipo</a>
-          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" (click)="navegarPublicidad();">Publicidad</a>
@@ -77,7 +71,7 @@
               <small>Precio</small>
               <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
               <div>
-                <button type="button" class="btn btn-warning ">Comprar</button> <button type="button" class="btn btn-warning ml-1">Cantidad</button>
+                <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario">Comprar</button> <button type="button" class="btn btn-warning ml-1">Cantidad</button>
 
               </div>
 
@@ -115,7 +109,7 @@
 
 
 
-
+<!--slider de productos-->
 <div class="container-fluid text-center mt-5 mb-5" style="background-color: white;">
   <h5 style = "color: black; text-align: left;">Más vendidos</h5>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -156,6 +150,90 @@
 </div>
 </div>
 </div>
+</div>
+
+
+<!-- Modal -->
+<div id="formulario" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal contenido-->
+
+    <div class="modal-content">
+      <div id="Layer1" style="height:600px; overflow: scroll;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">VENTA</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+
+          <div class="form-sec">
+            <h4>Venta por correo</h4>
+            
+            <form [formGroup]="ventaForm">
+              <div class="form-group">
+                <label>Nombre:</label>
+                <input type="text" class="form-control" [(ngModel)]="nombre" formControlName="nombre" placeholder="Nombre" type="text">
+              </div>
+              <div class="form-group">
+                <label>Apellido:</label>
+                <input type="text" class="form-control" [(ngModel)]="apellido" formControlName="apellido" placeholder="Apellido" type="text">
+              </div>
+              <div class="form-group">
+                <label>Correo:</label>
+                <input type="email" class="form-control" [(ngModel)]="email" formControlName="email" placeholder="Correo" type="email">
+              </div>
+
+              <div class="form-group">
+                <label>Calle 1:</label>
+                <input type="email" class="form-control" [(ngModel)]="calle1" formControlName="calle1" placeholder="Calle 1" type="text">
+              </div>
+
+              <div class="form-group">
+                <label>Calle 2:</label>
+                <input type="email" class="form-control" [(ngModel)]="calle2" formControlName="calle2" placeholder="Calle 2" type="text">
+              </div>
+
+              <div class="form-group">
+                <label>Calle 3:</label>
+                <input type="email" class="form-control" [(ngModel)]="calle3" formControlName="calle3" placeholder="Calle 3" type="text">
+              </div>
+
+              <div class="form-group">
+                <label>Ciudad:</label>
+                <input type="email" class="form-control"[(ngModel)]="ciudad" formControlName="ciudad" placeholder="Ciudad" type="text">
+              </div>
+              
+              <div class="form-group" *ngFor = "let producto of productos">
+                <label>Producto:</label>
+                <input type="text" class="form-control" id="peoducto" placeholder="{{producto.NombreProducto}}" name="producto" disabled>
+              </div>
+            <div class="form-group" *ngFor = "let producto of productos">
+                <label>Precio:</label>
+                <input type="text" class="form-control" id="precio" placeholder="${{producto.Precio}}" name="producto" disabled>
+              </div>  
+              <div class="form-group">
+                <label>Cantidad:</label>
+                <input type="text" class="form-control" id="precio" placeholder="Cantidad" name="producto">
+              </div> 
+             
+            
+              
+              <button type="submit" class="btn btn-default" (click)="venta()">Enviar</button>
+            </form>
+            </div>
+          
+          
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+    </div>
+    </div>
+
 </div>
 
 

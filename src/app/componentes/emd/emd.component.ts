@@ -67,4 +67,9 @@ cadena:string;
     this.router.navigate(['busqueda'])
   }
 
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
+  }
+
 }

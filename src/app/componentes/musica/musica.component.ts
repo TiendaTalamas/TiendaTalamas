@@ -74,5 +74,9 @@ export class MusicaComponent implements OnInit {
     console.log(this.cadena);
     this.router.navigate(['busqueda'])
   }
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
+  }
 
 }

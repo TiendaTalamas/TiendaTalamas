@@ -5,6 +5,8 @@ import { producto } from '../../servicios/producto';
 import {Router} from "@angular/router";
 import { Http , Response} from '@angular/http';
 import { URLSearchParams } from "@angular/http";
+import { FormGroup } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -22,10 +24,42 @@ export class VentaLibroComponent implements OnInit {
   P2: boolean;
   P3: boolean;
   P4: boolean; 
+
+  //Variables para formulario 
+  DatosError:boolean = false;
+  cadena: string;
+  ventaForm: FormGroup;
+  ventaforma: FormGroup;
+  email: string;
+  nombre: string;
+  apellido: string;
+  calle1: string;
+  calle2: string;
+  calle3: string;
+  ciudad: string;
+
   //array para guardar los valores
 
-  constructor(private _servicioCompartido : servicioCompartido,private router:Router,private http:Http) { }
-  
+  constructor(private _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,){ 
+  this.ventaForm = fb.group({
+    'email' : [null, Validators.required],
+    'nombre': this.nombre,
+    'apellido': this.apellido,  
+    'calle1': this.calle1,
+    'calle2': this.calle2,
+    'calle3': this.calle3,
+    'ciudad': this.ciudad
+  });
+this.ventaforma = fb2.group({
+  'cadena': this.cadena
+});
+}
+
+
+
+
+
+
   AA: string;
   data: any[];
   val: any[];
@@ -263,6 +297,26 @@ export class VentaLibroComponent implements OnInit {
   navegarBusqueda()
   {
     this.router.navigate(['busqueda'])
+  }
+
+  venta()
+  {
+   // let body = new URLSearchParams();
+   // body.append('nombre', this.nombre);
+   // body.append('email', this.email);
+    //body.append('apellido', this.apellido);
+    //body.append('calle1', this.calle1);
+    //body.append('calle2', this.calle2);
+    //body.append('calle3', this.calle3);
+    //body.append('ciudad', this.ciudad);
+
+    console.log(this.nombre);
+      console.log(this.email);
+      console.log(this.apellido);
+      console.log(this.calle1);
+      console.log(this.calle2);
+      console.log(this.calle3);
+      console.log(this.ciudad);
   }
 
 }

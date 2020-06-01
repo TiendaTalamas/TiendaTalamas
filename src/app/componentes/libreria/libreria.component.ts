@@ -163,5 +163,10 @@ export class LibreriaComponent implements OnInit {
     this.router.navigate(['busqueda'])
   }
 
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
+  }
+
 
 }
