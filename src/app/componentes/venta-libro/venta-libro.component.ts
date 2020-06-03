@@ -37,10 +37,10 @@ export class VentaLibroComponent implements OnInit {
   calle2: string;
   calle3: string;
   ciudad: string;
-  cantidad:number;
-  precioBinding:number;
+  cantidad:string;
+  precioBinding:number = 123;
   precio:number;
-
+  cantidades = [1, 2, 3];
 
   //array para guardar los valores
 
@@ -98,15 +98,15 @@ this.ventaforma = fb2.group({
     else if(this.Categoria == "Instrumentos"){
       this.P2 = true;
     }
+
     this.limiteI = "0";
     this.LibroCarrousel();
     this.limiteI = "6";
     this.LibroCarrousel();
     this.limiteI = "12";
     this.LibroCarrousel();
-
-
-
+    
+    this.defaultPrice();
 
   }
 //Metodo de obtencion de un libro aleatorio para optimizar las pruebas
@@ -244,7 +244,7 @@ this.ventaforma = fb2.group({
               for (var i = 0; i < Object.keys(this.val).length; i++) {
               this.contenedor = Object.keys(this.val)[i];
               Object.entries(this.val)[i]
-               
+                
                 this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
                 this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
 
@@ -267,19 +267,30 @@ this.ventaforma = fb2.group({
 
 
   }
-
+/*
   onChange()
   {
+    console.log(this.cantidad + " ESTA ES LA CANTIDAD");
     for(let producto of this.productos)
     {
     this.precio=producto.Precio;
     }
 
-    this.precioBinding=this.precio*this.cantidad;
-
-    console.log()
+    //this.precioBinding = this.precio * this.cantidad;
+    console.log(this.precioBinding);
+    
 
   }
+*/
+  onChange(cantidad) {
+    for(let producto of this.productos)
+    {
+    this.precio=producto.Precio;
+    }
+    this.precioBinding = this.precio * cantidad;
+    console.log(this.precioBinding);
+    // ... do other stuff here ...
+}
 
 
   navegarInicio()
@@ -339,6 +350,16 @@ this.ventaforma = fb2.group({
       console.log(this.ciudad);
       console.log(this.cantidad)
       
+  }
+
+  defaultPrice(){
+    console.log("Dentro del metodo defaultPrice");
+    for(let producto of this.productos)
+    {
+        this.precio=producto.Precio;
+        
+    }
+    this.precioBinding = this.precio;
   }
 
 }
