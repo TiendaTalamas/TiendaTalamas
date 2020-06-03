@@ -37,6 +37,10 @@ export class VentaLibroComponent implements OnInit {
   calle2: string;
   calle3: string;
   ciudad: string;
+  cantidad:number;
+  precioBinding:number;
+  precio:number;
+
 
   //array para guardar los valores
 
@@ -48,7 +52,10 @@ export class VentaLibroComponent implements OnInit {
     'calle1': this.calle1,
     'calle2': this.calle2,
     'calle3': this.calle3,
-    'ciudad': this.ciudad
+    'ciudad': this.ciudad,
+    'cantidad': this.cantidad,
+    'precioBinding': this.precioBinding,
+    'precio': this.precio
   });
 this.ventaforma = fb2.group({
   'cadena': this.cadena
@@ -261,6 +268,19 @@ this.ventaforma = fb2.group({
 
   }
 
+  onChange()
+  {
+    for(let producto of this.productos)
+    {
+    this.precio=producto.Precio;
+    }
+
+    this.precioBinding=this.precio*this.cantidad;
+
+    console.log()
+
+  }
+
 
   navegarInicio()
   {
@@ -317,6 +337,8 @@ this.ventaforma = fb2.group({
       console.log(this.calle2);
       console.log(this.calle3);
       console.log(this.ciudad);
+      console.log(this.cantidad)
+      
   }
 
 }
