@@ -82,6 +82,7 @@ this.ventaforma = fb2.group({
 
 
   ngOnInit() {
+    console.log(this.precioBinding + " ESTE ES EL VALOR");
     this.Categoria = this._servicioCompartido.getCategoria();
     this.IdProducto = this._servicioCompartido.getIdProducto();  
     if(this.IdProducto === undefined){
@@ -107,6 +108,7 @@ this.ventaforma = fb2.group({
     this.LibroCarrousel();
     
     this.defaultPrice();
+    
 
   }
 //Metodo de obtencion de un libro aleatorio para optimizar las pruebas
@@ -223,7 +225,6 @@ this.ventaforma = fb2.group({
   }
   //Obtiene el libro cuando recibe datos
   obtenerArticulo(){
-
     let body = new URLSearchParams();
       
     body.append('id_producto', this.IdProducto);
@@ -361,6 +362,13 @@ this.ventaforma = fb2.group({
         
     }
     this.precioBinding = this.precio;
+  }
+
+  openModal(){
+    for(let producto of this.productos)
+    {
+    this.precioBinding=producto.Precio;
+    }
   }
 
 }
