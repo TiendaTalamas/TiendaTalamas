@@ -68,10 +68,9 @@
   <div class="menu sticky-top ">
       <div class="card bg-light ">
           <div class="card-body"  *ngFor = "let producto of productos">
-              <small>Precio</small>
               <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
               <div>
-                <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario">Comprar</button> <button type="button" class="btn btn-warning ml-1">Cantidad</button>
+                <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button> <button type="button" class="btn btn-warning ml-1">Cantidad</button>
 
               </div>
 
@@ -211,12 +210,11 @@
               </div>
             <div class="form-group">
                 <label>Precio:</label>
-                <input type="number" class="form-control" id="precio" placeholder="{{+precioBinding}}" name="producto" disabled>
+                <input type="text" class="form-control" id="precio" placeholder="{{+precioBinding}}" name="producto" disabled>
               </div>  
               <div class="form-group">
                 <label>Cantidad:</label>
                 <select class="form-control" (ngModelChange)="onChange($event)" [(ngModel)]="cantidad" formControlName="cantidad" name="dropventa">
-                  <option selected="selected">Elige una cantidad</option>
                   <option [value]="i" *ngFor="let i of cantidades">{{i}}</option>
                   </select>
               </div> 
