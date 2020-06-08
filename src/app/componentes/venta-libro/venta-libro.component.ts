@@ -38,7 +38,7 @@ export class VentaLibroComponent implements OnInit {
   calle3: string;
   ciudad: string;
   cantidad:string;
-  precioBinding:number = 123;
+  precioBinding:number;
   precio:number;
   cantidades = [1, 2, 3];
 
@@ -282,6 +282,7 @@ this.ventaforma = fb2.group({
 
   }
 */
+  
   onChange(cantidad) {
     for(let producto of this.productos)
     {
@@ -290,8 +291,8 @@ this.ventaforma = fb2.group({
     this.precioBinding = this.precio * cantidad;
     console.log(this.precioBinding);
     // ... do other stuff here ...
+    // ... Why? ...
 }
-
 
   navegarInicio()
   {
