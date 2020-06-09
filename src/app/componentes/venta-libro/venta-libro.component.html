@@ -70,11 +70,7 @@
           <div class="card-body"  *ngFor = "let producto of productos">
               <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
               <div>
-<<<<<<< HEAD
-                <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario">Comprar</button> 
-=======
                 <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button> <button type="button" class="btn btn-warning ml-1">Cantidad</button>
->>>>>>> 898721bf5153c9b5a1c1cae9e07ce2234b734495
 
               </div>
 
