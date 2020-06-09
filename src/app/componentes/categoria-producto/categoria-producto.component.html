@@ -1,47 +1,56 @@
-<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #ffca00">
-    <a class="navbar-brand"><img src="assets/talamas.png" alt="" style = "width: 100px; height:100px;"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" (click)="navegarInicio();">Inicio<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="navegarLibreria();">Libreria</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" (click)="navegarMusica()" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Musica
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Acceso</a>
-            <a class="dropdown-item" href="#">De viento</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Otro tipo</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" (click)="navegarPublicidad();">Publicidad</a>
-        </li>
-      </ul>
+<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #ffca00" >
+  <a class="navbar-brand"><img src="assets/talamas.png" alt="" style = "width: 100px; height:100px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown"  *ngIf="_servicioCompartido.CompUsuario">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Usuario
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Ver carrito</a>
+          <a class="dropdown-item" (click)="navegarConfiguracion()">Configuracion</a>
+          <a class="dropdown-item" href="#">Soporte</a>
+          <div class="dropdown-divider"></div>
+          <a href="http://localhost:4200/" class="dropdown-item" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
+        </div>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" (click)="navegarInicio();">Inicio<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="navegarLibreria();">Libreria</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="navegarMusica()" role="button" aria-haspopup="true" aria-expanded="false">
+          Musica
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" (click)="navegarPublicidad();">Publicidad</a>
+      </li>
+    </ul>
+
+    <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
+      <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
+    </form>
+   <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
       
-      
-      <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-        <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
-      </form>
-      <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
-        <a href="http://localhost:4200/"><button style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="_servicioCompartido.cerrarSesion();" >Cerrar Sesion</button></a>      
-        </ng-container>
-        <ng-template #elseTemplate>
-          <button style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
-          
-          <button style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
-        </ng-template>    </div>  
-  </nav>
+      <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+    </ng-template>    
+
+
+    
+</div>  
+</nav>
 
 
 
@@ -79,7 +88,7 @@
                     <div class="col-md-4 mb-2 mt-3" *ngFor = "let articulo of articulosArray; let i = index">
                         <div class="card-content">
                             <div class="card-img">
-                                <img src="{{articulo.Imagen}}"style="height:250px; width:250px; margin-left:10%;" alt="">
+                                <img class="mt-3" src="{{articulo.Imagen}}" style="height:300px; width:250px; margin-left:16%;" alt="">
                                 <span><h4>{{Categoria}}</h4></span>
                             </div>
                             <div class="card-desc" >

@@ -250,9 +250,9 @@
 
       <!-- Modal body -->
       <div class="modal-body" *ngFor = "let Recomendados of articulosArray_Recomendados; let i = index" ><!----->
-        <img class="ola" style="height:350px; width:350px; margin-left:10%;" src="{{Recomendados.Imagen}}">
+        <img class="ola" style="height:350px; width:350px; margin-left:12%;" src="{{Recomendados.Imagen}}">
         <br>
-        <button type="button" class="btn btn-danger" style="margin-left: 150px;" data-dismiss="modal" (click)="masInformacion(Recomendados.IdProducto)"> Ver Producto</button>
+        <button type="button" class="btn btn-danger mt-3" style="margin-left:180px;" data-dismiss="modal" (click)="masInformacion(Recomendados.IdProducto)"> Ver Producto</button>
       </div>
 
       <!-- Modal footer -->
