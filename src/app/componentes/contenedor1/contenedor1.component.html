@@ -25,16 +25,10 @@
       <li class="nav-item">
         <a class="nav-link" (click)="navegarLibreria();">Libreria</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" (click)="navegarMusica()" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item">
+        <a class="nav-link" (click)="navegarMusica()" role="button" aria-haspopup="true" aria-expanded="false">
           Musica
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Acceso</a>
-          <a class="dropdown-item" href="#">De viento</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Otro tipo</a>
-        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" (click)="navegarPublicidad();">Publicidad</a>
@@ -166,7 +160,7 @@
 <div class="card">
           <div class="card-content">
             <div class="card-header-grey">
-                 <h1 class="card-heading">Has que tu celular luzca mejor</h1>
+                 <h1 class="card-heading">Has tus propios diseños</h1>
                </div>
                <div class="card-body">
                <p class="card-p">
@@ -177,7 +171,7 @@
              
              <nav class="nav-tabs">
                <ul class="nav nav-pills pull-left">
-                      <li class="ml-5" ><a (click)="navegarPublicidad()">Ir a la pagina</a></li>
+                      <li class="ml-5" ><a href="http://emdpublicidad.com">Ir a la pagina</a></li>
                   </ul>
                
              </nav>
@@ -193,7 +187,7 @@
       <div class="container text-center">
           <h1>No te pierdas Nuestros Mejores libros</h1>
               <div class="breadcrumbs_path">
-                  <a href="#">Libreria</a> - Adelante, leer alimenta tu mente
+                  <a (click)="navegarLibreria()">Libreria</a> - Adelante, leer alimenta tu mente
               </div>      
       </div>
   </div>
@@ -220,7 +214,7 @@
 <!--Primer slider de Libreria-->
   <div id="slider1" class="container-fluid text-center mt-5 mb-5" style="background-color: white;">
     <h5 style = "color: black; text-align: left;">Mas Vendidos</h5>
-    <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
+    <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div> 
     <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
       <div class="carousel-item active">
@@ -263,7 +257,7 @@
   <div id="slider1" class="container-fluid text-center mt-5 mb-5" style="background-color: white;">
     <h5 style = "color: black; text-align: left;">Mas Recientes</h5>
     <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
-    <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleControls8" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
       <div class="carousel-item active">
     <div class="row">
@@ -290,11 +284,11 @@
   </div>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
   </div> 
-  <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="#carouselExampleControls8" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#carouselExampleControls8" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
@@ -310,7 +304,7 @@
         <div class="container text-center">
             <h1>¿Que tal un poco de musica?</h1>
                 <div class="breadcrumbs_path">
-                    <a href="#">Musica</a> - Para que el mundo este mejor, debes sonar mejor
+                    <a (click)="navegarMusica()">Musica</a> - Para que el mundo este mejor, debes sonar mejor
                 </div>      
         </div>
     </div>
@@ -414,15 +408,15 @@
       <div class="carousel-item active">
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let Recomendados of articulosArray_Recomendados; let i = index">
-          <img class="imgr" src="{{Recomendados.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(Recomendados.IdProducto)">
+          <img class="imgr" src="{{Recomendados.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(Recomendados.IdProducto,Recomendados.Categoria)">
       </div>
     </div>
     </div>
    
     <div class="carousel-item">
       <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes; let i = index">
-            <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto)">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros; let i = index">
+            <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto,reciente.Categoria)">
         </div>
     </div>
     </div> 

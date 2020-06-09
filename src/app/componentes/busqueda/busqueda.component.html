@@ -6,22 +6,28 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown"  *ngIf="_servicioCompartido.CompUsuario">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Usuario
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Ver carrito</a>
+            <a class="dropdown-item" (click)="navegarConfiguracion()">Configuracion</a>
+            <a class="dropdown-item" href="#">Soporte</a>
+            <div class="dropdown-divider"></div>
+            <a href="http://localhost:4200/" class="dropdown-item" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
+          </div>
+        </li>
         <li class="nav-item active">
           <a class="nav-link" (click)="navegarInicio();">Inicio<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" (click)="navegarLibreria();">Libreria</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="navegarMusica()">
+        <li class="nav-item">
+          <a class="nav-link" (click)="navegarMusica()" role="button" aria-haspopup="true" aria-expanded="false">
             Musica
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Acceso</a>
-            <a class="dropdown-item" href="#">De viento</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Otro tipo</a>
-          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" (click)="navegarPublicidad();">Publicidad</a>

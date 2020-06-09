@@ -261,7 +261,25 @@ figure.effect-ravi:hover h2 {
 figure.effect-ravi:hover p i:empty {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    /* just because it's stronger than nth-child */
     opacity: 1;
 }
 
+@media only screen and (max-width:1200px) and (min-width:300px)
+{
+    #random
+    {
+        display: none !important;
+        overflow: hidden;
+    }
+
+    #cardColecciones
+    {
+        display: none !important;
+        overflow: hidden;
+    }
+    #raya
+    {
+        display: none !important;
+        overflow: hidden;
+    }
+}

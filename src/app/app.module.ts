@@ -21,6 +21,7 @@ import { CategoriaProductoComponent } from './componentes/categoria-producto/cat
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 import { ConfiguracionUsuarioComponent } from './componentes/configuracion-usuario/configuracion-usuario.component';
 import { MetodoPagoComponent } from './componentes/metodo-pago/metodo-pago.component';
+import { CarritoComponent } from './componentes/carrito/carrito.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { MetodoPagoComponent } from './componentes/metodo-pago/metodo-pago.compo
     BusquedaComponent,
     ConfiguracionUsuarioComponent,
     MetodoPagoComponent,
+    CarritoComponent,
    
   ],
   imports: [

@@ -17,7 +17,7 @@ export class EMDComponent implements OnInit {
 registroForm:FormGroup;
 cadena:string;
   constructor(private http: Http,private router: Router, private location:Location,
-    private _servicioCompartido : servicioCompartido, private fb:FormBuilder){   
+    public _servicioCompartido : servicioCompartido, private fb:FormBuilder){   
       this.registroForm = fb.group({
         'cadena' : this.cadena
 
@@ -65,6 +65,11 @@ cadena:string;
     this._servicioCompartido.setCadena(this.cadena);
     console.log(this.cadena);
     this.router.navigate(['busqueda'])
+  }
+
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
   }
 
 }

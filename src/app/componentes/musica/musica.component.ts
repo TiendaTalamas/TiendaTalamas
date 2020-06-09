@@ -12,7 +12,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class MusicaComponent implements OnInit {
   registroForm: FormGroup;
   cadena:string;
-  constructor(private router: Router, private _servicioCompartido: servicioCompartido, private fb: FormBuilder) {   
+  constructor(private router: Router, public _servicioCompartido: servicioCompartido, private fb: FormBuilder) {   
     this.registroForm = fb.group({
       'cadena' : this.cadena
 
@@ -73,6 +73,10 @@ export class MusicaComponent implements OnInit {
     this._servicioCompartido.setCadena(this.cadena);
     console.log(this.cadena);
     this.router.navigate(['busqueda'])
+  }
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
   }
 
 }

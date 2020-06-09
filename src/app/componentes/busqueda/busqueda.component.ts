@@ -19,7 +19,7 @@ export class BusquedaComponent implements OnInit {
 
 
   constructor(private http: Http,private router: Router, private location:Location,
-    private _servicioCompartido : servicioCompartido, private fb:FormBuilder){   
+    public _servicioCompartido : servicioCompartido, private fb:FormBuilder){   
       this.registroForm = fb.group({
         'cadena' : this.cadena
    });}
@@ -106,7 +106,7 @@ export class BusquedaComponent implements OnInit {
       
 
 
-    this.http.post('http://192.168.1.99/talamas/todos.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/todos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -141,7 +141,7 @@ export class BusquedaComponent implements OnInit {
     body.append('categoria', this.Categoria);
     body.append('sub_categoria', this.SubCategoria);
 
-    this.http.post('http://192.168.1.99/talamas/categoria.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/categoria.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -185,7 +185,7 @@ export class BusquedaComponent implements OnInit {
       
 
 
-    this.http.post('http://192.168.1.99/talamas/obtenerCategoriaEspecifica.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerCategoriaEspecifica.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -221,7 +221,7 @@ export class BusquedaComponent implements OnInit {
 
 
 
-    this.http.post('http://192.168.1.99/talamas/obtenerSubCategoria.php', body2)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -298,10 +298,15 @@ export class BusquedaComponent implements OnInit {
     this.obtenerBusqueda();
   }
 
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
+  }
+
   obtenerBusqueda(){
     let body = new URLSearchParams();
     body.append('cadena', this.cadena);
-    this.http.post('http://192.168.1.99/talamas/buscar.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/buscar.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {

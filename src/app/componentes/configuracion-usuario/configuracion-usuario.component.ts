@@ -38,7 +38,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
   estado:string;
   pais:string;
   codigoPostal:string;
-  constructor(private router: Router, private _servicioCompartido : servicioCompartido, private fb: FormBuilder, private fb2: FormBuilder,private fb3: FormBuilder, private http: Http) { 
+  constructor(private router: Router, public _servicioCompartido : servicioCompartido, private fb: FormBuilder, private fb2: FormBuilder,private fb3: FormBuilder, private http: Http) { 
     this.registroForm = fb.group({
       'cadena' : this.cadena
     
@@ -117,7 +117,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
   
     console.log(localStorage.getItem('email_U'));
    
-    this.http.post('http://192.168.1.99/talamas/CambiarContrasena.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/CambiarContrasena.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 
               {
@@ -153,7 +153,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
       console.log(this.calle1);
       console.log(localStorage.getItem('email_U'));
    
-    this.http.post('http://192.168.1.99/talamas/agregarDireccion.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/agregarDireccion.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 
               {
@@ -172,7 +172,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
   obtenerDirecciones() {
     let body = new URLSearchParams();
     body.append('email', localStorage.getItem('email_U'));
-    this.http.post('http://192.168.1.99/talamas/obtenerDirecciones.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerDirecciones.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
