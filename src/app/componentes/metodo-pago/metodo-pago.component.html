@@ -1,1 +1,49 @@
-<p>metodo-pago works!</p>
+<div class="row">
+<div class="col-md-4">
+    <div class="col-md-6">
+         <h4>Metodos de pago</h4>
+    
+        <div class="funkyradio">
+            <div class="funkyradio-default">
+                <input type="radio" name="radio" id="radio1" />
+                <label for="radio1"> Paypal</label>
+            </div>
+            <div class="funkyradio-primary">
+                <input type="radio" name="radio" id="radio2" checked/>
+                <label for="radio2">Second Option primary</label>
+            </div>
+            <div class="funkyradio-success">
+                <input type="radio" name="radio" id="radio3" />
+                <label for="radio3">Third Option success</label>
+            </div>
+            <div class="funkyradio-danger">
+                <input type="radio" name="radio" id="radio4" />
+                <label for="radio4">Fourth Option danger</label>
+            </div>
+            <div class="funkyradio-warning">
+                <input type="radio" name="radio" id="radio5" />
+                <label for="radio5">Fifth Option warning</label>
+            </div>
+            <div class="funkyradio-info">
+                <input type="radio" name="radio" id="radio6" />
+                <label for="radio6">Sixth Option info</label>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-6">
+        <br>
+        <h2>Datos</h2>
+        <h5>Direccion</h5>
+        <select id="country" name="country"  name="pais" autocomplete="country"  class="form-control">
+            <option value="AF" *ngFor="let direccion of direccionesArray">{{direccion.Calle}}</option>
+        </select>
+        
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="RX37QQXVTBD6U">
+            <input type="submit" value="Submit">
+            </form>
+            
+   </div>
+</div>

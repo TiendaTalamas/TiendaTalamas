@@ -6,6 +6,7 @@ import {RegistroComponent} from './componentes/registro/registro.component'
 import {LibreriaComponent} from './componentes/libreria/libreria.component'
 import {VentaLibroComponent} from './componentes/venta-libro/venta-libro.component'
 import {EMDComponent} from './componentes/emd/emd.component'
+import {MetodoPagoComponent} from './componentes/metodo-pago/metodo-pago.component'
 import {MusicaComponent} from './componentes/musica/musica.component'
 import {CategoriaProductoComponent} from './componentes/categoria-producto/categoria-producto.component'
 import {BusquedaComponent} from './componentes/busqueda/busqueda.component'
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'categoria', component: CategoriaProductoComponent,}, 
   {path: 'busqueda', component: BusquedaComponent,},
   {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,},
+  {path: 'Pago', component: MetodoPagoComponent,}
 
 
 ];
