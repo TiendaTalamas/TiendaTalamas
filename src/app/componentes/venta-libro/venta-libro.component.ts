@@ -140,6 +140,31 @@ this.ventaforma = fb2.group({
     });
   }
 
+  ComprarPorCorreo() {
+    let body = new URLSearchParams();
+    body.append("IdProducto", this.IdProducto);
+    body.append('nombre', this.nombre);
+    body.append('email', this.email);
+    body.append('apellido', this.apellido);
+    body.append('calle1', this.calle1);
+    body.append('calle2', this.calle2);
+    body.append('calle3', this.calle3);
+    body.append('ciudad', this.ciudad);
+    console.log(this.calle1);
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/enviarCorreo.php', body)
+    .map((res:Response) => res.text())
+            .subscribe(result => 
+            {
+              if(result == "Message has been sent")
+              {
+                alert("Mensaje enviado");
+              }
+              else{
+                alert(result);
+              }
+    });
+  }
+
   LibroCarrousel() {
     let body = new URLSearchParams();
     body.append('categoria', this.Categoria);
