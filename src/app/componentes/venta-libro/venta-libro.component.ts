@@ -150,6 +150,7 @@ this.ventaforma = fb2.group({
     body.append('calle2', this.calle2);
     body.append('calle3', this.calle3);
     body.append('ciudad', this.ciudad);
+    body.append("cantidad",this.cantidad);
     console.log(this.calle1);
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/enviarCorreo.php', body)
     .map((res:Response) => res.text())
