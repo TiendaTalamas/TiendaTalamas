@@ -46,7 +46,6 @@ export class servicioCompartido{
                 {
                   this.CompUsuario=false;
                   this.cerrarSesion();
-
                 }
                 else{ 
                 this.CompUsuario=true;

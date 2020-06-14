@@ -133,8 +133,6 @@ export class Contenedor1Component implements OnInit {
     this.obtenerRecomendados();
     this.obtenerSlider();
     this._servicioCompartido.comprobarUsuario();
-    localStorage.clear()
-    console.log("HOla la verga");
     
     
  
