@@ -26,7 +26,7 @@
         <a class="nav-link" (click)="navegarLibreria();">Libreria</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="navegarMusica()" role="button" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link" (click)="navegarMusica()" role= "button" aria-haspopup="true" aria-expanded="false">
           Musica
         </a>
       </li>
@@ -194,14 +194,16 @@
     </div>
   </div>
 <!--Este div se mostrara solo en celular-->
-
-<div class="Prueba mt-5 ml-5 mb-5">
+<h1 id="deco" class="mr-5 ml-5" style="color: black;">LIBROS MAS VENDIDOS</h1>
+<hr id="deco" style="width:80%;"/>
+<div class="Prueba mt-5 ml-5 mb-5 mr-5">
 
   <div class="row">
     <div class="col-xs-6" *ngFor = "let articulo of articulosArray_Celular; let i = index">
 
-      <div id="contenedor" class="container mb-2 ml-1 " style="width:150px; height:150px; background-color:#c3c3c3;">
+      <div id="contenedor" class="container mb-5 ml-1 " style="width:150px; height:200px; background-color:#c3c3c3;">
         <img src="{{articulo.Imagen}}" (click)= "masInformacion(articulo.IdProducto, articulo.Categoria)">
+        <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{articulo.NombreProducto}}</p></h5>
       </div>
 
     </div>
@@ -310,14 +312,17 @@
     </div>
       </div>
     </div>
+     <!--Este se mostrara solo en celular-->
 
-    <div class="Prueba mt-5 ml-5">
-
+     <h1 id="deco" class="mr-5 ml-5" style="color: black;">INSTRUMENTOS MAS VENDIDOS</h1>
+      <hr id="deco" style="width:80%;"/>
+    <div class="Prueba mt-3 ml-5 mb-5 mr-5">
       <div class="row">
         <div class="col-xs-6" *ngFor = "let articulo of articulosArray_Celular; let i = index">
     
-          <div id="contenedor" class="container mb-2 ml-1 " style="width:150px; height:150px; background-color:#c3c3c3;">
+          <div id="contenedor" class="container mb-5 ml-1 " style="width:150px; height:200px; background-color:#c3c3c3;">
             <img src="{{articulo.Imagen}}" (click)= "masInformacion(articulo.IdProducto, articulo.Categoria)">
+            <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{articulo.NombreProducto}}</p></h5>
           </div>
     
         </div>
@@ -382,14 +387,18 @@
     </div>
 
 
-    <!--Se mostrara cuando este en celular-->
-    <div class="Prueba mt-5 ml-5">
 
+
+    <!--Se mostrara en celular-->
+    <h1 id="deco" class="mr-5 ml-5" style="color: black;">ESTILOS MAS VENDIDOS</h1>
+    <hr id="deco" style="width:80%;"/>
+    <div class="Prueba mt-5 ml-5 mb-5 mr-5">
       <div class="row">
         <div class="col-xs-6" *ngFor = "let articulo of articulosArray_Celular; let i = index">
     
-          <div id="contenedor" class="container mb-2 ml-1 " style="width:150px; height:150px; background-color:#c3c3c3;">
+          <div id="contenedor" class="container mb-5 ml-1 " style="width:150px; height:200px; background-color:#c3c3c3;">
             <img src="{{articulo.Imagen}}" (click)= "masInformacion(articulo.IdProducto, articulo.Categoria)">
+            <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{articulo.NombreProducto}}</p></h5>
           </div>
     
         </div>
@@ -397,6 +406,7 @@
     
       </div>
       </div>
+    
 
 
      <!--Tercer Slider Slider-->

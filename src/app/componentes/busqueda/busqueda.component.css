@@ -56,3 +56,33 @@ text-align:center;
     }
 }
 
+@media only screen and (max-width:1400px) and (min-width:800px)
+{
+    #img
+    {
+        margin-left:25%;
+    }
+
+    #boton
+    {
+        margin-left:20%;
+        font-size: 30px;
+    }
+
+    #Texto
+    {
+        margin-left:50%;
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width:780px) and (min-width:500px)
+{
+    #img
+    {
+        margin-left:120px;
+
+    }
+    
+}
+
