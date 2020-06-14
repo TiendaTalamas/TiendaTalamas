@@ -38,6 +38,7 @@ button
 text-align:center;
 }
 
+
 @media only  screen and (max-width:400px)
 {
     #Texto
@@ -78,11 +79,27 @@ text-align:center;
 
 @media only screen and (max-width:780px) and (min-width:500px)
 {
-    #img
+    #Texto
     {
-        margin-left:120px;
+        margin-left:40%;
 
     }
+
+    #resultado
+    {
+      margin-left: -50%;
+    }
     
+}
+
+@media only screen and (max-width:415px) and (min-width:410px)
+{
+    
+        #Texto
+        {
+            margin-left:-5%;
+        }
+    
+
 }
 
