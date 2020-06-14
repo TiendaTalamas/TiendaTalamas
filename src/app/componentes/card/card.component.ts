@@ -71,7 +71,8 @@ ngOnInit(){
               {
               this.AA = "";
             this.data = [];
-            console.log(result);
+            if(result != "Error")
+            {
             localStorage.setItem('Nombre_U',result[0]['Nombre']);
             localStorage.setItem('ApellidoPa_U',result[0]['ApellidoPa']);
             localStorage.setItem('ApellidoMa_U',result[0]['ApellidoMa']);
@@ -96,6 +97,11 @@ ngOnInit(){
              }
           }
           this.navegarInicio();
+        }
+        else
+        {
+          alert(result);
+        }
     });
 
     

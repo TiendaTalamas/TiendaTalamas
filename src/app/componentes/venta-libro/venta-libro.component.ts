@@ -24,6 +24,12 @@ export class VentaLibroComponent implements OnInit {
   P2: boolean;
   P3: boolean;
   P4: boolean; 
+  direccionesArray = new Array;
+  Nombrecito: string;
+  Apellidito:string;
+  Correito:string;
+  NumeroExterior:string;
+  CodigoPostal:string;
 
   //Variables para formulario 
   DatosError:boolean = false;
@@ -55,7 +61,9 @@ export class VentaLibroComponent implements OnInit {
     'ciudad': this.ciudad,
     'cantidad': this.cantidad,
     'precioBinding': this.precioBinding,
-    'precio': this.precio
+    'precio': this.precio,
+    'NumeroExterior': this.NumeroExterior,
+    'CodigoPostal': this.CodigoPostal
   });
 this.ventaforma = fb2.group({
   'cadena': this.cadena
@@ -82,6 +90,10 @@ this.ventaforma = fb2.group({
 
 
   ngOnInit() {
+    this.Nombrecito = localStorage.getItem("Nombre_U");
+    this.Apellidito = localStorage.getItem("ApellidoPa_U");
+    this.Correito = localStorage.getItem("email_U");
+
     console.log(this.precioBinding + " ESTE ES EL VALOR");
     this.Categoria = this._servicioCompartido.getCategoria();
     this.IdProducto = this._servicioCompartido.getIdProducto();  
@@ -108,9 +120,38 @@ this.ventaforma = fb2.group({
     this.LibroCarrousel();
     
     this.defaultPrice();
-    
+    this.obtenerDirecciones();
 
   }
+  obtenerDirecciones() {
+    let body = new URLSearchParams();
+    body.append('email', localStorage.getItem('email_U'));
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerDirecciones.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA = "";
+            this.data = [];
+            console.log(result);
+            this.direccionesArray = result;
+            for (var key in result) {
+            this.AA = this.AA + key;
+            if (result.hasOwnProperty(key)) {
+              this.val = result[key];
+              this.data.push(Object.keys(this.val));
+              for (var i = 0; i < Object.keys(this.val).length; i++) {
+              this.contenedor = Object.keys(this.val)[i];
+              Object.entries(this.val)[i]
+               
+                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+
+                }
+             }
+          }
+    });
+  }
+
 //Metodo de obtencion de un libro aleatorio para optimizar las pruebas
   LibroAleatorio() {
     let body = new URLSearchParams();
@@ -150,6 +191,9 @@ this.ventaforma = fb2.group({
     body.append('calle2', this.calle2);
     body.append('calle3', this.calle3);
     body.append('ciudad', this.ciudad);
+    body.append("cantidad",this.cantidad);
+    body.append("numeroExterior", this.NumeroExterior);
+    body.append("codigoPostal", this.CodigoPostal);
     console.log(this.calle1);
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/enviarCorreo.php', body)
     .map((res:Response) => res.text())
