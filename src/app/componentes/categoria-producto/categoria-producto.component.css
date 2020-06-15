@@ -140,3 +140,48 @@ a.btn-card {
 {
     margin: -120px;
 }
+
+#producto
+{
+    height:300px;
+    width:250px; 
+    margin-left:16%;
+}
+
+@media only screen and (max-width:320px) and (min-width:319px)
+{
+    #producto
+    {
+        width:200px;
+        height: 250px;
+        margin-left:10%;
+    }
+}
+
+@media only screen and (max-width:375px) and (min-width:360px)
+{
+    #producto
+    {
+        margin-left: 9%;
+    }
+}
+
+@media only screen and (max-width:1024px) and (min-width:1000px)
+{
+    #producto
+    {
+        width:200px;
+        height: 250px;
+        margin-left:10%;
+    }
+}
+
+@media only screen and (max-width:768px) and (min-width:767px)
+{
+    #producto
+    {
+        width:150px;
+        height: 200px;
+        margin-left:7%;
+    }
+}
