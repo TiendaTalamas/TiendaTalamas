@@ -39,14 +39,15 @@
       <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
       <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
     </form>
+    <!---
    <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
     </ng-container>
     <ng-template #elseTemplate>
-      <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
+      <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button> >
       
       <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
     </ng-template>    
-
+-->
 
     
 </div>  
@@ -266,7 +267,7 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros; let i = index">
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-          {{_servicioCompartido.ApellidoPa}}
+          <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
       </div>
   </div>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -275,6 +276,7 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros2; let i = index">
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+          <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
       </div>
   </div>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -283,6 +285,7 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros3; let i = index">
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+          <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
       </div>
   </div>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
