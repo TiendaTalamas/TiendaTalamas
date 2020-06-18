@@ -64,10 +64,10 @@
           <br>
            
           <div *ngIf="P1">
-            <h5>Editorial:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad1}}</p>
+            <h5>Editorial:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad4}}</p>
             <h5>Autor:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad2}}</p>
             <h5>Paginas:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad3}}</p>
-            <h5>Año:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad4}}</p>
+            <h5>Año:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad1}}</p>
         
         
           </div>
@@ -187,7 +187,7 @@
         <div class="container">
 
           <div class="form-sec">
-            <h4>Venta por correo</h4>
+            <h4>Venta por Whatsapp</h4>
             
             <form [formGroup]="ventaForm">
               <div class="form-group">
@@ -198,6 +198,12 @@
                 <label>Apellido:</label>
                 <input type="text" class="form-control" [(ngModel)]="apellido" formControlName="apellido" placeholder="Apellido" type="text" >
               </div>
+
+              <div class="form-group">
+                <label>Numero de celular:</label>
+                <input type="email" class="form-control" [(ngModel)]="email" formControlName="email" placeholder="Ej:+52123456789" type="text" > 
+              </div>
+
               <div class="form-group">
                 <label>Correo:</label>
                 <input type="email" class="form-control" [(ngModel)]="email" formControlName="email" placeholder="Correo" type="email" > 
