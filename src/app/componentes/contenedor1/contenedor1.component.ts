@@ -524,7 +524,7 @@ export class Contenedor1Component implements OnInit {
     {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://192.168.1.99/talamas/obtenerInstrumentoVendidos.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerInstrumentoVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -552,7 +552,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://192.168.1.99/talamas/obtenerInstrumentoVendidos.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerInstrumentoVendidos.php', body)
     .map((res:Response) => res.json()) 
             .subscribe(result => 
             {
@@ -581,7 +581,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://192.168.1.99/talamas/obtenerInstrumentoVendidos.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerInstrumentoVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {

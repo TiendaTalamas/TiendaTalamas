@@ -64,10 +64,10 @@
           <br>
            
           <div *ngIf="P1">
-            <h5>Editorial:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad1}}</p>
+            <h5>Editorial:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad4}}</p>
             <h5>Autor:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad2}}</p>
             <h5>Paginas:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad3}}</p>
-            <h5>Año:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad4}}</p>
+            <h5>Año:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad1}}</p>
         
         
           </div>
@@ -89,7 +89,7 @@
           <div class="card-body"  *ngFor = "let producto of productos">
               <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
               <div>
-                <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button> <button type="button" class="btn btn-warning">Agregar al carrito</button>
+                <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button> <!---<button type="button" class="btn btn-warning">Agregar al carrito</button>---->
 
               </div>
 
