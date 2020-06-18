@@ -47,6 +47,7 @@ export class VentaLibroComponent implements OnInit {
   precioBinding:number;
   precio:number;
   cantidades = [1, 2, 3];
+  numeroCelular:string;
 
   //array para guardar los valores
 
@@ -63,7 +64,8 @@ export class VentaLibroComponent implements OnInit {
     'precioBinding': this.precioBinding,
     'precio': this.precio,
     'NumeroExterior': this.NumeroExterior,
-    'CodigoPostal': this.CodigoPostal
+    'CodigoPostal': this.CodigoPostal,
+    'numeroCelular': this.numeroCelular
   });
 this.ventaforma = fb2.group({
   'cadena': this.cadena
@@ -185,6 +187,7 @@ this.ventaforma = fb2.group({
     let body = new URLSearchParams();
     body.append("IdProducto", this.IdProducto);
     body.append('nombre', this.nombre);
+    body.append('numeroCelular', this.numeroCelular);
     body.append('email', this.email);
     body.append('apellido', this.apellido);
     body.append('calle1', this.calle1);
@@ -201,7 +204,7 @@ this.ventaforma = fb2.group({
             {
               if(result == "Message has been sent")
               {
-                alert("Mensaje enviado");
+                alert("Mensaje enviado, en unos instantes recibira un mensaje en su whatsapp");
               }
               else{
                 alert(result);

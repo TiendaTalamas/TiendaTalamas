@@ -110,7 +110,7 @@
 -->
 
 <!--Banner-->
-
+<!--
 <div id="cards" class="row mb-5 mt-2">
   <div class="col-md-4">
   <div class="card">
@@ -157,6 +157,7 @@
           </div>
       </div>
 </div>
+
 <div class="col-md-4">
 <div class="card">
           <div class="card-content">
@@ -181,7 +182,7 @@
       </div>
 </div>
 </div>
-
+-->
 <div class="banner-breadcum section">
   <div class="row">
       <div class="breadcrumb-image" style="background-image: url(https://www.quo.es/wp-content/uploads/2019/10/a-que-huelen-los-libros-viejos-960x640.jpg);">
@@ -223,7 +224,7 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index">
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-          <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
+          <h5><p class="ml-1 mt-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
       </div>
   </div>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -232,7 +233,7 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Vendidos_Libros2; let i = index">
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-          <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
+          <h5><p class="ml-1 mt-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
       </div>
   </div>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -241,7 +242,7 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Vendidos_Libros3; let i = index">
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-          <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
+          <h5><p class="ml-1 mt-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
       </div>
   </div>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -267,7 +268,7 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros; let i = index">
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-          <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
+          <h5><p class="ml-1 mt-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
       </div>
   </div>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -276,7 +277,7 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros2; let i = index">
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-          <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
+          <h5><p class="ml-1 mt-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
       </div>
   </div>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -285,7 +286,7 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of articulosArray_Recientes_Libros3; let i = index">
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-          <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
+          <h5><p class="ml-1 mt-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
       </div>
   </div>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -379,7 +380,7 @@
   
   <div class="banner-breadcum section">
     <div class="row">
-        <div class="breadcrumb-image" style="background-image: url(https://sonnydickson.com/wp-content/uploads/2019/09/totallee-iphone-11-cases-1-960x640.jpg);">
+        <div class="breadcrumb-image" style="background-image: url(https://scontent.fntr2-1.fna.fbcdn.net/v/t1.0-9/s960x960/87014942_567361087190408_7383109980813000704_o.jpg?_nc_cat=111&_nc_sid=2d5d41&_nc_eui2=AeGAkd4JZ80WSlVNodO7hjdz1oqOsHylfmHWio6wfKV-YS2WdC5GVZfUbBbM1_ODRQ6Bu5DYdWm5kjCQmUUOB0pD&_nc_ohc=Sh1BRfUg2_EAX-bfs53&_nc_ht=scontent.fntr2-1.fna&_nc_tp=7&oh=b0a53d789c7a008c5ff3dff51cda1382&oe=5F116868);">
         <div class="container text-center">
             <h1>Todo para tu telefono justo aqui</h1>
                 <div class="breadcrumbs_path">
