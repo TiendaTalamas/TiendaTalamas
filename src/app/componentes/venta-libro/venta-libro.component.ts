@@ -205,6 +205,7 @@ this.ventaforma = fb2.group({
               if(result == "Message has been sent")
               {
                 alert("Mensaje enviado, en unos instantes recibira un mensaje en su whatsapp");
+                console.log(this.numeroCelular);
               }
               else{
                 alert(result);
