@@ -55,7 +55,17 @@
 <div style="overflow: hidden;">
 <div class="row mt-4" *ngFor = "let producto of productos">
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-    <img class="izquierda mb-5 mt-2 ml-5" src="{{producto.Imagen}}" width="350" height="450"> 
+  <div class="galeria">
+    <input type="radio" name="navegacion" id="_1" checked>
+    <input type="radio" name="navegacion" id="_2">
+    <input type="radio" name="navegacion" id="_3">
+    <input type="radio" name="navegacion" id="_4"> 
+    <img src="https://www.fillmurray.com/260/300" width="260" height="300" alt="Galeria CSS 1" />
+    <img src="https://www.placecage.com/c/260/300" width="260" height="300" alt="Galeria CSS 2"  />
+    <img src="http://placekitten.com/260/300" width="260" height="300" alt="Galeria CSS 3" />
+    <img src="http://www.stevensegallery.com/260/300" width="260" height="300" alt="Galeria CSS 4" />
+  </div>
+    <!--<img class="izquierda mb-5 mt-2 ml-5" src="{{producto.Imagen}}" width="350" height="450">-->
 </div>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 md-ml-4">
      <div><h1><p style = "font-family:Helvetica; padding:0px 0px;">{{producto.NombreProducto}} 
@@ -90,7 +100,7 @@
           <div class="card-body"  *ngFor = "let producto of productos">
               <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
               <div>
-                <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button> <!---<button type="button" class="btn btn-warning">Agregar al carrito</button>---->
+                <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
 
               </div>
 
