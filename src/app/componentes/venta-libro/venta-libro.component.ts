@@ -30,6 +30,7 @@ export class VentaLibroComponent implements OnInit {
   Correito:string;
   NumeroExterior:string;
   CodigoPostal:string;
+  Tipo: boolean;
 
   //Variables para formulario 
   DatosError:boolean = false;
@@ -51,7 +52,7 @@ export class VentaLibroComponent implements OnInit {
 
   //array para guardar los valores
 
-  constructor(private _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,){ 
+  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,){ 
   this.ventaForm = fb.group({
     'email' : [null, Validators.required],
     'nombre': this.nombre,
@@ -403,6 +404,11 @@ this.ventaforma = fb2.group({
   navegarBusqueda()
   {
     this.router.navigate(['busqueda'])
+  }
+
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
   }
 
   venta()
