@@ -43,7 +43,7 @@
    <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
     </ng-container>
     <ng-template #elseTemplate>
-      <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button> >
+      <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button> 
       
       <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
     </ng-template>    
@@ -64,7 +64,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active" >
-      <img class="d-block w-100" src="assets/NuevaPortada.jpg" alt="First slide" height="500px">
+      <img class="d-block w-100" src="assets/compas.jpg" alt="First slide" height="500px">
     </div>
     <div class="carousel-item" *ngFor = "let slider of articulosArray_slider; let i = index" >
       <img class="d-block w-100" src="{{slider.ImagenSlider}}" alt="First slide" height="500px">
@@ -183,6 +183,7 @@
 </div>
 </div>
 -->
+<!-- BANNER ANTIGUO DE CEL
 <div class="banner-breadcum section">
   <div class="row">
       <div class="breadcrumb-image" style="background-image: url(https://www.quo.es/wp-content/uploads/2019/10/a-que-huelen-los-libros-viejos-960x640.jpg);">
@@ -194,7 +195,8 @@
       </div>
   </div>
     </div>
-  </div>
+  </div>-->
+
 <!--Este div se mostrara solo en celular-->
 <h1 id="deco" class="mr-5 ml-5" style="color: black;">LIBROS MAS VENDIDOS</h1>
 <hr id="deco" style="width:80%;"/>
