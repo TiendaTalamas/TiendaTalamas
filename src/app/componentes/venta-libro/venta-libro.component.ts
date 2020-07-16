@@ -2,11 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 //Importando los servicios para obtener los datos del producto
 import {servicioCompartido} from '../../servicios/servicioCompartido';
 import { producto } from '../../servicios/producto';
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 import { Http , Response} from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
+import { importType } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -52,7 +53,7 @@ export class VentaLibroComponent implements OnInit {
 
   //array para guardar los valores
 
-  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,){ 
+  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute,){ 
   this.ventaForm = fb.group({
     'email' : [null, Validators.required],
     'nombre': this.nombre,
@@ -96,10 +97,9 @@ this.ventaforma = fb2.group({
     this.Nombrecito = localStorage.getItem("Nombre_U");
     this.Apellidito = localStorage.getItem("ApellidoPa_U");
     this.Correito = localStorage.getItem("email_U");
-
+    this.IdProducto = this.Route.snapshot.paramMap.get('id');
+    this.Categoria = this.Route.snapshot.paramMap.get('categoria');
     console.log(this.precioBinding + " ESTE ES EL VALOR");
-    this.Categoria = this._servicioCompartido.getCategoria();
-    this.IdProducto = this._servicioCompartido.getIdProducto();  
     if(this.IdProducto === undefined){
       this.LibroAleatorio();
 
@@ -332,14 +332,10 @@ this.ventaforma = fb2.group({
 
   
   masInformacion(IdProducto: string, Categoria: string){
-    this.Nombre = IdProducto;
-    console.log(this.Nombre);
-    this._servicioCompartido.setIdProducto(IdProducto);
-    this._servicioCompartido.setCategoria(Categoria);
-    this.Categoria = this._servicioCompartido.getCategoria();
-    this.IdProducto = this._servicioCompartido.getIdProducto();  
+    this.IdProducto = IdProducto;
+    this.Categoria = Categoria;
+    this.router.navigate(['venta',Categoria,IdProducto]);
     this.obtenerArticulo();
-
 
   }
 /*

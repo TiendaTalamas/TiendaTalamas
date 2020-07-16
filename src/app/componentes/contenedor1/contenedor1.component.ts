@@ -439,9 +439,8 @@ export class Contenedor1Component implements OnInit {
   masInformacion(IdProducto: string, Categoria: string){
     this.nombre = IdProducto;
     console.log(this.nombre);
-    this.router.navigate(['venta']);
-    this._servicioCompartido.setIdProducto(IdProducto);
-    this._servicioCompartido.setCategoria(Categoria);
+    this.router.navigate(['venta',Categoria,IdProducto]);
+
 
    }
 
