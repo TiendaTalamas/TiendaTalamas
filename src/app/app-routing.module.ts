@@ -11,6 +11,7 @@ import {MusicaComponent} from './componentes/musica/musica.component'
 import {CategoriaProductoComponent} from './componentes/categoria-producto/categoria-producto.component'
 import {BusquedaComponent} from './componentes/busqueda/busqueda.component'
 import {ConfiguracionUsuarioComponent} from './componentes/configuracion-usuario/configuracion-usuario.component'
+import { CompraComponent } from './componentes/compra/compra/compra.component';
 
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'categoria/:categoria/:subcategoria', component: CategoriaProductoComponent,}, 
   {path: 'busqueda/:search', component: BusquedaComponent,},
   {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,},
-  {path: 'Pago', component: MetodoPagoComponent,}
+  {path: 'Pago', component: MetodoPagoComponent,},
+  {path: 'Datos/Venta', component:CompraComponent,}
 
 
 ];

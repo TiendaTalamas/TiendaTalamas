@@ -89,6 +89,7 @@ this.ventaforma = fb2.group({
   productosCarrousel = new Array;
   productosCarrousel2 = new Array;
   productosCarrousel3 = new Array;
+  imagenesInstrumentos = new Array;
 
 
 
@@ -126,6 +127,36 @@ this.ventaforma = fb2.group({
     this.obtenerDirecciones();
 
   }
+
+  obtenerImagenes() {
+    let body = new URLSearchParams();
+    body.append("IdProducto", this.Route.snapshot.paramMap.get('id'));
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerImagenesInstrumentos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA = "";
+            this.data = [];
+            console.log(result);
+            this.imagenesInstrumentos = result;
+            for (var key in result) {
+            this.AA = this.AA + key;
+            if (result.hasOwnProperty(key)) {
+              this.val = result[key];
+              this.data.push(Object.keys(this.val));
+              for (var i = 0; i < Object.keys(this.val).length; i++) {
+              this.contenedor = Object.keys(this.val)[i];
+              Object.entries(this.val)[i]
+               
+                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+
+                }
+             }
+          }
+    });
+  }
+
   obtenerDirecciones() {
     let body = new URLSearchParams();
     body.append('email', localStorage.getItem('email_U'));
