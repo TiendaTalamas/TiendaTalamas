@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response } from '@angular/http';
 import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
 import 'rxjs/add/operator/map';
@@ -22,7 +22,7 @@ export class CategoriaProductoComponent implements OnInit {
   registroForm: FormGroup;
 
   constructor(private http: Http,private router: Router, private location:Location,
-    public _servicioCompartido : servicioCompartido, private fb:FormBuilder) {   
+    public _servicioCompartido : servicioCompartido, private fb:FormBuilder, private Route:ActivatedRoute) {   
       this.registroForm = fb.group({
         'cadena' : this.cadena
 
@@ -52,8 +52,8 @@ export class CategoriaProductoComponent implements OnInit {
 
   ngOnInit() {
     this._servicioCompartido.comprobarUsuario();
-    this.Categoria = this._servicioCompartido.getCategoria();
-    this.SubCategoria = this._servicioCompartido.getSubCategoria();
+    this.Categoria = this.Route.snapshot.paramMap.get('categoria');
+    this.SubCategoria = this.Route.snapshot.paramMap.get('subcategoria');
     if(this.Categoria == "Instrumentos")
     {
       this.Logo = "assets/libreriaLogo.jpg";
@@ -124,8 +124,8 @@ export class CategoriaProductoComponent implements OnInit {
   }
 
   obtenerArticulos(){
-    this.Categoria = this._servicioCompartido.getCategoria();
-    this.SubCategoria = this._servicioCompartido.getSubCategoria();
+    this.Categoria = this.Route.snapshot.paramMap.get('categoria');
+    this.SubCategoria = this.Route.snapshot.paramMap.get('subcategoria');
     let body = new URLSearchParams();
       
     body.append('categoria', this.Categoria);
@@ -195,8 +195,8 @@ export class CategoriaProductoComponent implements OnInit {
 
   obtenerSubCategorias(){
     
-    this.Categoria = this._servicioCompartido.getCategoria();
-    this.SubCategoria = this._servicioCompartido.getSubCategoria();
+    this.Categoria = this.Route.snapshot.paramMap.get('categoria');
+    this.SubCategoria = this.Route.snapshot.paramMap.get('subcategoria');
     let body2 = new URLSearchParams();
     body2.append('categoria', this.Categoria);
 
@@ -229,11 +229,10 @@ export class CategoriaProductoComponent implements OnInit {
   }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
-    this.Categoria = Categoria;
+    this.router.navigate(['categoria',Categoria,SubCategoria])
+    this.Categoria = this.Route.snapshot.paramMap.get('categoria');
     console.log(this.Categoria);
     console.log(SubCategoria);
-    this._servicioCompartido.setCategoria(Categoria);
-    this._servicioCompartido.setSubCategoria(SubCategoria);
     if(this.Categoria == "Instrumentos")
     {
       this.Logo = "assets/libreriaLogo.jpg";
@@ -307,7 +306,7 @@ export class CategoriaProductoComponent implements OnInit {
   masInformacion(IdProducto: string){
     this.nombre = IdProducto;
     console.log(this.nombre);
-    this.router.navigate(['venta']);
+    this.router.navigate(['venta',this.Categoria,IdProducto]);
     this._servicioCompartido.setIdProducto(IdProducto);
     this._servicioCompartido.setCategoria(this.Categoria);
   

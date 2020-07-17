@@ -512,9 +512,7 @@ export class Contenedor1Component implements OnInit {
   }
   navegarBusqueda()
   {
-    this._servicioCompartido.setCadena(this.cadena);
-    console.log(this.cadena);
-    this.router.navigate(['busqueda'])
+    this.router.navigate(['busqueda',this.cadena])
   }
 
 

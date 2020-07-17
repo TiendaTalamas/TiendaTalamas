@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { Http, Response } from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import { producto } from '../../servicios/producto';
@@ -19,7 +19,7 @@ export class BusquedaComponent implements OnInit {
 
 
   constructor(private http: Http,private router: Router, private location:Location,
-    public _servicioCompartido : servicioCompartido, private fb:FormBuilder){   
+    public _servicioCompartido : servicioCompartido, private fb:FormBuilder, private Route: ActivatedRoute){   
       this.registroForm = fb.group({
         'cadena' : this.cadena
    });}
@@ -59,7 +59,7 @@ export class BusquedaComponent implements OnInit {
 
   ngOnInit() {
     this._servicioCompartido.comprobarUsuario();
-    this.cadena = this._servicioCompartido.getCadena();
+    this.cadena = this.Route.snapshot.paramMap.get('search');
     console.log(this.cadena);
     this.obtenerBusqueda();
 
@@ -171,9 +171,8 @@ export class BusquedaComponent implements OnInit {
   masInformacion(IdProducto: string, Categoria: string){
     this.nombre = IdProducto;
     console.log(this.nombre);
-    this.router.navigate(['venta']);
-    this._servicioCompartido.setIdProducto(IdProducto);
-    this._servicioCompartido.setCategoria(Categoria);
+    this.router.navigate(['venta',Categoria,IdProducto]);
+
 
   }
 
