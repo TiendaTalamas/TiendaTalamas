@@ -32,7 +32,7 @@ export class VentaLibroComponent implements OnInit {
   NumeroExterior:string;
   CodigoPostal:string;
   Tipo: boolean;
-
+  Imagen: string;
   //Variables para formulario 
   DatosError:boolean = false;
   cadena: string;
@@ -114,6 +114,8 @@ this.ventaforma = fb2.group({
     }
     else if(this.Categoria == "Instrumentos"){
       this.P2 = true;
+      console.log("Antes de la trajedia");
+      this.obtenerImagenes();
     }
 
     this.limiteI = "0";
@@ -130,7 +132,7 @@ this.ventaforma = fb2.group({
 
   obtenerImagenes() {
     let body = new URLSearchParams();
-    body.append("IdProducto", this.Route.snapshot.paramMap.get('id'));
+    body.append("IdProducto", this.IdProducto);
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerImagenesInstrumentos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
@@ -357,8 +359,11 @@ this.ventaforma = fb2.group({
                 }
              }
           }
+          for(let producto of this.productos)
+          {
+              this.Imagen=producto.Imagen;
+          }
     });
-
   }
 
   
