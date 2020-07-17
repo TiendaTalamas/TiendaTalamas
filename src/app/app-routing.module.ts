@@ -20,8 +20,8 @@ const routes: Routes = [
   {path: 'venta/:categoria/:id', component: VentaLibroComponent, },
   {path: 'emd', component: EMDComponent, },
   {path: 'musica', component: MusicaComponent,},
-  {path: 'categoria', component: CategoriaProductoComponent,}, 
-  {path: 'busqueda', component: BusquedaComponent,},
+  {path: 'categoria/:categoria/:subcategoria', component: CategoriaProductoComponent,}, 
+  {path: 'busqueda/:search', component: BusquedaComponent,},
   {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,},
   {path: 'Pago', component: MetodoPagoComponent,}
 
