@@ -22,6 +22,7 @@ import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 import { ConfiguracionUsuarioComponent } from './componentes/configuracion-usuario/configuracion-usuario.component';
 import { MetodoPagoComponent } from './componentes/metodo-pago/metodo-pago.component';
 import { CarritoComponent } from './componentes/carrito/carrito.component';
+import { CompraComponent } from './componentes/compra/compra/compra.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { CarritoComponent } from './componentes/carrito/carrito.component';
     ConfiguracionUsuarioComponent,
     MetodoPagoComponent,
     CarritoComponent,
+    CompraComponent,
    
   ],
   imports: [

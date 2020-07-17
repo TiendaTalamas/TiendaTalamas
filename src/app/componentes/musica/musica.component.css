@@ -173,8 +173,8 @@ button
 }
 .center-bottom{
     position: absolute;
-left: 50%;
-top:75% ;
+    left: 50%;
+    top:75% ;
     z-index: 1;
     color:white;
     font-size: xx-large;
@@ -207,6 +207,7 @@ top:75% ;
 
 
 }
+
 .imgr2{
     position: relative;
     filter: brightness(70%);

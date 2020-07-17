@@ -2,6 +2,10 @@
 .carousel-control-next, .carousel-control-prev{
 	width: 1% !important;
 }
+body
+{
+  background-color: white;
+}
 
 h1
 {
@@ -58,7 +62,7 @@ h1
 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff0000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
   }
 
-  button
+  #boton
 {
     margin-right: 20px;
 }
@@ -292,6 +296,16 @@ h1
 {
   overflow: hidden;
 }
+
+#textomas
+{
+  width: 250px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
 
 
 
