@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #ffca00" >
+<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #fa1616" >
   <a class="navbar-brand"><img src="assets/talamas.png" alt="" style = "width: 100px; height:100px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -214,12 +214,12 @@
     </div>
   </div>
   </div>
-  <h1 style = "color: black; text-align:center;">Libros añadidos recientemente</h1>
+  <h1 style = "color: black; text-align:center;">Añadidos recientemente</h1>
   <hr/>
 
   <div class="container-fluid ml-5">
     <div class="row mb-4">
-        <div class="col-md-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index">
+        <div class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index">
 
        <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
        <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
@@ -323,7 +323,7 @@
 
   <div class="banner-breadcum section">
     <div class="row">
-        <div class="breadcrumb-image" style="background-image: url(https://www.tendencias21.net/photo/art/grande/31579491-29735050.jpg?v=1552482907);">
+        <div class="breadcrumb-image" style="background-image: url(https://cdn.shopify.com/s/files/1/0253/8618/8834/articles/guitarra_efc51b91-b078-40f7-8fe3-8c777bd84635.jpg?v=1566272689);">
         <div class="container text-center">
             <h1>¿Que tal un poco de musica?</h1>
                 <div class="breadcrumbs_path">
