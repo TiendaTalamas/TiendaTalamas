@@ -65,7 +65,7 @@ export class LibreriaComponent implements OnInit {
                
                 this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
                 this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
-
+                
                 }
              }
           }
@@ -100,13 +100,10 @@ export class LibreriaComponent implements OnInit {
     });
   }
 
-  masInformacion(IdProducto: string){
+  masInformacion(IdProducto: string, Categoria: string){
     this.nombre = IdProducto;
     console.log(this.nombre);
-    this.router.navigate(['venta']);
-    this._servicioCompartido.setIdProducto(IdProducto);
-    this._servicioCompartido.setCategoria(this.Categoria);
-
+    this.router.navigate(['venta',Categoria,IdProducto]);
   }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
@@ -124,6 +121,7 @@ export class LibreriaComponent implements OnInit {
   ngOnInit() {
     this._servicioCompartido.comprobarUsuario();
     this.Categoria = "Libros";
+    this.obtenerArticulos();
   }
   navegarInicio()
   {

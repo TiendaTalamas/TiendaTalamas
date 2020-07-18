@@ -11,3 +11,11 @@ button
     justify-content: center;
     min-height:75vh;
 }
+
+#textomas
+{
+  width: 250px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
