@@ -374,6 +374,12 @@ this.ventaforma = fb2.group({
     this.obtenerArticulo();
 
   }
+  comprarPorTarjeta(IdProducto: string){
+    this.IdProducto = IdProducto;
+    this.router.navigate(['Datos/Venta',IdProducto]);
+    this.obtenerArticulo();
+
+  }
 /*
   onChange()
   {

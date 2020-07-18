@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'busqueda/:search', component: BusquedaComponent,},
   {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,},
   {path: 'Pago', component: MetodoPagoComponent,},
-  {path: 'Datos/Venta', component:CompraComponent,}
+  {path: 'Datos/Venta/:id', component:CompraComponent,}
 
 
 ];
