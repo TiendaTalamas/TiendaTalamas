@@ -7,12 +7,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown"  *ngIf="_servicioCompartido.CompUsuario">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Usuario
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Ver carrito</a>
-            <a class="dropdown-item" href="#">Configuracion</a>
+            <a class="dropdown-item" (click)="navegarConfiguracion()">Configuracion</a>
             <a class="dropdown-item" href="#">Soporte</a>
             <div class="dropdown-divider"></div>
             <a href="http://localhost:4200/" class="dropdown-item" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
@@ -20,27 +20,25 @@
         </li>
   
         <li class="nav-item active">
-          <a class="nav-link" (click)="navegarInicio();">Inicio<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://emdpublicidad.com/">Libreria</a>
-          
+          <button type="button" class="btn btn-danger" style="color: black; border-color:#ffca00; background-color:#ffca00;" (click)="navegarInicio();">Inicio</button>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" (click)="navegarMusica()" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Musica
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Acceso</a>
-            <a class="dropdown-item" href="#">De viento</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Otro tipo</a>
-          </div>
+            <button type="button" class="btn btn-danger" style="color: black; border-color:#ffca00; background-color:#ffca00;" (click)="navegarLibreria();">Libreria</button>
+              <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" style="color: black; border-color:#ffca00; background-color:#ffca00;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <span class="sr-only">Toggle Dropdown</span>
+             </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+               </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" (click)="navegarPublicidad();">Publicidad</a>
+          <button type="button" class="btn btn-danger" style="color: black; border-color:#ffca00; background-color:#ffca00;" (click)="navegarMusica()">Musica</button>
         </li>
-      </ul>
+    </ul>
   
       <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">

@@ -6,33 +6,38 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown"  *ngIf="_servicioCompartido.CompUsuario">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Usuario
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Ver carrito</a>
-          <a class="dropdown-item" (click)="navegarConfiguracion()">Configuracion</a>
-          <a class="dropdown-item" href="#">Soporte</a>
-          <div class="dropdown-divider"></div>
-          <a href="http://localhost:4200/" class="dropdown-item" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
-        </div>
-      </li>
+        <li class="nav-item dropdown"  *ngIf="_servicioCompartido.CompUsuario">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Usuario
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Ver carrito</a>
+            <a class="dropdown-item" (click)="navegarConfiguracion()">Configuracion</a>
+            <a class="dropdown-item" href="#">Soporte</a>
+            <div class="dropdown-divider"></div>
+            <a href="http://localhost:4200/" class="dropdown-item" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
+          </div>
+        </li>
 
-      <li class="nav-item active">
-        <a class="nav-link" (click)="navegarInicio();">Inicio<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="navegarLibreria();">Libreria</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="navegarMusica()" role= "button" aria-haspopup="true" aria-expanded="false">
-          Musica
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="http://emdpublicidad.com/">Publicidad</a>
-      </li>
+        <li class="nav-item active">
+          <button type="button" class="btn btn-danger" style="color: black; border-color:#fa1616;" (click)="navegarInicio();">Inicio</button>
+        </li>
+        <li class="nav-item dropdown">
+            <button type="button" class="btn btn-danger" style="color: black; border-color:#fa1616;" (click)="navegarLibreria();">Libreria</button>
+              <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" style="color: black; border-color:#fa1616;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <span class="sr-only">Toggle Dropdown</span>
+             </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+               </div>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-danger" style="color: black; border-color:#fa1616;" (click)="navegarMusica()">Musica</button>
+        </li>
     </ul>
 
     <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
