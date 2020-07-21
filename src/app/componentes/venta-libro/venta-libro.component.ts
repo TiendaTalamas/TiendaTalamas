@@ -376,9 +376,7 @@ this.ventaforma = fb2.group({
   }
   comprarPorTarjeta(IdProducto: string){
     this.IdProducto = IdProducto;
-    this.router.navigate(['Datos/Venta',IdProducto]);
-    this.obtenerArticulo();
-
+    this.router.navigateByUrl("http://localhost/talamas/DatosDePago.php");
   }
 /*
   onChange()
