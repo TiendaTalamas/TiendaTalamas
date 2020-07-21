@@ -94,6 +94,10 @@ export class Contenedor1Component implements OnInit {
    articulosArray_Vendidos_Libros = new Array;
    articulosArray_Vendidos_Libros2 = new Array;
    articulosArray_Vendidos_Libros3 = new Array;
+   articulosArray_Vendidos_Libros4 = new Array;
+   articulosArray_Vendidos_Libros5 = new Array;
+   articulosArray_Vendidos_Libros6 = new Array;
+   
 
 
 
@@ -127,6 +131,24 @@ export class Contenedor1Component implements OnInit {
     this.obtenerVendidos();
     this.obtenerMasVendidosInstrumentos();
     this.obtenerLibrosCelular()
+    this.LimiteI = "18";
+    this.obtenerRecientes()
+    this.obtenerVendidos();
+    this.obtenerMasVendidosInstrumentos();
+    this.obtenerLibrosCelular()
+    this.LimiteI = "24";
+    this.obtenerRecientes()
+    this.obtenerVendidos();
+    this.obtenerMasVendidosInstrumentos();
+    this.obtenerLibrosCelular()
+    this.LimiteI = "30";
+    this.obtenerRecientes()
+    this.obtenerVendidos();
+    this.obtenerMasVendidosInstrumentos();
+    this.obtenerLibrosCelular()
+
+
+
 
 
     this.obtenerRecomendados();
@@ -318,6 +340,96 @@ export class Contenedor1Component implements OnInit {
     });
 
   }
+  else if(this.LimiteI == "18")
+  {
+    let body = new URLSearchParams();
+    body.append('limiteI', this.LimiteI);
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroVendidos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Vendidos_Libros4 = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+
+  }
+  else if(this.LimiteI == "24")
+  {
+    let body = new URLSearchParams();
+    body.append('limiteI', this.LimiteI);
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroVendidos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Vendidos_Libros5 = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+
+  }
+  else if(this.LimiteI == "30")
+  {
+    let body = new URLSearchParams();
+    body.append('limiteI', this.LimiteI);
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroVendidos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Vendidos_Libros6 = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+
+  }
 
   }
   obtenerRecientes() {
@@ -408,6 +520,7 @@ export class Contenedor1Component implements OnInit {
     });
 
   }
+  
 
   }
 
