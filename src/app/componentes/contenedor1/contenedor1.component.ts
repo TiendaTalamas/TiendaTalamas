@@ -116,8 +116,7 @@ export class Contenedor1Component implements OnInit {
 
 
   ngOnInit() {
-    this.obtenerArticulos();
-    this.obtenerOfertas();
+  
     //Productos Libros
     this.LimiteI = "0";
     this.obtenerVendidos();
@@ -249,62 +248,9 @@ export class Contenedor1Component implements OnInit {
           }
     });
   }
-  //Obteniendo datos
-  obtenerArticulos() {
-    let body = new URLSearchParams();
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/articulosVendidos.php', body)
-    .map((res:Response) => res.json())
-            .subscribe(result => 
-            {
-            this.AA = "";
-            this.data = [];
-            console.log(result);
-            this.articulosArray = result;
-            for (var key in result) {
-            this.AA = this.AA + key;
-            if (result.hasOwnProperty(key)) {
-              this.val = result[key];
-              this.data.push(Object.keys(this.val));
-              for (var i = 0; i < Object.keys(this.val).length; i++) {
-              this.contenedor = Object.keys(this.val)[i];
-              Object.entries(this.val)[i]
-               
-                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
-                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+  
+  
 
-                }
-             }
-          }
-    });
-  }
-//Metodo para obtener Ofertas
-  obtenerOfertas() {
-    let body = new URLSearchParams();
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/ofertas.php', body)
-    .map((res:Response) => res.json())
-            .subscribe(result => 
-            {
-            this.AA_Ofertas = "";
-            this.data_Ofertas = [];
-            console.log(result);
-            this.articulosArray_Ofertas = result;
-            for (var key in result) {
-            this.AA_Ofertas = this.AA_Ofertas + key;
-            if (result.hasOwnProperty(key)) {
-              this.val_Ofertas = result[key];
-              this.data_Ofertas.push(Object.keys(this.val_Ofertas));
-              for (var i = 0; i < Object.keys(this.val_Ofertas).length; i++) {
-              this.contenedor_Ofertas = Object.keys(this.val_Ofertas)[i];
-              Object.entries(this.val_Ofertas)[i]
-               
-                this.xxxMap_Ofertas.set(Object.keys(this.val_Ofertas)[i], Object.values(this.val_Ofertas)[i]);
-                this.valuesKeys_Ofertas.push(Object.keys(this.val_Ofertas)[i], Object.values(this.val_Ofertas)[i]);
-
-                }
-             }
-          }
-    });
-  }
    //Metodo para obtener recientes
   obtenerVendidos() {
     if(this.LimiteI == "0")
