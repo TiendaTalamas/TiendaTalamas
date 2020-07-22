@@ -7,6 +7,7 @@ import {Location} from "@angular/common";
 import { producto } from '../../servicios/producto';
 import { servicioCompartido } from '../../servicios/servicioCompartido';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { BoundDirectivePropertyAst } from '@angular/compiler';
 
 @Component({
   selector: 'app-contenedor1',
@@ -750,6 +751,20 @@ export class Contenedor1Component implements OnInit {
     });
 
   }
+
+  }
+  anadirAlCarrito(IdProducto:string, Cantidad:string)
+  {
+    let body = new URLSearchParams();
+    body.append("IdProducto",IdProducto);
+    body.append("Cantidad",Cantidad);
+    console.log(Cantidad);
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/agregarCarrito.php', body)
+    .map((res:Response) => res.text())
+            .subscribe(result => 
+            {
+              alert(result);
+    });
 
   }
 }
