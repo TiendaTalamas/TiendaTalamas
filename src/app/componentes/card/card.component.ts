@@ -69,39 +69,16 @@ ngOnInit(){
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
-              this.AA = "";
-            this.data = [];
-            if(result != "Error")
-            {
-            localStorage.setItem('Nombre_U',result[0]['Nombre']);
-            localStorage.setItem('ApellidoPa_U',result[0]['ApellidoPa']);
-            localStorage.setItem('ApellidoMa_U',result[0]['ApellidoMa']);
-            localStorage.setItem('email_U',result[0]['email']);
-            localStorage.setItem('NumeroTel_U',result[0]['NumeroTel']);
-            localStorage.setItem('Imagen_U',result[0]['Imagen']);
-            localStorage.setItem('Token_U',result[0]['Token']);
-
-            for (var key in result) {
-            this.AA = this.AA + key;
-            if (result.hasOwnProperty(key)) {
-              this.val = result[key];
-              this.data.push(Object.keys(this.val));
-              for (var i = 0; i < Object.keys(this.val).length; i++) {
-              this.contenedor = Object.keys(this.val)[i];
-              Object.entries(this.val)[i]
-               
-                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
-                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
-
+                if(result['status'] == "200")
+                {
+                  localStorage.setItem('Token', result['token']);
+                  this.router.navigate[''];
                 }
-             }
-          }
-          this.navegarInicio();
-        }
-        else
-        {
-          alert(result);
-        }
+                else
+                {
+                  alert(result['mensaje']);
+                }
+
     });
 
     

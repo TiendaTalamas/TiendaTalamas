@@ -28,13 +28,8 @@ export class servicioCompartido{
   constructor(private http: Http, private router: Router) {}   
   comprobarUsuario() 
   {
-    var usuario;
-
-      usuario =localStorage.getItem('email_U');
       let body = new URLSearchParams();
-
-  body.append('email', usuario);
-  body.append('token', localStorage.getItem('Token_U'));
+     body.append('token', localStorage.getItem('token'));
 
 
 
@@ -42,20 +37,14 @@ export class servicioCompartido{
   .map((res:Response) => res.text())
           .subscribe(result => 
             {
-                if(result == "Error")
+                if(result['status'] == "400")
                 {
-                  this.CompUsuario=false;
-                  this.cerrarSesion();
+                    this.cerrarSesion();
+                    this.CompUsuario = false;
                 }
-                else{ 
-                this.CompUsuario=true;
-                localStorage.setItem('Token_U',result);
-                this.Nombre = localStorage.getItem('Nombre_U');
-                this.ApellidoPa = localStorage.getItem('ApellidoPa_U');
-                this.ApellidoMa = localStorage.getItem('ApellidoMa_U');
-                this.email = localStorage.getItem('email_U');
-                this.NumeroTel = localStorage.getItem('NumeroTel_U');
-                this.Imagen = localStorage.getItem('Imagen_U');
+                else
+                {
+                    this.CompUsuario = true;
                 }
   });
   } 
