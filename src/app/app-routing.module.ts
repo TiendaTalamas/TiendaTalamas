@@ -13,6 +13,8 @@ import {BusquedaComponent} from './componentes/busqueda/busqueda.component'
 import {ConfiguracionUsuarioComponent} from './componentes/configuracion-usuario/configuracion-usuario.component'
 import { CompraComponent } from './componentes/compra/compra/compra.component';
 import {CarritoComponent} from './componentes/carrito/carrito.component';
+import {CuadroExitosoComponent} from './componentes/CuadroExitoso/cuadro-exitoso/cuadro-exitoso.component';
+
 
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
@@ -27,7 +29,9 @@ const routes: Routes = [
   {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,},
   {path: 'Pago', component: MetodoPagoComponent,},
   {path: 'Datos/Venta/:id', component:CompraComponent,},
-  {path:'Carrito', component:CarritoComponent,}
+  {path:'Carrito', component:CarritoComponent,},
+  {path:'CuadroExitoso', component:CuadroExitosoComponent,}
+
 ];
 
 @NgModule({

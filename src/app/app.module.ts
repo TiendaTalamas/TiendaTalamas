@@ -23,6 +23,8 @@ import { ConfiguracionUsuarioComponent } from './componentes/configuracion-usuar
 import { MetodoPagoComponent } from './componentes/metodo-pago/metodo-pago.component';
 import { CarritoComponent } from './componentes/carrito/carrito.component';
 import { CompraComponent } from './componentes/compra/compra/compra.component';
+import { ExitosaComponent } from './exitosa/exitosa.component';
+import { CuadroExitosoComponent } from './componentes/CuadroExitoso/cuadro-exitoso/cuadro-exitoso.component';
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { CompraComponent } from './componentes/compra/compra/compra.component';
     MetodoPagoComponent,
     CarritoComponent,
     CompraComponent,
+    ExitosaComponent,
+    CuadroExitosoComponent,
    
   ],
   imports: [
