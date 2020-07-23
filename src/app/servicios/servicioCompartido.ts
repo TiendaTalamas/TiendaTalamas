@@ -29,22 +29,24 @@ export class servicioCompartido{
   comprobarUsuario() 
   {
       let body = new URLSearchParams();
-     body.append('token', localStorage.getItem('token'));
+     body.append('token', localStorage.getItem('Token'));
 
 
 
   this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/comprobarSesion.php', body)
-  .map((res:Response) => res.text())
+  .map((res:Response) => res.json())
           .subscribe(result => 
             {
                 if(result['status'] == "400")
                 {
+                    console.log(result);
                     this.cerrarSesion();
                     this.CompUsuario = false;
                 }
                 else
                 {
                     this.CompUsuario = true;
+                    console.log(result);
                 }
   });
   } 
