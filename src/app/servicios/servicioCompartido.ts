@@ -28,34 +28,25 @@ export class servicioCompartido{
   constructor(private http: Http, private router: Router) {}   
   comprobarUsuario() 
   {
-    var usuario;
-
-      usuario =localStorage.getItem('email_U');
       let body = new URLSearchParams();
-
-  body.append('email', usuario);
-  body.append('token', localStorage.getItem('Token_U'));
+     body.append('token', localStorage.getItem('Token'));
 
 
 
   this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/comprobarSesion.php', body)
-  .map((res:Response) => res.text())
+  .map((res:Response) => res.json())
           .subscribe(result => 
             {
-                if(result == "Error")
+                if(result['status'] == "400")
                 {
-                  this.CompUsuario=false;
-                  this.cerrarSesion();
+                    console.log(result);
+                    this.cerrarSesion();
+                    this.CompUsuario = false;
                 }
-                else{ 
-                this.CompUsuario=true;
-                localStorage.setItem('Token_U',result);
-                this.Nombre = localStorage.getItem('Nombre_U');
-                this.ApellidoPa = localStorage.getItem('ApellidoPa_U');
-                this.ApellidoMa = localStorage.getItem('ApellidoMa_U');
-                this.email = localStorage.getItem('email_U');
-                this.NumeroTel = localStorage.getItem('NumeroTel_U');
-                this.Imagen = localStorage.getItem('Imagen_U');
+                else
+                {
+                    this.CompUsuario = true;
+                    console.log(result);
                 }
   });
   } 

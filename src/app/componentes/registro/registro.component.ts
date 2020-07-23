@@ -113,9 +113,17 @@ export class RegistroComponent implements OnInit {
       .map((res:Response) => res.json())
               .subscribe(result => 
                 {
+                  console.log(result);
+                  if(result['status'] == "400")
+                  {
+                    alert(result['mensaje']);
+                  }
+                  else
+                  {
+                    localStorage.setItem('Token', result['token']);
+                    alert("Usuario registrado correctamente");
+                  }
                   
-              alert(result);   
-                     
             });
 
       }
