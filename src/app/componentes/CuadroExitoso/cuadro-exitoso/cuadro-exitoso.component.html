@@ -53,7 +53,7 @@
       
   </div>  
   </nav>
-
+  <ng-container *ngIf="EoF; else elseTemplate">
   <div class="container mt-5 mb-5" style="width: 500px; height:350px; overflow:hidden;">
 
         <p>FELICIDADES COMPRA EXITOSA<img src="assets/palomita.png"></p>
@@ -61,10 +61,12 @@
         
 
   </div>
-  <!--
+</ng-container>
+<ng-template #elseTemplate>
   <div class="container mt-5 mb-5" style="width: 500px; height:350px; overflow:hidden;">
 
     <p>ALGO SALIO MAL CON TU COMPRA<img src="assets/tacharoja.png"></p>
     <button id="boton" type="button" class="btn btn-warning">VOLVER A INICIO</button>
     
-</div>-->
+</div>
+</ng-template>   

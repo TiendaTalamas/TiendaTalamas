@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 import { Http} from '@angular/http';
 
 @Component({
@@ -9,9 +9,19 @@ import { Http} from '@angular/http';
 })
 export class CuadroExitosoComponent implements OnInit {
 
-  constructor(private router:Router,private http:Http) { }
+  constructor(private router:Router,private http:Http, private route:ActivatedRoute) { }
 
+  EoF:boolean;
   ngOnInit() {
+    if(this.route.snapshot.paramMap.get('Exito') == "Exito")
+    {
+      this.EoF = true;
+    }
+    else
+    {
+
+      this.EoF = false;
+    }
   }
   navegarInicio()
   {
