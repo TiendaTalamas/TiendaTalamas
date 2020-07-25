@@ -24,7 +24,7 @@ export class RegistroComponent implements OnInit {
   telefono: string;
   contrasena: string;
   repContrasena: string;
-  constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, fb2: FormBuilder,private _servicioCompartido: servicioCompartido){
+  constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, fb2: FormBuilder,public _servicioCompartido: servicioCompartido){
     this.registroForm = fb.group({
       'email' : [null, Validators.required],
       'nombre': this.nombre,
@@ -41,13 +41,25 @@ export class RegistroComponent implements OnInit {
 
     ngOnInit() {
     }
-
+    navegarConfiguracion()
+    {
+      this.router.navigate(['ConfiguracionUsuario']);
+    }
     navegarInicio()
     {
       this.router.navigate(['']);
       
     }
+    navegarCategoria(Categoria:string, SubCategoria: string){
 
+      console.log(SubCategoria);
+      this.router.navigate(['categoria',Categoria,SubCategoria]);
+  
+    this._servicioCompartido.setCategoria(Categoria);
+    this._servicioCompartido.setSubCategoria(SubCategoria);
+  
+    
+    }
     navegarRegistro()
     {
       this.router.navigate(['registro']);

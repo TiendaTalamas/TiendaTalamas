@@ -37,7 +37,7 @@
       </li>
   </ul>
     
-    <form [formGroup]="ventaforma" class="form-inline my-2 my-lg-0">
+    <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
       <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
     </form>
@@ -55,7 +55,7 @@
 </nav>
 
   <div class="col-md-10 col-sm-8 main-content">
-    <h1>CARRITO</h1>
+    <h1>CARRITO                         Subtotal:{{Subtotal}}</h1>
     <section class="details-card" *ngFor="let producto of articulosArray;  let i = index">
       <hr/>
       <div class="container-fluid mt-2 " style="background-color:#fff; "  >

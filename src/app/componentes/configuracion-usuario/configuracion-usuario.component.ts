@@ -197,5 +197,8 @@ export class ConfiguracionUsuarioComponent implements OnInit {
           }
     });
   }
-
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
+  }
 }

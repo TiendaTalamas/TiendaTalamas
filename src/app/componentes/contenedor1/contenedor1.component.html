@@ -11,7 +11,7 @@
             Usuario
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Ver carrito</a>
+            <a class="dropdown-item" (click)="navegarCarrito()">Ver carrito</a>
             <a class="dropdown-item" (click)="navegarConfiguracion()">Configuracion</a>
             <a class="dropdown-item" href="#">Soporte</a>
             <div class="dropdown-divider"></div>
@@ -228,7 +228,7 @@
             <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
             <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
             <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-            <button style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto, 1)" class="btn btn-primary mb-5 ml-5">Añadir al carrito</button> 
+            <button style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary mb-5 ml-5">Añadir al carrito</button> 
            </div>
 
         </div>
@@ -241,7 +241,7 @@
           <img class="imgr ml-4" src="{{reciente.Imagen}}" style = "width: 190px; height: 300px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
           <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
           <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-          <button style="background-color: #ffca00; border-color: #ffca00;" type="button"(click)="anadirAlCarrito(reciente.IdProducto, 1)"  class="btn btn-primary mb-5 ml-5">Añadir al carrito</button> 
+          <button style="background-color: #ffca00; border-color: #ffca00;" type="button"(click)="anadirAlCarrito(reciente.IdProducto)"  class="btn btn-primary mb-5 ml-5">Añadir al carrito</button> 
          </div>
         </div>
        </div>
@@ -254,7 +254,7 @@
           <img class="imgr ml-4" src="{{reciente.Imagen}}" style = "width: 190px; height: 300px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
           <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
           <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-          <button style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto, 1)" class="btn btn-primary mb-5 ml-5">Añadir al carrito</button> 
+          <button style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary mb-5 ml-5">Añadir al carrito</button> 
          </div>
         </div>
        </div>
@@ -287,7 +287,7 @@
             <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
             <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
             <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-            <button style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto, 1)" class="btn btn-primary mb-5 ml-5">Añadir al carrito</button> 
+            <button style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary mb-5 ml-5">Añadir al carrito</button> 
            </div>
 
         </div>
@@ -300,7 +300,7 @@
           <img class="imgr ml-4" src="{{reciente.Imagen}}" style = "width: 190px; height: 300px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
           <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
           <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-          <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5"(click)="anadirAlCarrito(reciente.IdProducto, 1)">Añadir al carrito</button> 
+          <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5"(click)="anadirAlCarrito(reciente.IdProducto)">Añadir al carrito</button> 
          </div>
         </div>
        </div>
@@ -312,7 +312,7 @@
          <img class="imgr ml-4" src="{{reciente.Imagen}}" style = "width: 190px; height: 300px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
          <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
          <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-         <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto, 1)">Añadir al carrito</button> 
+         <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)">Añadir al carrito</button> 
         </div>
        </div>
       </div>
@@ -376,7 +376,7 @@
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
           <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
           <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-          <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto, 1)">Añadir al carrito</button> 
+          <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)">Añadir al carrito</button> 
          </div>
 
       </div>
@@ -389,7 +389,7 @@
         <img class="imgr ml-4" src="{{reciente.Imagen}}" style = "width: 190px; height: 300px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-        <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto, 1)">Añadir al carrito</button> 
+        <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)">Añadir al carrito</button> 
        </div>
       </div>
      </div>
@@ -402,7 +402,7 @@
         <img class="imgr ml-4" src="{{reciente.Imagen}}" style = "width: 190px; height: 300px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-        <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto, 1)">Añadir al carrito</button> 
+        <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)">Añadir al carrito</button> 
        </div>
       </div>
      </div>

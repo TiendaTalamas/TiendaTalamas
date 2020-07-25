@@ -661,7 +661,10 @@ export class Contenedor1Component implements OnInit {
   {
     this.router.navigate(['busqueda',this.cadena])
   }
-
+  navegarCarrito()
+  {
+    this.router.navigate(['Carrito'])
+  }
 
   obtenerMasVendidosInstrumentos() {
     if(this.LimiteI == "0")
@@ -753,12 +756,13 @@ export class Contenedor1Component implements OnInit {
   }
 
   }
-  anadirAlCarrito(IdProducto:string, Cantidad:string)
+  anadirAlCarrito(IdProducto:string)
   {
     let body = new URLSearchParams();
     body.append("IdProducto",IdProducto);
-    body.append("Cantidad",Cantidad);
-    console.log(Cantidad);
+    body.append("Cantidad", "1");
+    body.append("token",localStorage.getItem('Token'))
+    
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/agregarCarrito.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 

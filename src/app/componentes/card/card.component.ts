@@ -36,7 +36,7 @@ ngOnInit(){
 
 }
 
-  constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, private fb2: FormBuilder, private _servicioCompartido: servicioCompartido) {
+  constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, private fb2: FormBuilder, public _servicioCompartido: servicioCompartido) {
     
   {
     this.registroForm = fb.group({
@@ -123,5 +123,8 @@ ngOnInit(){
     console.log(this.cadena);
     this.router.navigate(['busqueda'])
   }
-  
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
+  }
 }

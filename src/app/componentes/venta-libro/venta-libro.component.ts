@@ -50,7 +50,7 @@ export class VentaLibroComponent implements OnInit {
   precio:number;
   cantidades = [1, 2, 3];
   numeroCelular:string;
-
+  articulosArray_Sub = new Array;
   //array para guardar los valores
 
   constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute,){ 
@@ -90,7 +90,7 @@ this.ventaforma = fb2.group({
   productosCarrousel2 = new Array;
   productosCarrousel3 = new Array;
   imagenesInstrumentos = new Array;
-
+  user:string;
 
 
 
@@ -100,6 +100,9 @@ this.ventaforma = fb2.group({
     this.Correito = localStorage.getItem("email_U");
     this.IdProducto = this.Route.snapshot.paramMap.get('id');
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
+    
+    this.user = localStorage.getItem("Token");
+    
     console.log(this.precioBinding + " ESTE ES EL VALOR");
     if(this.IdProducto === undefined){
       this.LibroAleatorio();
@@ -446,7 +449,16 @@ this.ventaforma = fb2.group({
   {
     this.router.navigate(['ConfiguracionUsuario']);
   }
+  navegarCategoria(Categoria:string, SubCategoria: string){
 
+    console.log(SubCategoria);
+    this.router.navigate(['categoria',Categoria,SubCategoria]);
+
+  this._servicioCompartido.setCategoria(Categoria);
+  this._servicioCompartido.setSubCategoria(SubCategoria);
+
+  
+  }
   venta()
   {
    // let body = new URLSearchParams();
