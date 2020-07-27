@@ -242,6 +242,11 @@ h1
     display: none !important;
   }
 
+  #textoPC
+  {
+    display: none !important;
+  }
+
   .carousel-inner
   {
     display: none !important;
@@ -299,16 +304,18 @@ h1
 
 #textomas
 {
-  width: 250px;
+  width:100%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+
 }
 
-.container-fluid-ml-5
+#Botoncarrito
 {
   display: block;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 
