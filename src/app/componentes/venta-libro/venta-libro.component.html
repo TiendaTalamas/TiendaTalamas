@@ -39,15 +39,15 @@
     
     <form [formGroup]="ventaforma" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-      <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
+      <button id="botones" class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
     </form>
     
    <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
     </ng-container>
     <ng-template #elseTemplate>
-      <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
+      <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
       
-      <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+      <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
     </ng-template>    
 
     
@@ -118,7 +118,7 @@
           <div class="card-body"  *ngFor = "let producto of productos">
               <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
               <div>
-                <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
+                <button id="botones" type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
                 <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant=1&user={{user}}" class="btn btn-warning" >Comprar ahora</a>
               </div>
 
