@@ -30,3 +30,9 @@
   transition-duration: 1s;
 }
 
+@media only screen and (max-width:360px) and (min-width:270px)
+{
+
+
+}
+
