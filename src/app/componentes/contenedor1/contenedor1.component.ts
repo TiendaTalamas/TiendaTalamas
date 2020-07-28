@@ -98,6 +98,10 @@ export class Contenedor1Component implements OnInit {
    articulosArray_Vendidos_Libros4 = new Array;
    articulosArray_Vendidos_Libros5 = new Array;
    articulosArray_Vendidos_Libros6 = new Array;
+
+
+   //Para el modal
+   respuesta:string;
    
 
 
@@ -767,7 +771,7 @@ export class Contenedor1Component implements OnInit {
     .map((res:Response) => res.text())
             .subscribe(result => 
             {
-              alert(result);
+              this.respuesta=result;
     });
 
   }

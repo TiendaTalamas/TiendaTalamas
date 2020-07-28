@@ -24,6 +24,8 @@ export class RegistroComponent implements OnInit {
   telefono: string;
   contrasena: string;
   repContrasena: string;
+  respuesta:string;
+
   constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, fb2: FormBuilder,public _servicioCompartido: servicioCompartido){
     this.registroForm = fb.group({
       'email' : [null, Validators.required],
@@ -128,12 +130,12 @@ export class RegistroComponent implements OnInit {
                   console.log(result);
                   if(result['status'] == "400")
                   {
-                    alert(result['mensaje']);
+                    this.respuesta=result['mensaje'];
                   }
                   else
                   {
                     localStorage.setItem('Token', result['token']);
-                    alert("Usuario registrado correctamente");
+                    this.respuesta="Usuario registrado correctamente";
                   }
                   
             });
