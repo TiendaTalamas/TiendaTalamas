@@ -30,7 +30,7 @@ const routes: Routes = [
   {path: 'Pago', component: MetodoPagoComponent,},
   {path: 'Datos/Venta/:id', component:CompraComponent,},
   {path:'Carrito', component:CarritoComponent,},
-  {path:'CuadroExitoso/:Exito', component:CuadroExitosoComponent,}
+  {path:'CuadroExitoso/:Exito/:Mensaje', component:CuadroExitosoComponent,}
 
 ];
 

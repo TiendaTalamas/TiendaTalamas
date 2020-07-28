@@ -20,7 +20,8 @@ export class CuadroExitosoComponent implements OnInit {
   valuesKeys_Sub = new Array;
   articulosArray_Sub = new Array;
   articulosArray_Inst = new Array;
-
+  MensajeError:string;
+  IdCompra:string;
   constructor(private router:Router,private http:Http, private route:ActivatedRoute, public _servicioCompartido:servicioCompartido, private fb:FormBuilder){   
     this.ventaforma = fb.group({
       'cadena' : this.cadena
@@ -34,13 +35,31 @@ export class CuadroExitosoComponent implements OnInit {
     if(this.respuesta == "Exito")
     {
       this.EoF = true;
+      this.IdCompra = this.route.snapshot.paramMap.get('Mensaje');
+      this.obtenerCompra();
     }
     else
     {
-
       this.EoF = false;
+      this.MensajeError = this.route.snapshot.paramMap.get('Mensaje');
     }
     this.obtenerSubCategoriasLibros();
+  }
+
+  obtenerCompra()
+  {
+    let body = new URLSearchParams();
+    body.append('token', localStorage.getItem('Token'));
+
+
+
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerSubCategoria.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+
+              });
+            
   }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
