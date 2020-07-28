@@ -42,15 +42,15 @@
       
       <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-        <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #00737d; color:white" (click)="navegarBusqueda();">Buscar</button>
+        <button id="boton" class="btn my-2 my-sm-0" type="submit" style = "background-color: #00737d; color:white" (click)="navegarBusqueda();">Buscar</button>
       </form>
       
       <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
         </ng-container>
         <ng-template #elseTemplate>
-          <button style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
+          <button id="boton" style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
           
-          <button style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+          <button id="boton" style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
         </ng-template>
       
     </div>  
@@ -76,7 +76,7 @@
      <img class="imgr ml-4" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
      <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
      <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-     <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5">Añadir al carrito</button> 
+     <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
       </div>
 
   </div>
@@ -91,7 +91,7 @@
          <img class="imgr ml-4" src="{{reciente.Imagen}}"  (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
          <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
          <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-         <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5">Añadir al carrito</button> 
+         <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
           </div>
        </div>
         
@@ -118,11 +118,29 @@
              <img class="imgr" src="{{reciente.Imagen}}" style = "width: 190px; height: 300px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
              <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
              <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-             <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5">Añadir al carrito</button> 
+             <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
               </div>
            </div>
             
               </div> 
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">TIENDA TALAMAS</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>{{respuesta}}</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color:red; border-color:red;">Aceptar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
               </div>
 
 

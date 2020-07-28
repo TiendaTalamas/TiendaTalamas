@@ -36,6 +36,9 @@ export class LibreriaComponent implements OnInit {
   valuesKeys_Recomendados = new Array;
   articulosArray_Recomendados = new Array;
 
+  //Variable del modal
+  respuesta:string;
+
   //Constructor
   constructor(private http: Http,private router: Router, private location:Location,
     public _servicioCompartido : servicioCompartido, fb : FormBuilder) {   
@@ -164,6 +167,22 @@ export class LibreriaComponent implements OnInit {
   navegarConfiguracion()
   {
     this.router.navigate(['ConfiguracionUsuario']);
+  }
+
+  anadirAlCarrito(IdProducto:string)
+  {
+    let body = new URLSearchParams();
+    body.append("IdProducto",IdProducto);
+    body.append("Cantidad", "1");
+    body.append("token",localStorage.getItem('Token'))
+    
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/agregarCarrito.php', body)
+    .map((res:Response) => res.text())
+            .subscribe(result => 
+            {
+              this.respuesta=result;
+    });
+
   }
 
 

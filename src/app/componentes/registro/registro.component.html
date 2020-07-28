@@ -105,7 +105,7 @@
             <input class="form-control" [(ngModel)]="repContrasena" formControlName="repContrasena" placeholder="Repetir contraseña" type="password">
         </div> <!-- form-group// -->                                      
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block" (click) = "registrar()"> Crear Cuenta  </button>
+            <button type="submit" class="btn btn-primary btn-block" (click) = "registrar()" data-toggle="modal" data-target="#exampleModal"> Crear Cuenta  </button>
         </div> <!-- form-group// -->      
         <p class="text-center">¿Tienes una cuenta? <a style=color:blue;  (click)="navegarSesion()">Iniciar Sesión</a> </p>                                                                 
     </form>
@@ -114,6 +114,25 @@
     
     </div> 
     <!--container end.//-->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">TIENDA TALAMAS</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>{{respuesta}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color:red; border-color:red;">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <br><br>
  

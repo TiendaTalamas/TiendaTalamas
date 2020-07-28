@@ -30,6 +30,7 @@ export class CardComponent implements OnInit {
   xxxMap = new Map();
   valuesKeys = new Array;
   articulosArray = new Array;
+  respuesta:string;
 
 ngOnInit(){
   this._servicioCompartido.comprobarUsuario();
@@ -72,11 +73,11 @@ ngOnInit(){
                 if(result['status'] == "200")
                 {
                   localStorage.setItem('Token', result['token']);
-                  this.router.navigate[''];
+                  this.location.back();
                 }
                 else
                 {
-                  alert(result['mensaje']);
+                this.respuesta=result['mensaje'];
                 }
 
     });

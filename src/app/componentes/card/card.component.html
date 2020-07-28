@@ -60,9 +60,12 @@
     </div>
     <!-- forma de inicio -->
     <form>
-      <input [(ngModel)]="email"  id="login" class="fadeIn second" name="login" placeholder="Correo Electronico">
-      <input type="password" [(ngModel)]="contrasena"  id="password" class="fadeIn third" name="login" placeholder="Contraseña">
-      <input type="submit" (click) = "registrar()" class="fadeIn fourth" value="Iniciar sesión">
+      <br>
+      <input [(ngModel)]="email"  id="login" class="form-control w-75 ml-5" name="login" placeholder="Correo Electronico">
+      <br>
+      <input type="password" [(ngModel)]="contrasena"  id="password" class="form-control w-75 ml-5" name="login" placeholder="Contraseña">
+      <br>
+      <input type="submit" (click) = "registrar()"  class="fadeIn fourth" value="Iniciar sesión">
     </form>
 
     <!--  Passowrd -->
@@ -72,3 +75,4 @@
 
   </div>
 </div>
+

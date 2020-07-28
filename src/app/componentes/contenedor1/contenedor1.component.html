@@ -205,18 +205,21 @@
 <div class="Prueba mt-5 ml-5 mb-5 mr-5">
 
   <div class="row">
-    <div class="col-xs-6" *ngFor = "let articulo of articulosArray_Celular; let i = index">
+    <div class="col-xs-6" *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index">
 
-      <div id="contenedor" class="container mb-5 ml-1 " style="width:150px; height:200px; background-color:#c3c3c3;">
-        <img src="{{articulo.Imagen}}" (click)= "masInformacion(articulo.IdProducto, articulo.Categoria)">
-        <h5><p class="ml-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden;">{{articulo.NombreProducto}}</p></h5>
+      <div id="contenedor" class="container mb-5 ml-1 " style="width:150px; height:200px; background-color:white;">
+        <img src="{{reciente.Imagen}}" (click)= "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <h5><p class="ml-1 mt-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden; text-align: center;">{{reciente.NombreProducto}}</p></h5>
+        <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
       </div>
 
     </div>
   </div>
   </div>
+
+  <!--AQUI EMPIEZA EL SLIDER DE INICIO-->
   <h1 id="textoPC" style = "color: black; text-align:center;">Mas Vendido</h1>
-  <hr/>
+  <hr id="textoPC"/>
 
   <div class="container-fluid-ml-5">
     <div id="carouselExampleControls55" class="carousel slide" data-interval="false">
@@ -228,7 +231,7 @@
             <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
             <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
             <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-            <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary">Añadir al carrito</button> 
+            <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
            </div>
 
         </div>
@@ -241,7 +244,7 @@
          <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
          <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
          <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-         <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary">Añadir al carrito</button> 
+         <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
         </div>
 
      </div>
@@ -255,7 +258,7 @@
        <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
        <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
        <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-       <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary">Añadir al carrito</button> 
+       <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
       </div>
 
    </div>
@@ -273,12 +276,12 @@
     </div>
   </div>
   </div>
-  <hr/>
+  <hr id="textoPC"/>
 
         <!--SEGUNDO SLIDER-->
 
         <h1 id="textoPC" style = "color: black; text-align:center;">Novedades</h1>
-  <hr/>
+  <hr id="textoPC"/>
   <div class="container-fluid-ml-5">
     <div id="carouselExampleControls3" class="carousel slide" data-interval="false">
       <div class="carousel-inner">
@@ -289,7 +292,7 @@
             <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
             <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
             <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-            <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary">Añadir al carrito</button> 
+            <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
            </div>
 
         </div>
@@ -302,7 +305,7 @@
          <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
          <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
          <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-         <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary">Añadir al carrito</button> 
+         <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
         </div>
 
      </div>
@@ -316,7 +319,7 @@
        <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
        <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
        <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-       <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary">Añadir al carrito</button> 
+       <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
       </div>
 
    </div>
@@ -381,7 +384,7 @@
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
           <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
           <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-          <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary">Añadir al carrito</button> 
+          <button id="Botoncarrito" style="background-color: #ffca00; border-color: #ffca00;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
          </div>
 
       </div>
@@ -497,6 +500,24 @@
   </div>
   </div>
 ---->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">TIENDA TALAMAS</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{respuesta}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color:red; border-color:red;">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 
