@@ -144,8 +144,8 @@ a.btn-card {
 #producto
 {
     height:300px;
-    width:250px; 
-    margin-left:16%;
+    width:200px; 
+    margin-left:20%;
 }
 
 @media only screen and (max-width:320px) and (min-width:319px)
@@ -185,3 +185,4 @@ a.btn-card {
         margin-left:7%;
     }
 }
+
