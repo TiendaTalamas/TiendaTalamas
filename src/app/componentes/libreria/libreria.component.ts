@@ -120,7 +120,10 @@ export class LibreriaComponent implements OnInit {
 
   
   }
-
+  navegarBusqueda()
+  {
+    this.router.navigate(['busqueda',this.cadena])
+  }
   ngOnInit() {
     this._servicioCompartido.comprobarUsuario();
     this.Categoria = "Libros";
@@ -157,12 +160,7 @@ export class LibreriaComponent implements OnInit {
     this.router.navigate(['emd'])
   }
 
-  navegarBusqueda()
-  {
-    this._servicioCompartido.setCadena(this.cadena);
-    console.log(this.cadena);
-    this.router.navigate(['busqueda'])
-  }
+
 
   navegarConfiguracion()
   {

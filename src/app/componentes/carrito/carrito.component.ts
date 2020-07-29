@@ -169,10 +169,7 @@ cadena:string;
           }
     });
   }
-  navegarBusqueda()
-  {
-    this.router.navigate(['busqueda',this.cadena])
-  }
+
   navegarInicio()
   {
     this.router.navigate(['']);
@@ -209,7 +206,10 @@ cadena:string;
   {
     this.router.navigate(['musica'])
   }
-
+  navegarBusqueda()
+  {
+    this.router.navigate(['busqueda',this.cadena])
+  }
   navegarConfiguracion()
   {
     this.router.navigate(['ConfiguracionUsuario']);

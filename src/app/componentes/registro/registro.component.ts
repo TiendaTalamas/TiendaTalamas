@@ -52,6 +52,12 @@ export class RegistroComponent implements OnInit {
       this.router.navigate(['']);
       
     }
+
+    navegarBusqueda()
+    {
+      this.router.navigate(['busqueda',this.cadena])
+    }
+
     navegarCategoria(Categoria:string, SubCategoria: string){
 
       console.log(SubCategoria);
@@ -86,13 +92,7 @@ export class RegistroComponent implements OnInit {
       this.router.navigate(['musica'])
     }
 
-    navegarBusqueda()
-    {
-      this._servicioCompartido.setCadena(this.cadena);
-      console.log(this.cadena);
-      this.router.navigate(['busqueda'])
-    }
-    
+
     registrar() {     
       if(this.nombre.length<3)
       {

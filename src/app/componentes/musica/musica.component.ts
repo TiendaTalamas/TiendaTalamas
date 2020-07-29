@@ -68,15 +68,16 @@ export class MusicaComponent implements OnInit {
     this.router.navigate(['musica'])
   }
 
-  navegarBusqueda()
-  {
-    this._servicioCompartido.setCadena(this.cadena);
-    console.log(this.cadena);
-    this.router.navigate(['busqueda'])
-  }
+
   navegarConfiguracion()
   {
     this.router.navigate(['ConfiguracionUsuario']);
   }
 
+
+
+  navegarBusqueda()
+  {
+    this.router.navigate(['busqueda',this.cadena])
+  }
 }

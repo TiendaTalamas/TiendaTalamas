@@ -289,13 +289,7 @@ export class BusquedaComponent implements OnInit {
     this.router.navigate(['musica'])
   }
 
-  navegarBusqueda()
-  {
-    this._servicioCompartido.setCadena(this.cadena);
-    this.cadena = this._servicioCompartido.getCadena();
-    console.log(this.cadena);
-    this.obtenerBusqueda();
-  }
+
 
   navegarConfiguracion()
   {
@@ -332,4 +326,8 @@ export class BusquedaComponent implements OnInit {
 
   }
 
+  navegarBusqueda()
+  {
+    this.router.navigate(['busqueda',this.cadena])
+  }
 }

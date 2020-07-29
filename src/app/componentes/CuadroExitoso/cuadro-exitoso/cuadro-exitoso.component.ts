@@ -115,15 +115,18 @@ export class CuadroExitosoComponent implements OnInit {
     this.router.navigate(['musica'])
   }
 
-  navegarBusqueda()
-  {
-    this.router.navigate(['busqueda'])
-  }
+
 
   navegarConfiguracion()
   {
     this.router.navigate(['ConfiguracionUsuario']);
   }
+
+  navegarBusqueda()
+  {
+    this.router.navigate(['busqueda',this.cadena])
+  }
+
   obtenerSubCategoriasLibros(){
     
     

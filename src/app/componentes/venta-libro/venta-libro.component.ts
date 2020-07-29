@@ -250,6 +250,11 @@ this.ventaforma = fb2.group({
     });
   }
 
+  navegarBusqueda()
+  {
+    this.router.navigate(['busqueda',this.cadena])
+  }
+
   LibroCarrousel() {
     let body = new URLSearchParams();
     body.append('categoria', this.Categoria);
@@ -440,10 +445,7 @@ this.ventaforma = fb2.group({
     this.router.navigate(['musica'])
   }
 
-  navegarBusqueda()
-  {
-    this.router.navigate(['busqueda'])
-  }
+
 
   navegarConfiguracion()
   {
