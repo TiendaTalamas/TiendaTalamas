@@ -3,6 +3,7 @@ import {Router, ActivatedRoute} from "@angular/router";
 import { Http,Response} from '@angular/http';
 import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { URLSearchParams } from "@angular/http";
 
 @Component({
   selector: 'app-cuadro-exitoso',
@@ -20,7 +21,11 @@ export class CuadroExitosoComponent implements OnInit {
   valuesKeys_Sub = new Array;
   articulosArray_Sub = new Array;
   articulosArray_Inst = new Array;
-
+  MensajeError:string;
+  IdCompra:string;
+  IdProducto:string;
+  CostoTotal:string;
+  NombreProducto:string;
   constructor(private router:Router,private http:Http, private route:ActivatedRoute, public _servicioCompartido:servicioCompartido, private fb:FormBuilder){   
     this.ventaforma = fb.group({
       'cadena' : this.cadena
@@ -34,13 +39,35 @@ export class CuadroExitosoComponent implements OnInit {
     if(this.respuesta == "Exito")
     {
       this.EoF = true;
+      this.IdCompra = this.route.snapshot.paramMap.get('Mensaje');
+      this.obtenerCompra();
     }
     else
     {
-
       this.EoF = false;
+      this.MensajeError = this.route.snapshot.paramMap.get('Mensaje');
     }
     this.obtenerSubCategoriasLibros();
+  }
+
+  obtenerCompra()
+  {
+    let body = new URLSearchParams();
+    body.append('token', localStorage.getItem('Token'));
+    body.append('idCompra', this.IdCompra);
+
+
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/detallesDeCompra.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+
+                  this.IdProducto = result['IdProducto'];
+                  this.CostoTotal = result['Precio'];
+                  this.NombreProducto = result['NombreProducto'];
+                  console.log(result);
+              });
+            
   }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
