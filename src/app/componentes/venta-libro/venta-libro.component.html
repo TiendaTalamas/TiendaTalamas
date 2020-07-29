@@ -15,7 +15,7 @@
           <a class="dropdown-item" (click)="navegarConfiguracion()">Configuracion</a>
           <a class="dropdown-item" href="#">Soporte</a>
           <div class="dropdown-divider"></div>
-          <a href="http://localhost:4200/" class="dropdown-item" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
+          <a href="http://www.tiendatalamas.com/" class="dropdown-item" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
         </div>
       </li>
 
@@ -119,7 +119,12 @@
               <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
               <div>
                 <button id="botones" type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
+                <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
                 <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant=1&user={{user}}" class="btn btn-warning" >Comprar ahora</a>
+              </ng-container>
+              <ng-template #elseTemplate>
+             En estos momentos no contamos con unidades de este producto, si desea puede comunicarse a oscar-ms8@hotmail.com y nosotros buscaremos una forma de conseguir el producto para usted    
+              </ng-template>  
               </div>
 
 
