@@ -47,7 +47,7 @@ export class VentaLibroComponent implements OnInit {
   ciudad: string;
   cantidad:string;
   precioBinding:number;
-  Unidades:number;
+  Unidades:string;
   precio:number;
   cantidades = [1, 2, 3];
   numeroCelular:string;
@@ -97,6 +97,7 @@ this.ventaforma = fb2.group({
 
 
   ngOnInit() {
+    this.verificacionProductos = true;
     this.Nombrecito = localStorage.getItem("Nombre_U");
     this.Apellidito = localStorage.getItem("ApellidoPa_U");
     this.Correito = localStorage.getItem("email_U");
@@ -106,12 +107,8 @@ this.ventaforma = fb2.group({
     this.user = localStorage.getItem("Token");
     
     console.log(this.precioBinding + " ESTE ES EL VALOR");
-    if(this.IdProducto === undefined){
-      this.LibroAleatorio();
-
-    }else{
     this.obtenerArticulo();
-    }
+
     if(this.Categoria === undefined){
     }
     if(this.Categoria == "Libros"){
@@ -132,10 +129,7 @@ this.ventaforma = fb2.group({
     
     this.defaultPrice();
     this.obtenerDirecciones();
-    if(this.Unidades <= 0)
-    {
-      this.verificacionProductos = false;
-    }
+
 
   }
 
@@ -355,6 +349,14 @@ this.ventaforma = fb2.group({
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
+                console.log(result);
+              this.Unidades = result[0]['Unidades'];
+              
+              if(Number(this.Unidades) <= 0)
+              {
+                
+                this.verificacionProductos = false;
+              }
               this.AA = "";
             this.data = [];
             this.productos = result;
@@ -376,7 +378,7 @@ this.ventaforma = fb2.group({
           for(let producto of this.productos)
           {
               this.Imagen=producto.Imagen;
-              this.Unidades = producto.Unidades;
+             
           }
     });
   }
