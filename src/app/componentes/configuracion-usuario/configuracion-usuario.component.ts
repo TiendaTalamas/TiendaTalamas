@@ -98,12 +98,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
 
   }
 
-  navegarBusqueda()
-  {
-    this._servicioCompartido.setCadena(this.cadena);
-    console.log(this.cadena);
-    this.router.navigate(['busqueda'])
-  }
+
 
   cambiarContrasena()
   {
@@ -200,5 +195,10 @@ export class ConfiguracionUsuarioComponent implements OnInit {
   navegarConfiguracion()
   {
     this.router.navigate(['ConfiguracionUsuario']);
+  }
+
+  navegarBusqueda()
+  {
+    this.router.navigate(['busqueda',this.cadena])
   }
 }

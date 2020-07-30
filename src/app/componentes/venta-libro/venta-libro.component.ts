@@ -7,7 +7,7 @@ import { Http , Response} from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
-import { importType } from '@angular/compiler/src/output/output_ast';
+import { importType, IfStmt } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -47,6 +47,7 @@ export class VentaLibroComponent implements OnInit {
   ciudad: string;
   cantidad:string;
   precioBinding:number;
+  Unidades:number;
   precio:number;
   cantidades = [1, 2, 3];
   numeroCelular:string;
@@ -91,6 +92,7 @@ this.ventaforma = fb2.group({
   productosCarrousel3 = new Array;
   imagenesInstrumentos = new Array;
   user:string;
+  verificacionProductos:boolean;
 
 
 
@@ -130,6 +132,10 @@ this.ventaforma = fb2.group({
     
     this.defaultPrice();
     this.obtenerDirecciones();
+    if(this.Unidades <= 0)
+    {
+      this.verificacionProductos = false;
+    }
 
   }
 
@@ -250,6 +256,11 @@ this.ventaforma = fb2.group({
     });
   }
 
+  navegarBusqueda()
+  {
+    this.router.navigate(['busqueda',this.cadena])
+  }
+
   LibroCarrousel() {
     let body = new URLSearchParams();
     body.append('categoria', this.Categoria);
@@ -365,6 +376,7 @@ this.ventaforma = fb2.group({
           for(let producto of this.productos)
           {
               this.Imagen=producto.Imagen;
+              this.Unidades = producto.Unidades;
           }
     });
   }
@@ -440,10 +452,7 @@ this.ventaforma = fb2.group({
     this.router.navigate(['musica'])
   }
 
-  navegarBusqueda()
-  {
-    this.router.navigate(['busqueda'])
-  }
+
 
   navegarConfiguracion()
   {

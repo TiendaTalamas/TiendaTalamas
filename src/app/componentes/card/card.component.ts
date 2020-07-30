@@ -51,7 +51,10 @@ ngOnInit(){
     });
   }
 }
-
+navegarBusqueda()
+{
+  this.router.navigate(['busqueda',this.cadena])
+}
   registrar() {     
 
       
@@ -118,12 +121,7 @@ ngOnInit(){
     this.router.navigate(['musica'])
   }
   
-  navegarBusqueda()
-  {
-    this._servicioCompartido.setCadena(this.cadena);
-    console.log(this.cadena);
-    this.router.navigate(['busqueda'])
-  }
+
   navegarConfiguracion()
   {
     this.router.navigate(['ConfiguracionUsuario']);

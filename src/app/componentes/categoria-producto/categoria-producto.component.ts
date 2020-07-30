@@ -262,12 +262,7 @@ export class CategoriaProductoComponent implements OnInit {
   {
     this.router.navigate(['ConfiguracionUsuario']);
   }
-  navegarBusqueda()
-  {
-    this._servicioCompartido.setCadena(this.cadena);
-    console.log(this.cadena);
-    this.router.navigate(['busqueda'])
-  }
+
 
   
   navegarInicio()
@@ -276,7 +271,10 @@ export class CategoriaProductoComponent implements OnInit {
     this.router.navigate(['']);
     
   }
-  
+  navegarBusqueda()
+  {
+    this.router.navigate(['busqueda',this.cadena])
+  }
   navegarSesion()
   {
 
