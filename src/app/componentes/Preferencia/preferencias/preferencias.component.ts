@@ -43,14 +43,6 @@ export class PreferenciasComponent implements OnInit {
   {
     this.router.navigate(['emd'])
   }
-
-  navegarBusqueda()
-  {
-    this._servicioCompartido.setCadena(this.cadena);
-    console.log(this.cadena);
-    this.router.navigate(['busqueda'])
-  }
-
   navegarConfiguracion()
   {
     this.router.navigate(['ConfiguracionUsuario']);

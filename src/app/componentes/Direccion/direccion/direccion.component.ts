@@ -50,10 +50,7 @@ export class DireccionComponent implements OnInit {
   {
     this.router.navigate(['ConfiguracionUsuario']);
   }
-  navegarBusqueda()
-  {
-    this.router.navigate(['busqueda',this.cadena])
-  }
+
   navegarCarrito()
   {
     this.router.navigate(['Carrito'])

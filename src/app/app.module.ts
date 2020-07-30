@@ -27,6 +27,7 @@ import { ExitosaComponent } from './exitosa/exitosa.component';
 import { CuadroExitosoComponent } from './componentes/CuadroExitoso/cuadro-exitoso/cuadro-exitoso.component';
 import { DireccionComponent } from './componentes/Direccion/direccion/direccion.component';
 import { PreferenciasComponent } from './componentes/Preferencia/preferencias/preferencias.component';
+import { HistorialComponent } from './componentes/historial/historial/historial.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { PreferenciasComponent } from './componentes/Preferencia/preferencias/pr
     CuadroExitosoComponent,
     DireccionComponent,
     PreferenciasComponent,
+    HistorialComponent,
    
   ],
   imports: [

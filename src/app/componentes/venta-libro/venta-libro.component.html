@@ -118,12 +118,13 @@
           <div class="card-body"  *ngFor = "let producto of productos">
               <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
               <div>
-                <button id="botones" type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
                 <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+                <button id="botones" type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
+      
                 <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant=1&user={{user}}" class="btn btn-warning" >Comprar ahora</a>
               </ng-container>
               <ng-template #elseTemplate>
-             En estos momentos no contamos con unidades de este producto, si desea puede comunicarse a oscar-ms8@hotmail.com y nosotros buscaremos una forma de conseguir el producto para usted    
+                  <p id="TextoOpcion">En estos momentos no contamos con unidades de este producto, si desea puede comunicarse a <br>brandon@tiendatalamas.com y nosotros buscaremos una forma de conseguir el producto para usted</p>    
               </ng-template>  
               </div>
 

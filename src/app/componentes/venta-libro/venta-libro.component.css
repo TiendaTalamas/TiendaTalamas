@@ -76,6 +76,14 @@ div.noticia {
    margin-left: 4rem;
 }
 
+#TextoOpcion
+{
+	background-color:#ffca00;
+	margin-top:5%;
+	padding: 5px;
+	border-radius: 3px;
+}
+
 
 
 @media only  screen and (max-width:400px)
