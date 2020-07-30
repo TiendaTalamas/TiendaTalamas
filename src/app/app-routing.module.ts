@@ -15,6 +15,7 @@ import { CompraComponent } from './componentes/compra/compra/compra.component';
 import {CarritoComponent} from './componentes/carrito/carrito.component';
 import {CuadroExitosoComponent} from './componentes/CuadroExitoso/cuadro-exitoso/cuadro-exitoso.component';
 import {DireccionComponent} from './componentes/Direccion/direccion/direccion.component';
+import {PreferenciasComponent} from './componentes/Preferencia/preferencias/preferencias.component';
 
 
 
@@ -33,7 +34,8 @@ const routes: Routes = [
   {path: 'Datos/Venta/:id', component:CompraComponent,},
   {path:'Carrito', component:CarritoComponent,},
   {path:'CuadroExitoso/:Exito/:Mensaje', component:CuadroExitosoComponent,},
-  {path:'Direccion', component:DireccionComponent,}
+  {path:'Direccion', component:DireccionComponent,},
+  {path:'Preferencia', component:PreferenciasComponent,},
 
 ];
 

@@ -2,3 +2,79 @@
 {
     margin-right:20px;
 }
+
+form
+{
+	margin: 0 auto;
+	width: 550px;
+	background-color: whitesmoke;
+	padding: 20px;
+	color:#999;
+    border-radius: 3px;
+    margin-top:5%;
+    margin-bottom: 5%;
+}
+
+input
+{
+	margin: 0 auto;
+	border: none;
+	outline: none;
+	width: 480px;
+}
+
+input:focus
+{
+	border-color:#ffca00;
+}
+.form-control
+{
+	border:solid 1px #ccc;
+	padding: 10px;
+    border-radius:3px;
+    float: left;
+}
+
+#enviarDatos
+{
+	padding: 10px;
+	border-radius:3px; 
+}
+
+label
+{
+	font-family: arial;
+    font-size: 20px;
+    float: left;
+}
+
+
+
+#button
+{
+	padding: 20px;
+	color:white;
+	border-radius: 3px;
+	font-size:15px;
+}
+
+#button:hover
+{
+	padding: 20px;
+	color:white;
+	border-radius: 3px;
+	font-size:15px;
+}
+
+textarea
+{
+	margin: 0 auto;
+	border: none;
+	outline: none;
+	width: 480px;
+	height:150px;
+	border:solid 1px #ccc;
+	padding: 10px;
+    border-radius:3px;
+    float: left;
+}
