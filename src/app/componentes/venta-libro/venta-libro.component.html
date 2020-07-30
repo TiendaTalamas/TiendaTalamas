@@ -80,7 +80,7 @@
     </div>
 </ng-container>
 <ng-template #elseTemplate>
-    <img class="izquierda mb-5 mt-2 ml-5" src="{{producto.Imagen}}" width="350" height="450">
+    <img class="izquierda mb-5 mt-2 ml-5" src="http://emdpublicidad.com/tiendatalamas/archivos/php/Imagenes/{{producto.Propiedad4}}/{{producto.IdProducto}}.jpg" width="350" height="450">
   </ng-template>
 </div>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 md-ml-4">
@@ -118,13 +118,12 @@
           <div class="card-body"  *ngFor = "let producto of productos">
               <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
               <div>
-                <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
                 <button id="botones" type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
-      
+                <ng-container *ngIf="verificacionProductos; else elseTemplate3">
                 <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant=1&user={{user}}" class="btn btn-warning" >Comprar ahora</a>
               </ng-container>
-              <ng-template #elseTemplate>
-                  <p id="TextoOpcion">En estos momentos no contamos con unidades de este producto, si desea puede comunicarse a <br>brandon@tiendatalamas.com y nosotros buscaremos una forma de conseguir el producto para usted</p>    
+              <ng-template #elseTemplate3>
+             En estos momentos no contamos con unidades de este producto, si desea puede comunicarse a oscar-ms8@hotmail.com y nosotros buscaremos una forma de conseguir el producto para usted    
               </ng-template>  
               </div>
 
