@@ -7,6 +7,8 @@ import {Location} from "@angular/common";
 import { producto } from '../../servicios/producto';
 import { servicioCompartido } from '../../servicios/servicioCompartido';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ResourceLoader } from '@angular/compiler';
+
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
@@ -14,7 +16,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor(private http:Http, private router:Router, public _servicioCompartido:servicioCompartido, private fb:FormBuilder) {
+  constructor(private http:Http, private router:Router, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, private location:Location) {
     this.registroForm = fb.group({
       'cadena' : this.cadena
 
@@ -22,6 +24,7 @@ export class CarritoComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.router.onSameUrlNavigation = 'reload';
     this.obtenerCarrito();
     this.obtenerSubCategoriasLibros();
     this.obtenerSubtotal();
@@ -36,6 +39,8 @@ cadena:string;
   valuesKeys = new Array;
   articulosArray = new Array;
   Subtotal:string;
+
+
   obtenerCarrito()
   {
     let body = new URLSearchParams();
@@ -44,26 +49,9 @@ cadena:string;
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
-            this.AA = "";
-            this.data = [];
-            console.log(result);
-            this.articulosArray = result;
-            console.log(this.articulosArray);
-            for (var key in result) {
-            this.AA = this.AA + key;
-            if (result.hasOwnProperty(key)) {
-              this.val = result[key];
-              this.data.push(Object.keys(this.val));
-              for (var i = 0; i < Object.keys(this.val).length; i++) {
-              this.contenedor = Object.keys(this.val)[i];
-              Object.entries(this.val)[i]
-               
-                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
-                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
 
-                }
-             }
-          }
+            this.articulosArray = result;
+
     });
 
   }
@@ -74,10 +62,17 @@ cadena:string;
     body.append("token",localStorage.getItem('Token'));
     body.append("IdCarrito",IdCarrito);
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/quitarCarrito.php', body)
-    .map((res:Response) => res.json())
+    .map((res:Response) => res.text())
             .subscribe(result => 
             {
-              this.obtenerCarrito();
+              if(result = "OK")
+              {
+                this.obtenerCarrito();
+                this.obtenerSubtotal();
+              }
+              else{
+                alert("Algo salio mal favor de recargar la pagina");
+              }
     });
 
   }
@@ -93,7 +88,9 @@ cadena:string;
               if(result['status']  == "200")
               {
                 this.Subtotal =result['subtotal'];
-                console.log(result);
+              }
+              else{
+                this.Subtotal = "0";
               }
     });
 

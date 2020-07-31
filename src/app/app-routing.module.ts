@@ -17,6 +17,7 @@ import {CuadroExitosoComponent} from './componentes/CuadroExitoso/cuadro-exitoso
 import {DireccionComponent} from './componentes/Direccion/direccion/direccion.component';
 import {PreferenciasComponent} from './componentes/Preferencia/preferencias/preferencias.component';
 import {HistorialComponent} from './componentes/historial/historial/historial.component';
+import { config } from 'process';
 
 
 
@@ -42,7 +43,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
