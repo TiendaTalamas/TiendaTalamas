@@ -43,16 +43,16 @@
       
       <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-        <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
+        <button id="botones" class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
       </form>
       
       <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
         <a href="http://localhost:4200/"><button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="_servicioCompartido.cerrarSesion();" >Cerrar Sesion</button></a>      
         </ng-container>
         <ng-template #elseTemplate>
-          <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
+          <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
           
-          <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+          <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
         </ng-template>   </div>  
   </nav>
 <!--Fin del navbar-->
@@ -95,7 +95,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 mt-5">
                           <div>
-                            <h4><p id="Texto" class="mr-5" style = "font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
+                            <h4><p id="Texto" class="mr-5" style = " font-style:italic; font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
                               {{resultado.NombreProducto}} 
                               <br>
                               <br>
@@ -106,7 +106,7 @@
                                <br>
                                <br>
                                <br>
-                               <button id="boton" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary" (click)= "masInformacion(resultado.IdProducto, resultado.Categoria)">Comprar</button>
+                               <button id="boton" style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary" (click)= "masInformacion(resultado.IdProducto, resultado.Categoria)">Comprar</button>
                               </p></h4>
                             </div>
                         </div>

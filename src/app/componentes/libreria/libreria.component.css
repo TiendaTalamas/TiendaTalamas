@@ -30,6 +30,11 @@
   transition-duration: 1s;
 }
 
+h1
+{
+  font-style: italic;
+}
+
 @media only screen and (max-width:600px) and (min-width:375px)
 {
   #contenedor
