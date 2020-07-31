@@ -61,23 +61,25 @@
       <div class="container-fluid mt-2 " style="background-color:#fff; "  >
         <div class="row"  >
            <div id="img" class="col-xs-12 col-sm-8 col-md-3 col-lg-4 mt-3 mb-3">       
-             <img class="ml-5" src="{{producto.Imagen}}" width="250" height="270">
+             <img class="ml-5" src="{{producto.Imagen}}" width="200" height="270">
            </div>
            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 mt-2">
             <h4><p id="Texto" class="mr-5" style = "font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
               {{producto.NombreProducto}}
             </h4>
             <h4><p id="Texto" class="mr-5" style = "font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
-              texto que se mostrara aqui
+              {{producto.Precio}}
             </h4>
             <h4><p id="Texto" class="mr-5" style = "font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
-              texto que se mostrara aqui
+              {{producto.Propiedad4}}
+              {{producto.Propiedad1}}
             </h4>
+            <button id="botones" type="button" class="btn btn-warning "  data-target="#formulario" (click) = "quitarCarrito()">Eliminar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
             </div>
         </div>
       </div>
       <hr/>
-      <button id="botones" type="button" class="btn btn-warning "  data-target="#formulario" (click) = "quitarCarrito()">Quitar del carrito</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
+     
 
     </section> 
   </div>
