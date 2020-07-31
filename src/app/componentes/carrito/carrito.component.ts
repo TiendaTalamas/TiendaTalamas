@@ -68,11 +68,11 @@ cadena:string;
 
   }
 
-  quitarCarrito(IdProducto:string)
+  quitarCarrito(IdCarrito:string)
   {
     let body = new URLSearchParams();
     body.append("token",localStorage.getItem('Token'));
-    body.append("IdProducto",IdProducto);
+    body.append("IdCarrito",IdCarrito);
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/quitarCarrito.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
