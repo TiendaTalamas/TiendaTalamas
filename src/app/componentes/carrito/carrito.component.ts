@@ -67,6 +67,21 @@ cadena:string;
     });
 
   }
+
+  quitarCarrito(IdProducto:string)
+  {
+    let body = new URLSearchParams();
+    body.append("token",localStorage.getItem('Token'));
+    body.append("IdProducto",IdProducto);
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/quitarCarrito.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+              this.obtenerCarrito();
+    });
+
+  }
+
   obtenerSubtotal()
   {
     let body = new URLSearchParams();
