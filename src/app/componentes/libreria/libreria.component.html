@@ -46,6 +46,7 @@
       </form>
       
       <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+        <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#212121;" (click)="navegarCarrito()">Ver carrito</button> 
         </ng-container>
         <ng-template #elseTemplate>
           <button id="boton" style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>

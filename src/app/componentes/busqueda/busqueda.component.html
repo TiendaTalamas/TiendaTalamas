@@ -47,7 +47,7 @@
       </form>
       
       <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
-        <a href="http://localhost:4200/"><button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="_servicioCompartido.cerrarSesion();" >Cerrar Sesion</button></a>      
+        <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#212121;" (click)="navegarCarrito()">Ver carrito</button>    
         </ng-container>
         <ng-template #elseTemplate>
           <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
