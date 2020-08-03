@@ -32,6 +32,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
   contrasenaRepetida:string;
   calle1:string;
   calle2:string;
+  calle3:string;
   numeroE:string;
   colonia:string;
   ciudad:string;
@@ -54,6 +55,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
    'colonia' : this.colonia,
    'numero' : this.numeroE,
    'calle2' : this.calle2,
+   'calle3' : this.calle3,
    'ciudad' : this.ciudad,
    'codigoPostal' : this.codigoPostal,
    'estado' : this.estado,
@@ -63,6 +65,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerDirecciones();
+    this._servicioCompartido.comprobarUsuario();
   }
 
   navegarInicio()
@@ -104,13 +107,12 @@ export class ConfiguracionUsuarioComponent implements OnInit {
   {
     let body = new URLSearchParams();
   
-    body.append('email', localStorage.getItem('email_U'));
+    body.append('token', localStorage.getItem('Token'));
     body.append('contrasenaActual', this.contrasenaActual);
     body.append('contrasenaNueva', this.contrasenaNueva);
     body.append('contrasenaRepetida', this.contrasenaRepetida);
     console.log(this.contrasenaActual);
   
-    console.log(localStorage.getItem('email_U'));
    
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/CambiarContrasena.php', body)
     .map((res:Response) => res.text())
@@ -120,9 +122,9 @@ export class ConfiguracionUsuarioComponent implements OnInit {
                 {
                   alert("Cambio realizado correctamente");
                 }
-                else if(result == "ERROR")
+                else
                 {
-                  alert("Contaseña no valida")
+                  alert(result)
                 }
     });
 
@@ -134,7 +136,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
   {
     let body = new URLSearchParams();
   
-    body.append('email', localStorage.getItem('email_U'));
+    body.append('token', localStorage.getItem('Token'));
     body.append('calle1', this.calle1);
     body.append('calle2', this.calle2);
     body.append('numero', this.numeroE);
@@ -166,7 +168,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
   }
   obtenerDirecciones() {
     let body = new URLSearchParams();
-    body.append('email', localStorage.getItem('email_U'));
+    body.append('token', localStorage.getItem('Token'));
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerDirecciones.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
@@ -175,6 +177,15 @@ export class ConfiguracionUsuarioComponent implements OnInit {
             this.data = [];
             console.log(result);
             this.direccionesArray = result;
+            this.calle1 = result[0]["Calle"];
+            this.calle2 = result[0]["Calle2"];
+            this.calle3 = result[0]["Calle3"];
+            this.ciudad = result[0]["Ciudad"];
+            this.codigoPostal = result[0]["CodigoPostal"];
+            this.numeroE = result[0]["NumeroExterior"];
+            this.colonia = result[0]["Colonia"];
+            this.estado = result[0]["Estado"];
+            this.pais = result[0]["Pais"];
             for (var key in result) {
             this.AA = this.AA + key;
             if (result.hasOwnProperty(key)) {
