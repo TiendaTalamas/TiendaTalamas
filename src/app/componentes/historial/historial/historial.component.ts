@@ -18,6 +18,7 @@ export class HistorialComponent implements OnInit {
   constructor(private router:Router,private http:Http,private _servicioCompartido:servicioCompartido) { }
 
   ngOnInit() {
+    this.obtenerCompras();
   }
 
   registroForm:FormGroup;
@@ -40,7 +41,7 @@ export class HistorialComponent implements OnInit {
   {
     let body = new URLSearchParams();
     body.append("token",localStorage.getItem('Token'));
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/carrito.php', body)
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/compras.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {

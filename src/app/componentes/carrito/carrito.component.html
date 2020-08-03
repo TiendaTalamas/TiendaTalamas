@@ -83,3 +83,45 @@
 
     </section> 
   </div>
+  <!-- Modal -->
+<div id="formulario" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal contenido-->
+
+    <div class="modal-content">
+      <div id="Layer1" style="height:600px; overflow: scroll;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cambiar cantidad</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+
+          <div class="form-sec">
+            <h4>Venta por Whatsapp</h4>
+            
+            <form [formGroup]="ventaForm">
+             
+             
+            
+              <select class="form-control" >
+                <option value="1" >1</option>
+                <option value="2" >2</option>
+                <option value="3" >3</option>
+              </select>
+              <button type="submit" class="btn btn-default" (click)="ComprarPorCorreo()">Enviar</button>
+            </form>
+            </div>
+          
+          
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+    </div>
+    </div>
+
+</div>

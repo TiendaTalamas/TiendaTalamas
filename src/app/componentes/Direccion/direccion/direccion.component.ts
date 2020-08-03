@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from "@angular/router"
+import {Location} from "@angular/common"
+import { FormBuilder, Validators } from '@angular/forms';
 import { Http, Response } from '@angular/http';
-
+import { URLSearchParams } from "@angular/http";
+import { FormGroup } from '@angular/forms';
+import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
 @Component({
   selector: 'app-direccion',
   templateUrl: './direccion.component.html',
@@ -9,13 +13,18 @@ import { Http, Response } from '@angular/http';
 })
 export class DireccionComponent implements OnInit {
 
-  constructor(private http: Http,private router: Router) { }
+  constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, fb2: FormBuilder,public _servicioCompartido: servicioCompartido) { }
 
   ngOnInit() {
   }
   navegarInicio()
   {
     this.router.navigate(['']);
+    
+  }
+
+  validarIngreso()
+  {
     
   }
 

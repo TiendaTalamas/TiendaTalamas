@@ -131,11 +131,11 @@ export class RegistroComponent implements OnInit {
                   if(result['status'] == "400")
                   {
                     this.respuesta=result['mensaje'];
+                    alert(this.respuesta);
                   }
                   else
                   {
-                    localStorage.setItem('Token', result['token']);
-                    this.respuesta="Usuario registrado correctamente";
+                    this.router.navigate['Direccion'];
                   }
                   
             });
