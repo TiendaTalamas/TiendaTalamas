@@ -46,6 +46,7 @@
       </form>
       
       <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+        <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#212121;" (click)="navegarCarrito()">Ver carrito</button> 
         </ng-container>
         <ng-template #elseTemplate>
           <button id="boton" style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
@@ -56,6 +57,17 @@
     </div>  
   </nav>
   <div style="overflow: hidden;">
+
+    <div class="btn-group btn-group-lg" id="GrupoBotones" role="group" aria-label="Basic example">
+      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;">Romance</button>
+      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;">Terror</button>
+      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;">Romance</button>
+      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;">Misterio</button>
+      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;">Novelas</button>
+      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;">Politica</button>
+      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;">Infantil</button>
+    </div>
+
   <div class="container">
   <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -74,9 +86,9 @@
       <div class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray; let i = index">
 
      <img class="imgr ml-4" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-     <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
-     <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-     <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
+     <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
+     <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">${{reciente.Precio}}</p></h5>
+     <button style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
       </div>
 
   </div>
@@ -89,9 +101,9 @@
           <div class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray; let i = index">
     
          <img class="imgr ml-4" src="{{reciente.Imagen}}"  (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
-         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-         <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
+         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
+         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">${{reciente.Precio}}</p></h5>
+         <button style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
           </div>
        </div>
         
@@ -117,9 +129,9 @@
                <div class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray; let i = index">
          
               <img class="imgr ml-4" src="{{reciente.Imagen}}"  (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-              <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">{{reciente.NombreProducto}}</p></h5>
-              <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center;">${{reciente.Precio}}</p></h5>
-              <button style="background-color: #ffca00; border-color: #ffca00;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
+              <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
+              <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; ">${{reciente.Precio}}</p></h5>
+              <button style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary mb-5 ml-5" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
                </div>
             </div>
              

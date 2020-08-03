@@ -39,15 +39,16 @@
     
     <form [formGroup]="ventaforma" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-      <button id="botones" class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
+      <button id="botones" class="btn my-2 my-sm-0" type="submit" style = "background-color: #0779e4; color:white" (click)="navegarBusqueda();">Buscar</button>
     </form>
     
    <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+    <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#212121;" (click)="navegarCarrito()">Ver carrito</button> 
     </ng-container>
     <ng-template #elseTemplate>
-      <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
+      <button id="botones" style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
       
-      <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+      <button id="botones" style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
     </ng-template>    
 
     
@@ -119,9 +120,9 @@
               <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
               <div>
                 <ng-container *ngIf="verificacionProductos; else elseTemplate3">
-                <button id="botones" type="button" class="btn btn-warning " data-toggle="modal" data-target="#formulario" (click) = "openModal()">Comprar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
+                <button id="botones" type="button" class="btn btn" data-toggle="modal" data-target="#formulario" style="background-color:#0779e4; border-color:#0779e4; color:white;" (click) = "openModal()">Comprar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
                 
-                <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant=1&user={{user}}" class="btn btn-warning" >Comprar ahora</a>
+                <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant=1&user={{user}}" class="btn btn" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</a>
               </ng-container>
               <ng-template #elseTemplate3>
                 <p id="TextoOpcion">No contamos con este producto<br>

@@ -39,15 +39,15 @@
     
     <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-      <button class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
+      <button id="botones" class="btn my-2 my-sm-0" type="submit" style = "background-color: #212121; color:white" (click)="navegarBusqueda();">Buscar</button>
     </form>
     
    <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
     </ng-container>
     <ng-template #elseTemplate>
-      <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
+      <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
       
-      <button style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+      <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
     </ng-template>    
 
     
@@ -55,7 +55,7 @@
 </nav>
 
   <div class="col-md-10 col-sm-8 main-content">
-    <h1>CARRITO                         Subtotal:{{Subtotal}}</h1>
+    <h1>PRODUCTOS AGREGADOS RECIENTEMENTE</h1>
     <section class="details-card" *ngFor="let producto of articulosArray;  let i = index">
       <hr/>
       <div class="container-fluid mt-2 " style="background-color:#fff; "  >
@@ -64,17 +64,21 @@
              <img class="ml-5" src="{{producto.Imagen}}" width="200" height="270">
            </div>
            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 mt-2">
-            <h4><p id="Texto" class="mr-5" style = "font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
-              {{producto.NombreProducto}}
-            </h4>
-            <h4><p id="Texto" class="mr-5" style = "font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
-              {{producto.Precio}}
-            </h4>
-            <h4><p id="Texto" class="mr-5" style = "font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
-              {{producto.Propiedad4}}
-              {{producto.Propiedad1}}
-            </h4>
-            <button id="botones" type="button" class="btn btn-warning "  data-target="#formulario" (click) = "quitarCarrito(producto.IdCarrito)">Eliminar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
+            <h3><p id="Texto" class="mr-5" style = " font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
+              Nombre del Producto:</p>
+              <h4><p style="font-style:italic; color: #ccc;">{{producto.NombreProducto}}</p></h4>
+            </h3>
+            <h3><p id="Texto" class="mr-5" style = " font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
+              Precio del producto:</p>
+              <h4><p style="font-style:italic; color: #ccc" > ${{producto.Precio}}</p></h4>
+            </h3>
+            <h3><p id="Texto" class="mr-5" style = " font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
+              Editorial o Modelo:</p>
+              <h4><p style="font-style:italic; color: #ccc">{{producto.Propiedad4}}
+                {{producto.Propiedad1}}</p>
+              </h4>
+            </h3>
+            <button id="botones" type="button" class="btn btn-warning" data-target="#formulario" (click) = "quitarCarrito(producto.IdCarrito)">Eliminar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
             </div>
         </div>
       </div>

@@ -39,6 +39,7 @@
       
     
      <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+      <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#212121;" (click)="navegarCarrito()">Ver carrito</button> 
       </ng-container>
       <ng-template #elseTemplate>
         <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
@@ -49,7 +50,7 @@
   </nav>
   
   <div class="col-md-10 col-sm-8 main-content">
-    <h1>Historial de compra</h1>
+    <h1>COMPRADO RECIENTEMENTE</h1>
     <section class="details-card" *ngFor="let producto of articulosArray;  let i = index">
       <hr/>
       <div  class="container-fluid mt-2 " style="background-color:#fff; "  >
