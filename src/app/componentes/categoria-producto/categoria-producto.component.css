@@ -1,4 +1,4 @@
-button
+#botones
 {
 margin-right: 20px;
 }
@@ -162,7 +162,7 @@ a.btn-card {
 {
     #producto
     {
-        margin-left: 9%;
+        margin-left:18%;
     }
 }
 
@@ -183,6 +183,14 @@ a.btn-card {
         width:150px;
         height: 200px;
         margin-left:7%;
+    }
+}
+
+@media only screen and (max-width:450px) and (min-width:377px)
+{
+    #producto
+    {
+        margin-left:25%;
     }
 }
 

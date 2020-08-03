@@ -55,21 +55,31 @@
       <hr/>
       <div  class="container-fluid mt-2 " style="background-color:#fff; "  >
         <div class="row"  >
-           <div id="img" class="col-xs-12 col-sm-8 col-md-3 col-lg-4 mt-3 mb-3">       
-             <img class="ml-5" src="{{producto.Imagen}}" width="250" height="270">
+          <div id="img" class="col-xs-12 col-sm-8 col-md-3 col-lg-4 mt-3 mb-3">       
+            <img class="ml-5" src="{{producto.Imagen}}" width="220" height="270">
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 mt-2">
+           <h3><p id="Texto" class="mr-5" style = " font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
+             Nombre del Producto:</p>
+             <h4><p style="font-style:italic; color: #ccc;">{{producto.NombreProducto}}</p></h4>
+           </h3>
+           <h3><p id="Texto" class="mr-5" style = " font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
+             Precio del producto:</p>
+             <h4><p style="font-style:italic; color: #ccc" > ${{producto.Precio}}</p></h4>
+           </h3>
+           <h3><p id="Texto" class="mr-5" style = " font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
+             Editorial o Modelo:</p>
+             <h4><p style="font-style:italic; color: #ccc">{{producto.Propiedad4}}
+               {{producto.Propiedad1}}</p>
+             </h4>
+           </h3>
+           <h3><p id="Texto" class="mr-5" style = " font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
+            Fecha de compra:</p>
+            <h4><p style="font-style:italic; color: #ccc">{{producto.FechaPago}}</p>
+            </h4>
+          </h3>
            </div>
-           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 mt-2">
-            <h4><p id="Texto" class="mr-5" style = "font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
-              {{producto.NombreProducto}}
-            </h4>
-            <h4><p id="Texto" class="mr-5" style = "font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
-              {{producto.IdProducto}}
-            </h4>
-            <h4><p id="Texto" class="mr-5" style = "font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
-              {{producto.PrecioTotal}}
-            </h4>
-            </div>
-        </div>
+       </div>
       </div>
       <hr/>
     </section> 
