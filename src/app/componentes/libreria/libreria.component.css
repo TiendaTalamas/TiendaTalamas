@@ -8,8 +8,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height:75vh;
+    min-height:70vh;
 }
+
+#GrupoBotones
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f09f07;
+  background-image: url(../../../assets/navbarLibreria.png);
+
+}
+
 
 #textomas
 {
