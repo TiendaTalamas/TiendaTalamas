@@ -113,6 +113,7 @@ export class LibreriaComponent implements OnInit {
     this.Categoria = Categoria;
     console.log(this.Categoria);
     console.log(SubCategoria);
+    alert(Categoria);
     this.router.navigate(['categoria',Categoria,SubCategoria]);
 
   this._servicioCompartido.setCategoria(Categoria);
