@@ -17,6 +17,7 @@ import {CuadroExitosoComponent} from './componentes/CuadroExitoso/cuadro-exitoso
 import {DireccionComponent} from './componentes/Direccion/direccion/direccion.component';
 import {PreferenciasComponent} from './componentes/Preferencia/preferencias/preferencias.component';
 import {HistorialComponent} from './componentes/historial/historial/historial.component';
+import {PoliticasComponent} from './componentes/politicas/politicas/politicas.component';
 import { config } from 'process';
 
 
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path:'Direccion', component:DireccionComponent,},
   {path:'Preferencia', component:PreferenciasComponent,},
   {path:'historial', component:HistorialComponent,},
+  {path:'politicas', component:PoliticasComponent,},
 
 ];
 

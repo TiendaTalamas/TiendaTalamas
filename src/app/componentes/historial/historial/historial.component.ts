@@ -95,6 +95,10 @@ export class HistorialComponent implements OnInit {
   {
     this.router.navigate(['musica'])
   }
+  navegarHistorial()
+  {
+    this.router.navigate(['historial']);
+  }
 
 
 }

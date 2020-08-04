@@ -1,0 +1,20 @@
+#botones
+{
+    margin-right: 20px;
+}
+
+.container-fluid
+{
+   width:600px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top:20px;
+   margin-bottom: 20px;
+}
+
+#contenedor
+{
+    padding:20px;
+
+}

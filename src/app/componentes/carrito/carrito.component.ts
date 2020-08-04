@@ -226,5 +226,9 @@ cadena:string;
   {
     this.router.navigate(['ConfiguracionUsuario']);
   }
+  navegarHistorial()
+  {
+    this.router.navigate(['historial']);
+  }
 
 }

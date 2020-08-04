@@ -7,11 +7,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown"  *ngIf="_servicioCompartido.CompUsuario">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <a class="nav-link dropdown-toggle" style=" border-color: #0779e4;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Usuario
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Ver carrito</a>
+            <a class="dropdown-item" (click)="navegarHistorial()">Historial de Compras</a>
             <a class="dropdown-item" (click)="navegarConfiguracion()">Configuracion</a>
             <a class="dropdown-item" href="#">Soporte</a>
             <div class="dropdown-divider"></div>
