@@ -50,6 +50,28 @@ export class servicioCompartido{
                 }
   });
   } 
+
+  comprobarUsuarioObligatorio() 
+  {
+      let body = new URLSearchParams();
+     body.append('token', localStorage.getItem('Token'));
+
+
+
+  this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/comprobarSesion.php', body)
+  .map((res:Response) => res.json())
+          .subscribe(result => 
+            {
+                if(result['status'] == "400")
+                {
+                    this.router.navigate[''];
+                }
+                else
+                {
+
+                }
+  });
+  } 
     setProductoData(data: producto[]) {    
         this.productoData= data;        
     }
