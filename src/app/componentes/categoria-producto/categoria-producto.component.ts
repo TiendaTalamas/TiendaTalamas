@@ -124,8 +124,48 @@ export class CategoriaProductoComponent implements OnInit {
   }
 
   obtenerArticulos(){
+
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
     this.SubCategoria = this.Route.snapshot.paramMap.get('subcategoria');
+    
+    let body = new URLSearchParams();
+      
+    body.append('categoria', this.Categoria);
+    body.append('sub_categoria', this.SubCategoria);
+
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/categoria.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA = "";
+            this.data = [];
+            console.log(result);
+            this.articulosArray = result;
+            for (var key in result) {
+            this.AA = this.AA + key;
+            if (result.hasOwnProperty(key)) {
+              this.val = result[key];
+              this.data.push(Object.keys(this.val));
+              for (var i = 0; i < Object.keys(this.val).length; i++) {
+              this.contenedor = Object.keys(this.val)[i];
+              Object.entries(this.val)[i]
+               
+                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+
+                }
+             }
+          }
+    });
+
+  }
+
+  
+  obtenerArticulos2(cat:string, sub:string){
+
+    this.Categoria = cat;
+    this.SubCategoria = sub;
+    
     let body = new URLSearchParams();
       
     body.append('categoria', this.Categoria);
@@ -193,6 +233,41 @@ export class CategoriaProductoComponent implements OnInit {
 
   }
 
+  obtenerCategoria2(cat:string){
+
+    let body = new URLSearchParams();
+    body.append('categoria', cat);
+
+      
+
+
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerCategoriaEspecifica.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA = "";
+            this.data = [];
+            console.log(result);
+            this.articulosArray = result;
+            for (var key in result) {
+            this.AA = this.AA + key;
+            if (result.hasOwnProperty(key)) {
+              this.val = result[key];
+              this.data.push(Object.keys(this.val));
+              for (var i = 0; i < Object.keys(this.val).length; i++) {
+              this.contenedor = Object.keys(this.val)[i];
+              Object.entries(this.val)[i]
+               
+                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+
+                }
+             }
+          }
+    });
+
+  }
+
   obtenerSubCategorias(){
     
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
@@ -229,11 +304,11 @@ export class CategoriaProductoComponent implements OnInit {
   }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
-    this.router.navigate(['categoria',Categoria,SubCategoria])
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
+    this.router.navigate(['categoria',Categoria,SubCategoria]);
     console.log(this.Categoria);
     console.log(SubCategoria);
-    if(this.Categoria == "Instrumentos")
+    if(Categoria == "Instrumentos")
     {
       this.Logo = "assets/libreriaLogo.jpg";
 
@@ -244,16 +319,16 @@ export class CategoriaProductoComponent implements OnInit {
     }
     if(Categoria == "Libros" && SubCategoria == "")
     {
-    this.obtenerCategoria()
+    this.obtenerCategoria2(Categoria);
     this.obtenerSubCategorias();
     }
     else if(Categoria == "Instrumentos" && SubCategoria == "")
     {
-     this.obtenerCategoria();
+     this.obtenerCategoria2(Categoria);
      this.obtenerSubCategorias();
     }
     else{
-      this.obtenerArticulos();
+      this.obtenerArticulos2(Categoria,SubCategoria);
       this.obtenerSubCategorias();
     }
  
