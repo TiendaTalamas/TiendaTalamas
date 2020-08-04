@@ -160,7 +160,10 @@ export class LibreriaComponent implements OnInit {
     this.router.navigate(['emd'])
   }
 
-
+  navegarHistorial()
+  {
+    this.router.navigate(['historial']);
+  }
 
   navegarConfiguracion()
   {

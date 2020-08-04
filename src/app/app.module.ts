@@ -28,6 +28,7 @@ import { CuadroExitosoComponent } from './componentes/CuadroExitoso/cuadro-exito
 import { DireccionComponent } from './componentes/Direccion/direccion/direccion.component';
 import { PreferenciasComponent } from './componentes/Preferencia/preferencias/preferencias.component';
 import { HistorialComponent } from './componentes/historial/historial/historial.component';
+import { PoliticasComponent } from './componentes/politicas/politicas/politicas.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { HistorialComponent } from './componentes/historial/historial/historial.
     DireccionComponent,
     PreferenciasComponent,
     HistorialComponent,
+    PoliticasComponent,
    
   ],
   imports: [

@@ -453,6 +453,15 @@ this.ventaforma = fb2.group({
   {
     this.router.navigate(['musica'])
   }
+  navegarHistorial()
+  {
+    this.router.navigate(['historial']);
+  }
+
+  navegarCarrito()
+  {
+    this.router.navigate(['Carrito']);
+  }
 
 
 
