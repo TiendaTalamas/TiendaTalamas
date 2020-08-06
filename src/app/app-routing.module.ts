@@ -18,6 +18,7 @@ import {DireccionComponent} from './componentes/Direccion/direccion/direccion.co
 import {PreferenciasComponent} from './componentes/Preferencia/preferencias/preferencias.component';
 import {HistorialComponent} from './componentes/historial/historial/historial.component';
 import {PoliticasComponent} from './componentes/politicas/politicas/politicas.component';
+import {SoporteComponent} from './componentes/Soporte/soporte/soporte.component';
 import { config } from 'process';
 
 
@@ -41,6 +42,7 @@ const routes: Routes = [
   {path:'Preferencia', component:PreferenciasComponent,},
   {path:'historial', component:HistorialComponent,},
   {path:'politicas', component:PoliticasComponent,},
+  {path:'soporte', component:SoporteComponent,},
 
 ];
 

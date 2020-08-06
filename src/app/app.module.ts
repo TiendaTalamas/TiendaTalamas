@@ -29,6 +29,7 @@ import { DireccionComponent } from './componentes/Direccion/direccion/direccion.
 import { PreferenciasComponent } from './componentes/Preferencia/preferencias/preferencias.component';
 import { HistorialComponent } from './componentes/historial/historial/historial.component';
 import { PoliticasComponent } from './componentes/politicas/politicas/politicas.component';
+import { SoporteComponent } from './componentes/Soporte/soporte/soporte.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { PoliticasComponent } from './componentes/politicas/politicas/politicas.
     PreferenciasComponent,
     HistorialComponent,
     PoliticasComponent,
+    SoporteComponent,
    
   ],
   imports: [

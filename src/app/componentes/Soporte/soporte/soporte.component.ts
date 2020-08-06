@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
 import {Router} from "@angular/router";
+import { Http, Response } from '@angular/http';
 import { servicioCompartido } from '../../../servicios/servicioCompartido';
 
 @Component({
-  selector: 'app-politicas',
-  templateUrl: './politicas.component.html',
-  styleUrls: ['./politicas.component.css']
+  selector: 'app-soporte',
+  templateUrl: './soporte.component.html',
+  styleUrls: ['./soporte.component.css']
 })
-export class PoliticasComponent implements OnInit {
-  CompUsuario:boolean;
+export class SoporteComponent implements OnInit {
 
-  constructor(private http: Http,private router: Router, public _servicioCompartido : servicioCompartido) { }
+  constructor(private http: Http,private router: Router,public _servicioCompartido : servicioCompartido) { }
 
   ngOnInit() {
   }
@@ -63,7 +62,5 @@ export class PoliticasComponent implements OnInit {
   {
     this.router.navigate(['Carrito'])
   }
-  
-  
 
 }

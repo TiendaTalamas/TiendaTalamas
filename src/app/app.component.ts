@@ -48,6 +48,16 @@ export class AppComponent {
 
 
   }
+
+  navegarSoporte()
+  {
+    this.router.navigate(['soporte'])
+  }
+
+  navegarPoliticas()
+  {
+    this.router.navigate(['politicas'])
+  }
   
  
   title = 'talamas';

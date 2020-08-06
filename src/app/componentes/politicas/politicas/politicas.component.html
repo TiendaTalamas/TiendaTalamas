@@ -36,12 +36,6 @@
           <button type="button" class="btn btn-danger" style="color: black; border-color:#ffca00; background-color: #ffca00;" (click)="navegarMusica()">Musica</button>
         </li>
     </ul>
-      
-      <form [formGroup]="ventaforma" class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-        <button id="botones" class="btn my-2 my-sm-0" type="submit" style = "background-color: #0779e4; color:white" (click)="navegarBusqueda();">Buscar</button>
-      </form>
-      
      <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
       <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#212121;" (click)="navegarCarrito()">Ver carrito</button> 
       </ng-container>
@@ -119,13 +113,23 @@
     <p>Asimismo, para la prestación de servicios, el usuario se obliga además a aceptar los términos y condiciones estipulados para tal efecto.</p>
 
      <h4>Derechos de autor y propiedad industrial</h4> 
-     
+    <p>
     En www.tiendatalamas.com sus logotipos y todo el material que aparece en dicho sitio, son marcas, nombres de dominio, nombres comerciales y obras artísticas propiedad de sus respectivos titulares y están protegidos por los tratados internacionales y las leyes aplicables en materia de propiedad intelectual y derechos de autor.
+    </p>
+    <p>
     Los derechos de autor sobre el contenido, organización, recopilación, compilación, información, logotipos, fotografías, imágenes, programas, aplicaciones, y en general cualquier información contenida o publicada en el sitio web www.tiendatalamas.com se encuentran debidamente protegidos a favor de Grupo Talamás, sus afiliados, proveedores y/o de sus respectivos propietarios, de conformidad con la legislación aplicable en materia de propiedad intelectual e industrial.
+    </p>
+    <p>
     Se prohíbe expresamente al usuario modificar, alterar o suprimir, ya sea en forma total o parcial, los avisos, marcas, nombres comerciales, señas, anuncios, logotipos o en general cualquier indicación que se refiera a la propiedad de la información contenida en el sitio señalado.
+    </p>
+    <p>
     El usuario renuncia expresamente a llevar a cabo cualquier acción, demanda o reclamación en contra de Grupo Talamássus afiliados o proveedores por cualquier actual o eventual violación de cualquier derecho de autor o propiedad intelectual derivado de la información, programas, aplicaciones, software, ideas y demás material que el propio usuario envíe al sitio web.
+    </p>
+    <p>
     Es nuestra política actuar contra las violaciones que en materia de propiedad intelectual se pudieran generar u originar según lo estipulado en la legislación y en otras leyes de propiedad intelectual aplicables, incluyendo la eliminación o el bloqueo del acceso a material que se encuentra sujeto a actividades que infrinjan el derecho de propiedad intelectual de terceros.
+    </p>
     En caso de que algún usuario o tercero consideren que cualquiera de los contenidos que se encuentren o sean introducidos en dicho sitio  y/o cualquiera de sus servicios, violen sus derechos de propiedad intelectual deberán enviar una notificación a la siguiente dirección (Poner dirección de correo electrónico), en la que indiquen: i) datos personales verídicos (nombre, dirección, número de teléfono y dirección de correo electrónico del reclamante); ii) firma autógrafa con los datos personales del titular de los derechos de propiedad intelectual; iii) indicación precisa y completa del (los) contenido (s) protegido (s) mediante los derechos de propiedad intelectual supuestamente infringidos, así como la localización de dichas violaciones en el sitio web referido; iv) declaración expresa y clara de que la introducción del (los) contenido (s) indicado (s) se ha realizado sin el consentimiento del titular de los derechos de propiedad intelectual supuestamente infringidos; v) declaración expresa, clara y bajo la responsabilidad del reclamante de que la información proporcionada en la notificación es exacta y de que la introducción del (los) contenido (s) constituye una violación de dichos derechos.
+    
     
     Material publicitario
     
