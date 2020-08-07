@@ -11,8 +11,8 @@ export class servicioCompartido{
   Nombre:string;
   ApellidoPa:string;
   ApellidoMa:string;
-  NumeroTel:String;
-  email:String;
+  NumeroTel:string;
+  email:string;
   Imagen:string;
 
   productoData : producto[];
@@ -20,11 +20,12 @@ export class servicioCompartido{
   SubCategoria : string;
   IdProducto: string;
   Cadena: string;
+  soloRegistro:boolean;
 
   CompUsuario: boolean;
   contrasena: string;
   usuario: string;
-  miJson: JSON;
+  
   constructor(private http: Http, private router: Router) {}   
   comprobarUsuario() 
   {

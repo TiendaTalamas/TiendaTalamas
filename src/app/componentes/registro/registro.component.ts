@@ -55,7 +55,7 @@ export class RegistroComponent implements OnInit {
 
     navegarBusqueda()
     {
-      this.router.navigate(['busqueda',this.cadena])
+      this.router.navigate(['busqueda',this.cadena]);
     }
 
     navegarCategoria(Categoria:string, SubCategoria: string){
@@ -116,13 +116,6 @@ export class RegistroComponent implements OnInit {
       body.append('numero_tel', this.telefono);
       body.append('contrasena', this.contrasena);
   
-      console.log(this.nombre);
-      console.log(this.email);
-      console.log(this.apellidoPa);
-      console.log(this.apellidoMa);
-      console.log(this.telefono);
-      console.log(this.contrasena);
-      console.log(this.repContrasena);
       this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/registro.php', body)
       .map((res:Response) => res.json())
               .subscribe(result => 
@@ -135,7 +128,16 @@ export class RegistroComponent implements OnInit {
                   }
                   else
                   {
-                    this.router.navigate['Direccion'];
+
+                    this.router.navigate(['Direccion']);
+                    this._servicioCompartido.Nombre = this.nombre;
+                    alert(this._servicioCompartido.Nombre);
+                    this._servicioCompartido.email = this.email;
+                    this._servicioCompartido.ApellidoPa = this.apellidoPa;
+                    this._servicioCompartido.ApellidoMa = this.apellidoMa;
+                    this._servicioCompartido.NumeroTel = this.telefono;
+                    this._servicioCompartido.contrasena = this.contrasena;
+                    this._servicioCompartido.soloRegistro = true;
                   }
                   
             });

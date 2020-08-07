@@ -81,6 +81,7 @@ navegarBusqueda()
                 else
                 {
                 this.respuesta=result['mensaje'];
+                alert(this.respuesta);
                 }
 
     });
