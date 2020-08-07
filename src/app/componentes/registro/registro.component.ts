@@ -42,6 +42,7 @@ export class RegistroComponent implements OnInit {
   }
 
     ngOnInit() {
+      this._servicioCompartido.soloSinLoguear();
     }
     navegarConfiguracion()
     {

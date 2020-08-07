@@ -34,7 +34,7 @@ export class CardComponent implements OnInit {
 
 ngOnInit(){
   this._servicioCompartido.comprobarUsuario();
-
+  this._servicioCompartido.soloSinLoguear();
 }
 
   constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, private fb2: FormBuilder, public _servicioCompartido: servicioCompartido) {

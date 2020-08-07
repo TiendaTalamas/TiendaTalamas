@@ -52,7 +52,7 @@ export class servicioCompartido{
   });
   } 
 
-  comprobarUsuarioObligatorio() 
+  soloLogueado() 
   {
       let body = new URLSearchParams();
      body.append('token', localStorage.getItem('Token'));
@@ -65,7 +65,7 @@ export class servicioCompartido{
             {
                 if(result['status'] == "400")
                 {
-                    this.router.navigate[''];
+                    this.router.navigate(['']);
                 }
                 else
                 {
@@ -73,6 +73,29 @@ export class servicioCompartido{
                 }
   });
   } 
+
+
+  soloSinLoguear() 
+  {
+      let body = new URLSearchParams();
+     body.append('token', localStorage.getItem('Token'));
+
+
+
+  this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/comprobarSesion.php', body)
+  .map((res:Response) => res.json())
+          .subscribe(result => 
+            {
+                if(result['status'] == "400")
+                {
+                }
+                else
+                {
+                    this.router.navigate(['']);
+                }
+  });
+  } 
+
     setProductoData(data: producto[]) {    
         this.productoData= data;        
     }

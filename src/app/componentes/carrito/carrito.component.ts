@@ -28,6 +28,7 @@ export class CarritoComponent implements OnInit {
     this.obtenerCarrito();
     this.obtenerSubCategoriasLibros();
     this.obtenerSubtotal();
+    this._servicioCompartido.soloLogueado();
   }
 registroForm:FormGroup;
 cadena:string;
