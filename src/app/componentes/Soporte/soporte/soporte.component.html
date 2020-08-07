@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #ffca00" >
+    <a class="navbar-brand"><img src="assets/talamas.png" alt="" style = "width: 100px; height:100px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown"  *ngIf="_servicioCompartido.CompUsuario">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Usuario
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Ver carrito</a>
+            <a class="dropdown-item" (click)="navegarConfiguracion()">Configuracion</a>
+            <div class="dropdown-divider"></div>
+            <a href="http://www.tiendatalamas.com/" class="dropdown-item" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
+          </div>
+        </li>
+  
+        <li class="nav-item active">
+          <button type="button" class="btn btn" style="color: black; border-color:#ffca00; background-color: #ffca00;" (click)="navegarInicio();">Inicio</button>
+        </li>
+        <li class="nav-item dropdown">
+            <button type="button" class="btn btn" style="color: black; border-color:#ffca00; background-color: #ffca00;" (click)="navegarLibreria();">Libreria</button>
+              <button type="button" class="btn btn dropdown-toggle dropdown-toggle-split" style="color: black; border-color:#ffca00; background-color: #ffca00;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <span class="sr-only">Toggle Dropdown</span>
+             </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" *ngFor="let Subcategoria of articulosArray_Sub" (click)="navegarCategoria(Subcategoria.categoria, Subcategoria.SubCategoria)">{{Subcategoria.SubCategoria}}</a>
+  
+               </div>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn" style="color: black; border-color:#ffca00; background-color: #ffca00;" (click)="navegarMusica()">Musica</button>
+        </li>
+    </ul>
+      
+    
+     <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+      <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#212121;" (click)="navegarCarrito()">Ver carrito</button> 
+      </ng-container>
+      <ng-template #elseTemplate>
+        <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
+        
+        <button id="botones" style="background-color: #212121; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+      </ng-template>    
+  </div>  
+  </nav>
+
+  <div class="container">
+      <h4><p>Ante cualquier duda o problema con pedido, compra, devolucion o percance mandar correo a esta direccion:</p></h4>
+      <br>
+      <h2><p>AtencionCliente@tiendatalamas.com</p></h2>
+      <br>
+      <h2><p>Soporte@tiendatalamas.com</p></h2>
+      <br>
+      <h4><p>Por su comprenciòn gracias.</p></h4>
+      <br>
+      <img src="assets/talamas.png" alt="" style = "width: 100px; height:100px;">
+
+    
+  </div>
+  

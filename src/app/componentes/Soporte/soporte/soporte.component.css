@@ -1,0 +1,17 @@
+#botones
+{
+    margin-right: 20px;
+}
+
+.container
+{
+    display: block;
+    margin: auto;
+    min-height:70vh;
+    width: 800px;
+    height: 500px;
+    background-color: #f4f6ff;
+    padding:50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

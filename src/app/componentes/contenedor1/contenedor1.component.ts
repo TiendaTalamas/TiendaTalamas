@@ -666,7 +666,6 @@ export class Contenedor1Component implements OnInit {
   {
     this.router.navigate(['historial']);
   }
-
   navegarBusqueda()
   {
     this.router.navigate(['busqueda',this.cadena])
