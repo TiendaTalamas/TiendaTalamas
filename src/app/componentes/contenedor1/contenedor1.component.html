@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" style = "background-color:#0833a2 ">
+<nav class="navbar navbar-expand-lg navbar-light" style = "background-color:#ff9234 ">
   <a class="navbar-brand"><img src="assets/talamas.png" alt="" style = "width: 100px; height:100px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -38,16 +38,16 @@
 
     <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-      <button id="boton" class="btn my-2 my-sm-0" type="submit" style = "background-color:white; color:black" (click)="navegarBusqueda();">Buscar</button>
+      <button id="boton" class="btn my-2 my-sm-0" type="submit" style = "background-color:#0779e4; color:white" (click)="navegarBusqueda();">Buscar</button>
     </form>
     
    <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
-    <button id="botones2" type="button" class="btn btn" style="color:black; background-color:white;" (click)="navegarCarrito()">Ver carrito</button>
+    <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#0779e4; border-color: #0779e4;" (click)="navegarCarrito()">Ver carrito</button>
     </ng-container>
     <ng-template #elseTemplate>
-      <button id="boton" style="background-color:white; color:black; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button> 
+      <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button> 
       
-      <button id="boton" style="background-color:white; color:black; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+      <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
     </ng-template>    
 
 
@@ -114,8 +114,8 @@
            <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index">
   
             <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-            <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
-            <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">${{reciente.Precio}}</p></h5>
+            <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+            <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
             <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
            </div>
 
@@ -127,8 +127,8 @@
         <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros2; let i = index">
 
          <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
-         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">${{reciente.Precio}}</p></h5>
+         <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+         <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
          <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
         </div>
 
@@ -141,8 +141,8 @@
       <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros3; let i = index">
 
        <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-       <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
-       <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">${{reciente.Precio}}</p></h5>
+       <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+       <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
        <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
       </div>
 
@@ -175,8 +175,8 @@
            <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros4; let i = index">
   
             <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-            <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
-            <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">${{reciente.Precio}}</p></h5>
+            <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+            <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
             <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
            </div>
 
@@ -188,8 +188,8 @@
         <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros5; let i = index">
 
          <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
-         <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">${{reciente.Precio}}</p></h5>
+         <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+         <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
          <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
         </div>
 
@@ -202,8 +202,8 @@
       <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros6; let i = index">
 
        <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-       <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
-       <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">${{reciente.Precio}}</p></h5>
+       <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+       <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
        <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
       </div>
 
@@ -266,8 +266,8 @@
          <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index">
 
           <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-          <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
-          <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">${{reciente.Precio}}</p></h5>
+          <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+          <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
           <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
          </div>
 
@@ -279,8 +279,8 @@
       <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros2; let i = index">
 
        <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-       <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
-       <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">${{reciente.Precio}}</p></h5>
+       <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+       <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
        <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary">Añadir al carrito</button> 
       </div>
 
@@ -293,8 +293,8 @@
     <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros3; let i = index">
 
      <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-     <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">{{reciente.NombreProducto}}</p></h5>
-     <h5><p id="textomas" class="mr-5 mt-4" style ="font-family:Helvetica; text-align: center; font-style: italic;">${{reciente.Precio}}</p></h5>
+     <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+     <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
      <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary">Añadir al carrito</button> 
     </div>
 

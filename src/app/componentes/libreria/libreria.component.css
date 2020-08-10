@@ -27,6 +27,8 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  text-align: center;
+  font-family: 'Anonymous Pro';
 }
 .imgr
 {
@@ -42,7 +44,7 @@
 
 h1
 {
-  font-style: italic;
+  font-family: 'Copse';
 }
 
 @media only screen and (max-width:600px) and (min-width:375px)

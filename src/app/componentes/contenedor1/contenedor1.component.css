@@ -11,7 +11,7 @@ h1
 {
 	margin:40px 0 60px 0;
   font-weight:300;
-  font-style: italic;
+  font-family:'Copse';
 
   
 }
@@ -67,6 +67,7 @@ h1
   #boton
 {
     margin-right: 20px;
+
 }
 
 .breadcrumb-image {
@@ -256,6 +257,8 @@ h1
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  text-align: center;
+  font-family: 'Anonymous Pro';
 
 }
 
