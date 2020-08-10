@@ -121,9 +121,9 @@
               <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
               <div>
                 <ng-container *ngIf="verificacionProductos; else elseTemplate3">
-                <button id="botones" type="button" class="btn btn" data-toggle="modal" data-target="#formulario" style="background-color:#0779e4; border-color:#0779e4; color:white;" (click) = "openModal()">Comprar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
+                  <a href="https://api.whatsapp.com/send?phone=+528672111350" class="btn btn" id="botones" style="background-color:#0779e4; border-color:#0779e4; color:white;">Comprar por Whatsapp</a>   
                 
-                <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant=1&user={{user}}" class="btn btn" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</a>
+                   <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant=1&user={{user}}" class="btn btn" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</a>
               </ng-container>
               <ng-template #elseTemplate3>
                 <p id="TextoOpcion">No contamos con este producto<br>

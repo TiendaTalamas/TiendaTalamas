@@ -132,7 +132,6 @@ export class RegistroComponent implements OnInit {
 
                     this.router.navigate(['Direccion']);
                     this._servicioCompartido.Nombre = this.nombre;
-                    alert(this._servicioCompartido.Nombre);
                     this._servicioCompartido.email = this.email;
                     this._servicioCompartido.ApellidoPa = this.apellidoPa;
                     this._servicioCompartido.ApellidoMa = this.apellidoMa;

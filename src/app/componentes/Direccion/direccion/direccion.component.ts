@@ -20,11 +20,11 @@ export class DireccionComponent implements OnInit {
   calle2:string;
   calle3:string;
   colonia:string;
-  numeroExterior:string;
-  numeroInterior:string;
-  codigoPostal:string;
+  numExt:string;
+  numInterior:string;
+  codigoPost:string;
   estado:string;
-  Ciudad:string;
+  ciudad:string;
   gustos:string;
   constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, fb2: FormBuilder,public _servicioCompartido: servicioCompartido) {
     this.formData = fb.group({
@@ -32,11 +32,11 @@ export class DireccionComponent implements OnInit {
       'calle2' : this.calle2,
       'calle3' :this.calle3,
       'colonia' : this.colonia,
-      'numeroExt' : this.numeroExterior,
-      'numeroInterior' : this.numeroInterior,
-      'codigoPost' : this.codigoPostal,
+      'numExt' : this.numExt,
+      'numInterior' : this.numInterior,
+      'codigoPost' : this.codigoPost,
       'estado' : this.estado,
-      'ciudad': this.Ciudad,
+      'ciudad': this.ciudad,
       'gustos' : this.gustos
     });
    }
@@ -52,7 +52,6 @@ export class DireccionComponent implements OnInit {
     {
       this.location.back();
     }
-    alert(this._servicioCompartido.Nombre);
   }
   navegarInicio()
   {
@@ -115,11 +114,11 @@ export class DireccionComponent implements OnInit {
     body.append('calle2', this.calle2);
     body.append('calle3', this.calle3);
     body.append('colonia', this.colonia);
-    body.append('numExt', this.numeroExterior);
-    body.append('numInt', this.numeroInterior);
-    body.append('codigoPost', this.codigoPostal);
+    body.append('numExt', this.numExt);
+    body.append('numInt', this.numInterior);
+    body.append('codigoPost', this.codigoPost);
     body.append('estado', this.estado);
-    body.append('ciudad', this.Ciudad);
+    body.append('ciudad', this.ciudad);
     body.append('gustos', this.gustos);
 
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/registrar.php', body)
@@ -135,7 +134,7 @@ export class DireccionComponent implements OnInit {
                 else
                 {
                   localStorage.setItem('Token', result['token']);
-                  this.router.navigate(['']);
+                  alert(result['sql']);
                 }
                 
           });

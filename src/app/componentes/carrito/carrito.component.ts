@@ -4,10 +4,10 @@ import { URLSearchParams } from "@angular/http";
 import 'rxjs/add/operator/map';
 import {Router} from "@angular/router";
 import {Location} from "@angular/common";
-import { producto } from '../../servicios/producto';
 import { servicioCompartido } from '../../servicios/servicioCompartido';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ResourceLoader } from '@angular/compiler';
+import { isUndefined, isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-carrito',
@@ -21,9 +21,13 @@ export class CarritoComponent implements OnInit {
       'cadena' : this.cadena
 
  });
+    this.ventaForm = fb.group({
+      'quantity' : this.quantity
+    })
    }
 
   ngOnInit() {
+    this.user = localStorage.getItem("Token");
     this.router.onSameUrlNavigation = 'reload';
     this.obtenerCarrito();
     this.obtenerSubCategoriasLibros();
@@ -31,6 +35,7 @@ export class CarritoComponent implements OnInit {
     this._servicioCompartido.soloLogueado();
   }
 registroForm:FormGroup;
+ventaForm:FormGroup;
 cadena:string;
   AA: string;
   data: any[];
@@ -40,8 +45,11 @@ cadena:string;
   valuesKeys = new Array;
   articulosArray = new Array;
   Subtotal:string;
-
-
+  Producto:string;
+  Cantidad:string;
+  quantity:string;
+  IdCarrito:string;
+  user:string;
   obtenerCarrito()
   {
     let body = new URLSearchParams();
@@ -182,6 +190,41 @@ cadena:string;
           }
     });
   }
+
+  cambiarCantidad(Cantidad:string, IdCarrito:string)
+  {
+    this.Cantidad= Cantidad;
+    this.IdCarrito = IdCarrito;
+  }
+
+  modificarCantidad()
+  { 
+    if(!isNullOrUndefined(this.quantity))
+    {
+      let body = new URLSearchParams();
+      body.append('categoria', "Libros");
+      body.append('cantidad', this.quantity);
+      body.append('IdCarrito', this.IdCarrito);
+      body.append('producto', this.Producto);
+      this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/cambiarCantidad.php', body)
+      .map((res:Response) => res.json())
+              .subscribe(result => 
+                {
+                  if(result['status'] == "200")
+                  {
+                    alert("Cambio realizado correctamente");
+                  }
+                  else{
+                    alert("Ocurrio un error inesperado");
+                  }
+      });
+    }
+    else
+    {
+      alert("Seleccione un valor");
+    }
+  }
+
 
   navegarInicio()
   {
