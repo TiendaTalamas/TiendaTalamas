@@ -12,6 +12,9 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class MusicaComponent implements OnInit {
   registroForm: FormGroup;
   cadena:string;
+  articulosArray_Vendidos_Libros = new Array;
+
+  
   constructor(private router: Router, public _servicioCompartido: servicioCompartido, private fb: FormBuilder) {   
     this.registroForm = fb.group({
       'cadena' : this.cadena
