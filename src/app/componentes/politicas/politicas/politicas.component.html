@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown"  *ngIf="_servicioCompartido.CompUsuario">
-          <a class="nav-link dropdown-toggle" style="color:white; background-color:#ff5722;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <a class="nav-link dropdown-toggle" style="color:white; background-color:#ff9234;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Usuario
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -20,11 +20,11 @@
         </li>
 
         <li class="nav-item active">
-          <button id="botones2" type="button" class="btn btn" style="color: white; background-color:#ff5722;" (click)="navegarInicio();">Inicio</button>
+          <button id="botones2" type="button" class="btn btn" style="color: white; background-color:#ff9234;" (click)="navegarInicio();">Inicio</button>
         </li>
         <li class="nav-item dropdown">
-            <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#ff5722;" (click)="navegarLibreria();">Libreria</button>
-              <button id="botones2" type="button" class="btn btn dropdown-toggle dropdown-toggle-split" style="color: white; background-color:#ff5722;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#ff9234;" (click)="navegarLibreria();">Libreria</button>
+              <button id="botones2" type="button" class="btn btn dropdown-toggle dropdown-toggle-split" style="color: white; background-color:#ff9234;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <span class="sr-only">Toggle Dropdown</span>
              </button>
                 <div class="dropdown-menu">
@@ -32,7 +32,7 @@
                </div>
         </li>
         <li class="nav-item">
-          <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#ff5722;" (click)="navegarMusica()">Musica</button>
+          <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#ff9234;" (click)="navegarMusica()">Musica</button>
         </li>
     </ul>
 
@@ -45,9 +45,9 @@
     <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#0779e4; border-color: #0779e4;" (click)="navegarCarrito()">Ver carrito</button>
     </ng-container>
     <ng-template #elseTemplate>
-      <button id="boton" style="background-color:#0779e4; color:white; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button> 
+      <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button> 
       
-      <button id="boton" style="background-color:#0779e4; color:white; border-color: #212121;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+      <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
     </ng-template>    
 
 
