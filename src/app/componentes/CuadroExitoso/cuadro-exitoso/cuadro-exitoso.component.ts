@@ -106,6 +106,11 @@ export class CuadroExitosoComponent implements OnInit {
     this.router.navigate(['libreria'])
   }
 
+  navegarHistorial()
+  {
+    this.router.navigate(['historial']);
+  }
+
   navegarPublicidad()
   {
     this.router.navigate(['emd'])

@@ -151,6 +151,12 @@ export class LibreriaComponent implements OnInit {
     this.router.navigate(['registro']);
     
   }
+
+  navegarCarrito()
+  {
+    this.router.navigate(['Carrito'])
+  }
+
   navegarLibreria()
   {
     this.router.navigate(['libreria'])

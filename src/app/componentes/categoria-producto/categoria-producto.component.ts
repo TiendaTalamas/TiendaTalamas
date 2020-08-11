@@ -350,6 +350,12 @@ export class CategoriaProductoComponent implements OnInit {
   {
     this.router.navigate(['busqueda',this.cadena])
   }
+
+  navegarHistorial()
+  {
+    this.router.navigate(['historial']);
+  }
+
   navegarSesion()
   {
 

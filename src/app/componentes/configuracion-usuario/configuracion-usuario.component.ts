@@ -68,6 +68,11 @@ export class ConfiguracionUsuarioComponent implements OnInit {
     this._servicioCompartido.comprobarUsuario();
   }
 
+  navegarHistorial()
+  {
+    this.router.navigate(['historial']);
+  }
+
   navegarInicio()
   {
     this.router.navigate(['']);

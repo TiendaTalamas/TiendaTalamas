@@ -123,7 +123,14 @@
                 <ng-container *ngIf="verificacionProductos; else elseTemplate3">
                   <a href="https://api.whatsapp.com/send?phone=+528672111350" class="btn btn" id="botones" style="background-color:#0779e4; border-color:#0779e4; color:white;">Comprar por Whatsapp</a>   
                 
-                   <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant=1&user={{user}}" class="btn btn" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</a>
+                   <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant={{quantity}}&user={{user}}" class="btn btn" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</a>
+                   <form [formGroup]="formCantidad">
+                   <select name="select" formControlName="quantity" [(ngModel)]="quantity">
+                    <option value="1" selected>1</option> 
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </form>
               </ng-container>
               <ng-template #elseTemplate3>
                 <p id="TextoOpcion">No contamos con este producto<br>

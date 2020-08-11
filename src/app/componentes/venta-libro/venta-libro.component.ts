@@ -52,6 +52,7 @@ export class VentaLibroComponent implements OnInit {
   cantidades = [1, 2, 3];
   numeroCelular:string;
   articulosArray_Sub = new Array;
+  quantity:string;
   //array para guardar los valores
 
   constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute,){ 
@@ -73,6 +74,9 @@ export class VentaLibroComponent implements OnInit {
 this.ventaforma = fb2.group({
   'cadena': this.cadena
 });
+this.formCantidad = fb.group({
+'quantity' : this.quantity
+});
 }
 
 
@@ -93,10 +97,11 @@ this.ventaforma = fb2.group({
   imagenesInstrumentos = new Array;
   user:string;
   verificacionProductos:boolean;
-
+  formCantidad:FormGroup;
 
 
   ngOnInit() {
+    this.quantity = "1";
     this.verificacionProductos = true;
     this.Nombrecito = localStorage.getItem("Nombre_U");
     this.Apellidito = localStorage.getItem("ApellidoPa_U");
