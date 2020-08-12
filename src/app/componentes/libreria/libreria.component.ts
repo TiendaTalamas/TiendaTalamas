@@ -128,6 +128,7 @@ export class LibreriaComponent implements OnInit {
             this.data_Sub = [];
             console.log(result);
             this.articulosArray_Sub = result;
+            console.log(result);
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
             if (result.hasOwnProperty(key)) {

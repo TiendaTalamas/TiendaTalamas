@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { servicioCompartido } from '../../servicios/servicioCompartido';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Http,Response } from '@angular/http';
+import { URLSearchParams } from "@angular/http";
+
 
 @Component({
   selector: 'app-musica',
