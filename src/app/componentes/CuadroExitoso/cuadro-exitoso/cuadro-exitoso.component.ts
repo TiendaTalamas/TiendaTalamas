@@ -48,6 +48,7 @@ export class CuadroExitosoComponent implements OnInit {
       this.MensajeError = this.route.snapshot.paramMap.get('Mensaje');
     }
     this.obtenerSubCategoriasLibros();
+    this._servicioCompartido.comprobarUsuario();
   }
 
   obtenerCompra()

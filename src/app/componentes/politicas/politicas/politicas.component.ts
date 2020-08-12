@@ -19,6 +19,7 @@ export class PoliticasComponent implements OnInit {
   constructor(private http: Http,private router: Router, public _servicioCompartido : servicioCompartido) { }
 
   ngOnInit() {
+    this._servicioCompartido.comprobarUsuario();
   }
 
   navegarInicio()

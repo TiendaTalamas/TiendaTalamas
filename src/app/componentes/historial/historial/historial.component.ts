@@ -20,6 +20,7 @@ export class HistorialComponent implements OnInit {
   ngOnInit() {
     this.obtenerCompras();
     this._servicioCompartido.soloLogueado();
+    this._servicioCompartido.comprobarUsuario();
   }
 
   registroForm:FormGroup;

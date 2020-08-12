@@ -9,9 +9,10 @@ import { Http, Response } from '@angular/http';
 })
 export class PreferenciasComponent implements OnInit {
 
-  constructor(private http: Http,private router: Router) { }
+  constructor(private http: Http,private router: Router, public _servicioCompartido) { }
 
   ngOnInit() {
+    this._servicioCompartido.comprobarUsuario();
   }
   navegarInicio()
   {
