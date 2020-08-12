@@ -1,13 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-light" style = " background-image: url(../../../assets/navbarLibreria.png); background-color: #f09f07">
-    <a class="navbar-brand"><img src="assets/logoLibreria.jpg" alt="" style = "width: 100px; height:100px; border-radius: 50%;"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-light" style = "background-color:#ff9234">
+  <a class="navbar-brand"><img src="assets/logo.png" alt="" style = "width:250px; height:100px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown"  *ngIf="_servicioCompartido.CompUsuario">
-          <a class="nav-link dropdown-toggle" style=" border-color: #0779e4;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <a class="nav-link dropdown-toggle" style="color:white; border-color: #0779e4;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Usuario
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -20,51 +20,49 @@
         </li>
 
         <li class="nav-item active">
-          <button type="button" class="btn btn-danger" style="color: black; border-color:#f09f07; background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png);" (click)="navegarInicio();">Inicio</button>
+          <button id="botones2" type="button" class="btn btn" style="color: white; background-color: #ff9234;" (click)="navegarInicio();">Inicio</button>
         </li>
         <li class="nav-item dropdown">
-            <button type="button" class="btn btn-danger" style="color: black; border-color:#f09f07; background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png);" (click)="navegarLibreria();">Libreria</button>
-              <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" style="color: black; border-color:#f09f07; background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="botones2" type="button" class="btn btn" style="color:white; background-color: #ff9234;" (click)="navegarLibreria();">Libreria</button>
+              <button id="botones2" type="button" class="btn btn dropdown-toggle dropdown-toggle-split" style="color: white; background-color: #ff9234;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <span class="sr-only">Toggle Dropdown</span>
              </button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Separated link</a>
+                  <a class="dropdown-item" *ngFor="let Subcategoria of articulosArray_Sub" (click)="navegarCategoria(Subcategoria.categoria, Subcategoria.SubCategoria)">{{Subcategoria.SubCategoria}}</a>
                </div>
         </li>
         <li class="nav-item">
-          <button type="button" class="btn btn-danger" style="color: black; border-color:#f09f07; background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png);" (click)="navegarMusica()">Musica</button>
+          <button id="botones2" type="button" class="btn btn" style="color:white; background-color: #ff9234;" (click)="navegarMusica()">Musica</button>
         </li>
     </ul>
+
+    <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
+      <button id="boton" class="btn my-2 my-sm-0" type="submit" style = "background-color:#0779e4; color:white" (click)="navegarBusqueda();">Buscar</button>
+    </form>
+    
+   <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+    <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#0779e4; border-color: #0779e4;" (click)="navegarCarrito()">Ver carrito</button>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button> 
       
-      <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-        <button id="boton" class="btn my-2 my-sm-0" type="submit" style = "background-color: #00737d; color:white" (click)="navegarBusqueda();">Buscar</button>
-      </form>
-      
-      <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
-        <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#212121;" (click)="navegarCarrito()">Ver carrito</button> 
-        </ng-container>
-        <ng-template #elseTemplate>
-          <button id="boton" style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
-          
-          <button id="boton" style="background-color: #00737d; border-color: #00737d;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
-        </ng-template>
-      
-    </div>  
-  </nav>
+      <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+    </ng-template>    
+
+
+    
+</div>  
+</nav>
   <div style="overflow: hidden;">
 
     <div class="btn-group btn-group-lg" id="GrupoBotones" role="group" aria-label="Basic example">
-      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;" (click)="navegarCategoria('Libros','Terror')">Terror</button>
-      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;" (click)="navegarCategoria('Libros','Romance')">Romance</button>
-      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;" (click)="navegarCategoria('Libros','Misterio')">Misterio</button>
-      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;" (click)="navegarCategoria('Libros','Novelas')">Novelas</button>
-      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;" (click)="navegarCategoria('Libros','Politica')">Politica</button>
-      <button type="button" class="btn"style="background-color:#f09f07; background-image: url(../../../assets/navbarLibreria.png); color:white;" (click)="navegarCategoria('Libros','Infantil')">Infantil</button>
+      <button type="button" class="btn"style="background-color:#ff9234; color:white;" (click)="navegarCategoria('Libros','Terror')">Terror</button>
+      <button type="button" class="btn"style="background-color:#ff9234; color:white;" (click)="navegarCategoria('Libros','Romance')">Romance</button>
+      <button type="button" class="btn"style="background-color:#ff9234; color:white;" (click)="navegarCategoria('Libros','Misterio')">Misterio</button>
+      <button type="button" class="btn"style="background-color:#ff9234; color:white;" (click)="navegarCategoria('Libros','Novelas')">Novelas</button>
+      <button type="button" class="btn"style="background-color:#ff9234; color:white;" (click)="navegarCategoria('Libros','Politica')">Politica</button>
+      <button type="button" class="btn"style="background-color:#ff9234; color:white;" (click)="navegarCategoria('Libros','Infantil')">Infantil</button>
     </div>
 
   <div class="container">
