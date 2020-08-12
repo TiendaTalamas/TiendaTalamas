@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import { Http, Response } from '@angular/http';
-
+import { servicioCompartido } from '../../../servicios/servicioCompartido';
 @Component({
   selector: 'app-preferencias',
   templateUrl: './preferencias.component.html',
@@ -9,7 +9,7 @@ import { Http, Response } from '@angular/http';
 })
 export class PreferenciasComponent implements OnInit {
 
-  constructor(private http: Http,private router: Router, public _servicioCompartido) { }
+  constructor(private http: Http,private router: Router, public _servicioCompartido:servicioCompartido) { }
 
   ngOnInit() {
     this._servicioCompartido.comprobarUsuario();
