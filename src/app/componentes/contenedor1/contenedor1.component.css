@@ -68,7 +68,10 @@ h1
 {
     margin-right: 20px;
 
+
 }
+
+/*CSS DEL BANNER*/
 
 .breadcrumb-image {
     background-position: center center;
@@ -259,6 +262,18 @@ h1
   overflow: hidden;
   text-align: center;
   font-family: 'Anonymous Pro';
+
+}
+
+#textomas2
+{
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Anonymous Pro';
+  color:#0779e4;
 
 }
 
