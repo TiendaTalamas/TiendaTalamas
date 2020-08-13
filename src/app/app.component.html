@@ -1,8 +1,8 @@
-<div style="width: 100%; height:35px; background-color:#0779e4;">
-  <ul id="cuenta">
-  <li class="nav-item dropdown"  *ngIf="_servicioCompartido.CompUsuario">
+<div class="float-right" style="width: 100%; height:35px; background-color:#0779e4;">
+  <ul id="botoncuenta">
+  <li *ngIf="_servicioCompartido.CompUsuario">
     <a class="nav-link dropdown-toggle" style="color:white; border-color: #0779e4;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Mi cuenta
+     <img class="mb-1 mr-1" src="assets/perfil.png" width="15px" height="15px"> Mi cuenta
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
       <a class="dropdown-item" (click)="navegarHistorial()">Historial de Compras</a>
