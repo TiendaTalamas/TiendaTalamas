@@ -5,7 +5,8 @@ import 'rxjs/add/operator/map';
 import {Router} from "@angular/router";
 import {Location} from "@angular/common";
 import { servicioCompartido } from './servicios/servicioCompartido';
-  
+import { FormBuilder, FormGroup } from '@angular/forms';
+
 
 
 
@@ -22,13 +23,14 @@ export class AppComponent {
 
   Pag1:boolean;
   cadena: string;
+  registroForm:FormGroup;
 
+  constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido, private fb:FormBuilder){
+    this.registroForm = fb.group({
+      'cadena' : this.cadena
 
-  constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido)
-
-  
-  
-  {}
+ });
+  }
   ngOnInit()
   {
 
