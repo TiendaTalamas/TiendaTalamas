@@ -48,6 +48,7 @@ export class CuadroExitosoComponent implements OnInit {
       this.MensajeError = this.route.snapshot.paramMap.get('Mensaje');
     }
     this.obtenerSubCategoriasLibros();
+    this._servicioCompartido.comprobarUsuario();
   }
 
   obtenerCompra()
@@ -104,6 +105,11 @@ export class CuadroExitosoComponent implements OnInit {
   navegarLibreria()
   {
     this.router.navigate(['libreria'])
+  }
+
+  navegarHistorial()
+  {
+    this.router.navigate(['historial']);
   }
 
   navegarPublicidad()

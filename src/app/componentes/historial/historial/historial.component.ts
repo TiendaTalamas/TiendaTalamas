@@ -15,11 +15,12 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class HistorialComponent implements OnInit {
 
   cadena: string;
-  constructor(private router:Router,private http:Http,private _servicioCompartido:servicioCompartido) { }
+  constructor(private router:Router,private http:Http,public _servicioCompartido:servicioCompartido) { }
 
   ngOnInit() {
     this.obtenerCompras();
     this._servicioCompartido.soloLogueado();
+    this._servicioCompartido.comprobarUsuario();
   }
 
   registroForm:FormGroup;
@@ -31,6 +32,7 @@ export class HistorialComponent implements OnInit {
   valuesKeys = new Array;
   articulosArray = new Array;
   Subtotal:string;
+  articulosArray_Sub = new Array;
 
   navegarInicio()
   {
@@ -99,6 +101,22 @@ export class HistorialComponent implements OnInit {
   {
     this.router.navigate(['historial']);
   }
+  navegarCarrito()
+  {
+    this.router.navigate(['Carrito'])
+  }
+  navegarCategoria(Categoria:string, SubCategoria: string){
 
+    console.log(SubCategoria);
+    this.router.navigate(['categoria',Categoria,SubCategoria]);
 
+  this._servicioCompartido.setCategoria(Categoria);
+  this._servicioCompartido.setSubCategoria(SubCategoria);
+
+  
+  }
+  navegarConfiguracion()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
+  }
 }

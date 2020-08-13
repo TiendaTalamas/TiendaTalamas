@@ -66,6 +66,12 @@ export class ConfiguracionUsuarioComponent implements OnInit {
   ngOnInit() {
     this.obtenerDirecciones();
     this._servicioCompartido.comprobarUsuario();
+    this._servicioCompartido.soloLogueado();
+  }
+
+  navegarHistorial()
+  {
+    this.router.navigate(['historial']);
   }
 
   navegarInicio()

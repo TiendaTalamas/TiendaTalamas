@@ -18,3 +18,19 @@
         width:300px;
     }
 }
+
+.btn:hover:not(.btn-link):not(.btn-flat) {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.23), 0 10px 30px rgba(0, 0, 0, 0.19);
+  }
+  .btn:active:not(.btn-link):not(.btn-flat) {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.23), 0 10px 30px rgba(0, 0, 0, 0.19);
+  }
+  .btn:not(.btn-link):not(.btn-flat),
+  .btn-default:not(.btn-link):not(.btn-flat) {
+    background-color: transparent;
+  }
+  .btn-grey-mat{
+      background-color:#607D8B;
+      color:#ffffff;    
+      margin:10px;
+  }

@@ -280,6 +280,11 @@ export class BusquedaComponent implements OnInit {
     this.router.navigate(['libreria'])
   }
 
+  navegarCarrito()
+  {
+    this.router.navigate(['Carrito'])
+  }
+
   navegarPublicidad()
   {
     this.router.navigate(['emd'])

@@ -1,59 +1,3 @@
-<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #ff9234" >
-  <a class="navbar-brand"><img src="assets/talamas.png" alt="" style = "width: 100px; height:100px;"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown"  *ngIf="_servicioCompartido.CompUsuario">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Usuario
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" (click)="navegarHistorial()">Historial de compras</a>
-          <a class="dropdown-item" (click)="navegarConfiguracion()">Configuracion</a>
-          <a class="dropdown-item" href="#">Soporte</a>
-          <div class="dropdown-divider"></div>
-          <a href="http://www.tiendatalamas.com/" class="dropdown-item" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
-        </div>
-      </li>
-
-      <li class="nav-item active">
-        <button type="button" class="btn btn-danger" style="color: black; border-color:#ff9234; background-color: #ff9234;" (click)="navegarInicio();">Inicio</button>
-      </li>
-      <li class="nav-item dropdown">
-          <button type="button" class="btn btn-danger" style="color: black; border-color:#ff9234; background-color: #ff9234;" (click)="navegarLibreria();">Libreria</button>
-            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" style="color: black; border-color:#ff9234; background-color: #ff9234;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <span class="sr-only">Toggle Dropdown</span>
-           </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" *ngFor="let Subcategoria of articulosArray_Sub" (click)="navegarCategoria(Subcategoria.categoria, Subcategoria.SubCategoria)">{{Subcategoria.SubCategoria}}</a>
-
-             </div>
-      </li>
-      <li class="nav-item">
-        <button type="button" class="btn btn-danger" style="color: black; border-color:#ff9234; background-color: #ff9234;" (click)="navegarMusica()">Musica</button>
-      </li>
-  </ul>
-    
-    <form [formGroup]="ventaforma" class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-      <button id="botones" class="btn my-2 my-sm-0" type="submit" style = "background-color: #0779e4; color:white" (click)="navegarBusqueda();">Buscar</button>
-    </form>
-    
-   <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
-    <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#212121;" (click)="navegarCarrito()">Ver carrito</button> 
-    </ng-container>
-    <ng-template #elseTemplate>
-      <button id="botones" style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button>
-      
-      <button id="botones" style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
-    </ng-template>    
-
-    
-</div>  
-</nav>
 <div style="overflow: hidden;">
 <div class="row mt-4" *ngFor = "let producto of productos">
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
@@ -123,7 +67,14 @@
                 <ng-container *ngIf="verificacionProductos; else elseTemplate3">
                   <a href="https://api.whatsapp.com/send?phone=+528672111350" class="btn btn" id="botones" style="background-color:#0779e4; border-color:#0779e4; color:white;">Comprar por Whatsapp</a>   
                 
-                   <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant=1&user={{user}}" class="btn btn" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</a>
+                   <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant={{quantity}}&user={{user}}" class="btn btn" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</a>
+                   <form [formGroup]="formCantidad">
+                   <select name="select" formControlName="quantity" [(ngModel)]="quantity">
+                    <option value="1" selected>1</option> 
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </form>
               </ng-container>
               <ng-template #elseTemplate3>
                 <p id="TextoOpcion">No contamos con este producto<br>
