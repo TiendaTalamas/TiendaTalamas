@@ -3,6 +3,15 @@
     margin-right: 20px;
 }
 
+#cuenta
+{
+  color: white;
+  float: right;
+  margin-right:15px;
+  list-style: none;
+
+}
+
 @media only  screen and (max-width:500px)
 {
     iframe
