@@ -1,6 +1,6 @@
-<div class="float-right" style="width: 100%; height:35px; background-color:#0779e4;">
-  <ul id="botoncuenta">
-  <li *ngIf="_servicioCompartido.CompUsuario">
+<nav class="float-right navbar" style="width: 100%; height:25px; background-color:#0779e4; position:-webkit-sticky; position: sticky; top:0px; z-index: 101;  ">
+  <ul >
+  <li *ngIf="_servicioCompartido.CompUsuario" class="my-2 my-sm-0">
     <a class="nav-link dropdown-toggle" style="color:white; border-color: #0779e4;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
      <img class="mb-1 mr-1" src="assets/perfil.png" width="15px" height="15px"> Mi cuenta
     </a>
@@ -14,8 +14,8 @@
   </li>
   </ul>
 
-</div>
-<nav class="navbar navbar-expand-lg navbar-light" style = "background-color:white">
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light " style = "background-color:white; position:-webkit-sticky; position: sticky; top: 0px; z-index: 100; width: 100%;">
   <a class="navbar-brand"><img src="assets/logo.png" alt="" style = "width:275px; height:100px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

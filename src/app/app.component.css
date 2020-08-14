@@ -7,9 +7,10 @@
 {
   color: white;
   float: right;
-  margin-right:15px;
+  margin-left: 80%;
+  margin-top:-15px;
   list-style: none;
-
+  text-align:right;
 }
 
 @media only  screen and (max-width:500px)
