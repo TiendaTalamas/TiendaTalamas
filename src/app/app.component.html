@@ -28,8 +28,12 @@
               <button id="botones2" type="button" class="btn btn dropdown-toggle dropdown-toggle-split" style="color: orange;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <span class="sr-only">Toggle Dropdown</span>
              </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" *ngFor="let Subcategoria of articulosArray_Sub" (click)="navegarCategoria(Subcategoria.categoria, Subcategoria.SubCategoria)">{{Subcategoria.SubCategoria}}</a>
+                <div class="dropdown-menu" >
+                  <div class="row align-items-start" >
+                    <div class="col-4" *ngFor="let Subcategoria of articulosArray_Sub">
+                      <a class="dropdown-item"  (click)="navegarCategoria(Subcategoria.categoria, Subcategoria.SubCategoria)">{{Subcategoria.SubCategoria}}</a>
+                    </div>
+                  </div>
                </div>
         </li>
         <li class="nav-item dropdown">
@@ -82,9 +86,8 @@
         <h5 class="text-uppercase" style="color:white" >Tienda Talamas</h5>
         <p style="color:white">Av. Vicente Guerrero 1729, Sector Centro, 88000 Nuevo Laredo, Tamps.</p>
         <p style="color:white">Telefono de contacto: +52 867 121 6031</p>
-        <p style="color:white;" (click)="navegarPoliticas()">Condiciones de uso de uso</p>
-        <p style="color: white;" (click)="navegarPoliticas()">Avisos de privacidad</p>
-        <p style="color: white;" (click)="navegarPoliticas()">Condiciones de devolucion</p>
+        <p style="color:white;" (click)="navegarPoliticas('CondicionesDeUso')">Condiciones de uso de uso</p>
+        <p style="color: white;" (click)="navegarPoliticas('CondicionesDeDevoluciones')">Condiciones de devoluciones</p>
         <p style="color: white;" (click)="navegarSoporte()">Soporte</p>
         <br>
         <br>  
