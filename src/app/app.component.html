@@ -1,21 +1,7 @@
-<div class="float-right" style="width: 100%; height:35px; background-color:#0779e4;">
-  <ul id="botoncuenta">
-  <li class="nav-item dropdown" *ngIf="_servicioCompartido.CompUsuario">
-    <a class="nav-link dropdown-toggle" style="color:white; border-color: #0779e4;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-     <img class="mb-1 mr-1" src="assets/perfil.png" width="15px" height="15px"> Mi cuenta
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" (click)="navegarHistorial()">Historial de Compras</a>
-      <a class="dropdown-item" (click)="navegarConfiguracion()">Configuracion</a>
-      <a class="dropdown-item" href="#">Soporte</a>
-      <div class="dropdown-divider"></div>
-      <a href="http://localhost:4200/" class="dropdown-item" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
-    </div>
-  </li>
-  </ul>
-
-</div>
-<nav class="navbar navbar-expand-lg navbar-light" style = "background-color:white">
+<nav class="float-right " style="width: 100%; height:30px; background-color:#0779e4; position:-webkit-sticky; position: sticky; top:0px; z-index: 101;  ">
+  <a id="botoncuenta" (click)="navegarInicio();"><img class="mb-2 mr-2" src="assets/perfil.png" width="20px" height="20px">Mi Cuenta</a>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light " style = "background-color:white; position:-webkit-sticky; position: sticky; top: 0px; z-index: 100; width: 100%;">
   <a class="navbar-brand"><img src="assets/logo.png" alt="" style = "width:275px; height:100px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -37,14 +23,20 @@
                   <a class="dropdown-item" *ngFor="let Subcategoria of articulosArray_Sub" (click)="navegarCategoria(Subcategoria.categoria, Subcategoria.SubCategoria)">{{Subcategoria.SubCategoria}}</a>
                </div>
         </li>
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <img src="assets/disco.png" width="20px" height="20px">
           <button id="botones2" type="button" class="btn btn" style="color:orange;" (click)="navegarMusica()">Musica</button>
+          <button id="botones2" type="button" class="btn btn dropdown-toggle dropdown-toggle-split" style="color: orange;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" *ngFor="let Subcategoria of articulosArray_Inst" (click)="navegarCategoria(Subcategoria.categoria, Subcategoria.SubCategoria)">{{Subcategoria.SubCategoria}}</a>
+         </div>
         </li>
+        
     </ul>
-
     <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" name="cadena" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
+      <input class="form-control mr-sm-2" name="cadena" style="width:250px; border-radius:15px;" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
       <button id="boton" class="btn my-2 my-sm-0" type="submit" style = "background-color:#0779e4; color:white" (click)="navegarBusqueda();">Buscar</button>
     </form>
     
@@ -57,9 +49,13 @@
       <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
     </ng-template>    
 
+    
 
     
 </div>  
+</nav>
+<nav>
+
 </nav>
 <router-outlet></router-outlet>
 
@@ -81,6 +77,7 @@
         <p style="color:white">Telefono de contacto: +52 867 121 6031</p>
         <p style="color:white;" (click)="navegarPoliticas()">Condiciones de uso de uso</p>
         <p style="color: white;" (click)="navegarPoliticas()">Avisos de privacidad</p>
+        <p style="color: white;" (click)="navegarPoliticas()">Condiciones de devolucion</p>
         <p style="color: white;" (click)="navegarSoporte()">Soporte</p>
         <br>
         <br>  
