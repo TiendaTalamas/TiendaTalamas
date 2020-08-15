@@ -41,7 +41,7 @@ const routes: Routes = [
   {path:'Direccion', component:DireccionComponent,},
   {path:'Preferencia', component:PreferenciasComponent,},
   {path:'historial', component:HistorialComponent,},
-  {path:'politicas', component:PoliticasComponent,},
+  {path:'Condiciones/:uso', component:PoliticasComponent,},
   {path:'soporte', component:SoporteComponent,},
 
 ];

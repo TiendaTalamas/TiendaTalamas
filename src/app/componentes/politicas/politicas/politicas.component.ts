@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import 'rxjs/add/operator/map';
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
 import { servicioCompartido } from '../../../servicios/servicioCompartido';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -16,10 +16,21 @@ export class PoliticasComponent implements OnInit {
   CompUsuario:boolean;
   cadena:string;
   registroForm:FormGroup;
-  constructor(private http: Http,private router: Router, public _servicioCompartido : servicioCompartido) { }
+  TipoCondiciones:string;
+  Cond1:boolean;
+  Cond2:boolean;
+  constructor(private http: Http,private router: Router, public _servicioCompartido : servicioCompartido, private route:ActivatedRoute) { }
 
   ngOnInit() {
     this._servicioCompartido.comprobarUsuario();
+    this.TipoCondiciones = this.route.snapshot.paramMap.get('uso');
+    if(this.TipoCondiciones == "CondicionesDeUso")
+    {
+      this.Cond1 = true;
+    }
+    else{
+      this.Cond2 = true;
+    }
   }
 
   navegarInicio()
