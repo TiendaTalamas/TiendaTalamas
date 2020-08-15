@@ -2,7 +2,10 @@
 {
     margin-right: 20px;
 }
-
+.dropdown-menu
+{
+  width:1000px;
+}
 #botoncuenta
 {
   color: white;

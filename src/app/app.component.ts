@@ -184,7 +184,17 @@ export class AppComponent {
 
   navegarPoliticas(TipoCondicion:string)
   {
-    this.router.navigate(['politicas', TipoCondicion])
+    this.router.navigate(['Condiciones', TipoCondicion]);
+    if(TipoCondicion == "CondicionesDeUso")
+    {
+      this._servicioCompartido.Cond1 = true;
+      this._servicioCompartido.Cond2 = false;
+    }
+    else{
+      this._servicioCompartido.Cond2 = true;
+      this._servicioCompartido.Cond1 = false;
+    }
+
   }
   
  

@@ -25,6 +25,8 @@ export class servicioCompartido{
   CompUsuario: boolean;
   contrasena: string;
   usuario: string;
+  Cond1:boolean;
+  Cond2:boolean;
   
   constructor(private http: Http, private router: Router) {}   
   comprobarUsuario() 

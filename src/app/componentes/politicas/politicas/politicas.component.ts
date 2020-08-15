@@ -19,24 +19,27 @@ export class PoliticasComponent implements OnInit {
   TipoCondiciones:string;
   Cond1:boolean;
   Cond2:boolean;
-  constructor(private http: Http,private router: Router, public _servicioCompartido : servicioCompartido, private route:ActivatedRoute) { }
+  constructor(private http: Http,private router: Router, public _servicioCompartido : servicioCompartido, private route:ActivatedRoute, private location:Location) { }
 
   ngOnInit() {
     this._servicioCompartido.comprobarUsuario();
     this.TipoCondiciones = this.route.snapshot.paramMap.get('uso');
     if(this.TipoCondiciones == "CondicionesDeUso")
     {
-      this.Cond1 = true;
+      this._servicioCompartido.Cond1 = true;
+      this._servicioCompartido.Cond2 = false;
     }
     else{
-      this.Cond2 = true;
+      this._servicioCompartido.Cond2 = true;
+      this._servicioCompartido.Cond1 = false;
     }
+    
   }
 
   navegarInicio()
   {
     this.router.navigate(['']);
-    
+
   }
   articulosArray_Sub = new Array;
 
