@@ -182,9 +182,9 @@ export class AppComponent {
     this.router.navigate(['soporte'])
   }
 
-  navegarPoliticas()
+  navegarPoliticas(TipoCondicion:string)
   {
-    this.router.navigate(['politicas'])
+    this.router.navigate(['politicas', TipoCondicion])
   }
   
  
