@@ -34,8 +34,21 @@
   </a>
 </div>
 </div>
-
-
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img (click)="navegarLibreria();" src="assets/librosInicio.JPG" class="img-fluid" alt="">                                                                                  
+    </div>
+    <div class="col" >
+      <img src="assets/musicaInicio.jpg" class="img-fluid"  alt="">
+    </div>
+    <div class="col" >
+      <img src="assets/oficinaInicio.JPG" class="img-fluid"  alt="">
+    </div>
+  </div>
+</div>
 
 <!--Este div se mostrara solo en celular-->
 
@@ -56,8 +69,8 @@
   </div>
 
   <!--AQUI EMPIEZA EL SLIDER DE INICIO-->
-  <h1 id="textoPC" style = "color: black; text-align:center;">Mas Vendido</h1>
-  <hr id="textoPC"/>
+  <h1 id="textoPC" style = "color: black; text-align:left; margin-left:10%;">Mas Vendido</h1>
+  <hr id="textoPC" color="black" width="80%"/>
 
   <div class="container-fluid-ml-5">
     <div id="carouselExampleControls55" class="carousel slide" data-interval="false">
@@ -68,6 +81,7 @@
   
             <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
             <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+            <h5><p id="textomas2" class="mr-5 mt-4">${{reciente.Propiedad2}}</p></h5>
             <h5><p id="textomas2" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
             <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
            </div>
