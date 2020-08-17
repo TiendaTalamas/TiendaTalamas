@@ -2,22 +2,11 @@
 {
     margin-right: 20px;
 }
-<<<<<<< HEAD
-
-#contenido
-{
-  width: 92%;
-  margin: 0 auto;
-}
-
-#caida
-=======
 .dropdown-menu
 {
   width:1000px;
 }
-#botoncuenta
->>>>>>> 4afbcdbfb18a6663f1d038d2f1d1a8dfe1fd68af
+#caida
 {
   color: white;
   list-style: none;
