@@ -21,7 +21,7 @@
              </button>
                 <div class="dropdown-menu" >
                   <div class="row align-items-start" >
-                    <div class="col-4" *ngFor="let Subcategoria of articulosArray_Sub">
+                    <div class="col-4 " *ngFor="let Subcategoria of articulosArray_Sub">
                       <a class="dropdown-item"  (click)="navegarCategoria(Subcategoria.categoria, Subcategoria.SubCategoria)">{{Subcategoria.SubCategoria}}</a>
                     </div>
                   </div>
@@ -61,6 +61,7 @@
 <nav>
 
 </nav>
+
 <router-outlet></router-outlet>
 
 <!-- Footer -->
