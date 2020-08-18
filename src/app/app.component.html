@@ -1,56 +1,22 @@
-<nav class="navbar navbar-expand-lg" id="navbar-azul">
-  <div class="dropdown">
-    <a data-toggle="dropdown" role="button" id="caida" href="#"><img class="mb-2 mr-2" src="assets/perfil.png" width="20px" height="20px">Mi cuenta  </a>
-   <ul aria-labelledby="caida" role="menu" class="dropdown-menu" id="menu2">
-     <li><a class="margin-top" href="#">Historial de compra</a></li>
-   </ul>
-  </div>
 
-
-</nav>
-<nav class="navbar navbar-expand-lg navbar-light " style = "background-color:white; position:-webkit-sticky; position: sticky; top: 0px; z-index: 100; width: 100%;">
-  <a class="navbar-brand"><img src="assets/logo.png" alt="" style = "width:275px; height:100px;"></a>
+<nav class="navbar navbar-expand-lg navbar-light " style = "background-color:white; position:-webkit-sticky; position: sticky; top: 0px; z-index: 100; width: 100%; padding-left:7% ;">
+  <a class="navbar-brand"><img src="assets/logo.png" alt="" style = " width:450px; height:150px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <img src="assets/inicio.png" width="20px" height="20px">
-          <button id="botones2" type="button" class="btn btn" style="color:orange;" (click)="navegarInicio();">Inicio</button>
-        </li>
-        <li class="nav-item dropdown">
-          <img src="assets/libro.png" width="20px" height="20px">
-            <button id="botones2" type="button" class="btn btn" style="color:orange;" (click)="navegarLibreria();">Libreria</button>
-              <button id="botones2" type="button" class="btn btn dropdown-toggle dropdown-toggle-split" style="color: orange;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <span class="sr-only">Toggle Dropdown</span>
-             </button>
-                <div class="dropdown-menu" >
-                  <div class="row align-items-start" >
-                    <div class="col-4 " *ngFor="let Subcategoria of articulosArray_Sub">
-                      <a class="dropdown-item"  (click)="navegarCategoria(Subcategoria.categoria, Subcategoria.SubCategoria)">{{Subcategoria.SubCategoria}}</a>
-                    </div>
-                  </div>
-               </div>
-        </li>
-        <li class="nav-item dropdown">
-          <img src="assets/disco.png" width="20px" height="20px">
-          <button id="botones2" type="button" class="btn btn" style="color:orange;" (click)="navegarMusica()">Musica</button>
-          <button id="botones2" type="button" class="btn btn dropdown-toggle dropdown-toggle-split" style="color: orange;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="sr-only">Toggle Dropdown</span>
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" *ngFor="let Subcategoria of articulosArray_Inst" (click)="navegarCategoria(Subcategoria.categoria, Subcategoria.SubCategoria)">{{Subcategoria.SubCategoria}}</a>
-         </div>
-        </li>
-        
-    </ul>
-    <form [formGroup]="registroForm" class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" name="cadena" style="width:250px; border-radius:15px;" [(ngModel)]="cadena" formControlName="cadena" placeholder="Escribe aqui para buscar" aria-label="Search">
-      <button id="boton" class="btn my-2 my-sm-0" type="submit" style = "background-color:#0779e4; color:white" (click)="navegarBusqueda();">Buscar</button>
-    </form>
     
+    <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 " style="width:500px;">
+      <input class="form-control form-control-sm mr-3 w-75 sinBorde" type="text" placeholder="Buscar..." aria-label="Search" style="width:400px;">
+      <img src="assets/iconolupa.png" width="30px">
+    </form>
+
+    <img class="mr-1" src="assets/iconocontacto.png" width="50px">
+    <img class="mr-1" src="assets/iconouser.png" width="50px">
+    <img class="mr-1" src="assets/iconocarrito.png" width="50px">
+     
+    <!---
    <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
     <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#0779e4; border-color: #0779e4;" (click)="navegarCarrito()">Ver carrito</button>
     </ng-container>
@@ -59,6 +25,7 @@
       
       <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
     </ng-template>    
+  -->
 
     
 
