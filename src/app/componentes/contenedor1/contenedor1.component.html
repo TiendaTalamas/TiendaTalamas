@@ -69,21 +69,22 @@
   </div>
 
   <!--AQUI EMPIEZA EL SLIDER DE INICIO-->
-  <h1 id="textoPC" style = "color: black; text-align:left; margin-left:10%;">Mas Vendido</h1>
-  <hr id="textoPC" color="black" width="80%"/>
-
-  <div class="container-fluid-ml-5">
+  <div>
+  <h1 id="textoPC" style = "color: black; text-align:left; margin-left:10%; padding-top:10% ; margin-bottom: 0px;">Mas Vendido</h1>
+  <hr id="textoPC" width="80%" color="black"/>
+  </div>
+  <div class="container-fluid-ml-5" style="margin-left:100px; margin-right:100px;">
     <div id="carouselExampleControls55" class="carousel slide" data-interval="false">
       <div class="carousel-inner">
         <div class="carousel-item active">
            <div class="row mb-4">
            <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index">
   
-            <img class="imgr" src="{{reciente.Imagen}}" style = "width: 250px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+            <img class="imgr" src="{{reciente.Imagen}}" style = "width:150px; height: 175px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
             <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
-            <h5><p id="textomas2" class="mr-5 mt-4">${{reciente.Propiedad2}}</p></h5>
+            <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Propiedad2}}</p></h5>
             <h5><p id="textomas2" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
-            <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
+            <button id="Botoncarrito" style="background-color: #ccc; border-color: #ccc; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir<img id="imagencarrito" src="assets/carrito.png" width="30px" height="30px"></button>
            </div>
 
         </div>
@@ -93,8 +94,9 @@
         <div class="row mb-4">
         <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros2; let i = index">
 
-         <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+         <img class="imgr" src="{{reciente.Imagen}}" style = "width:140px; height:215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
          <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+         <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Propiedad2}}</p></h5>
          <h5><p id="textomas2" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
          <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
         </div>
@@ -107,10 +109,11 @@
       <div class="row mb-4">
       <div id="imagen" class="col-xs-12 col-md-6 col-lg-3" *ngFor = "let reciente of articulosArray_Vendidos_Libros3; let i = index">
 
-       <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+       <img class="imgr" src="{{reciente.Imagen}}" style = "width: 140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
        <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+       <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Propiedad2}}</p></h5>
        <h5><p id="textomas2" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
-       <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
+       <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir carrito</button> 
       </div>
 
    </div>
@@ -143,6 +146,7 @@
   
             <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
             <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+            <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Propiedad2}}</p></h5>
             <h5><p id="textomas2" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
             <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
            </div>
@@ -156,6 +160,7 @@
 
          <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
          <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+         <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Propiedad2}}</p></h5>
          <h5><p id="textomas2" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
          <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
         </div>
@@ -170,6 +175,7 @@
 
        <img class="imgr" src="{{reciente.Imagen}}" style = "width: 200px; height: 300px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
        <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+       <h5><p id="textomas" class="mr-5 mt-4">${{reciente.Propiedad2}}</p></h5>
        <h5><p id="textomas2" class="mr-5 mt-4">${{reciente.Precio}}</p></h5>
        <button id="Botoncarrito" style="background-color: #0779e4; border-color: #0779e4;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
       </div>
