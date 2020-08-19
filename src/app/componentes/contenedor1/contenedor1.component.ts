@@ -126,37 +126,30 @@ export class Contenedor1Component implements OnInit {
     this.LimiteI = "0";
     this.obtenerVendidos();
     this.obtenerRecientes()
-    this.obtenerMasVendidosInstrumentos();
     this.LimiteI = "6";
     this.obtenerRecientes()
     this.obtenerVendidos();
-    this.obtenerMasVendidosInstrumentos();
     this.LimiteI = "12";
     this.obtenerRecientes()
     this.obtenerVendidos();
-    this.obtenerMasVendidosInstrumentos();
     this.obtenerLibrosCelular()
     this.LimiteI = "18";
     this.obtenerRecientes()
     this.obtenerVendidos();
-    this.obtenerMasVendidosInstrumentos();
     this.obtenerLibrosCelular()
     this.LimiteI = "24";
     this.obtenerRecientes()
     this.obtenerVendidos();
-    this.obtenerMasVendidosInstrumentos();
     this.obtenerLibrosCelular()
     this.LimiteI = "30";
     this.obtenerRecientes()
     this.obtenerVendidos();
-    this.obtenerMasVendidosInstrumentos();
     this.obtenerLibrosCelular()
 
 
 
 
 
-    this.obtenerRecomendados();
     this.obtenerSlider();
     this._servicioCompartido.comprobarUsuario();
     this.obtenerSubCategoriasLibros();
@@ -559,33 +552,7 @@ export class Contenedor1Component implements OnInit {
 
   }
 
-  obtenerRecomendados() {
-    let body = new URLSearchParams();
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/recomendados.php', body)
-    .map((res:Response) => res.json())
-            .subscribe(result => 
-            {
-            this.AA_Recomendados = "";
-            this.data_Recomendados = [];
-            console.log(result);
-            this.articulosArray_Recomendados = result;
-            for (var key in result) {
-            this.AA_Recomendados = this.AA_Recomendados + key;
-            if (result.hasOwnProperty(key)) {
-              this.val_Recomendados = result[key];
-              this.data_Recomendados.push(Object.keys(this.val_Recomendados));
-              for (var i = 0; i < Object.keys(this.val_Recomendados).length; i++) {
-              this.contenedor = Object.keys(this.val_Recomendados)[i];
-              Object.entries(this.val_Recomendados)[i]
-               
-                this.xxxMap_Recomendados.set(Object.keys(this.val_Recomendados)[i], Object.values(this.val_Recomendados)[i]);
-                this.valuesKeys_Recomendados.push(Object.keys(this.val_Recomendados)[i], Object.values(this.val_Recomendados)[i]);
 
-                }
-             }
-          }
-    });
-  }
 
   masInformacion(IdProducto: string, Categoria: string){
     this.nombre = IdProducto;
@@ -675,96 +642,10 @@ export class Contenedor1Component implements OnInit {
     this.router.navigate(['Carrito'])
   }
 
-  obtenerMasVendidosInstrumentos() {
-    if(this.LimiteI == "0")
-    {
-    let body = new URLSearchParams();
-    body.append('limiteI', this.LimiteI);
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerInstrumentoVendidos.php', body)
-    .map((res:Response) => res.json())
-            .subscribe(result => 
-            {
-            this.AA_Recientes_Libros = "";
-            this.data_Recientes_Libros = [];
-            console.log(result);
-            this.articulosArray_Vendidos_Instrumentos = result;
-            for (var key in result) {
-            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
-            if (result.hasOwnProperty(key)) {
-              this.val_Recientes_Libros= result[key];
-              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
-              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
-              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
-              Object.entries(this.val_Recientes_Libros)[i]
-               
-                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
-                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
 
-                }
-             }
-          }
-    });
-  }else if(this.LimiteI == "6")
-  {
-    let body = new URLSearchParams();
-    body.append('limiteI', this.LimiteI);
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerInstrumentoVendidos.php', body)
-    .map((res:Response) => res.json()) 
-            .subscribe(result => 
-            {
-            this.AA_Recientes_Libros = "";
-            this.data_Recientes_Libros = [];
-            console.log(result);
-            this.articulosArray_Vendidos_Instrumentos2 = result;
-            for (var key in result) {
-            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
-            if (result.hasOwnProperty(key)) {
-              this.val_Recientes_Libros= result[key];
-              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
-              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
-              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
-              Object.entries(this.val_Recientes_Libros)[i]
-               
-                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
-                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+  
 
-                }
-             }
-          }
-    });
-  }
-  else if(this.LimiteI == "12")
-  {
-    let body = new URLSearchParams();
-    body.append('limiteI', this.LimiteI);
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerInstrumentoVendidos.php', body)
-    .map((res:Response) => res.json())
-            .subscribe(result => 
-            {
-            this.AA_Recientes_Libros = "";
-            this.data_Recientes_Libros = [];
-            console.log(result);
-            this.articulosArray_Recientes_Libros3 = result;
-            for (var key in result) {
-            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
-            if (result.hasOwnProperty(key)) {
-              this.val_Recientes_Libros= result[key];
-              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
-              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
-              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
-              Object.entries(this.val_Recientes_Libros)[i]
-               
-                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
-                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
-
-                }
-             }
-          }
-    });
-
-  }
-
-  }
+  
   anadirAlCarrito(IdProducto:string)
   {
     let body = new URLSearchParams();
