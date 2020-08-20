@@ -7,13 +7,19 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     
-    <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 " style="width:500px;">
-      <input class="form-control form-control-sm mr-3 w-75 sinBorde" type="text" placeholder="Buscar..." aria-label="Search" style="width:400px;">
-      <img src="assets/iconolupa.png" width="30px">
+    <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 " style="width:500px;" [formGroup]="registroForm">
+      <input class="form-control form-control-sm mr-3 w-75 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search" style="width:400px;">
+      <img src="assets/iconolupa.png" width="30px" (click)="navegarBusqueda()">
     </form>
 
-    <img class="mr-1" src="assets/iconocontacto.png" width="50px">
-    <img class="mr-1" src="assets/iconouser.png" width="50px">
+    <img class="mr-1" src="assets/iconocontacto.png" width="50px" (click)="navegarSoporte()">
+    <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+      <img ngif class="mr-1" src="assets/iconouser.png" width="50px" (click)="navegarConfiguracion()">
+    </ng-container>
+    <ng-template #elseTemplate>
+      <img ngif class="mr-1" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
+    </ng-template>
+    
     <img class="mr-1" src="assets/iconocarrito.png" width="50px">
      
     <!---
