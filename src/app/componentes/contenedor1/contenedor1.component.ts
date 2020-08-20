@@ -100,6 +100,12 @@ export class Contenedor1Component implements OnInit {
    articulosArray_Vendidos_Libros6 = new Array;
 
 
+   articulosArray_Vendidos_Discos = new Array;
+   articulosArray_Vendidos_Discos2 = new Array;
+   articulosArray_Vendidos_Discos3 = new Array;
+   articulosArray_Vendidos_Discos4 = new Array;
+   articulosArray_Vendidos_Discos5 = new Array;
+   articulosArray_Vendidos_Discos6 = new Array;
    //Para el modal
    respuesta:string;
    
@@ -125,26 +131,30 @@ export class Contenedor1Component implements OnInit {
     //Productos Libros
     this.LimiteI = "0";
     this.obtenerVendidos();
-    this.obtenerRecientes()
+    this.obtenerRecientes();
+    this.discosMasVendidos();
     this.LimiteI = "6";
-    this.obtenerRecientes()
+    this.obtenerRecientes();
     this.obtenerVendidos();
+    this.discosMasVendidos();
     this.LimiteI = "12";
-    this.obtenerRecientes()
+    this.obtenerRecientes();
     this.obtenerVendidos();
-    this.obtenerLibrosCelular()
+    this.obtenerLibrosCelular();
+    this.discosMasVendidos();
     this.LimiteI = "18";
-    this.obtenerRecientes()
+    this.obtenerRecientes();
     this.obtenerVendidos();
-    this.obtenerLibrosCelular()
+    this.obtenerLibrosCelular();
+    this.discosMasVendidos();
     this.LimiteI = "24";
-    this.obtenerRecientes()
+    this.obtenerRecientes();
     this.obtenerVendidos();
-    this.obtenerLibrosCelular()
+    this.obtenerLibrosCelular();
     this.LimiteI = "30";
-    this.obtenerRecientes()
+    this.obtenerRecientes();
     this.obtenerVendidos();
-    this.obtenerLibrosCelular()
+    this.obtenerLibrosCelular();
 
 
 
@@ -247,7 +257,126 @@ export class Contenedor1Component implements OnInit {
     });
   }
   
-  
+  discosMasVendidos()
+  {
+    if(this.LimiteI == "0")
+    {
+    let body = new URLSearchParams();
+    body.append('limiteI',  "0");
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/discosMasVendidos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Vendidos_Discos = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+  }else if(this.LimiteI == "6")
+  {
+    let body = new URLSearchParams();
+    body.append('limiteI',"5");
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/discosMasVendidos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Vendidos_Discos2 = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+  }
+  else if(this.LimiteI == "12")
+  {
+    let body = new URLSearchParams();
+    body.append('limiteI', "10");
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/discosMasVendidos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Vendidos_Discos3 = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+
+  }
+  else if(this.LimiteI == "18")
+  {
+    let body = new URLSearchParams();
+    body.append('limiteI', "15");
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/discosMasVendidos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.articulosArray_Vendidos_Discos4 = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+
+  }
+  }
 
    //Metodo para obtener recientes
   obtenerVendidos() {

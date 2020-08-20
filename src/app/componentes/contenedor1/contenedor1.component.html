@@ -221,35 +221,11 @@
   </div>
   <div class="container mb-5" style="background-color:white; ">
     <div class="row">
-      <div id="columnamala" class="col">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHK3eAdQSpcQc7TP1hKf9jFndlxPlXmCKMCr1MnUo6VZI_R7XSnk94i5Saqw&usqp=CAc" class="img-fluid" alt="">                                                                                  
-        <h5><p id="textomas" class="mr-5 mt-4">FUTURE NOSTALGIA</p></h5>
-        <h5><p id="textomas3" class="mr-5 mt-4">DUA LIPA</p></h5>
-        <h5><p id="textomas4" class="mr-5 mt-2">$254</p></h5>
-      </div>
-      <div class="col">
-        <img src="https://www.elquintobeatle.com/wp-content/uploads/2020/03/the-weeknd-after-hours-1-1068x1068.jpeg" class="img-fluid"  alt="">
-        <h5><p id="textomas" class="mr-5 mt-4">AFTER HOURS</p></h5>
-        <h5><p id="textomas3" class="mr-5 mt-4">THE WEEKND</p></h5>
-        <h5><p id="textomas4" class="mr-5 mt-2">$160</p></h5>
-      </div>
-      <div class="col" >
-        <img src="https://jenesaispop.com/wp-content/uploads/2020/01/eminem.jpg" class="img-fluid"  alt="">
-        <h5><p id="textomas" class="mr-5 mt-4">MUSIC TO BY MURDE...</p></h5>
-        <h5><p id="textomas3" class="mr-5 mt-4">EMINEM</p></h5>
-        <h5><p id="textomas4" class="mr-5 mt-2">$160</p></h5>
-      </div>
-      <div class="col" >
-        <img src="https://images-na.ssl-images-amazon.com/images/I/81lleqz5QXL._SL1400_.jpg" class="img-fluid"  alt="">
-        <h5><p id="textomas" class="mr-5 mt-4">CHANGES</p></h5>
-        <h5><p id="textomas3" class="mr-5 mt-4">JUSTIN BIEBER</p></h5>
-        <h5><p id="textomas4" class="mr-5 mt-2">$160</p></h5>
-      </div>
-      <div class="col" >
-        <img src="https://images-na.ssl-images-amazon.com/images/I/71LX9dm-rTL._AC_SL1200_.jpg" class="img-fluid"  alt="">
-        <h5><p id="textomas" class="mr-5 mt-4">X100PRE</p></h5>
-        <h5><p id="textomas3" class="mr-5 mt-4">BAD BUNNY</p></h5>
-        <h5><p id="textomas4" class="mr-5 mt-2">$160</p></h5> 
+      <div id="columnamala" class="col" *ngFor="let discos of articulosArray_Vendidos_Discos">
+        <img src="{{discos.Imagen}}" class="img-fluid" alt="">                                                                                  
+        <h5><p id="textomas" class="mr-5 mt-4">{{discos.Nombre}}</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">{{discos.Propiedad1}}</p></h5>
+        <h5><p id="textomas4" class="mr-5 mt-2">${{discos.Precio}}</p></h5>
       </div>
     </div>
   </div>
