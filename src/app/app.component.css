@@ -7,15 +7,11 @@
   width:1000px;
 }
 
-
-
-#botoncuenta
+#logo
 {
-  color: white;
-  list-style: none;
-  margin-top: 5px;
-
+  width:350px;
 }
+
 .active-pink-2 input.form-control[type=text]:focus:not([readonly]) {
   border-bottom: 1px solid #f48fb1;
   box-shadow: 0 1px 0 0 #f48fb1;
@@ -52,11 +48,17 @@
   align-items: center;
   justify-content: center;
 }
+
 @media only  screen and (max-width:500px)
 {
     iframe
     {
       display: none !important;
+    }
+
+    #logo
+    {
+      width: 250px;
     }
 }
 

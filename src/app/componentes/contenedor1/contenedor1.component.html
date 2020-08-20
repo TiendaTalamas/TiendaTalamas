@@ -33,7 +33,7 @@
 </div>
 <br>
 <br>
-<div class="container">
+<div id="columnamala" class="container">
   <div class="row">
     <div class="col">
       <img (click)="navegarLibreria();" src="assets/librosInicio.JPG" class="img-fluid" alt="">                                                                                  
@@ -51,14 +51,14 @@
 
 <h1 id="deco" class="mr-5 ml-5" style="color: black; font-family: 'Ubuntu', sans-serif;">MAS VENDIDO</h1>
 <hr id="deco" style="width:80%;"/>
-<div class="Prueba mt-5 ml-5 mb-5 mr-5">
+<div class="Prueba ml-5 mb-5 mr-5">
 
   <div class="row">
     <div *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index">
 
       <div id="contenedor" class="container">
         <img src="{{reciente.Imagen}}" (click)= "masInformacion(reciente.IdProducto, reciente.Categoria)">
-        <h5><p class="ml-1 mt-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden; text-align: center;">{{reciente.NombreProducto}}</p></h5>
+        <h5><p class="ml-1 mt-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden; text-align: center; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
       </div>
 
     </div>
@@ -131,7 +131,7 @@
   </div>
   </div>
   
-  <div class="container">
+  <div id="pequebanners" class="container">
   <div class="row">
     <div class="col">
           <img class="img-fluid" src="https://www.gonvill.com.mx/images/banners/063-es-env.jpg" alt="">
@@ -152,7 +152,7 @@
 
         <div>
           <hr id="textoPC" width="80%" color="#eeeeee" style="margin-top: 5%;"/>
-        <h3 id="textoPC" style = "color: #252850; text-align:left; margin-left:10%; margin-top: 0px; margin-bottom: 0px;">Mas vendido</h3>
+        <h3 id="textoPC" style = "color: #252850; text-align:left; margin-left:10%; margin-top: 0px; margin-bottom: 0px;">NOVEDADES</h3>
         <hr id="textoPC" width="80%" color="#eeeeee" style="margin-bottom: 3%;"/>
         </div>
           <div class="container-fluid-ml-5" style="margin-left:150px; margin-right:150px;">
@@ -216,12 +216,12 @@
 
   <!--Aqui Termina lo de libreria, sigue musica-->
   <div>
-  <h3 id="textoPC" style = "color: #252850; text-align:left; margin-left:10%; margin-top: 0px; margin-bottom: 0px;">Lo mejor en musica</h3>
-  <hr id="textoPC" width="80%" color="#eeeeee" style="margin-bottom:1%"/>
+  <h3 id="textoPC-1" style = "color: #252850; text-align:left; margin-left:10%; margin-top: 0px; margin-bottom: 0px;">Lo mejor en musica</h3>
+  <hr id="textoPC-1" width="80%" color="#eeeeee" style="margin-bottom:1%"/>
   </div>
   <div class="container mb-5" style="background-color:white; ">
     <div class="row">
-      <div class="col">
+      <div id="columnamala" class="col">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHK3eAdQSpcQc7TP1hKf9jFndlxPlXmCKMCr1MnUo6VZI_R7XSnk94i5Saqw&usqp=CAc" class="img-fluid" alt="">                                                                                  
         <h5><p id="textomas" class="mr-5 mt-4">FUTURE NOSTALGIA</p></h5>
         <h5><p id="textomas3" class="mr-5 mt-4">DUA LIPA</p></h5>
@@ -258,9 +258,9 @@
 
      <!--Este se mostrara solo en celular-->
 
-     <h1 id="deco" class="mr-5 ml-5" style="color: black;">INSTRUMENTOS MAS VENDIDOS</h1>
+     <h1 id="deco" class="mr-5 ml-5" style="color: black;">MAS VENDIDO</h1>
       <hr id="deco" style="width:80%;"/>
-      <div class="Prueba mt-5 ml-5 mb-5 mr-5">
+      <div class="Prueba ml-5 mb-5 mr-5">
 
         <div class="row">
           <div *ngFor = "let reciente of articulosArray_Vendidos_Libros2; let i = index">
