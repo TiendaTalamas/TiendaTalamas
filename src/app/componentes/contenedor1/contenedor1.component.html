@@ -67,9 +67,9 @@
 
   <!--AQUI EMPIEZA EL SLIDER DE INICIO-->
   <div>
-    <hr id="textoPC" width="80%" color="#eeeeee" style="margin-top:5%;"/>
-  <h3 id="textoPC" style = "color: #252850; text-align:left; margin-left:10%; margin-top:0px; margin-bottom: 0px;">Novedades</h3>
-  <hr id="textoPC" width="80%" color="#eeeeee" style="margin-bottom:3%;"/>
+    <hr id="textoPC" width="80%" color="#eeeeee" style="margin-top: 5%;"/>
+  <h3 id="textoPC" style = "color: #252850; text-align:left; margin-left:10%; margin-top: 0px; margin-bottom: 0px;">NOVEDADES</h3>
+  <hr id="textoPC" width="80%" color="#eeeeee" style="margin-bottom: 3%;"/>
   </div>
   <div class="container-fluid-ml-5" style="margin-left:150px; margin-right:150px;">
     <div id="carouselExampleControls55" class="carousel slide" data-interval="false">
@@ -152,7 +152,7 @@
 
         <div>
           <hr id="textoPC" width="80%" color="#eeeeee" style="margin-top: 5%;"/>
-        <h3 id="textoPC" style = "color: #252850; text-align:left; margin-left:10%; margin-top: 0px; margin-bottom: 0px;">NOVEDADES</h3>
+        <h3 id="textoPC" style = "color: #252850; text-align:left; margin-left:10%; margin-top: 0px; margin-bottom: 0px;">MAS VENDIDOS</h3>
         <hr id="textoPC" width="80%" color="#eeeeee" style="margin-bottom: 3%;"/>
         </div>
           <div class="container-fluid-ml-5" style="margin-left:150px; margin-right:150px;">
@@ -216,14 +216,14 @@
 
   <!--Aqui Termina lo de libreria, sigue musica-->
   <div>
-  <h3 id="textoPC-1" style = "color: #252850; text-align:left; margin-left:10%; margin-top: 0px; margin-bottom: 0px;">Lo mejor en musica</h3>
+  <h3 id="textoPC-1" style = "color: #252850; text-align:left; margin-left:10%; margin-top: 0px; margin-bottom: 0px;">LO MEJOR EN MUSICA</h3>
   <hr id="textoPC-1" width="80%" color="#eeeeee" style="margin-bottom:1%"/>
   </div>
-  <div class="container mb-5" style="background-color:white; ">
+  <div class="container mb-5">
     <div class="row">
-      <div id="columnamala" class="col" *ngFor="let discos of articulosArray_Vendidos_Discos">
+      <div class="col-sm-6 col-lg-2" *ngFor="let discos of articulosArray_Vendidos_Discos">
         <img src="{{discos.Imagen}}" class="img-fluid" alt="">                                                                                  
-        <h5><p id="textomas" class="mr-5 mt-4">{{discos.NombreProducto}}</p></h5>
+        <h5><p id="textomas5" class="mt-4">{{discos.NombreProducto}}</p></h5>
         <h5><p id="textomas3" class="mr-5 mt-4">{{discos.Propiedad1}}</p></h5>
         <h5><p id="textomas4" class="mr-5 mt-2">${{discos.Precio}}</p></h5>
       </div>
