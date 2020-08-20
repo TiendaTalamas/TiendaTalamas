@@ -250,6 +250,11 @@ h1
     overflow:hidden;
   }
 
+  #pequebanners2
+  {
+    display: none !important;
+  }
+
 }
 
 @media only screen and (max-width:460px) and (min-width:415px)
