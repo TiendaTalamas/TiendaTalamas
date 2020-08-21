@@ -30,8 +30,8 @@ h1
 {
 	
 	
-	position: absolute;
-	height: 100px;
+  position: absolute;
+  height: 100px;
 	line-height: 100px;
 	width: 30px;
 	text-align: center;
@@ -45,9 +45,9 @@ h1
 
 .carousel-control-next-icon
 {
-	position: absolute;
-	height: 100px;
-	line-height: 150px;
+  position: absolute;
+  height:100px;
+	line-height: 100px;
 	width:30px;
 	right: 0px;
 	clip: rect(-10px,55px,110px,0);
@@ -63,7 +63,7 @@ h1
 
 
 .carousel-control-prev-icon {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff0000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+	background-image: url("../../../assets/enviar.svg") !important;
 }
 
    .carousel-control-next-icon {
