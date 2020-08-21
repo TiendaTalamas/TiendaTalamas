@@ -470,8 +470,8 @@ export class Contenedor1Component implements OnInit {
   else if(this.LimiteI == "18")
   {
     let body = new URLSearchParams();
-    body.append('limiteI', this.LimiteI);
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroVendidos.php', body)
+    body.append('limiteI', "0");
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/librosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -500,8 +500,8 @@ export class Contenedor1Component implements OnInit {
   else if(this.LimiteI == "24")
   {
     let body = new URLSearchParams();
-    body.append('limiteI', this.LimiteI);
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroVendidos.php', body)
+    body.append('limiteI', "6");
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/librosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -530,8 +530,8 @@ export class Contenedor1Component implements OnInit {
   else if(this.LimiteI == "30")
   {
     let body = new URLSearchParams();
-    body.append('limiteI', this.LimiteI);
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerLibroVendidos.php', body)
+    body.append('limiteI', "12");
+    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/librosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
