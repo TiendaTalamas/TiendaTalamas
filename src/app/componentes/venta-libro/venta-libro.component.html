@@ -1,4 +1,4 @@
-<div style="overflow: hidden;">
+<div style="overflow: hidden; margin-left: 100px; margin-right: 100px;">
 <div class="row mt-4" *ngFor = "let producto of productos">
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
   <ng-container *ngIf="P2; else elseTemplate">
@@ -41,15 +41,15 @@
             <h5>Autor:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad2}}</p>
             <h5>Paginas:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad3}}</p>
             <h5>Año:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad1}}</p>
-        
-        
           </div>
           <div *ngIf="P2">
             <h5>Tipo:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.SubCategoria}}</p>
             <h5>Marca:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad2}}</p>
             <h5>Modelo:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad1}}</p>
- 
-        
+          </div>
+          <div *ngIf="P3">
+            <h5>Genero:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.SubCategoria}}</p>
+            <h5>Artista:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad1}}</p>
           </div>
         </div>
         <br>

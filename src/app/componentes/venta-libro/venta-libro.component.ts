@@ -123,6 +123,8 @@ this.formCantidad = fb.group({
       this.P2 = true;
       console.log("Antes de la trajedia");
       this.obtenerImagenes();
+    }else if(this.Categoria == "Discos"){
+      this.P3 = true;
     }
 
     this.limiteI = "0";
