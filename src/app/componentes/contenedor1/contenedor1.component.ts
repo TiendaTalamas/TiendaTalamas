@@ -290,7 +290,7 @@ export class Contenedor1Component implements OnInit {
   }else if(this.LimiteI == "6")
   {
     let body = new URLSearchParams();
-    body.append('limiteI',"5");
+    body.append('limiteI',"6");
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/discosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
@@ -319,7 +319,7 @@ export class Contenedor1Component implements OnInit {
   else if(this.LimiteI == "12")
   {
     let body = new URLSearchParams();
-    body.append('limiteI', "10");
+    body.append('limiteI', "12");
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/discosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
@@ -349,7 +349,7 @@ export class Contenedor1Component implements OnInit {
   else if(this.LimiteI == "18")
   {
     let body = new URLSearchParams();
-    body.append('limiteI', "15");
+    body.append('limiteI', "18");
     this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/discosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
