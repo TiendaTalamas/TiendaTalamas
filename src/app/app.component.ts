@@ -7,13 +7,6 @@ import {Location} from "@angular/common";
 import { servicioCompartido } from './servicios/servicioCompartido';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-
-
-
-
-
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -46,6 +39,13 @@ export class AppComponent {
   valuesKeys_Sub = new Array;
   articulosArray_Sub = new Array;
   articulosArray_Inst = new Array;
+  AA_Buscar: string;
+  data_Buscar: any[];
+  val_Buscar: any[];
+  contenedor_Buscar: string;
+  xxxMap_Buscar = new Map();
+  valuesKeys_Buscar = new Array;
+  articulosArray_Buscar = new Array;
 
   navegarCategoria(Categoria:string, SubCategoria: string){
 
@@ -145,7 +145,35 @@ export class AppComponent {
     this.router.navigate(['musica']);
 
   }
+  obtenerBusqueda(){
+    let body = new URLSearchParams();
+    body.append('cadena', this.cadena);
+    this.http.post('http://www.tiendatalamas.com/assets/php/buscar.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Buscar = "";
+            this.data_Buscar = [];
+            console.log(result);
+            this.articulosArray_Buscar = result;
+            for (var key in result) {
+            this.AA_Buscar = this.AA_Buscar + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Buscar= result[key];
+              this.data_Buscar.push(Object.keys(this.val_Buscar));
+              for (var i = 0; i < Object.keys(this.val_Buscar).length; i++) {
+              this.contenedor_Buscar = Object.keys(this.val_Buscar)[i];
+              Object.entries(this.val_Buscar)[i]
+               
+                this.xxxMap_Buscar.set(Object.keys(this.val_Buscar)[i], Object.values(this.val_Buscar)[i]);
+                this.valuesKeys_Buscar.push(Object.keys(this.val_Buscar)[i], Object.values(this.val_Buscar)[i]);
 
+                }
+             }
+          }
+    });
+
+  }
   navegarConfiguracion()
   {
     this.router.navigate(['ConfiguracionUsuario']);
@@ -158,6 +186,7 @@ export class AppComponent {
   navegarBusqueda()
   {
     this.router.navigate(['busqueda',this.cadena])
+    this.obtenerBusqueda();
   }
   navegarCarrito()
   {

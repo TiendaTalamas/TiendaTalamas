@@ -69,7 +69,7 @@ navegarBusqueda()
    
     console.log(this.contrasena);
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/inicioSesion.php', body)
+    this.http.post('http://www.tiendatalamas.com/assets/php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {

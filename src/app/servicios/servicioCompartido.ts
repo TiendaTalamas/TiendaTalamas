@@ -27,7 +27,7 @@ export class servicioCompartido{
   usuario: string;
   Cond1:boolean;
   Cond2:boolean;
-  
+  Url = "http://www.tiendatalamas.com/assets/php";
   constructor(private http: Http, private router: Router) {}   
   comprobarUsuario() 
   {
@@ -36,7 +36,7 @@ export class servicioCompartido{
 
 
 
-  this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/comprobarSesion.php', body)
+  this.http.post(this.Url+'/comprobarSesion.php', body)
   .map((res:Response) => res.json())
           .subscribe(result => 
             {
@@ -61,7 +61,7 @@ export class servicioCompartido{
 
 
 
-  this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/comprobarSesion.php', body)
+  this.http.post(this.Url+'/comprobarSesion.php', body)
   .map((res:Response) => res.json())
           .subscribe(result => 
             {
@@ -84,7 +84,7 @@ export class servicioCompartido{
 
 
 
-  this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/comprobarSesion.php', body)
+  this.http.post(this.Url+'/comprobarSesion.php', body)
   .map((res:Response) => res.json())
           .subscribe(result => 
             {

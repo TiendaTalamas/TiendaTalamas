@@ -36,7 +36,7 @@ IdProducto:string;
     body.append("Apellido",this.apellido);
     body.append("NumeroTelefonico", this.numeroCelular);
     body.append("email", this.email)
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/pagoRedirigido.php', body)
+    this.http.post('http://www.tiendatalamas.com/assets/php/pagoRedirigido.php', body)
   }
 
   continuarDatosBancarios()
