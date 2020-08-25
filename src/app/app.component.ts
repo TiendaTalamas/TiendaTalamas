@@ -179,6 +179,13 @@ export class AppComponent {
     this.router.navigate(['ConfiguracionUsuario']);
   }
 
+  
+  masInformacion(IdProducto: string, Categoria: string){
+
+    this.router.navigate(['venta',Categoria,IdProducto]);
+
+
+  }
   navegarHistorial()
   {
     this.router.navigate(['historial']);
