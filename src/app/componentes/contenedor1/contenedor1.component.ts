@@ -197,7 +197,7 @@ export class Contenedor1Component implements OnInit {
 
 
 
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerSubCategoria.php', body2)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -231,7 +231,7 @@ export class Contenedor1Component implements OnInit {
 
 
 
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerSubCategoria.php', body2)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -263,7 +263,7 @@ export class Contenedor1Component implements OnInit {
     {
     let body = new URLSearchParams();
     body.append('limiteI',  "0");
-    this.http.post('http://www.tiendatalamas.com/assets/php/discosMasVendidos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/discosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -291,7 +291,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI',"6");
-    this.http.post('http://www.tiendatalamas.com/assets/php/discosMasVendidos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/discosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -320,7 +320,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', "12");
-    this.http.post('http://www.tiendatalamas.com/assets/php/discosMasVendidos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/discosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -350,7 +350,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', "18");
-    this.http.post('http://www.tiendatalamas.com/assets/php/discosMasVendidos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/discosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -384,7 +384,7 @@ export class Contenedor1Component implements OnInit {
     {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerLibroVendidos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerLibroVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -412,7 +412,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerLibroVendidos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerLibroVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -441,7 +441,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerLibroVendidos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerLibroVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -471,7 +471,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', "0");
-    this.http.post('http://www.tiendatalamas.com/assets/php/librosMasVendidos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/librosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -501,7 +501,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', "6");
-    this.http.post('http://www.tiendatalamas.com/assets/php/librosMasVendidos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/librosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -531,7 +531,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', "12");
-    this.http.post('http://www.tiendatalamas.com/assets/php/librosMasVendidos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/librosMasVendidos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -564,7 +564,7 @@ export class Contenedor1Component implements OnInit {
     {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerLibroReciente.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerLibroReciente.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -592,7 +592,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerLibroReciente.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerLibroReciente.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -621,7 +621,7 @@ export class Contenedor1Component implements OnInit {
   {
     let body = new URLSearchParams();
     body.append('limiteI', this.LimiteI);
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerLibroReciente.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerLibroReciente.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -654,7 +654,7 @@ export class Contenedor1Component implements OnInit {
   obtenerLibrosCelular()
   {
     let body = new URLSearchParams();
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerLibroCelular.php', body)
+    this.http.post(this._servicioCompartido+'/obtenerLibroCelular.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -694,7 +694,7 @@ export class Contenedor1Component implements OnInit {
    //Obteniendo datos
    obtenerSlider() {
     let body = new URLSearchParams();
-    this.http.post('http://www.tiendatalamas.com/assets/php/slider.php', body)
+    this.http.post(this._servicioCompartido.Url+'/slider.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -782,7 +782,7 @@ export class Contenedor1Component implements OnInit {
     body.append("Cantidad", "1");
     body.append("token",localStorage.getItem('Token'))
     
-    this.http.post('http://www.tiendatalamas.com/assets/php/agregarCarrito.php', body)
+    this.http.post(this._servicioCompartido.Url+'/agregarCarrito.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 
             {

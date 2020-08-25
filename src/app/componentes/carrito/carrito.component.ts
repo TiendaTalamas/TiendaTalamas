@@ -55,7 +55,7 @@ cadena:string;
   {
     let body = new URLSearchParams();
     body.append("token",localStorage.getItem('Token'));
-    this.http.post('http://www.tiendatalamas.com/assets/php/carrito.php', body)
+    this.http.post(this._servicioCompartido.Url+'/carrito.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -71,7 +71,7 @@ cadena:string;
     let body = new URLSearchParams();
     body.append("token",localStorage.getItem('Token'));
     body.append("IdCarrito",IdCarrito);
-    this.http.post('http://www.tiendatalamas.com/assets/php/quitarCarrito.php', body)
+    this.http.post(this._servicioCompartido.Url+'/quitarCarrito.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 
             {
@@ -91,7 +91,7 @@ cadena:string;
   {
     let body = new URLSearchParams();
     body.append("token",localStorage.getItem('Token'));
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerSubtotal.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubtotal.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -132,7 +132,7 @@ cadena:string;
 
 
 
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerSubCategoria.php', body2)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -166,7 +166,7 @@ cadena:string;
 
 
 
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerSubCategoria.php', body2)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -207,7 +207,7 @@ cadena:string;
       body.append('cantidad', this.quantity);
       body.append('IdCarrito', this.IdCarrito);
       body.append('producto', this.Producto);
-      this.http.post('http://www.tiendatalamas.com/assets/php/cambiarCantidad.php', body)
+      this.http.post(this._servicioCompartido.Url+'/cambiarCantidad.php', body)
       .map((res:Response) => res.json())
               .subscribe(result => 
                 {

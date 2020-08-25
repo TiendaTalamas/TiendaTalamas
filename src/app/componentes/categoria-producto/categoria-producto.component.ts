@@ -96,7 +96,7 @@ export class CategoriaProductoComponent implements OnInit {
       
 
 
-    this.http.post('http://www.tiendatalamas.com/assets/php/todos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/todos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
