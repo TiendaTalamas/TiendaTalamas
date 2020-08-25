@@ -43,7 +43,7 @@ export class SoporteComponent implements OnInit {
 
 
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerSubCategoria.php', body2)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -77,7 +77,7 @@ export class SoporteComponent implements OnInit {
 
 
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerSubCategoria.php', body2)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {

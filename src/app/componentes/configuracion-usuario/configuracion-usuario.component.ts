@@ -120,7 +120,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
     console.log(this.contrasenaActual);
   
    
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/CambiarContrasena.php', body)
+    this.http.post(this._servicioCompartido.Url+'/CambiarContrasena.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 
               {
@@ -156,7 +156,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
       console.log(this.calle1);
       console.log(localStorage.getItem('email_U'));
    
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/agregarDireccion.php', body)
+    this.http.post(this._servicioCompartido.Url+'/agregarDireccion.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 
               {
@@ -175,7 +175,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
   obtenerDirecciones() {
     let body = new URLSearchParams();
     body.append('token', localStorage.getItem('Token'));
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerDirecciones.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerDirecciones.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {

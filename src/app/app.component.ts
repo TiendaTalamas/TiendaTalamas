@@ -65,7 +65,7 @@ export class AppComponent {
 
 
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerSubCategoria.php', body2)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -99,7 +99,7 @@ export class AppComponent {
 
 
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerSubCategoria.php', body2)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -148,7 +148,7 @@ export class AppComponent {
   obtenerBusqueda(){
     let body = new URLSearchParams();
     body.append('cadena', this.cadena);
-    this.http.post('http://www.tiendatalamas.com/assets/php/buscar.php', body)
+    this.http.post(this._servicioCompartido.Url+'/buscar.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -179,6 +179,13 @@ export class AppComponent {
     this.router.navigate(['ConfiguracionUsuario']);
   }
 
+  
+  masInformacion(IdProducto: string, Categoria: string){
+
+    this.router.navigate(['venta',Categoria,IdProducto]);
+
+
+  }
   navegarHistorial()
   {
     this.router.navigate(['historial']);

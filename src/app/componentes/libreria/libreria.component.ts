@@ -49,7 +49,7 @@ export class LibreriaComponent implements OnInit {
  
   obtenerArticulos() {
     let body = new URLSearchParams();
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/librosRomance.php', body)
+    this.http.post(this._servicioCompartido.Url+'/librosRomance.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -78,7 +78,7 @@ export class LibreriaComponent implements OnInit {
 
   obtenerRecomendados() {
     let body = new URLSearchParams();
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/libroAleatorio.php', body)
+    this.http.post(this._servicioCompartido.Url+'/libroAleatorio.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -120,7 +120,7 @@ export class LibreriaComponent implements OnInit {
 
 
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerSubCategoria.php', body2)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -155,7 +155,7 @@ export class LibreriaComponent implements OnInit {
 
 
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerSubCategoria.php', body2)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -267,7 +267,7 @@ export class LibreriaComponent implements OnInit {
     body.append("Cantidad", "1");
     body.append("token",localStorage.getItem('Token'))
     
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/agregarCarrito.php', body)
+    this.http.post(this._servicioCompartido.Url+'/agregarCarrito.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 
             {

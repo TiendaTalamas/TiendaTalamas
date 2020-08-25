@@ -143,7 +143,7 @@ this.formCantidad = fb.group({
   obtenerImagenes() {
     let body = new URLSearchParams();
     body.append("IdProducto", this.IdProducto);
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerImagenesInstrumentos.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerImagenesInstrumentos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -172,7 +172,7 @@ this.formCantidad = fb.group({
   obtenerDirecciones() {
     let body = new URLSearchParams();
     body.append('email', localStorage.getItem('email_U'));
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerDirecciones.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerDirecciones.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -201,7 +201,7 @@ this.formCantidad = fb.group({
 //Metodo de obtencion de un libro aleatorio para optimizar las pruebas
   LibroAleatorio() {
     let body = new URLSearchParams();
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/libroAleatorio.php', body)
+    this.http.post(this._servicioCompartido.Url+'/libroAleatorio.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -242,7 +242,7 @@ this.formCantidad = fb.group({
     body.append("numeroExterior", this.NumeroExterior);
     body.append("codigoPostal", this.CodigoPostal);
     console.log(this.calle1);
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/enviarCorreo.php', body)
+    this.http.post(this._servicioCompartido.Url+'/enviarCorreo.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 
             {
@@ -267,7 +267,7 @@ this.formCantidad = fb.group({
     body.append('categoria', this.Categoria);
     body.append('limiteI', this.limiteI);
     if(this.limiteI == "0"){
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerCarruselVenta.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerCarruselVenta.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -293,7 +293,7 @@ this.formCantidad = fb.group({
     });
   }
   if(this.limiteI == "6"){
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerCarruselVenta.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerCarruselVenta.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -319,7 +319,7 @@ this.formCantidad = fb.group({
     });
   }
   if(this.limiteI == "12"){
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerCarruselVenta.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerCarruselVenta.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -352,7 +352,7 @@ this.formCantidad = fb.group({
     body.append('id_producto', this.IdProducto);
 
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerUnicoArticulo.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerUnicoArticulo.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -398,10 +398,7 @@ this.formCantidad = fb.group({
     this.obtenerArticulo();
 
   }
-  comprarPorTarjeta(IdProducto: string){
-    this.IdProducto = IdProducto;
-    this.router.navigateByUrl("http://localhost/talamas/DatosDePago.php");
-  }
+
 /*
   onChange()
   {
