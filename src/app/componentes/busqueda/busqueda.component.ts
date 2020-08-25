@@ -55,9 +55,15 @@ export class BusquedaComponent implements OnInit {
     xxxMap_Buscar = new Map();
     valuesKeys_Buscar = new Array;
     articulosArray_Buscar = new Array;
- 
-
+   
+    ngOnDestroy(): void {
+      //Called once, before the instance is destroyed.
+      //Add 'implements OnDestroy' to the class.
+      this._servicioCompartido.setsoloBusqueda(false);
+    }
+    
   ngOnInit() {
+    this._servicioCompartido.setsoloBusqueda(true);
     this._servicioCompartido.comprobarUsuario();
     this.cadena = this.Route.snapshot.paramMap.get('search');
     console.log(this.cadena);
@@ -106,7 +112,7 @@ export class BusquedaComponent implements OnInit {
       
 
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/todos.php', body)
+    this.http.post('http://www.tiendatalamas.com/assets/php/todos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -141,7 +147,7 @@ export class BusquedaComponent implements OnInit {
     body.append('categoria', this.Categoria);
     body.append('sub_categoria', this.SubCategoria);
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/categoria.php', body)
+    this.http.post('http://www.tiendatalamas.com/assets/php/categoria.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -184,7 +190,7 @@ export class BusquedaComponent implements OnInit {
       
 
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerCategoriaEspecifica.php', body)
+    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerCategoriaEspecifica.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -220,7 +226,7 @@ export class BusquedaComponent implements OnInit {
 
 
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/obtenerSubCategoria.php', body2)
+    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -304,7 +310,7 @@ export class BusquedaComponent implements OnInit {
   obtenerBusqueda(){
     let body = new URLSearchParams();
     body.append('cadena', this.cadena);
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/buscar.php', body)
+    this.http.post('http://www.tiendatalamas.com/assets/php/buscar.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {

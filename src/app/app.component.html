@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light " style = "background-color:white; position:-webkit-sticky; position: sticky; top: 0px; z-index: 100; width: 100%; padding-left:7% ;">
-  <a href class="navbar-brand"><img id="logo" src="assets/logo.png" alt=""></a>
+  <a class="navbar-brand"><img id="logo" src="assets/logo.png" alt="" (click)="navegarInicio()"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,7 +20,7 @@
       <img ngif class="mr-1" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
     </ng-template>
     
-    <img class="mr-1" src="assets/iconocarrito.png" width="50px">
+    <img class="mr-1" src="assets/iconocarrito.png" width="50px" (click)="navegarCarrito()">
      
     <!---
    <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
@@ -38,9 +38,72 @@
     
 </div>  
 </nav>
-<nav>
+<!--Fin del navbar--><div class="container-fluid" *ngIf="_servicioCompartido.soloBusqueda">
+  <div class="row">
+    <div class="col-md-2 col-sm-4 sidebar1">
+        <div class="logo">
+            <img src="{{Logo}}" style="height: 100px; width: 100px; margin-left: 30px;" class="img-responsive center-block" alt="Logo">
+        </div>
+        <hr color="white"/>
+        <div class="left-navigation">
+            <ul class="list ml-0">
+                <h5><strong>{{Categoria}}</strong></h5>
+                <li *ngFor = "let Sub of articulosArray_Sub; let i = index" (click)="navegarCategoria(Sub.categoria, Sub.SubCategoria)">{{Sub.SubCategoria}}
+                </li>
 
-</nav>
+            </ul>
+
+            <hr color="white"/>
+
+            <ul class="list">
+                <h5><strong>Mas</strong></h5>
+                <li (click)="navegarCategoria('Libros','')">Libros</li>
+                <li (click)="navegarCategoria('Instrumentos', '')">Musica</li>
+                <li (click)="navegarCategoria('EMD', '')">Emd</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-10 col-sm-8 main-content">
+      <section class="details-card" *ngFor = "let resultado of articulosArray_Buscar; let i = index">
+          <hr color="black"/>
+        <div class="container-fluid mt-2 " style="background-color:#fff;">
+            <div class="row ">
+                    <div id="img" class="col-xs-12 col-sm-8 col-md-3 col-lg-4 mt-3 mb-3">
+                        
+                            <img src="{{resultado.Imagen}}" width="250" height="350">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 mt-5">
+                      <div>
+                        <h4><p id="Texto" class="mr-5" style = " font-style:italic; font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
+                          {{resultado.NombreProducto}} 
+                          <br>
+                          <br>
+                           Precio: ${{resultado.Precio}}
+                           <br>
+                           <br>
+                           Categoria: {{resultado.SubCategoria}}
+                           <br>
+                           <br>
+                           <br>
+                           <button id="boton" style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary" (click)= "masInformacion(resultado.IdProducto, resultado.Categoria)">Comprar</button>
+                          </p></h4>
+                        </div>
+                    </div>
+                    
+
+
+                    </div>
+         
+        </div>
+      </section>
+    
+  
+</div>
+</div>
+</div>
+
 
 <router-outlet></router-outlet>
 
