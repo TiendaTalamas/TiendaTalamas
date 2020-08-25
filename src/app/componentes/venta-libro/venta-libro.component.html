@@ -1,6 +1,6 @@
 <div style="overflow: hidden; margin-left: 100px; margin-right: 100px;">
 <div class="row mt-4" *ngFor = "let producto of productos">
-<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+<div class="col-sm-6 col-md-6 col-lg-3">
   <ng-container *ngIf="P2; else elseTemplate">
     <div>
       <div id="CarouselTest" class="carousel slide" data-ride="carousel">
@@ -25,22 +25,21 @@
     </div>
 </ng-container>
 <ng-template #elseTemplate>
-    <img class="izquierda" src="{{producto.Imagen}}" width="350" height="450">
+    <img class="img-fluid" src="{{producto.Imagen}}" width="228" height="350">
     <!--http://emdpublicidad.com/tiendatalamas/archivos/php/Imagenes/{{producto.Propiedad4}}/{{producto.IdProducto}}.jpg-->
   </ng-template>
 </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 md-ml-4">
-     <div><h1><p style = "font-family:Helvetica; padding:0px 0px;">{{producto.NombreProducto}} 
-    <br>        
-    </p></h1>
+    <div class="col-sm-12 col-md-6 col-lg-5">
+     <div><h1><p>{{producto.NombreProducto}}</p></h1>
         <div class="container">
-          <br>
-           
           <div *ngIf="P1">
-            <h5>Editorial:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad4}}</p>
-            <h5>Autor:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad2}}</p>
-            <h5>Paginas:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad3}}</p>
-            <h5>Año:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad1}}</p>
+            <h5>Editorial: {{producto.Propiedad4}}</h5>
+            <br>
+            <h5>Autor: {{producto.Propiedad2}}</h5>
+            <br>
+            <h5>Paginas: {{producto.Propiedad3}}</h5>
+            <br>
+            <h5>Año: {{producto.Propiedad1}}</h5>
           </div>
           <div *ngIf="P2">
             <h5>Tipo:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.SubCategoria}}</p>
@@ -66,9 +65,9 @@
               <div>
                 <ng-container *ngIf="verificacionProductos; else elseTemplate3">
                   <a href="https://api.whatsapp.com/send?phone=+528672111350" class="btn btn" id="botones" style="background-color:#0779e4; border-color:#0779e4; color:white;">Comprar por Whatsapp</a>   
-                
-                   <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant={{quantity}}&user={{user}}" class="btn btn" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</a>
-                   <form [formGroup]="formCantidad">
+                    
+                   <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant={{quantity}}&user={{user}}" class="btn btn mt-2" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</a>
+                   <form class="mt-2" [formGroup]="formCantidad">
                    <select name="select" formControlName="quantity" [(ngModel)]="quantity">
                     <option value="1" selected>1</option> 
                     <option value="2">2</option>
@@ -104,7 +103,7 @@
 </div>
 <div class="row" *ngFor="let producto of productos">
 
-  <div class="col ml-2 Descripcion">
+  <div class="col ml-2 mt-5 Descripcion">
     <h2>Descripcion:</h2>
     {{producto.Descripcion}}
 
