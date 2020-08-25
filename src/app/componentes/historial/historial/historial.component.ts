@@ -44,7 +44,7 @@ export class HistorialComponent implements OnInit {
   {
     let body = new URLSearchParams();
     body.append("token",localStorage.getItem('Token'));
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/compras.php', body)
+    this.http.post(this._servicioCompartido.Url+'/compras.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {

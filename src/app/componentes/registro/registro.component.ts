@@ -118,7 +118,7 @@ export class RegistroComponent implements OnInit {
       body.append('numero_tel', this.telefono);
       body.append('contrasena', this.contrasena);
   
-      this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/registro.php', body)
+      this.http.post(this._servicioCompartido.Url+'/registro.php', body)
       .map((res:Response) => res.json())
               .subscribe(result => 
                 {

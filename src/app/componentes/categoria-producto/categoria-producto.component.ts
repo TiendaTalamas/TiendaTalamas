@@ -133,7 +133,7 @@ export class CategoriaProductoComponent implements OnInit {
     body.append('categoria', this.Categoria);
     body.append('sub_categoria', this.SubCategoria);
 
-    this.http.post('http://www.tiendatalamas.com/assets/php/categoria.php', body)
+    this.http.post(this._servicioCompartido.Url+'/categoria.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -171,7 +171,7 @@ export class CategoriaProductoComponent implements OnInit {
     body.append('categoria', this.Categoria);
     body.append('sub_categoria', this.SubCategoria);
 
-    this.http.post('http://www.tiendatalamas.com/assets/php/categoria.php', body)
+    this.http.post(this._servicioCompartido.Url+'/categoria.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -206,7 +206,7 @@ export class CategoriaProductoComponent implements OnInit {
       
 
 
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerCategoriaEspecifica.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerCategoriaEspecifica.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -241,7 +241,7 @@ export class CategoriaProductoComponent implements OnInit {
       
 
 
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerCategoriaEspecifica.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerCategoriaEspecifica.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
@@ -277,7 +277,7 @@ export class CategoriaProductoComponent implements OnInit {
 
 
 
-    this.http.post('http://www.tiendatalamas.com/assets/php/obtenerSubCategoria.php', body2)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {

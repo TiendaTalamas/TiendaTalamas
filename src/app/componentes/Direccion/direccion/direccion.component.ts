@@ -121,7 +121,7 @@ export class DireccionComponent implements OnInit {
     body.append('ciudad', this.ciudad);
     body.append('gustos', this.gustos);
 
-    this.http.post('http://emdpublicidad.com/tiendatalamas/archivos/php/registrar.php', body)
+    this.http.post(this._servicioCompartido.Url+'/registrar.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
