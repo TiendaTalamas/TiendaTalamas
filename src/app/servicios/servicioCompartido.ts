@@ -14,7 +14,7 @@ export class servicioCompartido{
   NumeroTel:string;
   email:string;
   Imagen:string;
-
+  soloBusqueda:boolean;
   productoData : producto[];
   Categoria : string;
   SubCategoria : string;
@@ -97,6 +97,11 @@ export class servicioCompartido{
                 }
   });
   } 
+
+    setsoloBusqueda(soloBusqueda:boolean)
+    {
+        this.soloBusqueda = soloBusqueda;
+    }
 
     setProductoData(data: producto[]) {    
         this.productoData= data;        

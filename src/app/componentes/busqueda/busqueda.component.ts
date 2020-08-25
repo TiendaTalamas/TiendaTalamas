@@ -55,9 +55,15 @@ export class BusquedaComponent implements OnInit {
     xxxMap_Buscar = new Map();
     valuesKeys_Buscar = new Array;
     articulosArray_Buscar = new Array;
- 
-
+   
+    ngOnDestroy(): void {
+      //Called once, before the instance is destroyed.
+      //Add 'implements OnDestroy' to the class.
+      this._servicioCompartido.setsoloBusqueda(false);
+    }
+    
   ngOnInit() {
+    this._servicioCompartido.setsoloBusqueda(true);
     this._servicioCompartido.comprobarUsuario();
     this.cadena = this.Route.snapshot.paramMap.get('search');
     console.log(this.cadena);
