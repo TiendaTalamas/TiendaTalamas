@@ -46,7 +46,7 @@ img {
 			  animation-duration: .3s; }
   
   .card {
-	margin-top: 50px;
+	margin-top:25px;
 	background: white;
 	padding: 3em;
 	line-height: 1.5em; }
@@ -69,11 +69,7 @@ img {
 		-ms-flex-direction: column;
 			flex-direction: column; }
   
-  .colors {
-	-webkit-box-flex: 1;
-	-webkit-flex-grow: 1;
-		-ms-flex-positive: 1;
-			flex-grow: 1; }
+
   
   .product-title, .price, .sizes, .colors {
 	text-transform: UPPERCASE;
@@ -123,16 +119,8 @@ img {
 	  font-family: fontawesome;
 	  content: "\f00d";
 	  color: #fff; }
-  
-  .orange {
-	background: #ff9f1a; }
-  
-  .green {
-	background: #85ad00; }
-  
-  .blue {
-	background: #0076ad; }
-  
+
+
   .tooltip-inner {
 	padding: 1.3em; }
   
@@ -155,5 +143,3 @@ img {
 	  opacity: 1;
 	  -webkit-transform: scale(1);
 			  transform: scale(1); } }
-  
-  /*# sourceMappingURL=style.css.map */
