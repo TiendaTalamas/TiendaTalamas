@@ -49,6 +49,16 @@
 
 }
 
+h1
+{
+	font-family:'Tahoma';
+	font-size:30px;
+}
+
+h5
+{
+	margin-left: 0px;
+}
 
 div.noticia {
    
@@ -84,14 +94,14 @@ div.noticia {
 	border-radius: 5px;
 }
 
-.izquierda
+/*.izquierda
 {
 
 	overflow: hidden;
 	display: block;
 	margin:auto;
 }
-
+*/
 
 
 @media only  screen and (max-width:375px)
