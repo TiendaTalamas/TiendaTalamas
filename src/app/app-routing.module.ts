@@ -20,7 +20,7 @@ import {HistorialComponent} from './componentes/historial/historial/historial.co
 import {PoliticasComponent} from './componentes/politicas/politicas/politicas.component';
 import {SoporteComponent} from './componentes/Soporte/soporte/soporte.component';
 import { config } from 'process';
-
+import {SidebarComponent} from './componentes/sidebar/sidebar.component'
 
 
 const routes: Routes = [
@@ -43,6 +43,7 @@ const routes: Routes = [
   {path:'historial', component:HistorialComponent,},
   {path:'Condiciones/:uso', component:PoliticasComponent,},
   {path:'soporte', component:SoporteComponent,},
+  {path:'Sidebar', component:SidebarComponent ,},
 
 ];
 

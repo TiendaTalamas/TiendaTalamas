@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './componentes/componentes/inicio/inicio.component';
@@ -10,8 +9,8 @@ import {HttpModule, RequestOptions, XHRBackend, Http} from "@angular/http";
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { LibreriaComponent } from './componentes/libreria/libreria.component';
 import { VentaLibroComponent } from './componentes/venta-libro/venta-libro.component';
-
-//Importando los servicios
+import { MaterialModule} from '../material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { producto } from './servicios/producto';
 import { servicioCompartido } from './servicios/servicioCompartido';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
@@ -30,7 +29,14 @@ import { PreferenciasComponent } from './componentes/Preferencia/preferencias/pr
 import { HistorialComponent } from './componentes/historial/historial/historial.component';
 import { PoliticasComponent } from './componentes/politicas/politicas/politicas.component';
 import { SoporteComponent } from './componentes/Soporte/soporte/soporte.component';
-
+import { SidebarComponent } from './componentes/sidebar/sidebar.component';
+import {
+  MatToolbarModule,
+  MatMenuModule,
+  MatCardModule,
+  MatButtonModule,
+  MatIconModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -56,6 +62,7 @@ import { SoporteComponent } from './componentes/Soporte/soporte/soporte.componen
     HistorialComponent,
     PoliticasComponent,
     SoporteComponent,
+    SidebarComponent,
    
   ],
   imports: [
@@ -64,6 +71,13 @@ import { SoporteComponent } from './componentes/Soporte/soporte/soporte.componen
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     servicioCompartido,
