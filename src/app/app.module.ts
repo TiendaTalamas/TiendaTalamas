@@ -11,6 +11,10 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { LibreriaComponent } from './componentes/libreria/libreria.component';
 import { VentaLibroComponent } from './componentes/venta-libro/venta-libro.component';
 
+/*Angular material*/
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+
 //Importando los servicios
 import { producto } from './servicios/producto';
 import { servicioCompartido } from './servicios/servicioCompartido';
@@ -30,6 +34,7 @@ import { PreferenciasComponent } from './componentes/Preferencia/preferencias/pr
 import { HistorialComponent } from './componentes/historial/historial/historial.component';
 import { PoliticasComponent } from './componentes/politicas/politicas/politicas.component';
 import { SoporteComponent } from './componentes/Soporte/soporte/soporte.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -64,6 +69,9 @@ import { SoporteComponent } from './componentes/Soporte/soporte/soporte.componen
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatInputModule,
   ],
   providers: [
     servicioCompartido,
