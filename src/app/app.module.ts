@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './componentes/componentes/inicio/inicio.component';
@@ -10,12 +9,17 @@ import {HttpModule, RequestOptions, XHRBackend, Http} from "@angular/http";
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { LibreriaComponent } from './componentes/libreria/libreria.component';
 import { VentaLibroComponent } from './componentes/venta-libro/venta-libro.component';
+<<<<<<< HEAD
 
 /*Angular material*/
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 
 //Importando los servicios
+=======
+import { MaterialModule} from '../material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+>>>>>>> 4dd249e7bcde15e680d2862f07e03ee63854b57d
 import { producto } from './servicios/producto';
 import { servicioCompartido } from './servicios/servicioCompartido';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
@@ -34,8 +38,14 @@ import { PreferenciasComponent } from './componentes/Preferencia/preferencias/pr
 import { HistorialComponent } from './componentes/historial/historial/historial.component';
 import { PoliticasComponent } from './componentes/politicas/politicas/politicas.component';
 import { SoporteComponent } from './componentes/Soporte/soporte/soporte.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { SidebarComponent } from './componentes/sidebar/sidebar.component';
+import {
+  MatToolbarModule,
+  MatMenuModule,
+  MatCardModule,
+  MatButtonModule,
+  MatIconModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -61,6 +71,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HistorialComponent,
     PoliticasComponent,
     SoporteComponent,
+    SidebarComponent,
    
   ],
   imports: [
@@ -69,9 +80,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
     BrowserAnimationsModule,
     MatSelectModule,
     MatInputModule,
+=======
+    MaterialModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+>>>>>>> 4dd249e7bcde15e680d2862f07e03ee63854b57d
   ],
   providers: [
     servicioCompartido,
