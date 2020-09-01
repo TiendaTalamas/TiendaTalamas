@@ -37,6 +37,8 @@ import {
   MatButtonModule,
   MatIconModule
 } from '@angular/material';
+import { DatosPagoComponent } from './componentes/datos-pago/datos-pago.component';
+import { NgxStripeModule } from 'ngx-stripe';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,7 @@ import {
     PoliticasComponent,
     SoporteComponent,
     SidebarComponent,
+    DatosPagoComponent,
    
   ],
   imports: [
@@ -78,6 +81,7 @@ import {
     MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
+    NgxStripeModule.forRoot('pk_test_51HIMK7FdBqnzMdTTfbNMiHsbOtBcEdoaovMyA4VQRRNmE9Qz50KrayBuwVy6o5bnNH33ktWU8nlN3qPjUOH1ipu000UFN1vHtSng')
   ],
   providers: [
     servicioCompartido,

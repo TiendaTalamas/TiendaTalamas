@@ -7,6 +7,11 @@
   width:1000px;
 }
 
+.example-sidenav-content
+{
+  background-color: #ffffff;
+}
+
 #logo
 {
   width:350px;
