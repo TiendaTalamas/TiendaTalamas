@@ -134,13 +134,13 @@
         -->
         </div>
         <div class="details col-md-6" *ngFor = "let producto of productos">
-          <h3 class="product-title">{{producto.NombreProducto}}</h3>
-          <h4 class="price">Editorial: <span>{{producto.Propiedad4}}</span></h4>
-          <h4 class="price">Autor: <span>{{producto.Propiedad2}}</span></h4>
-          <h4 class="price">Paginas: <span>{{producto.Propiedad3}}</span></h4>
-          <h4 class="price">Año: <span>{{producto.Propiedad1}}</span></h4>
-          <h4 class="price">Precio: <span>${{producto.Precio}}</span></h4>
-          <p class="product-description"></p>
+          <h3 style="color: black;" class="product-title">{{producto.NombreProducto}}</h3>
+          <h4  style="color: black;" class="price">Editorial: <span>{{producto.Propiedad4}}</span></h4>
+          <h4  style="color: black;" class="price">Autor: <span>{{producto.Propiedad2}}</span></h4>
+          <h4  style="color: black;" class="price">Paginas: <span>{{producto.Propiedad3}}</span></h4>
+          <h4  style="color: black;" class="price">Año: <span>{{producto.Propiedad1}}</span></h4>
+          <h4  style="color: black;" class="price">Precio: <span>${{producto.Precio}}</span></h4>
+          <p  style="color: black;" class="product-description"></p>
 
           <div class="action">
             <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant={{quantity}}&user={{user}}" class="add-to-cart btn btn-default mr-1"  >Comprar ahora</a>

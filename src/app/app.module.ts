@@ -9,17 +9,8 @@ import {HttpModule, RequestOptions, XHRBackend, Http} from "@angular/http";
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { LibreriaComponent } from './componentes/libreria/libreria.component';
 import { VentaLibroComponent } from './componentes/venta-libro/venta-libro.component';
-<<<<<<< HEAD
-
-/*Angular material*/
-import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-
-//Importando los servicios
-=======
 import { MaterialModule} from '../material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
->>>>>>> 4dd249e7bcde15e680d2862f07e03ee63854b57d
 import { producto } from './servicios/producto';
 import { servicioCompartido } from './servicios/servicioCompartido';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
@@ -80,11 +71,6 @@ import {
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-<<<<<<< HEAD
-    BrowserAnimationsModule,
-    MatSelectModule,
-    MatInputModule,
-=======
     MaterialModule,
     MatToolbarModule,
     MatMenuModule,
@@ -92,7 +78,6 @@ import {
     MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
->>>>>>> 4dd249e7bcde15e680d2862f07e03ee63854b57d
   ],
   providers: [
     servicioCompartido,
