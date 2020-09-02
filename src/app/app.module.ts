@@ -38,7 +38,7 @@ import {
   MatIconModule
 } from '@angular/material';
 import { DatosPagoComponent } from './componentes/datos-pago/datos-pago.component';
-
+import { PagoComponent } from './componentes/pago/pago.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +66,7 @@ import { DatosPagoComponent } from './componentes/datos-pago/datos-pago.componen
     SoporteComponent,
     SidebarComponent,
     DatosPagoComponent,
+    PagoComponent,
    
   ],
   imports: [

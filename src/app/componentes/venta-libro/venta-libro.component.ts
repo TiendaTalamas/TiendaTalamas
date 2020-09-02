@@ -140,6 +140,11 @@ this.formCantidad = fb.group({
 
   }
 
+  navegarCompra(IdProducto:string, Cantidad:string)
+  {
+    this.router.navigate(['']);
+  }
+
   obtenerImagenes() {
     let body = new URLSearchParams();
     body.append("IdProducto", this.IdProducto);
