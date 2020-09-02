@@ -21,7 +21,7 @@ import {PoliticasComponent} from './componentes/politicas/politicas/politicas.co
 import {SoporteComponent} from './componentes/Soporte/soporte/soporte.component';
 import { config } from 'process';
 import {SidebarComponent} from './componentes/sidebar/sidebar.component'
-
+import {PagoComponent} from './componentes/pago/pago.component'
 
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
@@ -34,7 +34,7 @@ const routes: Routes = [
   {path: 'categoria/:categoria/:subcategoria', component: CategoriaProductoComponent,}, 
   {path: 'busqueda/:search', component: BusquedaComponent,},
   {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,},
-  {path: 'Pago', component: MetodoPagoComponent,},
+  {path: 'Pag', component: MetodoPagoComponent,},
   {path: 'Datos/Venta/:id', component:CompraComponent,},
   {path:'Carrito', component:CarritoComponent,},
   {path:'CuadroExitoso/:Exito/:Mensaje', component:CuadroExitosoComponent,},
@@ -44,7 +44,7 @@ const routes: Routes = [
   {path:'Condiciones/:uso', component:PoliticasComponent,},
   {path:'soporte', component:SoporteComponent,},
   {path:'Sidebar', component:SidebarComponent ,},
-
+  {path: 'Pago', component:PagoComponent}
 ];
 
 @NgModule({
