@@ -21,12 +21,14 @@ export class servicioCompartido{
   IdProducto: string;
   Cadena: string;
   soloRegistro:boolean;
-
+  Cantidad:string;
   CompUsuario: boolean;
   contrasena: string;
   usuario: string;
   Cond1:boolean;
   Cond2:boolean;
+  jsonUsuario:string;
+  Direccion:string;
   Url = "http://www.tiendatalamas.com/archivos/php";
   constructor(private http: Http, private router: Router) {}   
   comprobarUsuario() 

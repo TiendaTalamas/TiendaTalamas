@@ -18,7 +18,9 @@ export class AppComponent {
   Pag1:boolean;
   cadena: string;
   registroForm:FormGroup;
-
+  catLibros:boolean;
+  todasCat:boolean;
+  catInstrumentos:boolean;
   constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher){
     this.registroForm = fb.group({
       'cadena' : this.cadena
@@ -30,7 +32,8 @@ export class AppComponent {
   }
   ngOnInit()
   {
-
+    this.todasCat = true;
+    this.catLibros = false;
     this._servicioCompartido.comprobarUsuario();
     this.obtenerSubCategoriasLibros();
     this.obtenerSubCategoriasInst();
@@ -50,6 +53,29 @@ export class AppComponent {
   xxxMap_Buscar = new Map();
   valuesKeys_Buscar = new Array;
   articulosArray_Buscar = new Array;
+
+  changeCatLibros()
+  {
+    if(this.todasCat)
+    {
+      this.todasCat= false;
+      this.catLibros = true;
+    }else{
+      this.todasCat = true;
+      this.catLibros = false;
+    }
+  }
+  changeCatInstrumentos()
+  {
+    if(this.todasCat)
+    {
+      this.todasCat= false;
+      this.catInstrumentos = true;
+    }else{
+      this.todasCat = true;
+      this.catInstrumentos = false;
+    }
+  }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
 

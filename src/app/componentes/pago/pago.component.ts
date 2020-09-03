@@ -17,13 +17,16 @@ declare var Stripe: any;
 })
 
 export class PagoComponent implements OnInit {
-
+  isDisabled = false;
   item:string;
-  cantidad:number;
+  cantidad:string;
   constructor(private http:Http, private _servicioCompartido:servicioCompartido) { }
 
   ngOnInit() {
-
+    this.item = this._servicioCompartido.IdProducto;
+    this.cantidad = this._servicioCompartido.Cantidad;
+    console.log(this._servicioCompartido.Direccion);
+    console.log(this._servicioCompartido.jsonUsuario);
     // Your Stripe public key
     const stripe = Stripe('pk_test_51HIMK7FdBqnzMdTTfbNMiHsbOtBcEdoaovMyA4VQRRNmE9Qz50KrayBuwVy6o5bnNH33ktWU8nlN3qPjUOH1ipu000UFN1vHtS');
     // Create `card` element that will watch for updates
@@ -43,12 +46,14 @@ export class PagoComponent implements OnInit {
     // and get the 
     const paymentForm = document.getElementById('payment-form');
     paymentForm.addEventListener('submit', event => {
+      this.isDisabled = true;
       event.preventDefault();
       stripe.createToken(card).then(result => {
         if (result.error) {
           console.log('Error creating payment method.');
           const errorElement = document.getElementById('card-errors');
           errorElement.textContent = result.error.message;
+          this.isDisabled = false;
         } else {
           // At this point, you should send the token ID
           // to your server so it can attach
@@ -67,14 +72,16 @@ export class PagoComponent implements OnInit {
     let body = new URLSearchParams();
     body.append("item", this.item);
     body.append("cantidad", String(this.cantidad));
-    body.append("jsonCliente", "nada");
+    body.append("jsonUsuario", this._servicioCompartido.jsonUsuario);
+    body.append("Direccion", this._servicioCompartido.Direccion);
     body.append("stripeToken", stripeToken);
     this.http.post('http://localhost/talamas/generarPagoStripe.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
 
-
+              alert("result");
+              console.log(result);
     });
   }
 

@@ -142,7 +142,7 @@ this.formCantidad = fb.group({
 
   navegarCompra(IdProducto:string, Cantidad:string)
   {
-    this.router.navigate(['']);
+    this.router.navigate(['DatosDePago',IdProducto,Cantidad]);
   }
 
   obtenerImagenes() {

@@ -20,8 +20,9 @@ import {HistorialComponent} from './componentes/historial/historial/historial.co
 import {PoliticasComponent} from './componentes/politicas/politicas/politicas.component';
 import {SoporteComponent} from './componentes/Soporte/soporte/soporte.component';
 import { config } from 'process';
-import {SidebarComponent} from './componentes/sidebar/sidebar.component'
-import {PagoComponent} from './componentes/pago/pago.component'
+import {SidebarComponent} from './componentes/sidebar/sidebar.component';
+import {PagoComponent} from './componentes/pago/pago.component';
+import {DatosPagoComponent} from './componentes/datos-pago/datos-pago.component';
 
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
@@ -44,7 +45,8 @@ const routes: Routes = [
   {path:'Condiciones/:uso', component:PoliticasComponent,},
   {path:'soporte', component:SoporteComponent,},
   {path:'Sidebar', component:SidebarComponent ,},
-  {path: 'Pago', component:PagoComponent}
+  {path: 'Pago', component:PagoComponent},
+  {path: 'DatosDePago/:id/:cantidad', component:DatosPagoComponent} 
 ];
 
 @NgModule({
