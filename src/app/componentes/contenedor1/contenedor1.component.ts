@@ -787,6 +787,7 @@ export class Contenedor1Component implements OnInit {
             .subscribe(result => 
             {
               this.respuesta=result;
+              console.log(result);
     });
 
   }
