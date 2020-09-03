@@ -1,14 +1,5 @@
   <div style="overflow: hidden;">
-    <hr width="82%"/>
-    <div class="btn-group btn-group-lg" id="GrupoBotones" role="group" aria-label="Basic example">
-      <button type="button" class="btn"style="background-color:white; color:orange; font-size:18px;" (click)="navegarCategoria('Libros','Terror')">Terror</button>
-      <button type="button" class="btn"style="background-color:white; color:orange; font-size:18px;" (click)="navegarCategoria('Libros','Romance')">Romance</button>
-      <button type="button" class="btn"style="background-color:white; color:orange; font-size:18px;" (click)="navegarCategoria('Libros','Misterio')">Misterio</button>
-      <button type="button" class="btn"style="background-color:white; color:orange; font-size:18px;" (click)="navegarCategoria('Libros','Novelas')">Novelas</button>
-      <button type="button" class="btn"style="background-color:white; color:orange; font-size:18px;" (click)="navegarCategoria('Libros','Politica')">Politica</button>
-      <button type="button" class="btn"style="background-color:white; color:orange; font-size:18px;" (click)="navegarCategoria('Libros','Infantil')">Infantil</button>
-    </div>
-    <hr width="82%"/>
+
   <div class="container">
   <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -31,8 +22,8 @@
      <h5><p id="textomas" class=" ml-4 mt-4">{{reciente.NombreProducto}}</p></h5>
      <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad1}}</p></h5>
      <h5><p id="textomas2" class="ml-2 mt-4">${{reciente.Precio}}</p></h5>
-     <button style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary mb-5 ml-4" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
-      </div>
+     <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+    </div>
 
   </div>
     
@@ -48,7 +39,7 @@
      <img class="imgr ml-4" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
      <h5><p id="textomas" class=" ml-4 mt-4">{{reciente.NombreProducto}}</p></h5>
      <h5><p id="textomas2" class="ml-2 mt-4">${{reciente.Precio}}</p></h5>
-     <button style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary mb-5 ml-4" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
+     <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
       </div>
 
   </div>
@@ -77,8 +68,8 @@
                <img class="imgr ml-4" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
                <h5><p id="textomas" class=" ml-4 mt-4">{{reciente.NombreProducto}}</p></h5>
                <h5><p id="textomas2" class="ml-2 mt-4">${{reciente.Precio}}</p></h5>
-               <button style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary mb-5 ml-4" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal">Añadir al carrito</button> 
-                </div>
+               <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+              </div>
           
             </div>
               
