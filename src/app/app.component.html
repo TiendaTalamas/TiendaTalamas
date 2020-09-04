@@ -49,7 +49,7 @@
     
     <mat-sidenav-content>
       <nav class="navbar navbar-expand-lg navbar-light " style = "background-color:white; position:-webkit-sticky; position: sticky; top: 0px; z-index: 100; width: 100%; padding-left:7% ;">
-        <a class="navbar-brand"><img id="logo" src="assets/logo.png" alt="" (click)="navegarInicio()"></a>
+        <a class="navbar-brand" style="cursor:pointer;"><img id="logo" src="assets/logo.png" alt=""  (click)="navegarInicio()"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,18 +58,18 @@
           
           <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 " style="width:500px;" [formGroup]="registroForm">
             <input class="form-control form-control-sm mr-3 w-75 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search" style="width:400px;">
-            <img src="assets/iconolupa.png" width="30px" (click)="navegarBusqueda()">
+            <img class="cursorMano" src="assets/iconolupa.png" width="30px" (click)="navegarBusqueda()">
           </form>
       
-          <img class="mr-1" src="assets/iconocontacto.png" width="50px" (click)="navegarSoporte()">
+          <img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px" (click)="navegarSoporte()">
           <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
-            <img ngif class="mr-1" src="assets/iconouser.png" width="50px" (click)="navegarConfiguracion()">
+            <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarConfiguracion()">
           </ng-container>
           <ng-template #elseTemplate>
-            <img ngif class="mr-1" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
+            <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
           </ng-template>
           
-          <img class="mr-1" src="assets/iconocarrito.png" width="50px" (click)="navegarCarrito()">
+          <img class="mr-1 cursorMano" src="assets/iconocarrito.png" width="50px" (click)="navegarCarrito()">
            
           <!---
          <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
@@ -91,7 +91,7 @@
         <div class="row">
           <div class="col-md-2 col-sm-4 sidebar1">
               <div class="logo">
-                  <img src="assets/logo.png" style="height: 100px; width: 100px; margin-left: 30px;" class="img-responsive center-block" alt="Logo">
+                  <img src="assets/logo.png" style="height: 100px; width: 100px; margin-left: 30px;" class="img-responsive center-block cursorMano" alt="Logo">
               </div>
               <hr color="white"/>
               <div class="left-navigation">
@@ -152,8 +152,6 @@
       </div>
       </div>
       </div>
-
-<br><br>
 
 
 

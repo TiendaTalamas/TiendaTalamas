@@ -6,7 +6,9 @@ body
 {
   background-color: white;
 }
-
+.imgr{
+  cursor: pointer;
+}
 #discos
 {
 
@@ -112,6 +114,7 @@ h1
 
 #textomas
 {
+  color: black;
   width:100%;
   white-space: nowrap;
   text-overflow: ellipsis;

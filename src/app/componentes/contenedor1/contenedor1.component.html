@@ -36,13 +36,13 @@
 <div id="columnamala" class="container">
   <div class="row">
     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6">
-      <img (click)="navegarLibreria();" src="assets/librosInicio.JPG" class="img-fluid" alt="">                                                                                  
+      <img (click)="navegarLibreria();" src="assets/librosInicio.JPG" class="img-fluid cursorMano" style="cursor: pointer;" alt="">                                                                                  
     </div>
     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6" >
-      <img (click)="navegarMusica();" src="assets/musicaInicio.jpg" class="img-fluid"  alt="">
+      <img (click)="navegarMusica();" src="assets/musicaInicio.jpg" class="img-fluid cursorMano" style="cursor: pointer;" alt="">
     </div>
     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6" >
-      <img src="assets/oficinaInicio.JPG" class="img-fluid"  alt="">
+      <img src="assets/oficinaInicio.JPG" class="img-fluid" style="cursor: pointer;"  alt="">
     </div>
   </div>
 </div>
@@ -65,7 +65,7 @@
     <div *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index">
 
       <div id="contenedor" class="container">
-        <img src="{{reciente.Imagen}}" (click)= "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <img src="{{reciente.Imagen}}" (click)= "masInformacion(reciente.IdProducto, reciente.Categoria)" class="cursorMano">
         <h5><p class="ml-1 mt-1" style = "font-family:Helvetica; padding:0px 0px; overflow: hidden; text-align: center; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{{reciente.NombreProducto}}</p></h5>
       </div>
 
@@ -86,7 +86,7 @@
            <div class="row mb-4">
            <div id="imagen" class="col-xs-12 col-md-6 col-lg-2" *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index">
   
-            <img class="imgr" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+            <img class="imgr cursorMano" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
             <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
             <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
             <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
@@ -100,7 +100,7 @@
         <div class="row mb-4">
         <div id="imagen" class="col-xs-12 col-md-6 col-lg-2" *ngFor = "let reciente of articulosArray_Vendidos_Libros2; let i = index">
 
-         <img class="imgr" src="{{reciente.Imagen}}" style = "width:140px; height:215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+         <img class="imgr cursorMano" src="{{reciente.Imagen}}" style = "width:140px; height:215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
          <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
          <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
          <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
@@ -230,8 +230,8 @@
   <div class="container mb-5">
     <div class="row">
       <div class="col-sm-6 col-lg-2" *ngFor="let discos of articulosArray_Vendidos_Discos">
-        <img src="{{discos.Imagen}}" class="img-fluid" alt="" (click) = "masInformacion(discos.IdProducto, discos.Categoria)">                                                                                  
-        <h5><p id="textomas5" class="mt-4">{{discos.NombreProducto}}</p></h5>
+        <img src="{{discos.Imagen}}" class="img-fluid imgr" alt="" (click) = "masInformacion(discos.IdProducto, discos.Categoria)">                                                                                  
+        <h5><p id="textomas" class="mt-4">{{discos.NombreProducto}}</p></h5>
         <h5><p id="textomas3" class="mr-5 mt-4">{{discos.Propiedad1}}</p></h5>
         <h5><p id="textomas4" class="mr-5 mt-2">${{discos.Precio}}</p></h5>
         <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(discos.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
