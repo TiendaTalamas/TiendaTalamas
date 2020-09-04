@@ -9,7 +9,54 @@
     </div>
   </div>
 </div>
-  
+  <div>
+    <div class="row" style="padding-left:9%; padding-right: 9%;">
+      <div class="col-2">
+        <hr/>
+        <p style="color: black; padding-left:20%; font-size: large; font-weight: 600;" > Categorias</p>
+        <hr style="margin-bottom: 0px;"/>
+        <mat-nav-list style="padding-top: 0;">
+          <mat-list-item style="color: black; font-size:medium; height: 25px;" >Adolecentes</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Autoayuda</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Ángeles</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Cocina</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Fantasia</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Negocios</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Novela</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Niños</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Politica</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Romance</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Superación</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Terror</mat-list-item>
+
+        </mat-nav-list>
+        <hr/>
+        <p style="color: black; padding-left:20%; font-size: large; font-weight: 600;" > +Más</p>
+        <hr style="margin-bottom: 0px;"/> 
+        <mat-list style="padding-top: 0;">
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Libreria</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Musica</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Oficina</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium ; height: 25px;" >Imprenta</mat-list-item>
+
+        </mat-list>
+      </div>
+      <div class="col-10">
+        <div class="row mb-4">
+          <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;" *ngFor = "let reciente of articulosArray; let i = index">
+    
+         <img class="imgr ml-4" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+         <h5><p id="textomas" class=" ml-4 mt-4">{{reciente.NombreProducto}}</p></h5>
+         <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad1}}</p></h5>
+         <h5><p id="textomas2" class="ml-2 mt-4">${{reciente.Precio}}</p></h5>
+         <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+        </div>
+    
+      </div>
+     
+      </div>
+    </div>
+  </div>
 <div style="padding-left: 12%; padding-right: 12%;">
 <h1 style = "color: black; text-align:left;">Novedades</h1>
   <hr/>
