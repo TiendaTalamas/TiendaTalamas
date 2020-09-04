@@ -112,6 +112,7 @@
 </div>
 </div>
 -->
+<!---Segundo intento de venta
 <div class="container mb-5">
   <div class="card">
     <div class="container-fliud">
@@ -154,7 +155,8 @@
 </div>
 
 <hr width="80%" color="black"/>
-<!--slider de productos-->
+------->
+<!--slider de productos
 <div class="container text-center mt-5 mb-5" style="background-color: white;">
   <h5 style = "color: black; text-align: left;">Más vendidos</h5>
   <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -193,6 +195,41 @@
   <span class="sr-only">Next</span>
 </a>
 </div>
+</div>
+</div>-->
+<div style="margin-left:10%; margin-right:10%;" *ngFor="let producto of productos">
+<div class="row">
+  <div class="col-5">
+    <div class="tab-pane active"  id="pic-1"><img src="{{producto.Imagen}}" /></div>
+  </div>
+  <div class="col-7">
+    <div class="row">
+        <h2 style="color: black; font-weight: 700;">{{producto.NombreProducto}}</h2>
+      </div>
+    <div class="row">
+        <p style="font-weight: 300; color:gray;">{{producto.Propiedad2}}</p>
+    </div>
+    <div class="row">
+        <h2  style="color: black; font-weight: 700;">Editorial:</h2>
+    </div>
+    <div class="row">
+      <p style="font-weight: 300; color:gray;">{{producto.Propiedad4}}</p>
+    </div>
+    <hr style="height:1.5px; background-color: gray; margin-right: 10%;"/>
+    <div class="row">
+      <h2  style="color: black; font-weight: 700;">Sinopsis</h2>
+    </div>
+    <div class="row">
+      <p style="font-weight: 300; color:gray;">{{producto.Descripcion}}</p>
+    </div>
+    <div class="row">
+      <div class="col-6">
+      <button></button> 
+    </div>
+    <div class="col-6">
+     <h1 style="font-weight: 700; color:#F307E5;"> ${{producto.Precio}}</h1>
+    </div>
+    </div>
 </div>
 </div>
 </div>
