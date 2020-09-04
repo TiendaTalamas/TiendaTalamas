@@ -25,7 +25,7 @@ export class Contenedor1Component implements OnInit {
   LimiteF :string;
   cadena: string;
   registroForm: FormGroup;
-
+  noRegistrado:boolean;
 
   
     //Datos Slider
@@ -787,6 +787,12 @@ export class Contenedor1Component implements OnInit {
             .subscribe(result => 
             {
               this.respuesta=result;
+              if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
+              {
+                this.noRegistrado= true;
+              }else{
+                this.noRegistrado = false;
+              }
               console.log(result);
     });
 
