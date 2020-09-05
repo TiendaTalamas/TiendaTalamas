@@ -197,12 +197,12 @@
 </div>
 </div>
 </div>-->
-<div style="margin-left:10%; margin-right:10%;" *ngFor="let producto of productos">
-<div class="row">
-  <div class="col-5">
+<div  *ngFor="let producto of productos">
+<div class="row mx-5">
+  <div class=" mx-lg-0 col-sm-12 col-lg-5 col-md-6 ">
     <div class="tab-pane active"  id="pic-1"><img src="{{producto.Imagen}}" /></div>
   </div>
-  <div class="col-7">
+  <div class="col-lg-7 col-md-6">
     <div class="row">
         <h2 style="color: black; font-weight: 700;">{{producto.NombreProducto}}</h2>
       </div>

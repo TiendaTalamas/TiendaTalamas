@@ -52,30 +52,33 @@
         <a mat-list-item (click)="changeCatLibros()" *ngIf="todasCat">Libreria  <img style="padding-left:120px ;" src="assets/icons/arrowRigth.png"/></a>
         <mat-nav-list *ngIf="catLibros">
           <mat-list-item (click)="changeCatLibros()"><img src="assets/icons/arrowLeft.png"/>Volver</mat-list-item>
-          <mat-list-item>Adolecentes</mat-list-item>
-          <mat-list-item>Autoayuda</mat-list-item>
-          <mat-list-item>Angeles</mat-list-item>
-          <mat-list-item>Cocina </mat-list-item>
-          <mat-list-item>Fantasia </mat-list-item>
-          <mat-list-item>Negocios</mat-list-item>
-          <mat-list-item>Novela</mat-list-item>
-          <mat-list-item>Niños  </mat-list-item>
-          <mat-list-item>Politica </mat-list-item>
-          <mat-list-item>Romance </mat-list-item>
-          <mat-list-item>Superación</mat-list-item>
-          <mat-list-item>Terror</mat-list-item>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Adolecentes" >Adolecentes</a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Autoayuda"  >Autoayuda</a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Angeles"  >Angeles</a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Cocina"  >Cocina </a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Fantasia"  >Fantasia </a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Negocios" >Negocios</a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Novelas" >Novelas</a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Ninos" >Niños  </a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Politica" >Politica </a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Romance" >Romance </a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Superacion" >Superación</a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Terror" >Terror</a>
 
 
         </mat-nav-list>
         <mat-list-item (click)="changeCatInstrumentos()"  *ngIf="todasCat">Instrumentos  <img style="padding-left:80px;" src="assets/icons/arrowRigth.png"/></mat-list-item>
         <mat-nav-list *ngIf="catInstrumentos" style="text-align:justify;">
           <mat-list-item (click)="changeCatInstrumentos()"><img src="assets/icons/arrowLeft.png"/>Volver</mat-list-item>
-          <mat-list-item>Guitarras Y Bajos </mat-list-item>
-          <mat-list-item>Pianos Y Teclados   </mat-list-item>
-          <mat-list-item>Instrumentos De Cuerda  </mat-list-item>
-          <mat-list-item>Instrumentos De Viento   </mat-list-item>
-          <mat-list-item>Baterías y Percusión  </mat-list-item>
-          <mat-list-item>Intrumentos electronicos   </mat-list-item>
+          <a mat-list-item href="http://localhost:4200/categoria/instrumentos/Guitarras" >Guitarras</a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Bajos" >Bajos</a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Pianos" >Pianos</a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Teclados" >Teclados digitales</a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/Baterías" >Baterías</a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/InstrumentosDeCuerda" >Instrumentos De Cuerda  </a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/InstrumentosDeViento" >Instrumentos De Viento   </a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/InstrumenntosDePercusion" >Instrumentos DE Percusión  </a>
+          <a mat-list-item href="http://localhost:4200/categoria/libros/InstrumentosElectronicos" >Intrumentos electronicos   </a>
         </mat-nav-list>
         <a mat-list-item routerLink="." *ngIf="todasCat">Oficina <img style="padding-left:120px;" src="assets/icons/arrowRigth.png"/></a>
         <mat-list-item  *ngIf="todasCat">Acerca de nosotros   </mat-list-item>
@@ -172,7 +175,7 @@
       </div>
       <div class="row">
         <div class="container mb-5" style="border-left: solid 5px #81b214; width: 50%; padding-left:20px; padding-bottom:20px;">
-          Bolsa de trabajo<br>
+          <a>Bolsa de trabajo</a><br>
           Acerca de tienda talamas<br>
           Contacto
         </div>

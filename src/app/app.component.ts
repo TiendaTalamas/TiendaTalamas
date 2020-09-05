@@ -78,10 +78,10 @@ export class AppComponent {
   }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
-
     console.log(SubCategoria);
-    this.router.navigate(['categoria',Categoria,SubCategoria]);
 
+    this.router.navigate(['categoria',Categoria,SubCategoria]);
+    
   this._servicioCompartido.setCategoria(Categoria);
   this._servicioCompartido.setSubCategoria(SubCategoria);
 
