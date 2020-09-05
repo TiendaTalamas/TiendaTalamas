@@ -1,19 +1,57 @@
 <div style="overflow: hidden;">
+  <br>
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar style="background-color: white; color:black;" class="example-toolbar">
+  <mat-toolbar style="background-color: white; color:black; height:130px ;" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">SideBar de prueba</h1>
-  </mat-toolbar>
+    <nav class="navbar navbar-expand-lg navbar-light " style = "background-color:white; position:-webkit-sticky; position: sticky;  z-index: 3; width: 100%; padding-left:7% ;">
+      <a class="navbar-brand" style="cursor:pointer;"><img id="logo" src="assets/logo.png" alt=""  (click)="navegarInicio()"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+        <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 " style="width:500px;" [formGroup]="registroForm">
+          <input class="form-control form-control-sm mr-3 w-75 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search" style="width:400px;">
+          <img class="cursorMano" src="assets/iconolupa.png" width="30px" (click)="navegarBusqueda()">
+        </form>
+    
+        <img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px" (click)="navegarSoporte()">
+        <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+          <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarConfiguracion()">
+        </ng-container>
+        <ng-template #elseTemplate>
+          <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
+        </ng-template>
+        
+        <img class="mr-1 cursorMano" src="assets/iconocarrito.png" width="50px" (click)="navegarCarrito()">
+         
+        <!---
+       <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
+        <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#0779e4; border-color: #0779e4;" (click)="navegarCarrito()">Ver carrito</button>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button> 
+          
+          <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
+        </ng-template>    
+      -->
+    
+        
+    
+        
+    </div>  
+    </nav>  </mat-toolbar>
 
-  <mat-sidenav-container style="background-color: white;" class="example-sidenav-container"
+  <mat-sidenav-container style="background-color: white; z-index: 4;" class="example-sidenav-container"
                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" style="width: 20%;">
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" style="width: 230px; ">
       <mat-nav-list>
         <a mat-list-item routerLink="." *ngIf="todasCat">Inicio</a>
-        <a mat-list-item (click)="changeCatLibros()" *ngIf="todasCat">Libreria</a>
+        <a mat-list-item (click)="changeCatLibros()" *ngIf="todasCat">Libreria  <img style="padding-left:120px ;" src="assets/icons/arrowRigth.png"/></a>
         <mat-nav-list *ngIf="catLibros">
-          <mat-list-item (click)="changeCatLibros()">Volver</mat-list-item>
+          <mat-list-item (click)="changeCatLibros()"><img src="assets/icons/arrowLeft.png"/>Volver</mat-list-item>
           <mat-list-item>Adolecentes</mat-list-item>
           <mat-list-item>Autoayuda</mat-list-item>
           <mat-list-item>Angeles</mat-list-item>
@@ -29,64 +67,27 @@
 
 
         </mat-nav-list>
-        <a mat-list-item (click)="changeCatInstrumentos()"  *ngIf="todasCat">Instrumentos  <img  src="assets/icons/arrowRigth.png"/></a>
-        <mat-nav-list *ngIf="catInstrumentos">
-          <mat-list-item (click)="changeCatInstrumentos()">Volver</mat-list-item>
-          <mat-list-item>Guitarras   </mat-list-item>
-          <mat-list-item>Violines   </mat-list-item>
-          <mat-list-item>Pianos y teclados digitales   </mat-list-item>
-          <mat-list-item>Trompetas   </mat-list-item>
-          <mat-list-item>Baterias   </mat-list-item>
-          <mat-list-item>Bajos   </mat-list-item>
-          <mat-list-item>Acordeones    </mat-list-item>
-          <mat-list-item>Flautas   </mat-list-item>
-
-
+        <mat-list-item (click)="changeCatInstrumentos()"  *ngIf="todasCat">Instrumentos  <img style="padding-left:80px;" src="assets/icons/arrowRigth.png"/></mat-list-item>
+        <mat-nav-list *ngIf="catInstrumentos" style="text-align:justify;">
+          <mat-list-item (click)="changeCatInstrumentos()"><img src="assets/icons/arrowLeft.png"/>Volver</mat-list-item>
+          <mat-list-item>Guitarras Y Bajos </mat-list-item>
+          <mat-list-item>Pianos Y Teclados   </mat-list-item>
+          <mat-list-item>Instrumentos De Cuerda  </mat-list-item>
+          <mat-list-item>Instrumentos De Viento   </mat-list-item>
+          <mat-list-item>Baterías y Percusión  </mat-list-item>
+          <mat-list-item>Intrumentos electronicos   </mat-list-item>
         </mat-nav-list>
-        <a mat-list-item routerLink="." *ngIf="todasCat">Oficina</a>
+        <a mat-list-item routerLink="." *ngIf="todasCat">Oficina <img style="padding-left:120px;" src="assets/icons/arrowRigth.png"/></a>
+        <mat-list-item  *ngIf="todasCat">Acerca de nosotros   </mat-list-item>
+        <mat-list-item  *ngIf="todasCat">Politicas   </mat-list-item>
+        <mat-list-item  *ngIf="todasCat">Historia  </mat-list-item>
+        <mat-list-item  *ngIf="todasCat">Soporte  </mat-list-item>
+
       </mat-nav-list>
     </mat-sidenav>
     
     <mat-sidenav-content>
-      <nav class="navbar navbar-expand-lg navbar-light " style = "background-color:white; position:-webkit-sticky; position: sticky; top: 0px; z-index: 100; width: 100%; padding-left:7% ;">
-        <a class="navbar-brand" style="cursor:pointer;"><img id="logo" src="assets/logo.png" alt=""  (click)="navegarInicio()"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          
-          <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 " style="width:500px;" [formGroup]="registroForm">
-            <input class="form-control form-control-sm mr-3 w-75 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search" style="width:400px;">
-            <img class="cursorMano" src="assets/iconolupa.png" width="30px" (click)="navegarBusqueda()">
-          </form>
-      
-          <img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px" (click)="navegarSoporte()">
-          <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
-            <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarConfiguracion()">
-          </ng-container>
-          <ng-template #elseTemplate>
-            <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
-          </ng-template>
-          
-          <img class="mr-1 cursorMano" src="assets/iconocarrito.png" width="50px" (click)="navegarCarrito()">
-           
-          <!---
-         <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
-          <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#0779e4; border-color: #0779e4;" (click)="navegarCarrito()">Ver carrito</button>
-          </ng-container>
-          <ng-template #elseTemplate>
-            <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button> 
-            
-            <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
-          </ng-template>    
-        -->
-      
-          
-      
-          
-      </div>  
-      </nav>
+
       <!--Fin del navbar--><div class="container-fluid" *ngIf="_servicioCompartido.soloBusqueda">
         <div class="row">
           <div class="col-md-2 col-sm-4 sidebar1">
@@ -154,7 +155,7 @@
       </div>
 
 
-
+<br><br>
 <router-outlet></router-outlet>
 </mat-sidenav-content>
 
