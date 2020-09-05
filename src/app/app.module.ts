@@ -39,6 +39,7 @@ import {
 } from '@angular/material';
 import { DatosPagoComponent } from './componentes/datos-pago/datos-pago.component';
 import { PagoComponent } from './componentes/pago/pago.component';
+import { HistoriaComponent } from './historia/historia.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { PagoComponent } from './componentes/pago/pago.component';
     SidebarComponent,
     DatosPagoComponent,
     PagoComponent,
+    HistoriaComponent,
    
   ],
   imports: [

@@ -23,6 +23,7 @@ import { config } from 'process';
 import {SidebarComponent} from './componentes/sidebar/sidebar.component';
 import {PagoComponent} from './componentes/pago/pago.component';
 import {DatosPagoComponent} from './componentes/datos-pago/datos-pago.component';
+import { HistoriaComponent } from './historia/historia.component';
 
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
@@ -46,7 +47,9 @@ const routes: Routes = [
   {path:'soporte', component:SoporteComponent,},
   {path:'Sidebar', component:SidebarComponent ,},
   {path: 'Pago', component:PagoComponent},
-  {path: 'DatosDePago', component:DatosPagoComponent} 
+  {path: 'DatosDePago', component:DatosPagoComponent},
+  {path: 'historia', component:HistoriaComponent},
+
 ];
 
 @NgModule({
