@@ -46,7 +46,7 @@ const routes: Routes = [
   {path:'soporte', component:SoporteComponent,},
   {path:'Sidebar', component:SidebarComponent ,},
   {path: 'Pago', component:PagoComponent},
-  {path: 'DatosDePago/:id/:cantidad', component:DatosPagoComponent} 
+  {path: 'DatosDePago', component:DatosPagoComponent} 
 ];
 
 @NgModule({

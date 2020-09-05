@@ -65,7 +65,10 @@ cadena:string;
     });
 
   }
-
+  navegarPago()
+  {
+    this.router.navigate(['DatosDePago']);
+  }
   quitarCarrito(IdCarrito:string)
   {
     let body = new URLSearchParams();

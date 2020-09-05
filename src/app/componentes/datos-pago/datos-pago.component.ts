@@ -24,33 +24,35 @@ export class DatosPagoComponent implements OnInit {
   colonia:string;
   ciudad:string;
   estado:string;
+  Subtotal:string;
   pais:string;
   codigoPostal:string;
   Direccion:string;
   jsonUsuario:string;
   ngOnInit() {
-    this.IdProducto = this.Route.snapshot.paramMap.get('id');
-    this.Cantidad = this.Route.snapshot.paramMap.get('cantidad');
     this.obtenerDirecciones();
-    this.comprobarArticulo();
+    this._servicioCompartido.soloLogueado();
+    this.obtenerSubtotal();
+    if(Number(this.Subtotal) <= 0)
+    {
+      this.navegarSesion();
+    }
   }
-  comprobarArticulo()
+   obtenerSubtotal()
   {
-    if(Number(this.Cantidad) <= 0)
-    {this.navegarInicio();}
     let body = new URLSearchParams();
-      
-    body.append('IdProducto', this.IdProducto);
-    body.append('cantidad', String(this.Cantidad));
-
-    this.http.post(this._servicioCompartido.Url+'/comprobarArticulo.php', body)
-    .map((res:Response) => res.text())
+    body.append("token",localStorage.getItem('Token'));
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubtotal.php', body)
+    .map((res:Response) => res.json())
             .subscribe(result => 
+            {
+              if(result['status']  == "200")
               {
-                console.log(result);
-                if(result != "Existe")
-                {this.navegarInicio()}
-
+                this.Subtotal =result['subtotal'];
+              }
+              else{
+                this.Subtotal = "0";
+              }
     });
 
   }

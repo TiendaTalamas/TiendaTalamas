@@ -19,10 +19,33 @@ declare var Stripe: any;
 export class PagoComponent implements OnInit {
   isDisabled = false;
   item:string;
+  Subtotal:string;
   cantidad:string;
-  constructor(private http:Http, private _servicioCompartido:servicioCompartido) { }
+  constructor(private http:Http, private _servicioCompartido:servicioCompartido, private router:Router) { }
+  obtenerSubtotal()
+  {
+    let body = new URLSearchParams();
+    body.append("token",localStorage.getItem('Token'));
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubtotal.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+              if(result['status']  == "200")
+              {
+                this.Subtotal =result['subtotal'];
+              }
+              else{
+                this.Subtotal = "0";
+              }
+              if(Number(this.Subtotal) <= 0)
+              {
+                this.router.navigate(['']);
+              }
+    });
 
+  }
   ngOnInit() {
+    this.obtenerSubtotal();
     this.item = this._servicioCompartido.IdProducto;
     this.cantidad = this._servicioCompartido.Cantidad;
     console.log(this._servicioCompartido.Direccion);
@@ -35,6 +58,7 @@ export class PagoComponent implements OnInit {
     const card = elements.create('card');
     card.mount('#card-element');
     card.addEventListener('change', event => {
+      this.obtenerSubtotal();
       const displayError = document.getElementById('card-errors');
       if (event.error) {
         displayError.textContent = event.error.message;
@@ -70,11 +94,10 @@ export class PagoComponent implements OnInit {
   enviarToken(stripeToken:string)
   {
     let body = new URLSearchParams();
-    body.append("item", this.item);
-    body.append("cantidad", String(this.cantidad));
     body.append("jsonUsuario", this._servicioCompartido.jsonUsuario);
     body.append("Direccion", this._servicioCompartido.Direccion);
     body.append("stripeToken", stripeToken);
+    body.append("Token", localStorage.getItem('Token'));
     this.http.post('http://localhost/talamas/generarPagoStripe.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 

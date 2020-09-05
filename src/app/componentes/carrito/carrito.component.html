@@ -1,5 +1,5 @@
   <div class="col-md-10 col-sm-8 main-content">
-    <h1>PRODUCTOS AGREGADOS RECIENTEMENTE Total: ${{Subtotal}}</h1><a href="http://www.tiendatalamas.com/pagos/DatosDePagoCarrito.php?user={{user}}" class="btn btn" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</a>
+    <h1>PRODUCTOS AGREGADOS RECIENTEMENTE Total: ${{Subtotal}}</h1><button (click)="navegarPago()" class="btn btn" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</button>
     <section class="details-card" *ngFor="let producto of articulosArray;  let i = index">
       <hr/>
       <div class="container-fluid mt-2 " style="background-color:#fff; "  >
