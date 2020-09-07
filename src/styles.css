@@ -4,6 +4,8 @@
 }
 body{
     height: 100px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .modal-backdrop.fade {
     opacity: 0;
