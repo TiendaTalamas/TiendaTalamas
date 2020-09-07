@@ -3,6 +3,7 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar style="background-color: white; color:black; height:130px ;" class="example-toolbar">
     <!---<button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>-->
+    <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light " style = "background-color:white; position:-webkit-sticky; position: sticky;  z-index: 3; width: 100%; padding-left:7% ;">
       <a class="navbar-brand" style="cursor:pointer;"><img id="logo" src="assets/logo.png" alt=""  (click)="navegarInicio()"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +42,7 @@
     
         
     </div>  
-    </nav>  </mat-toolbar>
+    </nav>  </div></mat-toolbar>
 
   <mat-sidenav-container style="background-color: white; z-index: 4;" class="example-sidenav-container"
                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
