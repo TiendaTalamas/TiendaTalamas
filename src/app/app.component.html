@@ -2,7 +2,7 @@
   <br>
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar style="background-color: white; color:black; height:130px ;" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <!---<button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>-->
     <nav class="navbar navbar-expand-lg navbar-light " style = "background-color:white; position:-webkit-sticky; position: sticky;  z-index: 3; width: 100%; padding-left:7% ;">
       <a class="navbar-brand" style="cursor:pointer;"><img id="logo" src="assets/logo.png" alt=""  (click)="navegarInicio()"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -168,22 +168,22 @@
 <!-- Footer -->
 <hr>
 <footer class="page-footer font-small blue pt-4" style = "background-color: white">
-   
-  <div class="row">
-    <div class="col-4">
-      <div class="row" style="margin-left:50%;">
+   <div class="container">
+  <div class="row mx-sm-5 mx-lg-0 mx-md-0">
+    <div class="col-md-4 col-lg-4 col-sm-12 mx-sm-5 mx-lg-0 mx-md-0">
+      <div class="row mx-5" >
         <p>CONOCENOS</p>
       </div>
       <div class="row">
-        <div class="container mb-5" style="border-left: solid 7px #81b214; width: 50%; margin-left:50%; padding-bottom:20px;">
+        <div class="container mb-5" style="border-left: solid 7px #81b214; width: 50%;  padding-bottom:20px;">
           <a href="#">Mision</a><br>
           <a href="#">Vision</a><br>
           <a href="http://localhost:4200/soporte">Contacto</a>
         </div>
     </div>
     </div>
-    <div class="col-4">
-      <div class="row" style="margin-left:23%;">
+    <div class="col-md-4 col-lg-4 col-sm-12 mx-sm-5 mx-lg-0 mx-md-0">
+      <div class="row mx-5" >
         <p>NUESTRA HISTORIA</p>
       </div>
       <div class="row">
@@ -194,12 +194,12 @@
         </div>
     </div>
     </div>
-    <div class="col-4">
-      <div class="row" style="margin-left:-4%;">
+    <div class="col-md-4 col-lg-4 col-sm-12 mx-sm-5 mx-lg-0 mx-md-0">
+      <div class="row mx-5">
         <p>POLITICAS</p>
       </div>
       <div class="row">
-        <div class="container mb-5" style="border-left: solid 7px #6a2c70; width: 50%; margin-right: 50%; padding-bottom:20px;">
+        <div class="container mb-5" style="border-left: solid 7px #6a2c70; width: 50%;  padding-bottom:20px;">
         <a href="http://localhost:4200/Condiciones/CondicionesDeUso">Condiciones de uso</a><br>
           <a href="http://localhost:4200/Condiciones/CondicionesDeDevoluciones">Devoluciones y/o remplazos</a>
           
@@ -208,29 +208,38 @@
     </div>
     </div>
   </div>
-
-  <div class="row" style="background-color:#dadada;">
-    <div class="col">
+</div>
+<div style="background-color:#dadada;">
+  <div class="container">
+  <div class="row" >
+    <div class="col-sm-12 col-md-4 col-lg-4">
         <img style="padding-top:50px; margin-left: 20%;" id="facebook" src="assets/facebook.png" width="60px">
         <img style="padding-top:50px; margin-left:3%;" id="facebook" src="assets/instagram.png" width="60px">
         <p style="margin-left: 15%; margin-top: 1%; font-size:12px;">Av. Vicente Guerrero 1729 (Sector centro)</p>
         <p style="margin-left: 20%; margin-top: -5%; font-size: 12px;">C.P. 88000 Nuevo Laredo, Tamps</p>
 
     </div>
-    <div class="col">
+    <div class="col-sm-12 col-md-4 col-lg-4">
       <img style="padding-top:20px; margin-left:12%;" id="logo" src="assets/logo.png" alt="" (click)="navegarInicio()">
     </div>
-    <div class="col">
+    <div class="col-sm-12 col-md-4 col-lg-4">
       
     </div>
   </div>
+  </div>
+</div>
   <!-- Footer Links -->
-  <div class="container-fluid text-center text-md-left">
+  <div style="background-color:#6d6d6d;">
 
     <!-- Grid row -->
-    <div style="background-color:#6d6d6d;" class="row">
-   <div class="col"><p style="color: white; margin-left:35%;">2020 © propiedad Visual de Tienda en Linea Talamas</p></div>
+    <div class="container">
+    <div  class="row">
+      <div class="col-12 col-md-4 col-lg-4"></div>
+   <div class="col-12 col-md-4 col-lg-4"><p style="color: white; ">2020 © propiedad Visual de Tienda en Linea Talamas</p></div>
+   <div class="col-12 col-md-4 col-lg-4"></div>
+
     </div>
+  </div>
     <!-- Grid row -->
 
   </div>
