@@ -17,7 +17,7 @@
           <img class="cursorMano" src="assets/iconolupa.png" width="30px" (click)="navegarBusqueda()">
         </form>
     
-        <img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px" (click)="navegarSoporte()">
+        <a href="https://api.whatsapp.com/send?phone=+528672111350"><img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"  ></a>
         <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
           <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarConfiguracion()">
         </ng-container>
