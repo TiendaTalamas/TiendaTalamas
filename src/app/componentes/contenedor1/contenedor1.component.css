@@ -80,7 +80,7 @@ h1
 
 /*Empieza el css de los botones del principio*/
 
-.btn:hover:not(.btn-link):not(.btn-flat) {
+/*.btn:hover:not(.btn-link):not(.btn-flat) {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.23), 0 10px 30px rgba(0, 0, 0, 0.19);
 }
 .btn:active:not(.btn-link):not(.btn-flat) {
@@ -94,7 +94,7 @@ h1
     background-color:#607D8B;
     color:#ffffff;    
     margin:10px;
-}
+}*/
 
 #contenedor img{
   width: 125%;
