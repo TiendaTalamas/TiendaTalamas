@@ -141,15 +141,27 @@
            <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
            <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
           </div>
+          <div id="imagen" class="col-xs-12 col-md-6 col-lg-2" *ngFor = "let reciente of articulosArray_Vendidos_Libros6; let i = index">
   
-            <img class="imgr cursorMano" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+            <img class="imgr" src="{{reciente.Imagen}}" style = "width:140px; height:215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
             <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
             <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
             <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
             <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
+           </div>
+    
           </div>
 
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+         </a>
+
+         <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+    </a>
        </div>
       </div>
   
