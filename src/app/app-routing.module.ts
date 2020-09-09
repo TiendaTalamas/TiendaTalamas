@@ -24,7 +24,9 @@ import {SidebarComponent} from './componentes/sidebar/sidebar.component';
 import {PagoComponent} from './componentes/pago/pago.component';
 import {DatosPagoComponent} from './componentes/datos-pago/datos-pago.component';
 import { HistoriaComponent } from './historia/historia.component';
-
+import {JuegosComponent} from './componentes/juegos/juegos.component';
+import {ImprentaComponent} from './componentes/imprenta/imprenta.component';
+import {VendedorGenericoComponent} from './componentes/vendedor-generico/vendedor-generico.component'
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
   {path: 'card', component: CardComponent, },
@@ -49,7 +51,9 @@ const routes: Routes = [
   {path: 'Pago', component:PagoComponent},
   {path: 'DatosDePago', component:DatosPagoComponent},
   {path: 'historia', component:HistoriaComponent},
-
+  {path: 'Juegos', component:JuegosComponent},
+  {path: 'Imprenta', component:ImprentaComponent },
+  {path: 'Categoria/:nombre', component:VendedorGenericoComponent},
 ];
 
 @NgModule({
