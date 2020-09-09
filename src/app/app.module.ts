@@ -43,6 +43,8 @@ import { HistoriaComponent } from './historia/historia.component';
 import { JuegosComponent } from './componentes/juegos/juegos.component';
 import { ImprentaComponent } from './componentes/imprenta/imprenta.component';
 import { VendedorGenericoComponent } from './componentes/vendedor-generico/vendedor-generico.component';
+import { MisionComponent } from './mision/mision.component';
+import { VisionComponent } from './vision/vision.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,8 @@ import { VendedorGenericoComponent } from './componentes/vendedor-generico/vende
     JuegosComponent,
     ImprentaComponent,
     VendedorGenericoComponent,
+    MisionComponent,
+    VisionComponent,
    
   ],
   imports: [

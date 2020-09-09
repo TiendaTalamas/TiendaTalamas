@@ -11,7 +11,7 @@ import {MusicaComponent} from './componentes/musica/musica.component'
 import {CategoriaProductoComponent} from './componentes/categoria-producto/categoria-producto.component'
 import {BusquedaComponent} from './componentes/busqueda/busqueda.component'
 import {ConfiguracionUsuarioComponent} from './componentes/configuracion-usuario/configuracion-usuario.component'
-import { CompraComponent } from './componentes/compra/compra/compra.component';
+import {CompraComponent } from './componentes/compra/compra/compra.component';
 import {CarritoComponent} from './componentes/carrito/carrito.component';
 import {CuadroExitosoComponent} from './componentes/CuadroExitoso/cuadro-exitoso/cuadro-exitoso.component';
 import {DireccionComponent} from './componentes/Direccion/direccion/direccion.component';
@@ -26,7 +26,11 @@ import {DatosPagoComponent} from './componentes/datos-pago/datos-pago.component'
 import { HistoriaComponent } from './historia/historia.component';
 import {JuegosComponent} from './componentes/juegos/juegos.component';
 import {ImprentaComponent} from './componentes/imprenta/imprenta.component';
-import {VendedorGenericoComponent} from './componentes/vendedor-generico/vendedor-generico.component'
+import {MisionComponent} from './mision/mision.component';
+import {VisionComponent} from './vision/vision.component';
+import {VendedorGenericoComponent} from './componentes/vendedor-generico/vendedor-generico.component';
+
+
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
   {path: 'card', component: CardComponent, },
@@ -54,6 +58,10 @@ const routes: Routes = [
   {path: 'Juegos', component:JuegosComponent},
   {path: 'Imprenta', component:ImprentaComponent },
   {path: 'Categoria/:nombre', component:VendedorGenericoComponent},
+  {path: 'mision', component:MisionComponent},
+  {path: 'vision', component:VisionComponent},
+
+
 ];
 
 @NgModule({
