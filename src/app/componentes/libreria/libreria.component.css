@@ -26,6 +26,16 @@
   height:40px;
   
 }
+#categoria
+{
+  color: black; 
+  font-size: medium;
+   height: 25px;
+}
+#categoria:hover
+{
+  color:#81b214 ;
+}
 
 
 #textomas

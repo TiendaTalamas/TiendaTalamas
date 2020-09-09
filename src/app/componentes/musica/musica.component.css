@@ -27,6 +27,16 @@
   
 }
 
+#categorias
+{
+  color: black; 
+  font-size: medium;
+   height: 25px;
+}
+#categorias:hover
+{
+  color:#81b214 ;
+}
 
 #textomas
 {
