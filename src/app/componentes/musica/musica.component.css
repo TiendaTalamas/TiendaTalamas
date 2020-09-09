@@ -2,13 +2,19 @@
 {
     margin-right: 20px;
 }
+#Botoncarrito
+{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius:20px;
 
+}
 .container
 {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height:70vh;
 }
 
 #GrupoBotones
@@ -16,36 +22,64 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ff9234;
-
+  background-color:white;
+  height:40px;
+  
 }
 
 
 #textomas
 {
-  width: 250px;
+  color: black;
+  width:100%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   text-align: center;
-  font-family: "Anonymous Pro";
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+
+}
+
+#textomas2
+{
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color:#0779e4;
+
+}
+
+#textomas3
+{
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color:#9e9e9e;
+  font-size: 11px;
+  text-transform: uppercase;
 }
 .imgr
 {
-  width: 190px; 
-  height: 300px;
+  width:140px; 
+  height: 215px;
+  display: block; 
+  margin: 0 auto;
 }
-.imgr:hover
-{
-  height: 310px;
-  width: 200px;
-  transition-duration: 1s;
-}
+
 
 h1
 {
-  font-family: 'Copse';
+  font-family: 'Tahoma';
 }
+
 
 @media only screen and (max-width:600px) and (min-width:375px)
 {
@@ -108,4 +142,6 @@ h1
   }
 
 }
+
+
 

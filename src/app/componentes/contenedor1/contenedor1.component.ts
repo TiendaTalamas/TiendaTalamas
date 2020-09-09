@@ -740,12 +740,21 @@ export class Contenedor1Component implements OnInit {
   }
   navegarLibreria()
   {
-    this.router.navigate(['libreria'])
+    this.router.navigate(['libreria']);
+  }
+
+  navegarImprenta()
+  {
+    this.router.navigate(['Imprenta']);
+  }
+  navegarJuegos()
+  {
+    this.router.navigate(['Juegos']);
   }
 
   navegarPublicidad()
   {
-    this.router.navigate(['emd'])
+    this.router.navigate(['emd']);
   }
   navegarMusica()
   {

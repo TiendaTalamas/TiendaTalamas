@@ -40,6 +40,9 @@ import {
 import { DatosPagoComponent } from './componentes/datos-pago/datos-pago.component';
 import { PagoComponent } from './componentes/pago/pago.component';
 import { HistoriaComponent } from './historia/historia.component';
+import { JuegosComponent } from './componentes/juegos/juegos.component';
+import { ImprentaComponent } from './componentes/imprenta/imprenta.component';
+import { VendedorGenericoComponent } from './componentes/vendedor-generico/vendedor-generico.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +72,9 @@ import { HistoriaComponent } from './historia/historia.component';
     DatosPagoComponent,
     PagoComponent,
     HistoriaComponent,
+    JuegosComponent,
+    ImprentaComponent,
+    VendedorGenericoComponent,
    
   ],
   imports: [

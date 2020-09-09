@@ -29,7 +29,7 @@ export class servicioCompartido{
   Cond2:boolean;
   jsonUsuario:string;
   Direccion:string;
-  Url = "http://www.tiendatalamas.com/archivos/php";
+  Url = "https://www.tiendatalamas.com/archivos/php";
   constructor(private http: Http, private router: Router) {}   
   comprobarUsuario() 
   {
