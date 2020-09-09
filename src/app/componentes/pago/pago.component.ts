@@ -51,7 +51,7 @@ export class PagoComponent implements OnInit {
     console.log(this._servicioCompartido.Direccion);
     console.log(this._servicioCompartido.jsonUsuario);
     // Your Stripe public key
-    const stripe = Stripe('pk_test_51HIMK7FdBqnzMdTTfbNMiHsbOtBcEdoaovMyA4VQRRNmE9Qz50KrayBuwVy6o5bnNH33ktWU8nlN3qPjUOH1ipu000UFN1vHtS');
+    const stripe = Stripe('pk_live_51HIMK7FdBqnzMdTTy9snyo9VqO8xHgXWOHcqPH23eTVS5XMiZNWFSZQODYPJBbRfM8JYMruJ3M5f3393bMiP0Xhm003iPuphsq');
     // Create `card` element that will watch for updates
     // and display error messages
     const elements = stripe.elements();
@@ -98,13 +98,16 @@ export class PagoComponent implements OnInit {
     body.append("Direccion", this._servicioCompartido.Direccion);
     body.append("stripeToken", stripeToken);
     body.append("Token", localStorage.getItem('Token'));
-    this.http.post('http://localhost/talamas/generarPagoStripe.php', body)
+    this.http.post(this._servicioCompartido.Url+'/generarPagoStripe.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
-
-              alert("result");
-              console.log(result);
+              if(result['status'] == 200)
+              {
+                this.router.navigate(['CuadroExitoso',"Exito",result['IdCompra']]);
+              }else{
+                this.router.navigate(['CuadroExitoso',"Fallo",result['IdCompra']]);
+              }
     });
   }
 
