@@ -135,6 +135,7 @@ export class DireccionComponent implements OnInit {
                 {
                   localStorage.setItem('Token', result['token']);
                   alert(result['sql']);
+                  this.navegarInicio();
                 }
                 
           });
