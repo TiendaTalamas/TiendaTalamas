@@ -1,3 +1,4 @@
+  <!--
   <div class="col-md-10 col-sm-8 main-content">
     <h1>PRODUCTOS AGREGADOS RECIENTEMENTE Total: ${{Subtotal}}</h1><button (click)="navegarPago()" class="btn btn" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</button>
     <section class="details-card" *ngFor="let producto of articulosArray;  let i = index">
@@ -22,7 +23,7 @@
                 {{producto.Propiedad1}}</p>
               </h4>
             </h3>
-            <button id="botones" type="button" class="btn btn-warning" data-target="#formulario" (click) = "quitarCarrito(producto.IdCarrito)">Eliminar</button><!--<button type="button" class="btn btn-warning">Agregar al carrito</button>-->
+            <button id="botones" type="button" class="btn btn-warning" data-target="#formulario" (click) = "quitarCarrito(producto.IdCarrito)">Eliminar</button><button type="button" class="btn btn-warning">Agregar al carrito</button>
             <button id="botones" type="button" class="btn btn" data-toggle="modal" data-target="#formulario" style="background-color:#0779e4; border-color:#0779e4; color:white;" (click) = "cambiarCantidad(producto.Cantidade, producto.IdCarrito)">Cambiar cantidad</button>
             </div>
         </div>
@@ -32,11 +33,9 @@
 
     </section> 
   </div>
-  <!-- Modal -->
+
 <div id="formulario" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
-    <!-- Modal contenido-->
 
     <div class="modal-content">
       <div id="Layer1" style="height:600px; overflow: scroll;">
@@ -73,4 +72,33 @@
     </div>
     </div>
 
+</div>
+-->
+<div class="card text-center" style="color: black;">
+  <div class="card-header">
+    Resumen De Compra<img class="ml-1" src="assets/bolsa.png" width="45px">
+  </div>
+  <div class="card-body">
+   <div class="row">
+     <div class="col">ARTICULOS</div>
+     <div class="col">PRECIO</div>
+     <div class="col">CANT</div>
+   </div>
+   <hr/>
+     <div class="row">
+       <div class="col">
+         <img class="img-fluid" src="https://www.elquintobeatle.com/wp-content/uploads/2020/03/the-weeknd-after-hours-1-1068x1068.jpeg">
+        
+        </div>
+       <div class="col">
+        <p style="font-size:20px;">$160</p>
+     </div>
+     <div class="col">
+       <p style="font-size:20px;;">5</p>
+     </div>
+   </div>
+  <div class="card-footer text-muted">
+    <p style="margin-left: 70%;">TOTAL:</p>
+  </div>
+</div>
 </div>
