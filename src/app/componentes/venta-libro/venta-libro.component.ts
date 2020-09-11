@@ -33,6 +33,7 @@ export class VentaLibroComponent implements OnInit {
   CodigoPostal:string;
   Tipo: boolean;
   Imagen: string;
+  Cantidad:number;
   //Variables para formulario 
   DatosError:boolean = false;
   cadena: string;
@@ -53,6 +54,8 @@ export class VentaLibroComponent implements OnInit {
   numeroCelular:string;
   articulosArray_Sub = new Array;
   quantity:string;
+  respuesta:string;
+  noRegistrado:boolean;
   //array para guardar los valores
 
   constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute,){ 
@@ -101,6 +104,7 @@ this.formCantidad = fb.group({
 
 
   ngOnInit() {
+    this.Cantidad = 1;
     this.quantity = "1";
     this.verificacionProductos = true;
     this.Nombrecito = localStorage.getItem("Nombre_U");
@@ -204,6 +208,27 @@ this.formCantidad = fb.group({
   }
 
 //Metodo de obtencion de un libro aleatorio para optimizar las pruebas
+  aumentarCantidad()
+  {
+    this.Cantidad++;
+  }
+  disminuirCantidad()
+  {
+    this.Cantidad --;
+  } 
+
+  pruebaJson()
+  {
+    let body = new URLSearchParams();
+    body.append("JSON", "algoMIerda");
+    this.http.put(this._servicioCompartido.Url+'/prueba_json.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+              console.log(result);
+    });
+  }
+
   LibroAleatorio() {
     let body = new URLSearchParams();
     this.http.post(this._servicioCompartido.Url+'/libroAleatorio.php', body)
@@ -526,5 +551,26 @@ this.formCantidad = fb.group({
     this.precioBinding=producto.Precio;
     }
   }
+  anadirAlCarrito(IdProducto:string)
+  {
+    let body = new URLSearchParams();
+    body.append("IdProducto",IdProducto);
+    body.append("Cantidad", "1");
+    body.append("token",localStorage.getItem('Token'))
+    
+    this.http.post(this._servicioCompartido.Url+'/agregarCarrito.php', body)
+    .map((res:Response) => res.text())
+            .subscribe(result => 
+            {
+              this.respuesta=result;
+              if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
+              {
+                this.noRegistrado= true;
+              }else{
+                this.noRegistrado = false;
+              }
+              console.log(result);
+    });
 
+  }
 }
