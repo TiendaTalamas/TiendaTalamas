@@ -56,6 +56,7 @@ export class VentaLibroComponent implements OnInit {
   quantity:string;
   respuesta:string;
   noRegistrado:boolean;
+  CantidadMaxima:number;
   //array para guardar los valores
 
   constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute,){ 
@@ -210,11 +211,15 @@ this.formCantidad = fb.group({
 //Metodo de obtencion de un libro aleatorio para optimizar las pruebas
   aumentarCantidad()
   {
-    this.Cantidad++;
-  }
+    if(this.Cantidad < Number(this.Unidades)){
+      this.Cantidad ++;
+      } 
+ }
   disminuirCantidad()
   {
+    if(this.Cantidad > 1){
     this.Cantidad --;
+    }
   } 
 
   pruebaJson()
@@ -555,7 +560,7 @@ this.formCantidad = fb.group({
   {
     let body = new URLSearchParams();
     body.append("IdProducto",IdProducto);
-    body.append("Cantidad", "1");
+    body.append("Cantidad", String(this.Cantidad));
     body.append("token",localStorage.getItem('Token'))
     
     this.http.post(this._servicioCompartido.Url+'/agregarCarrito.php', body)
@@ -569,7 +574,7 @@ this.formCantidad = fb.group({
               }else{
                 this.noRegistrado = false;
               }
-              console.log(result);
+              alert(result);
     });
 
   }

@@ -220,16 +220,15 @@
         CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>
     </div>
     <div class="col-7 col-md-6 col-sm-12">
-      <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>      <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/botonComprar.png" width="150px"/>
-      <button (click)="pruebaJson()">Prueba JSON </button>
+      <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>      <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/botonComprar.png" width="150px"/>
     </div>
     </div>
     <hr style="height:1.5px; background-color: gray; margin-right: 10%;"/>
     <div class="row">
-      <h2  style="color: black; font-weight: 700;">Sinopsis</h2>
+      <h2  style="color: black; font-weight: 700;">Descripción</h2>
     </div>
     <div class="row">
-      <p style="font-weight: 300; color:gray;" [innerHTML]="producto.Descripcion"></p>
+      <p style="font-weight: 300; color:gray; text-align: justify;" [innerHTML]="producto.Descripcion"></p>
     </div>
 </div>
 </div>
