@@ -89,7 +89,13 @@ cadena:string;
     });
 
   }
+  aumentarCantidad(){
 
+  }
+  disminuirCantidad()
+  {
+    
+  }
   obtenerSubtotal()
   {
     let body = new URLSearchParams();

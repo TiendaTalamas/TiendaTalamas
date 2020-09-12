@@ -74,31 +74,47 @@
 
 </div>
 -->
-<div class="card text-center" style="color: black;">
-  <div class="card-header">
+<div class="card text-center" style="color: black; border-radius: 20px;">
+  <div class="card-header" style="border-radius: 20px;">
     Resumen De Compra<img class="ml-1" src="assets/bolsa.png" width="45px">
   </div>
-  <div class="card-body">
+  <div class="card-body" style="height: 730px; overflow-y: scroll; ">
    <div class="row">
-     <div class="col">ARTICULOS</div>
-     <div class="col">PRECIO</div>
-     <div class="col">CANT</div>
+     <div class="col-8">ARTICULOS</div>
+     <div class="col-2">PRECIO</div>
+     <div class="col-2 ">CANT</div>
    </div>
    <hr/>
-     <div class="row">
-       <div class="col">
-         <img class="img-fluid" src="https://www.elquintobeatle.com/wp-content/uploads/2020/03/the-weeknd-after-hours-1-1068x1068.jpeg">
-        
+   <div *ngFor="let producto of articulosArray;  let i = index">
+     <div class="row align-items-center " >
+       <div class="col-2" >
+         <button (click)="quitarCarrito(producto.IdCarrito)" style="font-weight: 900; color: gray; background-color: white; border: 0; cursor: pointer;"> X</button>
         </div>
-       <div class="col">
-        <p style="font-size:20px;">$160</p>
+       <div class="col-2">
+        <img class="img-fluid" src="{{producto.Imagen}}">
+      </div>
+     <div class="col-4">
+       <p style="font-size:20px;;">{{producto.NombreProducto}}  - {{producto.Propiedad2}}</p>
      </div>
-     <div class="col">
-       <p style="font-size:20px;;">5</p>
-     </div>
+     <div class="col-2" style="font-weight: 900; font-size: larger; color:gray;" >
+      ${{producto.Precio}}
+    </div>
+    <div class="col-2">
+      <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="1"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>    
+    </div>
+
    </div>
-  <div class="card-footer text-muted">
-    <p style="margin-left: 70%;">TOTAL:</p>
+    <hr/>
+
   </div>
+
+</div>
+<div class="card-footer text-muted">
+  <div style="margin-left:70%;">Total: <h3 style="font-weight: 700; color:#d7388b;"> ${{Subtotal}}</h3> </div>  
+</div>
+</div>
+<div class="row align-items-center"> 
+  <div class="col">
+<img class="ml-1" style="cursor: pointer;"   data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/botonComprar.png" width="150px"/> 
 </div>
 </div>
