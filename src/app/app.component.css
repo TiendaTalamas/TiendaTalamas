@@ -7,15 +7,13 @@
   width:1000px;
 }
 
-.count{
+/*.badge{
   border-radius: 100%;
   background-color: red;
   width: 20px;
   height: 20px;
   font-size: small;
-  text-align: center;
-  bottom:50px ;
-}
+}*/
 
 .example-sidenav-content
 {
