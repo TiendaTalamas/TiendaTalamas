@@ -8,13 +8,9 @@
     padding: 5%;
 }
 .container h3{
-    color: #004085;
+    color: black;
 }
 .container p{
     margin-top: 10%;
-    color: #545b62;
-}
-.container img
-{
-    width: 100%;
+    color: #6d6d6d;
 }

@@ -17,7 +17,7 @@
           <img class="cursorMano" src="assets/iconolupa.png" width="30px" (click)="navegarBusqueda()">
         </form>
     
-        <a class="ml-5" href="https://api.whatsapp.com/send?phone=+528672111350"><img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"  ></a>
+        <a class="ml-5" href="https://api.whatsapp.com/send?phone=+528672111350"><img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"></a>
         <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
           <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarConfiguracion()">
         </ng-container>
@@ -25,7 +25,7 @@
           <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
         </ng-template>
         
-        <img class="mr-1 cursorMano" src="assets/iconocarrito.png" width="50px" (click)="navegarCarrito()"><span class="badge badge-danger mb-5">1</span>
+        <img class="mr-1 cursorMano" src="assets/iconocarrito.png" width="50px" (click)="navegarCarrito()"><!--<span class="badge badge-danger mb-5">1</span>-->
       
         <!---
        <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
@@ -187,13 +187,16 @@
     </div>
     <div class="col-md-4 col-lg-4 col-sm-12 mx-sm-5 mx-lg-0 mx-md-0">
       <div class="row" style="margin-left:22%;" >
-        <p>GANA CON NOSOTROS</p>
+        <p>ACERCA DE</p>
       </div>
       <div class="row">
         <div class="container mb-5" style="border-left: solid 7px #ff5722; width: 50%; padding-left:20px; padding-bottom:20px;">
-          <a href="#">Vende En Tienda Talamas</a><br>
-          <a href="#">Programa De Afiliados</a><br>
-          <a href="#">Publica Tu Libro</a><br>
+          <a href="#">Tienda Talamas</a><br>
+          <a href="#">Sala de Musica</a><br>
+          <a href="#">EMD Publicidad</a><br>
+          <a href="#">Libreria Talamas</a><br>
+          <a href="#">Discos</a>
+
           
           
         </div>
@@ -218,16 +221,17 @@
 </div>
 <div style="background-color:#dadada;">
   <div class="container">
-  <div class="row" >
+  <div class="row" style="align-items: center;" >
     <div class="col-sm-12 col-md-4 col-lg-4">
-        <a title="Pagina de Facebook de Tienda Talamas" href="https://www.facebook.com/libreriatalamas/?__tn__=%2Cd%2CP-R&eid=ARAtq7g7F02JUBBD1LazD4VJqGE4dAZywcLO_8W9q--3nvipBqj6xgdDzLsvAt3On6Lf1h3N-5pruC4e"><img style="padding-top:50px; margin-left: 20%;" id="facebook" src="assets/facebook.png" width="60px"></a>
+        <a title="Pagina de Facebook de Tienda Talamas" href="https://www.facebook.com/libreriatalamas/?__tn__=%2Cd%2CP-R&eid=ARAtq7g7F02JUBBD1LazD4VJqGE4dAZywcLO_8W9q--3nvipBqj6xgdDzLsvAt3On6Lf1h3N-5pruC4e"><img style="margin-left:20%; padding-top: 50px;" id="facebook" src="assets/facebook.png" width="60px"></a>
         <a title="Pagina de Instagram de Tienda Talamas" href="https://www.instagram.com/libreria_talamas/?hl=es-la"><img style="padding-top:50px; margin-left:3%;" id="facebook" src="assets/instagram.png" width="60px"></a>
+        <a title="Pagina de Twiter de Tienda Talamas" href="#"><img style="padding-top: 50px; margin-left:3%;" id="twiter" src="assets/twiter.png" width="60px"></a>
         <p style="margin-left: 15%; margin-top: 1%; font-size:12px;">Av. Vicente Guerrero 1729 (Sector centro)</p>
         <p style="margin-left: 20%; margin-top: -5%; font-size: 12px;">C.P. 88000 Nuevo Laredo, Tamps</p>
 
     </div>
     <div class="col-sm-12 col-md-4 col-lg-4">
-      <img class="mx-auto" style="padding-top:20px;" id="logo" src="assets/logo.png" alt="" (click)="navegarInicio()">
+      <img class="d-block mx-auto" id="logo" src="assets/logo.png" alt="" (click)="navegarInicio()">
     </div>
     <div class="col-sm-12 col-md-4 col-lg-4">
       
@@ -242,7 +246,7 @@
     <div class="container">
     <div  class="row">
       <div class="col-12 col-md-4 col-lg-4"></div>
-   <div class="col-12 col-md-4 col-lg-4 mx-auto mt-2"><p style="color: white; ">2020 © propiedad de Tienda en Linea Talamas</p></div>
+   <div class="col-12 col-md-4 col-lg-4 mx-auto mt-2"><p class="text-center" style="color: white; ">2020 © propiedad de Tienda en Linea Talamas</p></div>
    <div class="col-12 col-md-4 col-lg-4"></div>
 
     </div>
