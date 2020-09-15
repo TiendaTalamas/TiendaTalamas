@@ -197,12 +197,13 @@
 </div>
 </div>
 </div>-->
-<div  *ngFor="let producto of productos">
+<div *ngIf="!P1">
+<div  *ngFor="let producto of productos" >
 <div class="row mx-5">
-  <div class=" mx-lg-0 col-sm-12 col-lg-4 col-md-6 ">
-    <div class="tab-pane active"  id="pic-1"><img width="100%"  src="{{producto.Imagen}}" /></div>
+  <div class=" mx-lg-0 col-sm-12 col-lg-7 col-md-6" style="background-color: brown;">
+    <img width="100%"  src="{{producto.Imagen}}" />
   </div>
-  <div class="col-lg-8 col-md-6">
+  <div class="col-lg-5 col-md-6">
     <div class="row">
         <h2 style="color: black; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
       </div>
@@ -233,8 +234,46 @@
 </div>
 </div>
 </div>
-
-
+</div>
+<!-------->
+<div *ngIf="P1">
+<div  *ngFor="let producto of productos" >
+  <div class="row mx-5">
+    <div class=" mx-lg-0 col-sm-12 col-lg-4 col-md-6">
+      <img width="100%"  src="{{producto.Imagen}}" />
+    </div>
+    <div class="col-lg-8 col-md-6 col-sm-12">
+      <div class="row">
+          <h2 style="color: black; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
+        </div>
+      <div class="row">
+          <p style="font-weight: 300; color:gray;">{{producto.Propiedad2}}</p>
+      </div>
+      <div class="row">
+          <h2  style="color: black; font-weight: 700;">{{producto.Propiedad4}}</h2>
+      </div>
+      <div class="row">
+        <h1 style="font-weight: 700; color:#d7388b;"> ${{producto.Precio}}</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-5 col-md-6 col-sm-12" style="color:black ; font-weight: 700; font-size: large;" >
+          CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>
+      </div>
+      <div class="col-7 col-md-6 col-sm-12">
+        <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>      <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/botonComprar.png" width="150px"/>
+      </div>
+      </div>
+      <hr style="height:1.5px; background-color: gray; margin-right: 10%;"/>
+      <div class="row">
+        <h2  style="color: black; font-weight: 700;">Descripción</h2>
+      </div>
+      <div class="row">
+        <p style="font-weight: 300; color:gray; text-align: justify;" [innerHTML]="producto.Descripcion"></p>
+      </div>
+  </div>
+  </div>
+  </div>
+</div>
 <!-- Modal -->
 <div id="formulario" class="modal fade" role="dialog">
   <div class="modal-dialog">
