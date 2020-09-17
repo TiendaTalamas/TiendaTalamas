@@ -87,20 +87,20 @@
    <hr/>
    <div *ngFor="let producto of articulosArray;  let i = index">
      <div class="row align-items-center " >
-       <div class="col-2" >
+       <div class="col-1" >
          <button (click)="quitarCarrito(producto.IdCarrito)" style="font-weight: 900; color: gray; background-color: white; border: 0; cursor: pointer;"> X</button>
         </div>
        <div class="col-2">
         <img class="img-fluid" src="{{producto.Imagen}}">
       </div>
-     <div class="col-4">
+     <div class="col-3">
        <p style="font-size:20px;;">{{producto.NombreProducto}}  - {{producto.Propiedad2}}</p>
      </div>
      <div class="col-2" style="font-weight: 900; font-size: larger; color:gray;" >
       ${{producto.Precio}}
     </div>
-    <div class="col-2">
-      <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="1"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>    
+    <div class="col-4">
+      <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{producto.Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>    
     </div>
 
    </div>
