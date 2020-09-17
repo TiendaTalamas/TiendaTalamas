@@ -46,6 +46,8 @@ import { VendedorGenericoComponent } from './componentes/vendedor-generico/vende
 import { MisionComponent } from './mision/mision.component';
 import { VisionComponent } from './vision/vision.component';
 import { ZoomComponent } from './zoom.component';
+import { AcercaComponent } from './acerca/acerca.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +83,9 @@ import { ZoomComponent } from './zoom.component';
     MisionComponent,
     VisionComponent,
     ZoomComponent,
+    AcercaComponent,
+    ContactoComponent,
+   
   ],
   imports: [
     HttpModule,

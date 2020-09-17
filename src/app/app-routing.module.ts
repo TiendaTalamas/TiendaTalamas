@@ -29,6 +29,9 @@ import {ImprentaComponent} from './componentes/imprenta/imprenta.component';
 import {MisionComponent} from './mision/mision.component';
 import {VisionComponent} from './vision/vision.component';
 import {VendedorGenericoComponent} from './componentes/vendedor-generico/vendedor-generico.component';
+import {AcercaComponent} from './acerca/acerca.component';
+import {ContactoComponent} from './contacto/contacto.component';
+
 
 
 const routes: Routes = [
@@ -60,6 +63,8 @@ const routes: Routes = [
   {path: 'Categoria/:nombre', component:VendedorGenericoComponent},
   {path: 'mision', component:MisionComponent},
   {path: 'vision', component:VisionComponent},
+  {path: 'acerca', component:AcercaComponent},
+  {path: 'contacto', component:ContactoComponent},
 
 
 ];
