@@ -54,6 +54,7 @@ export class ZoomComponent {
   constructor(private render:Renderer2){}
   onLoad()
   {
+    this.render.setStyle(this.divZoomed, 'display', 'none');
     this.render.setStyle(this.divZoomed,'background-image',"url('" + this.imagen+ "')");
     this.render.setStyle(this.divZoomed,'background-size',(this.img.nativeElement.width * this.zoom) + "px " + (this.img.nativeElement.height * this.zoom) + "px")
     this.render.setStyle(this.divZoomed,'background-repeat', 'no-repeat')
@@ -102,7 +103,9 @@ export class ZoomComponent {
         this.render.setStyle(this.divZoomed, 'display', 'none');
     }
     else{
-        this.render.setStyle(this.divZoomed, 'display', 'block');
+        this.render.setStyle(this.divZoomed, 'display', 'inline');
+        this.render.setStyle(this.divZoomed, 'positon', 'absolute');
+
     }
 
     let result = (x * this.cx) + "px "+(y * this.cy) + "px"
