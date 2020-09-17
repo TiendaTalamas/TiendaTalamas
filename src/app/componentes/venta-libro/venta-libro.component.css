@@ -1,6 +1,13 @@
 img {
 	max-width:100%; }
-  
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 320px;
+  height: 250px;
+
+}
   .preview {
 	display: -webkit-box;
 	display: -webkit-flex;

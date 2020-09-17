@@ -4,64 +4,64 @@
 
   <div>
     <div class="row" >
-      <div class="col-2" style="text-align: center;">
+      <div class="col-2" style="text-align: left;">
         <hr style=" height:1.5px; width: 100%; background-color: gray;"/>
-        <p style="color: black; font-size: large; font-weight: 600;" > Categorias</p>
+        <p style="color: black; font-size: large; font-weight: 600; text-align: center;" > Categorias</p>
         <hr style="margin-bottom: px; width: 100%; height:1.5px; background-color: gray; "/>
 
-        <mat-nav-list style="color:black;" *ngIf="Libros">
-            <mat-list-item style="color:black;">Libros </mat-list-item>
-                <mat-nav-list style="color:black;">
-                    <mat-list-item *ngFor="let subCat of articulosArray_Lib" style="color: black;">{{subCat.SubCategoria}}</mat-list-item>  
-                </mat-nav-list>
+        <mat-nav-list style="color:black;" *ngIf="Libros" (click)="abrirLibros()">
+            <mat-list-item style="color:black;" >Libros </mat-list-item>
+            <mat-nav-list *ngIf="LibrosCat">
+            <mat-list-item *ngFor="let subCat of articulosArray_Lib" style="color: black;" >{{subCat.SubCategoria}}</mat-list-item> 
+            </mat-nav-list> 
         </mat-nav-list>
         <mat-nav-list *ngIf="Instrumentos">
                 <mat-list-item style="color:black;">Instrumentos</mat-list-item>
-                    <mat-nav-list>
-                        <mat-list-item style="color:black;">De cuerda</mat-list-item>
-                            <mat-nav-list>
-                                <mat-list-item style="color:black;"></mat-list-item>
+                    <mat-nav-list *ngIf="Instrumentos">
+                        <mat-list-item style="color:black;" (click)="abrirCuerda()">De cuerda</mat-list-item>
+                            <mat-nav-list *ngIf="Cuerda">
+                                <mat-list-item style="color:black;" *ngFor="let subCat of articulosArray_Vien">{{subCat.Clase}}</mat-list-item>
                             </mat-nav-list>
-                        <mat-list-item style="color:black;">De viento</mat-list-item>
-                            <mat-nav-list>
-                                <mat-list-item style="color:black;"></mat-list-item>
+                        <mat-list-item style="color:black;" (click)="abrirViento()">De viento</mat-list-item>
+                            <mat-nav-list *ngIf="Viento">
+                                <mat-list-item style="color:black;" *ngFor="let subCat of articulosArray_Cuer">{{subCat.Clase}}</mat-list-item>
                             </mat-nav-list>
-                        <mat-list-item style="color:black;">De percusión</mat-list-item>
-                            <mat-nav-list>
-                                <mat-list-item style="color:black;"></mat-list-item>
+                        <mat-list-item style="color:black;" (click)="abrirPercusion()">De percusión</mat-list-item>
+                            <mat-nav-list *ngIf="Percusion">
+                                <mat-list-item style="color:black;" *ngFor="let subCat of articulosArray_Perc">{{subCat.Clase}}</mat-list-item>
                             </mat-nav-list>
-                        <mat-list-item style="color:black;">Elctronicos</mat-list-item>
-                            <mat-nav-list>
-                                <mat-list-item style="color:black;"></mat-list-item>
+                        <mat-list-item style="color:black;" (click)="abrirElectronico()">Elctronicos</mat-list-item>
+                            <mat-nav-list *ngIf="Electronicos">
+                                <mat-list-item style="color:black;" *ngFor="let subCat of articulosArray_Elec">{{subCat.Clase}}</mat-list-item>
                             </mat-nav-list>
                     </mat-nav-list>
                 <mat-list-item style="color:black;">Discos</mat-list-item>
                     <mat-nav-list>
-                        <mat-list-item style="color:black;"></mat-list-item>
+                        <mat-list-item style="color:black;" *ngFor="let subCat of articulosArray_Disc">{{subCat.Clase}}</mat-list-item>
                     </mat-nav-list> 
         </mat-nav-list>
         <hr/>
         <p style="color: black;  font-size: large; font-weight: 600;" > +Más</p>
         <hr style="margin-bottom: 0px;"/> 
         <mat-nav-list style="padding-top: 0;">
-          <mat-list-item style="color: black; font-size: medium; height: 25px; margin-top: 5px;" >Libreria</mat-list-item>
-          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Musica</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px; margin-top: 5px;" (click)="abrirLibreria()">Libreria</mat-list-item>
+          <mat-list-item style="color: black; font-size: medium; height: 25px;" (click)="abrirInstrumentos()">Musica</mat-list-item>
           <mat-list-item style="color: black; font-size: medium ; height: 25px;" >Juegos didacticos</mat-list-item>
 
         </mat-nav-list>
       </div>
       <div class="col-10 mt-3">
         <div class="row mb-4">
-          <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;" *ngFor = "let reciente of articulosArray; let i = index">
-    
-         <img class="imgr" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-         <h5><p id="textomas" class=" ml-auto mt-4">{{reciente.NombreProducto}}</p></h5>
-         <h5><p id="textomas3" class="mr-auto mt-4">{{reciente.Propiedad1}}</p></h5>
-         <h5><p id="textomas2" class="ml-auto mt-4">${{reciente.Precio}}</p></h5>
-         <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+            <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;" *ngFor = "let reciente of articulosArray; let i = index">
+      
+           <img class="imgr" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+           <h5><p id="textomas" class=" ml-auto mt-4">{{reciente.NombreProducto}}</p></h5>
+           <h5><p id="textomas3" class="mr-auto mt-4">{{reciente.Propiedad1}}</p></h5>
+           <h5><p id="textomas2" class="ml-auto mt-4">${{reciente.Precio}}</p></h5>
+           <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+          </div>
+      
         </div>
-    
-      </div>
      
       </div>
     </div>

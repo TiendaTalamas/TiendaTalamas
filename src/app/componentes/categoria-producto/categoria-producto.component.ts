@@ -48,19 +48,28 @@ export class CategoriaProductoComponent implements OnInit {
   valuesKeys_Sub = new Array;
   articulosArray_Sub = new Array;
   articulosArray_Lib = new Array;
-  articulosArray_Inst = new Array;
+  articulosArray_Cuer = new Array;
+  articulosArray_Vien = new Array;
+  articulosArray_Perc = new Array;
+  articulosArray_Elec = new Array;
   articulosArray_Disc = new Array;
 
   Libros:boolean;
   Instrumentos:boolean;
-
-
+  Viento:boolean;
+  Cuerda:boolean;
+  Percusion:boolean;
+  Electronicos:boolean;
+  LibrosCat:boolean;
   ngOnInit() {
     this.obtenerCategoriaDiscos();
     this.obtenerCategoriaLibros();
-    this.obtenerCategoriaInstrumentos();
+    this.obtenerCategoraVient();
+    this.obtenerCategoraCuer();
+    this.obtenerCategoraPerc();
+    this.obtenerCategoraElec();
     this.Libros = true;
-    this.Instrumentos = true;
+    this.Instrumentos = false;
     this._servicioCompartido.comprobarUsuario();
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
     this.SubCategoria = this.Route.snapshot.paramMap.get('subcategoria');
@@ -98,7 +107,42 @@ export class CategoriaProductoComponent implements OnInit {
  
     
   }
-
+  abrirLibros()
+  {
+    this.LibrosCat = !this.LibrosCat;
+    this.Instrumentos = false;
+  }
+  abrirInstrumentos()
+  {
+    if(!this.Instrumentos){
+    this.Instrumentos = !this.Instrumentos;
+    this.Libros = false;
+    }
+  }
+  abrirElectronico()
+  {
+    this.Electronicos = !this.Electronicos;
+  }
+  abrirViento(){
+    this.Viento = !this.Viento;
+  }
+  abrirCuerdas()
+  {
+    this.Cuerda = !this.Cuerda;
+  }
+  abrirPercusion()
+  {
+    this.Percusion = !this.Percusion;
+  }
+  abrirLibreria()
+  {
+    if(this.Instrumentos)
+    {
+    this.LibrosCat = true;
+    this.Libros = !this.Libros;
+    this.Instrumentos = false;
+    }
+  }
   obtenerTodos(){
 
     let body = new URLSearchParams();
@@ -210,7 +254,7 @@ export class CategoriaProductoComponent implements OnInit {
   obtenerCategoriaLibros()
   {
     let body = new URLSearchParams();
-    body.append('categoria',"Libros");
+    body.append('categoria',"LIBROS");
 
 
     this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body)
@@ -238,13 +282,159 @@ export class CategoriaProductoComponent implements OnInit {
           }
     });
   }
-  obtenerCategoriaInstrumentos()
+  obtenerCategoraVient()
   {
+    let body = new URLSearchParams();
+    body.append('categoria',"Instrumentos");
+    body.append('clase',"Viento");
 
+    this.http.post(this._servicioCompartido.Url+'/obtenerInstrumentosClase.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA_Sub = "";
+            this.data_Sub = [];
+            console.log(result);
+            this.articulosArray_Vien = result;
+            for (var key in result) {
+            this.AA_Sub = this.AA_Sub + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Sub = result[key];
+              this.data_Sub.push(Object.keys(this.val_Sub));
+              for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
+              this.contenedor_Sub = Object.keys(this.val_Sub)[i];
+              Object.entries(this.val_Sub)[i]
+               
+                this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+                this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+
+                }
+             }
+          }
+    });
+  }
+  obtenerCategoraCuer()
+  {
+    let body = new URLSearchParams();
+    body.append('categoria',"Instrumentos");
+    body.append('clase',"Cuerda");
+
+    this.http.post(this._servicioCompartido.Url+'/obtenerInstrumentosClase.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA_Sub = "";
+            this.data_Sub = [];
+            console.log(result);
+            this.articulosArray_Cuer = result;
+            for (var key in result) {
+            this.AA_Sub = this.AA_Sub + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Sub = result[key];
+              this.data_Sub.push(Object.keys(this.val_Sub));
+              for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
+              this.contenedor_Sub = Object.keys(this.val_Sub)[i];
+              Object.entries(this.val_Sub)[i]
+               
+                this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+                this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+
+                }
+             }
+          }
+    });
+  }
+  obtenerCategoraPerc()
+  {
+    let body = new URLSearchParams();
+    body.append('categoria',"Instrumentos");
+    body.append('clase',"Percusion");
+
+    this.http.post(this._servicioCompartido.Url+'/obtenerInstrumentosClase.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA_Sub = "";
+            this.data_Sub = [];
+            console.log(result);
+            this.articulosArray_Perc = result;
+            for (var key in result) {
+            this.AA_Sub = this.AA_Sub + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Sub = result[key];
+              this.data_Sub.push(Object.keys(this.val_Sub));
+              for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
+              this.contenedor_Sub = Object.keys(this.val_Sub)[i];
+              Object.entries(this.val_Sub)[i]
+               
+                this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+                this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+
+                }
+             }
+          }
+    });
+  }
+  obtenerCategoraElec()
+  {
+    let body = new URLSearchParams();
+    body.append('categoria',"Instrumentos");
+    body.append('clase',"Viento");
+
+    this.http.post(this._servicioCompartido.Url+'/obtenerInstrumentosClase.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA_Sub = "";
+            this.data_Sub = [];
+            console.log(result);
+            this.articulosArray_Elec = result;
+            for (var key in result) {
+            this.AA_Sub = this.AA_Sub + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Sub = result[key];
+              this.data_Sub.push(Object.keys(this.val_Sub));
+              for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
+              this.contenedor_Sub = Object.keys(this.val_Sub)[i];
+              Object.entries(this.val_Sub)[i]
+               
+                this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+                this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+
+                }
+             }
+          }
+    });
   }
   obtenerCategoriaDiscos()
   {
+    let body = new URLSearchParams();
+    body.append('categoria',"Discos");
 
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA_Sub = "";
+            this.data_Sub = [];
+            console.log(result);
+            this.articulosArray_Elec = result;
+            for (var key in result) {
+            this.AA_Sub = this.AA_Sub + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Sub = result[key];
+              this.data_Sub.push(Object.keys(this.val_Sub));
+              for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
+              this.contenedor_Sub = Object.keys(this.val_Sub)[i];
+              Object.entries(this.val_Sub)[i]
+               
+                this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+                this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+
+                }
+             }
+          }
+    });
   }
   obtenerCategoria(){
 
