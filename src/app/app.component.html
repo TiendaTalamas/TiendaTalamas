@@ -25,7 +25,7 @@
           <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
         </ng-template>
         
-        <img class="mr-1 cursorMano" src="assets/iconocarrito.png" width="50px" (click)="navegarCarrito()"><!--<span class="badge badge-danger mb-5">1</span>-->
+        <button class="btn" style="border-color:#f6f6f6; background-color:#f6f6f6; border-radius:150px; width:50px; height:50px;"><img class="cursorMano" style="margin-left:-15%;" src="assets/bolsa.png" width="30px" (click)="navegarCarrito()"><span style="margin-left: -7%; color:#cd0a0a;">1</span></button>
       
         <!---
        <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
@@ -179,23 +179,21 @@
         <div class="container mb-5" style="border-left: solid 7px #81b214; width: 50%;  padding-bottom:20px;">
           <a href="http://localhost:4200/mision">Misión</a><br>
           <a href="http://localhost:4200/vision">Visión</a><br>
-          <a href="http://tiendatalamas.com/soporte">Contacto</a><br>
           <a href="http://tiendatalamas.com/historia">Historia</a><br>
-          <a href="#">Ubicaciones</a><br>
+        
         </div>
     </div>
     </div>
     <div class="col-md-4 col-lg-4 col-sm-12 mx-sm-5 mx-lg-0 mx-md-0">
       <div class="row" style="margin-left:22%;" >
-        <p>ACERCA DE</p>
+        <p>SOPORTE AL CLIENTE</p>
       </div>
       <div class="row">
         <div class="container mb-5" style="border-left: solid 7px #ff5722; width: 50%; padding-left:20px; padding-bottom:20px;">
-          <a href="#">Tienda Talamas</a><br>
-          <a href="#">Sala de Musica</a><br>
-          <a href="#">EMD Publicidad</a><br>
-          <a href="#">Libreria Talamas</a><br>
-          <a href="#">Discos</a>
+          <a href="http://localhost:4200/acerca">Ayuda</a><br>
+          <a href="http://localhost:4200/contacto">Contacto</a><br>
+          <a href="http://localhost:4200/acerca">Ubicaciones</a><br>
+          
 
           
           
@@ -204,13 +202,13 @@
     </div>
     <div class="col-md-4 col-lg-4 col-sm-12 mx-sm-5 mx-lg-0 mx-md-0">
       <div class="row" style="margin-left:22%;">
-        <p>AYUDA</p>
+        <p>POLITICAS</p>
       </div>
       <div class="row">
         <div class="container mb-5" style="border-left: solid 7px #6a2c70; width: 50%;  padding-bottom:20px;">
         <a href="http://localhost:4200/Condiciones/CondicionesDeUso">Condiciones de uso</a><br>
         <a href="http://localhost:4200/Condiciones/CondicionesDeDevoluciones">Devoluciones y/o remplazos</a><br>
-        <a href="#">Tu Cuenta</a><br>
+        <a href="http://localhost:4200/ConfiguracionUsuario">Tu Cuenta</a><br>
         <a href="#">Tus Pedidos</a><br>
           
 
