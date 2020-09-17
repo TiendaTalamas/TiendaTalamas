@@ -45,6 +45,7 @@ import { ImprentaComponent } from './componentes/imprenta/imprenta.component';
 import { VendedorGenericoComponent } from './componentes/vendedor-generico/vendedor-generico.component';
 import { MisionComponent } from './mision/mision.component';
 import { VisionComponent } from './vision/vision.component';
+import { ZoomComponent } from './zoom.component';
 import { AcercaComponent } from './acerca/acerca.component';
 import { ContactoComponent } from './contacto/contacto.component';
 
@@ -81,6 +82,7 @@ import { ContactoComponent } from './contacto/contacto.component';
     VendedorGenericoComponent,
     MisionComponent,
     VisionComponent,
+    ZoomComponent,
     AcercaComponent,
     ContactoComponent,
    
