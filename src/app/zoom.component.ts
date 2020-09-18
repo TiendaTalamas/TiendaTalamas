@@ -90,10 +90,16 @@ export class ZoomComponent {
     x = pos.x - (this.lens.nativeElement.offsetWidth / 2);
     y = pos.y - (this.lens.nativeElement.offsetHeight / 2);
     /*prevent the lens from being positioned outside the image:*/
-    if (x > this.img.nativeElement.width - this.lens.nativeElement.offsetWidth) {x = 0}
-    if (x < 0) {x = 0;}
-    if (y > this.img.nativeElement.height - this.lens.nativeElement.offsetHeight) {y = 0}
-    if (y < 0) {y = 0;}
+    this.render.setStyle(this.divZoomed, 'display', 'block');
+
+    if (x > this.img.nativeElement.width - this.lens.nativeElement.offsetWidth) {x = 0;         this.render.setStyle(this.divZoomed, 'display', 'none');
+  }
+    if (x < 0) {x = 0;         this.render.setStyle(this.divZoomed, 'display', 'none');
+  }
+    if (y > this.img.nativeElement.height - this.lens.nativeElement.offsetHeight) {y = 0,         this.render.setStyle(this.divZoomed, 'display', 'none');
+  }
+    if (y < 0) {y = 0;         this.render.setStyle(this.divZoomed, 'display', 'none');
+  }
     /*set the position of the lens:*/
     this.posX = x;
     this.posY = y;
@@ -103,7 +109,6 @@ export class ZoomComponent {
         this.render.setStyle(this.divZoomed, 'display', 'none');
     }
     else{
-        this.render.setStyle(this.divZoomed, 'display', 'inline');
         this.render.setStyle(this.divZoomed, 'positon', 'absolute');
 
     }
