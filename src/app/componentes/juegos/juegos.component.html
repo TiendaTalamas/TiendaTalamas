@@ -8,10 +8,10 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active" >
-            <img style="width: 100%; height:375px;"  (click)= "masInformacion('9788498389234', 'libros')" src="assets/bannerjuego.jpeg" alt="First slide">
+            <img style="width: 100%; height:375px;"  src="assets/bannerjuego.jpeg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img style="width: 100%; height:375px;"  (click)= "masInformacion('9786070762567', 'libros')" src="assets/bannerjuego2.jpeg" alt="First slide"> 
+            <img style="width: 100%; height:375px;"   src="assets/bannerjuego2.jpeg" alt="First slide"> 
           </div>
       
         </div>
@@ -32,8 +32,6 @@
         <p style="color: black; font-size: large; font-weight: 600;" > Categorias</p>
         <hr style="margin-bottom: px; width: 100%; height:1.5px; background-color: gray; "/>
         <mat-nav-list style="padding-top: 0; ">
-          <mat-list-item style="color: black; font-size: medium; height: 25px;" >Acordenones</mat-list-item>
-          <mat-list-item style="color: black; font-size:medium; height: 25px; margin-top: 5px;" >Guitarras</mat-list-item>
           <mat-list-item style="color: black; font-size: medium; height: 25px;" >0-2 años</mat-list-item>
           <mat-list-item style="color: black; font-size: medium; height: 25px;" >2-4 años</mat-list-item>
           <mat-list-item style="color: black; font-size: medium; height: 25px;" >5+ años</mat-list-item>
@@ -53,7 +51,14 @@
       </div>
       <div class="col-10 mt-3">
         <div class="row mb-4">
-
+          <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;" *ngFor = "let reciente of articulosArray; let i = index">
+    
+            <img class="imgr" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+            <h5><p id="textomas" class=" ml-auto mt-4">{{reciente.NombreProducto}}</p></h5>
+            <h5><p id="textomas3" class="mr-auto mt-4">{{reciente.Propiedad1}}</p></h5>
+            <h5><p id="textomas2" class="ml-auto mt-4">${{reciente.Precio}}</p></h5>
+            <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+           </div>
       </div>
      
       </div>

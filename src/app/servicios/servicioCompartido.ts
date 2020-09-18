@@ -148,7 +148,7 @@ export class servicioCompartido{
     cerrarSesion()
     {
         localStorage.clear();
-    
+        this.comprobarUsuario();
         
     }
 
