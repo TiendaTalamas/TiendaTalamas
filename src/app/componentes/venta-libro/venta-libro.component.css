@@ -4,8 +4,12 @@ img {
 .img-zoom-result {
   border: 1px solid #d4d4d4;
   /*set the size of the result div:*/
+  position: absolute;
+  z-index: 199;
   width: 100%;
-  height:500px;
+  background-color: white;
+  height:600px;
+  overflow-x: visible;
 }
   .preview {
 	display: -webkit-box;
