@@ -78,12 +78,14 @@
 }
 .imgr
 {
-  width:140px; 
-  height: 215px;
   display: block; 
   margin: 0 auto;
 }
 
+#cursormano
+{
+  cursor: pointer;
+}
 
 h1
 {
