@@ -1,9 +1,5 @@
 <div style="overflow: hidden;">
-  <br>
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar style="background-color: white; color:black; height:130px ;" class="example-toolbar">
-    <!---<button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>-->
-    <div class="container">
+<div class="container">
     <nav class="navbar navbar-expand-lg navbar-light px-0" style = "background-color:white; position:-webkit-sticky; position: sticky;  z-index: 3; width: 100%; ">
       <a class="navbar-brand" style="cursor:pointer;"><img id="logo" src="assets/logo.png" alt=""  (click)="navegarInicio()"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,56 +38,7 @@
     
         
     </div>  
-    </nav>  </div></mat-toolbar>
-
-  <mat-sidenav-container style="background-color: white; z-index: 4;" class="example-sidenav-container"
-                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" style="width: 230px; ">
-      <mat-nav-list>
-        <a mat-list-item routerLink="." *ngIf="todasCat">Inicio</a>
-        <a mat-list-item (click)="changeCatLibros()" *ngIf="todasCat">Libreria  <img style="padding-left:120px ;" src="assets/icons/arrowRigth.png"/></a>
-        <mat-nav-list *ngIf="catLibros">
-          <mat-list-item (click)="changeCatLibros()"><img src="assets/icons/arrowLeft.png"/>Volver</mat-list-item>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Adolecentes" >Adolecentes</a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Autoayuda"  >Autoayuda</a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Angeles"  >Angeles</a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Cocina"  >Cocina </a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Fantasia"  >Fantasia </a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Negocios" >Negocios</a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Novelas" >Novelas</a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Ninos" >Niños  </a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Politica" >Politica </a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Romance" >Romance </a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Superacion" >Superación</a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Terror" >Terror</a>
-
-
-        </mat-nav-list>
-        <mat-list-item (click)="changeCatInstrumentos()"  *ngIf="todasCat">Instrumentos  <img style="padding-left:80px;" src="assets/icons/arrowRigth.png"/></mat-list-item>
-        <mat-nav-list *ngIf="catInstrumentos" style="text-align:justify;">
-          <mat-list-item (click)="changeCatInstrumentos()"><img src="assets/icons/arrowLeft.png"/>Volver</mat-list-item>
-          <a mat-list-item href="http://localhost:4200/categoria/instrumentos/Guitarras" >Guitarras</a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Bajos" >Bajos</a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Pianos" >Pianos</a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Teclados" >Teclados digitales</a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/Baterías" >Baterías</a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/InstrumentosDeCuerda" >Instrumentos De Cuerda  </a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/InstrumentosDeViento" >Instrumentos De Viento   </a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/InstrumenntosDePercusion" >Instrumentos DE Percusión  </a>
-          <a mat-list-item href="http://localhost:4200/categoria/libros/InstrumentosElectronicos" >Intrumentos electronicos   </a>
-        </mat-nav-list>
-        <a mat-list-item routerLink="." *ngIf="todasCat">Oficina <img style="padding-left:120px;" src="assets/icons/arrowRigth.png"/></a>
-        <mat-list-item  *ngIf="todasCat">Acerca de nosotros   </mat-list-item>
-        <mat-list-item  *ngIf="todasCat">Politicas   </mat-list-item>
-        <mat-list-item  *ngIf="todasCat">Historia  </mat-list-item>
-        <mat-list-item  *ngIf="todasCat">Soporte  </mat-list-item>
-
-      </mat-nav-list>
-    </mat-sidenav>
-    
-    <mat-sidenav-content>
-<div class="container">
+    </nav>  
       <!--Fin del navbar--><div class="container-fluid" *ngIf="_servicioCompartido.soloBusqueda">
         <div class="row">
           <div class="col-md-2 col-sm-4 sidebar1">
@@ -161,11 +108,8 @@
 <router-outlet></router-outlet>
 </div>
 
-</mat-sidenav-content>
 
 
-</mat-sidenav-container>
-</div>
 <!-- Footer -->
 <hr>
 <footer class="page-footer font-small blue pt-4" style = "background-color: white">
