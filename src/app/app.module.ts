@@ -48,6 +48,7 @@ import { VisionComponent } from './vision/vision.component';
 import { ZoomComponent } from './zoom.component';
 import { AcercaComponent } from './acerca/acerca.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { AcrilicoComponent } from './componentes/acrilico/acrilico.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { ContactoComponent } from './contacto/contacto.component';
     ZoomComponent,
     AcercaComponent,
     ContactoComponent,
+    AcrilicoComponent,
    
   ],
   imports: [

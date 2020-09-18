@@ -31,7 +31,7 @@ import {VisionComponent} from './vision/vision.component';
 import {VendedorGenericoComponent} from './componentes/vendedor-generico/vendedor-generico.component';
 import {AcercaComponent} from './acerca/acerca.component';
 import {ContactoComponent} from './contacto/contacto.component';
-
+import {AcrilicoComponent} from './componentes/acrilico/acrilico.component';
 
 
 const routes: Routes = [
@@ -65,7 +65,7 @@ const routes: Routes = [
   {path: 'vision', component:VisionComponent},
   {path: 'acerca', component:AcercaComponent},
   {path: 'contacto', component:ContactoComponent},
-
+  {path: 'Acrilicos', component:AcrilicoComponent}
 
 ];
 

@@ -1,0 +1,157 @@
+#boton
+{
+    margin-right: 20px;
+}
+#Botoncarrito
+{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius:20px;
+
+}
+.container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#GrupoBotones
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:white;
+  height:40px;
+  
+}
+#categoria
+{
+  color: black; 
+  font-size: medium;
+   height: 25px;
+}
+#categoria:hover
+{
+  color:#e11d74 ;
+}
+
+
+#textomas
+{
+  color: black;
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+
+}
+
+#textomas2
+{
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color:#0779e4;
+
+}
+
+#textomas3
+{
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color:#9e9e9e;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.imgr
+{
+  width:140px; 
+  height: 140px;
+  display: block; 
+  margin: 0 auto;
+}
+
+
+h1
+{
+  font-family: 'Tahoma';
+}
+
+
+@media only screen and (max-width:600px) and (min-width:375px)
+{
+  #contenedor
+  {
+   display: block; 
+   margin-left:20%;
+   margin-bottom:25%;
+  }
+
+}
+@media only screen and (max-width:375px) and (min-width:350px)
+{
+  #contenedor
+  {
+   display: block; 
+   margin-left:15%;
+   margin-bottom:25%;
+  }
+
+}
+@media only screen and (max-width:349px) and (min-width:300px)
+{
+  #contenedor
+  {
+   display: block; 
+   margin-left:10%;
+   margin-bottom:25%;
+  }
+
+}
+
+@media only screen and (max-width:999px) and (min-width:900px)
+{
+  #contenedor
+  {
+   display: block; 
+   margin-left:18%;
+   margin-bottom:25%;
+  }
+
+}
+@media only screen and (max-width:899px) and (min-width:768px)
+{
+  #contenedor
+  {
+   display: block; 
+   margin-left:12%;
+   margin-bottom:25%;
+  }
+
+}
+@media only screen and (max-width:767px) and (min-width:600px)
+{
+  #contenedor
+  {
+   display: block; 
+   margin-left:32%;
+   margin-bottom:25%;
+  }
+
+}
+
+
+
