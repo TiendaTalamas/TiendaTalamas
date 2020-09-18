@@ -14,8 +14,19 @@
         </form>
     
         <a class="ml-5" href="https://api.whatsapp.com/send?phone=+528672111350"><img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"></a>
-        <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
-          <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarConfiguracion()">
+        <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">         
+           <div class="dropdown">
+          <button class="btn mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" border-radius:150px; width:50px; height:50px; color: black; background-color:#f6f6f6;">
+            <img src="assets/user.png" width="27px">
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:199;">
+            <a class="dropdown-item" href="#">Ajustes</a>
+            <a class="dropdown-item" href="#">Historial</a>
+            <a class="dropdown-item" href="#">Historial</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
+          </div>
+        </div>
         </ng-container>
         <ng-template #elseTemplate>
           <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
