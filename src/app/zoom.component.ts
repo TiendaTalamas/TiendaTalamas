@@ -6,7 +6,7 @@ import {debounceTime} from 'rxjs/operators'
   selector: 'app-zoom',
   template: `
   <div class="img-zoom-container">
-	   <img #img [style.width]="yet && imgWidth?imgWidth+'%':null" [style.heigth]="yet && imgHeigth?imgHeigth+'%':null" id="myimage" [src]="imagen" (load)="onLoad()">
+	   <img #img [style.width]="yet && imgWidth?imgWidth+'%':null" id="myimage" [src]="imagen" (load)="onLoad()">
 	   <div #len [style.width]="lenSize+'px'" [style.height]="lenSize+'px'"  [style.left] ="posX+'px'" [style.top] ="posY+'px'"
 class="img-zoom-lens">
 </div>

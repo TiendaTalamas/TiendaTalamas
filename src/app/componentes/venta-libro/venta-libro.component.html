@@ -243,8 +243,7 @@
 <div  *ngFor="let producto of productos" >
   <div class="row mx-5">
     <div class=" mx-lg-0 col-sm-12 col-lg-4 col-md-6">
-      <app-zoom [img]="producto.Imagen" [zoom]="2" [lenSize]="0" [imgWidth]="100"   [divZoomed]="divZoomed" ></app-zoom>  
-
+    <img width="100%" src="{{producto.Imagen}}">
       </div>
     <div class="col-lg-8 col-md-6 col-sm-12">
       <div class="row">
