@@ -751,7 +751,10 @@ export class Contenedor1Component implements OnInit {
   {
     this.router.navigate(['Juegos']);
   }
-
+  navegarAcrilicos()
+  {
+    this.router.navigate(['Acrilicos']);
+  }
   navegarPublicidad()
   {
     this.router.navigate(['emd']);

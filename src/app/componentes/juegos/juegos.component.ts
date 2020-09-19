@@ -12,25 +12,21 @@ import { URLSearchParams } from "@angular/http";
 })
 export class JuegosComponent implements OnInit {
 
-  constructor(private http: Http,private router: Router, private location:Location,
-    public _servicioCompartido : servicioCompartido, fb : FormBuilder) { }
+  constructor(private router:Router, private http:Http, private _servicioCompartido:servicioCompartido) { }
 
   ngOnInit() {
+    this.obtenerArticulos();
   }
-  masInformacion(IdProducto: string, Categoria: string){
-
-    this.router.navigate(['venta',Categoria,IdProducto]);
-   }
-   AA: string;
-   data: any[];
-   val: any[];
-   contenedor: string;
-   xxxMap = new Map();
-   valuesKeys = new Array;
-   articulosArray = new Array;
-   obtenerArticulos() {
+  AA: string;
+  data: any[];
+  val: any[];
+  contenedor: string;
+  xxxMap = new Map();
+  valuesKeys = new Array;
+  articulosArray = new Array;
+  obtenerArticulos() {
     let body = new URLSearchParams();
-    this.http.post(this._servicioCompartido.Url+'/librosRomance.php', body)
+    this.http.post(this._servicioCompartido.Url+'/juegosDi.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
@@ -55,4 +51,9 @@ export class JuegosComponent implements OnInit {
           }
     });
   }
+  masInformacion(IdProducto: string, Categoria: string){
+
+    this.router.navigate(['venta',Categoria,IdProducto]);
+   }
+   
 }
