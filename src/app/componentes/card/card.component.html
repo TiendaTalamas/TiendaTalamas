@@ -1,27 +1,60 @@
-
+<div class="row">
+  <div class="col">
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- titulos -->
+    <div id="formhead">
+      <h1><p>INICIAR SESION</p></h1>
+    </div>
 
     <!-- Icono -->
     <div class="fadeIn first">
-      <img src="assets/usuario.jpg" id="icon" alt="User Icon">
+      <img src="assets/user.png" id="icon" alt="User Icon">
     </div>
     <!-- forma de inicio -->
     <form>
       <br>
-      <input [(ngModel)]="email"  id="login" class="form-control w-75 ml-5" name="login" placeholder="Correo Electronico">
+      <input [(ngModel)]="email"  id="login" class="form-control w-75 ml-5" name="login" placeholder="Correo Electronico" style="background-color:#f6f6f6; border-radius: 50px;">
       <br>
-      <input type="password" [(ngModel)]="contrasena"  id="password" class="form-control w-75 ml-5" name="login" placeholder="Contraseña">
+      <input type="password" [(ngModel)]="contrasena"  id="password" class="form-control w-75 ml-5" name="login" placeholder="Contraseña" style="background-color:#f6f6f6; border-radius:50px;">
       <br>
-      <input type="submit" (click) = "registrar()"  class="fadeIn fourth" value="Iniciar sesión">
+      <button class="btn fadeIn fourth mb-5" (click) = "registrar()" style="background-color: #f6f6f6; border-radius:50px;">Iniciar sesion<span><img src="assets/bolsa.png" width="30px"></span></button>
     </form>
 
-    <!--  Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" style="color: blue;" (click)="navegarRegistro()">Registrarse</a>
+    <!-- registro -->
+
+  </div>
+</div>
+  </div>
+  <div class="col">
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- titulos -->
+        <div id="formhead">
+          <h1><p>INICIAR SESION</p></h1>
+        </div>
+    
+        <!-- Icono -->
+        <div class="fadeIn first">
+          <img src="assets/user.png" id="icon" alt="User Icon">
+        </div>
+        <!-- forma de inicio -->
+        <form>
+          <br>
+          <input [(ngModel)]="email"  id="login" class="form-control w-75 ml-5" name="login" placeholder="Correo Electronico" style="background-color:#f6f6f6; border-radius: 50px;">
+          <br>
+          <input type="password" [(ngModel)]="contrasena"  id="password" class="form-control w-75 ml-5" name="login" placeholder="Contraseña" style="background-color:#f6f6f6; border-radius:50px;">
+          <br>
+          <button class="btn fadeIn fourth mb-5" (click) = "registrar()" style="background-color: #f6f6f6; border-radius:50px;">Iniciar sesion<span><img src="assets/bolsa.png" width="30px"></span></button>
+        </form>
+    
+        <!-- registro -->
+    
+      </div>
     </div>
 
   </div>
 </div>
+
+
 
