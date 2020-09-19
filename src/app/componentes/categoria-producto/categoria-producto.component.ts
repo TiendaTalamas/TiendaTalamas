@@ -194,6 +194,7 @@ export class CategoriaProductoComponent implements OnInit {
               this.AA = "";
             this.data = [];
             console.log(result);
+            console.log(result)
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;

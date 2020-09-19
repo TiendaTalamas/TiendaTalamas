@@ -742,7 +742,7 @@ export class Contenedor1Component implements OnInit {
   {
     this.router.navigate(['libreria']);
   }
-
+  
   navegarImprenta()
   {
     this.router.navigate(['Imprenta']);
