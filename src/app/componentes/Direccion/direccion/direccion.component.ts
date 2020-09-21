@@ -48,10 +48,10 @@ export class DireccionComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(isUndefined(this._servicioCompartido.soloRegistro))
-    {
-      this.location.back();
-    }
+    // if(isUndefined(this._servicioCompartido.soloRegistro))
+    // {
+    //   this.location.back();
+    // }
   }
   navegarInicio()
   {
