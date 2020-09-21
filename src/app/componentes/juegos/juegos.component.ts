@@ -24,6 +24,7 @@ export class JuegosComponent implements OnInit {
   xxxMap = new Map();
   valuesKeys = new Array;
   articulosArray = new Array;
+  anadirAlCarrito(IdProducto){}
   obtenerArticulos() {
     let body = new URLSearchParams();
     this.http.post(this._servicioCompartido.Url+'/juegosDi.php', body)
