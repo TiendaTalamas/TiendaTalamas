@@ -1,4 +1,4 @@
-    <div class="col-md-10 col-sm-8 main-content">
+    <!--<div class="col-md-10 col-sm-8 main-content">
     <h1>COMPRADO RECIENTEMENTE</h1>
     <section class="details-card" *ngFor="let producto of articulosArray;  let i = index">
       <hr/>
@@ -32,4 +32,42 @@
       </div>
       <hr/>
     </section> 
+  </div>-->
+  <div class="card text-center" style="color: black; border-radius: 20px;">
+    <div class="card-header" style="border-radius: 20px;">
+      Historial De Compra<img class="ml-1" src="assets/bolsa.png" width="45px">
+    </div>
+    <div class="card-body" style="height: 730px; overflow-y: scroll; ">
+     <div class="row">
+       <div class="col-8">ARTICULOS</div>
+       <div class="col-2">PRECIO</div>
+       <div class="col-2 ">CANT</div>
+     </div>
+     <hr/>
+     <div *ngFor="let producto of articulosArray;  let i = index">
+       <div class="row align-items-center " >
+         <div class="col-1" >
+           <button (click)="quitarCarrito(producto.IdCarrito)" style="font-weight: 900; color: gray; background-color: white; border: 0; cursor: pointer;"> X</button>
+          </div>
+         <div class="col-2">
+          <img class="img-fluid" src="{{producto.Imagen}}">
+        </div>
+       <div class="col-3">
+         <p style="font-size:20px;;">{{producto.NombreProducto}}  - {{producto.Propiedad2}}</p>
+       </div>
+       <div class="col-2" style="font-weight: 900; font-size: larger; color:gray;" >
+        ${{producto.Precio}}
+      </div>
+      <div class="col-4">
+        <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{producto.Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>    
+      </div>
+  
+     </div>
+      <hr/>
+  
+    </div>
+  
+  </div>
+  <div class="card-footer text-muted"> 
+  </div>
   </div>
