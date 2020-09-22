@@ -153,6 +153,7 @@ export class MusicaComponent implements OnInit {
     this.obtenerSubCategoriasLibros();
     this.obtenerSubCategoriasInst();
     this.obtenerArticulos();
+    document.body.scrollTop=0;
   }
 
   navegarInicio()
