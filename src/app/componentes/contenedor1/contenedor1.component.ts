@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import 'rxjs/add/operator/map';
-import {Router} from "@angular/router";
 import {Location} from "@angular/common";
 import { producto } from '../../servicios/producto';
 import { servicioCompartido } from '../../servicios/servicioCompartido';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BoundDirectivePropertyAst } from '@angular/compiler';
+import { Router, NavigationEnd } from '@angular/router'; 
 
 @Component({
   selector: 'app-contenedor1',
@@ -127,6 +127,15 @@ export class Contenedor1Component implements OnInit {
 
 
   ngOnInit() {
+
+    this.router.events.subscribe((evt) => { 
+      if (!(evt instanceof NavigationEnd)) { 
+       return; 
+      } 
+
+      window.scrollTo(0, 0) 
+     });
+    
   
     //Productos Libros
     this.LimiteI = "0";
@@ -155,6 +164,8 @@ export class Contenedor1Component implements OnInit {
     this.obtenerRecientes();
     this.obtenerVendidos();
     this.obtenerLibrosCelular();
+
+    
 
 
 
