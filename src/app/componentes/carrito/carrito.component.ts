@@ -89,12 +89,42 @@ cadena:string;
     });
 
   }
-  aumentarCantidad(){
-
+  aumentarCantidad(IdCarrito:string){
+    let body = new URLSearchParams();
+    body.append("token",localStorage.getItem('Token'));
+    body.append("IdCarrito",IdCarrito);
+    this.http.post(this._servicioCompartido.Url+'/aumentarCantidad.php', body)
+    .map((res:Response) => res.text())
+            .subscribe(result => 
+            {
+              if(result = "OK")
+              {
+                this.obtenerCarrito();
+                this.obtenerSubtotal();
+              }
+              else{
+                alert("Algo salio mal favor de recargar la pagina");
+              }
+    });
   }
-  disminuirCantidad()
+  disminuirCantidad(IdCarrito:string)
   {
-    
+    let body = new URLSearchParams();
+    body.append("token",localStorage.getItem('Token'));
+    body.append("IdCarrito",IdCarrito);
+    this.http.post(this._servicioCompartido.Url+'/disminuirCantidad.php', body)
+    .map((res:Response) => res.text())
+            .subscribe(result => 
+            {
+              if(result = "OK")
+              {
+                this.obtenerCarrito();
+                this.obtenerSubtotal();
+              }
+              else{
+                alert("Algo salio mal favor de recargar la pagina");
+              }
+    });
   }
   obtenerSubtotal()
   {
