@@ -89,10 +89,11 @@ cadena:string;
     });
 
   }
-  aumentarCantidad(IdCarrito:string){
+  aumentarCantidad(IdCarrito:string, IdProducto:string){
     let body = new URLSearchParams();
     body.append("token",localStorage.getItem('Token'));
     body.append("IdCarrito",IdCarrito);
+    body.append("IdProducto", IdProducto);
     this.http.post(this._servicioCompartido.Url+'/aumentarCantidad.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 
