@@ -10,7 +10,7 @@
         
         <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 mr-3" style="width:500px;" [formGroup]="registroForm">
           <input class="form-control form-control-sm mr-3 w-75 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search" style="width:400px;">
-          <img class="cursorMano" src="assets/iconolupa.png" width="30px" (click)="navegarBusqueda()">
+          <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; border-width: 0; background-color: white; "><img class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
         </form>
     
         <a class="ml-5" href="https://api.whatsapp.com/send?phone=+528672111350"><img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"></a>
