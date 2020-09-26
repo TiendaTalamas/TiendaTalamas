@@ -49,6 +49,8 @@ import { ZoomComponent } from './zoom.component';
 import { AcercaComponent } from './acerca/acerca.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { AcrilicoComponent } from './componentes/acrilico/acrilico.component';
+import { DatosPagoIndividualesComponent } from './componentes/datos-pago-individuales/datos-pago-individuales.component';
+import { TarjetaComponent } from './componentes/tarjeta/tarjeta.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +89,8 @@ import { AcrilicoComponent } from './componentes/acrilico/acrilico.component';
     AcercaComponent,
     ContactoComponent,
     AcrilicoComponent,
+    DatosPagoIndividualesComponent,
+    TarjetaComponent,
    
   ],
   imports: [
