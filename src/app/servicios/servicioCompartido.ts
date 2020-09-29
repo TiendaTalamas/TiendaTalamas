@@ -30,6 +30,7 @@ export class servicioCompartido{
   jsonUsuario:string;
   Direccion:string;
   Url = "https://www.tiendatalamas.com/archivos/php";
+  productosCarrito:string;
   constructor(private http: Http, private router: Router) {}   
   comprobarUsuario() 
   {
@@ -151,5 +152,21 @@ export class servicioCompartido{
         this.CompUsuario = false;
         
     }
+
+    obtenerCantidadCarrito(){
+        
+    
+        let body = new URLSearchParams();
+        body.append('token', localStorage.getItem("Token"));
+    
+    
+    
+        this.http.post(this.Url+'/cantidadCarrito.php', body)
+        .map((res:Response) => res.text())
+                .subscribe(result => 
+                  {
+                    this.productosCarrito = result;
+        });
+      }
 
 }
