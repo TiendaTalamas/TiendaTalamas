@@ -40,7 +40,7 @@
 
 
   <div id="carouselExampleControls66" class="carousel slide"  data-interval="false">
-    <div class="carousel-inner" id="nomostrar">
+    <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="row mx-2">
           <div class="col-4">
@@ -60,19 +60,27 @@
 
   </div>
 
-<div id="pequebanners2" class="container">
-  <div class="row">
-    <div class="col-12">
-          <img src="https://www.gonvill.com.mx/images/banners/031-es-bts_boton362x176px.jpg" alt="">
-    </div>
-</div>
-</div>
-
 <!--Este div se mostrara solo en celular-->
+<div id="pequebanners2" >
+  <div class="row">
+    <div class="col-12 mt-2 mb-2">
+          <img class="img-fluid" src="assets/gratisguitarra.jpg" (click)="navegarCategoria('Instrumentos', 'Guitarra')" style="cursor: pointer;" alt="">
+    </div>
+    <div class="col-12 mt-2 mb-2">
 
+          <img class="img-fluid" src="assets/sobrino.jpg" style="cursor: pointer;"(click)="navegarJuegos();" alt="">
+
+    </div>
+    <div class="col-12 mt-2 mb-2">
+          <img class="img-fluid" src="assets/separadores.jpg" style="cursor: pointer;" (click)="navegarAcrilicos()"   alt="" >
+      </div>
+    </div>
+  </div>
+
+<hr id="deco" style="width:80%;"/>
 <h1 id="deco" class="mr-5 ml-5" style="color: black; font-family: 'Ubuntu', sans-serif;">MAS VENDIDO</h1>
 <hr id="deco" style="width:80%;"/>
-  <div id="carouselExampleControls20" class="carousel slide" data-ride="carousel" style="width: 300px; display: block; margin:0 auto;">
+  <div id="carouselExampleControls20" class="carousel slide" data-ride="carousel" style="width:300px; display: block; margin:0 auto;">
     <div class="carousel-inner" id="mostrarencelular">
       <div class="carousel-item active" >
         <img width="140px" height="215px" style="cursor: pointer; display: block; margin: 0 auto;" src="https://images-na.ssl-images-amazon.com/images/I/71YoFJSz3LL.jpg" (click)="navegarSesion()" alt="First slide" >
@@ -83,10 +91,17 @@
       </div>
       <div class="carousel-item">
         <img style="width:140px; height:215px;  cursor: pointer; display: block; margin: 0 auto;" src="https://www.gonvill.com.mx/imagenes/9786070/978607074702.JPG" (click)="navegarAcrilicos()" alt="First slide"> 
-      
+        <h5><p id="textomas" class="mr-5 mt-4">Hola</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">Precio</p></h5>
+        <h5><p id="textomas2" class="mr-5 mt-2">845</p></h5>
+        <img style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
       </div>
       <div class="carousel-item">
         <img style="width:140px; height:215px;  cursor: pointer; display: block; margin: 0 auto;" src="https://www.gonvill.com.mx/images/portadas/33304607-33304607.jpg" (click)="navegarMusica()" alt="First slide"> 
+        <h5><p id="textomas" class="mr-5 mt-4">Hola</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">Precio</p></h5>
+        <h5><p id="textomas2" class="mr-5 mt-2">845</p></h5>
+        <img style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
       </div>
     </div>
     <a class="flecha carousel-control-prev my-5" id="mostrarencelular" href="#carouselExampleControls20" role="button" data-slide="prev">
@@ -130,7 +145,7 @@
            <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
            <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
            <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
-           <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
+           <img class="ml-1" style="cursor: pointer; display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
           </div>
 
           <div id="imagen" class="col-xs-12 col-md-6 col-lg-2" *ngFor = "let reciente of articulosArray_Vendidos_Libros6; let i = index">
@@ -139,7 +154,7 @@
             <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
             <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
             <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
-            <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
+            <img class="ml-1" style="cursor: pointer; display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
            </div>
     
           </div>
@@ -166,7 +181,7 @@
          <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
          <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
          <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
-         <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
+         <img class="ml-1" style="cursor: pointer; display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
         </div>
   
      </div>
@@ -181,12 +196,12 @@
        <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
        <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
        <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
-       <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
+       <img class="ml-1" style="cursor: pointer; display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
       </div>
     </div>
     </div>
 
-    <!--SLIDER QUE MOSTRARA 4 PRODUCTOS-->
+    <!--SLIDER QUE MOSTRARA 4 PRODUCTOS
     <div id="carouselExampleControls4" class="carousel slide" data-interval="false">
       <div class="carousel-inner" id="DUCTOS">
         <div class="carousel-item active">
@@ -238,7 +253,7 @@
          <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
          <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
          <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
-         <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
+         <img class="ml-1" style="cursor: pointer; display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
         </div>
           
         </div>
@@ -254,9 +269,9 @@
        <span class="sr-only">Next</span>
   </a>
      </div>
-    </div>
+    </div>-->
 
-        <!--SLIDER QUE MOSTRARA 3 PRODUCTOS-->
+        <!--SLIDER QUE MOSTRARA 3 PRODUCTOS
         <div id="carouselExampleControls5" class="carousel slide" data-interval="false">
           <div class="carousel-inner" id="DUCTOS2">
             <div class="carousel-item active">
@@ -267,7 +282,7 @@
                 <h5><p id="textomas" class="mr-5 mt-4">Hola</p></h5>
                 <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
                 <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
-                <img style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+                <img style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" id="imagencarrito"  data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
               </div>
     
               <div id="imagen" class="col-xs-2 col-md-4">
@@ -276,7 +291,7 @@
                 <h5><p id="textomas" class="mr-5 mt-4">Hola</p></h5>
                 <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
                 <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
-                <img style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+                <img style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" id="imagencarrito"  data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
               </div>
     
               <div id="imagen" class="col-xs-2 col-md-4">
@@ -285,9 +300,8 @@
                 <h5><p id="textomas" class="mr-5 mt-4">Hola</p></h5>
                 <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
                 <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
-                <img style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+                <img style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" id="imagencarrito" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
               </div>
-    
             </div>
            </div>
     
@@ -301,15 +315,43 @@
            <span class="sr-only">Next</span>
       </a>
          </div>
-        </div>
-    
+        </div>-->
 
-
-
-
-
-
-
+                <!--SLIDER QUE MOSTRARA 2 PRODUCTOS
+                <div id="carouselExampleControls6" class="carousel slide" data-interval="false" style="width:500px; display: block; margin: 0 auto;">
+                  <div class="carousel-inner" id="DUCTOS4">
+                    <div class="carousel-item active">
+                       <div class="row mb-4">    
+                      <div id="imagen" class="col-xs-2 col-md-6">
+                        <img class="imgr" src="https://www.elsotano.com/imagenes/9786070/978607072916.JPG" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+                        <h5><p id="textomas" class="mr-5 mt-4">Hola</p></h5>
+                        <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
+                        <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
+                        <img style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+                      </div>
+            
+                      <div id="imagen" class="col-xs-2 col-md-6">
+              
+                        <img class="imgr" src="https://www.elsotano.com/imagenes/9786070/978607072916.JPG" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+                        <h5><p id="textomas" class="mr-5 mt-4">Hola</p></h5>
+                        <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
+                        <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
+                        <img style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+                      </div>
+                    </div>
+                   </div>
+            
+                  <a class="carousel-control-prev" id="DUCTOS3" href="#carouselExampleControls6" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                   </a>
+            
+                   <a class="carousel-control-next" id="DUCTOS3" href="#carouselExampleControls6" role="button" data-slide="next">
+                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                   <span class="sr-only">Next</span>
+              </a>
+                 </div>
+                </div>-->
   
   <div id="pequebanners" >
   <div class="row">
@@ -345,7 +387,7 @@
                   <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
                   <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
                   <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
-                  <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
+                  <img  style="cursor: pointer; display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
                 </div>
       
               </div>
@@ -359,7 +401,7 @@
                <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
                <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
                <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5> 
-               <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
+               <img style="cursor: pointer; display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
               </div>
       
            </div>
@@ -374,7 +416,7 @@
              <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
              <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
              <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
-             <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
+             <img style="cursor: pointer; display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
             </div>
             
       
@@ -395,41 +437,46 @@
         </div>
 
   <!--Aqui Termina lo de libreria, sigue musica-->
-  <div>
+  <div id="pequebanners">
   <h3 id="textoPC-1" style = "color: #252850; text-align:left;  margin-top: 0px; margin-bottom: 0px;">LO MEJOR EN MUSICA</h3>
   <hr id="textoPC-1" width="100%" color="#eeeeee" style="margin-bottom:1%"/>
   </div>
-  <div class="container mb-5">
+  <div class="container mb-5" id="pequebanners">
     <div class="row">
       <div class="col-sm-4 col-xs-4 col-lg-2" *ngFor="let discos of articulosArray_Vendidos_Discos">
         <img src="{{discos.Imagen}}" class="img-fluid imgr" alt="" (click) = "masInformacion(discos.IdProducto, discos.Categoria)">                                                                                  
         <h5><p id="textomas" class="mt-4">{{discos.NombreProducto}}</p></h5>
         <h5><p id="textomas3" class="mr-5 mt-4">{{discos.Propiedad1}}</p></h5>
         <h5><p id="textomas4" class="mr-5 mt-2">${{discos.Precio}}</p></h5>
-        <img class="ml-1" style="cursor: pointer;" (click)="anadirAlCarrito(discos.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
+        <img  style="cursor: pointer; display: block; margin: 0 auto;" (click)="anadirAlCarrito(discos.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
 
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container" id="pequebanners">
     <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" >
-          <img style="cursor: pointer;" (click)= "masInformacion('9786073197489', 'Libros')" src="assets/contigobanner.jpg" alt="First slide" height="400px">
+          <img style="cursor: pointer; display: block; margin: 0 auto;" (click)= "masInformacion('9786073197489', 'Libros')" src="assets/contigobanner.jpg" alt="First slide" height="400px">
         </div>
       </div>
     </div>
   </div>
-
-  <div id="pequebanners2" class="container">
-    <div class="row">
-      <div class="col-12">
-            <img  src="https://www.gonvill.com.mx/images/banners/063-es-env.jpg" alt="">
+       <hr/>
+       <h5 class="text-center">Novedades</h5>
+       <hr/>
+    <div class="row" *ngFor="let discos of articulosArray_Vendidos_Discos" id="pequebanners2">
+      <div class="col-4 mt-4 "><img class="img-fluid" src="{{discos.Imagen}}" (click) = "masInformacion(discos.IdProducto, discos.Categoria)" width="200px" alt=""></div>
+      <div class="col-8 mt-4">
+        {{discos.NombreProducto}}
+          <br>
+          {{discos.Propiedad1}}
+          <br>
+          ${{discos.Precio}}
+          <br>
+        <img  style="cursor: pointer;" (click)="anadirAlCarrito(discos.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
       </div>
-  </div>
-  </div>
-
-
+    </div>
 
      <!--Este se mostrara solo en celular-->
 
@@ -454,7 +501,7 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color:#81b214; border-color:#81b214;" (click)="navegarSesion()" *ngIf="noRegistrado">Iniciar Sesion</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color:#81b214; border-color:#81b214;" *ngIf="noRegistrado">Mas Tarde</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color:#81b214; border-color:#81b214;" *ngIf="!noRegistrado">Aceptar</button>
-
+     
       </div>
     </div>
   </div>
