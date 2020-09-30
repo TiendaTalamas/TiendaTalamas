@@ -9,14 +9,14 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active" >
-            <img style="width: 100%; height:375px;"  (click)= "masInformacion('9788498389234', 'libros')" src="assets/potterbanner.jpg" alt="First slide">
+            <img style="width: 100%;"  (click)= "masInformacion('9788498389234', 'libros')" src="assets/potterbanner.jpg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img style="width: 100%; height:375px;"  (click)= "masInformacion('9786070762567', 'libros')" src="assets/felipebanner.jpg" alt="First slide"> 
+            <img style="width: 100%;"  (click)= "masInformacion('9786070762567', 'libros')" src="assets/felipebanner.jpg" alt="First slide"> 
           </div>
       
           <div class="carousel-item">
-            <img style="width: 100%; height:375px;"  (click)= "masInformacion('9786070762567', 'libros')" src="assets/compasbanner.jpg" alt="First slide">
+            <img style="width: 100%;"  (click)= "masInformacion('9786070762567', 'libros')" src="assets/compasbanner.jpg" alt="First slide">
           </div>
       
         </div>
@@ -30,7 +30,36 @@
         </a>
       </div>
       </div>
-  <div>
+      <!--Se mostrara en celular-->
+      <div id="justcel" class="input-group mb-3 mt-3">
+        <select class="custom-select" id="inputGroupSelect01">
+          <option selected>Elegir Categoria</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <hr/>
+          <option value="3">Four</option>
+          <option value="3">Five</option>
+          
+        </select>
+      </div>
+
+      <hr/>
+      <h5 class="text-center">Libreria Talamas</h5>
+      <hr/>
+   <div class="row" id="justcel" *ngFor = "let reciente of articulosArray; let i = index">
+     <div class="col-4 mt-4 "><img class="img-fluid" src="{{reciente.Imagen}}" (click) = "masInformacion(discos.IdProducto, discos.Categoria)" width="200px" alt=""></div>
+     <div class="col-8 mt-4">
+      {{reciente.NombreProducto}}
+         <br>
+         <div class="mt-2">{{reciente.Propiedad1}}</div>
+          <div class="mt-2" style="color:#0779e4;">${{reciente.Precio}}</div>
+         <br>
+       <img class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(discos.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
+     </div>
+   </div>
+
+  <div id="onlypc">
     <div class="row " >
       <div class="col-2 houdinni" style="text-align: center;">
         <hr style=" height:1.5px; width: 100%; background-color: gray;"/>
