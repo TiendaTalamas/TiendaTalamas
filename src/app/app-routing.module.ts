@@ -32,7 +32,8 @@ import {VendedorGenericoComponent} from './componentes/vendedor-generico/vendedo
 import {AcercaComponent} from './acerca/acerca.component';
 import {ContactoComponent} from './contacto/contacto.component';
 import {AcrilicoComponent} from './componentes/acrilico/acrilico.component';
-
+import {DatosPagoIndividualesComponent} from './componentes/datos-pago-individuales/datos-pago-individuales.component';
+import {TarjetaComponent} from './componentes/tarjeta/tarjeta.component';
 
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
@@ -65,7 +66,9 @@ const routes: Routes = [
   {path: 'vision', component:VisionComponent},
   {path: 'acerca', component:AcercaComponent},
   {path: 'contacto', component:ContactoComponent},
-  {path: 'Acrilicos', component:AcrilicoComponent}
+  {path: 'Acrilicos', component:AcrilicoComponent},
+  {path: 'DatosDePago/:IdProducto/:Cantidad', component:DatosPagoIndividualesComponent},
+  {path: 'Pago/:IdProducto/:Cantidad', component:TarjetaComponent}
 
 ];
 

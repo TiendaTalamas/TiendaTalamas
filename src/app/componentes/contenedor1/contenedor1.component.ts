@@ -127,7 +127,7 @@ export class Contenedor1Component implements OnInit {
 
 
   ngOnInit() {
-
+    this._servicioCompartido.obtenerCantidadCarrito();
     this.router.events.subscribe((evt) => { 
       if (!(evt instanceof NavigationEnd)) { 
        return; 
@@ -233,6 +233,9 @@ export class Contenedor1Component implements OnInit {
           }
     });
   }
+
+
+
 
   obtenerSubCategoriasInst(){
     
@@ -815,6 +818,7 @@ export class Contenedor1Component implements OnInit {
                 this.noRegistrado= true;
               }else{
                 this.noRegistrado = false;
+                this._servicioCompartido.obtenerCantidadCarrito();
               }
               console.log(result);
     });

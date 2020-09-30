@@ -37,6 +37,7 @@ export class AppComponent {
     this._servicioCompartido.comprobarUsuario();
     this.obtenerSubCategoriasLibros();
     this.obtenerSubCategoriasInst();
+    this._servicioCompartido.obtenerCantidadCarrito();
   }
   AA_Sub: string;
   data_Sub: any[];

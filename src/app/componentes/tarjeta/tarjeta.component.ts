@@ -8,15 +8,13 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { importType, IfStmt } from '@angular/compiler/src/output/output_ast';
 declare var Stripe: any;
-@Component({
-  
-  selector: 'app-pago',
-  templateUrl: './pago.component.html',
-  styleUrls: ['./pago.component.css']
-  
-})
 
-export class PagoComponent implements OnInit {
+@Component({
+  selector: 'app-tarjeta',
+  templateUrl: './tarjeta.component.html',
+  styleUrls: ['./tarjeta.component.css']
+})
+export class TarjetaComponent implements OnInit {
   isDisabled = false;
   item:string;
   Subtotal:string;
