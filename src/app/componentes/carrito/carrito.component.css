@@ -1,0 +1,15 @@
+@media only  screen and (max-width:500px)
+{
+  #onlypc
+  {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width:5000px) and (min-width:500px)
+{
+  #justcel
+  {
+    display: none !important;
+  }
+}

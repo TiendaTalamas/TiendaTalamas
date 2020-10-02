@@ -92,71 +92,20 @@ h1
   font-family: 'Tahoma';
 }
 
-
-@media only screen and (max-width:600px) and (min-width:375px)
+@media only  screen and (max-width:500px)
 {
-  #contenedor
+  #onlypc
   {
-   display: block; 
-   margin-left:20%;
-   margin-bottom:25%;
-  }
-
-}
-@media only screen and (max-width:375px) and (min-width:350px)
-{
-  #contenedor
-  {
-   display: block; 
-   margin-left:15%;
-   margin-bottom:25%;
-  }
-
-}
-@media only screen and (max-width:349px) and (min-width:300px)
-{
-  #contenedor
-  {
-   display: block; 
-   margin-left:10%;
-   margin-bottom:25%;
-  }
-
-}
-@media only screen and (max-width:460px){
-  .houdinni{
-    display: none;
+    display: none !important;
   }
 }
-@media only screen and (max-width:999px) and (min-width:900px)
-{
-  #contenedor
-  {
-   display: block; 
-   margin-left:18%;
-   margin-bottom:25%;
-  }
 
-}
-@media only screen and (max-width:899px) and (min-width:768px)
+@media only screen and (max-width:5000px) and (min-width:500px)
 {
-  #contenedor
+  #justcel
   {
-   display: block; 
-   margin-left:12%;
-   margin-bottom:25%;
+    display: none !important;
   }
-
-}
-@media only screen and (max-width:767px) and (min-width:600px)
-{
-  #contenedor
-  {
-   display: block; 
-   margin-left:32%;
-   margin-bottom:25%;
-  }
-
 }
 
 

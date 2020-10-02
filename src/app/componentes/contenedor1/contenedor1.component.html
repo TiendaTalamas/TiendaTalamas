@@ -461,9 +461,11 @@
   </div>
 
   <!--Esto se mostrara en celular-->
+  <div id="pequebanners2">
        <hr/>
        <h5 class="text-center">Novedades</h5>
        <hr/>
+  </div>
     <div class="row" *ngFor="let discos of articulosArray_Vendidos_Discos" id="pequebanners2">
       <div class="col-4 mt-4 "><img class="img-fluid" src="{{discos.Imagen}}" (click) = "masInformacion(discos.IdProducto, discos.Categoria)" width="200px" alt=""></div>
       <div class="col-8 mt-4">

@@ -48,7 +48,7 @@
       <h5 class="text-center">Libreria Talamas</h5>
       <hr/>
    <div class="row" id="justcel" *ngFor = "let reciente of articulosArray; let i = index">
-     <div class="col-4 mt-4 "><img class="img-fluid" src="{{reciente.Imagen}}" (click) = "masInformacion(discos.IdProducto, discos.Categoria)" width="200px" alt=""></div>
+     <div class="col-4 mt-4 "><img class="img-fluid" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)" width="200px" alt=""></div>
      <div class="col-8 mt-4">
       {{reciente.NombreProducto}}
          <br>
