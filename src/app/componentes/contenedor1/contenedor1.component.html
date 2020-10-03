@@ -74,9 +74,9 @@
     </div>
   </div>
 
-<hr id="deco" style="width:80%;"/>
-<h1 id="deco" class="mr-5 ml-5" style="color: black; font-family: 'Ubuntu', sans-serif;">MAS VENDIDO</h1>
-<hr id="deco" style="width:80%;"/>
+<hr id="deco" style="width:100%;"/>
+<h5 id="deco" class="text-center" style="color: black; font-family: 'Ubuntu', sans-serif;">MAS VENDIDO</h5>
+<hr id="deco" style="width:100%;"/>
   <div id="carouselExampleControls20" class="carousel slide" data-ride="carousel" style="width:300px; display: block; margin:0 auto;">
     <div class="carousel-inner" id="mostrarencelular">
       <div class="carousel-item active" >
@@ -110,6 +110,19 @@
       <span class="sr-only my-5">Next</span>
     </a>
   </div>
+
+  <div id="pequebanners2" >
+    <div class="row">
+      <div class="col-12 mt-2 mb-2">
+  
+            <img class="img-fluid" src="assets/sobrino.jpg" style="cursor: pointer;"(click)="navegarJuegos();" alt="">
+  
+      </div>
+      <div class="col-12 mt-2 mb-2">
+            <img class="img-fluid" src="assets/separadores.jpg" style="cursor: pointer;" (click)="navegarAcrilicos()"   alt="" >
+        </div>
+      </div>
+    </div>
 
   <!--AQUI EMPIEZA EL SLIDER DE INICIO-->
   <div>
@@ -466,16 +479,16 @@
        <h5 class="text-center">Novedades</h5>
        <hr/>
   </div>
-    <div class="row" *ngFor="let discos of articulosArray_Vendidos_Discos" id="pequebanners2">
-      <div class="col-4 mt-4 "><img class="img-fluid" src="{{discos.Imagen}}" (click) = "masInformacion(discos.IdProducto, discos.Categoria)" width="200px" alt=""></div>
-      <div class="col-8 mt-4">
-        {{discos.NombreProducto}}
+    <div class="row" *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index" id="pequebanners2">
+      <div class="col-4 mt-4 "><img class="img-fluid" src="{{reciente.Imagen}}" (click) = "masInformacion(discos.IdProducto, discos.Categoria)" width="200px" alt=""></div>
+      <div class="col-8 mt-4" style="text-transform:uppercase;">
+        {{reciente.NombreProducto}}
           <br>
-          {{discos.Propiedad1}}
+          {{reciente.Propiedad1}}
           <br>
-          ${{discos.Precio}}
+          ${{reciente.Precio}}
           <br>
-        <img  style="cursor: pointer;" (click)="anadirAlCarrito(discos.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
+        <img class="mt-4" style="cursor: pointer;" (click)="anadirAlCarrito(discos.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
       </div>
     </div>
 
@@ -486,6 +499,24 @@
         </div>
         </div>
       </div>
+
+      <div id="pequebanners2">
+        <hr/>
+        <h5 class="text-center">LO MEJOR EN MUSICA</h5>
+        <hr/>
+   </div>
+     <div class="row" *ngFor="let discos of articulosArray_Vendidos_Discos"  id="pequebanners2">
+       <div class="col-4 mt-4 "><img class="img-fluid" src="{{discos.Imagen}}" (click) = "masInformacion(discos.IdProducto, discos.Categoria)" width="200px" alt=""></div>
+       <div class="col-8 mt-4" style="text-transform: uppercase;">
+         {{discos.NombreProducto}}
+           <br>
+           {{discos.Propiedad1}}
+           <br>
+           ${{discos.Precio}}
+           <br>
+         <img  style="cursor: pointer;" (click)="anadirAlCarrito(discos.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
+       </div>
+     </div>
 
  
 <!--AQUI ES EL CODIGO DEL MODAL-->
