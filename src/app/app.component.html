@@ -8,14 +8,14 @@
     
       <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent">
         
-        <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 mr-3" style="width:500px;" [formGroup]="registroForm">
-          <input class="form-control form-control-sm mr-3 w-75 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search" style="width:400px;">
+        <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 mr-3" [formGroup]="registroForm">
+          <input id="control" class="form-control form-control-sm mr-3 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search">
           <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; border-width: 0; background-color: white; "><img class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
         </form>
-    
-        <a class="ml-5" href="https://api.whatsapp.com/send?phone=+528672111350"><img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"></a>
+        
+        <a id="justcel" class="ml-5" href="https://api.whatsapp.com/send?phone=+528673076039"><img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"></a>
         <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">         
-           <div class="dropdown">
+           <div id="justcel" class="dropdown">
           <button class="btn mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" border-radius:150px; width:50px; height:50px; color: black; background-color:#f6f6f6;">
             <img src="assets/user.png" width="27px">
           </button>
@@ -29,11 +29,11 @@
         </div>
         </ng-container>
         <ng-template #elseTemplate>
-          <img ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
+          <img id="justcel" ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
         </ng-template>
         
-        <button class="btn" style="border-color:#f6f6f6; background-color:#f6f6f6; border-radius:150px; width:50px; height:50px;"><img class="cursorMano" style="margin-left:-15%;" src="assets/bolsa.png" width="30px" (click)="navegarCarrito()"><span style="margin-left: -7%; color:#cd0a0a;">{{_servicioCompartido.productosCarrito}}</span></button>
-      
+        <button id="justcel" class="btn" style="border-color:#f6f6f6; background-color:#f6f6f6; border-radius:150px; width:50px; height:50px;"><img class="cursorMano" style="margin-left:-15%;" src="assets/bolsa.png" width="30px" (click)="navegarCarrito()"><span style="margin-left: -7%; color:#cd0a0a;">{{_servicioCompartido.productosCarrito}}</span></button>
+        
         <!---
        <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
         <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#0779e4; border-color: #0779e4;" (click)="navegarCarrito()">Ver carrito</button>
@@ -188,7 +188,7 @@
       <img class="d-block mx-auto img-fluid" id="logo" src="assets/logo.png" alt="" (click)="navegarInicio()">
     </div>
     <div class="col-sm-12 col-md-3 col-lg-4">
-      <img class="d-block mx-auto img-fluid" src="assets/tel.png" width="250px">
+      <a title="Numero de contacto de Tienda Talamas" href="https://api.whatsapp.com/send?phone=+528673076039"><img class="d-block mx-auto img-fluid" src="assets/tel.png" width="250px"></a>
       
     </div>
   </div>

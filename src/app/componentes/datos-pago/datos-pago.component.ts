@@ -5,7 +5,7 @@ import {Router, ActivatedRoute} from "@angular/router";
 import { Http , Response} from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import { FormGroup } from '@angular/forms';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ThrowStmt } from '@angular/compiler';
 @Component({
   selector: 'app-datos-pago',
@@ -29,6 +29,18 @@ export class DatosPagoComponent implements OnInit {
   codigoPostal:string;
   Direccion:string;
   jsonUsuario:string;
+
+
+
+
+
+
+
+
+
+
+
+
   ngOnInit() {
     this.obtenerDirecciones();
     this._servicioCompartido.soloLogueado();
@@ -37,6 +49,7 @@ export class DatosPagoComponent implements OnInit {
     {
       this.navegarSesion();
     }
+    /*this.ObtenerDireccion();*/
   }
    obtenerSubtotal()
   {
@@ -145,3 +158,4 @@ export class DatosPagoComponent implements OnInit {
   }
 
 }
+
