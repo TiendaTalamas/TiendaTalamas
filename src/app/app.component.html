@@ -51,69 +51,67 @@
     </div>  
     </nav>  
       <!--Fin del navbar-->
-      <div class="container-fluid" *ngIf="_servicioCompartido.soloBusqueda">
-        <div class="row">
-          <div class="col-md-2 col-sm-4 sidebar1">
-              <div class="logo">
-                  <img src="assets/logo.png" style="height: 100px; width: 100px; margin-left: 30px;" class="img-responsive center-block cursorMano" alt="Logo">
-              </div>
-              <hr color="white"/>
-              <div class="left-navigation">
-                  <ul class="list ml-0">
-                      <h5><strong>Todo</strong></h5>
-                      <li *ngFor = "let Sub of articulosArray_Sub; let i = index" (click)="navegarCategoria(Sub.categoria, Sub.SubCategoria)">{{Sub.SubCategoria}}
-                      </li>
+      <div class="container" *ngIf="_servicioCompartido.soloBusqueda">
+        <div id="onlypc">
+          <div class="row " >
+            <div class="col-2 houdinni" style="text-align: center;">
+              <hr style=" height:1.5px; width: 100%; background-color: gray;"/>
+              <p style="color: black8; font-size: large; font-weight: 600;" > Categorias</p>
+              <hr style="margin-bottom: px; width: 100%; height:1.5px; background-color: gray; "/>
+              <mat-nav-list style="padding-top: 0;">
+                <mat-list-item style="color: black; font-size:medium; height: 25px; margin-top: 5px;" >Adolecentes</mat-list-item>
+                <mat-list-item id="categoria" >Autoayuda</mat-list-item>
+                <mat-list-item id="categoria" >Ángeles</mat-list-item>
+                <mat-list-item id="categoria" >Cocina</mat-list-item>
+                <mat-list-item id="categoria" >Fantasia</mat-list-item>
+                <mat-list-item id="categoria" >Negocios</mat-list-item>
+                <mat-list-item id="categoria" >Novela</mat-list-item>
+                <mat-list-item id="categoria" >Niños</mat-list-item>
+                <mat-list-item id="categoria" >Politica</mat-list-item>
+                <mat-list-item id="categoria" >Romance</mat-list-item>
+                <mat-list-item id="categoria" >Superación</mat-list-item>
+                <mat-list-item id="categoria" >Terror</mat-list-item>
       
-                  </ul>
+              </mat-nav-list>
+              <hr/>
+              <p style="color: black;  font-size: large; font-weight: 600;" > +Más</p>
+              <hr style="margin-bottom: 0px;"/> 
+              <mat-nav-list style="padding-top: 0;">
+                <mat-list-item style="color: black; font-size: medium; height: 25px; margin-top: 5px;" >Libreria</mat-list-item>
+                <mat-list-item style="color: black; font-size: medium; height: 25px;" >Musica</mat-list-item>
+                <mat-list-item style="color: black; font-size: medium; height: 25px;" >Oficina</mat-list-item>
+                <mat-list-item style="color: black; font-size: medium ; height: 25px;" >Imprenta</mat-list-item>
       
-                  <hr color="white"/>
-      
-                  <ul class="list">
-                      <h5><strong>Mas</strong></h5>
-                      <li (click)="navegarCategoria('Libros','')">Libros</li>
-                      <li (click)="navegarCategoria('Instrumentos', '')">Musica</li>
-                      <li (click)="navegarCategoria('EMD', '')">Emd</li>
-      
-                  </ul>
-              </div>
-          </div>
-      
-          <div class="col-md-10 col-sm-8 main-content">
-            <section class="details-card" *ngFor = "let resultado of articulosArray_Buscar; let i = index">
-                <hr color="black"/>
-              <div class="container-fluid mt-2 " style="background-color:#fff;">
-                  <div class="row ">
-                          <div id="img" class="col-xs-12 col-sm-8 col-md-3 col-lg-4 mt-3 mb-3">
-                              
-                                  <img src="{{resultado.Imagen}}" width="250" height="350">
-                          </div>
-                          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 mt-5">
-                            <div>
-                              <h4><p id="Texto" class="mr-5" style = " font-style:italic; font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
-                                {{resultado.NombreProducto}} 
-                                <br>
-                                <br>
-                                 Precio: ${{resultado.Precio}}
-                                 <br>
-                                 <br>
-                                 Categoria: {{resultado.SubCategoria}}
-                                 <br>
-                                 <br>
-                                 <br>
-                                 <button id="boton" style="background-color: #0779e4; border-color: #0779e4;" type="button" class="btn btn-primary" (click)= "masInformacion(resultado.IdProducto, resultado.Categoria)">Comprar</button>
-                                </p></h4>
-                              </div>
-                          </div>
-                          
-      
-      
-                          </div>
-               
-              </div>
-            </section>
+              </mat-nav-list>
+            </div>
+            <div class="col-10 mt-3">
+              <div class="row mb-4">
+
+                <div class="col-xs-6 col-md-4 col-lg-3 mt-4" *ngFor = "let resultado of articulosArray_Buscar; let i = index">
           
-        
-      </div>
+               <img class="imgr" style="display: block; margin: 0 auto;" src="{{resultado.Imagen}}" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)">
+               <h5><p id="textomas" class=" mt-1">{{resultado.NombreProducto}}</p></h5>
+               <h5><p id="textomas2"  class="mt-1">${{resultado.Precio}}</p></h5>
+               <h5><p id="textomas3" class="mt-1">{{resultado.SubCategoria}}</p></h5>
+               <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black; display: block; margin: 0 auto; border-radius:20px;" type="button" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)" class="btn btn-primary mt-1" data-toggle="modal" data-target="#exampleModal">Comprar<img class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+              </div>
+          
+            </div>
+           
+            </div>
+          </div>
+        </div>
+      <div class="row" *ngFor = "let resultado of articulosArray_Buscar; let i = index" id="pequebanners2">
+        <div class="col-4 mt-4 "><img class="img-fluid" src="{{resultado.Imagen}}" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)" width="200px" alt=""></div>
+        <div class="col-8 mt-4" style="text-transform:uppercase;">
+          {{resultado.NombreProducto}}
+            <br>
+             <b>Precio:</b>${{resultado.Precio}}
+            <br>
+            <b>Categoria:</b> {{resultado.SubCategoria}}
+            <br>
+          <img class="mt-4" style="cursor: pointer;" (click)="anadirAlCarrito(discos.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
+        </div>
       </div>
       </div>
 
