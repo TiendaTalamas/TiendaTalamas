@@ -134,7 +134,7 @@ navegarBusqueda()
 
                   this.router.navigate(['Direccion']);
                   this._servicioCompartido.Nombre = this.nombre;
-                  this._servicioCompartido.email = this.email;
+                  this._servicioCompartido.email = this.emailR;
                   this._servicioCompartido.ApellidoPa = this.apellido;
                   this._servicioCompartido.ApellidoMa = this.apellido
                   this._servicioCompartido.NumeroTel = this.numero;
