@@ -6,7 +6,7 @@ import { Http, Response } from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import { FormGroup } from '@angular/forms';
 import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
-import { isUndefined, isNull } from 'util';
+import { isUndefined, isNull, isNullOrUndefined } from 'util';
 import { Body } from '@angular/http/src/body';
 @Component({
   selector: 'app-direccion',
@@ -16,12 +16,15 @@ import { Body } from '@angular/http/src/body';
 export class DireccionComponent implements OnInit {
 
   formData:FormGroup;
+  nombre:string;
+  apellido:string;
   calle1:string;
   calle2:string;
   calle3:string;
   colonia:string;
   numExt:string;
   numInterior:string;
+  numTel:string;
   codigoPost:string;
   estado:string;
   ciudad:string;
@@ -48,10 +51,11 @@ export class DireccionComponent implements OnInit {
   }
 
   ngOnInit() {
-    // if(isUndefined(this._servicioCompartido.soloRegistro))
-    // {
-    //   this.location.back();
-    // }
+    this.estado = "Distrito Federal";
+     if(isUndefined(this._servicioCompartido.soloRegistro))
+     {
+       this.location.back();
+     }
   }
   navegarInicio()
   {
@@ -100,10 +104,35 @@ export class DireccionComponent implements OnInit {
 
   registrar()
   {
+    let errores = true;
+    this.gustos = "No definidos";
+    this._servicioCompartido.ApellidoMa = "Dato innecesario";
+    if(isNullOrUndefined(this.numInterior) || this.numInterior == "")
+    {
+      this.numInterior = "0";
+    }
+    if(this.calle1 == "" || isNullOrUndefined(this.calle1))
+    {
+      errores = false;
+    }
+    if(this.calle2 == "" || isNullOrUndefined(this.calle2))
+    {
+      errores = false;
+    }
 
-      
+    if(this.calle3 == "" || isNullOrUndefined(this.calle3))
+    {
+      errores = false;
+    }
+
+    if(this.colonia == "" || isNullOrUndefined(this.colonia))
+    {
+      errores = false;
+    }
+    if(errores)
+    {
     let body = new URLSearchParams();
-
+      
     body.append('nombre', this._servicioCompartido.Nombre);
     body.append('apellidoPa', this._servicioCompartido.ApellidoPa);
     body.append('apellidoMa', this._servicioCompartido.ApellidoMa);
@@ -139,8 +168,42 @@ export class DireccionComponent implements OnInit {
                 }
                 
           });
+        }
+  }
 
-    
+  omitir()
+  {
+    this.gustos = "No definidos";
+    this._servicioCompartido.ApellidoMa = "Dato innecesario";
+    let body = new URLSearchParams();
+      
+    body.append('nombre', this._servicioCompartido.Nombre);
+    body.append('apellidoPa', this._servicioCompartido.ApellidoPa);
+    body.append('apellidoMa', this._servicioCompartido.ApellidoMa);
+    body.append('email', this._servicioCompartido.email);
+    body.append('numTel', this._servicioCompartido.NumeroTel);
+    body.append('contrasena', this._servicioCompartido.contrasena);
+    body.append('gustos', this.gustos);
+
+    this.http.post(this._servicioCompartido.Url+'/omitir.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+                console.log(result);
+                if(result['status'] == "400")
+                {
+                  this.respuesta=result['mensaje'];
+                  alert(this.respuesta);
+                }
+                else
+                {
+                  localStorage.setItem('Token', result['token']);
+                  alert(result['sql']);
+                  this.navegarInicio();
+                }
+                
+          });
+        
   }
 
 }
