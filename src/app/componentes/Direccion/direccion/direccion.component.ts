@@ -111,6 +111,10 @@ export class DireccionComponent implements OnInit {
     {
       this.numInterior = "0";
     }
+    if(isNullOrUndefined(this.numExt) || this.numExt == "")
+    {
+      errores = false;
+    }
     if(this.calle1 == "" || isNullOrUndefined(this.calle1))
     {
       errores = false;
@@ -127,10 +131,12 @@ export class DireccionComponent implements OnInit {
 
     if(this.colonia == "" || isNullOrUndefined(this.colonia))
     {
+
       errores = false;
     }
     if(errores)
     {
+      
     let body = new URLSearchParams();
       
     body.append('nombre', this._servicioCompartido.Nombre);
@@ -168,6 +174,9 @@ export class DireccionComponent implements OnInit {
                 }
                 
           });
+        }else{
+          alert("Por favor rellene todos los datos");
+
         }
   }
 

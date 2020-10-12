@@ -11,33 +11,33 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <input type="text" class="form-control mt-2" placeholder="Nombre" required>
+                    <input type="text" class="form-control mt-2" id="Nombre" name="Nombre" [(ngModel)]="Nombre" placeholder="Nombre" required>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <input type="text" class="form-control mt-2" placeholder="Apellido" required>
+                    <input type="text" class="form-control mt-2" id="Apellido" name="Apellido" [(ngModel)]="Apellido" placeholder="Apellido" required>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <input type="email" class="form-control mt-2" placeholder="Correo" required>
+                    <input type="email" class="form-control mt-2" name="Correo"  id="Correo"[(ngModel)]="Correo" placeholder="Correo" required>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <input type="number" class="form-control mt-2" placeholder="Telefono" required>
+                    <input type="number" class="form-control mt-2" id="Telefono" name="Telefono"[(ngModel)]="Telefono" placeholder="Telefono" required>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Comentarios" rows="3" required></textarea>
+                    <textarea class="form-control" id="coment" name="coment"[(ngModel)]="coment" placeholder="Comentarios" rows="3" required></textarea>
                   </div>
                 </div>
                 <div class="col-12">
                 </div>
                 <div class="col-12">
-                  <button class="btn btn-primary" type="submit">Enviar</button>
+                  <button class="btn btn-primary" (click)="enviar()" type="submit">Enviar</button>
                 </div>
               </div>
             </form>

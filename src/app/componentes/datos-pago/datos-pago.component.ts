@@ -20,16 +20,23 @@ export class DatosPagoComponent implements OnInit {
   calle1:string;
   calle2:string;
   calle3:string;
-  numeroE:string;
+  numExt:string;
+  numInterior:string;
   colonia:string;
   ciudad:string;
   estado:string;
   Subtotal:string;
   pais:string;
-  codigoPostal:string;
+  codigoPost:string;
   Direccion:string;
   jsonUsuario:string;
 
+  Calle1:string;
+  NumeroExt:string;
+  Colonia:string;
+  Ciudad:string;
+  Estado:string;
+  CodPost:string; 
 
 
 
@@ -143,18 +150,26 @@ export class DatosPagoComponent implements OnInit {
             .subscribe(result => 
             {
             console.log(result);
-            this.calle1 = result[0]["Calle"];
-            this.calle2 = result[0]["Calle2"];
-            this.calle3 = result[0]["Calle3"];
-            this.ciudad = result[0]["Ciudad"];
-            this.codigoPostal = result[0]["CodigoPostal"];
-            this.numeroE = result[0]["NumeroExterior"];
-            this.colonia = result[0]["Colonia"];
-            this.estado = result[0]["Estado"];
-            this.pais = result[0]["Pais"];
-            this.Direccion = "Calle 1:"+result[0]["Calle"]+"Calle 2: "+this.calle2+" Calle 3: "+this.calle3+" NumeroExt: "+this.numeroE+" Codigo Postal: "+this.codigoPostal+" Ciudad: "+this.ciudad
+
+            this.Calle1 = result[0]['Calle'];
+            this.NumeroExt = result[0]['NumeroExterior'];
+            this.Colonia = result[0]['Colonia'];
+            this.Ciudad = result[0]['Ciudad'];
+            this.Estado = result[0]['Estado'];
+            this.CodPost = result[0]['CodigoPostal'];
+            this.Direccion = "Calle 1:"+result[0]["Calle"]+" Calle 2: "+result[0]["Calle2"]+" Calle 3: "+result[0]["Calle3"]+" NumeroExt: "+result[0]["NumeroExterior"]+" NumeroInt: "+result[0]["NumeroInterior"]+" Codigo Postal: "+result[0]["CodigoPostal"]+" Ciudad: "+result[0]["Ciudad"];
             this.jsonUsuario = JSON.stringify(result);
     });
+  }
+
+  procederCompra2()
+  {
+    this.Direccion = "Calle 1:"+this.calle1+" Calle 2: "+this.calle2+" Calle 3: "+this.calle3+" NumeroExt: "+this.numExt+" NumeroInt: "+this.numInterior+" Codigo Postal: "+this.codigoPost+" Ciudad: "+this.ciudad;
+    this.router.navigate(['Pago']);
+    this._servicioCompartido.IdProducto = this.IdProducto;
+    this._servicioCompartido.Cantidad = this.Cantidad;
+    this._servicioCompartido.jsonUsuario = this.jsonUsuario;
+    this._servicioCompartido.Direccion = this.Direccion;
   }
 
 }
