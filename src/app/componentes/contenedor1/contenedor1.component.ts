@@ -100,6 +100,10 @@ export class Contenedor1Component implements OnInit {
    articulosArray_Vendidos_Libros6 = new Array;
 
 
+   masVendido = new Array;
+   masVendidosCelular = new Array;
+
+
    articulosArray_Vendidos_Discos = new Array;
    articulosArray_Vendidos_Discos2 = new Array;
    articulosArray_Vendidos_Discos3 = new Array;
@@ -136,7 +140,7 @@ export class Contenedor1Component implements OnInit {
       window.scrollTo(0, 0) 
      });
     
-  
+     this.masVendidosCel();
     //Productos Libros
     this.LimiteI = "0";
     this.obtenerVendidos();
@@ -393,6 +397,61 @@ export class Contenedor1Component implements OnInit {
   }
 
    //Metodo para obtener recientes
+   masVendidosCel(){
+    let body = new URLSearchParams();
+    body.append('limiteI', "0");
+    body.append('limiteS', "1");
+    this.http.post(this._servicioCompartido.Url+'/librosMasVendidos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            console.log(result);
+            this.masVendido = result;
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+    body.append('limiteI', "1");
+    body.append('limiteS', "17");
+    this.http.post(this._servicioCompartido.Url+'/librosMasVendidos.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Recientes_Libros = "";
+            this.data_Recientes_Libros = [];
+            this.masVendidosCelular = result;
+            console.log(this.masVendidosCelular);
+            for (var key in result) {
+            this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Recientes_Libros= result[key];
+              this.data_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros));
+              for (var i = 0; i < Object.keys(this.val_Recientes_Libros).length; i++) {
+              this.contenedor_Recientes_Libros = Object.keys(this.val_Recientes_Libros)[i];
+              Object.entries(this.val_Recientes_Libros)[i]
+               
+                this.xxxMap_Recientes_Libros.set(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+                this.valuesKeys_Recientes_Libros.push(Object.keys(this.val_Recientes_Libros)[i], Object.values(this.val_Recientes_Libros)[i]);
+
+                }
+             }
+          }
+    });
+   }
   obtenerVendidos() {
     if(this.LimiteI == "0")
     {
