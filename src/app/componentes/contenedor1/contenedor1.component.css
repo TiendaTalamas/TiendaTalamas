@@ -1,4 +1,4 @@
-
+amb
 .carousel-control-next, .carousel-control-prev{
 	width: 1% !important;
 }
@@ -347,7 +347,7 @@ h1
 }
 
 
-/*Cambios que hice rapido para poder hacer todo a celular*/
+/*Cambios que hice rapido para poder hacer todo a celular
 
 @media only screen and (max-width:5000px) and (min-width:995px)
 {
@@ -380,7 +380,7 @@ h1
   {
     display: none !important; 
   }
-}
+}*/
 
 
 
