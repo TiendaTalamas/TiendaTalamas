@@ -83,7 +83,9 @@ export class MusicaComponent implements OnInit {
           }
     });
   }
-
+  onChange(SubCategoria:string) {
+    this.obtenerArticulosEspecificos(SubCategoria)
+  }
   obtenerArticulos() {
     let body = new URLSearchParams();
     this.http.post(this._servicioCompartido.Url+'/instrumentos.php', body)
@@ -257,6 +259,41 @@ export class MusicaComponent implements OnInit {
           }
     });
   }
+  
+  obtenerSubCategoriasInst(){
+    
+    
+    let body2 = new URLSearchParams();
+    body2.append('categoria', "Instrumentos");
+    body2.append('subcategoria', "");
+
+
+
+    this.http.post(this._servicioCompartido.Url+'/obtenerClases.php', body2)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA_Sub = "";
+            this.data_Sub = [];
+            console.log(result);
+            this.articulosArray_Inst = result;
+            for (var key in result) {
+            this.AA_Sub = this.AA_Sub + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Sub = result[key];
+              this.data_Sub.push(Object.keys(this.val_Sub));
+              for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
+              this.contenedor_Sub = Object.keys(this.val_Sub)[i];
+              Object.entries(this.val_Sub)[i]
+               
+                this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+                this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+
+                }
+             }
+          }
+    });
+  }
   navegarCategoria(Categoria:string, SubCategoria: string){
     this.Categoria = Categoria;
     console.log(this.Categoria);
@@ -276,6 +313,7 @@ export class MusicaComponent implements OnInit {
     this.obtenerPercusion();
     this.obtenerElectricos();
     this.obtenerArticulos();
+    this.obtenerSubCategoriasInst();
     document.body.scrollTop=0;
     this.Cuerda = false;
     this.Viento = false;

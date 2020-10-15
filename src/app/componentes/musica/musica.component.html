@@ -27,9 +27,9 @@
 
           <!--Se mostrara en celular-->
           <div id="justcel" class="input-group mb-3 mt-3">
-            <select class="custom-select" id="inputGroupSelect01">
+            <select  (ngModelChange)="onChange($event)" [(ngModel)]="sub" class="custom-select" id="sub">
               <option selected>Elegir Categoria</option>
-              <option value="1">One</option>
+              <option *ngFor="let categoria of articulosArray_Inst; let i = index" value="{{categoria.Clase}}">{{categoria.Clase}}</option>
             </select>
           </div>
     

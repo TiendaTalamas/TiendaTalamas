@@ -43,7 +43,7 @@
       <h5 class="text-center">Libreria Talamas</h5>
       <hr/>
    <div class="row" id="justcel" *ngFor = "let reciente of articulosArray; let i = index">
-     <div class="col-4 mt-4 "><img class="img-fluid" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)" width="200px" alt=""></div>
+     <div class="col-4 mt-4 "><img class="img-fluid" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, 'Libros')" width="200px" alt=""></div>
      <div class="col-8 mt-4">
       {{reciente.NombreProducto}}
          <br>
@@ -78,7 +78,7 @@
         <div class="row mb-4">
           <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;" *ngFor = "let reciente of articulosArray; let i = index">
     
-         <img class="imgr" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+         <img class="imgr" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, 'Libros')">
          <h5><p id="textomas" class=" ml-auto mt-4">{{reciente.NombreProducto}}</p></h5>
          <h5><p id="textomas3" class="mr-auto mt-4">{{reciente.Propiedad1}}</p></h5>
          <h5><p id="textomas2" class="ml-auto mt-4">${{reciente.Precio}}</p></h5>
