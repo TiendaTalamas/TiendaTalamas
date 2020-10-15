@@ -26,7 +26,7 @@ export class LibreriaComponent implements OnInit {
   articulosArray = new Array;
   productoObjeto: producto[];
   nombre: string;
-  
+  sub:string;
   //Aleatorio
   AA_Recomendados: string;
   data_Recomendados: any[];
@@ -208,7 +208,9 @@ export class LibreriaComponent implements OnInit {
           }
     });
   }
-  
+  onChange(SubCategoria:string) {
+    this.obtenerArticulosEspecificos(SubCategoria);
+}
 
   masInformacion(IdProducto: string, Categoria: string){
     this.nombre = IdProducto;
