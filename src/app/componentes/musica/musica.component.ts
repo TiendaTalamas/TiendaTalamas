@@ -34,6 +34,11 @@ export class MusicaComponent implements OnInit {
   valuesKeys_Sub = new Array;
   articulosArray_Sub = new Array;
   articulosArray_Inst = new Array;
+  articulosArray_Cuerda = new Array;
+  articulosArray_Viento = new Array;
+  articulosArray_Percusion = new Array;
+  articulosArray_Electricos = new Array;
+
   respuesta:string;
   AA: string;
   data: any[];
@@ -41,6 +46,10 @@ export class MusicaComponent implements OnInit {
   contenedor: string;
   xxxMap = new Map();
   valuesKeys = new Array;
+  Cuerda:boolean;
+  Viento:boolean;
+  Percusion:boolean;
+  Electricos:boolean;
   obtenerSubCategoriasLibros(){
     
     
@@ -102,24 +111,135 @@ export class MusicaComponent implements OnInit {
           }
     });
   }
-
-
-  obtenerSubCategoriasInst(){
-    
-    
+  obtenerArticulosEspecificos(Clase:string) {
+    let body = new URLSearchParams();
+    body.append('subcategoria',Clase);
+    body.append('categoria', 'Instrumentos');
+    this.http.post(this._servicioCompartido.Url+'/articulosClase.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA = "";
+            this.data = [];
+            console.log(result);
+            this.articulosArray = result;
+            for (var key in result) {
+            this.AA = this.AA + key;
+            if (result.hasOwnProperty(key)) {
+              this.val = result[key];
+              this.data.push(Object.keys(this.val));
+              for (var i = 0; i < Object.keys(this.val).length; i++) {
+              this.contenedor = Object.keys(this.val)[i];
+              Object.entries(this.val)[i]
+               
+                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                
+                }
+             }
+          }
+    });
+  }
+  obtenerElectricos(){
     let body2 = new URLSearchParams();
     body2.append('categoria', "Instrumentos");
-
-
-
-    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
+    body2.append('subcategoria', "Electricos");
+    this.http.post(this._servicioCompartido.Url+'/obtenerClases.php', body2)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
               this.AA_Sub = "";
             this.data_Sub = [];
             console.log(result);
-            this.articulosArray_Inst = result;
+            this.articulosArray_Electricos = result;
+            for (var key in result) {
+            this.AA_Sub = this.AA_Sub + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Sub = result[key];
+              this.data_Sub.push(Object.keys(this.val_Sub));
+              for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
+              this.contenedor_Sub = Object.keys(this.val_Sub)[i];
+              Object.entries(this.val_Sub)[i]
+               
+                this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+                this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+
+                }
+             }
+          }
+    });
+  }
+  obtenerPercusion(){
+    let body2 = new URLSearchParams();
+    body2.append('categoria', "Instrumentos");
+    body2.append('subcategoria', "Percusion");
+    this.http.post(this._servicioCompartido.Url+'/obtenerClases.php', body2)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA_Sub = "";
+            this.data_Sub = [];
+            console.log(result);
+            this.articulosArray_Percusion = result;
+            for (var key in result) {
+            this.AA_Sub = this.AA_Sub + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Sub = result[key];
+              this.data_Sub.push(Object.keys(this.val_Sub));
+              for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
+              this.contenedor_Sub = Object.keys(this.val_Sub)[i];
+              Object.entries(this.val_Sub)[i]
+               
+                this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+                this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+
+                }
+             }
+          }
+    });
+  }
+  obtenerViento(){
+    let body2 = new URLSearchParams();
+    body2.append('categoria', "Instrumentos");
+    body2.append('subcategoria', "Viento");
+    this.http.post(this._servicioCompartido.Url+'/obtenerClases.php', body2)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA_Sub = "";
+            this.data_Sub = [];
+            console.log(result);
+            this.articulosArray_Viento = result;
+            for (var key in result) {
+            this.AA_Sub = this.AA_Sub + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Sub = result[key];
+              this.data_Sub.push(Object.keys(this.val_Sub));
+              for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
+              this.contenedor_Sub = Object.keys(this.val_Sub)[i];
+              Object.entries(this.val_Sub)[i]
+               
+                this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+                this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+
+                }
+             }
+          }
+    });
+  }
+
+  obtenerCuerdas(){
+    let body2 = new URLSearchParams();
+    body2.append('categoria', "Instrumentos");
+    body2.append('subcategoria', "Cuerda");
+    this.http.post(this._servicioCompartido.Url+'/obtenerClases.php', body2)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+              this.AA_Sub = "";
+            this.data_Sub = [];
+            console.log(result);
+            this.articulosArray_Cuerda = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
             if (result.hasOwnProperty(key)) {
@@ -151,11 +271,32 @@ export class MusicaComponent implements OnInit {
   ngOnInit() {
     this._servicioCompartido.comprobarUsuario();
     this.obtenerSubCategoriasLibros();
-    this.obtenerSubCategoriasInst();
+    this.obtenerCuerdas();
+    this.obtenerViento();
+    this.obtenerPercusion();
+    this.obtenerElectricos();
     this.obtenerArticulos();
     document.body.scrollTop=0;
+    this.Cuerda = false;
+    this.Viento = false;
+    this.Percusion = false;
+    this.Electricos = false;
+  }
+  cuerda(){
+    this.Cuerda = !this.Cuerda;
   }
 
+  viento(){
+    this.Viento = !this.Viento;
+  }
+
+  percusion(){
+    this.Percusion = !this.Percusion;
+  }
+
+  electricos(){
+    this.Electricos = !this.Electricos;
+  }
   navegarInicio()
   {
     this.router.navigate(['']);

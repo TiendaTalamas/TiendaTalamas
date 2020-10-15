@@ -32,14 +32,9 @@
       </div>
       <!--Se mostrara en celular-->
       <div id="justcel" class="input-group mb-3 mt-3">
-        <select class="custom-select" id="inputGroupSelect01">
+        <select class="custom-select"  id="inputGroupSelect01">
           <option selected>Elegir Categoria</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-          <hr/>
-          <option value="3">Four</option>
-          <option value="3">Five</option>
+          <option *ngFor = "let reciente of articulosArray_Sub; let i = index" value="1" ><p>{{reciente.SubCategoria}}</p></option>
           
         </select>
       </div>
@@ -66,19 +61,7 @@
         <p style="color: black; font-size: large; font-weight: 600;" > Categorias</p>
         <hr style="margin-bottom: px; width: 100%; height:1.5px; background-color: gray; "/>
         <mat-nav-list style="padding-top: 0; ">
-          <mat-list-item style="color: black; font-size:medium; height: 25px; margin-top: 5px;" >Adolecentes</mat-list-item>
-          <mat-list-item id="categoria" >Autoayuda</mat-list-item>
-          <mat-list-item id="categoria" >Ángeles</mat-list-item>
-          <mat-list-item id="categoria" >Cocina</mat-list-item>
-          <mat-list-item id="categoria" >Fantasia</mat-list-item>
-          <mat-list-item id="categoria" >Negocios</mat-list-item>
-          <mat-list-item id="categoria" >Novela</mat-list-item>
-          <mat-list-item id="categoria" >Niños</mat-list-item>
-          <mat-list-item id="categoria" >Politica</mat-list-item>
-          <mat-list-item id="categoria" >Romance</mat-list-item>
-          <mat-list-item id="categoria" >Superación</mat-list-item>
-          <mat-list-item id="categoria" >Terror</mat-list-item>
-
+          <mat-list-item id="categoria" *ngFor = "let reciente of articulosArray_Sub; let i = index" ><p (click)="obtenerArticulosEspecificos(reciente.SubCategoria)">{{reciente.SubCategoria}}</p></mat-list-item>
         </mat-nav-list>
         <hr/>
         <p style="color: black;  font-size: large; font-weight: 600;" > +Más</p>
