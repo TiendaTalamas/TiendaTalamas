@@ -30,12 +30,6 @@
             <select class="custom-select" id="inputGroupSelect01">
               <option selected>Elegir Categoria</option>
               <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-              <hr/>
-              <option value="3">Four</option>
-              <option value="3">Five</option>
-              
             </select>
           </div>
     
@@ -62,14 +56,22 @@
       <p style="color: black; font-size: large; font-weight: 600;" > Categorias</p>
       <hr style="margin-bottom: px; width: 100%; height:1.5px; background-color: gray; "/>
       <mat-nav-list style="padding-top: 0; ">
-        <mat-list-item id="categorias">Acordenones</mat-list-item>
-        <mat-list-item id="categorias">Guitarras</mat-list-item>
-        <mat-list-item id="categorias">Bajos</mat-list-item>
-        <mat-list-item id="categorias">Baterías</mat-list-item>
-        <mat-list-item id="categorias">Violines</mat-list-item>
-        <mat-list-item id="categorias">Flautas</mat-list-item>
-        <mat-list-item id="categorias">Más+</mat-list-item>
-
+        <mat-list-item id="categorias" (click)="cuerda()">Cuerda</mat-list-item>
+        <mat-nav-list *ngIf="Cuerda">
+        <mat-list-item id="categorias"*ngFor = "let reciente of articulosArray_Cuerda; let i = index" (click)="obtenerArticulosEspecificos(reciente.Clase)">{{reciente.Clase}}</mat-list-item>
+        </mat-nav-list>
+        <mat-list-item id="categorias" (click)="viento()">Viento</mat-list-item>
+        <mat-nav-list *ngIf="Viento">
+        <mat-list-item id="categorias"*ngFor = "let reciente of articulosArray_Viento; let i = index" (click)="obtenerArticulosEspecificos(reciente.Clase)">{{reciente.Clase}}</mat-list-item>
+        </mat-nav-list>
+        <mat-list-item id="categorias" (click)="percusion()">Percusión</mat-list-item>
+        <mat-nav-list *ngIf="Percusion">
+        <mat-list-item id="categorias"*ngFor = "let reciente of articulosArray_Percusion; let i = index" (click)="obtenerArticulosEspecificos(reciente.Clase)">{{reciente.Clase}}</mat-list-item>
+        </mat-nav-list>
+        <mat-list-item id="categorias" (click)="electricos()">Electricos</mat-list-item>
+        <mat-nav-list *ngIf="Electricos">
+        <mat-list-item id="categorias"*ngFor = "let reciente of articulosArray_Electricos; let i = index" (click)="obtenerArticulosEspecificos(reciente.Clase)">{{reciente.Clase}}</mat-list-item>
+        </mat-nav-list>
       </mat-nav-list>
       <hr/>
       <p style="color: black;  font-size: large; font-weight: 600;" > +Más</p>
