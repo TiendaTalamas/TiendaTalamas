@@ -89,6 +89,10 @@ cadena:string;
     });
 
   }
+  masInformacion(IdProducto: string, Categoria: string){
+
+    this.router.navigate(['venta',Categoria,IdProducto]);
+  }
   aumentarCantidad(IdCarrito:string, IdProducto:string){
     let body = new URLSearchParams();
     body.append("token",localStorage.getItem('Token'));

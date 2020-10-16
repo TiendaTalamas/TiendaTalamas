@@ -119,4 +119,8 @@ export class HistorialComponent implements OnInit {
   {
     this.router.navigate(['ConfiguracionUsuario']);
   }
+  masInformacion(IdProducto: string, Categoria: string){
+
+    this.router.navigate(['venta',Categoria,IdProducto]);
+  }
 }

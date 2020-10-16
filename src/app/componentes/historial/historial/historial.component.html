@@ -47,7 +47,7 @@
        <div id="justcel" class="col-8">INFORMACION DE COMPRA</div>
      </div>
      <div class="row" id="justcel" *ngFor = "let producto of articulosArray; let i = index">
-      <div class="col-4 mt-4 "><img class="img-fluid" src="{{producto.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)" width="200px" alt="">
+      <div class="col-4 mt-4 "><img class="img-fluid" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria)" width="200px" alt="">
       </div>
       <div class="col-8 mt-4" style="text-align:left;">
        {{producto.NombreProducto}}

@@ -50,6 +50,7 @@ export class MusicaComponent implements OnInit {
   Viento:boolean;
   Percusion:boolean;
   Electricos:boolean;
+  sub:string;
   obtenerSubCategoriasLibros(){
     
     

@@ -153,7 +153,6 @@ this.formCantidad = fb.group({
 
   obtenerImagenes() {
     let body = new URLSearchParams();
-    alert(this.IdProducto);
     body.append("idProducto", this.IdProducto);
     this.http.post(this._servicioCompartido.Url+'/obtenerImagenesInstrumentos.php', body)
     .map((res:Response) => res.json())
