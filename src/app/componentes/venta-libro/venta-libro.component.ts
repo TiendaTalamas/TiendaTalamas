@@ -57,6 +57,8 @@ export class VentaLibroComponent implements OnInit {
   respuesta:string;
   noRegistrado:boolean;
   CantidadMaxima:number;
+  imagenPorDefault:string;
+  imagenActual:string;
   //array para guardar los valores
 
   constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute,){ 
@@ -113,10 +115,10 @@ this.formCantidad = fb.group({
     this.Correito = localStorage.getItem("email_U");
     this.IdProducto = this.Route.snapshot.paramMap.get('id');
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
-    
+    this.obtenerImagenes();
+
     this.user = localStorage.getItem("Token");
     
-    console.log(this.precioBinding + " ESTE ES EL VALOR");
     this.obtenerArticulo();
 
     if(this.Categoria === undefined){
@@ -126,7 +128,6 @@ this.formCantidad = fb.group({
     }
     else if(this.Categoria == "Instrumentos"){
       this.P2 = true;
-      console.log("Antes de la trajedia");
       this.obtenerImagenes();
     }else if(this.Categoria == "Discos"){
       this.P3 = true;
@@ -152,30 +153,15 @@ this.formCantidad = fb.group({
 
   obtenerImagenes() {
     let body = new URLSearchParams();
-    body.append("IdProducto", this.IdProducto);
+    alert(this.IdProducto);
+    body.append("idProducto", this.IdProducto);
     this.http.post(this._servicioCompartido.Url+'/obtenerImagenesInstrumentos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.imagenesInstrumentos = result;
-            for (var key in result) {
-            this.AA = this.AA + key;
-            if (result.hasOwnProperty(key)) {
-              this.val = result[key];
-              this.data.push(Object.keys(this.val));
-              for (var i = 0; i < Object.keys(this.val).length; i++) {
-              this.contenedor = Object.keys(this.val)[i];
-              Object.entries(this.val)[i]
-               
-                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
-                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
-
-                }
-             }
-          }
     });
   }
 
@@ -188,7 +174,6 @@ this.formCantidad = fb.group({
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.direccionesArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -222,17 +207,7 @@ this.formCantidad = fb.group({
     }
   } 
 
-  pruebaJson()
-  {
-    let body = new URLSearchParams();
-    body.append("JSON", "algoMIerda");
-    this.http.put(this._servicioCompartido.Url+'/prueba_json.php', body)
-    .map((res:Response) => res.json())
-            .subscribe(result => 
-            {
-              console.log(result);
-    });
-  }
+
 
   LibroAleatorio() {
     let body = new URLSearchParams();
@@ -242,7 +217,6 @@ this.formCantidad = fb.group({
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.productos = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -276,7 +250,6 @@ this.formCantidad = fb.group({
     body.append("cantidad",this.cantidad);
     body.append("numeroExterior", this.NumeroExterior);
     body.append("codigoPostal", this.CodigoPostal);
-    console.log(this.calle1);
     this.http.post(this._servicioCompartido.Url+'/enviarCorreo.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 
@@ -284,7 +257,6 @@ this.formCantidad = fb.group({
               if(result == "Message has been sent")
               {
                 alert("Mensaje enviado, en unos instantes recibira un mensaje en su whatsapp");
-                console.log(this.numeroCelular);
               }
               else{
                 alert(result);
@@ -308,7 +280,6 @@ this.formCantidad = fb.group({
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.productosCarrousel = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -334,7 +305,6 @@ this.formCantidad = fb.group({
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.productosCarrousel2 = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -360,7 +330,6 @@ this.formCantidad = fb.group({
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.productosCarrousel3 = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -380,6 +349,9 @@ this.formCantidad = fb.group({
     });
   }
   }
+  cambiarImagen(nuevaImagen:string){
+    this.imagenActual = nuevaImagen;
+  }
   //Obtiene el libro cuando recibe datos
   obtenerArticulo(){
     let body = new URLSearchParams();
@@ -391,9 +363,9 @@ this.formCantidad = fb.group({
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
-                console.log(result);
               this.Unidades = result[0]['Unidades'];
-              
+              this.imagenPorDefault = result[0]['Imagen'];
+              this.imagenActual = this.imagenPorDefault;
               if(Number(this.Unidades) <= 0)
               {
                 
@@ -456,7 +428,6 @@ this.formCantidad = fb.group({
     this.precio=producto.Precio;
     }
     this.precioBinding = this.precio * cantidad;
-    console.log(this.precioBinding);
     // ... do other stuff here ...
     // ... Why? ...
 }
@@ -510,7 +481,6 @@ this.formCantidad = fb.group({
   }
   navegarCategoria(Categoria:string, SubCategoria: string){
 
-    console.log(SubCategoria);
     this.router.navigate(['categoria',Categoria,SubCategoria]);
 
   this._servicioCompartido.setCategoria(Categoria);
@@ -529,19 +499,10 @@ this.formCantidad = fb.group({
     //body.append('calle3', this.calle3);
     //body.append('ciudad', this.ciudad);
 
-    console.log(this.nombre);
-      console.log(this.email);
-      console.log(this.apellido);
-      console.log(this.calle1);
-      console.log(this.calle2);
-      console.log(this.calle3);
-      console.log(this.ciudad);
-      console.log(this.cantidad)
       
   }
 
   defaultPrice(){
-    console.log("Dentro del metodo defaultPrice");
     for(let producto of this.productos)
     {
         this.precio=producto.Precio;
