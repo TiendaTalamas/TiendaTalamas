@@ -117,7 +117,7 @@ navegarBusqueda()
     body.append('apellido_pa', this.apellido);
     body.append('apellido_ma', this.apellido);
     body.append('numero_tel', this.numero);
-    body.append('contrasena', this.contrasena);
+    body.append('contrasena', this.contrasena1);
 
     this.http.post(this._servicioCompartido.Url+'/registro.php', body)
     .map((res:Response) => res.json())

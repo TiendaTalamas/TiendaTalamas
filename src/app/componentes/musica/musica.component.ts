@@ -38,7 +38,7 @@ export class MusicaComponent implements OnInit {
   articulosArray_Viento = new Array;
   articulosArray_Percusion = new Array;
   articulosArray_Electricos = new Array;
-
+  noRegistrado:boolean;
   respuesta:string;
   AA: string;
   data: any[];
@@ -381,6 +381,14 @@ export class MusicaComponent implements OnInit {
              .subscribe(result => 
              {
                this.respuesta=result;
+               if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
+               {
+                 this.noRegistrado= true;
+               }else{
+                 this.noRegistrado = false;
+                 this._servicioCompartido.obtenerCantidadCarrito();
+               }
+               console.log(result);
      });
  
    }
