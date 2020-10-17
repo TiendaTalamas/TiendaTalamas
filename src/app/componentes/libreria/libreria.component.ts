@@ -35,6 +35,7 @@ export class LibreriaComponent implements OnInit {
   xxxMap_Recomendados = new Map();
   valuesKeys_Recomendados = new Array;
   articulosArray_Recomendados = new Array;
+  noRegistrado:boolean;
 
   //Variable del modal
   respuesta:string;
@@ -302,6 +303,14 @@ export class LibreriaComponent implements OnInit {
             .subscribe(result => 
             {
               this.respuesta=result;
+              if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
+              {
+                this.noRegistrado= true;
+              }else{
+                this.noRegistrado = false;
+                this._servicioCompartido.obtenerCantidadCarrito();
+              }
+              console.log(result);
     });
 
   }
