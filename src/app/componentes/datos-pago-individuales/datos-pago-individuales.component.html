@@ -1,7 +1,89 @@
-<div class="container" style="color: black; border-color: black; border-bottom: black; border-bottom-width: 1cm;">
-    {{calle1}} #{{numeroE}}, Col.{{colonia}}, Ciudad:{{ciudad}}, Estado: {{estado}}, CP: {{codigoPostal}} 
+<div class="container">
+    <h5 class="text-center"><b>DIRECCION REGISTRADA</b></h5>
+    <div><b>CALLE:</b> {{Calle1}} #{{NumeroExt}}</div>
+    <div><b>Col.</b> {{Colonia}}</div>
+    <div><b>CIUDAD:</b> {{Ciudad}}</div>
+     <div><b>ESTADO:</b> {{Estado}}</div>
+      <div><b>CODIGO POSTAL:</b> {{CodPost}}</div>
     <br>
-    <button (click)="procederCompra()">Usar esta dirección</button>
+    <button class="btn btn-primary" (click)="procederCompra()">Usar esta dirección</button>
 </div>
-<br>
-<br>
+<hr/>
+
+<div class="container text-center" style="background-color:#f6f6f6; padding: 10px; border-radius: 50px;">USAR OTRA DIRECCION</div>
+<div class="row">
+  <div class="col-12">
+    <input id="login" class="form-control ml-2 mt-4" [(ngModel)]="colonia"  name="login" placeholder="Colonia" style=" border-radius:50px; width:100%;">
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+  <input id="login" class="form-control ml-2 mt-4" name="login"  [(ngModel)]="calle1" placeholder="Calle" style=" border-radius:50px; width:100%;">
+  </div>
+  <div class="col-3">
+    <input id="login" class="form-control ml-2 mt-4" name="login" [(ngModel)]="numExt" placeholder="Numero Ext." style=" border-radius:50px; width:100%;">
+    </div>
+    <div class="col-3">
+      <input id="login" class="form-control ml-2 mt-4" name="login" [(ngModel)]="numInterior" placeholder="Numero Int." style=" border-radius:50px; width:100%;">
+      </div>
+</div>
+<div class="row">
+  <div class="col-6">
+  <input id="login" class="form-control ml-2 mt-4" name="login" [(ngModel)]="calle2" placeholder="Entre calle" style=" border-radius:50px; width:100%;">
+  </div>
+  <div class="col-6">
+    <input id="login" class="form-control ml-2 mt-4" name="login" [(ngModel)]="calle3" placeholder="Y calle" style=" border-radius:50px; width:100%;">
+  </div>
+</div>
+
+<div class="row">
+<div class="col-4">
+  <div class="input-group ml-2 mt-4"   style=" border-radius:50px; width:100%;">
+    <select class="custom-select" [(ngModel)]="estado" id="inputGroupSelect01">
+      <option value="DIF">Distrito Federal</option>
+      <option value="AGS">Aguascalientes</option>
+      <option value="BCN">Baja California</option>
+      <option value="BCS">Baja California Sur</option>
+      <option value="CAM">Campeche</option>
+      <option value="CHP">Chiapas</option>
+      <option value="CHI">Chihuahua</option>
+      <option value="COA">Coahuila</option>
+      <option value="COL">Colima</option>
+      <option value="DUR">Durango</option>
+      <option value="GTO">Guanajuato</option>
+      <option value="GRO">Guerrero</option>
+      <option value="HGO">Hidalgo</option>
+      <option value="JAL">Jalisco</option>
+      <option value="MEX">M&eacute;xico</option>
+      <option value="MIC">Michoac&aacute;n</option>
+      <option value="MOR">Morelos</option>
+      <option value="NAY">Nayarit</option>
+      <option value="NLE">Nuevo Le&oacute;n</option>
+      <option value="OAX">Oaxaca</option>
+      <option value="PUE">Puebla</option>
+      <option value="QRO">Quer&eacute;taro</option>
+      <option value="ROO">Quintana Roo</option>
+      <option value="SLP">San Luis Potos&iacute;</option>
+      <option value="SIN">Sinaloa</option>
+      <option value="SON">Sonora</option>
+      <option value="TAB">Tabasco</option>
+      <option value="TAM">Tamaulipas</option>
+      <option value="TLX">Tlaxcala</option>
+      <option value="VER">Veracruz</option>
+      <option value="YUC">Yucat&aacute;n</option>
+      <option value="ZAC">Zacatecas</option>
+    </select>
+  </div>
+</div>
+<div class="col-4">
+  <input class="form-control ml-2 mt-4" [(ngModel)]="ciudad" style="width: 100%;" id="nombre" type="text" placeholder="Ciudad">
+</div>
+<div class="col-4">
+  <input class="form-control ml-2 mt-4" [(ngModel)]="codigoPost" style="width: 100%;" id="nombre" type="text" placeholder="Codigo Postal">
+</div>
+</div>
+<div class="row mt-4">
+ <div class="col-12">
+   <img (click)="procederCompra2()"style="display: block; margin-left: auto; margin-right: auto; cursor: pointer;" src="assets/GUARDAR.png" width="150px">
+ </div>
+</div>

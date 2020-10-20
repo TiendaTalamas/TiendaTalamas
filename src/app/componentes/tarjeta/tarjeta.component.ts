@@ -24,13 +24,13 @@ export class TarjetaComponent implements OnInit {
   {
     let body = new URLSearchParams();
     body.append("token",localStorage.getItem('Token'));
-    this.http.post(this._servicioCompartido.Url+'/obtenerSubtotal.php', body)
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubtotalIndividual.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
               if(result['status']  == "200")
               {
-                this.Subtotal =result['subtotal'];
+                this.Subtotal = String (Number(result['subtotal']) * Number(this.cantidad));
               }
               else{
                 this.Subtotal = "0";
@@ -94,7 +94,10 @@ export class TarjetaComponent implements OnInit {
     let body = new URLSearchParams();
     body.append("jsonUsuario", this._servicioCompartido.jsonUsuario);
     body.append("Direccion", this._servicioCompartido.Direccion);
+    body.append("IdProducto", this.item);
+    body.append("Cantidad", this.cantidad);
     body.append("stripeToken", stripeToken);
+    this.cantidad = "0";
     body.append("Token", localStorage.getItem('Token'));
     this.http.post(this._servicioCompartido.Url+'/generarPagoStripe.php', body)
     .map((res:Response) => res.json())

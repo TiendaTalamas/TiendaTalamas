@@ -25,9 +25,10 @@ export class DatosPagoComponent implements OnInit {
   colonia:string;
   ciudad:string;
   estado:string;
+  codigoPost:string;
+
   Subtotal:string;
   pais:string;
-  codigoPost:string;
   Direccion:string;
   jsonUsuario:string;
 

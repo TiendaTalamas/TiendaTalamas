@@ -31,6 +31,11 @@ export class servicioCompartido{
   Direccion:string;
   Url = "https://www.tiendatalamas.com/archivos/php";
   productosCarrito:string;
+  Calle:string;
+  NumeroExt:string;
+  Ciudad:string;
+  Estado:string;
+  CodigoPost:string;
   constructor(private http: Http, private router: Router) {}   
   comprobarUsuario() 
   {
