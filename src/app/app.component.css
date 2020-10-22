@@ -246,5 +246,9 @@
   {
     display: none !important;
   }
+  #control
+  {
+    width:220px;
+  }
 }
   

@@ -1,17 +1,16 @@
+<div class="container-fluid mt-5" style=" border: 2px solid gray; padding: 15px; border-radius: 10px; box-shadow: 1px 2px 3px gray;">
   <ng-container *ngIf="EoF; else elseTemplate2">
-  <div class="container mt-5 mb-5" style="width: 500px; height:350px; overflow:hidden;">
 
-        <p>COMPRA EXITOSA<img src="assets/palomita.png"></p>
-        <button id="boton" type="button" class="btn btn-warning">SEGUIR COMPRANDO</button>
-        {{IdCompra}} {{IdProducto}} {{NombreProducto}} {{CostoTotal}}
-
-  </div>
+        <p>COMPRA EXITOSA</p>
+        <img style="display: block; margin: 0 auto;" src="assets/palomita.png">
+        <button  id="boton" type="button" style="background-color: #81b214;" class="btn btn mt-2">Volver a Tienda Talamas</button>
+        <div class="text-center mt-2" style="font-size:20px;">{{IdCompra}} {{IdProducto}} {{NombreProducto}} {{CostoTotal}}</div>
 </ng-container>
 <ng-template #elseTemplate2>
-  <div class="container mt-5 mb-5" style="width: 500px; height:350px; overflow:hidden;">
 
-    <p>ALGO SALIO MAL CON TU COMPRA<img src="assets/tacharoja.png"></p>
-    <button id="boton" type="button" class="btn btn-warning">VOLVER A INICIO</button>
+    <p>ALGO SALIO MAL CON TU COMPRA</p>
+      <img style="display: block; margin: 0 auto;" src="assets/tacharoja.png">
+    <button id="boton" type="button" style="background-color: #81b214;" class="btn btn mt-2">VOLVER A INICIO</button>
     <h1>{{MensajeError}}</h1>
-</div>
 </ng-template>   
+</div>
