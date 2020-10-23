@@ -75,7 +75,7 @@ export class servicioCompartido{
             {
                 if(result['status'] == "400")
                 {
-                    this.router.navigate(['']);
+                    this.router.navigate(['card']);
                 }
                 else
                 {

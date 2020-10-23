@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {servicioCompartido} from '../../servicios/servicioCompartido';
 import { producto } from '../../servicios/producto';
-import {Router, ActivatedRoute} from "@angular/router";
+import {Router, ActivatedRoute, RouterLinkActive} from "@angular/router";
 import { Http , Response} from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import { FormGroup } from '@angular/forms';
@@ -19,7 +19,7 @@ export class TarjetaComponent implements OnInit {
   item:string;
   Subtotal:string;
   cantidad:string;
-  constructor(private http:Http, private _servicioCompartido:servicioCompartido, private router:Router) { }
+  constructor(private http:Http, private _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute) { }
   obtenerSubtotal()
   {
     let body = new URLSearchParams();
@@ -99,15 +99,22 @@ export class TarjetaComponent implements OnInit {
     body.append("stripeToken", stripeToken);
     this.cantidad = "0";
     body.append("Token", localStorage.getItem('Token'));
-    this.http.post(this._servicioCompartido.Url+'/generarPagoStripe.php', body)
+    this.http.post(this._servicioCompartido.Url+'/pagoIndividual.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
+              console.log(result);
               if(result['status'] == 200)
               {
                 this.router.navigate(['CuadroExitoso',"Exito",result['IdCompra']]);
-              }else{
+              }
+              if(result['status'] == 400){
                 this.router.navigate(['CuadroExitoso',"Fallo",result['IdCompra']]);
+              }
+              if(result['status'] == 402){
+                alert("Existe un error con la tarjeta: "+result['IdCompra']);
+                this.cantidad = this.route.snapshot.paramMap.get('Cantidad');
+                this.isDisabled = false;
               }
     });
   }

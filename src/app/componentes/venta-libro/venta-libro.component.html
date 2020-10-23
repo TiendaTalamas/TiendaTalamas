@@ -200,17 +200,17 @@
 <div *ngIf="!P1">
 <div  *ngFor="let producto of productos" >
 <div class="row mx-5">
-  <div class=" mx-lg-0 col-sm-12 col-lg-7 col-md-6" style="border-top: 1px solid #f6f6f6; border-right: 1px solid #f6f6f6;">
+  <div class=" mx-lg-0 col-sm-12 col-lg-5 col-md-6" style="border-top: 1px solid #f6f6f6; border-right: 1px solid #f6f6f6;">
     <div class="preview-pic tab-content">
       <div class="tab-pane active" id="pic-10"> <app-zoom [img]="imagenActual" [zoom]="2" [lenSize]="200" [imgWidth]="100"   [divZoomed]="divZoomed" ></app-zoom></div>
     </div> 
-
+<hr>
   <ul class="preview-thumbnail nav nav-tabs">
     <li style="cursor: pointer;"  class="active"><a data-target="#pic-10" (click)="cambiarImagen(imagenPorDefault)" data-toggle="tab"><img src="{{imagenPorDefault}}" /></a></li>
     <li *ngFor="let imagen of imagenesInstrumentos; let i = index"><a (click)="cambiarImagen(imagen.Imagen)" data-target="#pic-{{i}}" data-toggle="tab"><img style="cursor: pointer;"  src="{{imagen.Imagen}}" /></a></li>
   </ul>
      </div>
-  <div class="col-lg-5 col-md-6" style="border: 1px solid #f6f6f6; ">
+  <div class="col-lg-7 col-md-6" style="border: 1px solid #f6f6f6; ">
     <div style="margin-left: 3%;">
     <div class="row" style="margin-top: 1%;">
       <div #divZoomed class="img-zoom-result"  ></div> 
