@@ -1,7 +1,7 @@
 <div style="overflow: hidden;">
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light px-0" style = "background-color:white; position:-webkit-sticky; position: static; top:25px; z-index: 3;">
-      <a class="navbar-brand" style="cursor:pointer;"><img id="logo" src="assets/logo.png" alt=""  (click)="navegarInicio()"></a>
+      <a class="navbar-brand" style="cursor:pointer;"><img fallimg id="logo" src="assets/logo.png" alt=""  (click)="navegarInicio()"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,14 +10,14 @@
         
         <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 mr-3" [formGroup]="registroForm">
           <input id="control" class="form-control form-control-sm mr-3 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search">
-          <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; border-width: 0; background-color: white; "><img class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
+          <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; border-width: 0; background-color: white; "><img fallimg class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
         </form>
         
-        <a id="justcel" class="ml-5" href="https://api.whatsapp.com/send?phone=+528673076039"><img class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"></a>
+        <a id="justcel" class="ml-5" href="https://api.whatsapp.com/send?phone=+528673076039"><img fallimg class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"></a>
         <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">         
            <div id="justcel" class="dropdown">
           <button class="btn mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" border-radius:150px; width:50px; height:50px; color: black; background-color:#f6f6f6;">
-            <img src="assets/user.png" width="27px">
+            <img fallimg src="assets/user.png" width="27px">
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:199;">
             <a class="dropdown-item cursorMano" (click)="navegarConfiguracion()">Ajustes</a>
@@ -29,10 +29,10 @@
         </div>
         </ng-container>
         <ng-template #elseTemplate>
-          <img id="justcel" ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
+          <img fallimg id="justcel" ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
         </ng-template>
         
-        <button id="justcel" class="btn" style="border-color:#f6f6f6; background-color:#f6f6f6; border-radius:150px; width:50px; height:50px;"><img class="cursorMano" style="margin-left:-15%;" src="assets/bolsa.png" width="30px" (click)="navegarCarrito()"><span style="margin-left: -7%; color:#cd0a0a;">{{_servicioCompartido.productosCarrito}}</span></button>
+        <button id="justcel" class="btn" style="border-color:#f6f6f6; background-color:#f6f6f6; border-radius:150px; width:50px; height:50px;"><img fallimg class="cursorMano" style="margin-left:-15%;" src="assets/bolsa.png" width="30px" (click)="navegarCarrito()"><span style="margin-left: -7%; color:#cd0a0a;">{{_servicioCompartido.productosCarrito}}</span></button>
         
         <!---
        <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
@@ -73,11 +73,11 @@
 
                 <div class="col-xs-6 col-md-4 col-lg-3 mt-4" *ngFor = "let resultado of articulosArray_Buscar; let i = index">
           
-               <img class="imgr" style="display: block; margin: 0 auto; cursor: pointer;" src="{{resultado.Imagen}}" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)">
+               <img fallimg class="imgr" style="display: block; margin: 0 auto; cursor: pointer;" src="{{resultado.Imagen}}" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)">
                <h5><p id="textomas" class=" mt-1">{{resultado.NombreProducto}}</p></h5>
                <h5><p id="textomas2"  class="mt-1">${{resultado.Precio}}</p></h5>
                <h5><p id="textomas3" class="mt-1">{{resultado.SubCategoria}}</p></h5>
-               <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black; display: block; margin: 0 auto; border-radius:20px;" type="button" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)" class="btn btn-primary mt-1" data-toggle="modal" data-target="#exampleModal">Comprar<img class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+               <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black; display: block; margin: 0 auto; border-radius:20px;" type="button" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)" class="btn btn-primary mt-1" data-toggle="modal" data-target="#exampleModal">Comprar<img fallimg class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
               </div>
           
             </div>
@@ -86,7 +86,7 @@
           </div>
         </div>
       <div class="row" *ngFor = "let resultado of articulosArray_Buscar; let i = index" id="pequebanners2">
-        <div class="col-4 mt-4 "><img class="img-fluid" src="{{resultado.Imagen}}" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)" width="200px" alt=""></div>
+        <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{resultado.Imagen}}" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)" width="200px" alt=""></div>
         <div class="col-8 mt-4" style="text-transform:uppercase;">
           {{resultado.NombreProducto}}
             <br>
@@ -94,7 +94,7 @@
             <br>
             <b>Categoria:</b> {{resultado.SubCategoria}}
             <br>
-          <img class="mt-4" style="cursor: pointer;" (click)="anadirAlCarrito(resultado.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
+          <img fallimg class="mt-4" style="cursor: pointer;" (click)="anadirAlCarrito(resultado.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
         </div>
       </div>
       </div>
@@ -159,18 +159,18 @@
   <div class="container">
   <div class="row" style="align-items: center;" >
     <div class="col-sm-12 col-md-3 col-lg-4">
-        <a title="Pagina de Facebook de Tienda Talamas" href="https://www.facebook.com/libreriatalamas/?__tn__=%2Cd%2CP-R&eid=ARAtq7g7F02JUBBD1LazD4VJqGE4dAZywcLO_8W9q--3nvipBqj6xgdDzLsvAt3On6Lf1h3N-5pruC4e"><img style="margin-left:20%; padding-top: 50px;" id="facebook" src="assets/facebook.png" width="60px"></a>
-        <a title="Pagina de Instagram de Tienda Talamas" href="https://www.instagram.com/libreria_talamas/?hl=es-la"><img style="padding-top:50px; margin-left:3%;" id="facebook" src="assets/instagram.png" width="60px"></a>
-        <a title="Pagina de Twiter de Tienda Talamas" href="#"><img style="padding-top: 50px; margin-left:3%;" id="twiter" src="assets/twiter.png" width="60px"></a>
+        <a title="Pagina de Facebook de Tienda Talamas" href="https://www.facebook.com/libreriatalamas/?__tn__=%2Cd%2CP-R&eid=ARAtq7g7F02JUBBD1LazD4VJqGE4dAZywcLO_8W9q--3nvipBqj6xgdDzLsvAt3On6Lf1h3N-5pruC4e"><img fallimg style="margin-left:20%; padding-top: 50px;" id="facebook" src="assets/facebook.png" width="60px"></a>
+        <a title="Pagina de Instagram de Tienda Talamas" href="https://www.instagram.com/libreria_talamas/?hl=es-la"><img fallimg style="padding-top:50px; margin-left:3%;" id="facebook" src="assets/instagram.png" width="60px"></a>
+        <a title="Pagina de Twiter de Tienda Talamas" href="#"><img fallimg style="padding-top: 50px; margin-left:3%;" id="twiter" src="assets/twiter.png" width="60px"></a>
         <p style="margin-left: 15%; margin-top: 1%; font-size:12px;">Av. Vicente Guerrero 1729 (Sector centro)</p>
         <p style="margin-left: 20%; margin-top: -5%; font-size: 12px;">C.P. 88000 Nuevo Laredo, Tamps</p>
 
     </div>
     <div class="col-sm-12 col-md-5 col-lg-4">
-      <img class="d-block mx-auto img-fluid" id="logo" src="assets/logo.png" alt="" (click)="navegarInicio()">
+      <img fallimg class="d-block mx-auto img-fluid" id="logo" src="assets/logo.png" alt="" (click)="navegarInicio()">
     </div>
     <div class="col-sm-12 col-md-3 col-lg-4">
-      <a title="Numero de contacto de Tienda Talamas" href="https://api.whatsapp.com/send?phone=+528673076039"><img class="d-block mx-auto img-fluid" src="assets/tel.png" width="250px"></a>
+      <a title="Numero de contacto de Tienda Talamas" href="https://api.whatsapp.com/send?phone=+528673076039"><img fallimg class="d-block mx-auto img-fluid" src="assets/tel.png" width="250px"></a>
       
     </div>
   </div>
