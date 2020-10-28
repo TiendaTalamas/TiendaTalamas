@@ -20,18 +20,31 @@ export class TarjetaComponent implements OnInit {
   item:string;
   Subtotal:string;
   cantidad:string;
+  Envio:string;
+  Total:string;
+  nombre:string;
+  apellido:string;
   constructor(private http:Http, private _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute) { }
   obtenerSubtotal()
   {
     let body = new URLSearchParams();
     body.append("token",localStorage.getItem('Token'));
+    body.append("IdProducto",this.item);
     this.http.post(this._servicioCompartido.Url+'/obtenerSubtotalIndividual.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
               if(result['status']  == "200")
               {
+                this.Envio = "0";
                 this.Subtotal = String (Number(result['subtotal']) * Number(this.cantidad));
+                if(isNullOrUndefined(this.Subtotal)){
+                  this.router.navigate(['']);
+                }
+                if(Number(this.Subtotal) < 300){
+                  this.Envio =  String(300-Number(this.Subtotal));
+                }
+                this.Total = String(Number(this.Subtotal) + Number(this.Envio));
               }
               else{
                 this.Subtotal = "0";
@@ -44,9 +57,9 @@ export class TarjetaComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.obtenerSubtotal();
     this.item =this.route.snapshot.paramMap.get('IdProducto');
     this.cantidad = this.route.snapshot.paramMap.get('Cantidad');
+    this.obtenerSubtotal();
     console.log(this._servicioCompartido.IdProducto);
     console.log(this._servicioCompartido.Cantidad);
     if(isNullOrUndefined(this._servicioCompartido.Direccion)){
@@ -95,6 +108,9 @@ export class TarjetaComponent implements OnInit {
   
   enviarToken(stripeToken:string)
   {
+    if(isNullOrUndefined(this.nombre) && isNullOrUndefined(this.apellido)){
+      alert("Por favor ingrese el nombre del tramitante");
+    }else{
     let body = new URLSearchParams();
     body.append("jsonUsuario", this._servicioCompartido.jsonUsuario);
     body.append("Direccion", this._servicioCompartido.Direccion);
@@ -126,6 +142,7 @@ export class TarjetaComponent implements OnInit {
                 this.isDisabled = false;
               }
     });
+  }
   }
 
 }
