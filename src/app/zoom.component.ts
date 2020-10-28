@@ -1,4 +1,5 @@
 import { Component, Input,HostListener,ViewChild ,ElementRef,Output,EventEmitter,OnInit,Renderer2,AfterViewInit} from '@angular/core';
+import { NgFallimgModule } from 'ng-fallimg';
 import {Subject} from 'rxjs'
 import {debounceTime} from 'rxjs/operators'
 
@@ -6,7 +7,7 @@ import {debounceTime} from 'rxjs/operators'
   selector: 'app-zoom',
   template: `
   <div class="img-zoom-container">
-	   <img fallimg #img [style.width]="yet && imgWidth?imgWidth+'%':null" id="myimage" [src]="imagen" (load)="onLoad()">
+	   <img falla.fallimg #img [style.width]="yet && imgWidth?imgWidth+'%':null" id="myimage" [src]="imagen" (load)="onLoad()">
 	   <div #len [style.width]="lenSize+'px'" [style.height]="lenSize+'px'"  [style.left] ="posX+'px'" [style.top] ="posY+'px'"
 class="img-zoom-lens">
 </div>
@@ -51,7 +52,7 @@ export class ZoomComponent {
 
   }
 
-  constructor(private render:Renderer2){}
+  constructor(private render:Renderer2,public falla:NgFallimgModule){}
   onLoad()
   {
     this.render.setStyle(this.divZoomed, 'display', 'none');

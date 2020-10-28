@@ -5,7 +5,7 @@
       <div  class="container-fluid mt-2 " style="background-color:#fff; "  >
         <div class="row"  >
           <div id="img" class="col-xs-12 col-sm-8 col-md-3 col-lg-4 mt-3 mb-3">       
-            <img class="ml-5" src="{{producto.Imagen}}" width="220" height="270">
+            <img falla.fallimg falla.fallimgclass="ml-5" src="{{producto.Imagen}}" width="220" height="270">
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 mt-2">
            <h3><p id="Texto" class="mr-5" style = " font-family:Arial Narrow; padding:0px 0px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left;">
@@ -35,7 +35,7 @@
   </div>-->
   <div class="card text-center" style="color: black; border-radius: 20px;">
     <div class="card-header" style="border-radius: 20px;">
-      Historial De Compra<img class="ml-1" src="assets/bolsa.png" width="45px">
+      Historial De Compra<img falla.fallimg falla.fallimgclass="ml-1" src="assets/bolsa.png" width="45px">
     </div>
     <div class="card-body" style="height: 730px; overflow-y: scroll; ">
      <div class="row">
@@ -47,7 +47,7 @@
        <div id="justcel" class="col-8">INFORMACION DE COMPRA</div>
      </div>
      <div class="row" id="justcel" *ngFor = "let producto of articulosArray; let i = index">
-      <div class="col-4 mt-4 "><img class="img-fluid" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria)" width="200px" alt="">
+      <div class="col-4 mt-4 "><img falla.fallimg falla.fallimgclass="img-fluid" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria)" width="200px" alt="">
       </div>
       <div class="col-8 mt-4" style="text-align:left;">
        {{producto.NombreProducto}}
@@ -67,7 +67,7 @@
          <div class="col-1" >
           </div>
          <div class="col-2">
-          <img class="img-fluid" src="{{producto.Imagen}}">
+          <img falla.fallimg falla.fallimgclass="img-fluid" src="{{producto.Imagen}}">
         </div>
        <div class="col-3">
          <p style="font-size:20px;;">{{producto.NombreProducto}}  - {{producto.Propiedad2}}</p>

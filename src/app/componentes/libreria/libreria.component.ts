@@ -7,6 +7,8 @@ import {Location} from "@angular/common";
 import { producto } from '../../servicios/producto';
 import { servicioCompartido } from '../../servicios/servicioCompartido';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { NgFallimgModule } from 'ng-fallimg';
+
 @Component({
   selector: 'app-libreria',
   templateUrl: './libreria.component.html',
@@ -42,7 +44,7 @@ export class LibreriaComponent implements OnInit {
 
   //Constructor
   constructor(private http: Http,private router: Router, private location:Location,
-    public _servicioCompartido : servicioCompartido, fb : FormBuilder) {   
+    public _servicioCompartido : servicioCompartido, fb : FormBuilder, public falla:NgFallimgModule) {   
       this.registroForm = fb.group({
         'cadena' : this.cadena
 
