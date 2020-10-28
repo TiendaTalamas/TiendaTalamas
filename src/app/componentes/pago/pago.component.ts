@@ -24,6 +24,8 @@ export class PagoComponent implements OnInit {
   Envio:string;
   Total:string;
   cantidad:string;
+  nombre:string;
+  apellido:string;
   constructor(private http:Http, public _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute) { }
   obtenerSubtotal()
   {
@@ -104,6 +106,9 @@ export class PagoComponent implements OnInit {
   
   enviarToken(stripeToken:string)
   {
+    if(isNullOrUndefined(this.nombre) && isNullOrUndefined(this.apellido)){
+      alert("Por favor ingrese el nombre del tramitante");
+    }else{
     let body = new URLSearchParams();
     body.append("jsonUsuario", this._servicioCompartido.jsonUsuario);
     body.append("Direccion", this._servicioCompartido.Direccion);
@@ -129,6 +134,7 @@ export class PagoComponent implements OnInit {
                 this.isDisabled = false;
               }
     });
+  }
   }
 
 }
