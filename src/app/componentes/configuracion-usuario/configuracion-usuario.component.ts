@@ -117,7 +117,6 @@ export class ConfiguracionUsuarioComponent implements OnInit {
     body.append('contrasenaActual', this.contrasenaActual);
     body.append('contrasenaNueva', this.contrasenaNueva);
     body.append('contrasenaRepetida', this.contrasenaRepetida);
-    console.log(this.contrasenaActual);
   
    
     this.http.post(this._servicioCompartido.Url+'/CambiarContrasena.php', body)
@@ -127,6 +126,9 @@ export class ConfiguracionUsuarioComponent implements OnInit {
                 if(result == "OK")
                 {
                   alert("Cambio realizado correctamente");
+                  this.contrasenaActual = "";
+                  this.contrasenaNueva = "";
+                  this.contrasenaRepetida = "";
                 }
                 else
                 {

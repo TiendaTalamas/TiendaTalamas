@@ -4,13 +4,13 @@
         <p>COMPRA EXITOSA</p>
         <img style="display: block; margin: 0 auto;" src="assets/palomita.png">
         <button  id="boton" type="button" style="background-color: #81b214;" class="btn btn mt-2">Volver a Tienda Talamas</button>
-        <div class="text-center mt-2" style="font-size:20px;">{{IdCompra}} {{IdProducto}} {{NombreProducto}} {{CostoTotal}}</div>
+        <div class="text-center mt-2" style="font-size:20px;">Gracias por tu compra, pronto recibirás un correo con los detalles de tu compra</div>
 </ng-container>
 <ng-template #elseTemplate2>
 
     <p>ALGO SALIO MAL CON TU COMPRA</p>
       <img style="display: block; margin: 0 auto;" src="assets/tacharoja.png">
     <button id="boton" type="button" style="background-color: #81b214;" class="btn btn mt-2">VOLVER A INICIO</button>
-    <h1>{{MensajeError}}</h1>
+    <div class="text-center mt-2" style="font-size:20px;">Algo salió mal con tu compra intentalo más tarde</div>
 </ng-template>   
 </div>

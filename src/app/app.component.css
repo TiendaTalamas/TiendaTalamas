@@ -202,6 +202,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  text-align: center;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 13px;
   text-transform: uppercase;
@@ -216,7 +217,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   display: block;
-  margin: 0 auto;
+  text-align: center;
   font-family: 'Alegreya Sans SC', sans-serif;
   color:#0779e4;
 
