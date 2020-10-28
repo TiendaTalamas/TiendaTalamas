@@ -131,6 +131,7 @@ export class Contenedor1Component implements OnInit {
 
 
   ngOnInit() {
+  
     this._servicioCompartido.obtenerCantidadCarrito();
     this.router.events.subscribe((evt) => { 
       if (!(evt instanceof NavigationEnd)) { 

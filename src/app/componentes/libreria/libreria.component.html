@@ -9,14 +9,14 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active" >
-            <img falla.fallimg style="width: 100%;"  (click)= "masInformacion('9788498389234', 'libros')" src="assets/potterbanner.jpg" alt="First slide">
+            <img fallimg style="width: 100%;"  (click)= "masInformacion('9788498389234', 'libros')" src="assets/potterbanner.jpg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img falla.fallimg style="width: 100%;"  (click)= "masInformacion('9786070762567', 'libros')" src="assets/felipebanner.jpg" alt="First slide"> 
+            <img fallimg style="width: 100%;"  (click)= "masInformacion('9786070762567', 'libros')" src="assets/felipebanner.jpg" alt="First slide"> 
           </div>
       
           <div class="carousel-item">
-            <img falla.fallimg style="width: 100%;"  (click)= "masInformacion('9786070762567', 'libros')" src="assets/compasbanner.jpg" alt="First slide">
+            <img fallimg style="width: 100%;"  (click)= "masInformacion('9786070762567', 'libros')" src="assets/compasbanner.jpg" alt="First slide">
           </div>
       
         </div>
@@ -43,14 +43,14 @@
       <h5 class="text-center">Libreria Talamas</h5>
       <hr/>
    <div class="row" id="justcel" *ngFor = "let reciente of articulosArray; let i = index">
-     <div class="col-4 mt-4 "><img falla.fallimg class="img-fluid" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, 'Libros')" width="200px" alt=""></div>
+     <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, 'Libros')" width="200px" alt=""></div>
      <div class="col-8 mt-4">
       {{reciente.NombreProducto}}
          <br>
          <div class="mt-2">{{reciente.Propiedad1}}</div>
           <div class="mt-2" style="color:#0779e4;">${{reciente.Precio}}</div>
          <br>
-       <img falla.fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
+       <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
      </div>
    </div>
 
@@ -78,11 +78,11 @@
         <div class="row mb-4">
           <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;" *ngFor = "let reciente of articulosArray; let i = index">
     
-         <img falla.fallimg class="imgr" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, 'Libros')">
+         <img fallimg class="imgr" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, 'Libros')">
          <h5><p id="textomas" class=" ml-auto mt-4">{{reciente.NombreProducto}}</p></h5>
          <h5><p id="textomas3" class="mr-auto mt-4">{{reciente.Propiedad1}}</p></h5>
          <h5><p id="textomas2" class="ml-auto mt-4">${{reciente.Precio}}</p></h5>
-         <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img falla.fallimg class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+         <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img fallimg class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
         </div>
     
       </div>
@@ -122,11 +122,11 @@
   <div class="row mb-4">
       <div class="col-xs-12 col-md-6 col-lg-2" *ngFor = "let reciente of articulosArray; let i = index">
 
-     <img falla.fallimg class="imgr ml-4" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+     <img fallimg class="imgr ml-4" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
      <h5><p id="textomas" class=" ml-4 mt-4">{{reciente.NombreProducto}}</p></h5>
      <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad1}}</p></h5>
      <h5><p id="textomas2" class="ml-2 mt-4">${{reciente.Precio}}</p></h5>
-     <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img falla.fallimg class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+     <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img fallimg class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
     </div>
 
   </div>
@@ -140,10 +140,10 @@
   <div class="row mb-4">
       <div class="col-xs-12 col-md-6 col-lg-2" *ngFor = "let reciente of articulosArray; let i = index">
 
-     <img falla.fallimg class="imgr ml-4" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+     <img fallimg class="imgr ml-4" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
      <h5><p id="textomas" class=" ml-4 mt-4">{{reciente.NombreProducto}}</p></h5>
      <h5><p id="textomas2" class="ml-2 mt-4">${{reciente.Precio}}</p></h5>
-     <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img falla.fallimg class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+     <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img fallimg class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
       </div>
 
   </div>
@@ -156,7 +156,7 @@
             <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active" >
-                  <img falla.fallimg src="assets/compas.jpg" alt="First slide" height="400px">
+                  <img fallimg src="assets/compas.jpg" alt="First slide" height="400px">
                 </div>
               </div>
             </div>
@@ -169,10 +169,10 @@
             <div class="row mb-4">
                 <div class="col-xs-12 col-md-6 col-lg-2" *ngFor = "let reciente of articulosArray; let i = index">
           
-               <img falla.fallimg class="imgr ml-4" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+               <img fallimg class="imgr ml-4" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
                <h5><p id="textomas" class=" ml-4 mt-4">{{reciente.NombreProducto}}</p></h5>
                <h5><p id="textomas2" class="ml-2 mt-4">${{reciente.Precio}}</p></h5>
-               <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img falla.fallimg class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+               <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img fallimg class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
               </div>
           
             </div>

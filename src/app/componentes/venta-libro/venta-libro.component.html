@@ -8,10 +8,10 @@
  
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img falla.fallimg class="d-block" src="{{Imagen}}" width="400" height="400" alt="">
+            <img fallimg class="d-block" src="{{Imagen}}" width="400" height="400" alt="">
           </div>
           <div class="carousel-item" *ngFor = "let slider of imagenesInstrumentos; let i = index" >
-            <img falla.fallimg class="d-block w-100" src="{{slider.Imagen}}" alt="First slide" width="400" height="400">
+            <img fallimg class="d-block w-100" src="{{slider.Imagen}}" alt="First slide" width="400" height="400">
           </div>
           <a class="carousel-control-prev" href="#CarouselTest" role="button" data-slide="prev">
   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -26,7 +26,7 @@
     </div>
 </ng-container>
 <ng-template #elseTemplate>
-    <img falla.fallimg class="img-fluid" src="{{producto.Imagen}}" width="228" height="350">
+    <img fallimg class="img-fluid" src="{{producto.Imagen}}" width="228" height="350">
     http://emdpublicidad.com/tiendatalamas/archivos/php/Imagenes/{{producto.Propiedad4}}/{{producto.IdProducto}}.jpg
   </ng-template>
 </div>
@@ -120,17 +120,17 @@
         <div class="preview col-md-6">
           
           <div class="preview-pic tab-content" *ngFor = "let producto of productos">
-            <div class="tab-pane active" style="margin-left:25%;" id="pic-1"><img falla.fallimg src="{{producto.Imagen}}" /></div>
-            <div class="tab-pane" id="pic-2"><img falla.fallimg src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-3"><img falla.fallimg src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-4"><img falla.fallimg src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-5"><img falla.fallimg src="http://placekitten.com/400/252" /></div>
+            <div class="tab-pane active" style="margin-left:25%;" id="pic-1"><img fallimg src="{{producto.Imagen}}" /></div>
+            <div class="tab-pane" id="pic-2"><img fallimg src="http://placekitten.com/400/252" /></div>
+            <div class="tab-pane" id="pic-3"><img fallimg src="http://placekitten.com/400/252" /></div>
+            <div class="tab-pane" id="pic-4"><img fallimg src="http://placekitten.com/400/252" /></div>
+            <div class="tab-pane" id="pic-5"><img fallimg src="http://placekitten.com/400/252" /></div>
           </div>
          
           <ul class="preview-thumbnail nav nav-tabs" *ngIf="P2">
-            <li style="margin-left:24%;" class="active"><a data-target="#pic-1" data-toggle="tab"><img falla.fallimg src="http://placekitten.com/200/126" /></a></li>
-            <li><a data-target="#pic-2" data-toggle="tab"><img falla.fallimg src="http://placekitten.com/200/126" /></a></li>
-            <li><a data-target="#pic-3" data-toggle="tab"><img falla.fallimg src="http://placekitten.com/200/126" /></a></li>
+            <li style="margin-left:24%;" class="active"><a data-target="#pic-1" data-toggle="tab"><img fallimg src="http://placekitten.com/200/126" /></a></li>
+            <li><a data-target="#pic-2" data-toggle="tab"><img fallimg src="http://placekitten.com/200/126" /></a></li>
+            <li><a data-target="#pic-3" data-toggle="tab"><img fallimg src="http://placekitten.com/200/126" /></a></li>
           </ul>
         
         </div>
@@ -165,7 +165,7 @@
     <div class="carousel-item active">
   <div class="row">
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of productosCarrousel; let i = index">
-        <img falla.fallimg class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <img fallimg class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
     </div>
 </div>
 <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -173,7 +173,7 @@
 <div class="carousel-item">
   <div class="row">
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of productosCarrousel2; let i = index">
-        <img falla.fallimg class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <img fallimg class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
     </div>
 </div>
 <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -181,7 +181,7 @@
 <div class="carousel-item">
   <div class="row">
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of productosCarrousel3; let i = index">
-        <img falla.fallimg class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <img fallimg class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
     </div>
 </div>
 <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
@@ -206,8 +206,8 @@
     </div> 
 <hr>
   <ul class="preview-thumbnail nav nav-tabs">
-    <li style="cursor: pointer;"  class="active"><a data-target="#pic-10" (click)="cambiarImagen(imagenPorDefault)" data-toggle="tab"><img falla.fallimg src="{{imagenPorDefault}}" /></a></li>
-    <li *ngFor="let imagen of imagenesInstrumentos; let i = index"><a (click)="cambiarImagen(imagen.Imagen)" data-target="#pic-{{i}}" data-toggle="tab"><img falla.fallimg style="cursor: pointer;"  src="{{imagen.Imagen}}" /></a></li>
+    <li style="cursor: pointer;"  class="active"><a data-target="#pic-10" (click)="cambiarImagen(imagenPorDefault)" data-toggle="tab"><img fallimg src="{{imagenPorDefault}}" /></a></li>
+    <li *ngFor="let imagen of imagenesInstrumentos; let i = index"><a (click)="cambiarImagen(imagen.Imagen)" data-target="#pic-{{i}}" data-toggle="tab"><img fallimg style="cursor: pointer;"  src="{{imagen.Imagen}}" /></a></li>
   </ul>
      </div>
   <div class="col-lg-7 col-md-6" style="border: 1px solid #f6f6f6; ">
@@ -235,10 +235,10 @@
       <div class="row">
 
         <div class="col-6 col-md-6 col-sm-6">
-          <img falla.fallimg class="my-auto ml-3" style="cursor: pointer;"  data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
+          <img fallimg class="my-auto ml-3" style="cursor: pointer;"  data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
        </div>
         <div class="col-6 col-md-6 col-sm-6">
-          <img falla.fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
+          <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
         </div>
         </div>
     </ng-container>
@@ -270,7 +270,7 @@
 <div  *ngFor="let producto of productos" >
   <div class="row mx-5">
     <div class=" mx-lg-0 col-sm-12 col-lg-4 col-md-6" style="border-top: 1px solid #f6f6f6; border-right: 1px solid #f6f6f6;">
-     <img falla.fallimg width="100%" src="{{producto.Imagen}}">
+     <img fallimg width="100%" src="{{producto.Imagen}}">
       </div>
     <div class="col-lg-8 col-md-6 col-sm-12" style="border: 1px solid #f6f6f6;">
       <div class="row">
@@ -295,10 +295,10 @@
         <div class="row">
   
           <div class="col-6 col-md-6 col-sm-6">
-            <img falla.fallimg class="my-auto ml-3" style="cursor: pointer;"  data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
+            <img fallimg class="my-auto ml-3" style="cursor: pointer;"  data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
          </div>
           <div class="col-6 col-md-6 col-sm-6">
-            <img falla.fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
+            <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
           </div>
           </div>
       </ng-container>
