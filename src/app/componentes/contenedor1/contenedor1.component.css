@@ -253,7 +253,7 @@ h1
 }
 
 @media only screen and (max-width:5000px) and (min-width:500px)
-/*Esto no se muestra a menos que llegue a min de 5000 px o un maximo de 5000px*/
+/*Esto no se muestra a menos que llegue a min de 500 px o un maximo de 5000px*/
 {
   #mostrarencelular
   {
