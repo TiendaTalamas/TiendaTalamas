@@ -22,7 +22,7 @@ export class PagoComponent implements OnInit {
   item:string;
   Subtotal:string;
   cantidad:string;
-  constructor(private http:Http, private _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute) { }
+  constructor(private http:Http, public _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute) { }
   obtenerSubtotal()
   {
     let body = new URLSearchParams();

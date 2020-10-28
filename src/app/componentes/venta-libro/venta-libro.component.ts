@@ -104,9 +104,10 @@ this.formCantidad = fb.group({
   user:string;
   verificacionProductos:boolean;
   formCantidad:FormGroup;
-
+  disponible:boolean;
 
   ngOnInit() {
+    this.disponible = true;
     this.Cantidad = 1;
     this.quantity = "1";
     this.verificacionProductos = true;
@@ -123,7 +124,7 @@ this.formCantidad = fb.group({
 
     if(this.Categoria === undefined){
     }
-    if(this.Categoria == "Libros"){
+    if(this.Categoria == "LIBROS"){
       this.P1 = true;
     }
     else if(this.Categoria == "Instrumentos"){
@@ -367,7 +368,7 @@ this.formCantidad = fb.group({
               this.imagenActual = this.imagenPorDefault;
               if(Number(this.Unidades) <= 0)
               {
-                
+                this.disponible = false;
                 this.verificacionProductos = false;
               }
               this.AA = "";
