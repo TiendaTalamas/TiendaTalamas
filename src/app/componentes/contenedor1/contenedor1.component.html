@@ -57,8 +57,22 @@
 
 
   </div>
-
   </div>
+
+  <!--Botones para celular-->
+  <div id="pequebanners2" >
+    <div class="row">
+      <div class="col-4 mt-1 mb-4">
+        <button (click)="navegarLibreria();" type="button" class="btn btn-primary">Libreria</button>
+      </div>
+      <div class="col-4 mt-1 mb-4">
+        <button (click)="navegarMusica();" type="button" style="margin-left:10px;" class="btn btn-primary">Muisca</button>
+        </div>
+      <div class="col-4 mt-1 mb-4">
+        <button (click)="navegarJuegos();"  type="button" style="margin-left:15px;" class="btn btn-primary">Juegos</button>
+      </div>
+    </div>
+    </div>
 
 <!--Este div se mostrara solo en celular-->
 <div id="pequebanners2" >
@@ -68,9 +82,6 @@
           <img fallimg class="img-fluid" src="assets/sobrino.jpg" style="cursor: pointer;"(click)="navegarJuegos();" alt="">
 
     </div>
-    <div class="col-12 mt-2 mb-2">
-          <img fallimg class="img-fluid" src="assets/separadores.jpg" style="cursor: pointer;" (click)="navegarAcrilicos()"   alt="" >
-      </div>
     </div>
   </div>
 
@@ -111,9 +122,6 @@
             <img fallimg class="img-fluid" src="assets/bannerit.jpg" style="cursor: pointer;" alt="">
   
       </div>
-      <div class="col-12 mt-2 mb-2">
-            <img fallimg class="img-fluid" src="assets/bannermer.jpg" style="cursor: pointer;" alt="" >
-        </div>
       </div>
     </div>
 
