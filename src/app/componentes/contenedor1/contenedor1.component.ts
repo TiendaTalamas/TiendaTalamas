@@ -8,7 +8,7 @@ import { servicioCompartido } from '../../servicios/servicioCompartido';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BoundDirectivePropertyAst } from '@angular/compiler';
 import { Router, NavigationEnd } from '@angular/router'; 
-
+import {NgFallimgModule} from 'ng-fallimg'
 @Component({
   selector: 'app-contenedor1',
   templateUrl: './contenedor1.component.html',

@@ -7,6 +7,7 @@ import { URLSearchParams } from "@angular/http";
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { importType, IfStmt } from '@angular/compiler/src/output/output_ast';
+import { isNullOrUndefined } from 'util';
 declare var Stripe: any;
 
 @Component({
@@ -44,10 +45,13 @@ export class TarjetaComponent implements OnInit {
   }
   ngOnInit() {
     this.obtenerSubtotal();
-    this.item = this._servicioCompartido.IdProducto;
-    this.cantidad = this._servicioCompartido.Cantidad;
-    console.log(this._servicioCompartido.Direccion);
-    console.log(this._servicioCompartido.jsonUsuario);
+    this.item =this.route.snapshot.paramMap.get('IdProducto');
+    this.cantidad = this.route.snapshot.paramMap.get('Cantidad');
+    console.log(this._servicioCompartido.IdProducto);
+    console.log(this._servicioCompartido.Cantidad);
+    if(isNullOrUndefined(this._servicioCompartido.Direccion)){
+      this.router.navigate(['DatosDePago',this.item,this.cantidad]);
+    }
     // Your Stripe public key
     const stripe = Stripe('pk_test_51HIMK7FdBqnzMdTTfbNMiHsbOtBcEdoaovMyA4VQRRNmE9Qz50KrayBuwVy6o5bnNH33ktWU8nlN3qPjUOH1ipu000UFN1vHtS');
     // Create `card` element that will watch for updates
@@ -113,6 +117,11 @@ export class TarjetaComponent implements OnInit {
               }
               if(result['status'] == 402){
                 alert("Existe un error con la tarjeta: "+result['IdCompra']);
+                this.cantidad = this.route.snapshot.paramMap.get('Cantidad');
+                this.isDisabled = false;
+              }
+              if(result['status'] == 405){
+                alert("La tarjeta fue declinada");
                 this.cantidad = this.route.snapshot.paramMap.get('Cantidad');
                 this.isDisabled = false;
               }

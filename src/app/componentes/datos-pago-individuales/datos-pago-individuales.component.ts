@@ -43,7 +43,9 @@ export class DatosPagoIndividualesComponent implements OnInit {
   numInterior:string;
 
   codigoPost:string;
+  noPredeterminada:boolean;
   ngOnInit() {
+    this.noPredeterminada = true;
     this.IdProducto = this.Route.snapshot.paramMap.get('IdProducto');
     this.Cantidad = this.Route.snapshot.paramMap.get('Cantidad');
     if(isNullOrUndefined(this.IdProducto) || isNullOrUndefined(this.Cantidad) || Number(this.Cantidad)<=0 )
@@ -96,7 +98,7 @@ export class DatosPagoIndividualesComponent implements OnInit {
     this._servicioCompartido.NumeroExt = this.NumeroExt;
     this._servicioCompartido.Ciudad = this.Ciudad;
     this._servicioCompartido.Estado = this.Estado;
-    this._servicioCompartido.CodigoPost = this.codigoPostal;
+    this._servicioCompartido.CodigoPost = this.CodPost;
   }
   navegarSesion()
   {
@@ -160,6 +162,7 @@ export class DatosPagoIndividualesComponent implements OnInit {
             console.log(result);
 
             this.Calle1 = result[0]['Calle'];
+
             this.NumeroExt = result[0]['NumeroExterior'];
             this.Colonia = result[0]['Colonia'];
             this.Ciudad = result[0]['Ciudad'];
@@ -169,11 +172,14 @@ export class DatosPagoIndividualesComponent implements OnInit {
             this.Apellido = result[0]['Apellido'];
             this.Direccion = "Calle 1:"+result[0]["Calle"]+" Calle 2: "+result[0]["Calle2"]+" Calle 3: "+result[0]["Calle3"]+" NumeroExt: "+result[0]["NumeroExterior"]+" NumeroInt: "+result[0]["NumeroInterior"]+" Codigo Postal: "+result[0]["CodigoPostal"]+" Ciudad: "+result[0]["Ciudad"]+" Estado:"+result[0]['Estado']+" Nombre y Apellido: "+result[0]['NombreOpcional']+" "+result[0]['Apellido'];
             this.jsonUsuario = JSON.stringify(result);
+            if(isNullOrUndefined(result[0]['Calle']) || result[0]['Calle'] == ""){
+              this.noPredeterminada = false;
+            }
     });
   }
   procederCompra2()
   {
-    if(this.calle1 != "" && this.numExt != "" && this.numExt != "" && this.estado != "" && this.Ciudad != "" && this.codigoPostal != ""){
+    if(!isNullOrUndefined(this.calle1) && !isNullOrUndefined(this.numExt) && !isNullOrUndefined(this.numExt) && !isNullOrUndefined(this.estado) && !isNullOrUndefined(this.Ciudad)  && !isNullOrUndefined(this.codigoPost)){
 
     this.Direccion = "Calle 1:"+this.calle1+" Calle 2: "+this.calle2+" Calle 3: "+this.calle3+" NumeroExt: "+this.numExt+" NumeroInt: "+this.numInterior+" Codigo Postal: "+this.codigoPost+" Ciudad: "+this.ciudad+" Estado:"+this.estado+" Nombre y Apellido:"+this.Nombre+" "+ this.Apellido;
     this.router.navigate(['Pago',this.IdProducto,this.Cantidad]);
@@ -188,6 +194,8 @@ export class DatosPagoIndividualesComponent implements OnInit {
     this._servicioCompartido.Cantidad = this.Cantidad;
     this._servicioCompartido.jsonUsuario = this.jsonUsuario;
     this._servicioCompartido.Direccion = this.Direccion;
+    }else{
+      alert("Datos incompletos");
     }
   }
 }

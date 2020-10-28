@@ -7,6 +7,7 @@ import { URLSearchParams } from "@angular/http";
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { importType, IfStmt } from '@angular/compiler/src/output/output_ast';
+import { isNullOrUndefined } from 'util';
 declare var Stripe: any;
 @Component({
   
@@ -21,7 +22,7 @@ export class PagoComponent implements OnInit {
   item:string;
   Subtotal:string;
   cantidad:string;
-  constructor(private http:Http, private _servicioCompartido:servicioCompartido, private router:Router) { }
+  constructor(private http:Http, private _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute) { }
   obtenerSubtotal()
   {
     let body = new URLSearchParams();
@@ -50,6 +51,9 @@ export class PagoComponent implements OnInit {
     this.cantidad = this._servicioCompartido.Cantidad;
     console.log(this._servicioCompartido.Direccion);
     console.log(this._servicioCompartido.jsonUsuario);
+    if(isNullOrUndefined(this._servicioCompartido.Direccion)){
+      this.router.navigate(['DatosDePago']);
+    }
     // Your Stripe public key
     const stripe = Stripe('pk_test_51HIMK7FdBqnzMdTTfbNMiHsbOtBcEdoaovMyA4VQRRNmE9Qz50KrayBuwVy6o5bnNH33ktWU8nlN3qPjUOH1ipu000UFN1vHtS');
     // Create `card` element that will watch for updates
@@ -105,8 +109,17 @@ export class PagoComponent implements OnInit {
               if(result['status'] == 200)
               {
                 this.router.navigate(['CuadroExitoso',"Exito",result['IdCompra']]);
-              }else{
+              }
+              if(result['status'] == 400){
                 this.router.navigate(['CuadroExitoso',"Fallo",result['IdCompra']]);
+              }
+              if(result['status'] == 402){
+                alert("Existe un error con la tarjeta: "+result['IdCompra']);
+                this.isDisabled = false;
+              }
+              if(result['status'] == 405){
+                alert("La tarjeta fue declinada");
+                this.isDisabled = false;
               }
     });
   }
