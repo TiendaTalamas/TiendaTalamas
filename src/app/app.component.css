@@ -93,6 +93,14 @@
 
 }
 
+@media only  screen and (max-width:1050px)
+{
+  #botonespc
+  {
+    display: none !important;
+  }
+}
+
 @media only screen and (max-width:1100px) and (min-width:500px)
 {
     iframe
@@ -108,12 +116,15 @@
     display: none !important;
 
   }
-
-
-
-
-
 }
+@media only screen and (max-width:5000px) and (min-width:1050px)
+{
+  #botonescel
+  {
+    display: none !important;
+  }
+}
+
 
 .btn:hover:not(.btn-link):not(.btn-flat) {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.23), 0 10px 30px rgba(0, 0, 0, 0.19);
