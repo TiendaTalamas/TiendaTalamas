@@ -8,6 +8,7 @@ import { servicioCompartido } from './servicios/servicioCompartido';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
+import { NgFallimgModule } from 'ng-fallimg';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,7 +22,7 @@ export class AppComponent {
   catLibros:boolean;
   todasCat:boolean;
   catInstrumentos:boolean;
-  constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher){
+  constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public falla:NgFallimgModule){
     this.registroForm = fb.group({
       'cadena' : this.cadena
 

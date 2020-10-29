@@ -8,6 +8,7 @@ import { servicioCompartido } from '../../servicios/servicioCompartido';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ResourceLoader } from '@angular/compiler';
 import { isUndefined, isNullOrUndefined } from 'util';
+import { NgFallimgModule } from 'ng-fallimg';
 
 @Component({
   selector: 'app-carrito',
@@ -16,7 +17,7 @@ import { isUndefined, isNullOrUndefined } from 'util';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor(private http:Http, private router:Router, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, private location:Location) {
+  constructor(private http:Http, private router:Router, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, private location:Location,public falla:NgFallimgModule) {
     this.registroForm = fb.group({
       'cadena' : this.cadena
 

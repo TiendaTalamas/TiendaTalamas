@@ -8,6 +8,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { importType, IfStmt } from '@angular/compiler/src/output/output_ast';
 import { isNullOrUndefined } from 'util';
+import { NgFallimgModule } from 'ng-fallimg';
 declare var Stripe: any;
 
 @Component({
@@ -24,7 +25,7 @@ export class TarjetaComponent implements OnInit {
   Total:string;
   nombre:string;
   apellido:string;
-  constructor(private http:Http, private _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute) { }
+  constructor(private http:Http, public _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute, public falla:NgFallimgModule) { }
   obtenerSubtotal()
   {
     let body = new URLSearchParams();

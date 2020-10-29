@@ -123,7 +123,7 @@ export class Contenedor1Component implements OnInit {
 
 
   constructor(private http: Http,private router: Router,private fb: FormBuilder, private location:Location,
-    public _servicioCompartido : servicioCompartido){   
+    public _servicioCompartido : servicioCompartido, public falla:NgFallimgModule){   
        this.registroForm = fb.group({
          'cadena' : this.cadena
 
@@ -131,6 +131,7 @@ export class Contenedor1Component implements OnInit {
 
 
   ngOnInit() {
+  
     this._servicioCompartido.obtenerCantidadCarrito();
     this.router.events.subscribe((evt) => { 
       if (!(evt instanceof NavigationEnd)) { 

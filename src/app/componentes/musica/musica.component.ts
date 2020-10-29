@@ -5,6 +5,7 @@ import { servicioCompartido } from '../../servicios/servicioCompartido';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Http,Response } from '@angular/http';
 import { URLSearchParams } from "@angular/http";
+import { NgFallimgModule } from 'ng-fallimg';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class MusicaComponent implements OnInit {
   articulosArray = new Array;
 
   
-  constructor(private router: Router, public _servicioCompartido: servicioCompartido, private fb: FormBuilder, private http: Http) {   
+  constructor(private router: Router, public _servicioCompartido: servicioCompartido, private fb: FormBuilder, private http: Http, public falla:NgFallimgModule) {   
     this.registroForm = fb.group({
       'cadena' : this.cadena
 

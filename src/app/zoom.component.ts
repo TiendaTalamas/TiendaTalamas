@@ -1,4 +1,5 @@
 import { Component, Input,HostListener,ViewChild ,ElementRef,Output,EventEmitter,OnInit,Renderer2,AfterViewInit} from '@angular/core';
+import { NgFallimgModule } from 'ng-fallimg';
 import {Subject} from 'rxjs'
 import {debounceTime} from 'rxjs/operators'
 
@@ -51,7 +52,7 @@ export class ZoomComponent {
 
   }
 
-  constructor(private render:Renderer2){}
+  constructor(private render:Renderer2,public falla:NgFallimgModule){}
   onLoad()
   {
     this.render.setStyle(this.divZoomed, 'display', 'none');

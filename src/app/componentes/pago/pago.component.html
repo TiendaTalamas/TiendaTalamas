@@ -15,16 +15,27 @@
       <input id="nombre" type="text" placeholder="Nombre(s)">
     </div>
     <div class="col-sm-12 col-lg-6 mt-1">
-      <input id="nombre" type="text" placeholder="Apellido(s)">
+      <input id="apellido" type="text" placeholder="Apellido(s)">
      </div>
     </div>
     <button class="btn btn mt-2" [disabled]="isDisabled" >Ingresar Metodo de Pago</button>
   </form>
 </div>
-
-<div class="container mt-5" style=" margin-left: 0px; width:350px; border:2px solid gray; padding:15px; border: radius 10px;">
+<div class="row">
+  <div class="col-sm-12 col-lg-6">
+  <div class="container mt-5" style=" margin-left: 0px; width:350px; border:2px solid gray; padding:15px; border: radius 10px;">
   <strong>ENVIAR A:</strong>
   <div>{{_servicioCompartido.Nombre}}</div>
   <div>{{_servicioCompartido.Calle}} y #{{_servicioCompartido.NumeroExt}}</div>
-  <div>{{_servicioCompartido.Ciudad}} y {{_servicioCompartido.Estado}} {{_servicioCompartido.CodigoPost}}</div>
+  <div>{{_servicioCompartido.Ciudad}}, {{_servicioCompartido.Estado}}, #{{_servicioCompartido.CodigoPost}}</div>
+  </div>
+  </div>
+  <div class="col-sm-12 col-lg-6">
+  <div class="container mt-5" style=" margin-left: 0px; width:350px; border:2px solid gray; padding:15px; border: radius 10px;">
+    <div><strong>Subtotal:{{Subtotal}}</strong></div>
+    <div><strong>Envio:{{Envio}}</strong></div>
+    <div><strong>Total:{{Total}}</strong></div>
+    <br>
+    </div>
+  </div>
   </div>

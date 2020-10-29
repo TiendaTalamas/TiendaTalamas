@@ -8,6 +8,7 @@ import { URLSearchParams } from "@angular/http";
 import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { importType, IfStmt } from '@angular/compiler/src/output/output_ast';
+import { NgFallimgModule } from 'ng-fallimg';
 
 
 @Component({
@@ -61,7 +62,7 @@ export class VentaLibroComponent implements OnInit {
   imagenActual:string;
   //array para guardar los valores
 
-  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute,){ 
+  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute, public falla:NgFallimgModule){ 
   this.ventaForm = fb.group({
     'email' : [null, Validators.required],
     'nombre': this.nombre,
@@ -104,9 +105,10 @@ this.formCantidad = fb.group({
   user:string;
   verificacionProductos:boolean;
   formCantidad:FormGroup;
-
+  disponible:boolean;
 
   ngOnInit() {
+    this.disponible = true;
     this.Cantidad = 1;
     this.quantity = "1";
     this.verificacionProductos = true;
@@ -123,7 +125,7 @@ this.formCantidad = fb.group({
 
     if(this.Categoria === undefined){
     }
-    if(this.Categoria == "Libros"){
+    if(this.Categoria == "LIBROS"){
       this.P1 = true;
     }
     else if(this.Categoria == "Instrumentos"){
@@ -367,7 +369,7 @@ this.formCantidad = fb.group({
               this.imagenActual = this.imagenPorDefault;
               if(Number(this.Unidades) <= 0)
               {
-                
+                this.disponible = false;
                 this.verificacionProductos = false;
               }
               this.AA = "";

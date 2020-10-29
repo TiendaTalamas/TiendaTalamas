@@ -21,8 +21,12 @@ export class PagoComponent implements OnInit {
   isDisabled = false;
   item:string;
   Subtotal:string;
+  Envio:string;
+  Total:string;
   cantidad:string;
-  constructor(private http:Http, private _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute) { }
+  nombre:string;
+  apellido:string;
+  constructor(private http:Http, public _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute) { }
   obtenerSubtotal()
   {
     let body = new URLSearchParams();
@@ -34,6 +38,11 @@ export class PagoComponent implements OnInit {
               if(result['status']  == "200")
               {
                 this.Subtotal =result['subtotal'];
+                this.Envio = "0";
+                if(Number(this.Subtotal) <= 300){
+                  this.Envio = String(300 - Number(this.Subtotal));
+                }
+                this.Total = String(Number(this.Envio) + Number(this.Subtotal))
               }
               else{
                 this.Subtotal = "0";
@@ -97,6 +106,9 @@ export class PagoComponent implements OnInit {
   
   enviarToken(stripeToken:string)
   {
+    if(isNullOrUndefined(this.nombre) && isNullOrUndefined(this.apellido)){
+      alert("Por favor ingrese el nombre del tramitante");
+    }else{
     let body = new URLSearchParams();
     body.append("jsonUsuario", this._servicioCompartido.jsonUsuario);
     body.append("Direccion", this._servicioCompartido.Direccion);
@@ -122,6 +134,7 @@ export class PagoComponent implements OnInit {
                 this.isDisabled = false;
               }
     });
+  }
   }
 
 }
