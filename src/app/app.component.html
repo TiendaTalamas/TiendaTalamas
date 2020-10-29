@@ -6,8 +6,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     
-      <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent">
-        
+      <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent" id="botonespc">
+
         <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 mr-3" [formGroup]="registroForm">
           <input id="control" class="form-control form-control-sm mr-3 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search">
           <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; border-width: 0; background-color: white; "><img fallimg class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
@@ -33,22 +33,41 @@
         </ng-template>
         
         <button id="justcel" class="btn" style="border-color:#f6f6f6; background-color:#f6f6f6; border-radius:150px; width:50px; height:50px;"><img fallimg class="cursorMano" style="margin-left:-15%;" src="assets/bolsa.png" width="30px" (click)="navegarCarrito()"><span style="margin-left: -7%; color:#cd0a0a;">{{_servicioCompartido.productosCarrito}}</span></button>
+        </div>
         
-        <!---
-       <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">
-        <button id="botones2" type="button" class="btn btn" style="color:white; background-color:#0779e4; border-color: #0779e4;" (click)="navegarCarrito()">Ver carrito</button>
-        </ng-container>
-        <ng-template #elseTemplate>
-          <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarSesion();">Iniciar Sesión</button> 
-          
-          <button id="boton" style="background-color:#0779e4; color:white; border-color: #0779e4;" type="button" class="btn btn-primary"  (click)="navegarRegistro();">Registrarse</button>      
-        </ng-template>    
-      -->
+        <div id="botonescel">
+        <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent">
+            <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 mr-3" [formGroup]="registroForm">
+              <input id="control" class="form-control form-control-sm mr-3 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search">
+              <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; border-width: 0; background-color: white; "><img fallimg class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
+            </form>
     
-        
-    
-        
-    </div>  
+            <div class="d-flex justify-content-center">
+            <a id="justcel" href="https://api.whatsapp.com/send?phone=+528673076039"><img fallimg class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"></a>
+            <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">         
+               <div id="justcel" class="dropdown">
+              <button class="btn mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" border-radius:150px; width:50px; height:50px; color: black; background-color:#f6f6f6;">
+                <img fallimg src="assets/user.png" width="27px">
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:199;">
+                <a class="dropdown-item cursorMano" (click)="navegarConfiguracion()">Ajustes</a>
+                <a class="dropdown-item cursorMano" (click)="navegarHistorial()">Historial</a>
+                <a class="dropdown-item cursorMano" (click)="navegarSoporte()">Soporte</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item cursorMano" (click)="_servicioCompartido.cerrarSesion()">Cerrar Sesion</a>
+              </div>
+            </div>
+            </ng-container>
+            <ng-template #elseTemplate>
+              <img fallimg id="justcel" ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" (click)="navegarSesion()">
+            </ng-template>
+            
+            <button id="justcel" class="btn mr-5" style="border-color:#f6f6f6; background-color:#f6f6f6; border-radius:150px; width:50px; height:50px;"><img fallimg class="cursorMano" style="margin-left:-15%;" src="assets/bolsa.png" width="30px" (click)="navegarCarrito()"><span style="margin-left: -7%; color:#cd0a0a;">{{_servicioCompartido.productosCarrito}}</span></button>
+            
+          </div>        
+        </div> 
+        </div>
+         
     </nav>  
       <!--Fin del navbar-->
       
