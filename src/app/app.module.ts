@@ -108,7 +108,7 @@ import { NgFallimgModule } from 'ng-fallimg';
     MatIconModule,
     BrowserAnimationsModule,
     NgFallimgModule.forRoot({
-      default: '/assets/noDisponible.jpg'
+      default: 'https://tiendatalamas.com/assets/Disponible.jpg'
     })
   ],
   providers: [
