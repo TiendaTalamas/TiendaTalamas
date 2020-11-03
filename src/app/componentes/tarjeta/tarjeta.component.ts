@@ -111,6 +111,7 @@ export class TarjetaComponent implements OnInit {
   {
     if(isNullOrUndefined(this.nombre) && isNullOrUndefined(this.apellido)){
       alert("Por favor ingrese el nombre del tramitante");
+      this.isDisabled = false;
     }else{
     let body = new URLSearchParams();
     body.append("jsonUsuario", this._servicioCompartido.jsonUsuario);

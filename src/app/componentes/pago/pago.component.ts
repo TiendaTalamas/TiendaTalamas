@@ -8,6 +8,11 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { importType, IfStmt } from '@angular/compiler/src/output/output_ast';
 import { isNullOrUndefined } from 'util';
+import 'rxjs/add/operator/map';
+import {Location} from "@angular/common";
+import {MediaMatcher} from '@angular/cdk/layout';
+import {ChangeDetectorRef, OnDestroy} from '@angular/core';
+import { NgFallimgModule } from 'ng-fallimg';
 declare var Stripe: any;
 @Component({
   
@@ -26,7 +31,13 @@ export class PagoComponent implements OnInit {
   cantidad:string;
   nombre:string;
   apellido:string;
-  constructor(private http:Http, public _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute) { }
+  form2:FormGroup;
+  constructor(private http:Http, public _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute, private fb:FormBuilder) {
+    this.form2 = fb.group({
+      'nombre':this.nombre,
+      'apellido':this.apellido
+    });
+  }
   obtenerSubtotal()
   {
     let body = new URLSearchParams();
@@ -108,6 +119,7 @@ export class PagoComponent implements OnInit {
   {
     if(isNullOrUndefined(this.nombre) && isNullOrUndefined(this.apellido)){
       alert("Por favor ingrese el nombre del tramitante");
+      this.isDisabled = false;
     }else{
     let body = new URLSearchParams();
     body.append("jsonUsuario", this._servicioCompartido.jsonUsuario);
@@ -118,6 +130,7 @@ export class PagoComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
+              console.log(result);
               if(result['status'] == 200)
               {
                 this.router.navigate(['CuadroExitoso',"Exito",result['IdCompra']]);

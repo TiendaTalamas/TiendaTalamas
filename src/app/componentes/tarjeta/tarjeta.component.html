@@ -10,14 +10,15 @@
     <div class="form-row">
     <label for="nombre">Nombre del titular</label>
     </div>
+  
     <div class="form-row">
-    <div class="col-sm-12 col-lg-6 mt-1">
-      <input id="nombre" type="text" placeholder="Nombre(s)">
-    </div>
-    <div class="col-sm-12 col-lg-6 mt-1">
-      <input id="apellido" type="text" placeholder="Apellido(s)">
-     </div>
-    </div>
+      <div class="col-sm-12 col-lg-6 mt-1">
+        <input name="nombre" class="form-control" [(ngModel)]="nombre" id="nombre" placeholder="Nombre(s)">
+      </div>
+      <div class="col-sm-12 col-lg-6 mt-1">
+        <input name="apellido" class="form-control" id="apellido" [(ngModel)]="apellido"   placeholder="Apellido(s)">
+       </div>
+      </div>
     <button class="btn btn mt-2" [disabled]="isDisabled" >Ingresar Metodo de Pago</button>
   </form>
 </div>

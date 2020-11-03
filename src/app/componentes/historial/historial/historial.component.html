@@ -39,10 +39,12 @@
     </div>
     <div class="card-body" style="height: 730px; overflow-y: scroll; ">
      <div class="row">
-       <div id="onlypc" class="col-6">ARTICULOS</div>
-       <div id="onlypc" class="col-2">PRECIO</div>
+      <div id="onlypc" class="col-1"></div>
+       <div id="onlypc" class="col-2"></div>
+       <div id="onlypc" class="col-3">Num.Pedido</div>
+       <div id="onlypc" class="col-2 ">Fecha de Pago</div>
        <div id="onlypc" class="col-2 ">Total</div>
-       <div id="onlypc" class="col-2 ">CANT</div>
+       <div id="onlypc" class="col-2 ">Más detalles</div>
        <div id="justcel" class="col-4">ARTICULO</div>
        <div id="justcel" class="col-8">INFORMACION DE COMPRA</div>
      </div>
@@ -51,13 +53,11 @@
       </div>
       <div class="col-8 mt-4" style="text-align:left;">
        {{producto.NombreProducto}}
-          <br>
           <div class="mt-2">{{producto.Propiedad2}}</div>
            <div class="mt-2" style="color:gray;">${{producto.Precio}}</div>
            <div class="mt-2" style="color: gray;">TOTAL:{{producto.Total}}</div>
            <div class="mt-2" style="color: gray;">CANT:{{producto.Cantidad}}</div>
           <br>
-          
       </div>
     </div>
     <!--AQUI SE MOSTRARA EN PC-->
@@ -67,16 +67,16 @@
          <div class="col-1" >
           </div>
          <div class="col-2">
-          <img fallimg fallimgclass="img-fluid" src="{{producto.Imagen}}">
+          <img fallimg class="img-fluid" src="{{producto.IMAGEN}}">
         </div>
        <div class="col-3">
-         <p style="font-size:20px;;">{{producto.NombreProducto}}  - {{producto.Propiedad2}}</p>
+         <p style="font-size:20px;;">{{producto.IdPedido}}</p>
        </div>
        <div class="col-2" style="font-weight: 900; font-size: larger; color:gray;" >
-        ${{producto.Precio}}
+        {{producto.FECHAPAGO}}
       </div>
       <div class="col-2" style="font-weight: 900; font-size: larger; color:gray;" >
-        ${{producto.Total}}
+        ${{producto.TOTAL}}
       </div>
       <div class="col-2" style="font-weight: 900; font-size: larger; color:gray;">
         {{producto.Cantidad}}

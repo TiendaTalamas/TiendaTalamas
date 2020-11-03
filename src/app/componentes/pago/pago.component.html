@@ -1,6 +1,6 @@
 
 <div class="container-fluid mt-5" style=" border: 2px solid gray; padding: 15px; border-radius: 10px; box-shadow: 1px 2px 3px gray;">
-<form action="/charge" method="post" id="payment-form">
+<form action="/charge" method="post" id="payment-form" [formGroup]="form2">
     <div class="form-row">
       <label for="card-element">Tarjeta de Credito o Debito</label>
       <div id="card-element"></div>
@@ -12,10 +12,10 @@
     </div>
     <div class="form-row">
     <div class="col-sm-12 col-lg-6 mt-1">
-      <input id="nombre" type="text" placeholder="Nombre(s)">
+      <input name="nombre" class="form-control" [(ngModel)]="nombre" formControlName="nombre" id="nombre" placeholder="Nombre(s)">
     </div>
     <div class="col-sm-12 col-lg-6 mt-1">
-      <input id="apellido" type="text" placeholder="Apellido(s)">
+      <input name="apellido" class="form-control" id="apellido" [(ngModel)]="apellido" formControlName="apellido"  placeholder="Apellido(s)">
      </div>
     </div>
     <button class="btn btn mt-2" [disabled]="isDisabled" >Ingresar Metodo de Pago</button>

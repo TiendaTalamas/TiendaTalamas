@@ -79,6 +79,7 @@ navegarBusqueda()
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
+                alert(result);
                 if(result['status'] == "200")
                 {
                   localStorage.setItem('Token', result['token']);
@@ -87,7 +88,7 @@ navegarBusqueda()
                 else
                 {
                 this.respuesta=result['mensaje'];
-                alert(this.respuesta);
+                console.log(this.respuesta);
                 }
 
     });
