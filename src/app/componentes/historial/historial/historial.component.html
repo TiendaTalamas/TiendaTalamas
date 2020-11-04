@@ -49,14 +49,14 @@
        <div id="justcel" class="col-8">INFORMACION DE COMPRA</div>
      </div>
      <div class="row" id="justcel" *ngFor = "let producto of articulosArray; let i = index">
-      <div class="col-4 mt-4 "><img fallimg fallimgclass="img-fluid" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria)" width="200px" alt="">
+      <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{producto.IMAGEN}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria)" width="200px" alt="">
       </div>
       <div class="col-8 mt-4" style="text-align:left;">
-       {{producto.NombreProducto}}
-          <div class="mt-2">{{producto.Propiedad2}}</div>
-           <div class="mt-2" style="color:gray;">${{producto.Precio}}</div>
-           <div class="mt-2" style="color: gray;">TOTAL:{{producto.Total}}</div>
-           <div class="mt-2" style="color: gray;">CANT:{{producto.Cantidad}}</div>
+       Num.Pedido: {{producto.IdPedido}}
+          <div class="mt-2">Fecha Pago:{{producto.FECHAPAGO}}</div>
+           <div class="mt-2" style="color:gray;">Total: ${{producto.TOTAL}}</div>
+           <div class="mt-2" style="color:gray;"> <button type="button" class="btn btn-info">Ver detalles</button></div>
+
           <br>
       </div>
     </div>
@@ -79,7 +79,7 @@
         ${{producto.TOTAL}}
       </div>
       <div class="col-2" style="font-weight: 900; font-size: larger; color:gray;">
-        {{producto.Cantidad}}
+        <button type="button" class="btn btn-info">Ver detalles</button>
       </div>
   
      </div>
