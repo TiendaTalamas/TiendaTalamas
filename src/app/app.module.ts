@@ -52,6 +52,7 @@ import { AcrilicoComponent } from './componentes/acrilico/acrilico.component';
 import { DatosPagoIndividualesComponent } from './componentes/datos-pago-individuales/datos-pago-individuales.component';
 import { TarjetaComponent } from './componentes/tarjeta/tarjeta.component';
 import { NgFallimgModule } from 'ng-fallimg';
+import { DetallesPedidoComponent } from './detalles-pedido/detalles-pedido.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import { NgFallimgModule } from 'ng-fallimg';
     AcrilicoComponent,
     DatosPagoIndividualesComponent,
     TarjetaComponent,
+    DetallesPedidoComponent,
    
   ],
   imports: [
