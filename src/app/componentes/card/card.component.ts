@@ -79,7 +79,6 @@ navegarBusqueda()
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
-                alert(result);
                 if(result['status'] == "200")
                 {
                   localStorage.setItem('Token', result['token']);
@@ -139,7 +138,7 @@ navegarBusqueda()
                   this._servicioCompartido.ApellidoPa = this.apellido;
                   this._servicioCompartido.ApellidoMa = this.apellido
                   this._servicioCompartido.NumeroTel = this.numero;
-                  this._servicioCompartido.contrasena = this.contrasena;
+                  this._servicioCompartido.contrasena = this.contrasena2;
                   this._servicioCompartido.soloRegistro = true;
                 }
                 
