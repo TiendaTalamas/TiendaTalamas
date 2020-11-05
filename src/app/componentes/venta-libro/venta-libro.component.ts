@@ -125,7 +125,7 @@ this.formCantidad = fb.group({
 
     if(this.Categoria === undefined){
     }
-    if(this.Categoria == "LIBROS"){
+    if(this.Categoria == "LIBROS" || this.Categoria == "Libros"){
       this.P1 = true;
     }
     else if(this.Categoria == "Instrumentos"){

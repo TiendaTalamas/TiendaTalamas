@@ -1,4 +1,4 @@
-@media only  screen and (max-width:500px)
+@media only  screen and (max-width:771px)
 {
   #onlypc
   {
@@ -6,7 +6,7 @@
   }
 }
 
-@media only screen and (max-width:5000px) and (min-width:500px)
+@media only screen and (max-width:5000px) and (min-width:770px)
 {
   #justcel
   {

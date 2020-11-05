@@ -70,7 +70,7 @@ const routes: Routes = [
   {path: 'Acrilicos', component:AcrilicoComponent},
   {path: 'DatosDePago/:IdProducto/:Cantidad', component:DatosPagoIndividualesComponent},
   {path: 'Pago/:IdProducto/:Cantidad', component:TarjetaComponent},
-  {path: 'DetallesPedido', component:DetallesPedidoComponent}
+  {path: 'DetallesPedido/:IdPedido', component:DetallesPedidoComponent}
 
 ];
 

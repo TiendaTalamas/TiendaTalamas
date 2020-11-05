@@ -128,7 +128,7 @@ export class TarjetaComponent implements OnInit {
               console.log(result);
               if(result['status'] == 200)
               {
-                this.router.navigate(['CuadroExitoso',"Exito",result['IdCompra']]);
+                this.router.navigate(['DetallesPedido',result['IdCompra']]);
               }
               if(result['status'] == 400){
                 this.router.navigate(['CuadroExitoso',"Fallo",result['IdCompra']]);

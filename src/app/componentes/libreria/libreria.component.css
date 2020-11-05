@@ -65,6 +65,13 @@
 
 }
 
+#noSeleccionable{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
 #textomas3
 {
   width:100%;
