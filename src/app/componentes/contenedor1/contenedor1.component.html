@@ -91,19 +91,104 @@
 <hr id="deco" style="width:100%;"/>
   <div id="carouselExampleControls20" class="carousel slide" data-ride="carousel" style="width:300px; display: block; margin:0 auto;">
     <div class="carousel-inner" id="mostrarencelular">
-      <div class="carousel-item active" *ngFor = "let reciente of masVendido; let i = index">
-        <img  width="140px" height="215px" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+      <div class="carousel-item active" >
+        <div class="row">
+          <div class="col-6"  *ngFor = "let reciente of masVendido; let i = index">
+        <img  width="140px" fallimg height="215px" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
         <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
         <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
         <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
         <img fallimg style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+          </div>
+    </div>
       </div>
-      <div class="carousel-item " *ngFor = "let reciente of masVendidosCelular; let i = index">
-        <img  width="140px" height="215px" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+      <div class="carousel-item " >
+        <div class="row">
+          <div class="col-6" *ngFor = "let reciente of masVendidosCelular1; let i = index">
+        <img  width="140px" fallimg height="215px" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
         <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
         <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
         <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
         <img fallimg style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+          </div>
+    </div>
+      </div>
+      <div class="carousel-item " >
+        <div class="row">
+          <div class="col-6" *ngFor = "let reciente of masVendidosCelular2; let i = index">
+        <img  width="140px" fallimg height="215px" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
+        <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
+        <img fallimg style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+          </div>
+    </div>
+      </div>
+      <div class="carousel-item " >
+        <div class="row">
+          <div class="col-6" *ngFor = "let reciente of masVendidosCelular3; let i = index">
+        <img  width="140px" fallimg height="215px" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
+        <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
+        <img fallimg style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+          </div>
+    </div>
+      </div>
+      <div class="carousel-item " >
+        <div class="row">
+          <div class="col-6" *ngFor = "let reciente of masVendidosCelular4; let i = index">
+        <img  width="140px" fallimg height="215px" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
+        <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
+        <img fallimg style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+          </div>
+    </div>
+      </div>
+      <div class="carousel-item " >
+        <div class="row">
+          <div class="col-6" *ngFor = "let reciente of masVendidosCelular5; let i = index">
+        <img  width="140px" fallimg height="215px" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
+        <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
+        <img fallimg style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+          </div>
+    </div>
+      </div>
+      <div class="carousel-item " >
+        <div class="row">
+          <div class="col-6" fallimg *ngFor = "let reciente of masVendidosCelular6; let i = index">
+        <img  width="140px" fallimg height="215px" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
+        <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
+        <img fallimg style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+          </div>
+    </div>
+      </div>
+      <div class="carousel-item " >
+        <div class="row">
+          <div class="col-6" *ngFor = "let reciente of masVendidosCelular7; let i = index">
+        <img  width="140px" fallimg height="215px" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
+        <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
+        <img fallimg style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+          </div>
+    </div>
+      </div>
+      <div class="carousel-item" >
+        <div class="row">
+          <div class="col-6" *ngFor = "let reciente of masVendidosCelular; let i = index">
+        <img  width="140px" fallimg height="215px" src="{{reciente.Imagen}}" style = "width:140px; height: 215px; display: block; margin: 0 auto;" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+        <h5><p id="textomas" class="mr-5 mt-4">{{reciente.NombreProducto}}</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">{{reciente.Propiedad2}}</p></h5>
+        <h5><p id="textomas2" class="mr-5 mt-2">${{reciente.Precio}}</p></h5>
+        <img fallimg style="cursor: pointer;  display: block; margin: 0 auto;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" src="assets/anadirCarrito.png" width="150px"/>
+          </div>
+    </div>
       </div>
     </div>
     <a class="flecha carousel-control-prev my-5" id="mostrarencelular" href="#carouselExampleControls20" role="button" data-slide="prev">

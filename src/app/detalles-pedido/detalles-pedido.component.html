@@ -1,6 +1,6 @@
 <h1 class="mt-5">Detalles del Pedido</h1>
 <div *ngFor="let pedido of arrayPedido">
-<h5>Fecha a poner: {{pedido.FechaPago}}</h5><span><h5>Numero de pedido: {{pedido.IdPedido}}</h5></span>
+<h5>Fecha de compra: {{pedido.FechaPago}}</h5><span><h5>Numero de pedido: {{pedido.IdPedido}}</h5></span><span><h5>Entrega aproximada: {{pedido.Entrega}}</h5></span><span><h5>Estado del pedido: {{pedido.Estado}}</h5></span>
 <div class="row">
     <hr style="width:97%;">
 <div class="col-xs-12 col-sm-12 col-lg-3">    
@@ -37,9 +37,6 @@
 
 </div>
 </div>
-<hr style="width:100%;">
-
-<h1 class="ml-2">Fecha de entrega</h1>
 <div class="row" *ngFor="let producto of arrayProductos">
     <hr style="width: 97%;">
     <div class="col-sm-12 col-lg-3">
