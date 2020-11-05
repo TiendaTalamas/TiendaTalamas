@@ -55,7 +55,7 @@
        Num.Pedido: {{producto.IdPedido}}
           <div class="mt-2">Fecha Pago:{{producto.FECHAPAGO}}</div>
            <div class="mt-2" style="color:gray;">Total: ${{producto.TOTAL}}</div>
-           <div class="mt-2" style="color:gray;"> <button type="button" class="btn btn-info">Ver detalles</button></div>
+           <div class="mt-2" style="color:gray;"> <button type="button" class="btn btn-info" (click)="navegarDetalles(producto.IdPedido)">Ver detalles</button></div>
 
           <br>
       </div>
@@ -79,7 +79,7 @@
         ${{producto.TOTAL}}
       </div>
       <div class="col-2" style="font-weight: 900; font-size: larger; color:gray;">
-        <button type="button" class="btn btn-info">Ver detalles</button>
+        <button type="button" class="btn btn-info" (click)="navegarDetalles(producto.IdPedido)">Ver detalles</button>
       </div>
   
      </div>

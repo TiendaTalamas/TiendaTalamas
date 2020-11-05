@@ -40,6 +40,11 @@ export class HistorialComponent implements OnInit {
     this.obtenerCompras();
   }
 
+  navegarDetalles(IdPedido:string)
+  {
+    this.router.navigate(['DetallesPedido',IdPedido]);
+  }
+
   obtenerCompras()
   {
     let body = new URLSearchParams();
