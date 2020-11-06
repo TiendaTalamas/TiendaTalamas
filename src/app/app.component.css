@@ -77,7 +77,8 @@
 
     #logo
     {
-      width: 250px;
+      width:170px;
+      margin-left:-5%;
     }
 
     #control
