@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {Router} from "@angular/router"
 import {Location} from "@angular/common"
 import { FormBuilder, Validators } from '@angular/forms';
@@ -45,6 +45,7 @@ export class DireccionComponent implements OnInit {
    }
 
   respuesta:string;
+   modal:boolean;
 
   ngOnDestroy(): void {
     this._servicioCompartido.soloRegistro = false;
@@ -56,6 +57,7 @@ export class DireccionComponent implements OnInit {
      {
        this.location.back();
      }*/
+     this.modal = false;
   }
   navegarInicio()
   {
@@ -165,19 +167,45 @@ export class DireccionComponent implements OnInit {
                 {
                   this.respuesta=result['mensaje'];
                   alert(this.respuesta);
+                  this.modal = false;
                 }
                 else
                 {
                   localStorage.setItem('Token', result['token']);
                   alert(result['sql']);
-                  
+                  this.modal = true;
                 }
                 
           });
         }else{
           alert("Por favor rellene todos los datos");
-
+          this.modal = false;
         }
+  }
+
+  guardarGustor()
+  {
+    let body = new URLSearchParams();
+    body.append('gustos',"");
+    this.http.post(this._servicioCompartido.Url+'/registrar.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+                console.log(result);
+                if(result['status'] == "400")
+                {
+                  this.respuesta=result['mensaje'];
+                  alert(this.respuesta);
+                  this.modal = false;
+                }
+                else
+                {
+                  localStorage.setItem('Token', result['token']);
+                  alert(result['sql']);
+                  this.modal = true;
+                }
+                
+          });
   }
 
   omitir()
