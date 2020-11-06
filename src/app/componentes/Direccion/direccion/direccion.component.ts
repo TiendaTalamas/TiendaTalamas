@@ -51,11 +51,11 @@ export class DireccionComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.estado = "Distrito Federal";
+   /* this.estado = "Distrito Federal";
      if(isUndefined(this._servicioCompartido.soloRegistro))
      {
        this.location.back();
-     }
+     }*/
   }
   navegarInicio()
   {
@@ -170,7 +170,7 @@ export class DireccionComponent implements OnInit {
                 {
                   localStorage.setItem('Token', result['token']);
                   alert(result['sql']);
-                  this.navegarInicio();
+                  
                 }
                 
           });
@@ -208,7 +208,7 @@ export class DireccionComponent implements OnInit {
                 {
                   localStorage.setItem('Token', result['token']);
                   alert(result['sql']);
-                  this.navegarInicio();
+                  
                 }
                 
           });

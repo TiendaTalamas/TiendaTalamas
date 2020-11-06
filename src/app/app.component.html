@@ -2,17 +2,15 @@
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light px-0" style = "background-color:white; position:-webkit-sticky; position: static; top:25px; z-index: 3;">
       <a class="navbar-brand" style="cursor:pointer;"><img fallimg id="logo" src="assets/logo.png" alt=""  (click)="navegarInicio()"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button>-->
     
       <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent" id="botonespc">
-
         <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 mr-3" [formGroup]="registroForm">
           <input id="control" class="form-control form-control-sm mr-3 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search">
           <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; border-width: 0; background-color: white; "><img fallimg class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
         </form>
-        
         <a id="justcel" class="ml-5" href="https://api.whatsapp.com/send?phone=+528673076039"><img fallimg class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"></a>
         <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">         
            <div id="justcel" class="dropdown">
@@ -34,14 +32,10 @@
         
         <button id="justcel" class="btn" style="border-color:#f6f6f6; background-color:#f6f6f6; border-radius:150px; width:50px; height:50px;"><img fallimg class="cursorMano" style="margin-left:-15%;" src="assets/bolsa.png" width="30px" (click)="navegarCarrito()"><span style="margin-left: -7%; color:#cd0a0a;">{{_servicioCompartido.productosCarrito}}</span></button>
         </div>
-        
+
+        <!--Botones de cel-->
         <div id="botonescel">
-        <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent">
-            <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 mr-3" [formGroup]="registroForm">
-              <input id="control" class="form-control form-control-sm mr-3 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search">
-              <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; border-width: 0; background-color: white; "><img fallimg class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
-            </form>
-    
+        <!--<div class="collapse navbar-collapse ml-3" id="navbarSupportedContent">-->    
             <div class="d-flex justify-content-center">
             <a id="justcel" href="https://api.whatsapp.com/send?phone=+528673076039"><img fallimg class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"></a>
             <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">         
@@ -61,13 +55,17 @@
             <ng-template #elseTemplate>
               <img fallimg id="justcel" ngif class="mr-1 cursorMano" src="assets/iconouser.png" width="50px" height="50px" (click)="navegarSesion()">
             </ng-template>
-            
-            <button id="justcel" class="btn mr-5" style="border-color:#f6f6f6; background-color:#f6f6f6; border-radius:150px; width:50px; height:50px;"><img fallimg class="cursorMano" style="margin-left:-15%;" src="assets/bolsa.png" width="30px" (click)="navegarCarrito()"><span style="margin-left: -7%; color:#cd0a0a;">{{_servicioCompartido.productosCarrito}}</span></button>
-            
+            <button id="justcel" class="btn" style="border-color:#f6f6f6; background-color:#f6f6f6; border-radius:150px; width:50px; height:50px;"><img fallimg class="cursorMano" style="margin-left:-15%;" src="assets/bolsa.png" width="30px" (click)="navegarCarrito()"><span style="margin-left: -7%; color:#cd0a0a;">{{_servicioCompartido.productosCarrito}}</span></button>
           </div>        
-        </div> 
+        <!--</div>--> 
         </div>
-         
+
+        <div id="botonescel">
+          <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2" [formGroup]="registroForm">
+            <input id="control" class="form-control form-control-sm mr-3 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search">
+            <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; border-width: 0; background-color: white; "><img fallimg class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
+          </form>
+          </div>
     </nav>  
       <!--Fin del navbar-->
       
