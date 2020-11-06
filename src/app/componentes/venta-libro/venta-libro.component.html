@@ -284,17 +284,17 @@
         <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio}}</h1>
       </div>
       <div class="row">
-        <strong><h5 style="font-weight: 700; color: black;">EDITORIAL: </h5></strong> <h5 style="font-weight: 700; color:#0779e4;"> {{producto.Propiedad4}}</h5>
+        <strong><h5 id="cel" style="color: black;">EDITORIAL: </h5></strong> <h5 style="font-weight: 700; color:#0779e4;"> {{producto.Propiedad4}}</h5>
       </div>
       <div class="row">
-        <strong><h5 style="font-weight: 700; color: black;">ISBN: </h5></strong>        <h5 style="font-weight: 700; color:#0779e4;"> {{producto.IdProducto}}</h5>
+        <strong><h5 id="cel" style="color: black;">ISBN: </h5></strong>        <h5 style="font-weight: 700; color:#0779e4;"> {{producto.IdProducto}}</h5>
 
       </div>
       <div class="row">
-        <strong><h5 style="font-weight: 700; color: black;">NO.PAGINAS: </h5></strong>   <h5 style="font-weight: 700; color:#0779e4;"> {{producto.Propiedad3}}</h5>
+        <strong><h5 id="cel" style="color: black;">NO.PAGINAS: </h5></strong>   <h5 style="font-weight: 700; color:#0779e4;"> {{producto.Propiedad3}}</h5>
       </div>
       <div class="row">
-        <strong><h5 style="font-weight: 700; color: black;">ENCUADERNACION: </h5></strong>  <h5 style="font-weight: 700; color:#0779e4;"> {{producto.Propiedad1}}</h5>
+        <strong><h5 id="cel" style="color: black;">ENCUADERNACION: </h5></strong>  <h5 style="font-weight: 700; color:#0779e4;"> {{producto.Propiedad1}}</h5>
       </div>
       <hr/>
       <ng-container *ngIf="disponible; else elseTemplate">

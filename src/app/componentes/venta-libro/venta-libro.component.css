@@ -1,5 +1,9 @@
 img {
 	max-width:75%; }
+h5
+{
+	font-weight: 700;
+}
 
 .img-zoom-result {
   border: 1px solid #d4d4d4;
@@ -152,4 +156,18 @@ img {
 	100% {
 	  opacity: 1;
 	  -webkit-transform: scale(1);
-			  transform: scale(1); } }
+			  transform: scale(1); } 
+			
+			
+			
+			
+			}
+
+@media only  screen and (max-width:500px)
+{
+	h5
+	{
+		font-size:small;
+	}
+}
+
