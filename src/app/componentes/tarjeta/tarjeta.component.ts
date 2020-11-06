@@ -42,8 +42,8 @@ export class TarjetaComponent implements OnInit {
                 if(isNullOrUndefined(this.Subtotal)){
                   this.router.navigate(['']);
                 }
-                if(Number(this.Subtotal) < 500){
-                  this.Envio =  String(500-Number(this.Subtotal));
+                if(Number(this.Subtotal) < 300){
+                  this.Envio =  String(300-Number(this.Subtotal));
                 }
                 this.Total = String(Number(this.Subtotal) + Number(this.Envio));
               }
