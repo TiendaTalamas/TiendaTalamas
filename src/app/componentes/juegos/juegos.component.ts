@@ -17,6 +17,7 @@ export class JuegosComponent implements OnInit {
   ngOnInit() {
     this.obtenerArticulos();
   }
+  
   AA: string;
   data: any[];
   val: any[];
