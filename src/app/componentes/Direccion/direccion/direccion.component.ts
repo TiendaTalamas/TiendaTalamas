@@ -29,6 +29,10 @@ export class DireccionComponent implements OnInit {
   estado:string;
   ciudad:string;
   gustos:string;
+  gusto1:string;
+  gusto2:string;
+  gusto3:string;
+  gusto4:string;
   constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, fb2: FormBuilder,public _servicioCompartido: servicioCompartido) {
     this.formData = fb.group({
       'calle1' : this.calle1,
@@ -52,11 +56,11 @@ export class DireccionComponent implements OnInit {
   }
 
   ngOnInit() {
-   /* this.estado = "Distrito Federal";
+    this.estado = "Distrito Federal";
      if(isUndefined(this._servicioCompartido.soloRegistro))
      {
        this.location.back();
-     }*/
+     }
      this.modal = false;
   }
   navegarInicio()
@@ -106,6 +110,8 @@ export class DireccionComponent implements OnInit {
 
   registrar()
   {
+    this.modal = true;
+
     let errores = true;
     this.gustos = "No definidos";
     this._servicioCompartido.ApellidoMa = "Dato innecesario";
@@ -173,7 +179,6 @@ export class DireccionComponent implements OnInit {
                 {
                   localStorage.setItem('Token', result['token']);
                   alert(result['sql']);
-                  this.modal = true;
                 }
                 
           });
@@ -183,26 +188,26 @@ export class DireccionComponent implements OnInit {
         }
   }
 
-  guardarGustor()
+  guardarGustos()
   {
+    this.gustos ="Libro favorito: "+this.gusto1+"<br> Instrumento favorito: "+this.gusto2+"<br> Artista favorito:"+this.gusto3+"<br> Escritor favorito: "+this.gusto4;
     let body = new URLSearchParams();
-    body.append('gustos',"");
-    this.http.post(this._servicioCompartido.Url+'/registrar.php', body)
+    body.append('gustos',this.gustos);
+    body.append('token',localStorage.getItem('Token'));
+    this.http.post(this._servicioCompartido.Url+'/guardarGustos.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
-                console.log(result);
+                alert(result['Mensaje']);
                 if(result['status'] == "400")
                 {
-                  this.respuesta=result['mensaje'];
-                  alert(this.respuesta);
                   this.modal = false;
+                  this.router.navigate(['']);
                 }
                 else
                 {
-                  localStorage.setItem('Token', result['token']);
-                  alert(result['sql']);
-                  this.modal = true;
+                  this.router.navigate(['']);
+                  this.modal = false;
                 }
                 
           });
@@ -210,6 +215,7 @@ export class DireccionComponent implements OnInit {
 
   omitir()
   {
+    this.modal = true;
     this.gustos = "No definidos";
     this._servicioCompartido.ApellidoMa = "Dato innecesario";
     let body = new URLSearchParams();
@@ -231,12 +237,14 @@ export class DireccionComponent implements OnInit {
                 {
                   this.respuesta=result['mensaje'];
                   alert(this.respuesta);
+                  this.modal = false;
                 }
                 else
                 {
                   localStorage.setItem('Token', result['token']);
                   alert(result['sql']);
-                  
+                  this.modal = true;
+
                 }
                 
           });
