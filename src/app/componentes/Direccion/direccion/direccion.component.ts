@@ -198,7 +198,7 @@ export class DireccionComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
-                alert(result['Mensaje']);
+                this.router.navigate(['']);
                 if(result['status'] == "400")
                 {
                   this.modal = false;

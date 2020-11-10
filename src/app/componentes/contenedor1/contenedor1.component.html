@@ -548,7 +548,7 @@
   <div class="container mb-5" id="pequebanners">
     <div class="row">
       <div class="col-sm-4 col-xs-4 col-lg-2" *ngFor="let discos of articulosArray_Vendidos_Discos">
-        <img fallimg src="{{discos.Imagen}}" class="img-fluid imgr" alt="" (click) = "masInformacion(discos.IdProducto, discos.Categoria)">                                                                                  
+        <img fallimg src="{{discos.Imagen}}" class="img-fluid imgr" width="100%" style="min-height: 45%; max-height:45% ;" alt="" (click) = "masInformacion(discos.IdProducto, discos.Categoria)">                                                                                  
         <h5><p id="textomas" class="mt-4">{{discos.NombreProducto}}</p></h5>
         <h5><p id="textomas3" class="mr-5 mt-4">{{discos.Propiedad1}}</p></h5>
         <h5><p id="textomas4" class="mr-5 mt-2">${{discos.Precio}}</p></h5>
