@@ -163,20 +163,37 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel" style="color: black;">AYUDANOS A CONOCERTE</h5>
-        <button type="button" (click)="guardarGustos()" class="close" data-dismiss="modal" aria-label="Close">
+        <button *ngIf="carga" type="button" (click)="guardarGustos()" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+        <ng-container *ngIf="carga; else elseTemplate">
+            
         <input id="gusto1" [(ngModel)]="gusto1" class="form-control ml-2 mt-4"  style="width: 100%;"  type="text" placeholder="Libro Favorito?">
         <input id="gusto2" [(ngModel)]="gusto2" class="form-control ml-2 mt-4"  style="width: 100%;" id="preferencia2" type="text" placeholder="Instrumento Favorito?">
         <input id="gusto3" [(ngModel)]="gusto3" class="form-control ml-2 mt-4"  style="width: 100%;" id="preferencia3" type="text" placeholder="Artista Favorito?">
         <input id="gusto4" [(ngModel)]="gusto4" class="form-control ml-2 mt-4"  style="width: 100%;" id="preferencia3" type="text" placeholder="Escritor Favorito?">
         <p style="padding:20px; font-size: small; color: gray;">Estas preguntas nos ayudara a brindarte un mejor servicio</p>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <div class="row">
+            <div class="col-4"></div>
+
+            <div class="col-4">
+            <img style="display: block; margin: auto 0; " src="assets/carga.gif">
+            </div>
+            <div class="col-4"></div>
+
+          </div>
+        </ng-template>
+      
       </div>
       <div class="modal-footer">
+      <div *ngIf="carga">
         <button type="button" (click)="guardarGustos()" class="btn btn-secondary" data-dismiss="modal"style="background-color:#81b214; border-color:#81b214;">Enviar</button>
         <button type="button" (click)="guardarGustos()" class="btn btn-secondary" data-dismiss="modal"style="background-color:#81b214; border-color:#81b214;">Omitir</button>
+      </div>
       </div>
     </div>
   </div>

@@ -33,6 +33,7 @@ export class DireccionComponent implements OnInit {
   gusto2:string;
   gusto3:string;
   gusto4:string;
+  carga:boolean;
   constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, fb2: FormBuilder,public _servicioCompartido: servicioCompartido) {
     this.formData = fb.group({
       'calle1' : this.calle1,
@@ -62,6 +63,7 @@ export class DireccionComponent implements OnInit {
        this.location.back();
      }
      this.modal = false;
+     this.carga = false;
   }
   navegarInicio()
   {
@@ -111,7 +113,7 @@ export class DireccionComponent implements OnInit {
   registrar()
   {
     this.modal = true;
-
+  
     let errores = true;
     this.gustos = "No definidos";
     this._servicioCompartido.ApellidoMa = "Dato innecesario";
@@ -171,12 +173,13 @@ export class DireccionComponent implements OnInit {
                 console.log(result);
                 if(result['status'] == "400")
                 {
+                  this.modal = false;
                   this.respuesta=result['mensaje'];
                   alert(this.respuesta);
-                  this.modal = false;
                 }
                 else
                 {
+                  this.carga = true;
                   localStorage.setItem('Token', result['token']);
                   alert(result['sql']);
                 }
@@ -185,11 +188,13 @@ export class DireccionComponent implements OnInit {
         }else{
           alert("Por favor rellene todos los datos");
           this.modal = false;
+          this.carga = false;
         }
   }
 
   guardarGustos()
   {
+    this.carga = false;
     this.gustos ="Libro favorito: "+this.gusto1+"<br> Instrumento favorito: "+this.gusto2+"<br> Artista favorito:"+this.gusto3+"<br> Escritor favorito: "+this.gusto4;
     let body = new URLSearchParams();
     body.append('gustos',this.gustos);
@@ -216,6 +221,7 @@ export class DireccionComponent implements OnInit {
   omitir()
   {
     this.modal = true;
+    
     this.gustos = "No definidos";
     this._servicioCompartido.ApellidoMa = "Dato innecesario";
     let body = new URLSearchParams();
@@ -244,7 +250,7 @@ export class DireccionComponent implements OnInit {
                   localStorage.setItem('Token', result['token']);
                   alert(result['sql']);
                   this.modal = true;
-
+                  this.carga = true;
                 }
                 
           });
