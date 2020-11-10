@@ -194,7 +194,7 @@ h1
 
 }
 
-@media only  screen and (max-width:500px)/*Y estos solo muestra cuando la pantalla es mayor a 500px*/
+@media only  screen and (max-width:760px)/*Y estos solo muestra cuando la pantalla es mayor a 760px*/
 {
   #DUCTOS
   {
@@ -253,7 +253,7 @@ h1
   }
 }
 
-@media only screen and (max-width:5000px) and (min-width:500px)
+@media only screen and (max-width:5000px) and (min-width:750px)
 /*Esto no se muestra a menos que llegue a min de 500 px o un maximo de 5000px*/
 {
   #mostrarencelular
@@ -350,23 +350,23 @@ h1
 
 /*Cambios que hice rapido para poder hacer todo a celular
 
-@media only screen and (max-width:5000px) and (min-width:995px)
-{
-  #DUCTOS
-  {
-    display: none !important;
-    overflow: hidden;
-  }
-}
+/*esto solo se mostrara cuando sea suprior a 1000px o inferior a 750px*/
 
-@media only screen and (max-width:1000px) and (min-width:700px)
+@media only screen and (max-width:1000px) and (min-width:760px)
 {
   #nomostrar
   {
     display: none !important;
   }
 }
-
+@media only screen and (min-width:1000px)
+{
+  #DUCTOS
+  {
+    display: none !important;
+  }
+}
+/*
 @media only screen and (max-width:5000px) and (min-width:780px)
 {
   #DUCTOS2
@@ -383,6 +383,8 @@ h1
   }
 }
 */
+
+/*Hacer que aparezca de 760 a 1000px*/
 
 
 
