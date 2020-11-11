@@ -103,11 +103,17 @@
       <div class="row" *ngFor = "let resultado of articulosArray_Buscar; let i = index" id="pequebanners2">
         <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{resultado.Imagen}}" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)" width="200px" alt=""></div>
         <div class="col-8 mt-4" style="text-transform:uppercase;">
+          <span style="font-family: 'Oswald', sans-serif; color:#333333; font-weight: 700;">
           {{resultado.NombreProducto}}
+          </span>
             <br>
-             <b>Precio:</b>${{resultado.Precio}}
+            <span style="font-family: 'Oswald', sans-serif; font-weight:700;">
+             <b style="color: #333333;">Precio:</b><span style="color: #76aadb;">${{resultado.Precio}}</span>
+             </span>
             <br>
-            <b>Categoria:</b> {{resultado.SubCategoria}}
+            <span style="font-family: 'Oswald', sans-serif; font-weight: 700;">
+            <b style="color:#333333;">Categoria:</b><span style="color: #9e9e9e;"> {{resultado.SubCategoria}}</span>
+            </span>
             <br>
           <img fallimg class="mt-4" style="cursor: pointer;" (click)="anadirAlCarrito(resultado.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
         </div>
@@ -116,9 +122,6 @@
 
 <router-outlet></router-outlet>
 </div>
-
-
-
 <!-- Footer -->
 <hr>
 <footer class="page-footer font-small blue pt-4" style = "background-color: white">
@@ -126,7 +129,7 @@
   <div class="row mx-sm-5 mx-lg-0 mx-md-0">
     <div class="col-md-4 col-lg-4 col-sm-12 mx-sm-5 mx-lg-0 mx-md-0">
       <div class="row" style="margin-left:22%;" >
-        <p>CONOCENOS</p>
+        <p style="font-weight: 500;">CONOCENOS</p>
       </div>
       <div class="row">
         <div class="container mb-5" style="border-left: solid 7px #81b214; width: 50%;  padding-bottom:20px;">
@@ -139,7 +142,7 @@
     </div>
     <div class="col-md-4 col-lg-4 col-sm-12 mx-sm-5 mx-lg-0 mx-md-0">
       <div class="row" style="margin-left:22%;" >
-        <p>SOPORTE AL CLIENTE</p>
+        <p style="font-weight: 500;">SOPORTE AL CLIENTE</p>
       </div>
       <div class="row">
         <div class="container mb-5" style="border-left: solid 7px #ff5722; width: 50%; padding-left:20px; padding-bottom:20px;">
@@ -156,7 +159,7 @@
     </div>
     <div class="col-md-4 col-lg-4 col-sm-12 mx-sm-5 mx-lg-0 mx-md-0">
       <div class="row" style="margin-left:22%;">
-        <p>POLITICAS</p>
+        <p style="font-weight: 500;">POLITICAS</p>
       </div>
       <div class="row">
         <div class="container mb-5" style="border-left: solid 7px #6a2c70; width: 50%;  padding-bottom:20px;">
@@ -212,4 +215,6 @@
 
 </footer>
 <!-- Footer -->
+
+
 </div>

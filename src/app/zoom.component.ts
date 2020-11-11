@@ -21,6 +21,14 @@ class="img-zoom-lens">
      position: absolute;
      border: 1px solid #d4d4d4;
    }
+   
+   @media only screen and (max-width:1024px)
+   {
+     .img-zoom-lens
+     {
+     display:none !important;
+     }
+   }
 `]
 })
 export class ZoomComponent {

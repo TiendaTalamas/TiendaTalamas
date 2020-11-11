@@ -87,7 +87,7 @@
   </div>
 
 <hr id="deco" style="width:100%;"/>
-<h5 id="deco" class="text-center" style="color: black; font-family: 'Ubuntu', sans-serif;">MAS VENDIDO</h5>
+<h5 id="deco" class="text-center" style="font-weight: 700; font-family: 'Oswald', sans-serif; color: #243966;">MAS VENDIDO</h5>
 <hr id="deco" style="width:100%;"/>
   <div id="carouselExampleControls20" class="carousel slide" data-ride="carousel" style="width:300px; display: block; margin:0 auto;">
     <div class="carousel-inner" id="mostrarencelular">
@@ -550,7 +550,7 @@
       <div class="col-sm-4 col-xs-4 col-lg-2" *ngFor="let discos of articulosArray_Vendidos_Discos">
         <img fallimg src="{{discos.Imagen}}" class="img-fluid imgr" width="100%" style="min-height: 45%; max-height:45% ;" alt="" (click) = "masInformacion(discos.IdProducto, discos.Categoria)">                                                                                  
         <h5><p id="textomas" class="mt-4">{{discos.NombreProducto}}</p></h5>
-        <h5><p id="textomas3" class="mr-5 mt-4">{{discos.Propiedad1}}</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">{{discos.Propiedad2zi}}</p></h5>
         <h5><p id="textomas2" class="mr-5 mt-2">${{discos.Precio}}</p></h5>
         <img  style="cursor: pointer; display: block; margin: 0 auto;" (click)="anadirAlCarrito(discos.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
 
@@ -571,17 +571,23 @@
   <!--Esto se mostrara en celular-->
   <div id="pequebanners2">
        <hr/>
-       <h5 class="text-center">Novedades</h5>
+       <h5 class="text-center" style="font-weight: 700; font-family: 'Oswald', sans-serif; color: #243966;">Novedades</h5>
        <hr/>
   </div>
     <div class="row" *ngFor = "let reciente of articulosArray_Vendidos_Libros; let i = index" id="pequebanners2">
       <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)" width="200px" alt=""></div>
       <div class="col-8 mt-4" style="text-transform:uppercase;">
+        <span style="font-weight: 700;   font-family: 'Oswald', sans-serif; color: #333333;">
         {{reciente.NombreProducto}}
-          <br>
+        </span>  
+        <br>
+        <span style="color:#9e9e9e; font-family: 'Oswald', sans-serif; font-weight: 300;">
           {{reciente.Propiedad1}}
+          </span>
           <br>
+          <span style="color: #76aadb;   font-family: 'Oswald', sans-serif; font-weight: 700;">
           ${{reciente.Precio}}
+          </span>
           <br>
         <img fallimg class="mt-4" style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
       </div>
@@ -597,17 +603,23 @@
 
       <div id="pequebanners2">
         <hr/>
-        <h5 class="text-center">LO MEJOR EN MUSICA</h5>
+        <h5 class="text-center" style="font-weight: 700; font-family: 'Oswald', sans-serif; color: #243966;">LO MEJOR EN MUSICA</h5>
         <hr/>
    </div>
      <div class="row" *ngFor="let discos of articulosArray_Vendidos_Discos"  id="pequebanners2">
        <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{discos.Imagen}}" (click) = "masInformacion(discos.IdProducto, discos.Categoria)" width="200px" alt=""></div>
        <div class="col-8 mt-4" style="text-transform: uppercase;">
+        <span style="font-weight: 700; font-family: 'Oswald', sans-serif; color: #333333;">
          {{discos.NombreProducto}}
+        </span>
            <br>
-           {{discos.Propiedad1}}
+           <span style="font-weight:300; font-family: 'Oswald', sans-serif; color: #9e9e9e;">
+           {{discos.Propiedad2}}
+           </span>
            <br>
+           <span style="font-weight: 700; font-family: 'Oswald', sans-serif; color: #76aadb;">
            ${{discos.Precio}}
+           </span>
            <br>
          <img  style="cursor: pointer;" (click)="anadirAlCarrito(discos.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
        </div>
