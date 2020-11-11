@@ -229,6 +229,14 @@ a
 
 }
 
+#Botoncarrito
+{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+}
+
 #textomas2
 {
   white-space: nowrap;
