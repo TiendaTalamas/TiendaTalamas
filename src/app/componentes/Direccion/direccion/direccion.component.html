@@ -178,20 +178,14 @@
         </ng-container>
         <ng-template #elseTemplate>
           <div class="row">
-            <div class="col-4"></div>
-
-            <div class="col-4">
-            <img style="display: block; margin: auto 0; " src="assets/carga.gif">
-            </div>
-            <div class="col-4"></div>
-
+            <img style="display: block; margin:0 auto; width:150px;" src="assets/carga.gif">
           </div>
         </ng-template>
       
       </div>
       <div class="modal-footer">
       <div *ngIf="carga">
-        <button type="button" (click)="guardarGustos()" class="btn btn-secondary" data-dismiss="modal"style="background-color:#81b214; border-color:#81b214;">Enviar</button>
+        <button type="button" (click)="guardarGustos()" class="btn btn-secondary mr-1" data-dismiss="modal"style="background-color:#81b214; border-color:#81b214;">Enviar</button>
         <button type="button" (click)="guardarGustos()" class="btn btn-secondary" data-dismiss="modal"style="background-color:#81b214; border-color:#81b214;">Omitir</button>
       </div>
       </div>
