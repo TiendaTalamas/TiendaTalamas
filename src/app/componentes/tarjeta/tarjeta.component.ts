@@ -25,6 +25,8 @@ export class TarjetaComponent implements OnInit {
   Total:string;
   nombre:string;
   apellido:string;
+  button:string;
+  bloquear:boolean;
   constructor(private http:Http, public _servicioCompartido:servicioCompartido, private router:Router, private route:ActivatedRoute, public falla:NgFallimgModule) { }
   obtenerSubtotal()
   {
@@ -60,6 +62,7 @@ export class TarjetaComponent implements OnInit {
   ngOnInit() {
     this.item =this.route.snapshot.paramMap.get('IdProducto');
     this.cantidad = this.route.snapshot.paramMap.get('Cantidad');
+    this.button = "Pagar";
     this.obtenerSubtotal();
     console.log(this._servicioCompartido.IdProducto);
     console.log(this._servicioCompartido.Cantidad);
@@ -87,20 +90,20 @@ export class TarjetaComponent implements OnInit {
     const paymentForm = document.getElementById('payment-form');
     paymentForm.addEventListener('submit', event => {
       this.isDisabled = true;
+      this.button = "Cargando...";
       event.preventDefault();
       stripe.createToken(card).then(result => {
         if (result.error) {
           console.log('Error creating payment method.');
           const errorElement = document.getElementById('card-errors');
           errorElement.textContent = result.error.message;
+          this.button = "Pagar";
           this.isDisabled = false;
         } else {
           // At this point, you should send the token ID
           // to your server so it can attach
           // the payment source to a customer
-          console.log('Token acquired!');
-          console.log(result.token);
-          console.log(result.token.id);
+
           this.enviarToken(result.token.id);
         }
       });
@@ -109,16 +112,19 @@ export class TarjetaComponent implements OnInit {
   
   enviarToken(stripeToken:string)
   {
-    if(isNullOrUndefined(this.nombre) && isNullOrUndefined(this.apellido)){
+    if(isNullOrUndefined(this.nombre) && isNullOrUndefined(this.apellido) && this.bloquear){
       alert("Por favor ingrese el nombre del tramitante");
       this.isDisabled = false;
+      this.button = "Pagar";
     }else{
+      this.bloquear = true;
     let body = new URLSearchParams();
     body.append("jsonUsuario", this._servicioCompartido.jsonUsuario);
     body.append("Direccion", this._servicioCompartido.Direccion);
     body.append("IdProducto", this.item);
     body.append("Cantidad", this.cantidad);
     body.append("stripeToken", stripeToken);
+    body.append('DireccionE',this._servicioCompartido.DireccionE);
     this.cantidad = "0";
     body.append("Token", localStorage.getItem('Token'));
     this.http.post(this._servicioCompartido.Url+'/pagoIndividual.php', body)
@@ -128,8 +134,8 @@ export class TarjetaComponent implements OnInit {
               console.log(result);
               if(result['status'] == 200)
               {
-                this.router.navigate(['DetallesPedido',result['IdCompra']]);
-              }
+                this.router.navigate(['CuadroExitoso',"Exito",result['IdCompra']]);
+                this._servicioCompartido.IdPedido = result['IdPedido'];              }
               if(result['status'] == 400){
                 this.router.navigate(['CuadroExitoso',"Fallo",result['IdCompra']]);
               }
@@ -137,11 +143,15 @@ export class TarjetaComponent implements OnInit {
                 alert("Existe un error con la tarjeta: "+result['IdCompra']);
                 this.cantidad = this.route.snapshot.paramMap.get('Cantidad');
                 this.isDisabled = false;
+                this.bloquear = false;
+                this.button = "Pagar";
               }
               if(result['status'] == 405){
                 alert("La tarjeta fue declinada");
                 this.cantidad = this.route.snapshot.paramMap.get('Cantidad');
                 this.isDisabled = false;
+                this.bloquear = false;
+                this.button = "Pagar";
               }
     });
   }

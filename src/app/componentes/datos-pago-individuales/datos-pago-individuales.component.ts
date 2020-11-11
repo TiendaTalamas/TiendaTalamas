@@ -87,7 +87,7 @@ export class DatosPagoIndividualesComponent implements OnInit {
   }
   procederCompra()
   {
-    this.router.navigate(['Pago',this.IdProducto,this.Cantidad]);
+    this.router.navigate(['ConfirmacionPago',this.IdProducto,this.Cantidad]);
     this._servicioCompartido.IdProducto = this.IdProducto;
     this._servicioCompartido.Cantidad = this.Cantidad;
     this._servicioCompartido.jsonUsuario = this.jsonUsuario;
@@ -172,6 +172,8 @@ export class DatosPagoIndividualesComponent implements OnInit {
             this.Apellido = result[0]['Apellido'];
             this.Direccion = "Calle 1:"+result[0]["Calle"]+" Calle 2: "+result[0]["Calle2"]+" Calle 3: "+result[0]["Calle3"]+" NumeroExt: "+result[0]["NumeroExterior"]+" NumeroInt: "+result[0]["NumeroInterior"]+" Codigo Postal: "+result[0]["CodigoPostal"]+" Ciudad: "+result[0]["Ciudad"]+" Estado:"+result[0]['Estado']+" Nombre y Apellido: "+result[0]['NombreOpcional']+" "+result[0]['Apellido'];
             this.jsonUsuario = JSON.stringify(result);
+            this._servicioCompartido.DireccionE = this.Nombre+" "+this.Apellido+"<br>"+result[0]["Calle"]+" #"+result[0]["NumeroExterior"]+"<br>"+result[0]["CodigoPostal"]+", "+result[0]["Ciudad"]+"("+result[0]["Estado"]+")";
+
             if(isNullOrUndefined(result[0]['Calle']) || result[0]['Calle'] == ""){
               this.noPredeterminada = false;
             }
@@ -180,9 +182,9 @@ export class DatosPagoIndividualesComponent implements OnInit {
   procederCompra2()
   {
     if(!isNullOrUndefined(this.calle1) && !isNullOrUndefined(this.numExt) && !isNullOrUndefined(this.numExt) && !isNullOrUndefined(this.estado) && !isNullOrUndefined(this.Ciudad)  && !isNullOrUndefined(this.codigoPost)){
-
+      this._servicioCompartido.DireccionE = this.calle1+" #"+this.numExt+"<br>"+this.codigoPost+", "+this.Ciudad+"("+this.estado+")";
     this.Direccion = "Calle 1:"+this.calle1+" Calle 2: "+this.calle2+" Calle 3: "+this.calle3+" NumeroExt: "+this.numExt+" NumeroInt: "+this.numInterior+" Codigo Postal: "+this.codigoPost+" Ciudad: "+this.ciudad+" Estado:"+this.estado+" Nombre y Apellido:"+this.Nombre+" "+ this.Apellido;
-    this.router.navigate(['Pago',this.IdProducto,this.Cantidad]);
+    this.router.navigate(['ConfirmacionPago',this.IdProducto,this.Cantidad]);
     this._servicioCompartido.Nombre = this.Nombre;
     this._servicioCompartido.ApellidoPa = this.Apellido;
     this._servicioCompartido.Calle = this.calle1;

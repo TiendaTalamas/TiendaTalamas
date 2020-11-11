@@ -35,7 +35,8 @@ import {AcrilicoComponent} from './componentes/acrilico/acrilico.component';
 import {DetallesPedidoComponent} from './detalles-pedido/detalles-pedido.component';
 import {DatosPagoIndividualesComponent} from './componentes/datos-pago-individuales/datos-pago-individuales.component';
 import {TarjetaComponent} from './componentes/tarjeta/tarjeta.component';
-
+import {ConfirmacionPedidoComponent} from './confirmacion-pedido/confirmacion-pedido.component';
+import {ConfirmacionIndividualComponent} from './componentes/confirmacion-individual/confirmacion-individual.component';
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
   {path: 'card', component: CardComponent, },
@@ -70,8 +71,9 @@ const routes: Routes = [
   {path: 'Acrilicos', component:AcrilicoComponent},
   {path: 'DatosDePago/:IdProducto/:Cantidad', component:DatosPagoIndividualesComponent},
   {path: 'Pago/:IdProducto/:Cantidad', component:TarjetaComponent},
-  {path: 'DetallesPedido/:IdPedido', component:DetallesPedidoComponent}
-
+  {path: 'DetallesPedido/:IdPedido', component:DetallesPedidoComponent},
+  {path: 'ConfirmacionPago',component:ConfirmacionPedidoComponent},
+  {path: 'ConfirmacionPago/:IdProducto/:Cantidad',component:ConfirmacionIndividualComponent}
 ];
 
 @NgModule({

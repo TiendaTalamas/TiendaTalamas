@@ -1,0 +1,60 @@
+<h1 class="mt-5">Detalles de la compra</h1>
+<div >
+<div class="row">
+    <hr style="width:97%;">
+<div class="col-xs-12 col-sm-12 col-lg-3">    
+      <div>
+          <strong><p style="font-size:medium;">Direccion de Envio</p></strong>
+      </div>
+      <p [innerHTML]="_servicioCompartido.DireccionE"></p>
+    </div>    
+<div class=" col-xs-12 col-sm-12 col-lg-5">
+
+</div>
+<div class=" col-xs-12 col-sm-12 col-lg-3">
+    <div>
+       <strong><p style="font-size: medium;">Resumen de la compra </p></strong>
+     </div>
+     <div>
+       Productos: ${{Subtotal}}
+
+     </div>
+     <div>
+        Envio: ${{Envio}}
+
+      </div>
+      <div>
+        Total: ${{Total}}
+
+      </div>
+      <div>
+        <button class="btn btn mt-1" style="width: 100%;" (click)="confirmarCompra()">Confirmar compra</button>
+      </div>
+</div>
+
+</div>
+</div>
+<div class="row" *ngFor="let producto of articulosArray">
+    <hr style="width: 97%;">
+    <div class="col-sm-6 col-md-6 col-lg-3 col-xs-6">
+      <img class="img-fluid" fallimg src="{{producto.Imagen}}" width="100%" style="max-width: 75%;">
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-5 col-xs-6">
+        <div>
+            <h3>{{producto.NombreProducto}}</h3>
+        </div>
+        <div>
+          Precio Individual:{{producto.Precio}}
+      </div>
+      <div>
+        Cantidad:{{cantidad}}
+    </div>
+        <div>
+            Subtotal: {{totalArticulo}}
+        </div>
+
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-4 col-xs-12">
+        <button class="btn btn mt-1" style="width: 100%;" (click)="masInformacion(producto.IdProducto,producto.Categoria)">Ver Producto</button>
+        </div>
+</div>

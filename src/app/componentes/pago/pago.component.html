@@ -18,8 +18,7 @@
       <input name="apellido" class="form-control" id="apellido" [(ngModel)]="apellido" formControlName="apellido"  placeholder="Apellido(s)">
      </div>
     </div>
-    <button class="btn btn mt-2" [disabled]="isDisabled" >Ingresar Metodo de Pago</button>
-    <button data-toggle="modal" data-target="#exampleModal">pto</button>
+    <button class="btn btn mt-2" [disabled]="isDisabled" >{{button}}</button>
   </form>
 </div>
 <div class="row">
@@ -27,7 +26,7 @@
   <div class="container mt-5" style=" margin-left: 0px; width:350px; border:2px solid gray; padding:15px; border: radius 10px;">
   <strong>ENVIAR A:</strong>
   <div>{{_servicioCompartido.Nombre}}</div>
-  <div>{{_servicioCompartido.Calle}} y #{{_servicioCompartido.NumeroExt}}</div>
+  <div>{{_servicioCompartido.Calle}}  #{{_servicioCompartido.NumeroExt}}</div>
   <div>{{_servicioCompartido.Ciudad}}, {{_servicioCompartido.Estado}}, #{{_servicioCompartido.CodigoPost}}</div>
   </div>
   </div>

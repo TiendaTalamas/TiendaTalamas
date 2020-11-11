@@ -53,6 +53,8 @@ import { DatosPagoIndividualesComponent } from './componentes/datos-pago-individ
 import { TarjetaComponent } from './componentes/tarjeta/tarjeta.component';
 import { NgFallimgModule } from 'ng-fallimg';
 import { DetallesPedidoComponent } from './detalles-pedido/detalles-pedido.component';
+import { ConfirmacionPedidoComponent } from './confirmacion-pedido/confirmacion-pedido.component';
+import { ConfirmacionIndividualComponent } from './componentes/confirmacion-individual/confirmacion-individual.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +96,8 @@ import { DetallesPedidoComponent } from './detalles-pedido/detalles-pedido.compo
     DatosPagoIndividualesComponent,
     TarjetaComponent,
     DetallesPedidoComponent,
+    ConfirmacionPedidoComponent,
+    ConfirmacionIndividualComponent,
    
   ],
   imports: [

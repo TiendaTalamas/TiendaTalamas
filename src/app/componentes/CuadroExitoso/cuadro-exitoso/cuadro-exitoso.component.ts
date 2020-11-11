@@ -50,7 +50,9 @@ export class CuadroExitosoComponent implements OnInit {
     this.obtenerSubCategoriasLibros();
     this._servicioCompartido.comprobarUsuario();
   }
-
+  navegarDetalles(){
+    this.router.navigate(['DetallesPedido',this._servicioCompartido.IdPedido]);
+  }
   obtenerCompra()
   {
     let body = new URLSearchParams();
