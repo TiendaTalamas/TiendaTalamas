@@ -92,7 +92,7 @@
                <img fallimg class="imgr" style="display: block; margin: 0 auto; cursor: pointer;" src="{{resultado.Imagen}}" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)">
                <h5><p id="textomas" class=" mt-1 mr-5">{{resultado.NombreProducto}}</p></h5>
                <h5><p id="textomas2"  class="mt-1 mr-5">${{resultado.Precio}}</p></h5>
-               <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black; display: block; margin: 0 auto; border-radius:20px;" type="button" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)" class="btn btn-primary mt-1" data-toggle="modal" data-target="#exampleModal">Comprar<img fallimg class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+               <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(resultado.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
               </div>
           
             </div>
@@ -174,14 +174,13 @@
   </div>
 </div>
 <div style="background-color:#dadada;">
-  <div class="container">
   <div class="row" style="align-items: center;" >
     <div class="col-sm-12 col-md-3 col-lg-4">
         <a title="Pagina de Facebook de Tienda Talamas" href="https://m.facebook.com/Tienda-Talam%C3%A1s-108212411045799/?ref=bookmarks"><img fallimg style="margin-left:20%; padding-top: 50px;" id="facebook" src="assets/facebook.png" width="60px"></a>
-        <a title="Pagina de Instagram de Tienda Talamas" href="https://www.instagram.com/tiendatalamas/"><img fallimg style="padding-top:50px; margin-left:3%;" id="facebook" src="assets/instagram.png" width="60px"></a>
-        <a title="Pagina de Twiter de Tienda Talamas" href="https://mobile.twitter.com/tiendatalamas"><img fallimg style="padding-top: 50px; margin-left:3%;" id="twiter" src="assets/twiter.png" width="60px"></a>
-        <p style="margin-left: 15%; margin-top: 1%; font-size:12px;">Av. Vicente Guerrero 1729 (Sector centro)</p>
-        <p style="margin-left: 20%; margin-top: -5%; font-size: 12px;">C.P. 88000 Nuevo Laredo, Tamps</p>
+        <a title="Pagina de Instagram de Tienda Talamas" href="https://www.instagram.com/tiendatalamas/"><img fallimg style="padding-top:50px; margin-left:6%;" id="facebook" src="assets/instagram.png" width="60px"></a>
+        <a title="Pagina de Twiter de Tienda Talamas" href="https://mobile.twitter.com/tiendatalamas"><img fallimg style="padding-top: 50px; margin-left:6%;" id="twiter" src="assets/twiter.png" width="60px"></a>
+        <p style="margin-left: 20%; margin-top: 1%; font-size:12px;">Av. Vicente Guerrero 1729 (Sector centro)</p>
+        <p style="margin-left: 25%; margin-top: -5%; font-size: 12px;">C.P. 88000 Nuevo Laredo, Tamps</p>
 
     </div>
     <div class="col-sm-12 col-md-5 col-lg-4">
@@ -191,7 +190,6 @@
       <a title="Numero de contacto de Tienda Talamas" href="https://api.whatsapp.com/send?phone=+528673076039"><img fallimg class="d-block mx-auto img-fluid" src="assets/tel.png" width="250px"></a>
       
     </div>
-  </div>
   </div>
 </div>
   <!-- Footer Links -->
