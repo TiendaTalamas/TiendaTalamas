@@ -41,15 +41,17 @@
             </div>
       
             <hr/>
-            <h5 class="text-center">Libreria Talamas</h5>
+            <h5 class="text-center" style="  font-family: 'Oswald', sans-serif; color:#333333; font-weight:700;">EMD publicidad</h5>
             <hr/>
          <div class="row" id="justcel" *ngFor = "let reciente of articulosArray; let i = index">
            <div class="col-4 mt-4 "><img class="img-fluid" fallimg src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)" width="200px" alt=""></div>
            <div class="col-8 mt-4">
+             <span style="  font-family: 'Oswald', sans-serif; color:#333333; font-weight:700;">
             {{reciente.NombreProducto}}
+            </span>
                <br>
-               <div class="mt-2">{{reciente.Propiedad1}}</div>
-                <div class="mt-2" style="color:#0779e4;">${{reciente.Precio}}</div>
+               <div class="mt-2" style="  font-family: 'Oswald', sans-serif; color:#9e9e9e; font-weight:300;">{{reciente.Propiedad1}}</div>
+                <div class="mt-2" style="  font-family: 'Oswald', sans-serif; color:#76aadb; font-weight:700;">${{reciente.Precio}}</div>
                <br>
              <img class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
            </div>
@@ -87,7 +89,7 @@
             <h5><p id="textomas" class=" ml-auto mt-4">{{reciente.NombreProducto}}</p></h5>
             <h5><p id="textomas3" class="mr-auto mt-4">{{reciente.Propiedad1}}</p></h5>
             <h5><p id="textomas2" class="ml-auto mt-4">${{reciente.Precio}}</p></h5>
-            <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+            <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
            </div>
       </div>
      

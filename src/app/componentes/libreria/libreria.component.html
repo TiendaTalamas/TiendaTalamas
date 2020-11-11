@@ -40,15 +40,17 @@
       </div>
 
       <hr/>
-      <h5 class="text-center">Libreria Talamas</h5>
+      <h5 class="text-center" style=" font-family: 'Oswald', sans-serif; font-weight:700; color:#333333;">Libreria Talamas</h5>
       <hr/>
    <div class="row" id="justcel" *ngFor = "let reciente of articulosArray; let i = index">
      <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, 'Libros')" width="200px" alt=""></div>
      <div class="col-8 mt-4">
+       <span style="font-family: 'Oswald', sans-serif; font-weight: 700; color:#333333;">
       {{reciente.NombreProducto}}
+       </span>
          <br>
-         <div class="mt-2">{{reciente.Propiedad1}}</div>
-          <div class="mt-2" style="color:#0779e4;">${{reciente.Precio}}</div>
+         <div class="mt-2" style="font-family: 'Oswald', sans-serif; font-weight:300; color:#9e9e9e;">{{reciente.Propiedad1}}</div>
+          <div class="mt-2" style="color:#76aadb;">${{reciente.Precio}}</div>
          <br>
        <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
      </div>
@@ -61,7 +63,7 @@
         <p style="color: black; font-size: large; font-weight: 600;" > Categorias</p>
         <hr style="margin-bottom: px; width: 100%; height:1.5px; background-color: gray; "/>
         <mat-nav-list style="padding-top: 0; ">
-          <mat-list-item id="categoria" class="noSeleccionable" *ngFor = "let reciente of articulosArray_Sub; let i = index" ><p class="noSeleccionable" (click)="obtenerArticulosEspecificos(reciente.SubCategoria)">{{reciente.SubCategoria}}</p></mat-list-item>
+          <mat-list-item id="categoria" class="noSeleccionable" *ngFor = "let reciente of articulosArray_Sub; let i = index" ><span class="noSeleccionable" style="font-size: small; font-weight:500;" (click)="obtenerArticulosEspecificos(reciente.SubCategoria)">{{reciente.SubCategoria}}</span></mat-list-item>
         </mat-nav-list>
         <hr/>
         <p style="color: black;  font-size: large; font-weight: 600;" > +Más</p>
@@ -78,7 +80,7 @@
          <h5><p id="textomas" class=" ml-auto mt-4">{{reciente.NombreProducto}}</p></h5>
          <h5><p id="textomas3" class="mr-auto mt-4">{{reciente.Propiedad1}}</p></h5>
          <h5><p id="textomas2" class="ml-auto mt-4">${{reciente.Precio}}</p></h5>
-         <button id="Botoncarrito" style="background-color: #eeeeee; border-color: #eeeeee; color: black;" type="button" (click)="anadirAlCarrito(reciente.IdProducto)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir <img fallimg class="ml-1" id="imagencarrito" src="assets/iconocarrito.png" width="30px" height="30px"></button>
+         <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
         </div>
     
       </div>
