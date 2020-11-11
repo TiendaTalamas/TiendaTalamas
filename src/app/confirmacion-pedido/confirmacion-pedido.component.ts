@@ -74,8 +74,7 @@ export class ConfirmacionPedidoComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
-              console.log("Aqui");
-              console.log(result);
+
             this.articulosArray = result;
 
     });

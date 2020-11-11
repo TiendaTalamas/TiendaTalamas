@@ -58,7 +58,6 @@ export class LibreriaComponent implements OnInit {
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -87,7 +86,6 @@ export class LibreriaComponent implements OnInit {
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -115,7 +113,6 @@ export class LibreriaComponent implements OnInit {
             {
             this.AA_Recomendados = "";
             this.data_Recomendados = [];
-            console.log(result);
             this.articulosArray_Recomendados = result;
             for (var key in result) {
             this.AA_Recomendados = this.AA_Recomendados + key;
@@ -157,9 +154,7 @@ export class LibreriaComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Sub = result;
-            console.log(result);
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
             if (result.hasOwnProperty(key)) {
@@ -192,7 +187,6 @@ export class LibreriaComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Inst = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -217,14 +211,11 @@ export class LibreriaComponent implements OnInit {
 
   masInformacion(IdProducto: string, Categoria: string){
     this.nombre = IdProducto;
-    console.log(this.nombre);
     this.router.navigate(['venta',Categoria,IdProducto]);
   }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
     this.Categoria = Categoria;
-    console.log(this.Categoria);
-    console.log(SubCategoria);
     alert(Categoria);
     this.router.navigate(['categoria',Categoria,SubCategoria]);
 
@@ -312,7 +303,6 @@ export class LibreriaComponent implements OnInit {
                 this.noRegistrado = false;
                 this._servicioCompartido.obtenerCantidadCarrito();
               }
-              console.log(result);
     });
 
   }

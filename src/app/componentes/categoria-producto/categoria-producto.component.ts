@@ -84,8 +84,7 @@ export class CategoriaProductoComponent implements OnInit {
 
 
     
-    console.log(this.Categoria);
-    console.log(this.SubCategoria);
+
     if(this.Categoria === undefined){
       this.obtenerTodos();
 
@@ -156,7 +155,6 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -193,8 +191,7 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA = "";
             this.data = [];
-            console.log(result);
-            console.log(result)
+
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -232,7 +229,6 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -264,7 +260,6 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Lib = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -295,7 +290,6 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Vien = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -326,7 +320,6 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Cuer = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -357,7 +350,6 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Perc = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -388,7 +380,6 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Elec = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -418,7 +409,6 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Elec = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -451,7 +441,6 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -486,7 +475,6 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -522,7 +510,6 @@ export class CategoriaProductoComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Sub = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -545,8 +532,7 @@ export class CategoriaProductoComponent implements OnInit {
   navegarCategoria(Categoria:string, SubCategoria: string){
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
     this.router.navigate(['categoria',Categoria,SubCategoria]);
-    console.log(this.Categoria);
-    console.log(SubCategoria);
+
     if(Categoria == "Instrumentos")
     {
       this.Logo = "assets/libreriaLogo.jpg";
@@ -623,7 +609,6 @@ export class CategoriaProductoComponent implements OnInit {
 
   masInformacion(IdProducto: string){
     this.nombre = IdProducto;
-    console.log(this.nombre);
     this.router.navigate(['venta',this.Categoria,IdProducto]);
     this._servicioCompartido.setIdProducto(IdProducto);
     this._servicioCompartido.setCategoria(this.Categoria);

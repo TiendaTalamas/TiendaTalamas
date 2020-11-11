@@ -155,8 +155,7 @@ export class ConfiguracionUsuarioComponent implements OnInit {
     body.append('pais', this.calle1);
 
 
-      console.log(this.calle1);
-      console.log(localStorage.getItem('email_U'));
+
    
     this.http.post(this._servicioCompartido.Url+'/agregarDireccion.php', body)
     .map((res:Response) => res.text())
@@ -183,7 +182,6 @@ export class ConfiguracionUsuarioComponent implements OnInit {
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.direccionesArray = result;
             this.calle1 = result[0]["Calle"];
             this.calle2 = result[0]["Calle2"];

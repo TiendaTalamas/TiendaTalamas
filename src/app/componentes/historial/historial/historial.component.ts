@@ -55,9 +55,7 @@ export class HistorialComponent implements OnInit {
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
-            console.log(this.articulosArray);
             for (var key in result) {
             this.AA = this.AA + key;
             if (result.hasOwnProperty(key)) {
@@ -112,7 +110,6 @@ export class HistorialComponent implements OnInit {
   }
   navegarCategoria(Categoria:string, SubCategoria: string){
 
-    console.log(SubCategoria);
     this.router.navigate(['categoria',Categoria,SubCategoria]);
 
   this._servicioCompartido.setCategoria(Categoria);

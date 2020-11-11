@@ -170,7 +170,6 @@ export class DireccionComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
-                console.log(result);
                 if(result['status'] == "400")
                 {
                   this.modal = false;
@@ -238,7 +237,6 @@ export class DireccionComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
-                console.log(result);
                 if(result['status'] == "400")
                 {
                   this.respuesta=result['mensaje'];

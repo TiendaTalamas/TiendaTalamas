@@ -35,7 +35,6 @@ export class CuadroExitosoComponent implements OnInit {
   EoF:boolean;
   ngOnInit() {
     this.respuesta = this.route.snapshot.paramMap.get('Exito');
-    console.log(this.respuesta);
     if(this.respuesta == "Exito")
     {
       this.EoF = true;
@@ -68,14 +67,12 @@ export class CuadroExitosoComponent implements OnInit {
                   this.IdProducto = result['IdProducto'];
                   this.CostoTotal = result['Precio'];
                   this.NombreProducto = result['NombreProducto'];
-                  console.log(result);
               });
             
   }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
 
-    console.log(SubCategoria);
     this.router.navigate(['categoria',Categoria,SubCategoria]);
 
   this._servicioCompartido.setCategoria(Categoria);
@@ -149,7 +146,7 @@ export class CuadroExitosoComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
+
             this.articulosArray_Sub = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;

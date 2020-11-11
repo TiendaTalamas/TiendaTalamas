@@ -66,7 +66,6 @@ export class BusquedaComponent implements OnInit {
     this._servicioCompartido.setsoloBusqueda(true);
     this._servicioCompartido.comprobarUsuario();
     this.cadena = this.Route.snapshot.paramMap.get('search');
-    console.log(this.cadena);
     this.obtenerBusqueda();
 
     this.Categoria = this._servicioCompartido.getCategoria();
@@ -82,8 +81,7 @@ export class BusquedaComponent implements OnInit {
 
 
     
-    console.log(this.Categoria);
-    console.log(this.SubCategoria);
+
     if(this.Categoria === undefined){
       this.obtenerTodos();
 
@@ -118,7 +116,6 @@ export class BusquedaComponent implements OnInit {
               {
               this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -153,7 +150,6 @@ export class BusquedaComponent implements OnInit {
               {
               this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -176,7 +172,6 @@ export class BusquedaComponent implements OnInit {
 
   masInformacion(IdProducto: string, Categoria: string){
     this.nombre = IdProducto;
-    console.log(this.nombre);
     this.router.navigate(['venta',Categoria,IdProducto]);
 
 
@@ -196,7 +191,6 @@ export class BusquedaComponent implements OnInit {
               {
               this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -232,7 +226,6 @@ export class BusquedaComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Sub = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -263,8 +256,6 @@ export class BusquedaComponent implements OnInit {
   }
   navegarCategoria(Categoria:string, SubCategoria: string){
     this.Categoria = Categoria;
-    console.log(this.Categoria);
-    console.log(SubCategoria);
     this._servicioCompartido.setCategoria(Categoria);
     this._servicioCompartido.setSubCategoria(SubCategoria);
     this.router.navigate(['categoria']);}
@@ -316,7 +307,6 @@ export class BusquedaComponent implements OnInit {
             {
             this.AA_Buscar = "";
             this.data_Buscar = [];
-            console.log(result);
             this.articulosArray_Buscar = result;
             for (var key in result) {
             this.AA_Buscar = this.AA_Buscar + key;

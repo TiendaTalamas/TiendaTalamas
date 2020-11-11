@@ -71,9 +71,6 @@ navegarBusqueda()
     body.append('contrasena', this.contrasena);
 
   
-    console.log(this.email);
-   
-    console.log(this.contrasena);
 
     this.http.post(this._servicioCompartido.Url+'/inicioSesion.php', body)
     .map((res:Response) => res.json())
@@ -87,7 +84,6 @@ navegarBusqueda()
                 else
                 {
                 this.respuesta=result['mensaje'];
-                console.log(this.respuesta);
                 }
 
     });
@@ -123,7 +119,6 @@ navegarBusqueda()
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
-                console.log(result);
                 if(result['status'] == "400")
                 {
                   this.respuesta=result['mensaje'];

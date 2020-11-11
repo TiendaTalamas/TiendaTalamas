@@ -66,7 +66,6 @@ export class MusicaComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Sub = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -96,7 +95,6 @@ export class MusicaComponent implements OnInit {
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -125,7 +123,6 @@ export class MusicaComponent implements OnInit {
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
@@ -154,7 +151,6 @@ export class MusicaComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Electricos = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -183,7 +179,6 @@ export class MusicaComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Percusion = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -212,7 +207,6 @@ export class MusicaComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Viento = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -242,7 +236,6 @@ export class MusicaComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Cuerda = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -277,7 +270,6 @@ export class MusicaComponent implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Inst = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -298,8 +290,7 @@ export class MusicaComponent implements OnInit {
   }
   navegarCategoria(Categoria:string, SubCategoria: string){
     this.Categoria = Categoria;
-    console.log(this.Categoria);
-    console.log(SubCategoria);
+
     this.router.navigate(['categoria']);
 
   this._servicioCompartido.setCategoria(Categoria);
@@ -389,7 +380,6 @@ export class MusicaComponent implements OnInit {
                  this.noRegistrado = false;
                  this._servicioCompartido.obtenerCantidadCarrito();
                }
-               console.log(result);
      });
  
    }

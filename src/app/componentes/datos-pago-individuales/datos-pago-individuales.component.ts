@@ -143,7 +143,6 @@ export class DatosPagoIndividualesComponent implements OnInit {
   }
   navegarCategoria(Categoria:string, SubCategoria: string){
 
-    console.log(SubCategoria);
     this.router.navigate(['categoria',Categoria,SubCategoria]);
 
   this._servicioCompartido.setCategoria(Categoria);
@@ -159,7 +158,6 @@ export class DatosPagoIndividualesComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
-            console.log(result);
 
             this.Calle1 = result[0]['Calle'];
 

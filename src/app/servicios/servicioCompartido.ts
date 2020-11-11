@@ -52,14 +52,12 @@ export class servicioCompartido{
             {
                 if(result['status'] == "400")
                 {
-                    console.log(result);
                     this.cerrarSesion();
                     this.CompUsuario = false;
                 }
                 else
                 {
                     this.CompUsuario = true;
-                    console.log(result);
                 }
   });
   } 

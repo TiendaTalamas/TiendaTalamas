@@ -73,8 +73,7 @@ export class PagoComponent implements OnInit {
     this.obtenerSubtotal();
     this.item = this._servicioCompartido.IdProducto;
     this.cantidad = this._servicioCompartido.Cantidad;
-    console.log(this._servicioCompartido.Direccion);
-    console.log(this._servicioCompartido.jsonUsuario);
+
     if(isNullOrUndefined(this._servicioCompartido.Direccion)){
       this.router.navigate(['DatosDePago']);
     }
@@ -103,7 +102,6 @@ export class PagoComponent implements OnInit {
       event.preventDefault();
       stripe.createToken(card).then(result => {
         if (result.error) {
-          console.log('Error creating payment method.');
           const errorElement = document.getElementById('card-errors');
           errorElement.textContent = result.error.message;
           this.isDisabled = false;
@@ -136,7 +134,6 @@ export class PagoComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
-              console.log(result);
               if(result['status'] == 200)
               {
                 this.router.navigate(['CuadroExitoso',"Exito",result['IdCompra']]);

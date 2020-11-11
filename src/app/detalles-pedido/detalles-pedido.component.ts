@@ -42,7 +42,6 @@ export class DetallesPedidoComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
-              console.log(result);
               if(result['status'] == "200") {
                 this.arrayPedido = result['datos'];
               }else{
@@ -63,7 +62,6 @@ export class DetallesPedidoComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
-              console.log(result);
               if(result['status'] == "200") {
                 this.arrayProductos = result['datos'];
               }else{

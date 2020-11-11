@@ -81,7 +81,6 @@ export class AppComponent {
   }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
-    console.log(SubCategoria);
 
     this.router.navigate(['categoria',Categoria,SubCategoria]);
     
@@ -104,7 +103,6 @@ export class AppComponent {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Sub = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -138,7 +136,6 @@ export class AppComponent {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Inst = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -187,7 +184,6 @@ export class AppComponent {
             {
             this.AA_Buscar = "";
             this.data_Buscar = [];
-            console.log(result);
             this.articulosArray_Buscar = result;
             for (var key in result) {
             this.AA_Buscar = this.AA_Buscar + key;
@@ -306,7 +302,6 @@ export class AppComponent {
                 this.noRegistrado = false;
                 this._servicioCompartido.obtenerCantidadCarrito();
               }
-              console.log(result);
     });
 
   }

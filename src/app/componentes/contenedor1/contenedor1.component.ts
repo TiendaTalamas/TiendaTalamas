@@ -204,7 +204,6 @@ export class Contenedor1Component implements OnInit {
 
   navegarCategoria(Categoria:string, SubCategoria: string){
 
-    console.log(SubCategoria);
     this.router.navigate(['categoria',Categoria,SubCategoria]);
 
   this._servicioCompartido.setCategoria(Categoria);
@@ -226,7 +225,6 @@ export class Contenedor1Component implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Sub = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -263,7 +261,6 @@ export class Contenedor1Component implements OnInit {
               {
               this.AA_Sub = "";
             this.data_Sub = [];
-            console.log(result);
             this.articulosArray_Inst = result;
             for (var key in result) {
             this.AA_Sub = this.AA_Sub + key;
@@ -295,7 +292,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Vendidos_Discos = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -323,7 +319,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Vendidos_Discos2 = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -352,7 +347,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Vendidos_Discos3 = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -382,7 +376,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Vendidos_Discos4 = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -415,7 +408,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.masVendido = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -442,7 +434,6 @@ export class Contenedor1Component implements OnInit {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
             this.masVendidosCelular1 = result;
-            console.log(this.masVendidosCelular);
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
             if (result.hasOwnProperty(key)) {
@@ -468,7 +459,6 @@ export class Contenedor1Component implements OnInit {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
             this.masVendidosCelular2 = result;
-            console.log(this.masVendidosCelular);
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
             if (result.hasOwnProperty(key)) {
@@ -494,7 +484,6 @@ export class Contenedor1Component implements OnInit {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
             this.masVendidosCelular3 = result;
-            console.log(this.masVendidosCelular);
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
             if (result.hasOwnProperty(key)) {
@@ -520,7 +509,6 @@ export class Contenedor1Component implements OnInit {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
             this.masVendidosCelular4 = result;
-            console.log(this.masVendidosCelular);
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
             if (result.hasOwnProperty(key)) {
@@ -546,7 +534,6 @@ export class Contenedor1Component implements OnInit {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
             this.masVendidosCelular5 = result;
-            console.log(this.masVendidosCelular);
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
             if (result.hasOwnProperty(key)) {
@@ -572,7 +559,6 @@ export class Contenedor1Component implements OnInit {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
             this.masVendidosCelular6 = result;
-            console.log(this.masVendidosCelular);
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
             if (result.hasOwnProperty(key)) {
@@ -598,7 +584,6 @@ export class Contenedor1Component implements OnInit {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
             this.masVendidosCelular7 = result;
-            console.log(this.masVendidosCelular);
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
             if (result.hasOwnProperty(key)) {
@@ -624,7 +609,6 @@ export class Contenedor1Component implements OnInit {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
             this.masVendidosCelular = result;
-            console.log(this.masVendidosCelular);
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
             if (result.hasOwnProperty(key)) {
@@ -653,7 +637,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Vendidos_Libros = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -681,7 +664,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Vendidos_Libros2 = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -710,7 +692,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Vendidos_Libros3 = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -740,7 +721,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Vendidos_Libros4 = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -770,7 +750,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Vendidos_Libros5 = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -800,7 +779,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Vendidos_Libros6 = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -833,7 +811,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Recientes_Libros = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -861,7 +838,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Recientes_Libros2 = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -890,7 +866,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Recientes_Libros = "";
             this.data_Recientes_Libros = [];
-            console.log(result);
             this.articulosArray_Recientes_Libros3 = result;
             for (var key in result) {
             this.AA_Recientes_Libros = this.AA_Recientes_Libros + key;
@@ -923,7 +898,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_Celualar = "";
             this.data_Celular = [];
-            console.log(result);
             this.articulosArray_Celular = result;
             for (var key in result) {
             this.AA_Celualar = this.AA_Celualar + key;
@@ -948,7 +922,6 @@ export class Contenedor1Component implements OnInit {
 
   masInformacion(IdProducto: string, Categoria: string){
     this.nombre = IdProducto;
-    console.log(this.nombre);
     this.router.navigate(['venta',Categoria,IdProducto]);
 
 
@@ -963,7 +936,6 @@ export class Contenedor1Component implements OnInit {
             {
             this.AA_slider = "";
             this.data_slider = [];
-            console.log(result);
             this.articulosArray_slider = result;
             for (var key in result) {
             this.AA = this.AA_slider + key;
@@ -1069,7 +1041,6 @@ export class Contenedor1Component implements OnInit {
                 this.noRegistrado = false;
                 this._servicioCompartido.obtenerCantidadCarrito();
               }
-              console.log(result);
     });
 
   }

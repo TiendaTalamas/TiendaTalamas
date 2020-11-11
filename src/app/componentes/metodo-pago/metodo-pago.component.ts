@@ -34,7 +34,6 @@ export class MetodoPagoComponent implements OnInit {
             {
             this.AA = "";
             this.data = [];
-            console.log(result);
             this.direccionesArray = result;
             for (var key in result) {
             this.AA = this.AA + key;
