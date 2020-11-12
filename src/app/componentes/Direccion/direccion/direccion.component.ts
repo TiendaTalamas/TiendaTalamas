@@ -207,11 +207,13 @@ export class DireccionComponent implements OnInit {
                 {
                   this.modal = false;
                   this.router.navigate(['']);
+                  this.carga = false;
                 }
                 else
                 {
                   this.router.navigate(['']);
                   this.modal = false;
+                  this.carga = false;
                 }
                 
           });
