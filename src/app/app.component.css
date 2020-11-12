@@ -3,6 +3,13 @@
   width:100px;
 }
 
+.box
+{
+  margin: 0 auto;
+  width: 190px;
+  padding: 5px;
+}
+
 /*.badge{
   border-radius: 100%;
   background-color: red;
