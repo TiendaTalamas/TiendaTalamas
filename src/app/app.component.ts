@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import 'rxjs/add/operator/map';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Location} from "@angular/common";
 import { servicioCompartido } from './servicios/servicioCompartido';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -22,7 +22,8 @@ export class AppComponent {
   catLibros:boolean;
   todasCat:boolean;
   catInstrumentos:boolean;
-  constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public falla:NgFallimgModule){
+  encontrado:boolean;
+  constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public falla:NgFallimgModule, private Route:ActivatedRoute){
     this.registroForm = fb.group({
       'cadena' : this.cadena
 
@@ -31,8 +32,10 @@ export class AppComponent {
  this._mobileQueryListener = () => changeDetectorRef.detectChanges();
  this.mobileQuery.addListener(this._mobileQueryListener);
   }
+  busqueda:string;
   ngOnInit()
   {
+    this.encontrado = true;
     this.todasCat = true;
     this.catLibros = false;
     this._servicioCompartido.comprobarUsuario();
@@ -176,15 +179,27 @@ export class AppComponent {
 
   }
   obtenerBusqueda(){
+    try {
     let body = new URLSearchParams();
     body.append('cadena', this.cadena);
+    this._servicioCompartido.soloBusqueda = true;
+
     this.http.post(this._servicioCompartido.Url+'/buscar.php', body)
+      
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
             this.AA_Buscar = "";
             this.data_Buscar = [];
-            this.articulosArray_Buscar = result;
+            if(result['status'] == "200")
+            {
+              this.articulosArray_Buscar = result['datos'];
+              this.encontrado = true;
+            }else
+            {
+              this.articulosArray_Buscar = Array();
+              this.encontrado = false;
+            }
             for (var key in result) {
             this.AA_Buscar = this.AA_Buscar + key;
             if (result.hasOwnProperty(key)) {
@@ -201,7 +216,9 @@ export class AppComponent {
              }
           }
     });
-
+  } catch (error) {
+      this.encontrado = false;
+  }
   }
   navegarConfiguracion()
   {

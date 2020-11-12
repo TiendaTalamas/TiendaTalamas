@@ -86,7 +86,9 @@
             </div>
             <div class="col-10 mt-3">
               <div class="row mb-4">
-
+                <div *ngIf="!encontrado">
+                <h1 >Lo sentimos no encontramos resultados para: {{cadena}}</h1>
+              </div>
                 <div class="col-xs-6 col-md-4 col-lg-3 mt-4" *ngFor = "let resultado of articulosArray_Buscar; let i = index">
           
                <img fallimg class="imgr" style="display: block; margin: 0 auto; cursor: pointer;" src="{{resultado.Imagen}}" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)">

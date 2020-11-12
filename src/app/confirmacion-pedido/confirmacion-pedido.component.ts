@@ -47,7 +47,7 @@ export class ConfirmacionPedidoComponent implements OnInit {
               {
                 this.Subtotal =result['subtotal'];
                 this.Envio = "0";
-                if(Number(this.Subtotal) <= 500){
+                if(Number(this.Subtotal) <= 1){
                   this.Envio = String(500 - Number(this.Subtotal));
                 }
                 this.Total = String(Number(this.Envio) + Number(this.Subtotal))
