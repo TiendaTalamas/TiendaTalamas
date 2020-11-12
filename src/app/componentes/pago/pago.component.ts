@@ -52,7 +52,7 @@ export class PagoComponent implements OnInit {
               {
                 this.Subtotal =result['subtotal'];
                 this.Envio = "0";
-                if(Number(this.Subtotal) <= 500){
+                if(Number(this.Subtotal) <= 1){
                   this.Envio = String(500 - Number(this.Subtotal));
                 }
                 this.Total = String(Number(this.Envio) + Number(this.Subtotal))
@@ -78,7 +78,7 @@ export class PagoComponent implements OnInit {
       this.router.navigate(['DatosDePago']);
     }
     // Your Stripe public key
-    const stripe = Stripe('pk_live_51HIMK7FdBqnzMdTTy9snyo9VqO8xHgXWOHcqPH23eTVS5XMiZNWFSZQODYPJBbRfM8JYMruJ3M5f3393bMiP0Xhm003iPuphsq');
+    const stripe = Stripe('pk_test_51HIMK7FdBqnzMdTTfbNMiHsbOtBcEdoaovMyA4VQRRNmE9Qz50KrayBuwVy6o5bnNH33ktWU8nlN3qPjUOH1ipu000UFN1vHtS');
     // Create `card` element that will watch for updates
     // and display error messages
     const elements = stripe.elements();

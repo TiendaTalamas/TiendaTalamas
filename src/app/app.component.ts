@@ -22,6 +22,7 @@ export class AppComponent {
   catLibros:boolean;
   todasCat:boolean;
   catInstrumentos:boolean;
+  encontrado:boolean;
   constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public falla:NgFallimgModule, private Route:ActivatedRoute){
     this.registroForm = fb.group({
       'cadena' : this.cadena
@@ -34,6 +35,7 @@ export class AppComponent {
   busqueda:string;
   ngOnInit()
   {
+    this.encontrado = true;
     this.todasCat = true;
     this.catLibros = false;
     this._servicioCompartido.comprobarUsuario();
@@ -177,15 +179,27 @@ export class AppComponent {
 
   }
   obtenerBusqueda(){
+    try {
     let body = new URLSearchParams();
     body.append('cadena', this.cadena);
+    this._servicioCompartido.soloBusqueda = true;
+
     this.http.post(this._servicioCompartido.Url+'/buscar.php', body)
+      
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
             this.AA_Buscar = "";
             this.data_Buscar = [];
-            this.articulosArray_Buscar = result;
+            if(result['status'] == "200")
+            {
+              this.articulosArray_Buscar = result['datos'];
+              this.encontrado = true;
+            }else
+            {
+              this.articulosArray_Buscar = Array();
+              this.encontrado = false;
+            }
             for (var key in result) {
             this.AA_Buscar = this.AA_Buscar + key;
             if (result.hasOwnProperty(key)) {
@@ -202,7 +216,9 @@ export class AppComponent {
              }
           }
     });
-
+  } catch (error) {
+      this.encontrado = false;
+  }
   }
   navegarConfiguracion()
   {
