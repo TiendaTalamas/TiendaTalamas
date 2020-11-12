@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { URLSearchParams } from "@angular/http";
 import 'rxjs/add/operator/map';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Location} from "@angular/common";
 import { servicioCompartido } from './servicios/servicioCompartido';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -22,7 +22,7 @@ export class AppComponent {
   catLibros:boolean;
   todasCat:boolean;
   catInstrumentos:boolean;
-  constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public falla:NgFallimgModule){
+  constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public falla:NgFallimgModule, private Route:ActivatedRoute){
     this.registroForm = fb.group({
       'cadena' : this.cadena
 
@@ -31,6 +31,7 @@ export class AppComponent {
  this._mobileQueryListener = () => changeDetectorRef.detectChanges();
  this.mobileQuery.addListener(this._mobileQueryListener);
   }
+  busqueda:string;
   ngOnInit()
   {
     this.todasCat = true;
