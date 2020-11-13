@@ -144,7 +144,9 @@ export class Contenedor1Component implements OnInit {
       if (!(evt instanceof NavigationEnd)) { 
        return; 
       } 
-
+      if(this._servicioCompartido.recargar){
+        window.location.reload();
+      }
       window.scrollTo(0, 0) 
      });
     

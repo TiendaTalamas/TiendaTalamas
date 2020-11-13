@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class servicioCompartido{
+    recargar:boolean;
   DireccionE:string;
   IdPedido:string;
   Nombre:string;

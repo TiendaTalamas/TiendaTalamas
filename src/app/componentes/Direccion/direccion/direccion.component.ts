@@ -202,18 +202,21 @@ export class DireccionComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
-                this.router.navigate(['']);
+                
                 if(result['status'] == "400")
                 {
                   this.modal = false;
                   this.router.navigate(['']);
                   this.carga = false;
+                  this._servicioCompartido.recargar = true;
                 }
                 else
                 {
                   this.router.navigate(['']);
                   this.modal = false;
                   this.carga = false;
+                  this._servicioCompartido.recargar = true;
+
                 }
                 
           });

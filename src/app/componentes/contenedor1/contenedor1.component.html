@@ -550,7 +550,7 @@
       <div class="col-sm-4 col-xs-4 col-lg-2" *ngFor="let discos of articulosArray_Vendidos_Discos">
         <img fallimg src="{{discos.Imagen}}" class="img-fluid imgr" width="100%" style="min-height: 45%; max-height:45% ;" alt="" (click) = "masInformacion(discos.IdProducto, discos.Categoria)">                                                                                  
         <h5><p id="textomas" class="mt-4">{{discos.NombreProducto}}</p></h5>
-        <h5><p id="textomas3" class="mr-5 mt-4">{{discos.Propiedad2zi}}</p></h5>
+        <h5><p id="textomas3" class="mr-5 mt-4">{{discos.Propiedad2}}</p></h5>
         <h5><p id="textomas2" class="mr-5 mt-2">${{discos.Precio}}</p></h5>
         <img  style="cursor: pointer; display: block; margin: 0 auto;" (click)="anadirAlCarrito(discos.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="150px"/>
 
@@ -649,9 +649,11 @@
   </div>
 </div>
 </div>
+</div>
 
 
 <router-outlet></router-outlet>
+
 
 
 
