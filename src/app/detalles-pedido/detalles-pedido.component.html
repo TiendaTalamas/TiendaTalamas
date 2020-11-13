@@ -22,15 +22,15 @@
        <strong><p style="font-size: medium;">Resumen del Pedido </p></strong>
      </div>
      <div>
-       Productos: ${{pedido.Subtotal}}
+       Productos: ${{pedido.Subtotal |  number:'1.2-2'}}
 
      </div>
      <div>
-        Envio: ${{pedido.Envio}}
+        Envio: ${{pedido.Envio |  number:'1.2-2'}}
 
       </div>
       <div>
-        Total: ${{pedido.Total}}
+        Total: ${{pedido.Total |  number:'1.2-2'}}
 
       </div>
 </div>
@@ -47,13 +47,13 @@
             <h3>{{producto.NombreProducto}}</h3>
         </div>
         <div>
-          Precio Individual:{{producto.Precio}}
+          Precio Individual:{{producto.Precio |  number:'1.2-2'}}
       </div>
       <div>
         Cantidad:{{producto.Cantidad}}
     </div>
         <div>
-            Subtotal: {{producto.PrecioTotal}}
+            Subtotal: {{producto.PrecioTotal |  number:'1.2-2'}}
         </div>
 
     </div>

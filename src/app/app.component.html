@@ -87,13 +87,13 @@
             <div class="col-10 mt-3">
               <div class="row mb-4">
                 <div *ngIf="!encontrado">
-                <h1 >Lo sentimos no encontramos resultados para: {{cadena}}</h1>
+                <h5 class="text-center" >Lo sentimos no encontramos resultados para: {{cadena}}</h5>
               </div>
                 <div class="col-xs-6 col-md-4 col-lg-3 mt-4" *ngFor = "let resultado of articulosArray_Buscar; let i = index">
           
                <img fallimg class="imgr" style="display: block; margin: 0 auto; cursor: pointer;" src="{{resultado.Imagen}}" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)">
                <h5><p id="textomas" class=" mt-1 mr-5">{{resultado.NombreProducto}}</p></h5>
-               <h5><p id="textomas2"  class="mt-1 mr-5">${{resultado.Precio}}</p></h5>
+               <h5><p id="textomas2"  class="mt-1 mr-5">${{resultado.Precio |  number:'1.2-2'}}</p></h5>
                <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(resultado.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
               </div>
           
@@ -102,7 +102,11 @@
             </div>
           </div>
         </div>
-      <div class="row" *ngFor = "let resultado of articulosArray_Buscar; let i = index" id="pequebanners2">
+        <div id="pequebanners2">
+          <div *ngIf="!encontrado">
+            <h5 style="font-weight: 700;">Lo sentimos no encontramos resultados para: {{cadena}}</h5>
+          </div>
+      <div class="row" *ngFor = "let resultado of articulosArray_Buscar; let i = index">
         <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{resultado.Imagen}}" (click) = "masInformacion(resultado.IdProducto, resultado.Categoria)" width="200px" alt=""></div>
         <div class="col-8 mt-4" style="text-transform:uppercase;">
           <span style="font-family: 'Oswald', sans-serif; color:#333333; font-weight: 700;">
@@ -110,7 +114,7 @@
           </span>
             <br>
             <span style="font-family: 'Oswald', sans-serif; font-weight:700;">
-             <b style="color: #333333;">Precio:</b><span style="color: #76aadb;">${{resultado.Precio}}</span>
+             <b style="color: #333333;">Precio:</b><span style="color: #76aadb;">${{resultado.Precio |  number:'1.2-2'}}</span>
              </span>
             <br>
             <span style="font-family: 'Oswald', sans-serif; font-weight: 700;">
@@ -119,6 +123,7 @@
             <br>
           <img fallimg class="mt-4" style="cursor: pointer;" (click)="anadirAlCarrito(resultado.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
         </div>
+      </div>
       </div>
       </div>
 

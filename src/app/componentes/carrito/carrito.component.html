@@ -94,7 +94,7 @@
      {{producto.NombreProducto}}
         <br>
         <div class="mt-2">{{producto.Propiedad2}}</div>
-         <div class="mt-2" style="color:gray;">${{producto.Precio}}</div>
+         <div class="mt-2" style="color:gray;">${{producto.Precio |  number:'1.2-2'}}</div>
         <br>
         <button (click)="quitarCarrito(producto.IdCarrito)" style="color: gray; background-color: white; border: 0; cursor: pointer;">Eliminar</button><span style="font-size:20px;">|</span><span><input class="ml-2"  style="border-radius: 100%; width:30px ; height:30px; font-size:small; text-align: center;"  placeholder="{{producto.Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad(producto.IdCarrito, producto.IdProducto)">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad(producto.IdCarrito)">-</button></span>
     </div>
@@ -113,7 +113,7 @@
        <p style="font-size:20px;;">{{producto.NombreProducto}}  - {{producto.Propiedad2}}</p>
      </div>
      <div class="col-2" style="font-weight: 900; font-size: larger; color:gray;" >
-      ${{producto.Precio}}
+      ${{producto.Precio |  number:'1.2-2'}}
     </div>
     <div class="col-4">
       <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{producto.Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad(producto.IdCarrito, producto.IdProducto)">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad(producto.IdCarrito)">-</button>    
