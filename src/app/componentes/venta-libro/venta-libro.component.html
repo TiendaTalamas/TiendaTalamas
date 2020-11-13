@@ -223,7 +223,7 @@
         <h2  style="color: black; font-weight: 700;">{{producto.Propiedad4}}</h2>
     </div>
     <div class="row">
-      <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio}}</h1>
+      <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio | number:'1.0-0' }}</h1> 
     </div>
     <hr/>
     <ng-container *ngIf="disponible; else elseTemplate">
@@ -281,7 +281,7 @@
       <div class="row">
       </div>
       <div class="row">
-        <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio}}</h1>
+        <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio | number:'1.0-0'}}</h1>
       </div>
       <div class="row">
         <strong><h5 id="cel" style="color: black;">Autor: </h5></strong> <h5 style="font-weight: 700; color:#0779e4;"> {{producto.Propiedad2}}</h5>
