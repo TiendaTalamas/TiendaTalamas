@@ -64,9 +64,8 @@
         <p style="color: black; font-size: large; font-weight: 600;" > Categorias</p>
         <hr style="margin-bottom: px; width: 100%; height:1.5px; background-color: gray; "/>
         <mat-nav-list style="padding-top: 0; ">
-          <mat-list-item *ngFor="let sub of articulosArray_Sub" style="color: black; font-size: medium; height: 25px;" >{{sub.SubCategoria}}</mat-list-item>
-  
-        </mat-nav-list>
+          <mat-list-item id="categoria" *ngFor="let sub of articulosArray_Sub" style="color: black; font-size: medium; height: 25px;" ><span class="noSeleccionable" style="font-weight: 500; font-size: small;" (click)="obtenerArticulosEspecificos(reciente.Propiedad4)">{{sub.SubCategoria}}</span></mat-list-item>
+          </mat-nav-list>
         <hr/>
         <p style="color: black;  font-size: large; font-weight: 600;" > +Más</p>
         <hr style="margin-bottom: 0px;"/> 

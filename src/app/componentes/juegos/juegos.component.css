@@ -2,6 +2,14 @@
 {
     margin-right: 20px;
 }
+#categoria
+{
+  color: black; 
+  font-size: medium;
+   height: 40px;
+   text-align: left;
+   font-weight: 700;
+}
 #Botoncarrito
 {
   display: block;
@@ -10,6 +18,14 @@
   border-radius:20px;
 
 }
+
+#noSeleccionable{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
 .container
 {
     display: flex;

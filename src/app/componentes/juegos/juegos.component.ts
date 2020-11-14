@@ -29,6 +29,7 @@ export class JuegosComponent implements OnInit {
   respuesta:string;
   noRegistrado:boolean;
   articulosArray_Sub = new Array;
+
   obtenerSubCategoriasLibros(){
     
     
@@ -95,10 +96,10 @@ export class JuegosComponent implements OnInit {
     });
   }
 
-  obtenerArticulosEspecificos(Clase:string) {
+  obtenerArticulosEspecificos(cat:string) {
     let body = new URLSearchParams();
-    body.append('subcategoria',Clase);
-    body.append('categoria', 'Instrumentos');
+    body.append('subcategoria',cat);
+    body.append('categoria', 'ACCESORIOS');
     this.http.post(this._servicioCompartido.Url+'/ArticulosEMD.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
