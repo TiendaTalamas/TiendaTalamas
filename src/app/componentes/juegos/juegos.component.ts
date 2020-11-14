@@ -16,6 +16,7 @@ export class JuegosComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerArticulos();
+    this.obtenerSubCategoriasLibros();
   }
   
   AA: string;
@@ -27,6 +28,25 @@ export class JuegosComponent implements OnInit {
   articulosArray = new Array;
   respuesta:string;
   noRegistrado:boolean;
+  articulosArray_Sub = new Array;
+  obtenerSubCategoriasLibros(){
+    
+    
+    let body2 = new URLSearchParams();
+    body2.append('categoria', "EMD");
+
+
+
+    this.http.post(this._servicioCompartido.Url+'/obtenerEmd.php', body2)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+
+            this.articulosArray_Sub = result;
+          
+    });
+  }
+
   anadirAlCarrito(IdProducto:string)
   {
     let body = new URLSearchParams();
