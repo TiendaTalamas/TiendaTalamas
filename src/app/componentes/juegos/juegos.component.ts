@@ -75,6 +75,35 @@ export class JuegosComponent implements OnInit {
     });
   }
 
+  obtenerArticulosEspecificos(Clase:string) {
+    let body = new URLSearchParams();
+    body.append('subcategoria',Clase);
+    body.append('categoria', 'Instrumentos');
+    this.http.post(this._servicioCompartido.Url+'/ArticulosEMD.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA = "";
+            this.data = [];
+            this.articulosArray = result;
+            for (var key in result) {
+            this.AA = this.AA + key;
+            if (result.hasOwnProperty(key)) {
+              this.val = result[key];
+              this.data.push(Object.keys(this.val));
+              for (var i = 0; i < Object.keys(this.val).length; i++) {
+              this.contenedor = Object.keys(this.val)[i];
+              Object.entries(this.val)[i]
+               
+                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
+                
+                }
+             }
+          }
+    });
+  }
+
   navegarLibreria()
   {
     this.router.navigate(['libreria']);
