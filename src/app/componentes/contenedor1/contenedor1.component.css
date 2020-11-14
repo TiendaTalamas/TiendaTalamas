@@ -2,6 +2,14 @@
 .carousel-control-next, .carousel-control-prev{
 	width: 1% !important;
 }
+#nombreNav
+{
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight:700;
+  color:#243966;
+}
+
 body
 {
   background-color: white;
