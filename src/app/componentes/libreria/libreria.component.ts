@@ -282,6 +282,11 @@ export class LibreriaComponent implements OnInit {
     this.router.navigate(['ConfiguracionUsuario']);
   }
 
+  navegarJuegos()
+  {
+    this.router.navigate(['Juegos']);
+  }
+
 
 
   anadirAlCarrito(IdProducto:string)

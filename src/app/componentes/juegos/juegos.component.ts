@@ -52,6 +52,17 @@ export class JuegosComponent implements OnInit {
           }
     });
   }
+
+  navegarLibreria()
+  {
+    this.router.navigate(['libreria']);
+  }
+
+  navegarMusica()
+  {
+    this.router.navigate(['musica']);
+  }
+
   masInformacion(IdProducto: string, Categoria: string){
 
     this.router.navigate(['venta',Categoria,IdProducto]);

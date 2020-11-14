@@ -77,10 +77,9 @@
       <p style="color: black;  font-size: large; font-weight: 600;" > +Más</p>
       <hr style="margin-bottom: 0px;"/> 
       <mat-nav-list style="padding-top: 0;">
-        <mat-list-item id="categorias" >Libreria</mat-list-item>
-        <mat-list-item id="categorias" >Musica</mat-list-item>
-        <mat-list-item id="categorias" >Oficina</mat-list-item>
-        <mat-list-item id="categorias" >Imprenta</mat-list-item>
+        <mat-list-item id="categorias" (click)="navegarLibreria()">Libreria</mat-list-item>
+        <mat-list-item id="categorias" (click)="navegarJuegos()" >Juegos</mat-list-item>
+      
 
       </mat-nav-list>
     </div>

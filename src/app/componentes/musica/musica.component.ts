@@ -384,9 +384,9 @@ export class MusicaComponent implements OnInit {
  
    }
 
-  navegarPublicidad()
+   navegarJuegos()
   {
-    this.router.navigate(['emd'])
+    this.router.navigate(['Juegos']);
   }
   navegarMusica()
   {
