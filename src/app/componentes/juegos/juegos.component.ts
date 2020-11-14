@@ -25,8 +25,30 @@ export class JuegosComponent implements OnInit {
   xxxMap = new Map();
   valuesKeys = new Array;
   articulosArray = new Array;
-  anadirAlCarrito(IdProducto){}
-  obtenerArticulos() {
+  respuesta:string;
+  noRegistrado:boolean;
+  anadirAlCarrito(IdProducto:string)
+  {
+    let body = new URLSearchParams();
+    body.append("IdProducto",IdProducto);
+    body.append("Cantidad", "1");
+    body.append("token",localStorage.getItem('Token'))
+    
+    this.http.post(this._servicioCompartido.Url+'/agregarCarrito.php', body)
+    .map((res:Response) => res.text())
+            .subscribe(result => 
+            {
+              this.respuesta=result;
+              if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
+              {
+                this.noRegistrado= true;
+              }else{
+                this.noRegistrado = false;
+                this._servicioCompartido.obtenerCantidadCarrito();
+              }
+    });
+
+  }  obtenerArticulos() {
     let body = new URLSearchParams();
     this.http.post(this._servicioCompartido.Url+'/juegosDi.php', body)
     .map((res:Response) => res.json())
