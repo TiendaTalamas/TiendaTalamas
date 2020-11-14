@@ -78,7 +78,7 @@ export class PagoComponent implements OnInit {
       this.router.navigate(['DatosDePago']);
     }
     // Your Stripe public key
-    const stripe = Stripe('pk_test_51HIMK7FdBqnzMdTTfbNMiHsbOtBcEdoaovMyA4VQRRNmE9Qz50KrayBuwVy6o5bnNH33ktWU8nlN3qPjUOH1ipu000UFN1vHtS');
+    const stripe = Stripe('pk_live_51HIMK7FdBqnzMdTTy9snyo9VqO8xHgXWOHcqPH23eTVS5XMiZNWFSZQODYPJBbRfM8JYMruJ3M5f3393bMiP0Xhm003iPuphsq');
     // Create `card` element that will watch for updates
     // and display error messages
     const elements = stripe.elements();
