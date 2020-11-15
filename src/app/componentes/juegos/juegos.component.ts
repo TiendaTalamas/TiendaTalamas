@@ -125,6 +125,10 @@ export class JuegosComponent implements OnInit {
     });
   }
 
+  onChange(SubCategoria:string) {
+    this.obtenerArticulosEspecificos(SubCategoria);
+}
+
   navegarLibreria()
   {
     this.router.navigate(['libreria']);
