@@ -96,10 +96,10 @@ export class JuegosComponent implements OnInit {
     });
   }
 
-  obtenerArticulosEspecificos(cat:string) {
+  obtenerArticulosEspecificos(propiedad:string) {
     let body = new URLSearchParams();
-    body.append('subcategoria',cat);
-    body.append('categoria', 'ACCESORIOS');
+    body.append('subcategoria',propiedad);
+    body.append('categoria', 'Accesorios');
     this.http.post(this._servicioCompartido.Url+'/ArticulosEMD.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
