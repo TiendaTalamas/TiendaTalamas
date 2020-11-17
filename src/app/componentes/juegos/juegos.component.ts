@@ -134,6 +134,14 @@ export class JuegosComponent implements OnInit {
     this.router.navigate(['libreria']);
   }
 
+  navegarSesion()
+  {
+
+    this.router.navigate(['card'])
+
+
+  }
+
   navegarMusica()
   {
     this.router.navigate(['musica']);
