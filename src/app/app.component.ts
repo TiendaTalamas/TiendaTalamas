@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
 import { NgFallimgModule } from 'ng-fallimg';
+declare var fbq:any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -42,7 +43,8 @@ export class AppComponent {
     this.obtenerSubCategoriasLibros();
     this.obtenerSubCategoriasInst();
     this._servicioCompartido.obtenerCantidadCarrito();
-  }
+    fbq('init', '814700656069487');
+    fbq('track', 'PageView');  }
   AA_Sub: string;
   data_Sub: any[];
   val_Sub: any[];
