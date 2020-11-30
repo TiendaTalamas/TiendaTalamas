@@ -212,6 +212,14 @@ this.formCantidad = fb.group({
     }
   } 
 
+  ObtenerMeta(producto:any)
+  {
+    this.metaService.addTag({name:'titulo',content:producto.NombreProducto});
+    this.metaService.addTag({name:'Descripcion',Content:producto.Descripcion});
+    this.metaService.addTag({name:'Imagen',content:producto.Imagen});
+    
+  }
+
 
 
   LibroAleatorio() {
@@ -389,6 +397,7 @@ this.formCantidad = fb.group({
               this.AA = "";
             this.data = [];
             this.productos = result;
+            this.ObtenerMeta(result);
             for (var key in result) {
             this.AA = this.AA + key;
             if (result.hasOwnProperty(key)) {
