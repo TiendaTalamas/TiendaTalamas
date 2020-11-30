@@ -102,7 +102,7 @@ import { ConfirmacionIndividualComponent } from './componentes/confirmacion-indi
   ],
   imports: [
     HttpModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
