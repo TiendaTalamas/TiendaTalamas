@@ -1,5 +1,20 @@
 <div style="overflow:hidden">
-
+  <div *ngFor="let producto of productos" itemscope itemtype="http://schema.org/Product">
+    <meta itemprop="brand" content="{{producto.Propiedad4}}">
+    <meta itemprop="name" content="{{producto.NombreProducto}}">
+    <meta itemprop="description" content="{{producto.Descripcion}}">
+    <meta itemprop="productID" content="{{producto.IdProducto}}">
+    <meta itemprop="url" content="https://Tiendatalamas.com/Venta/Libros/{{producto.IdProducto}}">
+    <meta itemprop="image" content="{{producto.Imagen}}">
+    <div itemprop="value" itemscope itemtype="http://schema.org/PropertyValue">
+    </div>
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+      <link itemprop="availability" href="http://schema.org/InStock">
+      <link itemprop="itemCondition" href="http://schema.org/NewCondition">
+      <meta itemprop="price" content="{{producto.Precio}}">
+      <meta itemprop="priceCurrency" content="MXN">
+    </div>
+  </div>
 
   <!--
 <div class="row mt-4" *ngFor = "let producto of productos">
