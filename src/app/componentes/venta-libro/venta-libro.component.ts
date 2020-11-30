@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Injectable,Inject } from '@angular/core';
 //Importando los servicios para obtener los datos del producto
 import {servicioCompartido} from '../../servicios/servicioCompartido';
 import { producto } from '../../servicios/producto';
@@ -9,6 +9,8 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { importType, IfStmt } from '@angular/compiler/src/output/output_ast';
 import { NgFallimgModule } from 'ng-fallimg';
+import { Meta } from '@angular/platform-browser';
+import {DOCUMENT} from '@angular/common';
 
 
 @Component({
@@ -62,7 +64,7 @@ export class VentaLibroComponent implements OnInit {
   imagenActual:string;
   //array para guardar los valores
 
-  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute, public falla:NgFallimgModule){ 
+  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute, public falla:NgFallimgModule, private metaService:Meta,@Inject(DOCUMENT) private _document:Document){ 
   this.ventaForm = fb.group({
     'email' : [null, Validators.required],
     'nombre': this.nombre,
@@ -106,7 +108,8 @@ this.formCantidad = fb.group({
   verificacionProductos:boolean;
   formCantidad:FormGroup;
   disponible:boolean;
-
+  EMD:boolean;
+  script:string;
   ngOnInit() {
     this.disponible = true;
     this.Cantidad = 1;
@@ -163,6 +166,7 @@ this.formCantidad = fb.group({
             this.AA = "";
             this.data = [];
             this.imagenesInstrumentos = result;
+            
     });
   }
 
@@ -354,6 +358,16 @@ this.formCantidad = fb.group({
     this.imagenActual = nuevaImagen;
   }
   //Obtiene el libro cuando recibe datos
+  crearMetadatos(product)
+  {
+    let script;
+    this.script = "{ \"@context\":\"https://schema.org\",\"@type\":\"Product\", \"productID\":\""+product.IdProducto+"\",\"name\":\""+product.NombreProducto+"\",\"description\":\""+product.Descripcion+"\",\"url\":\"https://tiendatalamas.com/Venta/Libros/"+product.IdProducto+"\",\"image\":\""+product.Imagen+"\", \"brand\":\""+product.Propiedad4+"\",\"offers\": [{\"@type\": \"Offer\",\"price\": \""+product.Precio+"\",\"priceCurrency\": \"MXN\",\"itemCondition\": \"https://schema.org/NewCondition\",\"availability\": \"https://schema.org/InStock\"}],\"additionalProperty\": [{\"@type\": \"PropertyValue\",\"propertyID\": \"978607\",\"value\": \"books\"}]}";
+    script = this._document.createElement('script');
+    script.setAttribute('class', 'structured-data');
+    script.type = 'application/json+ld';
+    script.text = this.script;
+    this._document.head.appendChild(script);
+  }
   obtenerArticulo(){
     let body = new URLSearchParams();
       
@@ -393,7 +407,10 @@ this.formCantidad = fb.group({
           for(let producto of this.productos)
           {
               this.Imagen=producto.Imagen;
-             
+              if(producto.Clase == "Personalizado"){
+                this.EMD = true;
+              }
+              this.crearMetadatos(producto);
           }
     });
   }

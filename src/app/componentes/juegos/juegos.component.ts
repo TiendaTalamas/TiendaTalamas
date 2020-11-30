@@ -29,7 +29,7 @@ export class JuegosComponent implements OnInit {
   respuesta:string;
   noRegistrado:boolean;
   articulosArray_Sub = new Array;
-
+  sub:string;
   obtenerSubCategoriasLibros(){
     
     
@@ -47,7 +47,9 @@ export class JuegosComponent implements OnInit {
           
     });
   }
-
+  onChange(SubCategoria:string) {
+    this.obtenerArticulosEspecificos(SubCategoria)
+  }
   anadirAlCarrito(IdProducto:string)
   {
     let body = new URLSearchParams();
@@ -125,9 +127,7 @@ export class JuegosComponent implements OnInit {
     });
   }
 
-  onChange(SubCategoria:string) {
-    this.obtenerArticulosEspecificos(SubCategoria);
-}
+
 
   navegarLibreria()
   {
