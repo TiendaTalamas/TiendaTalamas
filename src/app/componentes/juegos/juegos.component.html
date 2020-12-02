@@ -38,7 +38,7 @@
             <h5 class="text-center" style="  font-family: 'Oswald', sans-serif; color:#333333; font-weight:700;">EMD publicidad</h5>
             <hr/>
          <div class="row" id="justcel" *ngFor = "let reciente of articulosArray; let i = index">
-           <div class="col-4 mt-4 "><img class="img-fluid" fallimg src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)" width="200px" alt=""></div>
+           <div class="col-4 mt-4 "><img class="img-fluid" fallimg src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria, 'reciente.NombreProducto')" width="200px" alt=""></div>
            <div class="col-8 mt-4">
              <span style="  font-family: 'Oswald', sans-serif; color:#333333; font-weight:700;">
             {{reciente.NombreProducto}}
@@ -73,7 +73,7 @@
         <div class="row mb-4">
           <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;" *ngFor = "let reciente of articulosArray; let i = index">
     
-            <img class="imgr" fallimg src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
+            <img class="imgr" fallimg src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria, 'reciente.NombreProducto')">
             <h5><p id="textomas" class=" ml-auto mt-4">{{reciente.NombreProducto}}</p></h5>
             <h5><p id="textomas3" class="mr-auto mt-4">EMD</p></h5>
             <h5><p id="textomas2" class="ml-auto mt-4">${{reciente.Precio |  number:'1.2-2'}}</p></h5>
