@@ -9,7 +9,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { importType, IfStmt } from '@angular/compiler/src/output/output_ast';
 import { NgFallimgModule } from 'ng-fallimg';
-import { Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import {DOCUMENT} from '@angular/common';
 
 
@@ -64,7 +64,7 @@ export class VentaLibroComponent implements OnInit {
   imagenActual:string;
   //array para guardar los valores
 
-  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute, public falla:NgFallimgModule, private metaService:Meta,@Inject(DOCUMENT) private _document:Document){ 
+  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute, public falla:NgFallimgModule, private metaService:Meta,@Inject(DOCUMENT) private _document:Document, private title:Title){ 
   this.ventaForm = fb.group({
     'email' : [null, Validators.required],
     'nombre': this.nombre,
@@ -112,7 +112,7 @@ this.formCantidad = fb.group({
   script:string;
   actual:string;
   ngOnInit() {
-
+    this.title.setTitle("Talamas");
     this.disponible = true;
     this.Cantidad = 1;
     this.quantity = "1";
@@ -216,9 +216,11 @@ this.formCantidad = fb.group({
 
   ObtenerMeta(producto:any)
   {
-    this.metaService.addTag({name:'og:title',content:producto.NombreProducto});
-    this.metaService.addTag({name:'og:url',Content:producto.Descripcion});
-    this.metaService.addTag({name:'og:image',content:producto.Imagen});
+    this.metaService.updateTag({name:'og:title',content:producto.NombreProducto});
+    this.metaService.updateTag({name:'og:url',Content:this.actual});
+    this.metaService.updateTag({name:'og:image',content:producto.Imagen});
+    this.metaService.updateTag({name:'og:description',content:producto.Descripcion});
+    this.metaService.updateTag({name:'og:type',content:"book:"+producto.IdProducto});
     alert(producto.NombreProducto);
   }
 
@@ -416,9 +418,9 @@ this.formCantidad = fb.group({
           }
           for(let producto of this.productos)
           {
+            this.actual = "http://tiendatalamas.com/Venta/"+this.Categoria+"/"+this.IdProducto;
             this.ObtenerMeta(producto);
               this.Imagen=producto.Imagen;
-              this.actual = "http://tiendatalamas.com/Venta/"+this.Categoria+"/"+this.IdProducto;
               if(producto.Clase == "Personalizado"){
                 this.EMD = true;
               }
