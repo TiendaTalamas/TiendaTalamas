@@ -147,9 +147,11 @@ export class JuegosComponent implements OnInit {
     this.router.navigate(['musica']);
   }
 
-  masInformacion(IdProducto: string, Categoria: string){
 
-    this.router.navigate(['venta',Categoria,IdProducto]);
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
+    this.router.navigate(['venta',Categoria,IdProducto,Nombre]);
+
+
    }
    
 }

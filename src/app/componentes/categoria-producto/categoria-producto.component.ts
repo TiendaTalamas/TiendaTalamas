@@ -607,12 +607,11 @@ export class CategoriaProductoComponent implements OnInit {
     this.router.navigate(['musica'])
   }
 
-  masInformacion(IdProducto: string, Nombre:string){
-    this.nombre = IdProducto;
-    this.router.navigate(['venta',this.Categoria,IdProducto, Nombre]);
-    this._servicioCompartido.setIdProducto(IdProducto);
-    this._servicioCompartido.setCategoria(this.Categoria);
-  
-  }
+
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
+    this.router.navigate(['venta',Categoria,IdProducto,Nombre]);
+
+
+   }
 
 }

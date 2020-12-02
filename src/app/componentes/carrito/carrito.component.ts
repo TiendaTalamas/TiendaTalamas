@@ -90,10 +90,12 @@ cadena:string;
     });
 
   }
-  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
 
-    this.router.navigate(['venta',Categoria,IdProducto, Nombre ]);
-  }
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
+    this.router.navigate(['venta',Categoria,IdProducto,Nombre]);
+
+
+   }
   aumentarCantidad(IdCarrito:string, IdProducto:string){
     let body = new URLSearchParams();
     body.append("token",localStorage.getItem('Token'));

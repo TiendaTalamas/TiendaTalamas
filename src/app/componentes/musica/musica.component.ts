@@ -356,9 +356,10 @@ export class MusicaComponent implements OnInit {
     this.router.navigate(['Carrito'])
   }
 
-  masInformacion(IdProducto: string, Categoria: string){
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
+    this.router.navigate(['venta',Categoria,IdProducto,Nombre]);
 
-    this.router.navigate(['venta',Categoria,IdProducto]);
+
    }
 
    anadirAlCarrito(IdProducto:string)
