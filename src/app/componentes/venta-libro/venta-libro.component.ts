@@ -112,6 +112,13 @@ this.formCantidad = fb.group({
   script:string;
   actual:string;
   ngOnInit() {
+    this.IdProducto = this.Route.snapshot.paramMap.get('id');
+    this.Categoria = this.Route.snapshot.paramMap.get('categoria');
+    this.actual = "http://tiendatalamas.com/Venta/"+this.Categoria+"/"+this.IdProducto+"/"+this.Route.snapshot.paramMap.get('Nombre');
+    this.metaService.updateTag({name:'og:title',content:this.Route.snapshot.paramMap.get('Nombre')});
+    this.metaService.updateTag({name:'og:url',Content:this.actual});
+    this.metaService.updateTag({name:'og:image',content:"http://tiendatalamas.com/assets/Imagenes/"+this.IdProducto});
+    this.metaService.updateTag({name:'og:type',content:"book:"+this.IdProducto});
     this.title.setTitle("Talamas");
     this.disponible = true;
     this.Cantidad = 1;
@@ -216,11 +223,7 @@ this.formCantidad = fb.group({
 
   ObtenerMeta(producto:any)
   {
-    this.metaService.updateTag({name:'og:title',content:producto.NombreProducto});
-    this.metaService.updateTag({name:'og:url',Content:this.actual});
-    this.metaService.updateTag({name:'og:image',content:producto.Imagen});
-    this.metaService.updateTag({name:'og:description',content:producto.Descripcion});
-    this.metaService.updateTag({name:'og:type',content:"book:"+producto.IdProducto});
+
     alert(producto.NombreProducto);
   }
 
@@ -418,7 +421,6 @@ this.formCantidad = fb.group({
           }
           for(let producto of this.productos)
           {
-            this.actual = "http://tiendatalamas.com/Venta/"+this.Categoria+"/"+this.IdProducto;
             this.ObtenerMeta(producto);
               this.Imagen=producto.Imagen;
               if(producto.Clase == "Personalizado"){

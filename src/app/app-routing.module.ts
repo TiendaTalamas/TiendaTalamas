@@ -42,7 +42,7 @@ const routes: Routes = [
   {path: 'card', component: CardComponent, },
   {path: 'registro', component: RegistroComponent, },
   {path: 'libreria', component: LibreriaComponent, },
-  {path: 'venta/:categoria/:id', component: VentaLibroComponent, },
+  {path: 'venta/:categoria/:id/:Nombre', component: VentaLibroComponent, },
   {path: 'emd', component: EMDComponent, },
   {path: 'musica', component: MusicaComponent,},
   {path: 'categoria/:categoria/:subcategoria', component: CategoriaProductoComponent,}, 
