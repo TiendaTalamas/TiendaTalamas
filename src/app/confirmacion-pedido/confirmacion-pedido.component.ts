@@ -32,8 +32,8 @@ export class ConfirmacionPedidoComponent implements OnInit {
   Envio:string;
   Total:string;
   articulosArray = new Array;
-  masInformacion(IdProducto: string, Categoria: string){
-    this.router.navigate(['venta',Categoria,IdProducto]);
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
+    this.router.navigate(['venta',Categoria,IdProducto, Nombre]);
    }
   obtenerSubtotal()
   {
