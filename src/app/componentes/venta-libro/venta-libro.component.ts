@@ -110,7 +110,9 @@ this.formCantidad = fb.group({
   disponible:boolean;
   EMD:boolean;
   script:string;
+  actual:string;
   ngOnInit() {
+
     this.disponible = true;
     this.Cantidad = 1;
     this.quantity = "1";
@@ -214,10 +216,10 @@ this.formCantidad = fb.group({
 
   ObtenerMeta(producto:any)
   {
-    this.metaService.addTag({name:'titulo',content:producto.NombreProducto});
-    this.metaService.addTag({name:'Descripcion',Content:producto.Descripcion});
-    this.metaService.addTag({name:'Imagen',content:producto.Imagen});
-    
+    this.metaService.addTag({name:'og:title',content:producto.NombreProducto});
+    this.metaService.addTag({name:'og:url',Content:producto.Descripcion});
+    this.metaService.addTag({name:'og:image',content:producto.Imagen});
+    alert(producto.NombreProducto);
   }
 
 
@@ -397,7 +399,6 @@ this.formCantidad = fb.group({
               this.AA = "";
             this.data = [];
             this.productos = result;
-            this.ObtenerMeta(result);
             for (var key in result) {
             this.AA = this.AA + key;
             if (result.hasOwnProperty(key)) {
@@ -415,7 +416,9 @@ this.formCantidad = fb.group({
           }
           for(let producto of this.productos)
           {
+            this.ObtenerMeta(producto);
               this.Imagen=producto.Imagen;
+              this.actual = "http://tiendatalamas.com/Venta/"+this.Categoria+"/"+this.IdProducto;
               if(producto.Clase == "Personalizado"){
                 this.EMD = true;
               }
