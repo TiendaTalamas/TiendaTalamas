@@ -430,10 +430,12 @@ this.formCantidad = fb.group({
   }
 
   
-  masInformacion(IdProducto: string, Categoria: string){
+
+  
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
     this.IdProducto = IdProducto;
     this.Categoria = Categoria;
-    this.router.navigate(['venta',Categoria,IdProducto]);
+    this.router.navigate(['venta',Categoria,IdProducto, Nombre]);
     this.obtenerArticulo();
 
   }

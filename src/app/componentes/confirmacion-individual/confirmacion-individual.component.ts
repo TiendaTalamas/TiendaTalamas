@@ -84,9 +84,9 @@ export class ConfirmacionIndividualComponent implements OnInit {
                 this.articulosArray = result;
     });
   }
-  masInformacion(IdProducto: string, Categoria: string){
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
 
-    this.router.navigate(['venta',Categoria,IdProducto]);
+    this.router.navigate(['venta',Categoria,IdProducto, Nombre]);
 
 
    }

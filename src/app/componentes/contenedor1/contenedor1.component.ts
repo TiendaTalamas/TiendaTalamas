@@ -1052,9 +1052,9 @@ export class Contenedor1Component implements OnInit {
 
 
 
-  masInformacion(IdProducto: string, Categoria: string){
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
     this.nombre = IdProducto;
-    this.router.navigate(['venta',Categoria,IdProducto]);
+    this.router.navigate(['venta',Categoria,IdProducto,Nombre]);
 
 
    }

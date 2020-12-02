@@ -90,9 +90,9 @@ cadena:string;
     });
 
   }
-  masInformacion(IdProducto: string, Categoria: string){
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
 
-    this.router.navigate(['venta',Categoria,IdProducto]);
+    this.router.navigate(['venta',Categoria,IdProducto, Nombre ]);
   }
   aumentarCantidad(IdCarrito:string, IdProducto:string){
     let body = new URLSearchParams();

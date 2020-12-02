@@ -30,8 +30,8 @@ export class DetallesPedidoComponent implements OnInit {
     this.obtenerDetalles();
     this.obtenerProductos();
   }
-  masInformacion(IdProducto: string, Categoria: string){
-    this.router.navigate(['venta',Categoria,IdProducto]);
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
+    this.router.navigate(['venta',Categoria,IdProducto, Nombre]);
   }
   obtenerDetalles()
   {
