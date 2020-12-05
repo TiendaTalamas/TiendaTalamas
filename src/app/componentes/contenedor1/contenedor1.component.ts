@@ -36,7 +36,7 @@ export class Contenedor1Component implements OnInit {
     xxxMap_slider = new Map();
     valuesKeys_slider = new Array;
     articulosArray_slider = new Array;
-
+    nuevoLaredo:boolean;
   //Datos Articulos mas Vendidos
   AA: string;
   data: any[];
@@ -141,7 +141,11 @@ export class Contenedor1Component implements OnInit {
 
 
   ngOnInit() {
-  
+    if(localStorage.getItem("Ciudad")== "Nuevo Laredo"){
+      this.nuevoLaredo = true;
+    }else{
+      this.nuevoLaredo = false;
+    }
     this._servicioCompartido.obtenerCantidadCarrito();
     this.router.events.subscribe((evt) => { 
       if (!(evt instanceof NavigationEnd)) { 
