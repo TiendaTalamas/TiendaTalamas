@@ -1,0 +1,116 @@
+#boton
+{
+    margin-right: 20px;
+}
+#Botoncarrito
+{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+}
+.container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#GrupoBotones
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:white;
+  height:40px;
+  
+}
+#categoria
+{
+  color: black; 
+  font-size: medium;
+   height: 40px;
+   text-align: left;
+}
+#categoria:hover
+{
+  color:#e11d74 ;
+}
+
+
+#textomas
+{
+  color: #333333;
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+}
+
+#textomas2
+{
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  color:#76aadb;
+  font-weight: 700;
+
+}
+
+#noSeleccionable{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+#textomas3
+{
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  color:#9e9e9e;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 300 !important;
+}
+.imgr
+{
+  width:140px; 
+  height: 215px;
+  display: block; 
+  margin: 0 auto;
+}
+
+h1
+{
+  font-family: 'Tahoma';
+}
+
+@media only  screen and (max-width:500px)
+{
+  #onlypc
+  {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width:5000px) and (min-width:500px)
+{
+  #justcel
+  {
+    display: none !important;
+  }
+}
