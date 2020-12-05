@@ -507,6 +507,9 @@ this.formCantidad = fb.group({
     this.router.navigate(['Carrito']);
   }
 
+  ventanaNueva(){	
+    window.open("https://www.tiendatalamas.com/compartir.php?fbclid=IwAR042ZSpcU1sqsJGNL8kN2iV-81jOmCaaDE8RKBh_5I8_OsROzs14cghagA");
+  }
 
 
   navegarConfiguracion()
