@@ -34,6 +34,7 @@ export class DireccionComponent implements OnInit {
   gusto3:string;
   gusto4:string;
   carga:boolean;
+  nuevoLaredo:boolean;
   constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, fb2: FormBuilder,public _servicioCompartido: servicioCompartido) {
     this.formData = fb.group({
       'calle1' : this.calle1,
@@ -57,6 +58,7 @@ export class DireccionComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.nuevoLaredo = false;
     this.estado = "Distrito Federal";
      if(isUndefined(this._servicioCompartido.soloRegistro))
      {
@@ -191,6 +193,15 @@ export class DireccionComponent implements OnInit {
           this.carga = false;
         }
   }
+
+  onChange(Estado:string) {
+    if(Estado == "TAM" )
+    {
+      this.nuevoLaredo = true;
+    }else{
+      this.nuevoLaredo = false;
+    }
+ }
 
   guardarGustos()
   {
