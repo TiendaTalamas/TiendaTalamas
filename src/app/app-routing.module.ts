@@ -74,7 +74,7 @@ const routes: Routes = [
   {path: 'DetallesPedido/:IdPedido', component:DetallesPedidoComponent},
   {path: 'ConfirmacionPago',component:ConfirmacionPedidoComponent},
   {path: 'ConfirmacionPago/:IdProducto/:Cantidad',component:ConfirmacionIndividualComponent},
-  {path: 'Generico', component:VendedorGenericoComponent }
+  {path: 'Negocio/Melissa', component:VendedorGenericoComponent }
 ];
 
 @NgModule({
