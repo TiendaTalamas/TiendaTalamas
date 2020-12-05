@@ -73,7 +73,8 @@ const routes: Routes = [
   {path: 'Pago/:IdProducto/:Cantidad', component:TarjetaComponent},
   {path: 'DetallesPedido/:IdPedido', component:DetallesPedidoComponent},
   {path: 'ConfirmacionPago',component:ConfirmacionPedidoComponent},
-  {path: 'ConfirmacionPago/:IdProducto/:Cantidad',component:ConfirmacionIndividualComponent}
+  {path: 'ConfirmacionPago/:IdProducto/:Cantidad',component:ConfirmacionIndividualComponent},
+  {path: 'Generico', component:VendedorGenericoComponent }
 ];
 
 @NgModule({
