@@ -255,7 +255,7 @@ export class AppComponent {
 
   navegarReposteria()
   {
-    this.router.navigate(['Generico'])
+    this.router.navigate(['Negocio/Melissa'])
   }
 
   navegarSesion()
