@@ -19,7 +19,8 @@ import 'zone.js/dist/zone-node';
 
 import * as express from 'express';
 import {join} from 'path';
-
+const https = require('https');
+const fs = require('fs');
 // Express server
 const app = express();
 
@@ -52,7 +53,13 @@ app.get('*', (req, res) => {
   res.render('index', { req });
 });
 
-// Start up the Node server
+/*// Start up the Node server
+https.createServer({
+    key: fs.readFileSync('../ssl/keys/ce9d3_99a7b_7ae40655e3be24abe001d46eb717fed6.key'),
+    cert: fs.readFileSync('../ssl/certs/tiendatalamas_com_ce9d3_99a7b_1631102400_006eacce165ec2f2baa62f863d5855ab.crt')
+}, app)
+.listen(4000);*/
 app.listen(PORT, () => {
   console.log(`Node Express server listening on http://localhost:${PORT}`);
 });
+

@@ -114,10 +114,10 @@ this.formCantidad = fb.group({
   ngOnInit() {
     this.IdProducto = this.Route.snapshot.paramMap.get('id');
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
-    this.actual = "http://tiendatalamas.com/Venta/"+this.Categoria+"/"+this.IdProducto+"/"+this.Route.snapshot.paramMap.get('Nombre');
+    this.actual = "https://tiendatalamas.com/Venta/"+this.Categoria+"/"+this.IdProducto+"/"+this.Route.snapshot.paramMap.get('Nombre');
     this.metaService.updateTag({property:'og:title',content:this.Route.snapshot.paramMap.get('Nombre')});
     this.metaService.updateTag({property:'og:url',Content:this.actual});
-    this.metaService.updateTag({property:'og:image',Content:"http://tiendatalamas.com/assets/Imagenes/"+this.IdProducto});
+    this.metaService.updateTag({property:'og:image',Content:"https://tiendatalamas.com/assets/Imagenes/"+this.IdProducto});
     this.title.setTitle("Talamas");
     this.disponible = true;
     this.Cantidad = 1;
@@ -223,7 +223,6 @@ this.formCantidad = fb.group({
   ObtenerMeta(producto:any)
   {
 
-    alert(producto.NombreProducto);
   }
 
 
