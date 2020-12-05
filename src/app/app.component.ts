@@ -253,6 +253,11 @@ export class AppComponent {
     
   }
 
+  navegarReposteria()
+  {
+    this.router.navigate(['Generico'])
+  }
+
   navegarSesion()
   {
 
