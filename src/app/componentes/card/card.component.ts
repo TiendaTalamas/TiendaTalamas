@@ -79,6 +79,7 @@ navegarBusqueda()
                 if(result['status'] == "200")
                 {
                   localStorage.setItem('Token', result['token']);
+                  localStorage.setItem('Ciudad',result['Ciudad']);
                   this.location.back();
                 }
                 else
