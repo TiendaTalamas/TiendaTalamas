@@ -41,23 +41,14 @@
       </div>
       <div class="col-10 mt-3">
         <div class="row mb-4">
-          <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;">
+          <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;" *ngFor="let producto of articulosArray">
     
-         <img fallimg class="imgr" style="cursor: pointer;" src="assets/Gallet1.jpg" (click) = "masInformacion('Gallet1', 'Producto','GalletasMelissa')">
-         <h5><p id="textomas" class=" ml-auto mt-4">Galletas Chispas de chocolates 3Pz</p></h5>
-         <h5><p id="textomas3" class="mr-auto mt-4">Melisa Reposteria</p></h5>
-         <h5><p id="textomas2" class="ml-auto mt-4">$120.00</p></h5>
-         <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito('Gallet1')" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
+         <img fallimg class="imgr" style="cursor: pointer;" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria,producto.NombreProducto)">
+         <h5><p id="textomas" class=" ml-auto mt-4">{{producto.NombreProducto}}</p></h5>
+         <h5><p id="textomas3" class="mr-auto mt-4">{{producto.Propiedad4}}</p></h5>
+         <h5><p id="textomas2" class="ml-auto mt-4">${{producto.Precio |  number:'1.2-2'}}</p></h5>
+         <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
         </div>
-
-        <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;">
-    
-          <img fallimg class="imgr" style="cursor: pointer;" src="assets/Gallet1.jpg" (click) = "masInformacion('Gallet2', 'Producto','GalletasMelissa')">
-          <h5><p id="textomas" class=" ml-auto mt-4">Galletas Chispas de chocolates 6Pz</p></h5>
-          <h5><p id="textomas3" class="mr-auto mt-4">Melisa Reposteria</p></h5>
-          <h5><p id="textomas2" class="ml-auto mt-4">$220.00</p></h5>
-          <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito('Gallet2')" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
-         </div>
     
       </div>
      
