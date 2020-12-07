@@ -5,6 +5,7 @@ import { NgFallimgModule } from 'ng-fallimg';
 import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
 import {Router} from "@angular/router";
 
+
 @Component({
   selector: 'app-vendedor-generico',
   templateUrl: './vendedor-generico.component.html',
