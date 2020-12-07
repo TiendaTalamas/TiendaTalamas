@@ -12,7 +12,7 @@
 
       <!--Se mostrara en celular-->
       <div id="justcel" class="input-group mb-3 mt-3">
-        <select (ngModelChange)="onChange($event)" [(ngModel)]="sub" class="custom-select"  id="sub">
+        <select  [(ngModel)]="sub" class="custom-select"  id="sub">
           <option  selected>Elegir Categoria</option>
           <option ><p></p></option>
           
@@ -47,7 +47,7 @@
          <h5><p id="textomas" class=" ml-auto mt-4">Galletas Chispas de chocolates 3Pz</p></h5>
          <h5><p id="textomas3" class="mr-auto mt-4">Melisa Reposteria</p></h5>
          <h5><p id="textomas2" class="ml-auto mt-4">$120.00</p></h5>
-         <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
+         <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito('Gallet1')" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
         </div>
 
         <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;">
@@ -56,7 +56,7 @@
           <h5><p id="textomas" class=" ml-auto mt-4">Galletas Chispas de chocolates 6Pz</p></h5>
           <h5><p id="textomas3" class="mr-auto mt-4">Melisa Reposteria</p></h5>
           <h5><p id="textomas2" class="ml-auto mt-4">$220.00</p></h5>
-          <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
+          <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito('Gallet2')" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
          </div>
     
       </div>

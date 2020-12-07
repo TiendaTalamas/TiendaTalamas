@@ -94,6 +94,10 @@ export class AppComponent {
 
   
   }
+  navegarJuegos()
+  {
+    this.router.navigate(['Juegos']);
+  }
   obtenerSubCategoriasLibros(){
     
     
@@ -255,7 +259,7 @@ export class AppComponent {
 
   navegarReposteria()
   {
-    this.router.navigate(['Negocio/Melissa'])
+    this.router.navigate(['Negocio/Melissa']);
   }
 
   navegarSesion()
