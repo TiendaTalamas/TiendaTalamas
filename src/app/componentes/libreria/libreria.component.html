@@ -40,7 +40,7 @@
       </div>
 
       <hr/>
-      <h5 class="text-center" style=" font-family: 'Oswald', sans-serif; font-weight:700; color:#333333;">Libreria Talamas</h5>
+      <h5 class="text-center" style=" font-family: 'Oswald', sans-serif; font-weight:700; color:#333333;">Librería Talamás</h5>
       <hr/>
    <div class="row" id="justcel" *ngFor = "let reciente of articulosArray; let i = index">
      <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, 'Libros', 'reciente.NombreProducto')" width="200px" alt=""></div>
@@ -63,14 +63,14 @@
         <p style="color: black; font-size: large; font-weight: 600;" > Categorias</p>
         <hr style="margin-bottom: px; width: 100%; height:1.5px; background-color: gray; "/>
         <mat-nav-list style="padding-top: 0; ">
-          <mat-list-item id="categoria" class="noSeleccionable" *ngFor = "let reciente of articulosArray_Sub; let i = index" ><span class="noSeleccionable" style="font-size: small; font-weight:500;" (click)="obtenerArticulosEspecificos(reciente.SubCategoria)">{{reciente.SubCategoria}}</span></mat-list-item>
+          <mat-list-item id="categoria" class="noSeleccionable" *ngFor = "let reciente of articulosArray_Sub; let i = index" ><span class="noSeleccionable" (click)="obtenerArticulosEspecificos(reciente.SubCategoria)">{{reciente.SubCategoria}}</span></mat-list-item>
         </mat-nav-list>
         <hr/>
         <p style="color: black;  font-size: large; font-weight: 600;" > +Más</p>
         <hr style="margin-bottom: 0px;"/> 
         <mat-nav-list style="padding-top: 0;">
-          <mat-list-item (click)="navegarMusica()" style="color: black; font-size: medium; height: 25px; margin-top: 5px;" >Musica</mat-list-item>
-          <mat-list-item (click)="navegarJuegos()" style="color: black; font-size: medium; height: 25px; margin-top: 5px;" >Juegos</mat-list-item>
+          <mat-list-item (click)="navegarMusica()" id="categoria2" >Musica</mat-list-item>
+          <mat-list-item (click)="navegarJuegos()" id="categoria2" >Juegos</mat-list-item>
         </mat-nav-list>
       </div>
       <div class="col-10 mt-3">
