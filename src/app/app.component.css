@@ -220,6 +220,20 @@ a
   margin: 0 auto;
 }
 
+#textomasNegocio
+{
+  color: #333333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+
+
+}
+
 #textomas
 {
   color: #333333;

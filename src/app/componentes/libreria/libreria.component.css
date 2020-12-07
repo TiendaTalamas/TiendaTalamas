@@ -27,16 +27,30 @@
 }
 #categoria
 {
-  color: black; 
-  font-size: medium;
-   height: 40px;
+  color:#333333; 
+  font-size:small;
+   height:35px;
    text-align: left;
+   font-weight:600;
 }
+
 #categoria:hover
 {
   color:#e11d74 ;
 }
+#categoria2
+{
+  color:#333333; 
+  font-size:small;
+   height:20px;
+   text-align: left;
+   font-weight:600;
+}
 
+#categoria2:hover
+{
+  color:#e11d74 ;
+}
 
 #textomas
 {

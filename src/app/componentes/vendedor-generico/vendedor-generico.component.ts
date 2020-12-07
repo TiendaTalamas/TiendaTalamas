@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
 import {Location} from "@angular/common";
 import { producto } from '../../servicios/producto';
 
+
 @Component({
   selector: 'app-vendedor-generico',
   templateUrl: './vendedor-generico.component.html',
