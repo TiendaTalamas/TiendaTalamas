@@ -4,6 +4,12 @@ import { Http, Response } from '@angular/http';
 import { NgFallimgModule } from 'ng-fallimg';
 import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
 import {Router} from "@angular/router";
+import 'rxjs/add/operator/map';
+
+import { URLSearchParams } from "@angular/http";
+import 'rxjs/add/operator/map';
+import {Location} from "@angular/common";
+import { producto } from '../../servicios/producto';
 
 @Component({
   selector: 'app-vendedor-generico',
@@ -84,5 +90,20 @@ export class VendedorGenericoComponent implements OnInit {
     });
 
   }
+  navegarJuegos()
+  {
+    this.router.navigate(['Juegos']);
+  }
+  navegarMusica()
+  {
+    this.router.navigate(['musica']);
 
+  }
+  navegarSesion()
+  {
+
+    this.router.navigate(['card'])
+
+
+  }
 }
