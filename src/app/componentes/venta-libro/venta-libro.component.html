@@ -294,12 +294,12 @@
       <div #divZoomed class="img-zoom-result"  ></div> 
         <h2 style="color: black; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
       </div>
-    <div class="row">
-        <p style="font-weight: 300; color:gray;">{{producto.Propiedad4}}</p>
+    <div class="row" *ngIf="negocio">
+        <p style="font-weight: 300; color:gray; cursor: pointer;" (click)="navegarNegocio()">{{producto.Propiedad4}}</p>
     </div>
-    <div class="row">
-        <h2  style="color: black; font-weight: 700;">{{producto.Propiedad4}}</h2>
-    </div>
+    <div class="row" *ngIf="!negocio">
+      <p style="font-weight: 300; color:gray;" (click)="navegarNegocio()">{{producto.Propiedad4}}</p>
+  </div>
     <div class="row">
       <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio | number:'1.2-2' }}</h1> 
     </div>

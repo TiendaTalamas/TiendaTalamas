@@ -112,6 +112,8 @@ this.formCantidad = fb.group({
   EMD:boolean;
   script:string;
   actual:string;
+  negocio:boolean;
+  NombreNegocio:string;
   ngOnInit() {
     this.IdProducto = this.Route.snapshot.paramMap.get('id');
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
@@ -178,7 +180,27 @@ this.formCantidad = fb.group({
             
     });
   }
-
+  obtenerVendedor(NombreNegocio){
+    try {
+      let body = new URLSearchParams();
+      body.append('cadena', NombreNegocio);  
+      this.http.post(this._servicioCompartido.Url+'/negocioExacto.php', body)
+        
+      .map((res:Response) => res.json())
+              .subscribe(result => 
+              {
+          if(result["status"] == "200")
+          {
+            this.negocio = true;
+            this.NombreNegocio = NombreNegocio;
+          }else{
+            this.negocio= false;
+          }
+      });
+    } catch (error) {
+      this.negocio= false;
+    }
+  }
   obtenerDirecciones() {
     let body = new URLSearchParams();
     body.append('email', localStorage.getItem('email_U'));
@@ -368,6 +390,15 @@ this.formCantidad = fb.group({
     });
   }
   }
+  navegarNegocio()
+  {
+    if(this.negocio){
+      this.router.navigate([this.NombreNegocio]);
+
+    }else{
+
+    }
+  }
   cambiarImagen(nuevaImagen:string){
     this.imagenActual = nuevaImagen;
   }
@@ -426,6 +457,7 @@ this.formCantidad = fb.group({
                 this.EMD = true;
               }
               this.crearMetadatos(producto);
+              this.obtenerVendedor(producto.Propiedad4);
           }
     });
   }
