@@ -44,7 +44,7 @@
           <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;" *ngFor="let producto of articulosArray">
     
             <div class="imgr">
-              <img fallimg class="imgr2 my-auto" style="display: block; margin:auto; cursor: pointer;" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria, producto.NombreProducto)">
+              <img fallimg class="imgr2" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria, producto.NombreProducto)">
               </div>       
          <h5><p id="textomas" class=" ml-auto mt-4">{{producto.NombreProducto}}</p></h5>
          <h5><p id="textomas3" class="mr-auto mt-4">{{producto.Propiedad4}}</p></h5>

@@ -216,9 +216,11 @@ a
 {
   width:140px; 
   height: 215px;
-  display: block; 
   margin: 0 auto;
+  line-height:400px ;
+  vertical-align:middle;
 }
+
 .imgr2
 {
   max-width:140px; 

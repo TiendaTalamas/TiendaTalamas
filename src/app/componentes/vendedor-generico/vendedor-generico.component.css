@@ -88,19 +88,16 @@
 }
 .imgr
 {
-  width:140px; 
+  width:140;
   height: 215px;
-  display: block; 
-  margin: 0 auto;
+  display:table-cell;
+  vertical-align:bottom;
 }
+
 .imgr2
 {
-  max-width:140px; 
-  max-height: 215px;
-  display: block; 
-  margin: auto;
-  margin-top: auto;
-  margin-bottom: auto;
+ width:150px;
+ margin-left:7%;
 }
 
 h1
