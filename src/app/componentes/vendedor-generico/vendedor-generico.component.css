@@ -97,7 +97,8 @@
 .imgr2
 {
  width:150px;
- margin-left:7%;
+ cursor: pointer;
+ margin-left: 8%;
 }
 
 h1
