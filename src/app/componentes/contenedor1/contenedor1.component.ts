@@ -1025,17 +1025,21 @@ export class Contenedor1Component implements OnInit {
   
 
   }
-
+  navegarNegocio(Negocio:string)
+  {
+    this.router.navigate([Negocio]);
+  }
   obtenerNegocios()
   {
     let body = new URLSearchParams();
-    this.http.post(this._servicioCompartido+'/todosLosNegocios.php', body)
+    this.http.post(this._servicioCompartido.Url+'/todosLosNegocios.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
             this.AA_Celualar = "";
             this.data_Celular = [];
-            this.Negocios = result;
+            this.Negocios = result["datos"];
+            console.log(result["datos"]);
             for (var key in result) {
             this.AA_Celualar = this.AA_Celualar + key;
             if (result.hasOwnProperty(key)) {
