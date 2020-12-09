@@ -219,7 +219,15 @@ a
   display: block; 
   margin: 0 auto;
 }
-
+.imgr2
+{
+  max-width:140px; 
+  max-height: 215px;
+  display: block; 
+  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 #textomasNegocio
 {
   color: #333333;

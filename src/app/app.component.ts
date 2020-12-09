@@ -231,9 +231,9 @@ export class AppComponent {
   }
   }
 
-  navegarNegocio()
+  navegarNegocio(Negocio:string)
   {
-    this.router.navigate(['Negocio/Melissa']);
+    this.router.navigate([Negocio]);
   }
 
   obtenerBusquedaNegocios(){

@@ -104,6 +104,7 @@ this.formCantidad = fb.group({
   productosCarrousel2 = new Array;
   productosCarrousel3 = new Array;
   imagenesInstrumentos = new Array;
+  url:string;
   user:string;
   verificacionProductos:boolean;
   formCantidad:FormGroup;

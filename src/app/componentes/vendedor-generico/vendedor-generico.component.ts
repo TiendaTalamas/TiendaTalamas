@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Http, Response } from '@angular/http';
 import { NgFallimgModule } from 'ng-fallimg';
 import { servicioCompartido } from 'src/app/servicios/servicioCompartido';
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 import 'rxjs/add/operator/map';
 
 import { URLSearchParams } from "@angular/http";
@@ -41,12 +41,15 @@ export class VendedorGenericoComponent implements OnInit {
   valuesKeys_Recomendados = new Array;
   articulosArray_Recomendados = new Array;
   noRegistrado:boolean;
+  Portada:string;
+  Imagen:string;
+
 
   //Variable del modal
   respuesta:string;
 
   constructor(private http: Http,private router: Router, private location:Location,
-    public _servicioCompartido : servicioCompartido, fb : FormBuilder, public falla:NgFallimgModule) {   
+    public _servicioCompartido : servicioCompartido, fb : FormBuilder, public falla:NgFallimgModule, public Route:ActivatedRoute) {   
 }
  
 
@@ -58,21 +61,47 @@ export class VendedorGenericoComponent implements OnInit {
   valuesKeys_Sub = new Array;
   articulosArray_Sub = new Array;
   articulosArray_Inst = new Array;
- 
+  NombreNegocio:string;
+
   ngOnInit()
   {
+    this.NombreNegocio = this.Route.snapshot.paramMap.get('negocio');
     this.obtenerArticulosEspecificos();
+    this.obtenerVendedor();
+  }
+
+  obtenerVendedor(){
+    try {
+      let body = new URLSearchParams();
+      body.append('cadena', this.NombreNegocio);  
+      this.http.post(this._servicioCompartido.Url+'/negocioExacto.php', body)
+        
+      .map((res:Response) => res.json())
+              .subscribe(result => 
+              {
+          if(result["status"] == "200")
+          {
+            this.Portada = result["datos"]["0"]["Portada"];
+            this.Imagen =  result["datos"]["0"]["Portada"];
+          }else{
+            this.router.navigate(['']);
+          }
+      });
+    } catch (error) {
+      this.router.navigate(['']);
+    }
   }
   
   obtenerArticulosEspecificos() {
     let body = new URLSearchParams();
-    body.append('marca','MELISSA REPOSTERIA');
+    body.append('marca', this.NombreNegocio);
     this.http.post(this._servicioCompartido.Url+'/articulosPorMarca.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
             this.AA = "";
             this.data = [];
+            console.log(result)
             this.articulosArray = result;
             for (var key in result) {
             this.AA = this.AA + key;

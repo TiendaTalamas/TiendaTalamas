@@ -295,7 +295,7 @@
         <h2 style="color: black; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
       </div>
     <div class="row">
-        <p style="font-weight: 300; color:gray;">{{producto.Propiedad2}}</p>
+        <p style="font-weight: 300; color:gray;">{{producto.Propiedad4}}</p>
     </div>
     <div class="row">
         <h2  style="color: black; font-weight: 700;">{{producto.Propiedad4}}</h2>
@@ -321,13 +321,13 @@
         </div>
     </ng-container>
     <ng-template #elseTemplate>
-      <div *ngIf="!EMD" class="d-flex justify-content-center align-items-center" id="main">
+      <div class="d-flex justify-content-center align-items-center" id="main">
+        <h1 class="mr-3 pr-3 align-top border-right inline-block align-content-center">Lo sentimos</h1>
         <div class="inline-block align-middle">
-          <button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button>        </div>
+          <h2 class="font-weight-normal lead" id="desc">No disponible por el momento.</h2>
+        </div>
     </div>
-    <div *ngIf="EMD" class="d-flex justify-content-center align-items-center" id="main">
-      Contactanos en Whatsapp para personalizar tu pedido: <a id="justcel" class="ml-5" href="https://api.whatsapp.com/send?phone=+528673076039"><img fallimg class="mr-1 cursorMano"  src="assets/whatsapp3.png" width="50px"></a>
-  </div>
+
     </ng-template>
     
 
@@ -397,7 +397,7 @@
           </div>
           </div>
           <div class="row">
-            <div><img  alt="Compartir" onclick="window.open('https:\/\/www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https:\/\/www.ticketstalamas.com/compartir.php'),'facebook-share-dialog','width=626,height=436');" /></div>
+            <div><img  alt="Compartir" onclick="window.open('https:\/\/www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url),'facebook-share-dialog','width=626,height=436');" /></div>
           </div>
       </ng-container>
       <ng-template #elseTemplate>
