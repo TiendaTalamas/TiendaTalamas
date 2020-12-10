@@ -60,8 +60,14 @@
   </div>
 
   <div>
-    <div class="row mt-5">
-      <div class="col-2" *ngFor="let negocio of Negocios">
+    <hr id="textoPC" width="100%" color="#eeeeee"/>
+  <h3 id="textoPC" style = "color: #252850; text-align:center;  margin-top: 0px; margin-bottom: 0px;">+ MARCAS</h3>
+  <hr id="textoPC" width="100%" color="#eeeeee" style="margin-bottom: 3%;"/>
+  </div>
+
+  <div>
+    <div class="row">
+      <div class="col-2 mb-1" *ngFor="let negocio of Negocios">
       <img src="{{negocio.Logo}}" style="cursor: pointer;" width="135px" (click)="navegarNegocio(negocio.Nombre)">
       </div>
 
@@ -225,7 +231,7 @@
   <!--AQUI EMPIEZA EL SLIDER DE INICIO-->
   <div>
     <hr id="textoPC" width="100%" color="#eeeeee"/>
-  <h3 id="textoPC" style = "color: #252850; text-align:center;  margin-top: 0px; margin-bottom: 0px;">MAS VENDIDOS</h3>
+  <h3 id="textoPC" style = "color: #252850; text-align:center;  margin-top: 0px; margin-bottom: 0px;">LIBROS + VENDIDOS</h3>
   <hr id="textoPC" width="100%" color="#eeeeee" style="margin-bottom: 3%;"/>
   </div>
     <div class="container-fluid-ml-5" >
