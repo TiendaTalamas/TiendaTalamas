@@ -1,11 +1,14 @@
 <div style="overflow: hidden; ">
 
 <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators" style="margin-bottom:30px;">
+  <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+    
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -17,6 +20,15 @@
     </div>
     <div class="carousel-item " *ngIf="nuevoLaredo">
       <img width="100%" style="cursor: pointer;" src="assets/bannerSDM.jpg" (click)="navegarSesion()" fallimg alt="First slide" >
+    </div>
+    <div class="carousel-item ">
+      <img width="100%" style="cursor: pointer;" src="https://tiendatalamas.com/assets/centro29portada.jpg" (click)="navegarSesion()" fallimg alt="First slide" >
+    </div>
+    <div class="carousel-item ">
+      <img width="100%" style="cursor: pointer;" src="https://tiendatalamas.com/assets/estevaportada.jpg" (click)="navegarSesion()" fallimg alt="First slide" >
+    </div>
+    <div class="carousel-item ">
+      <img width="100%" style="cursor: pointer;" src="https://tiendatalamas.com/assets/carlaoportada.jpg" (click)="navegarSesion()" fallimg alt="First slide" >
     </div>
     <div class="carousel-item">
       <img fallimg style="width: 100%;  cursor: pointer;" (click)= "masInformacion('9786070769238', 'Libros', 'Los compas y la camara del tiempo')" fallimg fallimg src="assets/compasbanner.jpg" alt="First slide">
