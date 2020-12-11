@@ -10,34 +10,33 @@
     </div>
   </div>
 
-      <!--Se mostrara en celular-->
+      <!--Se mostrara en celular
       <div id="justcel" class="input-group mb-3 mt-3">
         <select  [(ngModel)]="sub" class="custom-select"  id="sub">
           <option  selected>Elegir Categoria</option>
           <option ><p></p></option>
           
         </select>
-      </div>
+      </div>-->
 
       <hr/>
       <h5 class="text-center" style=" font-family: 'Oswald', sans-serif; font-weight:700; color:#333333;">{{NombreNegocio}}</h5>
       <hr/>
       
-      <!--
-      <div class="row" id="justcel" *ngFor = "let producto of articulosArray; let i = index">
-        <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{producto.Imagen}}" (click) = "masInformacion(reciente.IdProducto, 'Libros', 'reciente.NombreProducto')" width="200px" alt=""></div>
+      <div class="row" id="justcel" *ngFor = "let producto of articulosArray">
+        <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria, producto.NombreProducto)" width="200px" alt=""></div>
         <div class="col-8 mt-4">
           <span style="font-family: 'Oswald', sans-serif; font-weight: 700; color:#333333;">
-         {{prodcuto.NombreProducto}}
+         {{producto.NombreProducto}}
           </span>
             <br>
             <div class="mt-2" style="font-family: 'Oswald', sans-serif; font-weight:300; color:#9e9e9e;">{{producto.Propiedad4}}</div>
              <div class="mt-2" style="color:#76aadb;">${{producto.Precio |  number:'1.2-2'}}</div>
             <br>
-          <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
+          <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
         </div>
       </div>
-    -->
+    
 
   <div id="onlypc">
     <div class="row " >

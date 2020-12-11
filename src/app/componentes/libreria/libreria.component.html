@@ -35,7 +35,6 @@
         <select (ngModelChange)="onChange($event)" [(ngModel)]="sub" class="custom-select"  id="sub">
           <option  selected>Elegir Categoria</option>
           <option *ngFor = "let reciente of articulosArray_Sub; let i = index"  value="{{reciente.SubCategoria}}" ><p>{{reciente.SubCategoria}}</p></option>
-          
         </select>
       </div>
 
