@@ -403,6 +403,10 @@ this.formCantidad = fb.group({
     this.imagenActual = nuevaImagen;
   }
   //Obtiene el libro cuando recibe datos
+  abrirFacebook()
+  {
+    window.open('https:\/\/www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(this.url),'facebook-share-dialog','width=626,height=436');
+  }
   crearMetadatos(product)
   {
     let script;
@@ -451,7 +455,9 @@ this.formCantidad = fb.group({
           }
           for(let producto of this.productos)
           {
-            this.ObtenerMeta(producto);
+
+            this.url = "https://tiendatalamas.com/compartir.php?titulo="+producto.NombreProducto+"&description="+producto.Descripcion+"&image="+producto.Imagen+"&url=https://tiendatalamas.com/venta/Libros/"+producto.IdProducto+"/"+producto.NombreProducto;
+            alert(this.url);
               this.Imagen=producto.Imagen;
               if(producto.Clase == "Personalizado"){
                 this.EMD = true;
