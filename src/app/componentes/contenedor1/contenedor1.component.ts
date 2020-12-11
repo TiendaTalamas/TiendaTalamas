@@ -125,7 +125,10 @@ export class Contenedor1Component implements OnInit {
   masVendidosTablets3 = new Array;
   masVendidosTablets4 = new Array;
   masVendidosTablets5 = new Array;
-  Negocios = new Array;
+  NegociosG = new Array;
+  NegociosG2 = new Array;
+  NegociosS = new Array;
+  NegociosS2 = new Array;
 
 
 
@@ -1032,31 +1035,48 @@ export class Contenedor1Component implements OnInit {
   obtenerNegocios()
   {
     let body = new URLSearchParams();
+    body.append("","");
     this.http.post(this._servicioCompartido.Url+'/todosLosNegocios.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
             {
-            this.AA_Celualar = "";
-            this.data_Celular = [];
-            this.Negocios = result["datos"];
-            console.log(result["datos"]);
-            for (var key in result) {
-            this.AA_Celualar = this.AA_Celualar + key;
-            if (result.hasOwnProperty(key)) {
-              this.val_Celular = result[key];
-              this.data_Celular.push(Object.keys(this.val_Celular));
-              for (var i = 0; i < Object.keys(this.val_Celular).length; i++) {
-              this.contenedor_Celular = Object.keys(this.val_Celular)[i];
-              Object.entries(this.val_Celular)[i]
-               
-                this.xxxMap_Celular.set(Object.keys(this.val_Celular)[i], Object.values(this.val_Celular)[i]);
-                this.valuesKeys_Celular.push(Object.keys(this.val_Celular)[i], Object.values(this.val_Celular)[i]);
 
-                }
-             }
-          }
+            this.NegociosG = result["datos"];
+ 
     });
+    body = new URLSearchParams();
+    body.append("limiteI","6");
+    body.append("limiteS","6");
+    this.http.post(this._servicioCompartido.Url+'/todosLosNegocios.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
 
+            this.NegociosG2 = result["datos"];
+ 
+    });
+    body = new URLSearchParams();
+    body.append("limiteI","0");
+    body.append("limiteS","3");
+    this.http.post(this._servicioCompartido.Url+'/todosLosNegocios.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+
+            this.NegociosS = result["datos"];
+ 
+    });
+    body = new URLSearchParams();
+    body.append("limiteI","3");
+    body.append("limiteS","3");
+    this.http.post(this._servicioCompartido.Url+'/todosLosNegocios.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+
+            this.NegociosS2 = result["datos"];
+ 
+    });
   }
 
 
