@@ -53,7 +53,10 @@ export class ConfirmacionIndividualComponent implements OnInit {
                 if(isNullOrUndefined(this.Subtotal)){
                   this.router.navigate(['']);
                 }
-                if(Number(this.Subtotal) < 1){
+                if(this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
+                  this.Envio = "30";
+                }
+                if(Number(this.Subtotal) <= 1 && !this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
                   this.Envio =  String(300-Number(this.Subtotal));
                 }
                 this.Total = String(Number(this.Subtotal) + Number(this.Envio));

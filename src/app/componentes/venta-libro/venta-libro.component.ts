@@ -457,7 +457,6 @@ this.formCantidad = fb.group({
           {
 
             this.url = "https://tiendatalamas.com/compartir.php?titulo="+producto.NombreProducto+"&description="+producto.Descripcion+"&image="+producto.Imagen+"&url=https://tiendatalamas.com/venta/Libros/"+producto.IdProducto+"/"+producto.NombreProducto;
-            alert(this.url);
               this.Imagen=producto.Imagen;
               if(producto.Clase == "Personalizado"){
                 this.EMD = true;
