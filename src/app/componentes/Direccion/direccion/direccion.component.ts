@@ -183,6 +183,7 @@ export class DireccionComponent implements OnInit {
                   this.carga = true;
                   localStorage.setItem('Token', result['token']);
                   localStorage.setItem('Ciudad',result['Ciudad']);
+                  localStorage.setItem('Nombre', result['Nombre'])
                   alert(result['sql']);
                 }
                 

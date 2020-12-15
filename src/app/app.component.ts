@@ -66,6 +66,13 @@ export class AppComponent {
   articulosArray_Buscar = new Array;
   respuesta:string;
   noRegistrado:boolean;
+  AA_Nom:string;
+  data_Nom:any[];
+  val_Nom:any[];
+  articulosArray_Nom= new Array;
+  contenedor_Nom:string;
+
+
   changeCatLibros()
   {
     if(this.todasCat)
@@ -168,6 +175,7 @@ export class AppComponent {
     });
   }
 
+  
 
   navegarRegistro()
   {
