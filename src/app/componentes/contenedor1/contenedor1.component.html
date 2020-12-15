@@ -4,11 +4,11 @@
 
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <a href="https://tiendatalamas.com/CARLA%20SHOP"><img width="100%" style="cursor: pointer;" src="https://tiendatalamas.com/assets/carlaoportada.jpg" fallimg alt="First slide" ></a>
+    <img width="100%" style="cursor: pointer;" src="https://tiendatalamas.com/assets/carlaoportada.jpg" (click)="navegarNegocio('CARLA SHOP')" fallimg alt="First slide">
     </div>
 
     <div class="carousel-item">
-     <a href="https://tiendatalamas.com/CENTRO%2029"><img width="100%" style="cursor: pointer;" src="https://tiendatalamas.com/assets/centro29portada.jpg" fallimg alt="First slide" ></a>
+     <img width="100%" style="cursor: pointer;" src="https://tiendatalamas.com/assets/centro29portada.jpg" (click)="navegarNegocio('CARLA SHOP')" fallimg alt="First slide">
     </div>
 
     <div class="carousel-item " *ngIf="nuevoLaredo">
@@ -16,15 +16,15 @@
     </div>
 
     <div class="carousel-item ">
-      <img fallimg style="width: 100%;   cursor: pointer;" src="assets/sol.png" (click)="masInformacion('9786073198080', 'Libros', 'Sol de Medianoche')" fallimg alt="First slide"> 
+      <img width="100%" style="cursor: pointer;" src="assets/banneric.png" (click)="masInformacion('9786073198042','Libros','EL pasado, fututo y presente de Mexico')" fallimg alt="First slide" >
     </div>
 
     <div class="carousel-item ">
-      <a href="https://tiendatalamas.com/ESTEVABRAND" ><img width="100%" style="cursor: pointer;" src="https://tiendatalamas.com/assets/estevaportada.jpg" fallimg alt="First slide" ></a>
+      <img width="100%" style="cursor: pointer;" src="assets/sol.png" (click)="masInformacion('9786073198080','Libros', 'Sol de Medianoche')" fallimg alt="First slide" >
     </div>
 
     <div class="carousel-item ">
-      <img fallimg style="width: 100%;   cursor: pointer;" src="assets/banneric.png" (click)="masInformacion('9786073198042', 'Libros', 'Harry Potter')" fallimg alt="First slide"> 
+      <img width="100%" style="cursor: pointer;" src="https://tiendatalamas.com/assets/estevaportada.jpg" (click)="navegarNegocio('ESTEVABRAND')" fallimg alt="First slide" >
     </div>
 
     <div class="carousel-item">
@@ -49,7 +49,7 @@
       <div class="carousel-item active">
         <div class="row mx-2">
           <div class="col-4">
-            <img (click)="navegarLibreria();" src="assets/librosInicio.JPG" class="img-fluid cursorMano" fallimg fallimg style="cursor: pointer;" alt="">                                                                                  
+            <img (click)="navegarLibreria();" src="assets/librosInicio.jpg" class="img-fluid cursorMano" fallimg fallimg style="cursor: pointer;" alt="">                                                                                  
           </div>
           <div class="col-4" >
             <img (click)="navegarMusica();" src="assets/musicaInicio.jpg" class="img-fluid cursorMano" fallimg fallimg style="cursor: pointer;" alt="">
