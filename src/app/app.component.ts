@@ -37,6 +37,7 @@ export class AppComponent {
   busqueda:string;
   ngOnInit()
   {
+    this.Nombre = localStorage.getItem("Nombre");
     this.encontrado = true;
     this.encontradoNe;
     this.todasCat = true;
@@ -71,7 +72,7 @@ export class AppComponent {
   val_Nom:any[];
   articulosArray_Nom= new Array;
   contenedor_Nom:string;
-
+  Nombre:string;
 
   changeCatLibros()
   {
