@@ -81,6 +81,7 @@ navegarBusqueda()
                   localStorage.setItem('Token', result['token']);
                   localStorage.setItem('Ciudad',result['Ciudad']);
                   localStorage.setItem('Nombre', result['Nombre']);
+                  this._servicioCompartido.NombU = localStorage.getItem("Nombre");
                   this.location.back();
                 }
                 else

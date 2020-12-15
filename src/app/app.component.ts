@@ -37,7 +37,7 @@ export class AppComponent {
   busqueda:string;
   ngOnInit()
   {
-    this.Nombre = localStorage.getItem("Nombre");
+    this._servicioCompartido.NombU = localStorage.getItem("Nombre");
     this.encontrado = true;
     this.encontradoNe;
     this.todasCat = true;
