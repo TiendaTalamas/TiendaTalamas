@@ -9,8 +9,9 @@
       <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent" id="botonespc">
         <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2 mr-3" [formGroup]="registroForm">
           <input id="control" class="form-control form-control-sm mr-3 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search">
-          <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; border-width: 0; background-color: white; "><img fallimg class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
+          <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; margin-left: -3%; border-width: 0; background-color: white; "><img  fallimg class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
         </form>
+        <span style="margin-right:-4%; color:#81b214;"><b>Hi, Usuario</b></span>
         <a id="justcel" class="ml-5" href="https://api.whatsapp.com/send?phone=+528673076039"><img fallimg class="mr-1 cursorMano" src="assets/iconocontacto.png" width="50px"></a>
         <ng-container *ngIf="_servicioCompartido.CompUsuario; else elseTemplate">         
            <div id="justcel" class="dropdown">
