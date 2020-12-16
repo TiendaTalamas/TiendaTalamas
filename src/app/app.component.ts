@@ -47,7 +47,7 @@ export class AppComponent {
     this.obtenerSubCategoriasInst();
     this._servicioCompartido.obtenerCantidadCarrito();
     let body = new URLSearchParams();
-    this.http.post('http://emdpublicidad.com/contador_tienda/contador_tiendatalamas.php',body)
+    this.http.post('https://emdpublicidad.com/contador_tienda/contador_tiendatalamas.php',body)
     .map((rest:Response) =>rest.json()).subscribe(result=>{
       console.log("Peticion enviada");
     });
