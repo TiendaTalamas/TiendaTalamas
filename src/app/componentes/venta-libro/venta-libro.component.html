@@ -15,7 +15,6 @@
       <meta itemprop="priceCurrency" content="MXN">
     </div>
   </div>
-
   <!--
 <div class="row mt-4" *ngFor = "let producto of productos">
 <div class="col-sm-6 col-md-6 col-lg-3">
@@ -232,8 +231,7 @@
           <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio | number:'1.2-2'}}</h1>
         </div>
         <div class="row">
-          <strong><h5 id="cel" style="color: black;">Codigo del producto: </h5></strong>        <h5 style="font-weight: 700; color:#0779e4;"> {{producto.IdProducto}}</h5>
-  
+          <strong><h5 id="cel" style="color: black;">Codigo del producto: </h5></strong><h5 style="font-weight: 700; color:#0779e4;"> {{producto.IdProducto}}</h5>
         </div>
 
         <hr/>
@@ -303,6 +301,9 @@
     <div class="row">
       <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio | number:'1.2-2' }}</h1> 
     </div>
+    <div class="row">
+      <input class="form-control" style="width:auto; height:3%;" id="seleccion" type="text" maxlength="10" placeholder="Variante">
+      </div>
     <hr/>
     <ng-container *ngIf="disponible; else elseTemplate">
       <div class="row" style="padding: 20px;">

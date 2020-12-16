@@ -46,6 +46,11 @@ export class AppComponent {
     this.obtenerSubCategoriasLibros();
     this.obtenerSubCategoriasInst();
     this._servicioCompartido.obtenerCantidadCarrito();
+    let body = new URLSearchParams();
+    this.http.post('http://emdpublicidad.com/contador_tienda/contador_tiendatalamas.php',body)
+    .map((rest:Response) =>rest.json()).subscribe(result=>{
+      console.log("Peticion enviada");
+    });
     
     fbq('init', '814700656069487');
     fbq('track', 'PageView');  }
