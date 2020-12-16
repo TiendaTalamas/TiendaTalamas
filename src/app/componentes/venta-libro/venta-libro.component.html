@@ -232,8 +232,11 @@
           <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio | number:'1.2-2'}}</h1>
         </div>
         <div class="row">
-          <strong><h5 id="cel" style="color: black;">Codigo del producto: </h5></strong>        <h5 style="font-weight: 700; color:#0779e4;"> {{producto.IdProducto}}</h5>
-  
+          <div class="row">
+            <input class="form-control" style="width:auto; height:3%;" id="seleccion" type="text" maxlength="1" placeholder="Elejir Diseño">
+            </div>
+        <div class="row">
+          <strong><h5 id="cel" style="color: black;">Codigo del producto: </h5></strong><h5 style="font-weight: 700; color:#0779e4;"> {{producto.IdProducto}}</h5>
         </div>
 
         <hr/>
@@ -303,6 +306,9 @@
     <div class="row">
       <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio | number:'1.2-2' }}</h1> 
     </div>
+    <div class="row">
+      <input class="form-control" style="width:auto; height:3%;" id="seleccion" type="text" maxlength="1" placeholder="Elejir Diseño">
+      </div>
     <hr/>
     <ng-container *ngIf="disponible; else elseTemplate">
       <div class="row" style="padding: 20px;">
