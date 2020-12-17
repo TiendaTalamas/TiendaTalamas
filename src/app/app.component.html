@@ -62,8 +62,8 @@
         </div>
 
         <div id="botonescel">
-          <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2" [formGroup]="registroForm">
-            <input id="control" class="form-control form-control-sm mr-3 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="Buscar..." aria-label="Search">
+          <form id="equis" class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2" [formGroup]="registroForm">
+            <input id="controlcel" class="form-control form-control-sm mr-3 sinBorde" [(ngModel)]="cadena" formControlName="cadena" type="text" placeholder="celular" aria-label="Search">
             <button type="submit"  (click)="navegarBusqueda()" style="border-radius: 60%; border-width: 0; background-color: white; "><img fallimg class="cursorMano" src="assets/iconolupa.png" width="30px"> </button>
           </form>
           </div>
