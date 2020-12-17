@@ -62,6 +62,7 @@
               <img fallimg class="imgr2" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria, producto.NombreProducto)">
               </div>       
          <h5><p id="textomas" class=" ml-auto mt-4">{{producto.NombreProducto}}</p></h5>
+         <h5><p id="textomas3" class="mr-auto mt-4">{{producto.IdProducto}}</p></h5>
          <h5><p id="textomas3" class="mr-auto mt-4">{{producto.Propiedad4}}</p></h5>
          <h5><p id="textomas2" class="ml-auto mt-4">${{producto.Precio |  number:'1.2-2'}}</p></h5>
          <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
