@@ -8,13 +8,13 @@
     </div>
 
     <div class="carousel-item">
-     <img width="100%" style="cursor: pointer;" src="https://tiendatalamas.com/assets/centro29portada.jpg" (click)="navegarNegocio('CENTRO29')" fallimg alt="First slide">
+     <img width="100%" style="cursor: pointer;" src="https://tiendatalamas.com/assets/portadacentro.jpg" (click)="navegarNegocio('CENTRO29')" fallimg alt="First slide">
     </div>
-
+<!----------
     <div class="carousel-item " *ngIf="nuevoLaredo">
       <img width="100%" style="cursor: pointer;" src="assets/bannerSDM.jpg" (click)="navegarSesion()" fallimg alt="First slide" >
     </div>
-
+----->
     <div class="carousel-item ">
       <img width="100%" style="cursor: pointer;" src="assets/banneric.png" (click)="masInformacion('9786073198042','Libros','EL pasado, fututo y presente de Mexico')" fallimg alt="First slide" >
     </div>
@@ -136,6 +136,13 @@
          </div>
      </div>
      </div>
+     <div class="carousel-item" >
+      <div class="row">
+        <div class="col-4 mb-1" *ngFor="let negocio of NegociosS3">
+        <img class="img-fluid" src="{{negocio.Logo}}" style="cursor: pointer;" width="135px" (click)="navegarNegocio(negocio.Nombre)">
+        </div>
+    </div>
+    </div>
      </div>
      <a class="flecha carousel-control-prev my-5" id="mostrarencelular" href="#carouselExampleControls29" role="button" data-slide="prev">
        <span class="carousel-control-prev-icon my-5" aria-hidden="true"></span>

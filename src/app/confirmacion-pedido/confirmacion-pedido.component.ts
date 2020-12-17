@@ -50,9 +50,9 @@ export class ConfirmacionPedidoComponent implements OnInit {
                 if(this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
                   this.Envio = "30";
                 }
-                if(Number(this.Subtotal) <= 1 && !this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
+                if(Number(this.Subtotal) > 0 && !this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
 
-                  this.Envio = String(500 - Number(this.Subtotal));
+                  this.Envio = "200";
                 }
                 this.Total = String(Number(this.Envio) + Number(this.Subtotal))
               }

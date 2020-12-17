@@ -129,7 +129,7 @@ export class Contenedor1Component implements OnInit {
   NegociosG2 = new Array;
   NegociosS = new Array;
   NegociosS2 = new Array;
-
+  NegociosS3 = new Array;
 
 
 
@@ -1075,6 +1075,17 @@ export class Contenedor1Component implements OnInit {
             {
 
             this.NegociosS2 = result["datos"];
+ 
+    });
+    body = new URLSearchParams();
+    body.append("limiteI","6");
+    body.append("limiteS","3");
+    this.http.post(this._servicioCompartido.Url+'/todosLosNegocios.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+
+            this.NegociosS3 = result["datos"];
  
     });
   }
