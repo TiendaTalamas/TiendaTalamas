@@ -120,7 +120,15 @@
             </div>
           </div>
         </div>
+        <!--Busqueda de celular-->
         <div id="pequebanners2">
+          <div class="row" *ngIf="encontradoNe">
+            <div class="col-xs-6 col-md-4 col-lg-3 mt-4"*ngFor="let negocio of Negocios">
+              <img fallimg  style="display: block; margin: 0 auto; cursor: pointer; width: 150px;" src="{{negocio.Logo}}" (click) = "navegarNegocio(negocio.Nombre)">
+             </div>
+                            
+          </div>
+          <hr style="color:#9e9e9e;">
           <div *ngIf="!encontrado">
             <h5 style="font-weight: 700;">Lo sentimos no encontramos resultados para: {{cadena}}</h5>
           </div>
