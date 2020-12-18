@@ -72,6 +72,7 @@
         <mat-nav-list *ngIf="Electricos">
         <mat-list-item class="mt-3" style="text-align: left;" id="categorias"*ngFor = "let reciente of articulosArray_Electricos; let i = index" style="font-size: small; font-weight:500;" (click)="obtenerArticulosEspecificos(reciente.Clase)">{{reciente.Clase}}</mat-list-item>
         </mat-nav-list>
+        <mat-list-item id="categorias" (click)="obtenerDiscos()">Discos</mat-list-item>
       </mat-nav-list>
       <hr/>
       <p style="color: black;  font-size: large; font-weight: 600;" > +Más</p>
