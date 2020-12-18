@@ -48,7 +48,7 @@
       {{reciente.NombreProducto}}
        </span>
          <br>
-         <div class="mt-2" style="font-family: 'Oswald', sans-serif; font-weight:300; color:#9e9e9e;">{{reciente.Propiedad1}}</div>
+         <div class="mt-2" style="font-family: 'Oswald', sans-serif; font-weight:300; color:#9e9e9e;">{{reciente.Propiedad2}}</div>
           <div class="mt-2" style="color:#76aadb;">${{reciente.Precio |  number:'1.2-2'}}</div>
          <br>
        <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
@@ -78,7 +78,7 @@
     
          <img fallimg class="imgr" style="cursor: pointer;" src="{{reciente.Imagen}}" (click) = "masInformacion(reciente.IdProducto, 'Libros', reciente.NombreProducto)">
          <h5><p id="textomas" class=" ml-auto mt-4">{{reciente.NombreProducto}}</p></h5>
-         <h5><p id="textomas3" class="mr-auto mt-4">{{reciente.Propiedad1}}</p></h5>
+         <h5><p id="textomas3" class="mr-auto mt-4">{{reciente.Propiedad2}}</p></h5>
          <h5><p id="textomas2" class="ml-auto mt-4">${{reciente.Precio |  number:'1.2-2'}}</p></h5>
          <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(reciente.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
         </div>

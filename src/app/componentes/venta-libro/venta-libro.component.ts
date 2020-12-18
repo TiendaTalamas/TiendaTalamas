@@ -62,6 +62,7 @@ export class VentaLibroComponent implements OnInit {
   CantidadMaxima:number;
   imagenPorDefault:string;
   imagenActual:string;
+  personalizado:boolean;
   //array para guardar los valores
 
   constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute, public falla:NgFallimgModule, private metaService:Meta,@Inject(DOCUMENT) private _document:Document, private title:Title){ 
@@ -115,6 +116,7 @@ this.formCantidad = fb.group({
   negocio:boolean;
   NombreNegocio:string;
   ngOnInit() {
+    this.personalizado = false;
     this.IdProducto = this.Route.snapshot.paramMap.get('id');
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
     this.actual = "https://tiendatalamas.com/Venta/"+this.Categoria+"/"+this.IdProducto+"/"+this.Route.snapshot.paramMap.get('Nombre');
@@ -458,8 +460,11 @@ this.formCantidad = fb.group({
 
             this.url = "https://tiendatalamas.com/compartir.php?titulo="+producto.NombreProducto+"&description="+producto.Descripcion+"&image="+producto.Imagen+"&url=https://tiendatalamas.com/venta/Libros/"+producto.IdProducto+"/"+producto.NombreProducto;
               this.Imagen=producto.Imagen;
-              if(producto.Clase == "Personalizado"){
+              if(producto.Propiedad4 == "EMD"){
                 this.EMD = true;
+              }
+              if(producto.Clase == "Personalizado"){
+                this.personalizado = true;
               }
               this.crearMetadatos(producto);
               this.obtenerVendedor(producto.Propiedad4);
@@ -603,14 +608,13 @@ this.formCantidad = fb.group({
     .map((res:Response) => res.text())
             .subscribe(result => 
             {
-              this.respuesta=result;
-              if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
+              this._servicioCompartido.respuesta=result;
+              if(this._servicioCompartido.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
               {
                 this.noRegistrado= true;
               }else{
                 this.noRegistrado = false;
               }
-              alert(result);
     });
 
   }

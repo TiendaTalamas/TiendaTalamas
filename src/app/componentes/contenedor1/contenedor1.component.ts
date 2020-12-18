@@ -1235,8 +1235,8 @@ export class Contenedor1Component implements OnInit {
     .map((res:Response) => res.text())
             .subscribe(result => 
             {
-              this.respuesta=result;
-              if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
+              this._servicioCompartido.respuesta=result;
+              if(this._servicioCompartido.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
               {
                 this.noRegistrado= true;
               }else{

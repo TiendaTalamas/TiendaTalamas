@@ -57,7 +57,7 @@ export class ConfirmacionIndividualComponent implements OnInit {
                   this.Envio = "30";
                 }
                 if(Number(this.Subtotal) >= 0 && !this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
-                  this.Envio= "200";
+                  this.Envio= result['envio'];
                 }
                 this.Total = String(Number(this.Subtotal) + Number(this.Envio));
               }
