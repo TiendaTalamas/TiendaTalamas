@@ -48,7 +48,7 @@ export class TarjetaComponent implements OnInit {
                   this.router.navigate(['']);
                 }
                 if(Number(this.Subtotal) > 0 && !this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
-                  this.Envio =  "200";
+                  this.Envio =  result['envio'];
                 }
                 this.Total = String(Number(this.Subtotal) + Number(this.Envio));
               }
