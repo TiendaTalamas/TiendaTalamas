@@ -37,6 +37,7 @@ import {DatosPagoIndividualesComponent} from './componentes/datos-pago-individua
 import {TarjetaComponent} from './componentes/tarjeta/tarjeta.component';
 import {ConfirmacionPedidoComponent} from './confirmacion-pedido/confirmacion-pedido.component';
 import {ConfirmacionIndividualComponent} from './componentes/confirmacion-individual/confirmacion-individual.component';
+import {PasswordComponent} from './password/password.component';
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
   {path: 'card', component: CardComponent, },
@@ -74,7 +75,9 @@ const routes: Routes = [
   {path: 'DetallesPedido/:IdPedido', component:DetallesPedidoComponent},
   {path: 'ConfirmacionPago',component:ConfirmacionPedidoComponent},
   {path: 'ConfirmacionPago/:IdProducto/:Cantidad',component:ConfirmacionIndividualComponent},
-  {path: ':negocio', component:VendedorGenericoComponent }
+  {path: 'password', component:PasswordComponent },
+  {path: ':negocio', component:VendedorGenericoComponent },
+  
 ];
 
 @NgModule({

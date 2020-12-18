@@ -15,204 +15,7 @@
       <meta itemprop="priceCurrency" content="MXN">
     </div>
   </div>
-  <!--
-<div class="row mt-4" *ngFor = "let producto of productos">
-<div class="col-sm-6 col-md-6 col-lg-3">
-  <ng-container *ngIf="P2; else elseTemplate">
-    <div>
-      <div id="CarouselTest" class="carousel slide" data-ride="carousel">
- 
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img fallimg class="d-block" src="{{Imagen}}" width="400" height="400" alt="">
-          </div>
-          <div class="carousel-item" *ngFor = "let slider of imagenesInstrumentos; let i = index" >
-            <img fallimg class="d-block w-100" src="{{slider.Imagen}}" alt="First slide" width="400" height="400">
-          </div>
-          <a class="carousel-control-prev" href="#CarouselTest" role="button" data-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  <span class="sr-only">Previous</span>
-</a>
-          <a class="carousel-control-next" href="#CarouselTest" role="button" data-slide="next">
-  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  <span class="sr-only">Next</span>
-</a>
-        </div>
-      </div>
-    </div>
-</ng-container>
-<ng-template #elseTemplate>
-    <img fallimg class="img-fluid" src="{{producto.Imagen}}" width="228" height="350">
-    http://emdpublicidad.com/tiendatalamas/archivos/php/Imagenes/{{producto.Propiedad4}}/{{producto.IdProducto}}.jpg
-  </ng-template>
 </div>
-    <div class="col-sm-12 col-md-6 col-lg-5">
-     <div><h1><p>{{producto.NombreProducto}}</p></h1>
-        <div class="container">
-          <div *ngIf="P1">
-            <h5>Editorial: {{producto.Propiedad4}}</h5>
-            <br>
-            <h5>Autor: {{producto.Propiedad2}}</h5>
-            <br>
-            <h5>Paginas: {{producto.Propiedad3}}</h5>
-            <br>
-            <h5>Año: {{producto.Propiedad1}}</h5>
-          </div>
-          <div *ngIf="P2">
-            <h5>Tipo:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.SubCategoria}}</p>
-            <h5>Marca:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad2}}</p>
-            <h5>Modelo:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad1}}</p>
-          </div>
-          <div *ngIf="P3">
-            <h5>Genero:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.SubCategoria}}</p>
-            <h5>Artista:</h5><p style="font-family: sans-serif; font-size: large; font-weight: 300;">{{producto.Propiedad1}}</p>
-          </div>
-        </div>
-        <br>
-    </div>
-    <div class="reset"></div>    
-</div>
-
-
-<div class="col-md-12 col-lg-4 mt-5">
-  <div class="menu sticky-top ">
-      <div class="card bg-light ">
-          <div class="card-body"  *ngFor = "let producto of productos">
-              <h3><i class="fa fa-inr"></i> ${{producto.Precio}}</h3>
-              <div>
-                <ng-container *ngIf="verificacionProductos; else elseTemplate3">
-                  <a href="https://api.whatsapp.com/send?phone=+528672111350" class="btn btn" id="botones" style="background-color:#0779e4; border-color:#0779e4; color:white;">Comprar por Whatsapp</a>   
-                    
-                   <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant={{quantity}}&user={{user}}" class="btn btn mt-2" style="background-color:#0779e4; border-color:#0779e4; color:white;" >Comprar ahora</a>
-                   <form class="mt-2" [formGroup]="formCantidad">
-                   <select name="select" formControlName="quantity" [(ngModel)]="quantity">
-                    <option value="1" selected>1</option> 
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                </form>
-              </ng-container>
-              <ng-template #elseTemplate3>
-                <p id="TextoOpcion">No contamos con este producto<br>
-                                    comuniquese a brandon@tiendatalamas.com para consultar</p> 
-              </ng-template>  
-              </div>
-
-
-
-                  <div class="pb-3">
-                      
-                  </div>
-
-             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="updatecheck1">
-              <label class="form-check-label mb-2 mr-1" for="updatecheck1">
-
-                <small>Estoy de acuerdo con los terminos y condiciones <a href="#"><br>terminos y condiciones </a> </small>
-              </label>
-            </div>
-
-             
-          </div>
-      </div>
-  </div>
-</div>
-</div>
-<div class="row" *ngFor="let producto of productos">
-
-  <div class="col ml-2 mt-5 Descripcion">
-    <h2>Descripcion:</h2>
-    <p [innerHTML]="producto.Descripcion"></p> <br/>
-
-  <hr/>
-</div>
-</div>
--->
-<!---Segundo intento de venta
-<div class="container mb-5">
-  <div class="card">
-    <div class="container-fliud">
-      <div class="wrapper row">
-        <div class="preview col-md-6">
-          
-          <div class="preview-pic tab-content" *ngFor = "let producto of productos">
-            <div class="tab-pane active" style="margin-left:25%;" id="pic-1"><img fallimg src="{{producto.Imagen}}" /></div>
-            <div class="tab-pane" id="pic-2"><img fallimg src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-3"><img fallimg src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-4"><img fallimg src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-5"><img fallimg src="http://placekitten.com/400/252" /></div>
-          </div>
-         
-          <ul class="preview-thumbnail nav nav-tabs" *ngIf="P2">
-            <li style="margin-left:24%;" class="active"><a data-target="#pic-1" data-toggle="tab"><img fallimg src="http://placekitten.com/200/126" /></a></li>
-            <li><a data-target="#pic-2" data-toggle="tab"><img fallimg src="http://placekitten.com/200/126" /></a></li>
-            <li><a data-target="#pic-3" data-toggle="tab"><img fallimg src="http://placekitten.com/200/126" /></a></li>
-          </ul>
-        
-        </div>
-        <div class="details col-md-6" *ngFor = "let producto of productos">
-          <h3 style="color: black;" class="product-title">{{producto.NombreProducto}}</h3>
-          <h4  style="color: black;" class="price">Editorial: <span>{{producto.Propiedad4}}</span></h4>
-          <h4  style="color: black;" class="price">Autor: <span>{{producto.Propiedad2}}</span></h4>
-          <h4  style="color: black;" class="price">Paginas: <span>{{producto.Propiedad3}}</span></h4>
-          <h4  style="color: black;" class="price">Año: <span>{{producto.Propiedad1}}</span></h4>
-          <h4  style="color: black;" class="price">Precio: <span>${{producto.Precio}}</span></h4>
-          <p  style="color: black;" class="product-description"></p>
-
-          <div class="action">
-            <a href="http://www.tiendatalamas.com/pagos/DatosDePago.php?id={{IdProducto}}&quant={{quantity}}&user={{user}}" class="add-to-cart btn btn-default mr-1"  >Comprar ahora</a>
-            <button class="add-to-cart btn btn-default" type="button">añadir</button>
-            <button class="add-to-cart btn btn-default" type="button" (click)="navegarCompra(producto.IdProducto, '1')">Compra stripes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr width="80%" color="black"/>
-------->
-<!--slider de productos
-<div class="container text-center mt-5 mb-5" style="background-color: white;">
-  <h5 style = "color: black; text-align: left;">Más vendidos</h5>
-  <div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
-  <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-    <div class="carousel-item active">
-  <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of productosCarrousel; let i = index">
-        <img fallimg class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-    </div>
-</div>
-<div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
-</div> 
-<div class="carousel-item">
-  <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of productosCarrousel2; let i = index">
-        <img fallimg class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-    </div>
-</div>
-<div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
-</div> 
-<div class="carousel-item">
-  <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" *ngFor = "let reciente of productosCarrousel3; let i = index">
-        <img fallimg class="imgr" src="{{reciente.Imagen}}" style = "width: 150px; height: 200px" (click) = "masInformacion(reciente.IdProducto, reciente.Categoria)">
-    </div>
-</div>
-<div style = "width: 100%; height: 1px; background-color: #b1b1b1;"></div>
-</div> 
-<a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  <span class="sr-only">Previous</span>
-</a>
-<a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
-  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  <span class="sr-only">Next</span>
-</a>
-</div>
-</div>
-</div>-->
 <div *ngIf="EMD">
   <div  *ngFor="let producto of productos" >
     <div class="row mx-5">
@@ -228,7 +31,7 @@
         <div class="row">
         </div>
         <div class="row">
-          <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio | number:'1.2-2'}}</h1>
+          <h1 style="font-weight: 700; color:#76aadb;"> ${{producto.Precio | number:'1.2-2'}}</h1>
         </div>
         <div class="row">
           <strong><h5 id="cel" style="color: black;">Codigo del producto: </h5></strong><h5 style="font-weight: 700; color:#0779e4;"> {{producto.IdProducto}}</h5>
@@ -290,7 +93,7 @@
     <div style="margin-left: 3%;">
     <div class="row" style="margin-top: 1%;">
       <div #divZoomed class="img-zoom-result"  ></div> 
-        <h2 style="color: black; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
+        <h2 style="color:#333333; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
       </div>
     <div class="row" *ngIf="negocio">
         <p style="font-weight: 300; color:gray; cursor: pointer;" (click)="navegarNegocio()">{{producto.Propiedad4}}</p>
@@ -299,7 +102,7 @@
       <p style="font-weight: 300; color:gray;" (click)="navegarNegocio()">{{producto.Propiedad4}}</p>
   </div>
     <div class="row">
-      <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio | number:'1.2-2' }}</h1> 
+      <h1 style="font-weight: 700; color:#76aadb;"> ${{producto.Precio | number:'1.2-2' }}</h1> 
     </div>
     <!--
     <div class="row">
@@ -361,30 +164,30 @@
       </div>
     <div class="col-lg-8 col-md-6 col-sm-12" style="border: 1px solid #f6f6f6;">
       <div class="row">
-          <h2 style="color: black; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
+          <h2 style="color:#333333; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
         </div>
       <div class="row">
       </div>
       <div class="row">
       </div>
       <div class="row">
-        <h1 style="font-weight: 700; color:#0779e4;"> ${{producto.Precio | number:'1.2-2'}}</h1>
+        <h1 style="font-weight: 700; color:#76aadb;"> ${{producto.Precio | number:'1.2-2'}}</h1>
       </div>
       <div class="row">
-        <strong><h5 id="cel" style="color: black;">Autor: </h5></strong> <h5 style="font-weight: 700; color:#0779e4;"> {{producto.Propiedad2}}</h5>
+        <strong><h5 id="cel" style="color:#333333;">Autor: </h5></strong> <h5 style="font-weight: 700; color:#76aadb;"> {{producto.Propiedad2}}</h5>
       </div>
       <div class="row">
-        <strong><h5 id="cel" style="color: black;">EDITORIAL: </h5></strong> <h5 style="font-weight: 700; color:#0779e4;"> {{producto.Propiedad4}}</h5>
+        <strong><h5 id="cel" style="color:#333333;">EDITORIAL: </h5></strong> <h5 style="font-weight: 700; color:#76aadb;"> {{producto.Propiedad4}}</h5>
       </div>
       <div class="row">
-        <strong><h5 id="cel" style="color: black;">ISBN: </h5></strong>        <h5 style="font-weight: 700; color:#0779e4;"> {{producto.IdProducto}}</h5>
+        <strong><h5 id="cel" style="color:#333333;">ISBN: </h5></strong>        <h5 style="font-weight: 700; color:#76aadb;"> {{producto.IdProducto}}</h5>
 
       </div>
       <div class="row">
-        <strong><h5 id="cel" style="color: black;">NO.PAGINAS: </h5></strong>   <h5 style="font-weight: 700; color:#0779e4;"> {{producto.NumPag}}</h5>
+        <strong><h5 id="cel" style="color:#333333;">NO.PAGINAS: </h5></strong>   <h5 style="font-weight: 700; color:#76aadb;"> {{producto.NumPag}}</h5>
       </div>
       <div class="row">
-        <strong><h5 id="cel" style="color: black;">ENCUADERNACION: </h5></strong>  <h5 style="font-weight: 700; color:#0779e4;"> {{producto.Propiedad1}}</h5>
+        <strong><h5 id="cel" style="color:#333333;">ENCUADERNACION: </h5></strong>  <h5 style="font-weight: 700; color:#76aadb;"> {{producto.Propiedad1}}</h5>
       </div>
       <hr/>
       <ng-container *ngIf="disponible; else elseTemplate">

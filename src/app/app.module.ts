@@ -30,7 +30,7 @@ import { HistorialComponent } from './componentes/historial/historial/historial.
 import { PoliticasComponent } from './componentes/politicas/politicas/politicas.component';
 import { SoporteComponent } from './componentes/Soporte/soporte/soporte.component';
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
-import {
+import { 
   MatToolbarModule,
   MatMenuModule,
   MatCardModule,
@@ -55,6 +55,8 @@ import { NgFallimgModule } from 'ng-fallimg';
 import { DetallesPedidoComponent } from './detalles-pedido/detalles-pedido.component';
 import { ConfirmacionPedidoComponent } from './confirmacion-pedido/confirmacion-pedido.component';
 import { ConfirmacionIndividualComponent } from './componentes/confirmacion-individual/confirmacion-individual.component';
+import { PasswordComponent } from './password/password.component';
+
 
 @NgModule({
   declarations: [
@@ -98,6 +100,7 @@ import { ConfirmacionIndividualComponent } from './componentes/confirmacion-indi
     DetallesPedidoComponent,
     ConfirmacionPedidoComponent,
     ConfirmacionIndividualComponent,
+    PasswordComponent,
    
   ],
   imports: [

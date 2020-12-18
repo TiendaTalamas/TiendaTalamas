@@ -91,10 +91,17 @@
 }
 .imgr
 {
-  width:140px; 
-  height: 140px;
-  display: block; 
-  margin: 0 auto;
+  width:140;
+  height: 215px;
+  display:table-cell;
+  vertical-align:bottom;
+}
+
+.imgr2
+{
+  width:150px;
+  cursor: pointer;
+  margin-left:5%;
 }
 
 

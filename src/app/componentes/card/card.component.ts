@@ -37,10 +37,12 @@ export class CardComponent implements OnInit {
   valuesKeys = new Array;
   articulosArray = new Array;
   respuesta:string;
+  mostrarMensajeError:string;
 
 ngOnInit(){
   this._servicioCompartido.comprobarUsuario();
   this._servicioCompartido.soloSinLoguear();
+ this.mostrarMensajeError="";
 }
 
   constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, private fb2: FormBuilder, public _servicioCompartido: servicioCompartido) {
@@ -86,6 +88,7 @@ navegarBusqueda()
                 }
                 else
                 {
+                this.mostrarMensajeError="Correo o contraseña incorrecta"
                 this.respuesta=result['mensaje'];
                 }
 
@@ -147,6 +150,10 @@ navegarBusqueda()
     
   }
 
+  cerrarNotificacion()
+  {
+    this.mostrarMensajeError=""
+  }
 
   navegarInicio()
   {
