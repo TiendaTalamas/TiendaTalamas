@@ -39,6 +39,7 @@
 
         <hr/>
         <ng-container *ngIf="disponible; else elseTemplate">
+          <div *ngIf="!personalizado">
           <div class="row" style="padding: 20px;">
             <div class="col-lg-12 col-md-12 col-sm-12" style="color:black ; font-weight: 700; font-size: large;" >
               CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800; cursor:pointer;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800; cursor: pointer;" (click)="disminuirCantidad()">-</button>
@@ -53,15 +54,31 @@
               <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
             </div>
             </div>
+          </div>
+          <div *ngIf="personalizado" class="d-flex justify-content-center align-items-center" id="main">
+            <div class="row">
+              <h5>Personalizado por:</h5>
+              </div>
+          
+             <div class="row">
+              <a href="https://api.whatsapp.com/send?phone=+528673076039"><button type="button" class="btn" style="background-color:#00bb2d; color: white;">Whatsapp</button></a>
+               </div>   
+                 </div>
         </ng-container>
         <ng-template #elseTemplate>
-          <div *ngIf="!EMD" class="d-flex justify-content-center align-items-center" id="main">
+          <div *ngIf="!personalizado" class="d-flex justify-content-center align-items-center" id="main">
             <div class="inline-block align-middle">
               <button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button>        </div>
         </div>
-        <div *ngIf="EMD" class="d-flex justify-content-center align-items-center" id="main">
-          Contactanos en Whatsapp para personalizar tu pedido: <a id="justcel" class="ml-5" href="https://api.whatsapp.com/send?phone=+528673076039"><img fallimg class="mr-1 cursorMano" style="width: 100px;"  src="assets/whatsapp3.png" width="200px"></a>
-      </div>
+        <div *ngIf="personalizado" class="d-flex justify-content-center align-items-center" id="main">
+          <div class="row">
+            <h5>Personalizado por:</h5>
+            </div>
+        
+           <div class="row">
+            <a href="https://api.whatsapp.com/send?phone=+528673076039"><button type="button" class="btn" style="background-color:#00bb2d; color: white;">Whatsapp</button></a>
+             </div>   
+               </div>
         </ng-template>
         <hr/>
         <div class="row">
@@ -104,14 +121,7 @@
     <div class="row">
       <h1 style="font-weight: 700; color:#76aadb;"> ${{producto.Precio | number:'1.2-2' }}</h1> 
     </div>
-    <!--
-    <div class="row">
-      <h5>Personalizado por:</h5>
-      </div>
-  
-     <div class="row">
-      <a href="https://api.whatsapp.com/send?phone=+528673076039"><button type="button" class="btn" style="background-color:#00bb2d; color: white;">Whatsapp</button></a>
-       </div>-->
+
     <hr/>
     <ng-container *ngIf="disponible; else elseTemplate">
       <div class="row" style="padding: 20px;">

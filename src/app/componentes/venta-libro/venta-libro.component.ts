@@ -463,8 +463,9 @@ this.formCantidad = fb.group({
               if(producto.Propiedad4 == "EMD"){
                 this.EMD = true;
               }
-              if(producto.Clase == "Personalizado"){
+              if(producto.Clase == "PERSONALIZADO"){
                 this.personalizado = true;
+                alert("yp");
               }
               this.crearMetadatos(producto);
               this.obtenerVendedor(producto.Propiedad4);
