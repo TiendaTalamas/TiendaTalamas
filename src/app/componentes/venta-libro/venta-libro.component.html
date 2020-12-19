@@ -34,8 +34,17 @@
           <h1 style="font-weight: 700; color:#76aadb;"> ${{producto.Precio | number:'1.2-2'}}</h1>
         </div>
         <div class="row">
-          <strong><h5 id="cel" style="color: black;">Codigo del producto: </h5></strong><h5 style="font-weight: 700; color:#0779e4;"> {{producto.IdProducto}}</h5>
+          <strong><h5 id="cel" style="color: black;"></h5></strong><h5 style="font-weight: 700; color:#76aadb;"> {{producto.IdProducto}}</h5>
         </div>
+
+        <div *ngIf="personalizado" id="main">
+          <div class="row">
+            <h5>Para personalizado comunicarse por:</h5>
+            </div>
+           <div class="row">
+            <a href="https://api.whatsapp.com/send?phone=+528673076039"><button type="button" class="btn" style="background-color:#00bb2d; color: white;">Whatsapp<span class="ml-1"><img src="https://www.flaticon.es/svg/static/icons/svg/1383/1383336.svg" width="25px"></span></button></a>
+             </div>   
+               </div>
 
         <hr/>
         <ng-container *ngIf="disponible; else elseTemplate">
@@ -46,7 +55,6 @@
           </div>
           </div>
           <div class="row">
-    
             <div class="col-6 col-md-6 col-sm-6">
               <img fallimg class="my-auto ml-3" style="cursor: pointer;"   id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
            </div>
@@ -55,15 +63,6 @@
             </div>
             </div>
           </div>
-          <div *ngIf="personalizado" class="d-flex justify-content-center align-items-center" id="main">
-            <div class="row">
-              <h5>Personalizado por:</h5>
-              </div>
-          
-             <div class="row">
-              <a href="https://api.whatsapp.com/send?phone=+528673076039"><button type="button" class="btn" style="background-color:#00bb2d; color: white;">Whatsapp</button></a>
-               </div>   
-                 </div>
         </ng-container>
         <ng-template #elseTemplate>
           <div *ngIf="!personalizado" class="d-flex justify-content-center align-items-center" id="main">

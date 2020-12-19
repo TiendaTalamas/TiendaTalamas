@@ -338,6 +338,7 @@ export class MusicaComponent implements OnInit {
     this.Viento = false;
     this.Percusion = false;
     this.Electricos = false;
+    this.sub="Elegir Categoria";
   }
   cuerda(){
     this.Cuerda = !this.Cuerda;

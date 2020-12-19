@@ -29,7 +29,7 @@
             <!--Se mostrara en celular-->
             <div id="justcel" class="input-group mb-3 mt-3">
               <select (ngModelChange)="onChange($event)" class="custom-select" [(ngModel)]="sub"  id="sub" class="custom-select" id="inputGroupSelect01">
-                <option selected>Elegir Categoria</option>
+                <option disabled selected>{{sub}}</option>
               <option *ngFor="let sub of articulosArray_Sub" value="{{sub.SubCategoria}}"><p>{{sub.SubCategoria}}</p></option>                
               </select>
             </div>

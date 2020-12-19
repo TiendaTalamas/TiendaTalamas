@@ -17,6 +17,7 @@ export class JuegosComponent implements OnInit {
   ngOnInit() {
     this.obtenerArticulos();
     this.obtenerSubCategoriasLibros();
+    this.sub="Elegir Categoria";
   }
   
   AA: string;

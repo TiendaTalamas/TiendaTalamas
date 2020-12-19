@@ -234,6 +234,7 @@ export class LibreriaComponent implements OnInit {
     this.obtenerArticulos();
     this.obtenerSubCategoriasLibros();
     this.obtenerSubCategoriasInst();
+    this.sub="Elegir Categoria";
   }
   navegarInicio()
   {
