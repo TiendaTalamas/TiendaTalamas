@@ -38,7 +38,7 @@ export class LibreriaComponent implements OnInit {
   valuesKeys_Recomendados = new Array;
   articulosArray_Recomendados = new Array;
   noRegistrado:boolean;
-
+  ocultar:boolean;
   //Variable del modal
   respuesta:string;
 
@@ -138,6 +138,7 @@ export class LibreriaComponent implements OnInit {
   xxxMap_Sub = new Map();
   valuesKeys_Sub = new Array;
   articulosArray_Sub = new Array;
+  articulosArray_Sub2 = new Array;
   articulosArray_Inst = new Array;
 
   obtenerSubCategoriasLibros(){
@@ -152,24 +153,17 @@ export class LibreriaComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
-              this.AA_Sub = "";
-            this.data_Sub = [];
             this.articulosArray_Sub = result;
-            for (var key in result) {
-            this.AA_Sub = this.AA_Sub + key;
-            if (result.hasOwnProperty(key)) {
-              this.val_Sub = result[key];
-              this.data_Sub.push(Object.keys(this.val_Sub));
-              for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
-              this.contenedor_Sub = Object.keys(this.val_Sub)[i];
-              Object.entries(this.val_Sub)[i]
-               
-                this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
-                this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+    });
+    body2.append('categoria', "Libros");
+    body2.append('limiteI', "6");
+    body2.append('limiteS', "100");
 
-                }
-             }
-          }
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+            this.articulosArray_Sub2 = result;
     });
   }
 
@@ -229,12 +223,17 @@ export class LibreriaComponent implements OnInit {
     this.router.navigate(['busqueda',this.cadena])
   }
   ngOnInit() {
+    this.ocultar = true;
     this._servicioCompartido.comprobarUsuario();
     this.Categoria = "Libros";
     this.obtenerArticulos();
     this.obtenerSubCategoriasLibros();
     this.obtenerSubCategoriasInst();
     this.sub="Elegir Categoria";
+  }
+  mostrarYOcultar()
+  {
+    this.ocultar = !this.ocultar;
   }
   navegarInicio()
   {
