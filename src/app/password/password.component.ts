@@ -4,19 +4,46 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-password',
   templateUrl: './password.component.html',
   styleUrls: ['./password.component.css']
+ 
 })
+
 export class PasswordComponent implements OnInit {
 
-  respuestaDeAlert:string;
+  RespuestaBoton:boolean;
+  RespuestaAlert:boolean;
+  RespuestaCodigo:boolean;
 
+  
   constructor() { }
 
   ngOnInit() {
-    this.respuestaDeAlert="Hola";
+
+  this.RespuestaBoton=false;
+  this.RespuestaAlert=false;
+  this.RespuestaCodigo=false;
+    
   }
 
-  cerrarAlert()
+  CambioDeTexto()
   {
-    this.respuestaDeAlert="";
+    this.RespuestaBoton=true;
+    console.log(this.RespuestaBoton);
+  }
+
+  PruebaAlert()
+  {
+    this.RespuestaAlert=true;
+    console.log(this.RespuestaAlert);
+  }
+
+  CambioCodigo()
+  {
+    this.RespuestaCodigo=true;
+    console.log(this.RespuestaCodigo);
+  }
+  
+  CerrarAlert()
+  {
+    this.RespuestaAlert=false;
   }
 }
