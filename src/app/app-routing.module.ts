@@ -38,6 +38,7 @@ import {TarjetaComponent} from './componentes/tarjeta/tarjeta.component';
 import {ConfirmacionPedidoComponent} from './confirmacion-pedido/confirmacion-pedido.component';
 import {ConfirmacionIndividualComponent} from './componentes/confirmacion-individual/confirmacion-individual.component';
 import {PasswordComponent} from './password/password.component';
+import {RestablecerComponent} from './restablecer/restablecer.component';
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
   {path: 'card', component: CardComponent, },
@@ -76,7 +77,9 @@ const routes: Routes = [
   {path: 'ConfirmacionPago',component:ConfirmacionPedidoComponent},
   {path: 'ConfirmacionPago/:IdProducto/:Cantidad',component:ConfirmacionIndividualComponent},
   {path: 'password', component:PasswordComponent },
+  {path: 'restablecer', component:RestablecerComponent},
   {path: ':negocio', component:VendedorGenericoComponent },
+  
   
 ];
 
