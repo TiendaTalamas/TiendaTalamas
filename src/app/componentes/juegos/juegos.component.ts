@@ -15,6 +15,7 @@ export class JuegosComponent implements OnInit {
   constructor(private router:Router, private http:Http, private _servicioCompartido:servicioCompartido) { }
 
   ngOnInit() {
+    this.obtenerPaginas();
     this.obtenerArticulos();
     this.obtenerSubCategoriasLibros();
     this.sub="Elegir Categoria";
@@ -31,6 +32,9 @@ export class JuegosComponent implements OnInit {
   noRegistrado:boolean;
   articulosArray_Sub = new Array;
   sub:string;
+  paginas:number;
+  paginaActual:number;
+  SubCategoria:string;
   obtenerSubCategoriasLibros(){
     
     
@@ -51,6 +55,58 @@ export class JuegosComponent implements OnInit {
   onChange(SubCategoria:string) {
     this.obtenerArticulosEspecificos(SubCategoria)
   }
+
+  obtenerPaginas(){
+    let body2 = new URLSearchParams();
+    this.paginaActual = 1;
+    body2.append("SubCategoria",this.SubCategoria),
+    this.http.post(this._servicioCompartido.Url+'/obtenerPaginasJuegos.php', body2)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+                
+            this.paginas = result['NumPaginas'];
+
+    });
+  }
+  cambiarPagina(pagina:number){
+    this.paginaActual = pagina;
+    this.obtenerArticulos();
+    window.scrollTo(0, 0) 
+  }
+  siguiente(){
+    if (this.paginaActual != this.paginas) {
+      this.paginaActual ++;
+      this.obtenerArticulos();
+      window.scrollTo(0, 0) 
+
+    }
+  }
+  anterior(){
+    if (this.paginaActual != 1) {
+      this.paginaActual --;
+      this.obtenerArticulos();
+      window.scrollTo(0, 0) 
+
+    }
+  }
+  mayorOIgual(pagina:number):boolean
+  {
+    if(pagina > this.paginas){
+      return false;
+    }else{
+      return true;
+    }
+  }
+  menorAUno(pagina:number):boolean
+  {
+    if(pagina < 1){
+      return false;
+    }else{
+      return true;
+    }
+  }
+
   anadirAlCarrito(IdProducto:string)
   {
     let body = new URLSearchParams();
@@ -62,8 +118,8 @@ export class JuegosComponent implements OnInit {
     .map((res:Response) => res.text())
             .subscribe(result => 
             {
-              this.respuesta=result;
-              if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
+              this._servicioCompartido.respuesta=result;
+              if(this._servicioCompartido.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
               {
                 this.noRegistrado= true;
               }else{
@@ -74,6 +130,8 @@ export class JuegosComponent implements OnInit {
 
   }  obtenerArticulos() {
     let body = new URLSearchParams();
+    body.append('limite', String(this.paginaActual));
+    body.append('SubCategoria', this.SubCategoria);
     this.http.post(this._servicioCompartido.Url+'/juegosDi.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
@@ -100,32 +158,9 @@ export class JuegosComponent implements OnInit {
   }
 
   obtenerArticulosEspecificos(propiedad:string) {
-    let body = new URLSearchParams();
-    body.append('subcategoria',propiedad);
-    body.append('categoria', 'Accesorios');
-    this.http.post(this._servicioCompartido.Url+'/ArticulosEMD.php', body)
-    .map((res:Response) => res.json())
-            .subscribe(result => 
-            {
-            this.AA = "";
-            this.data = [];
-            this.articulosArray = result;
-            for (var key in result) {
-            this.AA = this.AA + key;
-            if (result.hasOwnProperty(key)) {
-              this.val = result[key];
-              this.data.push(Object.keys(this.val));
-              for (var i = 0; i < Object.keys(this.val).length; i++) {
-              this.contenedor = Object.keys(this.val)[i];
-              Object.entries(this.val)[i]
-               
-                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
-                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
-                
-                }
-             }
-          }
-    });
+    this.SubCategoria = propiedad;
+    this.obtenerPaginas();
+    this.obtenerArticulos();
   }
 
 
