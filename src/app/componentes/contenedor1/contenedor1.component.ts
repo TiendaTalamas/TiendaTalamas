@@ -158,7 +158,7 @@ export class Contenedor1Component implements OnInit {
       if(this._servicioCompartido.recargar){
         window.location.reload();
       }
-      window.scrollTo(0, 0) 
+      window.scrollTo(0, 0);
      });
     this.masVendidosTablet();
      this.masVendidosCel();

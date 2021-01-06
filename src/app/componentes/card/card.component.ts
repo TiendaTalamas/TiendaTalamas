@@ -63,6 +63,9 @@ navegarBusqueda()
 {
   this.router.navigate(['busqueda',this.cadena])
 }
+navegarPassword(){
+  this.router.navigate(['password']);
+}
   registrar() {     
 
       
