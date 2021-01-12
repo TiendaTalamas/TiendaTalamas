@@ -13,15 +13,23 @@
                       <div class="form-group">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
-                          <input id="contraseña" name="contraseña" placeholder="Nueva contraseña" class="form-control"  type="password">
+                          <input [(ngModel)]="contrasena" id="contrasena" name="contrasena" placeholder="Nueva contraseña" class="form-control"  type="password">
                         </div>
                         <div class="input-group mt-1">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
-                            <input id="contraseña" name="contraseña" placeholder="Confirmar contraseña" class="form-control"  type="password">
+                            <input [(ngModel)]="rcontrasena" id="rcontraseña" name="rcontraseña" placeholder="Confirmar contraseña" class="form-control"  type="password">
                           </div>
+                          <div *ngIf="!RespuestaAlert" class="alert alert-danger" role="alert">
+                            Las contraseñas no coinciden
+                            <button class="close" type="button" (click)="cerrarAlert()"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div *ngIf="!RespuestaAlert2" class="alert alert-danger" role="alert">
+                              La contraseña no es valida
+                              <button class="close" type="button" (click)="cerrarAlert()"><span aria-hidden="true">&times;</span></button>
+                            </div>
                       </div>
                       <div class="form-group">
-                        <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Confirmar contraseña" type="submit">
+                        <input name="recover-submit" (click)="cambiar()" class="btn btn-lg btn-primary btn-block" value="Confirmar contraseña" type="submit">
                       </div>
                       
                       <input type="hidden" class="hide" name="token" id="token" value=""> 
