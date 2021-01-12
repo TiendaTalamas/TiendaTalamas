@@ -1,5 +1,51 @@
 <h1><p style ="text-align: center;">Ajustes del Usuario</p></h1>
 <hr>
+<div class="row">
+<div class="list-group col-sm-12 col-md-4">
+  <a href="#" class="list-group-item list-group-item-action active">
+    Opciones
+  </a>
+  <a (click)="navegarOpcion1()" style="cursor:pointer;" class="list-group-item list-group-item-action">Cambiar contraseña</a>
+  <a (click)="navegarOpcion2()" style="cursor: pointer;" class="list-group-item list-group-item-action">Agregar Dirección</a>
+  <a (click)="navegarOpcion3()" style="cursor: pointer;" class="list-group-item list-group-item-action">Cambiar Dirección</a>
+</div>
+<div class="col-sm-12 col-md-8">
+  <router-outlet></router-outlet>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <div class="container">  
 <div class="row">
 <div class="col-lg-6">
@@ -17,7 +63,7 @@
 </div>
 
 <hr>
-<!--Primera opcion-->
+
 <div class="collapse" id="collapse1">
 <div class="container mb-2">
   <div class="row">
@@ -36,14 +82,14 @@
   <br>
   <input type="submit" class="col-xs-12 btn btn-primary btn-load btn-lg" data-loading-text="Changing Password..." value="Cambiar Contraseña" (click)="cambiarContrasena()">
   </form>
-  </div><!--/col-sm-6-->
-  </div><!--/row-->
+  </div>
+  </div>
   </div>
 </div>
-<!--Aqui se acaba-->
 
 
-<!--Empieza La opcion 2-->
+
+
 <div class="collapse" id="collapse2">
   <div class="container mb-2">
     <div class="row">
@@ -342,6 +388,5 @@
     </div>
 </div>
 </div>
-
-<!--Aqui se acaba-->
+Aqui se acaba-->
 

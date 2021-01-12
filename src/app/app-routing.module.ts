@@ -39,6 +39,10 @@ import {ConfirmacionPedidoComponent} from './confirmacion-pedido/confirmacion-pe
 import {ConfirmacionIndividualComponent} from './componentes/confirmacion-individual/confirmacion-individual.component';
 import {PasswordComponent} from './password/password.component';
 import {RestablecerComponent} from './restablecer/restablecer.component';
+import {CambiarpasswordComponent} from './cambiarpassword/cambiarpassword.component';
+import {ElegirdireccionComponent} from './elegirdireccion/elegirdireccion.component';
+import {NuevadireccionComponent} from './nuevadireccion/nuevadireccion.component';
+
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
   {path: 'card', component: CardComponent, },
@@ -49,7 +53,12 @@ const routes: Routes = [
   {path: 'musica', component: MusicaComponent,},
   {path: 'categoria/:categoria/:subcategoria', component: CategoriaProductoComponent,}, 
   {path: 'busqueda/:search', component: BusquedaComponent,},
-  {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,},
+  {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,
+  children: [
+    { path: '', component :CambiarpasswordComponent },
+    { path: 'agregar-direccion', component: NuevadireccionComponent},
+    { path: 'cambiar-direccion', component: ElegirdireccionComponent }
+  ]},
   {path: 'Pag', component: MetodoPagoComponent,},
   {path: 'Datos/Venta/:id', component:CompraComponent,},
   {path:'Carrito', component:CarritoComponent,},
@@ -79,6 +88,7 @@ const routes: Routes = [
   {path: 'password', component:PasswordComponent },
   {path: 'restablecer', component:RestablecerComponent},
   {path: ':negocio', component:VendedorGenericoComponent },
+  
   
   
 ];
