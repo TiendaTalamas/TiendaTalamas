@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class NuevadireccionComponent implements OnInit {
 
   constructor() { }
+  estado:string;
+  onChange(ok:string){
+
+  }
 
   ngOnInit() {
   }
