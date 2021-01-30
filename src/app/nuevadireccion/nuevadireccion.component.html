@@ -2,13 +2,13 @@
     <strong><h3>Agregar Dirección</h3></strong>
     <form>
       <label class="mt-2">Calle 1:</label>
-      <input class="form-control" placeholder="Calle 1" type="text">
+      <input class="form-control" [(ngModel)]="calle1"   placeholder="Calle 1" type="text">
   
       <label class="mt-2" for="contraseña">calle 2:</label>
-      <input id="contraseña" class="form-control" placeholder="Calle 2" type="text">
+      <input id="contraseña" class="form-control" [(ngModel)]="calle2"   placeholder="Calle 2" type="text">
   
       <label class="mt-2" for="contraseña2">Colonia:</label>
-      <input id="contraseña2" class="form-control" placeholder="Colonia" type="text">
+      <input id="contraseña2" class="form-control" [(ngModel)]="colonia"   placeholder="Colonia" type="text">
       
       <div class="row">
         <div class="col-sm-12 col-md-4">
@@ -52,11 +52,11 @@
     </div>
           <div class="col-sm-12 col-md-4">
       <label class="mt-2" for="contraseña2">Ciudad</label>
-      <input id="contraseña2" class="form-control" placeholder="Ciudad" type="text">
+      <input id="contraseña2" class="form-control" [(ngModel)]="ciudad"   placeholder="Ciudad" type="text">
        </div>
        <div class="col-sm-12 col-md-4">
       <label class="mt-2" for="contraseña2">Codigo postal:</label>
-      <input id="contraseña2" class="form-control" placeholder="Codigo postal" type="text">
+      <input id="contraseña2" class="form-control" [(ngModel)]="codigoPost"   placeholder="Codigo postal" type="text">
       </div>
       </div>
     </form>
