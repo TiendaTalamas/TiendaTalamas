@@ -28,3 +28,17 @@ input:focus,
 {
   width:100%;
 }
+
+#tarjeta
+{
+  box-shadow: 2px 2px 5px 0px #999;
+  padding: 15px;
+  border-radius: 2px;
+}
+
+#tarjetas
+{
+  box-shadow: 2px 2px 5px 0px #999;
+  padding:15px;
+  border-radius:2px;
+}

@@ -1,14 +1,14 @@
 
-<div class="container-fluid mt-5" style=" border: 2px solid gray; padding: 15px; border-radius: 10px; box-shadow: 1px 2px 3px gray;">
+<div class="container-fluid mt-5" id="tarjeta">
 <form action="/charge" method="post" id="payment-form" [formGroup]="form2">
     <div class="form-row">
-      <label for="card-element">Tarjeta de Credito o Debito</label>
+      <label class="ml-1" for="card-element">Tarjeta de Credito o Debito</label>
       <div id="card-element"></div>
       <div id="card-errors" role="alert"></div>
     </div>
 
     <div class="form-row">
-    <label for="nombre">Nombre del titular</label>
+    <label class="mt-2 ml-1" for="nombre">Nombre del titular</label>
     </div>
     <div class="form-row">
     <div class="col-sm-12 col-lg-6 mt-1">
@@ -23,7 +23,7 @@
 </div>
 <div class="row">
   <div class="col-sm-12 col-lg-6">
-  <div class="container mt-5" style=" margin-left: 0px; width:350px; border:2px solid gray; padding:15px; border: radius 10px;">
+  <div id="tarjetas" class="container mt-5">
   <strong>ENVIAR A:</strong>
   <div>{{_servicioCompartido.Nombre}}</div>
   <div>{{_servicioCompartido.Calle}}  #{{_servicioCompartido.NumeroExt}}</div>
@@ -31,7 +31,7 @@
   </div>
   </div>
   <div class="col-sm-12 col-lg-6">
-  <div class="container mt-5" style=" margin-left: 0px; width:350px; border:2px solid gray; padding:15px; border: radius 10px;">
+  <div id="tarjetas" class="container mt-5">
     <div><strong>Subtotal:{{Subtotal |  number:'1.2-2'}}</strong></div>
     <div><strong>Envio:{{Envio |  number:'1.2-2'}}</strong></div>
     <div><strong>Total:{{Total |  number:'1.2-2'}}</strong></div>
