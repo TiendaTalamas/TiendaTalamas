@@ -60,7 +60,7 @@ import { RestablecerComponent } from './restablecer/restablecer.component'
 import {CambiarpasswordComponent} from './cambiarpassword/cambiarpassword.component';
 import {ElegirdireccionComponent} from './elegirdireccion/elegirdireccion.component';
 import {NuevadireccionComponent} from './nuevadireccion/nuevadireccion.component';
-
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -112,6 +112,7 @@ import {NuevadireccionComponent} from './nuevadireccion/nuevadireccion.component
    
   ],
   imports: [
+    HttpClientModule,
     HttpModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
