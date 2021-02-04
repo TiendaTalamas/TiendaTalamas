@@ -117,7 +117,6 @@ export class DireccionComponent implements OnInit {
     this.modal = true;
   
     let errores = true;
-    this.gustos = "No definidos";
     this._servicioCompartido.ApellidoMa = "Dato innecesario";
     if(isNullOrUndefined(this.numInterior) || this.numInterior == "")
     {
@@ -180,12 +179,12 @@ export class DireccionComponent implements OnInit {
                 }
                 else
                 {
+                  this.modal = true;
                   this.carga = true;
                   localStorage.setItem('Token', result['token']);
                   localStorage.setItem('Ciudad',result['Ciudad']);
                   localStorage.setItem('Nombre', result['Nombre']);
                   this._servicioCompartido.NombU = localStorage.getItem("Nombre");
-                  alert(result['sql']);
                 }
                 
           });
@@ -265,9 +264,11 @@ export class DireccionComponent implements OnInit {
                 else
                 {
                   localStorage.setItem('Token', result['token']);
-                  alert(result['sql']);
+                  localStorage.setItem('Ciudad',result['Ciudad']);
+                  localStorage.setItem('Nombre', result['Nombre']);
                   this.modal = true;
                   this.carga = true;
+                  this._servicioCompartido.NombU = localStorage.getItem("Nombre");
                 }
                 
           });
