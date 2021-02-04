@@ -163,6 +163,11 @@ navegarPassword(){
     this.router.navigate(['']);
     
   }
+
+  navegarRestablecer()
+  {
+    this.router.navigate(['password'])
+  }
   
   navegarSesion()
   {

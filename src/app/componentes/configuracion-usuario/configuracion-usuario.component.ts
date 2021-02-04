@@ -107,6 +107,22 @@ export class ConfiguracionUsuarioComponent implements OnInit {
 
   }
 
+  navegarOpcion1()
+  {
+    this.router.navigate(['ConfiguracionUsuario']);
+  }
+
+  navegarOpcion2()
+  {
+    this.router.navigate(['ConfiguracionUsuario', 'agregar-direccion']);
+  }
+
+  navegarOpcion3()
+  {
+    this.router.navigate(['ConfiguracionUsuario','cambiar-direccion']);
+  }
+
+
 
 
   cambiarContrasena()

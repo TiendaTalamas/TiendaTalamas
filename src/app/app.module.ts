@@ -57,6 +57,9 @@ import { ConfirmacionPedidoComponent } from './confirmacion-pedido/confirmacion-
 import { ConfirmacionIndividualComponent } from './componentes/confirmacion-individual/confirmacion-individual.component';
 import { PasswordComponent } from './password/password.component';
 import { RestablecerComponent } from './restablecer/restablecer.component'
+import {CambiarpasswordComponent} from './cambiarpassword/cambiarpassword.component';
+import {ElegirdireccionComponent} from './elegirdireccion/elegirdireccion.component';
+import {NuevadireccionComponent} from './nuevadireccion/nuevadireccion.component';
 
 
 @NgModule({
@@ -103,6 +106,9 @@ import { RestablecerComponent } from './restablecer/restablecer.component'
     ConfirmacionIndividualComponent,
     PasswordComponent,
     RestablecerComponent,
+    CambiarpasswordComponent,
+    ElegirdireccionComponent,
+    NuevadireccionComponent,
    
   ],
   imports: [

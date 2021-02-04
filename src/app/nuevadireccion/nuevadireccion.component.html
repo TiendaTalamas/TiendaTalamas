@@ -1,0 +1,64 @@
+<div>
+    <strong><h3>Agregar Dirección</h3></strong>
+    <form>
+      <label class="mt-2">Calle 1:</label>
+      <input class="form-control" placeholder="Calle 1" type="text">
+  
+      <label class="mt-2" for="contraseña">calle 2:</label>
+      <input id="contraseña" class="form-control" placeholder="Calle 2" type="text">
+  
+      <label class="mt-2" for="contraseña2">Colonia:</label>
+      <input id="contraseña2" class="form-control" placeholder="Colonia" type="text">
+      
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <label class="mt-2" for="contraseña2">Estado:</label>
+        <div class="input-group">
+             <select class="custom-select" (ngModelChange)="onChange($event)" [(ngModel)]="estado" id="inputGroupSelect01">
+              <option value="DIF">Distrito Federal</option>
+              <option value="AGS">Aguascalientes</option>
+              <option value="BCN">Baja California</option>
+              <option value="BCS">Baja California Sur</option>
+              <option value="CAM">Campeche</option>
+              <option value="CHP">Chiapas</option>
+              <option value="CHI">Chihuahua</option>
+              <option value="COA">Coahuila</option>
+              <option value="COL">Colima</option>
+              <option value="DUR">Durango</option>
+              <option value="GTO">Guanajuato</option>
+              <option value="GRO">Guerrero</option>
+              <option value="HGO">Hidalgo</option>
+              <option value="JAL">Jalisco</option>
+              <option value="MEX">M&eacute;xico</option>
+              <option value="MIC">Michoac&aacute;n</option>
+              <option value="MOR">Morelos</option>
+              <option value="NAY">Nayarit</option>
+              <option value="NLE">Nuevo Le&oacute;n</option>
+              <option value="OAX">Oaxaca</option>
+              <option value="PUE">Puebla</option>
+              <option value="QRO">Quer&eacute;taro</option>
+              <option value="ROO">Quintana Roo</option>
+              <option value="SLP">San Luis Potos&iacute;</option>
+              <option value="SIN">Sinaloa</option>
+              <option value="SON">Sonora</option>
+              <option value="TAB">Tabasco</option>
+              <option value="TAM">Tamaulipas</option>
+              <option value="TLX">Tlaxcala</option>
+              <option value="VER">Veracruz</option>
+              <option value="YUC">Yucat&aacute;n</option>
+              <option value="ZAC">Zacatecas</option>
+            </select>
+      </div>
+    </div>
+          <div class="col-sm-12 col-md-4">
+      <label class="mt-2" for="contraseña2">Ciudad</label>
+      <input id="contraseña2" class="form-control" placeholder="Ciudad" type="text">
+       </div>
+       <div class="col-sm-12 col-md-4">
+      <label class="mt-2" for="contraseña2">Codigo postal:</label>
+      <input id="contraseña2" class="form-control" placeholder="Codigo postal" type="text">
+      </div>
+      </div>
+    </form>
+  
+  </div>
