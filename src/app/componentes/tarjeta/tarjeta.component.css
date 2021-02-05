@@ -23,3 +23,17 @@ input:focus,
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
+
+#tarjeta
+{
+  box-shadow: 2px 2px 5px 0px #999;
+  padding: 15px;
+  border-radius: 2px;
+}
+
+#tarjetas
+{
+  box-shadow: 2px 2px 5px 0px #999;
+  padding:15px;
+  border-radius:2px;
+}
