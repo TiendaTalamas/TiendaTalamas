@@ -27,7 +27,7 @@ export class DatosPagoComponent implements OnInit {
   ciudad:string;
   estado:string;
   codigoPost:string;
-
+  noPredeterminada:boolean;
   Subtotal:string;
   pais:string;
   Direccion:string;
@@ -160,6 +160,10 @@ export class DatosPagoComponent implements OnInit {
             this.Direccion = "Calle 1:"+result[0]["Calle"]+" Calle 2: "+result[0]["Calle2"]+" Calle 3: "+result[0]["Calle3"]+" NumeroExt: "+result[0]["NumeroExterior"]+" NumeroInt: "+result[0]["NumeroInterior"]+" Codigo Postal: "+result[0]["CodigoPostal"]+" Ciudad: "+result[0]["Ciudad"]+" Estado:"+result[0]['Estado']+" Nombre y Apellido: "+result[0]['NombreOpcional']+" "+result[0]['Apellido'];
             this.jsonUsuario = JSON.stringify(result);
             this._servicioCompartido.DireccionE = this.Nombre+" "+this.Apellido+"<br>"+result[0]["Calle"]+" #"+result[0]["NumeroExterior"]+"<br>"+result[0]["CodigoPostal"]+", "+result[0]["Ciudad"]+"("+result[0]["Estado"]+")";
+
+            if(isNullOrUndefined(result[0]['Calle']) || result[0]['Calle'] == ""){
+              this.noPredeterminada = false;
+            }
 
     });
   }
