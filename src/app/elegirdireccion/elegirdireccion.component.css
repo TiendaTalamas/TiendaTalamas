@@ -1,0 +1,10 @@
+#tarjeta
+{
+    box-shadow: 2px 2px 5px 0px #999999;
+    border-radius: 5px;
+}
+
+#tarjeta:hover
+{
+    box-shadow: 4px 4px 10px 0px #999999;
+}

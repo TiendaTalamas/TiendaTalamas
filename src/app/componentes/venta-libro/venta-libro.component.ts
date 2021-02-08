@@ -9,7 +9,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
 import { importType, IfStmt } from '@angular/compiler/src/output/output_ast';
 import { NgFallimgModule } from 'ng-fallimg';
-import { Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import {DOCUMENT} from '@angular/common';
 
 
@@ -62,9 +62,10 @@ export class VentaLibroComponent implements OnInit {
   CantidadMaxima:number;
   imagenPorDefault:string;
   imagenActual:string;
+  personalizado:boolean;
   //array para guardar los valores
 
-  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute, public falla:NgFallimgModule, private metaService:Meta,@Inject(DOCUMENT) private _document:Document){ 
+  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute, public falla:NgFallimgModule, private metaService:Meta,@Inject(DOCUMENT) private _document:Document, private title:Title){ 
   this.ventaForm = fb.group({
     'email' : [null, Validators.required],
     'nombre': this.nombre,
@@ -104,13 +105,25 @@ this.formCantidad = fb.group({
   productosCarrousel2 = new Array;
   productosCarrousel3 = new Array;
   imagenesInstrumentos = new Array;
+  url:string;
   user:string;
   verificacionProductos:boolean;
   formCantidad:FormGroup;
   disponible:boolean;
   EMD:boolean;
   script:string;
+  actual:string;
+  negocio:boolean;
+  NombreNegocio:string;
   ngOnInit() {
+    this.personalizado = false;
+    this.IdProducto = this.Route.snapshot.paramMap.get('id');
+    this.Categoria = this.Route.snapshot.paramMap.get('categoria');
+    this.actual = "https://tiendatalamas.com/Venta/"+this.Categoria+"/"+this.IdProducto+"/"+this.Route.snapshot.paramMap.get('Nombre');
+    this.metaService.updateTag({property:'og:title',content:this.Route.snapshot.paramMap.get('Nombre')});
+    this.metaService.updateTag({property:'og:url',Content:this.actual});
+    this.metaService.updateTag({property:'og:image',Content:"https://tiendatalamas.com/assets/Imagenes/"+this.IdProducto});
+    this.title.setTitle("Talamas");
     this.disponible = true;
     this.Cantidad = 1;
     this.quantity = "1";
@@ -169,7 +182,27 @@ this.formCantidad = fb.group({
             
     });
   }
-
+  obtenerVendedor(NombreNegocio){
+    try {
+      let body = new URLSearchParams();
+      body.append('cadena', NombreNegocio);  
+      this.http.post(this._servicioCompartido.Url+'/negocioExacto.php', body)
+        
+      .map((res:Response) => res.json())
+              .subscribe(result => 
+              {
+          if(result["status"] == "200")
+          {
+            this.negocio = true;
+            this.NombreNegocio = NombreNegocio;
+          }else{
+            this.negocio= false;
+          }
+      });
+    } catch (error) {
+      this.negocio= false;
+    }
+  }
   obtenerDirecciones() {
     let body = new URLSearchParams();
     body.append('email', localStorage.getItem('email_U'));
@@ -211,6 +244,11 @@ this.formCantidad = fb.group({
     this.Cantidad --;
     }
   } 
+
+  ObtenerMeta(producto:any)
+  {
+
+  }
 
 
 
@@ -354,10 +392,23 @@ this.formCantidad = fb.group({
     });
   }
   }
+  navegarNegocio()
+  {
+    if(this.negocio){
+      this.router.navigate([this.NombreNegocio]);
+
+    }else{
+
+    }
+  }
   cambiarImagen(nuevaImagen:string){
     this.imagenActual = nuevaImagen;
   }
   //Obtiene el libro cuando recibe datos
+  abrirFacebook()
+  {
+    window.open('https:\/\/www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(this.url),'facebook-share-dialog','width=626,height=436');
+  }
   crearMetadatos(product)
   {
     let script;
@@ -406,20 +457,28 @@ this.formCantidad = fb.group({
           }
           for(let producto of this.productos)
           {
+
+            this.url = "https://tiendatalamas.com/compartir.php?titulo="+producto.NombreProducto+"&description="+producto.Descripcion+"&image="+producto.Imagen+"&url=https://tiendatalamas.com/venta/Libros/"+producto.IdProducto+"/"+producto.NombreProducto;
               this.Imagen=producto.Imagen;
-              if(producto.Clase == "Personalizado"){
+              if(producto.Propiedad4 == "EMD"){
                 this.EMD = true;
               }
+              if(producto.Clase == "PERSONALIZADO"){
+                this.personalizado = true;
+              }
               this.crearMetadatos(producto);
+              this.obtenerVendedor(producto.Propiedad4);
           }
     });
   }
 
   
-  masInformacion(IdProducto: string, Categoria: string){
+
+  
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
     this.IdProducto = IdProducto;
     this.Categoria = Categoria;
-    this.router.navigate(['venta',Categoria,IdProducto]);
+    this.router.navigate(['venta',Categoria,IdProducto, Nombre]);
     this.obtenerArticulo();
 
   }
@@ -491,6 +550,9 @@ this.formCantidad = fb.group({
     this.router.navigate(['Carrito']);
   }
 
+  ventanaNueva(){	
+    window.open("https://www.tiendatalamas.com/compartir.php?fbclid=IwAR042ZSpcU1sqsJGNL8kN2iV-81jOmCaaDE8RKBh_5I8_OsROzs14cghagA");
+  }
 
 
   navegarConfiguracion()
@@ -546,14 +608,13 @@ this.formCantidad = fb.group({
     .map((res:Response) => res.text())
             .subscribe(result => 
             {
-              this.respuesta=result;
-              if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
+              this._servicioCompartido.respuesta=result;
+              if(this._servicioCompartido.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
               {
                 this.noRegistrado= true;
               }else{
                 this.noRegistrado = false;
               }
-              alert(result);
     });
 
   }

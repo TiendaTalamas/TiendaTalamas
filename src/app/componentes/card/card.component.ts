@@ -37,10 +37,12 @@ export class CardComponent implements OnInit {
   valuesKeys = new Array;
   articulosArray = new Array;
   respuesta:string;
+  mostrarMensajeError:string;
 
 ngOnInit(){
   this._servicioCompartido.comprobarUsuario();
   this._servicioCompartido.soloSinLoguear();
+ this.mostrarMensajeError="";
 }
 
   constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, private fb2: FormBuilder, public _servicioCompartido: servicioCompartido) {
@@ -61,6 +63,9 @@ navegarBusqueda()
 {
   this.router.navigate(['busqueda',this.cadena])
 }
+navegarPassword(){
+  this.router.navigate(['password']);
+}
   registrar() {     
 
       
@@ -79,10 +84,14 @@ navegarBusqueda()
                 if(result['status'] == "200")
                 {
                   localStorage.setItem('Token', result['token']);
+                  localStorage.setItem('Ciudad',result['Ciudad']);
+                  localStorage.setItem('Nombre', result['Nombre']);
+                  this._servicioCompartido.NombU = localStorage.getItem("Nombre");
                   this.location.back();
                 }
                 else
                 {
+                this.mostrarMensajeError="Correo o contraseña incorrecta"
                 this.respuesta=result['mensaje'];
                 }
 
@@ -144,11 +153,20 @@ navegarBusqueda()
     
   }
 
+  cerrarNotificacion()
+  {
+    this.mostrarMensajeError=""
+  }
 
   navegarInicio()
   {
     this.router.navigate(['']);
     
+  }
+
+  navegarRestablecer()
+  {
+    this.router.navigate(['password'])
   }
   
   navegarSesion()

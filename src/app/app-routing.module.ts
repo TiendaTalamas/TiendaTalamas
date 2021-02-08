@@ -37,17 +37,28 @@ import {DatosPagoIndividualesComponent} from './componentes/datos-pago-individua
 import {TarjetaComponent} from './componentes/tarjeta/tarjeta.component';
 import {ConfirmacionPedidoComponent} from './confirmacion-pedido/confirmacion-pedido.component';
 import {ConfirmacionIndividualComponent} from './componentes/confirmacion-individual/confirmacion-individual.component';
+import {PasswordComponent} from './password/password.component';
+import {RestablecerComponent} from './restablecer/restablecer.component';
+import {CambiarpasswordComponent} from './cambiarpassword/cambiarpassword.component';
+import {ElegirdireccionComponent} from './elegirdireccion/elegirdireccion.component';
+import {NuevadireccionComponent} from './nuevadireccion/nuevadireccion.component';
+
 const routes: Routes = [
   {path: '', component: Contenedor1Component, },
   {path: 'card', component: CardComponent, },
   {path: 'registro', component: RegistroComponent, },
   {path: 'libreria', component: LibreriaComponent, },
-  {path: 'venta/:categoria/:id', component: VentaLibroComponent, },
+  {path: 'venta/:categoria/:id/:Nombre', component: VentaLibroComponent, },
   {path: 'emd', component: EMDComponent, },
   {path: 'musica', component: MusicaComponent,},
   {path: 'categoria/:categoria/:subcategoria', component: CategoriaProductoComponent,}, 
   {path: 'busqueda/:search', component: BusquedaComponent,},
-  {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,},
+  {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,
+  children: [
+    { path: '', component :CambiarpasswordComponent },
+    { path: 'agregar-direccion', component: NuevadireccionComponent},
+    { path: 'cambiar-direccion', component: ElegirdireccionComponent }
+  ]},
   {path: 'Pag', component: MetodoPagoComponent,},
   {path: 'Datos/Venta/:id', component:CompraComponent,},
   {path:'Carrito', component:CarritoComponent,},
@@ -73,7 +84,13 @@ const routes: Routes = [
   {path: 'Pago/:IdProducto/:Cantidad', component:TarjetaComponent},
   {path: 'DetallesPedido/:IdPedido', component:DetallesPedidoComponent},
   {path: 'ConfirmacionPago',component:ConfirmacionPedidoComponent},
-  {path: 'ConfirmacionPago/:IdProducto/:Cantidad',component:ConfirmacionIndividualComponent}
+  {path: 'ConfirmacionPago/:IdProducto/:Cantidad',component:ConfirmacionIndividualComponent},
+  {path: 'password', component:PasswordComponent },
+  {path: 'restablecer', component:RestablecerComponent},
+  {path: ':negocio', component:VendedorGenericoComponent },
+  
+  
+  
 ];
 
 @NgModule({

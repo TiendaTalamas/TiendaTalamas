@@ -1,1 +1,99 @@
-<p>vendedor-generico works!</p>
+<div style="overflow: hidden;">
+
+  <div class="container" id="pequebanners">
+    <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" >
+          <img style="cursor: pointer; display: block; margin: 0 auto; width: 100%; max-height: 400px;" src="{{Portada}}" alt="First slide">
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!--Se mostrara en celular
+      <div id="justcel" class="input-group mb-3 mt-3">
+        <select  [(ngModel)]="sub" class="custom-select"  id="sub">
+          <option  selected>Elegir Categoria</option>
+          <option ><p></p></option>
+          
+        </select>
+      </div>-->
+
+      <hr/>
+      <h5 class="text-center" style=" font-family: 'Oswald', sans-serif; font-weight:700; color:#333333;">{{NombreNegocio}}</h5>
+      <hr/>
+      
+      <div class="row" id="justcel" *ngFor = "let producto of articulosArray">
+        <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria, producto.NombreProducto)" width="200px" alt=""></div>
+        <div class="col-8 mt-4">
+          <span style="font-family: 'Oswald', sans-serif; font-weight: 700; color:#333333;">
+         {{producto.NombreProducto}}
+          </span>
+            <br>
+            <div class="mt-2" style="font-family: 'Oswald', sans-serif; font-weight:300; color:#9e9e9e;">{{producto.IdProducto}}</div>
+            <div class="mt-2" style="font-family: 'Oswald', sans-serif; font-weight:300; color:#9e9e9e;">{{producto.Propiedad4}}</div>
+             <div class="mt-2" style="color:#76aadb;">${{producto.Precio |  number:'1.2-2'}}</div>
+            <br>
+          <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="100px"/>
+        </div>
+      </div>
+    
+
+  <div id="onlypc">
+    <div class="row " >
+      <div class="col-2 houdinni" style="text-align: center;">
+        <hr style=" height:1.5px; width: 100%; background-color: gray;"/>
+        <p style="color: black; font-size: large; font-weight: 600;" > Categorias</p>
+        <hr style="margin-bottom: px; width: 100%; height:1.5px; background-color: gray; "/>
+        <mat-nav-list style="padding-top: 0; ">
+        </mat-nav-list>
+        <hr/>
+        <p style="color: black;  font-size: large; font-weight: 600;" > +Más</p>
+        <hr style="margin-bottom: 0px;"/> 
+        <mat-nav-list style="padding-top: 0;">
+          <mat-list-item (click)="navegarMusica()" style="color: black; font-size: medium; height: 25px; margin-top: 5px;" >Musica</mat-list-item>
+          <mat-list-item (click)="navegarJuegos()" style="color: black; font-size: medium; height: 25px; margin-top: 5px;" >Juegos</mat-list-item>
+        </mat-nav-list>
+      </div>
+      <div class="col-10 mt-3">
+        <div class="row mb-4">
+          <div class="col-xs-6 col-md-4 col-lg-3" style="padding-left:50px;" *ngFor="let producto of articulosArray">
+            <div class="imgr">
+              <img fallimg class="imgr2" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria, producto.NombreProducto)">
+              </div>       
+         <h5><p id="textomas" class=" ml-auto mt-4">{{producto.NombreProducto}}</p></h5>
+         <h5><p id="textomas3" class="mr-auto mt-4">{{producto.IdProducto}}</p></h5>
+         <h5><p id="textomas3" class="mr-auto mt-4">{{producto.Propiedad4}}</p></h5>
+         <h5><p id="textomas2" class="ml-auto mt-4">${{producto.Precio |  number:'1.2-2'}}</p></h5>
+         <img fallimg class="mt-2"  style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="Botoncarrito" src="assets/anadirCarrito.png" width="100px"/>
+
+        </div>
+    
+      </div>
+     
+      </div>
+    </div>
+  </div>
+
+  <!--AQUI ES EL CODIGO DEL MODAL-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: black;">TIENDA TALAMAS</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <a style="color: black;">{{respuesta}}</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color:#81b214; border-color:#81b214;" (click)="navegarSesion()" *ngIf="noRegistrado">Iniciar Sesion</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color:#81b214; border-color:#81b214;" *ngIf="noRegistrado">Mas Tarde</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color:#81b214; border-color:#81b214;" *ngIf="!noRegistrado">Aceptar</button>
+     
+      </div>
+    </div>
+  </div>
+</div>

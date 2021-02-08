@@ -10,35 +10,36 @@
 </div>
 <hr/>
 
-<div class="container text-center" style="background-color:#f6f6f6; padding: 10px; border-radius: 50px;">USAR OTRA DIRECCION</div>
+<div id="encabezado2">
+  <div class="text-center"><strong>USAR OTRA DIRECCION</strong></div>
 <div class="row">
   <div class="col-12">
-    <input id="login" class="form-control ml-2 mt-4" [(ngModel)]="colonia"  name="login" placeholder="Colonia" style=" border-radius:50px; width:100%;">
+    <input id="login" class="form-control mt-4" [(ngModel)]="colonia"  name="login" placeholder="Colonia" style=" border-radius:50px; width:100%;">
   </div>
 </div>
 <div class="row">
   <div class="col-6">
-  <input id="login" class="form-control ml-2 mt-4" name="login"  [(ngModel)]="calle1" placeholder="Calle" style=" border-radius:50px; width:100%;">
+  <input id="login" class="form-control mt-4" name="login"  [(ngModel)]="calle1" placeholder="Calle" style=" border-radius:50px; width:100%;">
   </div>
   <div class="col-3">
-    <input id="login" class="form-control ml-2 mt-4" name="login" [(ngModel)]="numExt" placeholder="Numero Ext." style=" border-radius:50px; width:100%;">
+    <input id="login" class="form-control mt-4" name="login" [(ngModel)]="numExt" placeholder="Numero Ext." style=" border-radius:50px; width:100%;">
     </div>
     <div class="col-3">
-      <input id="login" class="form-control ml-2 mt-4" name="login" [(ngModel)]="numInterior" placeholder="Numero Int." style=" border-radius:50px; width:100%;">
+      <input id="login" class="form-control mt-4" name="login" [(ngModel)]="numInterior" placeholder="Numero Int." style=" border-radius:50px; width:100%;">
       </div>
 </div>
 <div class="row">
   <div class="col-6">
-  <input id="login" class="form-control ml-2 mt-4" name="login" [(ngModel)]="calle2" placeholder="Entre calle" style=" border-radius:50px; width:100%;">
+  <input id="login" class="form-control mt-4" name="login" [(ngModel)]="calle2" placeholder="Entre calle" style=" border-radius:50px; width:100%;">
   </div>
   <div class="col-6">
-    <input id="login" class="form-control ml-2 mt-4" name="login" [(ngModel)]="calle3" placeholder="Y calle" style=" border-radius:50px; width:100%;">
+    <input id="login" class="form-control mt-4" name="login" [(ngModel)]="calle3" placeholder="Y calle" style=" border-radius:50px; width:100%;">
   </div>
 </div>
 
 <div class="row">
 <div class="col-4">
-  <div class="input-group ml-2 mt-4"   style=" border-radius:50px; width:100%;">
+  <div class="input-group mt-4"   style=" border-radius:50px; width:100%;">
     <select class="custom-select" [(ngModel)]="estado" id="inputGroupSelect01">
       <option value="DIF">Distrito Federal</option>
       <option value="AGS">Aguascalientes</option>
@@ -76,14 +77,15 @@
   </div>
 </div>
 <div class="col-4">
-  <input class="form-control ml-2 mt-4" [(ngModel)]="ciudad" style="width: 100%;" id="nombre" type="text" placeholder="Ciudad">
+  <input class="form-control mt-4" [(ngModel)]="ciudad" style="width: 100%;" id="nombre" type="text" placeholder="Ciudad">
 </div>
 <div class="col-4">
-  <input class="form-control ml-2 mt-4" [(ngModel)]="codigoPost" style="width: 100%;" id="nombre" type="text" placeholder="Codigo Postal">
+  <input class="form-control mt-4" [(ngModel)]="codigoPost" style="width: 100%;" id="nombre" type="text" placeholder="Codigo Postal">
 </div>
 </div>
 <div class="row mt-4">
  <div class="col-12">
    <img (click)="procederCompra2()"style="display: block; margin-left: auto; margin-right: auto; cursor: pointer;" src="assets/GUARDAR.png" width="150px">
  </div>
+</div>
 </div>

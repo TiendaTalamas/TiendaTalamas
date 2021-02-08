@@ -53,8 +53,11 @@ export class ConfirmacionIndividualComponent implements OnInit {
                 if(isNullOrUndefined(this.Subtotal)){
                   this.router.navigate(['']);
                 }
-                if(Number(this.Subtotal) < 1){
-                  this.Envio =  String(300-Number(this.Subtotal));
+                if(this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
+                  this.Envio = "30";
+                }
+                if(Number(this.Subtotal) >= 0 && !this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
+                  this.Envio= result['envio'];
                 }
                 this.Total = String(Number(this.Subtotal) + Number(this.Envio));
               }
@@ -84,9 +87,9 @@ export class ConfirmacionIndividualComponent implements OnInit {
                 this.articulosArray = result;
     });
   }
-  masInformacion(IdProducto: string, Categoria: string){
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
 
-    this.router.navigate(['venta',Categoria,IdProducto]);
+    this.router.navigate(['venta',Categoria,IdProducto, Nombre]);
 
 
    }

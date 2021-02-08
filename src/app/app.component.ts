@@ -24,6 +24,7 @@ export class AppComponent {
   todasCat:boolean;
   catInstrumentos:boolean;
   encontrado:boolean;
+  encontradoNe:boolean;
   constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public falla:NgFallimgModule, private Route:ActivatedRoute){
     this.registroForm = fb.group({
       'cadena' : this.cadena
@@ -36,13 +37,21 @@ export class AppComponent {
   busqueda:string;
   ngOnInit()
   {
+    this._servicioCompartido.NombU = localStorage.getItem("Nombre");
     this.encontrado = true;
+    this.encontradoNe;
     this.todasCat = true;
     this.catLibros = false;
     this._servicioCompartido.comprobarUsuario();
     this.obtenerSubCategoriasLibros();
     this.obtenerSubCategoriasInst();
     this._servicioCompartido.obtenerCantidadCarrito();
+    let body = new URLSearchParams();
+    /*this.http.post('https://emdpublicidad.com/contador_tienda/contador_tiendatalamas.php',body)
+    .map((rest:Response) =>rest.json()).subscribe(result=>{
+      console.log("Peticion enviada");
+    });*/
+    
     fbq('init', '814700656069487');
     fbq('track', 'PageView');  }
   AA_Sub: string;
@@ -53,6 +62,7 @@ export class AppComponent {
   valuesKeys_Sub = new Array;
   articulosArray_Sub = new Array;
   articulosArray_Inst = new Array;
+  Negocios = new Array;
   AA_Buscar: string;
   data_Buscar: any[];
   val_Buscar: any[];
@@ -62,6 +72,13 @@ export class AppComponent {
   articulosArray_Buscar = new Array;
   respuesta:string;
   noRegistrado:boolean;
+  AA_Nom:string;
+  data_Nom:any[];
+  val_Nom:any[];
+  articulosArray_Nom= new Array;
+  contenedor_Nom:string;
+  Nombre:string;
+
   changeCatLibros()
   {
     if(this.todasCat)
@@ -93,6 +110,10 @@ export class AppComponent {
   this._servicioCompartido.setSubCategoria(SubCategoria);
 
   
+  }
+  navegarJuegos()
+  {
+    this.router.navigate(['Juegos']);
   }
   obtenerSubCategoriasLibros(){
     
@@ -160,6 +181,7 @@ export class AppComponent {
     });
   }
 
+  
 
   navegarRegistro()
   {
@@ -222,15 +244,64 @@ export class AppComponent {
       this.encontrado = false;
   }
   }
+
+  navegarNegocio(Negocio:string)
+  {
+    this.router.navigate([Negocio]);
+  }
+
+  obtenerBusquedaNegocios(){
+    try {
+    let body = new URLSearchParams();
+    body.append('cadena', this.cadena);
+    this._servicioCompartido.soloBusqueda = true;
+
+    this.http.post(this._servicioCompartido.Url+'/buscarNegocios.php', body)
+      
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+            this.AA_Buscar = "";
+            this.data_Buscar = [];
+            if(result['status'] == "200")
+            {
+              this.Negocios = result['datos'];
+              this.encontradoNe = true;
+            }else
+            {
+              this.Negocios = Array();
+              this.encontradoNe = false;
+            }
+            for (var key in result) {
+            this.AA_Buscar = this.AA_Buscar + key;
+            if (result.hasOwnProperty(key)) {
+              this.val_Buscar= result[key];
+              this.data_Buscar.push(Object.keys(this.val_Buscar));
+              for (var i = 0; i < Object.keys(this.val_Buscar).length; i++) {
+              this.contenedor_Buscar = Object.keys(this.val_Buscar)[i];
+              Object.entries(this.val_Buscar)[i]
+               
+                this.xxxMap_Buscar.set(Object.keys(this.val_Buscar)[i], Object.values(this.val_Buscar)[i]);
+                this.valuesKeys_Buscar.push(Object.keys(this.val_Buscar)[i], Object.values(this.val_Buscar)[i]);
+
+                }
+             }
+          }
+    });
+  } catch (error) {
+      this.encontradoNe = false;
+  }
+  }
+
   navegarConfiguracion()
   {
     this.router.navigate(['ConfiguracionUsuario']);
   }
 
   
-  masInformacion(IdProducto: string, Categoria: string){
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
 
-    this.router.navigate(['venta',Categoria,IdProducto]);
+    this.router.navigate(['venta',Categoria,IdProducto,Nombre]);
 
 
   }
@@ -242,6 +313,7 @@ export class AppComponent {
   {
     this.router.navigate(['busqueda',this.cadena])
     this.obtenerBusqueda();
+    this.obtenerBusquedaNegocios();
   }
   navegarCarrito()
   {
@@ -251,6 +323,11 @@ export class AppComponent {
   {
     this.router.navigate(['']);
     
+  }
+
+  navegarReposteria()
+  {
+    this.router.navigate(['Negocio/Melissa']);
   }
 
   navegarSesion()
@@ -313,8 +390,8 @@ export class AppComponent {
     .map((res:Response) => res.text())
             .subscribe(result => 
             {
-              this.respuesta=result;
-              if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
+              this._servicioCompartido.respuesta=result;
+              if(this._servicioCompartido.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
               {
                 this.noRegistrado= true;
               }else{

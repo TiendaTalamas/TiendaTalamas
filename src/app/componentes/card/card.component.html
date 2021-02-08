@@ -18,6 +18,11 @@
       <br>
       <input type="password" [(ngModel)]="contrasena"  id="password" class="form-control w-75 ml-5" name="login" placeholder="Contraseña" style="background-color:#f6f6f6; border-radius:50px;">
       <br>
+      <div *ngIf="mostrarMensajeError!=''" class="alert alert-danger" role="alert">
+        Contraseña/correo incorrectos
+        <button class="close" type="button" (click)="cerrarNotificacion()"><span aria-hidden="true">&times;</span></button>
+      </div>
+     <a><p (click)="navegarPassword()" id="enlace" style="color: blue; cursor: pointer;">¿Olvido su contraseña?</p></a>
       <button class="btn fadeIn fourth mb-5" (click) = "registrar()" style="background-color: #f6f6f6; border-radius:50px;">Iniciar sesion<span><img src="assets/bolsa.png" width="30px"></span></button>
     </form>
 

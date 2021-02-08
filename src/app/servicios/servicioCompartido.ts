@@ -40,6 +40,8 @@ export class servicioCompartido{
   Estado:string;
   CodigoPost:string;
   Busqueda:string;
+  NombU:string;
+  respuesta:string;
   constructor(private http: Http, private router: Router) {}   
   comprobarUsuario() 
   {

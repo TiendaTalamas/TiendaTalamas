@@ -36,7 +36,7 @@ export class Contenedor1Component implements OnInit {
     xxxMap_slider = new Map();
     valuesKeys_slider = new Array;
     articulosArray_slider = new Array;
-
+    nuevoLaredo:boolean;
   //Datos Articulos mas Vendidos
   AA: string;
   data: any[];
@@ -125,8 +125,11 @@ export class Contenedor1Component implements OnInit {
   masVendidosTablets3 = new Array;
   masVendidosTablets4 = new Array;
   masVendidosTablets5 = new Array;
-
-
+  NegociosG = new Array;
+  NegociosG2 = new Array;
+  NegociosS = new Array;
+  NegociosS2 = new Array;
+  NegociosS3 = new Array;
 
 
 
@@ -141,7 +144,12 @@ export class Contenedor1Component implements OnInit {
 
 
   ngOnInit() {
-  
+    this.obtenerNegocios();
+    if(localStorage.getItem("Ciudad")== "Nuevo Laredo"){
+      this.nuevoLaredo = true;
+    }else{
+      this.nuevoLaredo = false;
+    }
     this._servicioCompartido.obtenerCantidadCarrito();
     this.router.events.subscribe((evt) => { 
       if (!(evt instanceof NavigationEnd)) { 
@@ -150,7 +158,7 @@ export class Contenedor1Component implements OnInit {
       if(this._servicioCompartido.recargar){
         window.location.reload();
       }
-      window.scrollTo(0, 0) 
+      window.scrollTo(0, 0);
      });
     this.masVendidosTablet();
      this.masVendidosCel();
@@ -1020,6 +1028,68 @@ export class Contenedor1Component implements OnInit {
   
 
   }
+  navegarNegocio(Negocio:string)
+  {
+    this.router.navigate([Negocio]);
+  }
+  obtenerNegocios()
+  {
+    let body = new URLSearchParams();
+    body.append("","");
+    this.http.post(this._servicioCompartido.Url+'/todosLosNegocios.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+
+            this.NegociosG = result["datos"];
+ 
+    });
+    body = new URLSearchParams();
+    body.append("limiteI","6");
+    body.append("limiteS","6");
+    this.http.post(this._servicioCompartido.Url+'/todosLosNegocios.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+
+            this.NegociosG2 = result["datos"];
+ 
+    });
+    body = new URLSearchParams();
+    body.append("limiteI","0");
+    body.append("limiteS","3");
+    this.http.post(this._servicioCompartido.Url+'/todosLosNegocios.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+
+            this.NegociosS = result["datos"];
+ 
+    });
+    body = new URLSearchParams();
+    body.append("limiteI","3");
+    body.append("limiteS","3");
+    this.http.post(this._servicioCompartido.Url+'/todosLosNegocios.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+
+            this.NegociosS2 = result["datos"];
+ 
+    });
+    body = new URLSearchParams();
+    body.append("limiteI","6");
+    body.append("limiteS","3");
+    this.http.post(this._servicioCompartido.Url+'/todosLosNegocios.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+
+            this.NegociosS3 = result["datos"];
+ 
+    });
+  }
+
 
   obtenerLibrosCelular()
   {
@@ -1052,9 +1122,9 @@ export class Contenedor1Component implements OnInit {
 
 
 
-  masInformacion(IdProducto: string, Categoria: string){
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
     this.nombre = IdProducto;
-    this.router.navigate(['venta',Categoria,IdProducto]);
+    this.router.navigate(['venta',Categoria,IdProducto,Nombre]);
 
 
    }
@@ -1165,8 +1235,8 @@ export class Contenedor1Component implements OnInit {
     .map((res:Response) => res.text())
             .subscribe(result => 
             {
-              this.respuesta=result;
-              if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
+              this._servicioCompartido.respuesta=result;
+              if(this._servicioCompartido.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
               {
                 this.noRegistrado= true;
               }else{

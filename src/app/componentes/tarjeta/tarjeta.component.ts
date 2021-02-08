@@ -41,11 +41,14 @@ export class TarjetaComponent implements OnInit {
               {
                 this.Envio = "0";
                 this.Subtotal = String (Number(result['subtotal']) * Number(this.cantidad));
+                if(this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
+                  this.Envio = "30";
+                }
                 if(isNullOrUndefined(this.Subtotal)){
                   this.router.navigate(['']);
                 }
-                if(Number(this.Subtotal) < 1){
-                  this.Envio =  String(300-Number(this.Subtotal));
+                if(Number(this.Subtotal) > 0 && !this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
+                  this.Envio =  result['envio'];
                 }
                 this.Total = String(Number(this.Subtotal) + Number(this.Envio));
               }

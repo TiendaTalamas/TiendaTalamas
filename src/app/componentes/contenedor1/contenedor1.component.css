@@ -1,6 +1,6 @@
 
 .carousel-control-next, .carousel-control-prev{
-	width: 1% !important;
+  width: 5% !important;
 }
 #nombreNav
 {
@@ -36,18 +36,18 @@ h3
 }
 
 
+
 .carousel-control-prev-icon
 {
 	
-	
-  position: absolute;
   height: 100px;
-	line-height: 100px;
 	width: 30px;
 	text-align: center;
 	left: 0px;
 	clip: rect(-10px,55px,110px,0);
   margin-top:-150px;
+  padding-left: 0px;
+  padding-right: 5px;
  
 	
 	
@@ -55,16 +55,15 @@ h3
 
 .carousel-control-next-icon
 {
-  position: absolute;
+  
   height:100px;
-	line-height: 100px;
 	width:30px;
 	right: 0px;
-	clip: rect(-10px,55px,110px,0);
+  clip: rect(-10px,55px,110px,0);
+  margin-top: -150px;
   padding-right: 0px;
   padding-left: 5px;
-  border-radius: 0 3px 3px 0;
-  margin-top: -150px;
+
 
 
 	
@@ -376,6 +375,9 @@ h3
     display: none !important;
   }
 }
+
+
+
 /*
 @media only screen and (max-width:5000px) and (min-width:780px)
 {

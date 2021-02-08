@@ -88,7 +88,7 @@
    </div>
    <hr/>
    <div class="row" id="justcel" *ngFor = "let producto of articulosArray; let i = index">
-    <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria)" width="200px" alt="">
+    <div class="col-4 mt-4 "><img fallimg class="img-fluid" src="{{producto.Imagen}}" (click) = "masInformacion(producto.IdProducto, producto.Categoria, producto.NombreProducto)" width="200px" alt="">
     </div>
     <div class="col-8 mt-4" style="text-align:left;">
      {{producto.NombreProducto}}
@@ -131,6 +131,6 @@
 </div>
 <div class="row align-items-center"> 
   <div class="col">
-<img fallimg class="ml-1" style="cursor: pointer; float:right;" (click)="navegarPago()"   data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/botonComprar.png" width="150px"/> 
+<img fallimg class="ml-1" style="cursor: pointer; float:right;" (click)="navegarPago()" id="imagencarrito" src="assets/botonComprar.png" width="150px"/> 
 </div>
 </div>

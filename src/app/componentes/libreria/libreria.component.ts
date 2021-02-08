@@ -38,10 +38,14 @@ export class LibreriaComponent implements OnInit {
   valuesKeys_Recomendados = new Array;
   articulosArray_Recomendados = new Array;
   noRegistrado:boolean;
-
+  ocultar:boolean;
+  paginas:number;
+  paginaActual:number;
   //Variable del modal
   respuesta:string;
+  SubCategoria:string;
 
+  
   //Constructor
   constructor(private http: Http,private router: Router, private location:Location,
     public _servicioCompartido : servicioCompartido, fb : FormBuilder, public falla:NgFallimgModule) {   
@@ -52,6 +56,8 @@ export class LibreriaComponent implements OnInit {
  
   obtenerArticulos() {
     let body = new URLSearchParams();
+    body.append("limite",String(this.paginaActual));
+    body.append("SubCategoria",this.SubCategoria);
     this.http.post(this._servicioCompartido.Url+'/librosRomance.php', body)
     .map((res:Response) => res.json())
             .subscribe(result => 
@@ -77,32 +83,9 @@ export class LibreriaComponent implements OnInit {
     });
   }
   obtenerArticulosEspecificos(SubCat:string) {
-    let body = new URLSearchParams();
-    body.append('subcategoria',SubCat);
-    body.append('categoria', 'Libros');
-    this.http.post(this._servicioCompartido.Url+'/articulosSubCategorias.php', body)
-    .map((res:Response) => res.json())
-            .subscribe(result => 
-            {
-            this.AA = "";
-            this.data = [];
-            this.articulosArray = result;
-            for (var key in result) {
-            this.AA = this.AA + key;
-            if (result.hasOwnProperty(key)) {
-              this.val = result[key];
-              this.data.push(Object.keys(this.val));
-              for (var i = 0; i < Object.keys(this.val).length; i++) {
-              this.contenedor = Object.keys(this.val)[i];
-              Object.entries(this.val)[i]
-               
-                this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
-                this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
-                
-                }
-             }
-          }
-    });
+    this.SubCategoria = SubCat;
+    this.obtenerPaginas();
+    this.obtenerArticulos();
   }
 
   obtenerRecomendados() {
@@ -138,8 +121,60 @@ export class LibreriaComponent implements OnInit {
   xxxMap_Sub = new Map();
   valuesKeys_Sub = new Array;
   articulosArray_Sub = new Array;
+  articulosArray_Sub2 = new Array;
   articulosArray_Inst = new Array;
+  pag = new Array;
 
+  obtenerPaginas(){
+    let body2 = new URLSearchParams();
+    this.paginaActual = 1;
+    body2.append("SubCategoria",this.SubCategoria),
+    this.http.post(this._servicioCompartido.Url+'/obtenerPaginasLibreria.php', body2)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+                
+            this.paginas = result['NumPaginas'];
+
+    });
+  }
+  cambiarPagina(pagina:number){
+    this.paginaActual = pagina;
+    this.obtenerArticulos();
+    window.scrollTo(0, 0) 
+  }
+  siguiente(){
+    if (this.paginaActual != this.paginas) {
+      this.paginaActual ++;
+      this.obtenerArticulos();
+      window.scrollTo(0, 0) 
+
+    }
+  }
+  anterior(){
+    if (this.paginaActual != 1) {
+      this.paginaActual --;
+      this.obtenerArticulos();
+      window.scrollTo(0, 0) 
+
+    }
+  }
+  mayorOIgual(pagina:number):boolean
+  {
+    if(pagina > this.paginas){
+      return false;
+    }else{
+      return true;
+    }
+  }
+  menorAUno(pagina:number):boolean
+  {
+    if(pagina < 1){
+      return false;
+    }else{
+      return true;
+    }
+  }
   obtenerSubCategoriasLibros(){
     
     
@@ -152,24 +187,17 @@ export class LibreriaComponent implements OnInit {
     .map((res:Response) => res.json())
             .subscribe(result => 
               {
-              this.AA_Sub = "";
-            this.data_Sub = [];
             this.articulosArray_Sub = result;
-            for (var key in result) {
-            this.AA_Sub = this.AA_Sub + key;
-            if (result.hasOwnProperty(key)) {
-              this.val_Sub = result[key];
-              this.data_Sub.push(Object.keys(this.val_Sub));
-              for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
-              this.contenedor_Sub = Object.keys(this.val_Sub)[i];
-              Object.entries(this.val_Sub)[i]
-               
-                this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
-                this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
+    });
+    body2.append('categoria', "Libros");
+    body2.append('limiteI', "6");
+    body2.append('limiteS', "100");
 
-                }
-             }
-          }
+    this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+              {
+            this.articulosArray_Sub2 = result;
     });
   }
 
@@ -209,9 +237,9 @@ export class LibreriaComponent implements OnInit {
     this.obtenerArticulosEspecificos(SubCategoria);
 }
 
-  masInformacion(IdProducto: string, Categoria: string){
+  masInformacion(IdProducto: string, Categoria: string, Nombre:string){
     this.nombre = IdProducto;
-    this.router.navigate(['venta',Categoria,IdProducto]);
+    this.router.navigate(['venta',Categoria,IdProducto, Nombre]);
   }
 
   navegarCategoria(Categoria:string, SubCategoria: string){
@@ -229,11 +257,19 @@ export class LibreriaComponent implements OnInit {
     this.router.navigate(['busqueda',this.cadena])
   }
   ngOnInit() {
+    this.ocultar = true;
     this._servicioCompartido.comprobarUsuario();
     this.Categoria = "Libros";
+    this.obtenerPaginas();
+    this.paginaActual = 1;
     this.obtenerArticulos();
     this.obtenerSubCategoriasLibros();
     this.obtenerSubCategoriasInst();
+    this.sub="Elegir Categoria";
+  }
+  mostrarYOcultar()
+  {
+    this.ocultar = !this.ocultar;
   }
   navegarInicio()
   {

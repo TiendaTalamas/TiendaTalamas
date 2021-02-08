@@ -93,11 +93,6 @@ a
       margin-left:-5%;
     }
 
-    #control
-    {
-      width:250px;
-    }
-
     #justcel
     {
       display: inline-block;
@@ -130,7 +125,7 @@ a
 
   }
 }
-@media only screen and (max-width:5000px) and (min-width:1050px)
+@media only screen and (max-width:5000px) and (min-width:1025px)
 {
   #botonescel
   {
@@ -216,8 +211,32 @@ a
 {
   width:140px; 
   height: 215px;
-  display: block; 
   margin: 0 auto;
+  line-height:400px ;
+  vertical-align:middle;
+}
+
+.imgr2
+{
+  max-width:140px; 
+  max-height: 215px;
+  display: block; 
+  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#textomasNegocio
+{
+  color: #333333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+
+
 }
 
 #textomas
@@ -282,9 +301,30 @@ a
   {
     display: none !important;
   }
-  #control
+  #controlcel
   {
     width:220px;
   }
 }
+
+@media only  screen and (min-width:1051px) and (max-width:1500px)
+{
+  #control
+  {
+    width:230px;
+  }
+}
+
+@media only screen and (min-width:996px) and (max-width:1025px)
+{
+  #equis
+  {
+    margin-right:-20%;
+  }
+}
+
+
+
+
+
   
