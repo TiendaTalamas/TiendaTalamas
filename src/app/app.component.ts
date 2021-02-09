@@ -9,11 +9,38 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
 import { NgFallimgModule } from 'ng-fallimg';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import
+{
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations'
+
 declare var fbq:any;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  /*
+  animations: [
+    trigger('popOverState', [
+      state('show', style({opacity:1
+      })),
+      state('hide', style({opacity:0
+      })),
+      transition('show => hide', animate('600ms ease-out')),
+      transition('hide => show', animate('1000ms ease-in')),
+
+    
+    
+    ])
+  ]*/
 })
 export class AppComponent { 
 
@@ -25,6 +52,8 @@ export class AppComponent {
   catInstrumentos:boolean;
   encontrado:boolean;
   encontradoNe:boolean;
+  show:boolean;
+
   constructor(private router: Router, private location:Location,private http: Http, public _servicioCompartido:servicioCompartido, private fb:FormBuilder, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public falla:NgFallimgModule, private Route:ActivatedRoute){
     this.registroForm = fb.group({
       'cadena' : this.cadena
@@ -34,7 +63,19 @@ export class AppComponent {
  this._mobileQueryListener = () => changeDetectorRef.detectChanges();
  this.mobileQuery.addListener(this._mobileQueryListener);
   }
+
   busqueda:string;
+/*
+  get stateName()
+  {
+    return this.show ? 'show' : 'hide'  
+  }
+
+  toggle() 
+  {
+     this.show = !this.show;
+  }
+*/
   ngOnInit()
   {
     this._servicioCompartido.NombU = localStorage.getItem("Nombre");

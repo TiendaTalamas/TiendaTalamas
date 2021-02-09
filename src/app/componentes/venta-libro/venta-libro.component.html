@@ -63,11 +63,29 @@
             </div>
             </div>
           </div>
+          <div *ngIf="!personalizado">
+            <div class="row" style="padding: 20px;">
+              <div class="col-lg-12 col-md-12 col-sm-12" style="color:black ; font-weight: 700; font-size: large;" >
+                CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>
+            </div>
+            </div>
+            <div class="row">
+      
+              <div class="col-6 col-md-6 col-sm-6">
+                <img fallimg class="my-auto ml-3" style="cursor: pointer;"  id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
+             </div>
+              <div class="col-6 col-md-6 col-sm-6">
+                <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
+              </div>
+              </div>
+          </div>
         </ng-container>
         <ng-template #elseTemplate>
           <div *ngIf="!personalizado" class="d-flex justify-content-center align-items-center" id="main">
+            <h1 class="mr-3 pr-3 align-top border-right inline-block align-content-center">Lo sentimos</h1>
             <div class="inline-block align-middle">
-              <button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button>        </div>
+              <h2 class="font-weight-normal lead" id="desc">No disponible por el momento.</h2>
+            </div>
         </div>
         <div *ngIf="personalizado" class="d-flex justify-content-center align-items-center" id="main">
           <div class="row">
@@ -123,12 +141,17 @@
     <hr/>
     <ng-container *ngIf="disponible; else elseTemplate">
       <div class="row" style="padding: 20px;">
-        <div class="col-lg-12 col-md-12 col-sm-12" style="color:black ; font-weight: 700; font-size: large;" >
+        <div class="col-lg-6 col-md-12 col-sm-12" style="color:black ; font-weight: 700; font-size: large;">
           CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>
       </div>
+      <select name="select" style="width:150px; padding:10px;">
+        <option value="value0" selected disabled>Variante</option>
+        <option value="value1"><img src="assets/luffy.jpg" width="50px"></option>
+        <option value="value2">B</option>
+        <option value="value3">C</option>
+      </select>
       </div>
       <div class="row">
-
         <div class="col-6 col-md-6 col-sm-6">
           <img fallimg class="my-auto ml-3" style="cursor: pointer;"  id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
        </div>
