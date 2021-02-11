@@ -28,7 +28,10 @@ export class VentaLibroComponent implements OnInit {
   P2: boolean;
   P3: boolean;
   P4: boolean; 
+
   direccionesArray = new Array;
+  variantes = new Array;
+  variantesD:boolean;
   Nombrecito: string;
   Apellidito:string;
   Correito:string;
@@ -134,10 +137,10 @@ this.formCantidad = fb.group({
     this.IdProducto = this.Route.snapshot.paramMap.get('id');
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
     this.obtenerImagenes();
-
     this.user = localStorage.getItem("Token");
     
     this.obtenerArticulo();
+    this.obtenerVariantes();
 
     if(this.Categoria === undefined){
     }
@@ -162,6 +165,28 @@ this.formCantidad = fb.group({
     this.obtenerDirecciones();
 
 
+  }
+
+  obtenerVariantes(){
+    let body = new URLSearchParams();
+    body.append("idProducto", this.IdProducto);
+    this.http.post(this._servicioCompartido.Url+'/verVariantes.php', body)
+    .map((res:Response) => res.json())
+            .subscribe(result => 
+            {
+              if(result['status'] == "200" ){
+                this.variantes = result['Productos'];
+                this.variantesD = true;
+                console.log(result) ;
+              }else{
+                this.variantesD = false;
+              }
+            
+    });
+  }
+
+  cambiarVariante(){
+    
   }
 
   navegarCompra(IdProducto:string)

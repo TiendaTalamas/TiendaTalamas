@@ -144,11 +144,9 @@
         <div class="col-lg-6 col-md-12 col-sm-12" style="color:black ; font-weight: 700; font-size: large;">
           CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>
       </div>
-      <select name="select" style="width:150px; padding:10px;">
-        <option value="value0" selected disabled>Variante</option>
-        <option value="value1"><img src="assets/luffy.jpg" width="50px"></option>
-        <option value="value2">B</option>
-        <option value="value3">C</option>
+      <select *ngIf="variantesD" name="select" style="width:150px; padding:10px;">
+        <option value="value0" selected disabled>{{IdProducto}}</option>
+        <option value="value1" *ngFor="let variante of variantes">{{variante.NombreProducto}}</option>
       </select>
       </div>
       <div class="row">
