@@ -1,4 +1,4 @@
-<div style="overflow:hidden">
+<!--div style="overflow:hidden">
   <div *ngFor="let producto of productos" itemscope itemtype="http://schema.org/Product">
     <meta itemprop="brand" content="{{producto.Propiedad4}}">
     <meta itemprop="name" content="{{producto.NombreProducto}}">
@@ -15,14 +15,15 @@
       <meta itemprop="priceCurrency" content="MXN">
     </div>
   </div>
-</div>
+</div>-->
+<!--PRODUCTOS DE EMD LA CONCHA DE TU MADRE-->
 <div *ngIf="EMD">
   <div  *ngFor="let producto of productos" >
     <div class="row mx-5">
-      <div class=" mx-lg-0 col-sm-12 col-lg-4 col-md-6" style="border-top: 1px solid #f6f6f6; border-right: 1px solid #f6f6f6;">
+      <div class=" mx-lg-0 col-sm-12 col-lg-4 col-md-6">
        <img fallimg width="100%" src="{{producto.Imagen}}">
         </div>
-      <div class="col-lg-8 col-md-6 col-sm-12" style="border: 1px solid #f6f6f6;">
+      <div class="col-lg-8 col-md-6 col-sm-12" style="border: 2px solid #dddddd;">
         <div class="row">
             <h2 style="color: black; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
           </div> 
@@ -46,7 +47,7 @@
              </div>   
                </div>
 
-        <hr/>
+        <hr style="background-color: #dddddd;"/>
         <ng-container *ngIf="disponible; else elseTemplate">
           <div *ngIf="personalizado">
           <div class="row" style="padding: 20px;">
@@ -109,25 +110,27 @@
     </div>
     
 </div>
+
+<!--AQUI EMPIEZA INSTRUEMNTOS Y PRODUCTOS APARTE LA CONCHA DE TU MADRE-->
 <div *ngIf="!P1">
   <div *ngIf="!EMD">
 <div  *ngFor="let producto of productos" >
 <div class="row mx-5">
-  <div class=" mx-lg-0 col-sm-12 col-lg-5 col-md-6" style="border-top: 1px solid #f6f6f6; border-right: 1px solid #f6f6f6;">
+  <div class=" mx-lg-0 col-sm-12 col-lg-6 col-md-6">
     <div class="preview-pic tab-content">
       <div class="tab-pane active" id="pic-10"> <app-zoom [img]="imagenActual" [zoom]="2" [lenSize]="200" [imgWidth]="100"   [divZoomed]="divZoomed" ></app-zoom></div>
     </div> 
-<hr>
+<hr style="background-color: #dddddd;">
   <ul class="preview-thumbnail nav nav-tabs">
     <li style="cursor: pointer;"  class="active"><a data-target="#pic-10" (click)="cambiarImagen(imagenPorDefault)" data-toggle="tab"><img fallimg src="{{imagenPorDefault}}" /></a></li>
     <li *ngFor="let imagen of imagenesInstrumentos; let i = index"><a (click)="cambiarImagen(imagen.Imagen)" data-target="#pic-{{i}}" data-toggle="tab"><img fallimg style="cursor: pointer;"  src="{{imagen.Imagen}}" /></a></li>
   </ul>
      </div>
-  <div class="col-lg-7 col-md-6" style="border: 1px solid #f6f6f6; ">
+  <div class="col-lg-6 col-md-6" id="margen" style="border: 2px solid #dddddd; border-radius: 5px;">
     <div style="margin-left: 3%;">
     <div class="row" style="margin-top: 1%;">
       <div #divZoomed class="img-zoom-result"  ></div> 
-        <h2 style="color:#333333; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
+        <h2 style="color:#333333; font-weight:700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
       </div>
     <div class="row" *ngIf="negocio">
         <p style="font-weight: 300; color:gray; cursor: pointer;" (click)="navegarNegocio()">{{producto.Propiedad4}}</p>
@@ -138,8 +141,33 @@
       <h1 style="font-weight: 700; color:#76aadb;"> ${{producto.Precio | number:'1.2-2' }}</h1> 
     </div>
 
-    <hr/>
+    <hr style="background-color:#dddddd;"/>
     <ng-container *ngIf="disponible; else elseTemplate">
+      <!--ROW DE VARIANTES-->
+      <div class="row justify-content-center">
+         <div class="col-sm-12 col-lg-6" style="display: flex; justify-content: center;">
+         <div class="btn-group">
+           <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid #706c61; width: 200px; height: 50px;">
+             Variante del producto:
+           </button>
+           <div class="dropdown-menu">
+             <div class="ml-1" style="width:195px; cursor: pointer;">
+             <img src="https://www.alfabetajuega.com/wp-content/uploads/2021/01/luffy-wano-cosplay.jpeg" width="50px mr-1"><span class="ml-1">Action</span>
+             </div>
+             <div class="dropdown-divider"></div>
+             <div class="ml-1" style="width: 195px; cursor: pointer;">
+              <img src="https://www.alfabetajuega.com/wp-content/uploads/2021/01/luffy-wano-cosplay.jpeg" width="50px mr-1"><span class="ml-1">Action</span>
+              </div>
+              <div class="dropdown-divider"></div>
+              <div class="ml-1" style="width:195px; cursor: pointer;">
+                <img src="https://www.alfabetajuega.com/wp-content/uploads/2021/01/luffy-wano-cosplay.jpeg" width="50px mr-1"><span class="ml-1">Action</span>
+                </div>
+           </div>
+         </div>               
+
+          </div>
+     </div>
+     <hr style="background-color: #dddddd;"/>
       <div class="row" style="padding: 20px;">
         <div class="col-lg-6 col-md-12 col-sm-12" style="color:black ; font-weight: 700; font-size: large;">
           CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>
@@ -149,6 +177,7 @@
         <option value="value1" *ngFor="let variante of variantes">{{variante.NombreProducto}}</option>
       </select>
       </div>
+   
       <div class="row">
         <div class="col-6 col-md-6 col-sm-6">
           <img fallimg class="my-auto ml-3" style="cursor: pointer;"  id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
@@ -170,7 +199,7 @@
     
 
 
-    <hr/>
+    <hr style="background-color: #dddddd;"/>
     <div class="row">
       <h2  style="color: black; font-weight: 700;">Descripción</h2>
     </div>
@@ -184,14 +213,15 @@
 </div>
 </div>
 <!-------->
-<div *ngIf="P1">
 
+<!--AQUI EMPIEZA EL DE LIBROS LA CONCHA DE TU MADRE-->
+<div *ngIf="P1">
 <div  *ngFor="let producto of productos" >
   <div class="row mx-5">
-    <div class=" mx-lg-0 col-sm-12 col-lg-4 col-md-6" style="border-top: 1px solid #f6f6f6; border-right: 1px solid #f6f6f6;">
-     <img fallimg width="100%" src="{{producto.Imagen}}">
+    <div class="col-sm-12 col-lg-6 col-md-6">
+     <img fallimg width="100%" src="{{producto.Imagen}}" style="display: block; margin: 0 auto;">
       </div>
-    <div class="col-lg-8 col-md-6 col-sm-12" style="border: 1px solid #f6f6f6;">
+    <div class="col-lg-6 col-md-6 col-sm-12" id="margen" style="border: 2px solid #dddddd; border-radius: 5px; padding:20px;">
       <div class="row">
           <h2 style="color:#333333; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
         </div>
