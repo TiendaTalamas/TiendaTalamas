@@ -111,7 +111,7 @@
     
 </div>
 
-<!--AQUI EMPIEZA INSTRUEMNTOS Y PRODUCTOS APARTE LA CONCHA DE TU MADRE-->
+<!--AQUI EMPIEZA INSTRUMENTOS Y PRODUCTOS APARTE LA CONCHA DE TU MADRE-->
 <div *ngIf="!P1">
   <div *ngIf="!EMD">
 <div  *ngFor="let producto of productos" >
@@ -168,17 +168,16 @@
           </div>
      </div>
      <hr style="background-color: #dddddd;"/>
-      <div class="row" style="padding: 20px;">
-        <div class="col-lg-6 col-md-12 col-sm-12" style="color:black ; font-weight: 700; font-size: large;">
-          CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>
-      </div>
-      </div>
-   
+  
       <div class="row">
-        <div class="col-6 col-md-6 col-sm-6">
+
+        <div class="col-lg-4 col-sm-12" style="color:black ; font-weight:500; font-size: large;">
+          CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center; background-color: white; border-color: black;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px; height:30px; font-size: medium; margin-left:5px ; font-weight: 800; border-color:black; background-color: white;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800; background-color: white; border-color: black;" (click)="disminuirCantidad()">-</button>
+      </div>
+        <div class="col-lg-4 col-sm-6" style="background-color: red;">
           <img fallimg class="my-auto ml-3" style="cursor: pointer;"  id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
        </div>
-        <div class="col-6 col-md-6 col-sm-6">
+        <div class="col-lg-4  col-sm-6" style="background-color: blue;">
           <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
         </div>
         </div>

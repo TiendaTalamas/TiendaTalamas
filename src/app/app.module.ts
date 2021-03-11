@@ -10,7 +10,6 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { LibreriaComponent } from './componentes/libreria/libreria.component';
 import { VentaLibroComponent } from './componentes/venta-libro/venta-libro.component';
 import { MaterialModule} from '../material.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { producto } from './servicios/producto';
 import { servicioCompartido } from './servicios/servicioCompartido';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
@@ -61,6 +60,7 @@ import {CambiarpasswordComponent} from './cambiarpassword/cambiarpassword.compon
 import {ElegirdireccionComponent} from './elegirdireccion/elegirdireccion.component';
 import {NuevadireccionComponent} from './nuevadireccion/nuevadireccion.component';
 import {HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
