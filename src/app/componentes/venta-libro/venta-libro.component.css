@@ -1,9 +1,51 @@
-img {
-	max-width:75%; }
-h5
+/*CSS DE LOS TEXTOS*/
+img 
+{
+	max-width:75%; 
+}
+
+#titulo
+{
+	color:#333333;
+	font-weight:500;
+	text-transform: uppercase;
+	font-size: x-large;
+}
+
+#precio
 {
 	font-weight: 700;
+	color:#76aadb;
+	font-size:xx-large;
 }
+
+#descripcion
+{
+	font-size:large;
+	font-weight:500;
+}
+
+#datosLibro
+{
+	color:#333333;
+	font-size:large;
+}
+
+#textoVariantes
+{
+	color:#333333;
+	font-size:x-large;
+	font-weight: 500;
+}
+
+#libroInfo
+{
+	font-weight:500;
+	color:#76aadb;
+	font-size: large;
+}
+
+/*CSS DEL ZOOM Y CAMBIOS DE PANTALLA*/
 
 .img-zoom-result {
   border: 1px solid #d4d4d4;
@@ -163,7 +205,7 @@ h5
 			
 			}
 
-@media only  screen and (max-width:500px)
+@media only  screen and (max-width:1000px)
 {
 	h5
 	{
