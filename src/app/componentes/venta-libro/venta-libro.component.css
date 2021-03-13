@@ -45,6 +45,35 @@ img
 	font-size: large;
 }
 
+#inputCant
+{
+	
+	text-align: center;
+	outline: none;
+	border: none; 
+	background-color: #e3e3e3;
+	padding: 10px;
+
+}
+
+#botonMenos
+{
+	background-color:#e3e3e3; 
+	border: none; 
+	padding: 10px;
+
+}
+
+#simboloCant
+{
+	font-size:small;
+}
+
+#simboloCant:active
+{
+	color: white;
+}
+
 /*CSS DEL ZOOM Y CAMBIOS DE PANTALLA*/
 
 .img-zoom-result {
