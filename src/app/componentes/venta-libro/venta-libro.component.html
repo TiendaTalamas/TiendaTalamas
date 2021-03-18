@@ -24,6 +24,7 @@
        <img fallimg width="100%" src="{{producto.Imagen}}">
         </div>
       <div class="col-lg-8 col-md-6 col-sm-12" style="border: 2px solid #dddddd;">
+        <div style="margin-left: 3%;">
         <div class="row">
             <h2 id="titulo">{{producto.NombreProducto}}</h2>
           </div> 
@@ -104,6 +105,7 @@
         </div>
         <div class="row">
           <p style="font-weight: 300; color:gray; text-align: justify;" [innerHTML]="producto.Descripcion"></p>
+        </div>
         </div>
     </div>
     </div>
@@ -251,13 +253,18 @@
       </div>
       <hr/>
       <ng-container *ngIf="disponible; else elseTemplate">
-        <div class="row" style="padding: 20px;">
-          <div class="col-lg-12 col-md-12 col-sm-12" style="color:black ; font-weight: 700; font-size: large;" >
-            CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800; cursor:pointer;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800; cursor: pointer;" (click)="disminuirCantidad()">-</button>
-        </div>
-        </div>
+        <div class="container">
+          <label for="inputCant">Cantidad</label>
+         <div class="row justify-content-center">
+             <div class="control">
+               <button (click)="disminuirCantidad()" id="botonMenos" class="btn-decrease"><i id="simboloCant" class="fa fa-minus" aria-hidden="false"></i></button>
+               <input  type="text" name="inputCant" id="inputCant" maxlength="12" class="input-text" placeholder="{{Cantidad}}" readonly style="width:100px;">
+               <button (click)="aumentarCantidad()" id="botonMenos"class="btn-increase"><i id="simboloCant" class="fa fa-plus" aria-hidden="false"></i></button>
+             </div>
+         </div>
+       </div>
+       <hr/>
         <div class="row">
-  
           <div class="col-6 col-md-6 col-sm-6">
             <img fallimg class="my-auto ml-3" style="cursor: pointer;"   id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
          </div>
