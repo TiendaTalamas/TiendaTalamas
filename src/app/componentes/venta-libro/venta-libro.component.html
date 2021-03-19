@@ -24,15 +24,16 @@
        <img fallimg width="100%" src="{{producto.Imagen}}">
         </div>
       <div class="col-lg-8 col-md-6 col-sm-12" style="border: 2px solid #dddddd;">
+        <div style="margin-left: 3%;">
         <div class="row">
-            <h2 style="color: black; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
+            <h2 id="titulo">{{producto.NombreProducto}}</h2>
           </div> 
         <div class="row">
         </div>
         <div class="row">
         </div>
         <div class="row">
-          <h1 style="font-weight: 700; color:#76aadb;"> ${{producto.Precio | number:'1.2-2'}}</h1>
+          <h1 id="precio"> ${{producto.Precio | number:'1.2-2'}}</h1>
         </div>
         <div class="row">
           <strong><h5 id="cel" style="color: black;"></h5></strong><h5 style="font-weight: 700; color:#76aadb;"> {{producto.IdProducto}}</h5>
@@ -100,10 +101,11 @@
         </ng-template>
         <hr/>
         <div class="row">
-          <h2  style="color: black; font-weight: 700;">Descripción</h2>
+          <h2 id="descripcion">Lo que tienes que saber de este producto</h2>
         </div>
         <div class="row">
           <p style="font-weight: 300; color:gray; text-align: justify;" [innerHTML]="producto.Descripcion"></p>
+        </div>
         </div>
     </div>
     </div>
@@ -130,67 +132,64 @@
     <div style="margin-left: 3%;">
     <div class="row" style="margin-top: 1%;">
       <div #divZoomed class="img-zoom-result"  ></div> 
-        <h2 style="color:#333333; font-weight:700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
+        <h2 id="titulo">{{producto.NombreProducto}}</h2>
       </div>
     <div class="row" *ngIf="negocio">
         <p style="font-weight: 300; color:gray; cursor: pointer;" (click)="navegarNegocio()">{{producto.Propiedad4}}</p>
     </div>
-    <div class="row" *ngIf="!negocio">
-  </div>
+
     <div class="row">
-      <h1 style="font-weight: 700; color:#76aadb;"> ${{producto.Precio | number:'1.2-2' }}</h1> 
+      <h1 id="precio"> ${{producto.Precio | number:'1.2-2' }}</h1> 
     </div>
 
     <hr style="background-color:#dddddd;"/>
     <ng-container *ngIf="disponible; else elseTemplate">
       <!--ROW DE VARIANTES-->
-      <div class="row justify-content-center">
-         <div class="col-sm-12 col-lg-6" style="display: flex; justify-content: center;">
-         <div class="btn-group">
-           <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; border: 1px solid #706c61; width: 200px; height: 50px;">
-             Variante del producto:
-           </button>
-           <div class="dropdown-menu">
-             <div class="ml-1" style="width:195px; cursor: pointer;">
-             <img src="https://www.alfabetajuega.com/wp-content/uploads/2021/01/luffy-wano-cosplay.jpeg" width="50px mr-1"><span class="ml-1">Action</span>
-             </div>
-             <div class="dropdown-divider"></div>
-             <div class="ml-1" style="width: 195px; cursor: pointer;">
-              <img src="https://www.alfabetajuega.com/wp-content/uploads/2021/01/luffy-wano-cosplay.jpeg" width="50px mr-1"><span class="ml-1">Action</span>
+      <h2 id="textoVariantes">Color</h2>
+      <div class="container">
+      <div class="row">
+              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: green; border-radius: 5px; cursor: pointer;"></div>
+              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: red; border-radius: 5px; cursor: pointer;"></div>
+              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: blue; border-radius: 5px; cursor: pointer;"></div>
+              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: purple; border-radius: 5px; cursor: pointer;"></div>
+              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: orangered; border-radius: 5px; cursor: pointer;"></div>
+              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: pink; border-radius: 5px; cursor: pointer;"></div>
+              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: brown; border-radius: 5px; cursor: pointer;"></div>
+              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: orange; border-radius: 5px; cursor: pointer;"></div>
+              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: yellow; border-radius: 5px; cursor: pointer;"></div>
+              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: yellowgreen; border-radius: 5px; cursor: pointer;"></div>
+              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: black; border-radius: 5px; cursor: pointer;"></div>
               </div>
-              <div class="dropdown-divider"></div>
-              <div class="ml-1" style="width:195px; cursor: pointer;">
-                <img src="https://www.alfabetajuega.com/wp-content/uploads/2021/01/luffy-wano-cosplay.jpeg" width="50px mr-1"><span class="ml-1">Action</span>
-                </div>
-           </div>
-         </div>               
-
-          </div>
+     </div>
+     <hr style="background-color:#dddddd;"/>
+     <div class="container">
+      <div class="row">
+              <div class="ml-2 mt-1" style="width: 50px; height:50px; border-radius: 5px; border: 1px solid #dddddd; padding: 5px; cursor: pointer;"><img style="display: block; margin: 0 auto;" src="https://tiendatalamas.com/assets/Imagenes/ART01.jpg"></div>
+              
+     </div>
      </div>
      <hr style="background-color: #dddddd;"/>
-      <div class="row" style="padding: 20px;">
-        <div class="col-lg-6 col-md-12 col-sm-12" style="color:black ; font-weight: 700; font-size: large;">
-          CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800;" (click)="disminuirCantidad()">-</button>
+     <div class="container">
+       <label for="inputCant">Cantidad</label>
+      <div class="row justify-content-center">
+          <div class="control">
+            <button (click)="disminuirCantidad()" id="botonMenos" class="btn-decrease"><i id="simboloCant" class="fa fa-minus" aria-hidden="false"></i></button>
+            <input  type="text" name="inputCant" id="inputCant" maxlength="12" class="input-text" placeholder="{{Cantidad}}" readonly style="width:100px;">
+            <button (click)="aumentarCantidad()" id="botonMenos"class="btn-increase"><i id="simboloCant" class="fa fa-plus" aria-hidden="false"></i></button>
+          </div>
       </div>
-      <select *ngIf="variantesD" name="select" style="width:150px; padding:10px;">
-        <option value="value0" selected disabled>{{IdProducto}}</option>
-        <option value="value1" *ngFor="let variante of variantes">{{variante.NombreProducto}}</option>
-      </select>
-      </div>
-   
-      <div class="row">
-
-        <div class="col-lg-4 col-sm-12" style="color:black ; font-weight:500; font-size: large;">
-          CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center; background-color: white; border-color: black;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px; height:30px; font-size: medium; margin-left:5px ; font-weight: 800; border-color:black; background-color: white;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800; background-color: white; border-color: black;" (click)="disminuirCantidad()">-</button>
-      </div>
-        <div class="col-lg-4 col-sm-6" style="background-color: red;">
-          <img fallimg class="my-auto ml-3" style="cursor: pointer;"  id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
-       </div>
-        <div class="col-lg-4  col-sm-6" style="background-color: blue;">
-          <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
-        </div>
-        </div>
+    </div>
+    <hr style="background-color: #dddddd;"/>
+        <div class="row">
+          <div class="col-6 col-md-6 col-sm-6">
+            <img fallimg class="my-auto ml-3" style="cursor: pointer;"   id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
+         </div>
+          <div class="col-6 col-md-6 col-sm-6">
+            <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
+          </div>
+         </div>
     </ng-container>
+
     <ng-template #elseTemplate>
       <div class="d-flex justify-content-center align-items-center" id="main">
         <h1 class="mr-3 pr-3 align-top border-right inline-block align-content-center">Lo sentimos</h1>
@@ -205,7 +204,7 @@
 
     <hr style="background-color: #dddddd;"/>
     <div class="row">
-      <h2  style="color: black; font-weight: 700;">Descripción</h2>
+      <h2 id="descripcion">Lo que tienes que saber de este producto</h2>
     </div>
     <div class="row">
       <p style="font-weight: 300; color:gray; text-align: justify;" [innerHTML]="producto.Descripcion"></p>
@@ -227,40 +226,45 @@
       </div>
     <div class="col-lg-6 col-md-6 col-sm-12" id="margen" style="border: 2px solid #dddddd; border-radius: 5px; padding:20px;">
       <div class="row">
-          <h2 style="color:#333333; font-weight: 700; text-transform: uppercase;">{{producto.NombreProducto}}</h2>
+          <h2 id="titulo">{{producto.NombreProducto}}</h2>
         </div>
       <div class="row">
       </div>
       <div class="row">
       </div>
       <div class="row">
-        <h1 style="font-weight: 700; color:#76aadb;"> ${{producto.Precio | number:'1.2-2'}}</h1>
+        <h1 id="precio"> ${{producto.Precio | number:'1.2-2'}}</h1>
       </div>
       <div class="row">
-        <strong><h5 id="cel" style="color:#333333;">Autor: </h5></strong> <h5 style="font-weight: 700; color:#76aadb;"> {{producto.Propiedad2}}</h5>
+        <strong><h5 id="datosLibro" >Autor: </h5></strong> <h5 id="libroInfo"> {{producto.Propiedad2}}</h5>
       </div>
       <div class="row">
-        <strong><h5 id="cel" style="color:#333333;">EDITORIAL: </h5></strong> <h5 style="font-weight: 700; color:#76aadb;"> {{producto.Propiedad4}}</h5>
+        <strong><h5 id="datosLibro" >EDITORIAL: </h5></strong> <h5 id="libroInfo"> {{producto.Propiedad4}}</h5>
       </div>
       <div class="row">
-        <strong><h5 id="cel" style="color:#333333;">ISBN: </h5></strong>        <h5 style="font-weight: 700; color:#76aadb;"> {{producto.IdProducto}}</h5>
+        <strong><h5 id="datosLibro" >ISBN: </h5></strong>        <h5 id="libroInfo"> {{producto.IdProducto}}</h5>
 
       </div>
       <div class="row">
-        <strong><h5 id="cel" style="color:#333333;">NO.PAGINAS: </h5></strong>   <h5 style="font-weight: 700; color:#76aadb;"> {{producto.NumPag}}</h5>
+        <strong><h5 id="datosLibro" >NO.PAGINAS: </h5></strong>   <h5 id="libroInfo"> {{producto.NumPag}}</h5>
       </div>
       <div class="row">
-        <strong><h5 id="cel" style="color:#333333;">ENCUADERNACION: </h5></strong>  <h5 style="font-weight: 700; color:#76aadb;"> {{producto.Propiedad1}}</h5>
+        <strong><h5 id="datosLibro" >ENCUADERNACION: </h5></strong>  <h5 id="libroInfo"> {{producto.Propiedad1}}</h5>
       </div>
       <hr/>
       <ng-container *ngIf="disponible; else elseTemplate">
-        <div class="row" style="padding: 20px;">
-          <div class="col-lg-12 col-md-12 col-sm-12" style="color:black ; font-weight: 700; font-size: large;" >
-            CANT : <input  style="border-radius: 100%; width:30px ; height:30px; font-size: medium; text-align: center;"  placeholder="{{Cantidad}}"><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left:5px ; font-weight: 800; cursor:pointer;"(click)="aumentarCantidad()">+</button><button style="border-radius: 100%; width:30px ; height:30px; font-size: medium; margin-left: 5px; font-weight: 800; cursor: pointer;" (click)="disminuirCantidad()">-</button>
-        </div>
-        </div>
+        <div class="container">
+          <label for="inputCant">Cantidad</label>
+         <div class="row justify-content-center">
+             <div class="control">
+               <button (click)="disminuirCantidad()" id="botonMenos" class="btn-decrease"><i id="simboloCant" class="fa fa-minus" aria-hidden="false"></i></button>
+               <input  type="text" name="inputCant" id="inputCant" maxlength="12" class="input-text" placeholder="{{Cantidad}}" readonly style="width:100px;">
+               <button (click)="aumentarCantidad()" id="botonMenos"class="btn-increase"><i id="simboloCant" class="fa fa-plus" aria-hidden="false"></i></button>
+             </div>
+         </div>
+       </div>
+       <hr/>
         <div class="row">
-  
           <div class="col-6 col-md-6 col-sm-6">
             <img fallimg class="my-auto ml-3" style="cursor: pointer;"   id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
          </div>
@@ -279,7 +283,7 @@
       </ng-template>
       <hr/>
       <div class="row">
-        <h2  style="color: black; font-weight: 700;">Descripción</h2>
+        <h2 id="descripcion">Lo que tienes que saber de este producto</h2>
       </div>
       <div class="row">
         <p style="font-weight: 300; color:gray; text-align: justify;" [innerHTML]="producto.Descripcion"></p>
@@ -288,108 +292,6 @@
   </div>
   </div>
 </div>
-
-
-<!-- Modal -->
- <!--
-<div id="formulario" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    Modal contenido
-
-    <div class="modal-content">
-      <div id="Layer1" style="height:600px; overflow: scroll;">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">VENTA</h4>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-
-          <div class="form-sec">
-            <h4>Venta por Whatsapp</h4>
-            
-            <form [formGroup]="ventaForm">
-              <div class="form-group">
-                <label>Nombre:</label>
-                <input type="text" class="form-control" [(ngModel)]="nombre" formControlName="nombre" placeholder="Nombre" type="text" >
-              </div>
-              <div class="form-group">
-                <label>Apellido:</label>
-                <input type="text" class="form-control" [(ngModel)]="apellido" formControlName="apellido" placeholder="Apellido" type="text" >
-              </div>
-
-              <div class="form-group">
-                <label>Numero de celular:</label>
-                <input class="form-control" [(ngModel)]="numeroCelular" formControlName="numeroCelular" placeholder="Ej:+52123456789" type="text" > 
-              </div>
-
-              <div class="form-group">
-                <label>Correo:</label>
-                <input type="email" class="form-control" [(ngModel)]="email" formControlName="email" placeholder="Correo" type="email" > 
-              </div>
-
-              <div class="form-group">
-                <label>Calle 1:</label>
-                <input type="email" class="form-control" [(ngModel)]="calle1" formControlName="calle1" placeholder="Calle 1" type="text" >
-              </div>
-
-              <div class="form-group">
-                <label>Calle 2:</label>
-                <input type="email" class="form-control" [(ngModel)]="calle2" formControlName="calle2" placeholder="Calle 2" type="text" >
-              </div>
-
-              <div class="form-group">
-                <label>Calle 3:</label>
-                <input type="email" class="form-control" [(ngModel)]="calle3" formControlName="calle3" placeholder="Calle 3" type="text">
-              </div>
-              <div class="form-group">
-                <label>Numero exterior:</label>
-                <input type="email" class="form-control" [(ngModel)]="NumeroExterior" formControlName="NumeroExterior" placeholder="Numero Exterior" type="text" >
-              </div>
-              <div class="form-group">
-                <label>Codigo postal:</label>
-                <input type="email" class="form-control" [(ngModel)]="CodigoPostal" formControlName="CodigoPostal" placeholder="Codigo Postal" type="text" >
-              </div>
-              <div class="form-group">
-                <label>Ciudad:</label>
-                <input type="email" class="form-control"[(ngModel)]="ciudad" formControlName="ciudad" placeholder="Ciudad" type="text" >
-              </div>
-              
-              <div class="form-group" *ngFor = "let producto of productos">
-                <label>Producto:</label>
-                <input type="text" class="form-control" id="peoducto" placeholder="{{producto.NombreProducto}}" name="producto" disabled>
-              </div>
-            <div class="form-group">
-                <label>Precio:</label>
-                <input type="text" class="form-control" id="precio" placeholder="{{+precioBinding}}" name="producto" disabled>
-              </div>  
-              <div class="form-group">
-                <label>Cantidad:</label>
-                <select class="form-control" (ngModelChange)="onChange($event)" [(ngModel)]="cantidad" formControlName="cantidad" name="dropventa">
-                  <option [value]="i" *ngFor="let i of cantidades">{{i}}</option>
-                  </select>
-              </div> 
-             
-            
-              
-              <button type="submit" class="btn btn-default" (click)="ComprarPorCorreo()">Enviar</button>
-            </form>
-            </div>
-          
-          
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-      </div>
-    </div>
-    </div>
-    </div>
-
-</div>
--->
-
 
 
 
