@@ -32,6 +32,7 @@ export class ConfirmacionPedidoComponent implements OnInit {
   Envio:string;
   Total:string;
   articulosArray = new Array;
+  noVender:boolean;
   masInformacion(IdProducto: string, Categoria: string, Nombre:string){
     this.router.navigate(['venta',Categoria,IdProducto, Nombre]);
    }
@@ -53,6 +54,11 @@ export class ConfirmacionPedidoComponent implements OnInit {
                 if(Number(this.Subtotal) > 0 && !this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
 
                   this.Envio = "200";
+                }
+                if(!this._servicioCompartido.Direccion.includes("Nuevo Laredo") && !this._servicioCompartido.Direccion.includes("Monterrey")){
+                  this.noVender = true;
+                }else{
+                  this.noVender = false;
                 }
                 this.Total = String(Number(this.Envio) + Number(this.Subtotal))
               }

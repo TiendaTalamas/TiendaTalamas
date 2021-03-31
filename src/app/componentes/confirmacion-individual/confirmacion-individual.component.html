@@ -28,8 +28,12 @@
         Total: ${{Total}}
 
       </div>
-      <div>
+      
+      <div *ngIf="!noVender">
         <button class="btn btn mt-1" style="width: 100%;" (click)="confirmarCompra()">Confirmar compra</button>
+      </div>
+      <div *ngIf="noVender">
+        <p>Venta no disponible en está ciudad</p>
       </div>
 </div>
 

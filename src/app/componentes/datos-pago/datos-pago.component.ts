@@ -163,6 +163,8 @@ export class DatosPagoComponent implements OnInit {
 
             if(isNullOrUndefined(result[0]['Calle']) || result[0]['Calle'] == ""){
               this.noPredeterminada = false;
+            }else{
+              this.noPredeterminada = true;
             }
 
     });
@@ -173,7 +175,7 @@ export class DatosPagoComponent implements OnInit {
     if(!isNullOrUndefined(this.calle1) && !isNullOrUndefined(this.numExt) && !isNullOrUndefined(this.numExt) && !isNullOrUndefined(this.estado) && !isNullOrUndefined(this.Ciudad)  && !isNullOrUndefined(this.codigoPost)){
 
       this.Direccion = "Calle 1:"+this.calle1+" Calle 2: "+this.calle2+" Calle 3: "+this.calle3+" NumeroExt: "+this.numExt+" NumeroInt: "+this.numInterior+" Codigo Postal: "+this.codigoPost+" Ciudad: "+this.ciudad+" Estado:"+this.estado+" Nombre y Apellido:"+this.Nombre+" "+ this.Apellido;
-      this._servicioCompartido.DireccionE = this.calle1+" #"+this.numExt+"<br>"+this.codigoPost+", "+this.Ciudad+"("+this.estado+")";
+      this._servicioCompartido.DireccionE = this.calle1+" #"+this.numExt+"<br>"+this.codigoPost+", "+this.ciudad+"("+this.estado+")";
       this.router.navigate(['ConfirmacionPago']);
       this._servicioCompartido.Nombre = this.Nombre;
       this._servicioCompartido.ApellidoPa = this.Apellido;
