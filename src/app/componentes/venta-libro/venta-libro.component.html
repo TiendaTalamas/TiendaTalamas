@@ -27,7 +27,7 @@
         <div style="margin-left: 3%;">
         <div class="row">
             <h2 id="titulo">{{producto.NombreProducto}}</h2>
-          </div> 
+          </div>
         <div class="row">
         </div>
         <div class="row">
@@ -45,7 +45,7 @@
             </div>
            <div class="row">
             <a href="https://api.whatsapp.com/send?phone=+528673076039"><button type="button" class="btn" style="background-color:#00bb2d; color: white;">Whatsapp<span class="ml-1"><img src="https://www.flaticon.es/svg/static/icons/svg/1383/1383336.svg" width="25px"></span></button></a>
-             </div>   
+             </div>
                </div>
 
         <hr style="background-color: #dddddd;"/>
@@ -61,7 +61,7 @@
               <img fallimg class="my-auto ml-3" style="cursor: pointer;"   id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
            </div>
             <div class="col-6 col-md-6 col-sm-6">
-              <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
+              <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/>
             </div>
             </div>
           </div>
@@ -72,12 +72,12 @@
             </div>
             </div>
             <div class="row">
-      
+
               <div class="col-6 col-md-6 col-sm-6">
                 <img fallimg class="my-auto ml-3" style="cursor: pointer;"  id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
              </div>
               <div class="col-6 col-md-6 col-sm-6">
-                <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
+                <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/>
               </div>
               </div>
           </div>
@@ -93,10 +93,10 @@
           <div class="row">
             <h5>Personalizado por:</h5>
             </div>
-        
+
            <div class="row">
             <a href="https://api.whatsapp.com/send?phone=+528673076039"><button type="button" class="btn" style="background-color:#00bb2d; color: white;">Whatsapp</button></a>
-             </div>   
+             </div>
                </div>
         </ng-template>
         <hr/>
@@ -110,7 +110,7 @@
     </div>
     </div>
     </div>
-    
+
 </div>
 
 <!--AQUI EMPIEZA INSTRUMENTOS Y PRODUCTOS APARTE LA CONCHA DE TU MADRE-->
@@ -121,7 +121,7 @@
   <div class=" mx-lg-0 col-sm-12 col-lg-6 col-md-6">
     <div class="preview-pic tab-content">
       <div class="tab-pane active" id="pic-10"> <app-zoom [img]="imagenActual" [zoom]="2" [lenSize]="200" [imgWidth]="100"   [divZoomed]="divZoomed" ></app-zoom></div>
-    </div> 
+    </div>
 <hr style="background-color: #dddddd;">
   <ul class="preview-thumbnail nav nav-tabs">
     <li style="cursor: pointer;"  class="active"><a data-target="#pic-10" (click)="cambiarImagen(imagenPorDefault)" data-toggle="tab"><img fallimg src="{{imagenPorDefault}}" /></a></li>
@@ -131,7 +131,7 @@
   <div class="col-lg-6 col-md-6" id="margen" style="border: 2px solid #dddddd; border-radius: 5px;">
     <div style="margin-left: 3%;">
     <div class="row" style="margin-top: 1%;">
-      <div #divZoomed class="img-zoom-result"  ></div> 
+      <div #divZoomed class="img-zoom-result"  ></div>
         <h2 id="titulo">{{producto.NombreProducto}}</h2>
       </div>
     <div class="row" *ngIf="negocio">
@@ -139,33 +139,16 @@
     </div>
 
     <div class="row">
-      <h1 id="precio"> ${{producto.Precio | number:'1.2-2' }}</h1> 
+      <h1 id="precio"> ${{producto.Precio | number:'1.2-2' }}</h1>
     </div>
 
-    <hr style="background-color:#dddddd;"/>
     <ng-container *ngIf="disponible; else elseTemplate">
-      <!--ROW DE VARIANTES-->
-      <h2 id="textoVariantes">Color</h2>
-      <div class="container">
-      <div class="row">
-              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: green; border-radius: 5px; cursor: pointer;"></div>
-              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: red; border-radius: 5px; cursor: pointer;"></div>
-              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: blue; border-radius: 5px; cursor: pointer;"></div>
-              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: purple; border-radius: 5px; cursor: pointer;"></div>
-              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: orangered; border-radius: 5px; cursor: pointer;"></div>
-              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: pink; border-radius: 5px; cursor: pointer;"></div>
-              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: brown; border-radius: 5px; cursor: pointer;"></div>
-              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: orange; border-radius: 5px; cursor: pointer;"></div>
-              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: yellow; border-radius: 5px; cursor: pointer;"></div>
-              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: yellowgreen; border-radius: 5px; cursor: pointer;"></div>
-              <div class="ml-2 mt-1" style="width: 30px; height: 30px; background-color: black; border-radius: 5px; cursor: pointer;"></div>
-              </div>
-     </div>
-     <hr style="background-color:#dddddd;"/>
-     <div class="container">
-      <div class="row">
-              <div class="ml-2 mt-1" style="width: 50px; height:50px; border-radius: 5px; border: 1px solid #dddddd; padding: 5px; cursor: pointer;"><img style="display: block; margin: 0 auto;" src="https://tiendatalamas.com/assets/Imagenes/ART01.jpg"></div>
-              
+
+     <div class="container" *ngIf="variantesD">
+      <h2 id="textoVariantes">Variantes</h2>
+      <div class="row" >
+              <div *ngFor="let variante of variantes" class="ml-2 mt-1" style="width: 50px; height:50px; border-radius: 5px; border: 1px solid #dddddd; padding: 5px; cursor: pointer;"><img fallimg style="vertical-align: middle;" src="{{variante.Imagen}}"></div>
+
      </div>
      </div>
      <hr style="background-color: #dddddd;"/>
@@ -185,7 +168,7 @@
             <img fallimg class="my-auto ml-3" style="cursor: pointer;"   id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
          </div>
           <div class="col-6 col-md-6 col-sm-6">
-            <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
+            <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/>
           </div>
          </div>
     </ng-container>
@@ -199,7 +182,7 @@
     </div>
 
     </ng-template>
-    
+
 
 
     <hr style="background-color: #dddddd;"/>
@@ -269,7 +252,7 @@
             <img fallimg class="my-auto ml-3" style="cursor: pointer;"   id="imagencarrito" src="assets/botonComprar.png" (click)="navegarCompra(producto.IdProducto)" width="155px"/>
          </div>
           <div class="col-6 col-md-6 col-sm-6">
-            <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/> 
+            <img fallimg class="mt-1" style="cursor: pointer;" (click)="anadirAlCarrito(producto.IdProducto)" data-toggle="modal" data-target="#exampleModal" id="imagencarrito" src="assets/anadirCarrito.png" width="155px"/>
           </div>
           </div>
       </ng-container>
