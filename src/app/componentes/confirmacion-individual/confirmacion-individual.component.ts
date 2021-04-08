@@ -24,6 +24,7 @@ export class ConfirmacionIndividualComponent implements OnInit {
   Total:string;
   cantidad:string;
   articulosArray = new Array;
+  noVender:boolean;
   ngOnInit() {
     this.item =this.route.snapshot.paramMap.get('IdProducto');
     this.cantidad = this.route.snapshot.paramMap.get('Cantidad');
@@ -56,9 +57,15 @@ export class ConfirmacionIndividualComponent implements OnInit {
                 if(this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
                   this.Envio = "30";
                 }
-                if(Number(this.Subtotal) >= 0 && !this._servicioCompartido.Direccion.includes("Nuevo Laredo")){
+                if(Number(this.Subtotal) >= 0 && this._servicioCompartido.Direccion.includes("Monterrey")){
                   this.Envio= result['envio'];
                 }
+                if(!this._servicioCompartido.Direccion.includes("Nuevo Laredo") && !this._servicioCompartido.Direccion.includes("Monterrey")){
+                  this.noVender = true;
+                }else{
+                  this.noVender = false;
+                }
+
                 this.Total = String(Number(this.Subtotal) + Number(this.Envio));
               }
               else{
