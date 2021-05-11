@@ -146,8 +146,13 @@
 
      <div class="container" *ngIf="variantesD">
       <h2 id="textoVariantes">Variantes</h2>
-      <div class="row" >
-              <div *ngFor="let variante of variantes" class="ml-2 mt-1" style="width: 50px; height:50px; border-radius: 5px; border: 1px solid #dddddd; padding: 5px; cursor: pointer;"><img fallimg style="vertical-align: middle;" src="{{variante.Imagen}}"></div>
+      <div class="row">
+
+              <div *ngFor="let variante of variantes" class="ml-2" style="  width: 50px; height:50px; border-radius: 5px; padding:5px; border: 1px solid #dddddd; cursor: pointer;">
+               
+                <img fallimg style="display: block; margin: 0 auto;" src="{{variante.Imagen}}">
+                
+              </div>
 
      </div>
      </div>
