@@ -25,11 +25,14 @@ export class CambiarpasswordComponent implements OnInit {
     body.append('contrasenaNueva', this.nuevaContrasena.value);
     body.append('contrasenaRepetida', this.repiteContrasena.value);
   
-   
+   console.log(this.antiguaContrasena.value);
+   console.log(this.nuevaContrasena.value);
+   console.log(this.antiguaContrasena.value);
     this.http.post(this._servicioCompartido.Url+'/CambiarContrasena.php', body)
     .map((res:Response) => res.text())
             .subscribe(result => 
               {
+                console.log(result)   ;
                 if(result == "OK")
                 {
                   alert("Cambio realizado correctamente");
@@ -39,7 +42,7 @@ export class CambiarpasswordComponent implements OnInit {
                 }
                 else
                 {
-                  alert(result)
+                  alert("Fallo");
                 }
     });
 
