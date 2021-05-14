@@ -4,28 +4,28 @@
       <div class="row">
       <div class="col-sm-12 col-lg-4">
         <label class="mt-2">Calle 1:</label>
-        <input class="form-control" placeholder="Calle 1" type="text">
+        <input class="form-control" [formControl]="calle1" placeholder="Calle 1" type="text">
         </div>
         <div class="col-sm-12 col-lg-4">
           <label class="mt-2">Numero Exterior:</label>
-          <input class="form-control" placeholder="Num. Exterior" type="text">
+          <input class="form-control" placeholder="Num. Exterior" [formControl]="numExt" type="text">
           </div>   <div class="col-sm-12 col-lg-4">
             <label class="mt-2">Numero Interior:</label>
-            <input class="form-control" placeholder="Num. Interior" type="text">
+            <input class="form-control" [formControl]="numInterior" placeholder="Num. Interior" type="text">
             </div>
       </div>
   
       <label class="mt-2" for="contraseña">calle 2:</label>
-      <input id="contraseña" class="form-control" [(ngModel)]="calle2"   placeholder="Calle 2" type="text">
+      <input id="contraseña" class="form-control" [formControl]="calle2"  placeholder="Calle 2" type="text">
   
       <label class="mt-2" for="contraseña2">Colonia:</label>
-      <input id="contraseña2" class="form-control" [(ngModel)]="colonia"   placeholder="Colonia" type="text">
+      <input id="contraseña2" class="form-control" [formControl]="colonia"   placeholder="Colonia" type="text">
       
       <div class="row">
         <div class="col-sm-12 col-md-4">
             <label class="mt-2" for="contraseña2">Estado:</label>
         <div class="input-group">
-             <select class="custom-select" (ngModelChange)="onChange($event)" [(ngModel)]="estado" id="inputGroupSelect01">
+             <select class="custom-select" (change)="onChange($event)" [formControl]="estado" id="Otramierda">
               <option value="DIF">Distrito Federal</option>
               <option value="AGS">Aguascalientes</option>
               <option value="BCN">Baja California</option>
@@ -63,14 +63,61 @@
     </div>
           <div class="col-sm-12 col-md-4">
       <label class="mt-2" for="contraseña2">Ciudad</label>
-      <input id="contraseña2" class="form-control" [(ngModel)]="ciudad"   placeholder="Ciudad" type="text">
-       </div>
+      <input *ngIf="!nuevoLaredo" class="form-control ml-2 " [formControl]="ciudad" style="width: 100%;" id="nombre" type="text" placeholder="Ciudad">
+      <div *ngIf="nuevoLaredo" class="input-group ml-2 "   style=" border-radius:50px; width:100%;">
+        <select class="custom-select" [formControl]="ciudad" id="inputGroupSelect02">
+          <option value="Abasolo" >Abasolo</option>
+          <option value="Aldama" >Aldama</option>
+          <option value="Altamira" >Altamira</option>
+          <option value="Antiguo morelos" >Antiguo Morelos</option>
+          <option value="Burgos" >Burgos</option>
+          <option value="Bustamante" >Bustamante</option>
+          <option value="Camargo" >Camargo</option>
+          <option value="Casas" >Casas</option>
+          <option value="Cruillas" >Cruillas</option>
+          <option value="Guemez" >Güémez</option>
+          <option value="Gomez Farias" >Gómez Farías</option>
+          <option value="Gonzales" >González</option>
+          <option value="Guerrero" >Guerrero</option>
+          <option value="Gustavo Diaz Ordaz" >Gustavo Díaz Ordaz</option>
+          <option value="Hidalgo" >Hidalgo</option>
+          <option value="Jaumave" >Jaumave</option>
+          <option value="Jimenez" >Jiménez</option>
+          <option value="Llera" >Llera</option>
+          <option value="Madero" >Madero</option>
+          <option value="Mainero" >Mainero</option>
+          <option value="Mante" >Mante</option>
+          <option value="Matamoros" >Matamoros</option>
+          <option value="Mendez" >Méndez</option>
+          <option value="Mier">Mier</option>
+          <option value="Miguel Aleman" >Miguel Alemán</option>
+          <option value="Miquihuana" >Miquihuana</option>
+          <option value="Nuevo Laredo" >Nuevo Laredo</option>
+          <option value="Nuevo Morelos" >Nuevo Morelos</option>
+          <option value="Ocampo" >Ocampo</option>
+          <option value="Padilla" >Padilla</option>
+          <option value="Palmillas" >Palmillas</option>
+          <option value="Reynosa" >Reynosa</option>
+          <option value="Rio Bravo" >Río Bravo</option>
+          <option value="San Carlos" >San Carlos</option>
+          <option value="San Fernando" >San Fernando</option>
+          <option value="San Nicolas" >San Nicolás</option>
+          <option value="Soto la Marina" >Soto la Marina</option>
+          <option value="Tampico" >Tampico</option>
+          <option value="Tula" >Tula</option>
+          <option value="valle Hermoso" >Valle Hermoso</option>
+          <option value="Vicyoria" >Victoria</option>
+          <option value="Villagran" >Villagrán</option>
+          <option value="Xicoténcatl" >Xicoténcatl</option>
+        </select>
+        
+      </div>       </div>
        <div class="col-sm-12 col-md-4">
       <label class="mt-2" for="contraseña2">Codigo postal:</label>
-      <input id="contraseña2" class="form-control" [(ngModel)]="codigoPost"   placeholder="Codigo postal" type="text">
+      <input id="contraseña2" class="form-control" [formControl]="codigoPost"   placeholder="Codigo postal" type="text">
       </div>
       </div>
     </form>
-    <button class="btn btn-primary mt-3" style="display: block; margin: 0 auto; width: 150px;">Aceptar</button>
+    <button class="btn btn-primary mt-3" (click)="cambiarDireccion()" style="display: block; margin: 0 auto; width: 150px;">Aceptar</button>
   
   </div>
