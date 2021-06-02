@@ -128,7 +128,7 @@
     <li *ngFor="let imagen of imagenesInstrumentos; let i = index"><a (click)="cambiarImagen(imagen.Imagen)" data-target="#pic-{{i}}" data-toggle="tab"><img fallimg style="cursor: pointer;"  src="{{imagen.Imagen}}" /></a></li>
   </ul>
      </div>
-  <div class="col-lg-6 col-md-6" id="margen" style="border: 2px solid #dddddd; border-radius: 5px;">
+  <div class="col-lg-6 col-md-6" id="margen" style="border: 2px solid #a7292954; border-radius: 5px;">
     <div style="margin-left: 3%;">
     <div class="row" style="margin-top: 1%;">
       <div #divZoomed class="img-zoom-result"  ></div>
@@ -149,9 +149,9 @@
       <div class="row">
 
               <div *ngFor="let variante of variantes" class="ml-2" style="  width: 50px; height:50px; border-radius: 5px; padding:5px; border: 1px solid #dddddd; cursor: pointer;">
-               
+
                 <img fallimg style="display: block; margin: 0 auto;" src="{{variante.Imagen}}">
-                
+
               </div>
 
      </div>

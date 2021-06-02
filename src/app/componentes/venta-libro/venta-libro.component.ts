@@ -27,7 +27,7 @@ export class VentaLibroComponent implements OnInit {
   P1: boolean;
   P2: boolean;
   P3: boolean;
-  P4: boolean; 
+  P4: boolean;
 
   direccionesArray = new Array;
   variantes = new Array;
@@ -40,7 +40,7 @@ export class VentaLibroComponent implements OnInit {
   Tipo: boolean;
   Imagen: string;
   Cantidad:number;
-  //Variables para formulario 
+  //Variables para formulario
   DatosError:boolean = false;
   cadena: string;
   ventaForm: FormGroup;
@@ -68,11 +68,11 @@ export class VentaLibroComponent implements OnInit {
   personalizado:boolean;
   //array para guardar los valores
 
-  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute, public falla:NgFallimgModule, private metaService:Meta,@Inject(DOCUMENT) private _document:Document, private title:Title){ 
+  constructor(public _servicioCompartido : servicioCompartido,private router:Router,private http:Http,private fb: FormBuilder,fb2: FormBuilder,private Route:ActivatedRoute, public falla:NgFallimgModule, private metaService:Meta,@Inject(DOCUMENT) private _document:Document, private title:Title){
   this.ventaForm = fb.group({
     'email' : [null, Validators.required],
     'nombre': this.nombre,
-    'apellido': this.apellido,  
+    'apellido': this.apellido,
     'calle1': this.calle1,
     'calle2': this.calle2,
     'calle3': this.calle3,
@@ -138,7 +138,7 @@ this.formCantidad = fb.group({
     this.Categoria = this.Route.snapshot.paramMap.get('categoria');
     this.obtenerImagenes();
     this.user = localStorage.getItem("Token");
-    
+
     this.obtenerArticulo();
     this.obtenerVariantes();
 
@@ -160,7 +160,7 @@ this.formCantidad = fb.group({
     this.LibroCarrousel();
     this.limiteI = "12";
     this.LibroCarrousel();
-    
+
     this.defaultPrice();
     this.obtenerDirecciones();
 
@@ -168,11 +168,12 @@ this.formCantidad = fb.group({
   }
 
   obtenerVariantes(){
+    //Obtiene las variantes del producto
     let body = new URLSearchParams();
     body.append("idProducto", this.IdProducto);
     this.http.post(this._servicioCompartido.Url+'/verVariantes.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
               if(result['status'] == "200" ){
                 this.variantes = result['Productos'];
@@ -181,12 +182,12 @@ this.formCantidad = fb.group({
               }else{
                 this.variantesD = false;
               }
-            
+
     });
   }
 
   cambiarVariante(){
-    
+
   }
 
   navegarCompra(IdProducto:string)
@@ -199,22 +200,22 @@ this.formCantidad = fb.group({
     body.append("idProducto", this.IdProducto);
     this.http.post(this._servicioCompartido.Url+'/obtenerImagenesInstrumentos.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
             this.AA = "";
             this.data = [];
             this.imagenesInstrumentos = result;
-            
+
     });
   }
   obtenerVendedor(NombreNegocio){
     try {
       let body = new URLSearchParams();
-      body.append('cadena', NombreNegocio);  
+      body.append('cadena', NombreNegocio);
       this.http.post(this._servicioCompartido.Url+'/negocioExacto.php', body)
-        
+
       .map((res:Response) => res.json())
-              .subscribe(result => 
+              .subscribe(result =>
               {
           if(result["status"] == "200")
           {
@@ -233,7 +234,7 @@ this.formCantidad = fb.group({
     body.append('email', localStorage.getItem('email_U'));
     this.http.post(this._servicioCompartido.Url+'/obtenerDirecciones.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
             this.AA = "";
             this.data = [];
@@ -246,7 +247,7 @@ this.formCantidad = fb.group({
               for (var i = 0; i < Object.keys(this.val).length; i++) {
               this.contenedor = Object.keys(this.val)[i];
               Object.entries(this.val)[i]
-               
+
                 this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
                 this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
 
@@ -261,14 +262,14 @@ this.formCantidad = fb.group({
   {
     if(this.Cantidad < Number(this.Unidades)){
       this.Cantidad ++;
-      } 
+      }
  }
   disminuirCantidad()
   {
     if(this.Cantidad > 1){
     this.Cantidad --;
     }
-  } 
+  }
 
   ObtenerMeta(producto:any)
   {
@@ -281,7 +282,7 @@ this.formCantidad = fb.group({
     let body = new URLSearchParams();
     this.http.post(this._servicioCompartido.Url+'/libroAleatorio.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
             this.AA = "";
             this.data = [];
@@ -294,7 +295,7 @@ this.formCantidad = fb.group({
               for (var i = 0; i < Object.keys(this.val).length; i++) {
               this.contenedor = Object.keys(this.val)[i];
               Object.entries(this.val)[i]
-               
+
                 this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
                 this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
 
@@ -320,7 +321,7 @@ this.formCantidad = fb.group({
     body.append("codigoPostal", this.CodigoPostal);
     this.http.post(this._servicioCompartido.Url+'/enviarCorreo.php', body)
     .map((res:Response) => res.text())
-            .subscribe(result => 
+            .subscribe(result =>
             {
               if(result == "Message has been sent")
               {
@@ -344,7 +345,7 @@ this.formCantidad = fb.group({
     if(this.limiteI == "0"){
     this.http.post(this._servicioCompartido.Url+'/obtenerCarruselVenta.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
             this.AA = "";
             this.data = [];
@@ -357,7 +358,7 @@ this.formCantidad = fb.group({
               for (var i = 0; i < Object.keys(this.val).length; i++) {
               this.contenedor = Object.keys(this.val)[i];
               Object.entries(this.val)[i]
-               
+
                 this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
                 this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
 
@@ -369,7 +370,7 @@ this.formCantidad = fb.group({
   if(this.limiteI == "6"){
     this.http.post(this._servicioCompartido.Url+'/obtenerCarruselVenta.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
             this.AA = "";
             this.data = [];
@@ -382,7 +383,7 @@ this.formCantidad = fb.group({
               for (var i = 0; i < Object.keys(this.val).length; i++) {
               this.contenedor = Object.keys(this.val)[i];
               Object.entries(this.val)[i]
-               
+
                 this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
                 this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
 
@@ -394,7 +395,7 @@ this.formCantidad = fb.group({
   if(this.limiteI == "12"){
     this.http.post(this._servicioCompartido.Url+'/obtenerCarruselVenta.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
             this.AA = "";
             this.data = [];
@@ -407,7 +408,7 @@ this.formCantidad = fb.group({
               for (var i = 0; i < Object.keys(this.val).length; i++) {
               this.contenedor = Object.keys(this.val)[i];
               Object.entries(this.val)[i]
-               
+
                 this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
                 this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
 
@@ -446,13 +447,13 @@ this.formCantidad = fb.group({
   }
   obtenerArticulo(){
     let body = new URLSearchParams();
-      
+
     body.append('id_producto', this.IdProducto);
 
 
     this.http.post(this._servicioCompartido.Url+'/obtenerUnicoArticulo.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
               {
               this.Unidades = result[0]['Unidades'];
               this.imagenPorDefault = result[0]['Imagen'];
@@ -473,7 +474,7 @@ this.formCantidad = fb.group({
               for (var i = 0; i < Object.keys(this.val).length; i++) {
               this.contenedor = Object.keys(this.val)[i];
               Object.entries(this.val)[i]
-                
+
                 this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
                 this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
 
@@ -497,9 +498,9 @@ this.formCantidad = fb.group({
     });
   }
 
-  
 
-  
+
+
   masInformacion(IdProducto: string, Categoria: string, Nombre:string){
     this.IdProducto = IdProducto;
     this.Categoria = Categoria;
@@ -519,11 +520,11 @@ this.formCantidad = fb.group({
 
     //this.precioBinding = this.precio * this.cantidad;
     console.log(this.precioBinding);
-    
+
 
   }
 */
-  
+
   onChange(cantidad) {
     for(let producto of this.productos)
     {
@@ -537,9 +538,9 @@ this.formCantidad = fb.group({
   navegarInicio()
   {
     this.router.navigate(['']);
-    
+
   }
-  
+
   navegarSesion()
   {
 
@@ -550,7 +551,7 @@ this.formCantidad = fb.group({
   navegarRegistro()
   {
     this.router.navigate(['registro']);
-    
+
   }
   navegarLibreria()
   {
@@ -575,7 +576,7 @@ this.formCantidad = fb.group({
     this.router.navigate(['Carrito']);
   }
 
-  ventanaNueva(){	
+  ventanaNueva(){
     window.open("https://www.tiendatalamas.com/compartir.php?fbclid=IwAR042ZSpcU1sqsJGNL8kN2iV-81jOmCaaDE8RKBh_5I8_OsROzs14cghagA");
   }
 
@@ -591,7 +592,7 @@ this.formCantidad = fb.group({
   this._servicioCompartido.setCategoria(Categoria);
   this._servicioCompartido.setSubCategoria(SubCategoria);
 
-  
+
   }
   venta()
   {
@@ -604,14 +605,14 @@ this.formCantidad = fb.group({
     //body.append('calle3', this.calle3);
     //body.append('ciudad', this.ciudad);
 
-      
+
   }
 
   defaultPrice(){
     for(let producto of this.productos)
     {
         this.precio=producto.Precio;
-        
+
     }
     this.precioBinding = this.precio;
   }
@@ -628,10 +629,10 @@ this.formCantidad = fb.group({
     body.append("IdProducto",IdProducto);
     body.append("Cantidad", String(this.Cantidad));
     body.append("token",localStorage.getItem('Token'))
-    
+
     this.http.post(this._servicioCompartido.Url+'/agregarCarrito.php', body)
     .map((res:Response) => res.text())
-            .subscribe(result => 
+            .subscribe(result =>
             {
               this._servicioCompartido.respuesta=result;
               if(this._servicioCompartido.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
