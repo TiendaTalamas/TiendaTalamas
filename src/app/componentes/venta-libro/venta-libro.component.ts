@@ -186,9 +186,6 @@ this.formCantidad = fb.group({
     });
   }
 
-  cambiarVariante(){
-
-  }
 
   navegarCompra(IdProducto:string)
   {
