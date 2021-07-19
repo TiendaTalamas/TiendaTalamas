@@ -191,7 +191,7 @@
       <option value="Villagran" >Villagrán</option>
       <option value="Xicoténcatl" >Xicoténcatl</option>
     </select>
-    <select class="custom-select" [(ngModel)]="ciudad" id="inputGroupSelect02">
+    <select class="custom-select" *ngIf="monterrey" [(ngModel)]="ciudad" id="inputGroupSelect02">
       <option value="Abasolo" >Abasolo</option>
       <option value="Agualeguas" >Agualeguas</option>
       <option value="Allende" >Allendea</option>
@@ -268,7 +268,7 @@
       </div>
       <div class="modal-body">
         <ng-container *ngIf="carga; else elseTemplate">
-            
+
         <input id="gusto1" [(ngModel)]="gusto1" class="form-control ml-2 mt-4"  style="width: 100%;"  type="text" placeholder="Libro Favorito?">
         <input id="gusto2" [(ngModel)]="gusto2" class="form-control ml-2 mt-4"  style="width: 100%;" id="preferencia2" type="text" placeholder="Instrumento Favorito?">
         <input id="gusto3" [(ngModel)]="gusto3" class="form-control ml-2 mt-4"  style="width: 100%;" id="preferencia3" type="text" placeholder="Artista Favorito?">
@@ -280,7 +280,7 @@
             <img style="display: block; margin:0 auto; width:150px;" src="assets/carga.gif">
           </div>
         </ng-template>
-      
+
       </div>
       <div class="modal-footer">
       <div *ngIf="carga">
@@ -292,4 +292,4 @@
   </div>
 </div>
 
-  
+

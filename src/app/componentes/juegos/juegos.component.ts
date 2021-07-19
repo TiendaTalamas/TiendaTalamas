@@ -20,7 +20,7 @@ export class JuegosComponent implements OnInit {
     this.obtenerSubCategoriasLibros();
     this.sub="Elegir Categoria";
   }
-  
+
   AA: string;
   data: any[];
   val: any[];
@@ -36,8 +36,8 @@ export class JuegosComponent implements OnInit {
   paginaActual:number;
   SubCategoria:string;
   obtenerSubCategoriasLibros(){
-    
-    
+
+
     let body2 = new URLSearchParams();
     body2.append('categoria', "EMD");
 
@@ -45,11 +45,12 @@ export class JuegosComponent implements OnInit {
 
     this.http.post(this._servicioCompartido.Url+'/obtenerEmd.php', body2)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
               {
 
             this.articulosArray_Sub = result;
-          
+            console.log(result);
+
     });
   }
   onChange(SubCategoria:string) {
@@ -62,9 +63,9 @@ export class JuegosComponent implements OnInit {
     body2.append("SubCategoria",this.SubCategoria),
     this.http.post(this._servicioCompartido.Url+'/obtenerPaginasJuegos.php', body2)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
               {
-                
+
             this.paginas = result['NumPaginas'];
 
     });
@@ -72,13 +73,13 @@ export class JuegosComponent implements OnInit {
   cambiarPagina(pagina:number){
     this.paginaActual = pagina;
     this.obtenerArticulos();
-    window.scrollTo(0, 0) 
+    window.scrollTo(0, 0)
   }
   siguiente(){
     if (this.paginaActual != this.paginas) {
       this.paginaActual ++;
       this.obtenerArticulos();
-      window.scrollTo(0, 0) 
+      window.scrollTo(0, 0)
 
     }
   }
@@ -86,7 +87,7 @@ export class JuegosComponent implements OnInit {
     if (this.paginaActual != 1) {
       this.paginaActual --;
       this.obtenerArticulos();
-      window.scrollTo(0, 0) 
+      window.scrollTo(0, 0)
 
     }
   }
@@ -113,10 +114,10 @@ export class JuegosComponent implements OnInit {
     body.append("IdProducto",IdProducto);
     body.append("Cantidad", "1");
     body.append("token",localStorage.getItem('Token'))
-    
+
     this.http.post(this._servicioCompartido.Url+'/agregarCarrito.php', body)
     .map((res:Response) => res.text())
-            .subscribe(result => 
+            .subscribe(result =>
             {
               this._servicioCompartido.respuesta=result;
               if(this._servicioCompartido.respuesta == "Iniciar sesion o registrarse para agregar al carrito")
@@ -134,7 +135,7 @@ export class JuegosComponent implements OnInit {
     body.append('SubCategoria', this.SubCategoria);
     this.http.post(this._servicioCompartido.Url+'/juegosDi.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
             this.AA = "";
             this.data = [];
@@ -147,10 +148,10 @@ export class JuegosComponent implements OnInit {
               for (var i = 0; i < Object.keys(this.val).length; i++) {
               this.contenedor = Object.keys(this.val)[i];
               Object.entries(this.val)[i]
-               
+
                 this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
                 this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
-                
+
                 }
              }
           }
@@ -189,5 +190,5 @@ export class JuegosComponent implements OnInit {
 
 
    }
-   
+
 }

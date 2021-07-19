@@ -37,12 +37,12 @@ declare var fbq:any;
       transition('show => hide', animate('600ms ease-out')),
       transition('hide => show', animate('1000ms ease-in')),
 
-    
-    
+
+
     ])
   ]*/
 })
-export class AppComponent { 
+export class AppComponent {
 
   Pag1:boolean;
   cadena: string;
@@ -68,10 +68,10 @@ export class AppComponent {
 /*
   get stateName()
   {
-    return this.show ? 'show' : 'hide'  
+    return this.show ? 'show' : 'hide'
   }
 
-  toggle() 
+  toggle()
   {
      this.show = !this.show;
   }
@@ -92,7 +92,7 @@ export class AppComponent {
     .map((rest:Response) =>rest.json()).subscribe(result=>{
       console.log("Peticion enviada");
     });*/
-    
+
     fbq('init', '814700656069487');
     fbq('track', 'PageView');  }
   AA_Sub: string;
@@ -146,19 +146,19 @@ export class AppComponent {
   navegarCategoria(Categoria:string, SubCategoria: string){
 
     this.router.navigate(['categoria',Categoria,SubCategoria]);
-    
+
   this._servicioCompartido.setCategoria(Categoria);
   this._servicioCompartido.setSubCategoria(SubCategoria);
 
-  
+
   }
   navegarJuegos()
   {
     this.router.navigate(['Juegos']);
   }
   obtenerSubCategoriasLibros(){
-    
-    
+
+
     let body2 = new URLSearchParams();
     body2.append('categoria', "Libros");
 
@@ -166,7 +166,7 @@ export class AppComponent {
 
     this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
               {
               this.AA_Sub = "";
             this.data_Sub = [];
@@ -179,7 +179,7 @@ export class AppComponent {
               for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
               this.contenedor_Sub = Object.keys(this.val_Sub)[i];
               Object.entries(this.val_Sub)[i]
-               
+
                 this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
                 this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
 
@@ -190,8 +190,8 @@ export class AppComponent {
   }
 
   obtenerSubCategoriasInst(){
-    
-    
+
+
     let body2 = new URLSearchParams();
     body2.append('categoria', "Instrumentos");
 
@@ -199,7 +199,7 @@ export class AppComponent {
 
     this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
               {
               this.AA_Sub = "";
             this.data_Sub = [];
@@ -212,7 +212,7 @@ export class AppComponent {
               for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
               this.contenedor_Sub = Object.keys(this.val_Sub)[i];
               Object.entries(this.val_Sub)[i]
-               
+
                 this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
                 this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
 
@@ -222,12 +222,12 @@ export class AppComponent {
     });
   }
 
-  
+
 
   navegarRegistro()
   {
     this.router.navigate(['registro']);
-    
+
   }
   navegarLibreria()
   {
@@ -248,11 +248,10 @@ export class AppComponent {
     let body = new URLSearchParams();
     body.append('cadena', this.cadena);
     this._servicioCompartido.soloBusqueda = true;
-
     this.http.post(this._servicioCompartido.Url+'/buscar.php', body)
-      
+
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
             this.AA_Buscar = "";
             this.data_Buscar = [];
@@ -273,7 +272,7 @@ export class AppComponent {
               for (var i = 0; i < Object.keys(this.val_Buscar).length; i++) {
               this.contenedor_Buscar = Object.keys(this.val_Buscar)[i];
               Object.entries(this.val_Buscar)[i]
-               
+
                 this.xxxMap_Buscar.set(Object.keys(this.val_Buscar)[i], Object.values(this.val_Buscar)[i]);
                 this.valuesKeys_Buscar.push(Object.keys(this.val_Buscar)[i], Object.values(this.val_Buscar)[i]);
 
@@ -298,9 +297,9 @@ export class AppComponent {
     this._servicioCompartido.soloBusqueda = true;
 
     this.http.post(this._servicioCompartido.Url+'/buscarNegocios.php', body)
-      
+
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
             this.AA_Buscar = "";
             this.data_Buscar = [];
@@ -321,7 +320,7 @@ export class AppComponent {
               for (var i = 0; i < Object.keys(this.val_Buscar).length; i++) {
               this.contenedor_Buscar = Object.keys(this.val_Buscar)[i];
               Object.entries(this.val_Buscar)[i]
-               
+
                 this.xxxMap_Buscar.set(Object.keys(this.val_Buscar)[i], Object.values(this.val_Buscar)[i]);
                 this.valuesKeys_Buscar.push(Object.keys(this.val_Buscar)[i], Object.values(this.val_Buscar)[i]);
 
@@ -339,7 +338,7 @@ export class AppComponent {
     this.router.navigate(['ConfiguracionUsuario']);
   }
 
-  
+
   masInformacion(IdProducto: string, Categoria: string, Nombre:string){
 
     this.router.navigate(['venta',Categoria,IdProducto,Nombre]);
@@ -363,7 +362,7 @@ export class AppComponent {
   navegarInicio()
   {
     this.router.navigate(['']);
-    
+
   }
 
   navegarReposteria()
@@ -398,12 +397,12 @@ export class AppComponent {
     }
 
   }
-  
- 
+
+
   title = 'talamas';
-  
+
   mobileQuery: MediaQueryList;
-  
+
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
   fillerContent = Array.from({length: 50}, () =>
@@ -426,10 +425,10 @@ export class AppComponent {
     body.append("IdProducto",IdProducto);
     body.append("Cantidad", "1");
     body.append("token",localStorage.getItem('Token'))
-    
+
     this.http.post(this._servicioCompartido.Url+'/agregarCarrito.php', body)
     .map((res:Response) => res.text())
-            .subscribe(result => 
+            .subscribe(result =>
             {
               this._servicioCompartido.respuesta=result;
               if(this._servicioCompartido.respuesta == "Iniciar sesion o registrarse para agregar al carrito")

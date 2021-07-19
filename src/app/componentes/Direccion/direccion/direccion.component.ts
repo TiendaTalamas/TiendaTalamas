@@ -35,6 +35,7 @@ export class DireccionComponent implements OnInit {
   gusto4:string;
   carga:boolean;
   nuevoLaredo:boolean;
+  monterrey:boolean;
   constructor(private router: Router, private location:Location,private fb: FormBuilder,private http: Http, fb2: FormBuilder,public _servicioCompartido: servicioCompartido) {
     this.formData = fb.group({
       'calle1' : this.calle1,
@@ -70,7 +71,7 @@ export class DireccionComponent implements OnInit {
   navegarInicio()
   {
     this.router.navigate(['']);
-    
+
   }
 
 
@@ -85,7 +86,7 @@ export class DireccionComponent implements OnInit {
   navegarRegistro()
   {
     this.router.navigate(['registro']);
-    
+
   }
   navegarLibreria()
   {
@@ -115,7 +116,7 @@ export class DireccionComponent implements OnInit {
   registrar()
   {
     this.modal = true;
-  
+
     let errores = true;
     this._servicioCompartido.ApellidoMa = "Dato innecesario";
     if(isNullOrUndefined(this.numInterior) || this.numInterior == "")
@@ -147,9 +148,9 @@ export class DireccionComponent implements OnInit {
     }
     if(errores)
     {
-      
+
     let body = new URLSearchParams();
-      
+
     body.append('nombre', this._servicioCompartido.Nombre);
     body.append('apellidoPa', this._servicioCompartido.ApellidoPa);
     body.append('apellidoMa', this._servicioCompartido.ApellidoMa);
@@ -169,7 +170,7 @@ export class DireccionComponent implements OnInit {
 
     this.http.post(this._servicioCompartido.Url+'/registrar.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
               {
                 if(result['status'] == "400")
                 {
@@ -186,7 +187,7 @@ export class DireccionComponent implements OnInit {
                   localStorage.setItem('Nombre', result['Nombre']);
                   this._servicioCompartido.NombU = localStorage.getItem("Nombre");
                 }
-                
+
           });
         }else{
           alert("Por favor rellene todos los datos");
@@ -202,6 +203,12 @@ export class DireccionComponent implements OnInit {
     }else{
       this.nuevoLaredo = false;
     }
+    if(Estado == "NLE" )
+    {
+      this.monterrey = true;
+    }else{
+      this.monterrey = false;
+    }
  }
 
   guardarGustos()
@@ -213,9 +220,9 @@ export class DireccionComponent implements OnInit {
     body.append('token',localStorage.getItem('Token'));
     this.http.post(this._servicioCompartido.Url+'/guardarGustos.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
               {
-                
+
                 if(result['status'] == "400")
                 {
                   this.modal = false;
@@ -231,18 +238,18 @@ export class DireccionComponent implements OnInit {
                   this._servicioCompartido.recargar = true;
 
                 }
-                
+
           });
   }
 
   omitir()
   {
     this.modal = true;
-    
+
     this.gustos = "No definidos";
     this._servicioCompartido.ApellidoMa = "Dato innecesario";
     let body = new URLSearchParams();
-      
+
     body.append('nombre', this._servicioCompartido.Nombre);
     body.append('apellidoPa', this._servicioCompartido.ApellidoPa);
     body.append('apellidoMa', this._servicioCompartido.ApellidoMa);
@@ -253,7 +260,7 @@ export class DireccionComponent implements OnInit {
 
     this.http.post(this._servicioCompartido.Url+'/omitir.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
               {
                 if(result['status'] == "400")
                 {
@@ -270,9 +277,9 @@ export class DireccionComponent implements OnInit {
                   this.carga = true;
                   this._servicioCompartido.NombU = localStorage.getItem("Nombre");
                 }
-                
+
           });
-        
+
   }
 
 }

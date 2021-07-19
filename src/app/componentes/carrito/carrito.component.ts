@@ -58,11 +58,11 @@ cadena:string;
     body.append("token",localStorage.getItem('Token'));
     this.http.post(this._servicioCompartido.Url+'/carrito.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
 
             this.articulosArray = result;
-
+            console.log(result);
     });
 
   }
@@ -77,7 +77,7 @@ cadena:string;
     body.append("IdCarrito",IdCarrito);
     this.http.post(this._servicioCompartido.Url+'/quitarCarrito.php', body)
     .map((res:Response) => res.text())
-            .subscribe(result => 
+            .subscribe(result =>
             {
               if(result = "OK")
               {
@@ -103,7 +103,7 @@ cadena:string;
     body.append("IdProducto", IdProducto);
     this.http.post(this._servicioCompartido.Url+'/aumentarCantidad.php', body)
     .map((res:Response) => res.text())
-            .subscribe(result => 
+            .subscribe(result =>
             {
               if(result = "OK")
               {
@@ -122,7 +122,7 @@ cadena:string;
     body.append("IdCarrito",IdCarrito);
     this.http.post(this._servicioCompartido.Url+'/disminuirCantidad.php', body)
     .map((res:Response) => res.text())
-            .subscribe(result => 
+            .subscribe(result =>
             {
               if(result = "OK")
               {
@@ -140,7 +140,7 @@ cadena:string;
     body.append("token",localStorage.getItem('Token'));
     this.http.post(this._servicioCompartido.Url+'/obtenerSubtotal.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
               if(result['status']  == "200")
               {
@@ -168,11 +168,11 @@ cadena:string;
   this._servicioCompartido.setCategoria(Categoria);
   this._servicioCompartido.setSubCategoria(SubCategoria);
 
-  
+
   }
   obtenerSubCategoriasLibros(){
-    
-    
+
+
     let body2 = new URLSearchParams();
     body2.append('categoria', "Libros");
 
@@ -180,7 +180,7 @@ cadena:string;
 
     this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
               {
               this.AA_Sub = "";
             this.data_Sub = [];
@@ -193,7 +193,7 @@ cadena:string;
               for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
               this.contenedor_Sub = Object.keys(this.val_Sub)[i];
               Object.entries(this.val_Sub)[i]
-               
+
                 this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
                 this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
 
@@ -204,8 +204,8 @@ cadena:string;
   }
 
   obtenerSubCategoriasInst(){
-    
-    
+
+
     let body2 = new URLSearchParams();
     body2.append('categoria', "Instrumentos");
 
@@ -213,7 +213,7 @@ cadena:string;
 
     this.http.post(this._servicioCompartido.Url+'/obtenerSubCategoria.php', body2)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
               {
               this.AA_Sub = "";
             this.data_Sub = [];
@@ -226,7 +226,7 @@ cadena:string;
               for (var i = 0; i < Object.keys(this.val_Sub).length; i++) {
               this.contenedor_Sub = Object.keys(this.val_Sub)[i];
               Object.entries(this.val_Sub)[i]
-               
+
                 this.xxxMap_Sub.set(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
                 this.valuesKeys_Sub.push(Object.keys(this.val_Sub)[i], Object.values(this.val_Sub)[i]);
 
@@ -243,7 +243,7 @@ cadena:string;
   }
 
   modificarCantidad()
-  { 
+  {
     if(!isNullOrUndefined(this.quantity))
     {
       let body = new URLSearchParams();
@@ -253,7 +253,7 @@ cadena:string;
       body.append('producto', this.Producto);
       this.http.post(this._servicioCompartido.Url+'/cambiarCantidad.php', body)
       .map((res:Response) => res.json())
-              .subscribe(result => 
+              .subscribe(result =>
                 {
                   if(result['status'] == "200")
                   {
@@ -274,9 +274,9 @@ cadena:string;
   navegarInicio()
   {
     this.router.navigate(['']);
-    
+
   }
-  
+
   navegarCarrito()
   {
     this.router.navigate(['Carrito']);
@@ -292,7 +292,7 @@ cadena:string;
   navegarRegistro()
   {
     this.router.navigate(['registro']);
-    
+
   }
   navegarLibreria()
   {

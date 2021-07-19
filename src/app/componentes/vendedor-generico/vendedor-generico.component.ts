@@ -19,7 +19,7 @@ import { producto } from '../../servicios/producto';
 })
 export class VendedorGenericoComponent implements OnInit {
   cadena: string;
- 
+
 
   Categoria: string;
   AA: string;
@@ -49,9 +49,9 @@ export class VendedorGenericoComponent implements OnInit {
   respuesta:string;
 
   constructor(private http: Http,private router: Router, private location:Location,
-    public _servicioCompartido : servicioCompartido, fb : FormBuilder, public falla:NgFallimgModule, public Route:ActivatedRoute) {   
+    public _servicioCompartido : servicioCompartido, fb : FormBuilder, public falla:NgFallimgModule, public Route:ActivatedRoute) {
 }
- 
+
 
   AA_Sub: string;
   data_Sub: any[];
@@ -73,11 +73,11 @@ export class VendedorGenericoComponent implements OnInit {
   obtenerVendedor(){
     try {
       let body = new URLSearchParams();
-      body.append('cadena', this.NombreNegocio);  
+      body.append('cadena', this.NombreNegocio);
       this.http.post(this._servicioCompartido.Url+'/negocioExacto.php', body)
-        
+
       .map((res:Response) => res.json())
-              .subscribe(result => 
+              .subscribe(result =>
               {
           if(result["status"] == "200")
           {
@@ -91,13 +91,13 @@ export class VendedorGenericoComponent implements OnInit {
       this.router.navigate(['']);
     }
   }
-  
+
   obtenerArticulosEspecificos() {
     let body = new URLSearchParams();
     body.append('marca', this.NombreNegocio);
     this.http.post(this._servicioCompartido.Url+'/articulosPorMarca.php', body)
     .map((res:Response) => res.json())
-            .subscribe(result => 
+            .subscribe(result =>
             {
             this.AA = "";
             this.data = [];
@@ -111,10 +111,10 @@ export class VendedorGenericoComponent implements OnInit {
               for (var i = 0; i < Object.keys(this.val).length; i++) {
               this.contenedor = Object.keys(this.val)[i];
               Object.entries(this.val)[i]
-               
+
                 this.xxxMap.set(Object.keys(this.val)[i], Object.values(this.val)[i]);
                 this.valuesKeys.push(Object.keys(this.val)[i], Object.values(this.val)[i]);
-                
+
                 }
              }
           }
@@ -132,10 +132,10 @@ export class VendedorGenericoComponent implements OnInit {
     body.append("IdProducto",IdProducto);
     body.append("Cantidad", "1");
     body.append("token",localStorage.getItem('Token'))
-    
+
     this.http.post(this._servicioCompartido.Url+'/agregarCarrito.php', body)
     .map((res:Response) => res.text())
-            .subscribe(result => 
+            .subscribe(result =>
             {
               this.respuesta=result;
               if(this.respuesta == "Iniciar sesion o registrarse para agregar al carrito")

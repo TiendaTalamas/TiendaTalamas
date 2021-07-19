@@ -49,9 +49,8 @@ const routes: Routes = [
   {path: 'registro', component: RegistroComponent, },
   {path: 'libreria', component: LibreriaComponent, },
   {path: 'venta/:categoria/:id/:Nombre', component: VentaLibroComponent, },
-  {path: 'emd', component: EMDComponent, },
   {path: 'musica', component: MusicaComponent,},
-  {path: 'categoria/:categoria/:subcategoria', component: CategoriaProductoComponent,}, 
+  {path: 'categoria/:categoria/:subcategoria', component: CategoriaProductoComponent,},
   {path: 'busqueda/:search', component: BusquedaComponent,},
   {path: 'ConfiguracionUsuario', component: ConfiguracionUsuarioComponent,
   children: [
@@ -88,9 +87,9 @@ const routes: Routes = [
   {path: 'password', component:PasswordComponent },
   {path: 'restablecer', component:RestablecerComponent},
   {path: ':negocio', component:VendedorGenericoComponent },
-  
-  
-  
+
+
+
 ];
 
 @NgModule({
